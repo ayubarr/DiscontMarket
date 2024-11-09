@@ -1,9 +1,4 @@
 ﻿using DiscontMarket.Domain.Models.Abstractions.BaseEntities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DiscontMarket.Domain.Models.Entities
 {
