@@ -4,7 +4,7 @@ using DiscontMarket.Domain.Models.Abstractions.LinkEntities;
 namespace DiscontMarket.Domain.Models.Entities
 {
     
-    public class Attribute : BaseEntity
+    public class AttributeEntity : BaseEntity
     {
        
         public string AttributeName { get; set; }
