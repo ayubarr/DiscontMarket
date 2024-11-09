@@ -15,6 +15,6 @@ namespace DiscontMarket.Domain.Models.Entities
 
 
         //Связь с сущностью Order
-        public List<Order> Orders { get; set; }
+        public List<Order>? Orders { get; set; }
     }
 }

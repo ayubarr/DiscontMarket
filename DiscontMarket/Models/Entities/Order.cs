@@ -16,7 +16,7 @@ namespace DiscontMarket.Domain.Models.Entities
 
 
         //Связь с сущностью Session
-        public uint SessionID { get; set; }
-        public Session Session { get; set; }
+        public uint? SessionID { get; set; }
+        public Session? Session { get; set; }
     }
 }
