@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.35327.3
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiscontMarket.Domain", "DiscontMarket\DiscontMarket.Domain.csproj", "{FC06E97F-8CB2-4A1A-AB78-93511E3DE14B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DiscontMarket.Domain", "DiscontMarket\DiscontMarket.Domain.csproj", "{FC06E97F-8CB2-4A1A-AB78-93511E3DE14B}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DATA", "DATA", "{A4F1782C-6404-4549-9005-7DCC86E27919}"
 EndProject
@@ -12,6 +12,12 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WebApi", "WebApi", "{62DD8CF1-B678-4FB9-8494-5BEAA2DB1911}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{729F3B9F-B939-4DB4-A215-9B1D3146F6FD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataAccesLayer", "DataAccesLayer", "{90FE521B-63A7-416D-95A6-448603A70986}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BuisnessLogic", "BuisnessLogic", "{EF6B0069-FA87-471F-A51B-A54F7D3B359A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiscontMarket.DAL", "DiscontMarket.DAL\DiscontMarket.DAL.csproj", "{F213115E-A161-4251-8B27-243EAF39DF20}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,6 +29,10 @@ Global
 		{FC06E97F-8CB2-4A1A-AB78-93511E3DE14B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FC06E97F-8CB2-4A1A-AB78-93511E3DE14B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FC06E97F-8CB2-4A1A-AB78-93511E3DE14B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F213115E-A161-4251-8B27-243EAF39DF20}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F213115E-A161-4251-8B27-243EAF39DF20}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F213115E-A161-4251-8B27-243EAF39DF20}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F213115E-A161-4251-8B27-243EAF39DF20}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -30,6 +40,9 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{FC06E97F-8CB2-4A1A-AB78-93511E3DE14B} = {729F3B9F-B939-4DB4-A215-9B1D3146F6FD}
 		{729F3B9F-B939-4DB4-A215-9B1D3146F6FD} = {A4F1782C-6404-4549-9005-7DCC86E27919}
+		{90FE521B-63A7-416D-95A6-448603A70986} = {A4F1782C-6404-4549-9005-7DCC86E27919}
+		{EF6B0069-FA87-471F-A51B-A54F7D3B359A} = {A4F1782C-6404-4549-9005-7DCC86E27919}
+		{F213115E-A161-4251-8B27-243EAF39DF20} = {90FE521B-63A7-416D-95A6-448603A70986}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {CB71C059-46F6-468A-9399-BB87A1003BAC}
