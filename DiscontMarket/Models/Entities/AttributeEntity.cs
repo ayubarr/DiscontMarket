@@ -9,7 +9,7 @@ namespace DiscontMarket.Domain.Models.Entities
        
         public string AttributeName { get; set; }
        
-       public List <ProductAttribute>? ProductAttributes { get; set; }
+        public List <ProductAttribute>? ProductAttributes { get; set; }
         
     }
 }
