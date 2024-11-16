@@ -22,7 +22,7 @@ namespace DiscontMarket.DAL.SqlServer.Context
         public DbSet<Product> Products { get; set; }
         public DbSet<Session> Sessions { get; set; }
         public DbSet<Tag> Tags { get; set; }
-        public DbSet<AttributeEntity> AttributeEntities { get; set; }
+        public DbSet<AttributeEntity> Attributes { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
