@@ -20,12 +20,20 @@ namespace DiscontMarket.DAL.Repository.Implementations
             _dbSet = context.Set<T>();
         }
 
-        public async Task Create(T entity)
+        public async Task CreateAsync(T entity)
         {
              ObjectValidator<T>.CheckIsNotNullObject(entity);
 
             await _dbSet.AddAsync(entity);
             await _context.SaveChangesAsync();
+        }
+
+        public void Create(T entity)
+        {
+            ObjectValidator<T>.CheckIsNotNullObject(entity);
+
+            _dbSet.Add(entity); 
+            _context.SaveChanges();
         }
 
         public async Task Update(T entity)
