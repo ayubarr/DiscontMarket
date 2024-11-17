@@ -4,7 +4,9 @@ namespace DiscontMarket.DAL.Repository.Interfaces
 {
     public interface IBaseRepository<T> where T : BaseEntity
     {
-        public Task Create(T entity);
+        public Task CreateAsync(T entity);
+
+        public void Create(T entity);
 
         public IQueryable<T> GetAll();
 
