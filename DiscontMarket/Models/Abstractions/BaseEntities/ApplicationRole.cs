@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DiscontMarket.Domain.Models.Abstractions.BaseEntities
 {
-    public class ApplicationRole : IdentityRole<uint>
+    public abstract class ApplicationRole : IdentityRole<uint>
     {
     }
 }
