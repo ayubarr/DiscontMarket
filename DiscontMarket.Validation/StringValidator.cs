@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace DiscontMarket.Validation
+﻿namespace DiscontMarket.Validation
 {
     /// <summary>
     /// String validation.
@@ -20,7 +14,7 @@ namespace DiscontMarket.Validation
         {
             if (string.IsNullOrEmpty(text))
             {
-                throw new ArgumentNullException(nameof(text), "The parameter must not be Nullы");
+                throw new ArgumentNullException(nameof(text), "The parameter must not be Null");
             }
         }
     }
