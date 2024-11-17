@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="DTO\EntityDTOs\Brend\" />
+    <Folder Include="DTO\EntityDTOs\Category\" />
+    <Folder Include="DTO\EntityDTOs\Attribute\" />
+    <Folder Include="DTO\EntityDTOs\Tag\" />
+    <Folder Include="DTO\EntityDTOs\Session\" />
+    <Folder Include="DTO\EntityDTOs\Order\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DiscontMarket.Validation\DiscontMarket.Validation.csproj" />
+  </ItemGroup>
+
+</Project>
