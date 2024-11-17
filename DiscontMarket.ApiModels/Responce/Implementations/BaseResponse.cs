@@ -1,7 +1,5 @@
 ﻿using DiscontMarket.ApiModels.Responce.Interfaces;
 using DiscontMarket.Validation;
-using Newtonsoft.Json;
-using System.Xml;
 
 namespace DiscontMarket.ApiModels.Responce.Implementations
 {
