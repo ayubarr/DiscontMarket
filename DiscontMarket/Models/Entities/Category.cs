@@ -14,5 +14,7 @@ namespace DiscontMarket.Domain.Models.Entities
         
         public uint? ProductID { get; set; }
         public Product? Product { get; set; }
+
+ 
     }
 }

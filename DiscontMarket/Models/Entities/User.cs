@@ -16,5 +16,7 @@ namespace DiscontMarket.Domain.Models.Entities
         public string MiddleName { get; set; }
 
         public List<Product>? Products { get; set; }
+
+        public List<Category>? Categories {  get; set; }
     }
 }
