@@ -9,8 +9,6 @@ namespace DiscontMarket.DAL.SqlServer.Configuration
     {
         public void Configure(EntityTypeBuilder<User> builder)
         {
-            builder.HasKey(u => u.Id);
-
             PropertyHelper<User>.SetProperties(builder, false,
                e => e.UserName,
                e => e.NormalizedUserName,

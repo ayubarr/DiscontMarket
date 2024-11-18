@@ -2,7 +2,7 @@
 
 namespace DiscontMarket.Domain.Models.Abstractions.BaseEntities
 {
-    public abstract class ApplicationRole : IdentityRole<uint>
+    public class ApplicationRole : IdentityRole<uint>
     {
     }
 }
