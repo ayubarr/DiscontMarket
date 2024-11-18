@@ -15,8 +15,8 @@ namespace DiscontMarket.DAL.SqlServer.Configuration
                 .HasForeignKey(p => p.ProductID);
 
             builder.HasOne(pa => pa.Attribute)
-              .WithMany(a => a.ProductAttributes)
-              .HasForeignKey(p => p.AttributeID);
+                .WithMany(a => a.ProductAttributes)
+                .HasForeignKey(p => p.AttributeID);
         }
     }
 }

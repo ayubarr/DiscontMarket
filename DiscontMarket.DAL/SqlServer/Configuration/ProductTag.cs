@@ -17,11 +17,11 @@ namespace DiscontMarket.DAL.SqlServer.Configuration
 
             builder.HasOne(pt => pt.Product)
                 .WithMany(p => p.ProductTags)
-                .HasForeignKey(p => p.ProductID);
+                .HasForeignKey(pt => pt.ProductID);
 
             builder.HasOne(pt => pt.Tag)
-              .WithMany(t => t.ProductTags)
-              .HasForeignKey(p => p.TagID);
+                .WithMany(t => t.ProductTags)
+                .HasForeignKey(pt => pt.TagID);
         }
     }
 }

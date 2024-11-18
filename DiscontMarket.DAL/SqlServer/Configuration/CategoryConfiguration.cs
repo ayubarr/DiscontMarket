@@ -26,7 +26,6 @@ namespace DiscontMarket.DAL.SqlServer.Configuration
                 .WithMany(u => u.Categories)
                 .HasForeignKey(c => c.UserID);
 
-
             //Описание связи сущностей Category и Product
             builder.HasOne(c => c.Product)
                .WithMany(p => p.Categories)
