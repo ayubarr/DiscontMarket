@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/adminstyle.css">
+    <link rel="icon" href="items/header/mini-logo.png" type="image/x-icon">
+    <title>Панель администратора</title>
+</head>
+<body>
+
+    <!-- Панель авторизации -->
+    <div class="auth-container active" id="auth-container">
+        <img src="items/header/logo.png" alt="Логотип">
+        <input id="username" type="text" placeholder="Введите логин">
+        <input id="password" type="password" placeholder="Введите ключ">
+        <button id="auth-btn">Авторизация</button>
+        <p id="error-msg" class="error"></p>
+    </div>
+
+    <!-- Панель управления -->
+    <div class="dashboard-container" id="dashboard-container">
+        <img src="items/header/logo.png" alt="Логотип">
+        <button id="edit-ads-btn">Редактирование рекламы</button>
+        <button id="manage-products-btn">Добавление/Удаление товаров</button>
+        <button id="maintenance-btn">Закрыть сайт на техническое обслуживание</button>
+    </div>
+
+    <!-- Интерфейс редактирования рекламы -->
+    <div class="edit-ads-container" id="edit-ads-container" style="display: none;">
+        <button id="back-btn">← Назад</button>
+        <div class="ad-fields">
+            <div class="ad-field" data-path="items/advert/header/head_first.png" data-width="1371" data-height="485">
+                <img src="items/advert/header/head_first.png" alt="Реклама 1">
+                <input type="file" accept=".png" class="file-input">
+            </div>
+            <div class="ad-field" data-path="items/advert/header/head_second.png" data-width="1371" data-height="485">
+                <img src="items/advert/header/head_second.png" alt="Реклама 2">
+                <input type="file" accept=".png" class="file-input">
+            </div>
+            <div class="ad-field" data-path="items/advert/header/head_third.png" data-width="1371" data-height="485">
+                <img src="items/advert/header/head_third.png" alt="Реклама 3">
+                <input type="file" accept=".png" class="file-input">
+            </div>
+            <div class="ad-field" data-path="items/advert/middle/middle_first.png" data-width="557" data-height="229">
+                <img src="items/advert/middle/middle_first.png" alt="Реклама 4">
+                <input type="file" accept=".png" class="file-input">
+            </div>
+            <div class="ad-field" data-path="items/advert/middle/middle_second.png" data-width="260" data-height="229">
+                <img src="items/advert/middle/middle_second.png" alt="Реклама 5">
+                <input type="file" accept=".png" class="file-input">
+            </div>
+            <div class="ad-field" data-path="items/advert/middle/middle_third.png" data-width="260" data-height="229">
+                <img src="items/advert/middle/middle_third.png" alt="Реклама 6">
+                <input type="file" accept=".png" class="file-input">
+            </div>
+            <div class="ad-field" data-path="items/advert/middle/middle_fourth.png" data-width="260" data-height="229">
+                <img src="items/advert/middle/middle_fourth.png" alt="Реклама 7">
+                <input type="file" accept=".png" class="file-input">
+            </div>
+            <div class="ad-field" data-path="items/advert/bottom/bottom_first.png" data-width="681" data-height="229">
+                <img src="items/advert/bottom/bottom_first.png" alt="Реклама 8">
+                <input type="file" accept=".png" class="file-input">
+            </div>
+            <div class="ad-field" data-path="items/advert/bottom/bottom_second.png" data-width="681" data-height="229">
+                <img src="items/advert/bottom/bottom_second.png" alt="Реклама 9">
+                <input type="file" accept=".png" class="file-input">
+            </div>
+        </div>
+    </div>
+
+
+<script src="js/TechWorks.js"></script>
+</body>
+</html>
