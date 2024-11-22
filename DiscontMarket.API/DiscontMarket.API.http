@@ -1,0 +1,6 @@
+@DiscontMarket.API_HostAddress = http://localhost:5003
+
+GET {{DiscontMarket.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

@@ -21,15 +21,17 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DiscontMarket.DAL", "Discon
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Validation", "Validation", "{EBC962AF-60E5-42E6-847F-7C915CAF1FE8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiscontMarket.Validation", "DiscontMarket.Validation\DiscontMarket.Validation.csproj", "{96C51034-697A-4ED3-A525-2C93ACFF3605}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DiscontMarket.Validation", "DiscontMarket.Validation\DiscontMarket.Validation.csproj", "{96C51034-697A-4ED3-A525-2C93ACFF3605}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiscontMarket.Services", "DiscontMarket.Services\DiscontMarket.Services.csproj", "{4E10EA7E-8CE2-4600-A6D9-85956BFB5852}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DiscontMarket.Services", "DiscontMarket.Services\DiscontMarket.Services.csproj", "{4E10EA7E-8CE2-4600-A6D9-85956BFB5852}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "API", "API", "{99121658-B2FF-487B-B7B8-DF50F7C07051}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Models", "Models", "{26EF017B-550E-40F5-9236-30A144203EA0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiscontMarket.ApiModels", "DiscontMarket.ApiModels\DiscontMarket.ApiModels.csproj", "{5BFCA7E0-F126-4FF3-9E3E-847B2DD31061}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DiscontMarket.ApiModels", "DiscontMarket.ApiModels\DiscontMarket.ApiModels.csproj", "{5BFCA7E0-F126-4FF3-9E3E-847B2DD31061}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiscontMarket.API", "DiscontMarket.API\DiscontMarket.API.csproj", "{BB54E275-B1DC-42A5-85D9-07E7F53FC4DE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -57,6 +59,10 @@ Global
 		{5BFCA7E0-F126-4FF3-9E3E-847B2DD31061}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5BFCA7E0-F126-4FF3-9E3E-847B2DD31061}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5BFCA7E0-F126-4FF3-9E3E-847B2DD31061}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB54E275-B1DC-42A5-85D9-07E7F53FC4DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB54E275-B1DC-42A5-85D9-07E7F53FC4DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB54E275-B1DC-42A5-85D9-07E7F53FC4DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB54E275-B1DC-42A5-85D9-07E7F53FC4DE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -73,6 +79,7 @@ Global
 		{99121658-B2FF-487B-B7B8-DF50F7C07051} = {62DD8CF1-B678-4FB9-8494-5BEAA2DB1911}
 		{26EF017B-550E-40F5-9236-30A144203EA0} = {62DD8CF1-B678-4FB9-8494-5BEAA2DB1911}
 		{5BFCA7E0-F126-4FF3-9E3E-847B2DD31061} = {26EF017B-550E-40F5-9236-30A144203EA0}
+		{BB54E275-B1DC-42A5-85D9-07E7F53FC4DE} = {99121658-B2FF-487B-B7B8-DF50F7C07051}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {CB71C059-46F6-468A-9399-BB87A1003BAC}
