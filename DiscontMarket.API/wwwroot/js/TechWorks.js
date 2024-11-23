@@ -88,7 +88,7 @@ authButton.addEventListener('click', () => {
     }
 
     // Отправка данных на сервер для проверки
-    fetch('api/User/login', {
+    fetch('https://192.168.192.59/сайт/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ username, password })
