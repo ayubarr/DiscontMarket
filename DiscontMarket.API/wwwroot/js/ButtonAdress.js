@@ -7,38 +7,46 @@ document.addEventListener('DOMContentLoaded', function () {
             // Получаем значение из атрибута data-category
             const category = button.getAttribute('data-category');
 
-            // Проверяем, есть ли значение data-category
-            if (category) {
-                // Отправляем POST-запрос на сервер с категорией
-                fetch('http://192.168.192.59/сайт/filters.php', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({ category: category }),
-                })
-                .then(response => response.json())
-                .then(data => {
-                    console.log('Данные успешно отправлены:', data);
+            // Формируем параметры строки запроса
+            const params = new URLSearchParams();
 
-                    // После отправки запроса, проверяем текущий URL и выполняем редирект
+            if (category) {
+                params.append('category', category);
+            }
+
+            // Отправляем GET-запрос с параметрами
+            fetch(`/api/product/get-all?${params.toString()}`, {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+            })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    console.log('Данные успешно получены:', data);
+
+                    // Логика редиректа
                     const currentUrl = window.location.href;
-                    const targetUrl = `catalog.html?${category}=&instock=true&minprice=0&maxprice=100000&preordertomorrow=true&preorderlater=true`; // Фильтры не передаются, дописаны для стартовых галочек
+                    const targetUrl = `catalog.html?${category}=&instock=true&minprice=0&maxprice=100000&preordertomorrow=true&preorderlater=true`;
 
                     if (currentUrl.endsWith(targetUrl)) {
                         console.log('Вы уже на этой странице.');
-                        return; // Останавливаем дальнейшее выполнение
+                        return;
                     }
 
-                    // Перенаправляем на catalog.html с добавлением параметра
+                    // Перенаправление
                     window.location.href = targetUrl;
                 })
                 .catch(error => {
-                    console.error('Ошибка при отправке данных на сервер:', error);
+                    console.error('Ошибка при получении данных с сервера:', error);
                 });
-            } else {
-                console.error('Отсутствует атрибут data-category у кнопки:', button);
-            }
+
         });
     });
 });
+

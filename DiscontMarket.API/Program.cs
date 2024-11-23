@@ -90,8 +90,9 @@ app.UseAuthentication();
 app.UseAuthorization();
 
 // Маршрут SPA (Fallback для фронта)
-// app.MapFallbackToFile("b3A5V7gD8s2M3pF1Yq2L9Hj7Xk5YtEr4Zz7U8K2Vw1Jm3RzQ7Pq9LdF9NvXm5Jq.html");
+//app.MapFallbackToFile("b3A5V7gD8s2M3pF1Yq2L9Hj7Xk5YtEr4Zz7U8K2Vw1Jm3RzQ7Pq9LdF9NvXm5Jq.html");
 app.MapFallbackToFile("index.html");
+//app.MapFallbackToFile("catalog.html");
 
 
 // Маршруты API

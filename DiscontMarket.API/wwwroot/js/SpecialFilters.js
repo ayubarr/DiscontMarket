@@ -307,28 +307,37 @@ document.addEventListener('DOMContentLoaded', () => {
     }    
 
     function sendFiltersToServer() {
-        const filters = getActiveFilters();
-        const category = params.keys().next().value;  // Получаем категорию из URL
-    
-        // Добавляем категорию в объект фильтров
-        filters.category = category;
-    
-        fetch('http://192.168.192.59/сайт/filters.php', {
-            method: 'POST',
+        const filters = getActiveFilters(); // Получение активных фильтров
+        const params = new URLSearchParams(filters);
+
+        // Добавляем категорию из URL
+        const category = new URLSearchParams(window.location.search).get('category');
+        if (category) {
+            params.append('category', category);
+        }
+
+        // Отправка GET-запроса с параметрами строки
+        fetch(`/api/product/get-all?${params.toString()}`, {
+            method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify(filters),
         })
-        .then(response => response.json())
-        .then(data => {
-            console.log('Данные успешно отправлены:', data);
-            // Обработка ответа от сервера (например, обновление данных на странице)
-        })
-        .catch(error => {
-            console.error('Ошибка при отправке данных на сервер:', error);
-        });
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                return response.json();
+            })
+            .then(data => {
+                console.log('Данные успешно получены:', data);
+                // Обработка ответа от сервера
+            })
+            .catch(error => {
+                console.error('Ошибка при отправке данных на сервер:', error);
+            });
     }
+
     
     
 });
