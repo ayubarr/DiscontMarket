@@ -263,6 +263,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Фильтры по чекбоксам
         const stockCategories = ['instock', 'preorderlater', 'preordertomorrow'];
         const statusCategories = ['discount', 'damagedpackage', 'minordefect'];
+        const brands = ['']
     
         activeFilters.stock = [];
         activeFilters.status = [];
@@ -314,4 +315,6 @@ document.addEventListener('DOMContentLoaded', () => {
             console.error('Ошибка при отправке данных на сервер:', error);
         });
     }
+    
+    
 });
