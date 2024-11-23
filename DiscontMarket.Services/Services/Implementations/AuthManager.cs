@@ -41,10 +41,10 @@ namespace DiscontMarket.Services.Services.Implementations
                 if (user != null && await _userManager.CheckPasswordAsync(user, model.Password))
                 {
                     var authClaims = new List<Claim>
-                    {
-                        new Claim(ClaimTypes.Name, user.UserName),
-                        new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
-                    };
+            {
+                new Claim(ClaimTypes.Name, user.UserName),
+                new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
+            };
 
                     var token = GenerateToken(authClaims);
                     var refreshToken = GenerateRefreshToken();
@@ -52,7 +52,7 @@ namespace DiscontMarket.Services.Services.Implementations
                     if (int.TryParse(_configuration["JWT:RefreshTokenValidityInDays"], out int refreshTokenValidityInDays))
                     {
                         user.RefreshToken = refreshToken;
-                        user.RefreshTokenExpiryTime = DateTime.Now.AddDays(refreshTokenValidityInDays);
+                        user.RefreshTokenExpiryTime = DateTime.UtcNow.AddDays(refreshTokenValidityInDays); // Исправление
 
                         await _userManager.UpdateAsync(user);
                         var userId = user.Id;

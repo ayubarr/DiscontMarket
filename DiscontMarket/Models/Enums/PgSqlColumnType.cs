@@ -1,6 +1,6 @@
 ﻿namespace DiscontMarket.Domain.Models.Enums
 {
-    public struct PgSqlColumnTypes
+    public struct PgSqlColumnType
     {
         // Текстовые типы
         public const string Varchar = "varchar";                     // Строка фиксированной длины
