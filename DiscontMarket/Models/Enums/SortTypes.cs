@@ -2,9 +2,9 @@
 {
     public enum SortTypes
     {
-        Popularity,
+        Popularity, //random
         Price,
-        Rating,
+        Rating, //random
         Title,
         Quantity,
     }

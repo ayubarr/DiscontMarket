@@ -7,7 +7,7 @@ namespace DiscontMarket.Domain.Models.Entities
     public class Product : BaseEntity
     {
         public  string ProductName { get; set; }
-        public decimal Cost { get; set; }
+        public decimal Price { get; set; }
         public Availability ProductAvailability { get; set; }
         public ProductStatus ProductStatus { get; set; }
 

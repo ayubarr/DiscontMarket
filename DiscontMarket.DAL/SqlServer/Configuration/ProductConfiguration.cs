@@ -16,7 +16,7 @@ namespace DiscontMarket.DAL.SqlServer.Configuration
             );
 
             PropertyHelper<Product>.SetProperties(builder,
-                p => p.Cost
+                p => p.Price
             );
 
             builder.HasOne(p => p.User)
