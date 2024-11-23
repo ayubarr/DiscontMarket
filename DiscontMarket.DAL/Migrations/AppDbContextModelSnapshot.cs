@@ -17,7 +17,7 @@ namespace DiscontMarket.DAL.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "8.0.10")
+                .HasAnnotation("ProductVersion", "8.0.11")
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
@@ -174,7 +174,12 @@ namespace DiscontMarket.DAL.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<long>("ID"));
 
-                    b.Property<string>("AttributeName")
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("varchar");
+
+                    b.Property<string>("Type")
                         .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("varchar");
@@ -192,22 +197,20 @@ namespace DiscontMarket.DAL.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<long>("ID"));
 
-                    b.Property<string>("BrendName")
+                    b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(50)
-                        .HasColumnType("varchar");
-
-                    b.Property<string>("Description")
-                        .IsRequired()
-                        .HasMaxLength(500)
                         .HasColumnType("varchar");
 
                     b.Property<long?>("ProductID")
                         .HasColumnType("bigint");
 
-                    b.HasKey("ID");
+                    b.Property<string>("Type")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("varchar");
 
-                    b.HasIndex("ProductID");
+                    b.HasKey("ID");
 
                     b.ToTable("Brends");
                 });
@@ -230,7 +233,7 @@ namespace DiscontMarket.DAL.Migrations
 
                     b.Property<string>("Type")
                         .IsRequired()
-                        .HasMaxLength(500)
+                        .HasMaxLength(50)
                         .HasColumnType("varchar");
 
                     b.Property<long?>("UserID")
@@ -281,10 +284,10 @@ namespace DiscontMarket.DAL.Migrations
             modelBuilder.Entity("DiscontMarket.Domain.Models.Entities.Product", b =>
                 {
                     b.Property<long>("ID")
-                        .ValueGeneratedOnAdd()
                         .HasColumnType("bigint");
 
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<long>("ID"));
+                    b.Property<long?>("BrendId")
+                        .HasColumnType("bigint");
 
                     b.Property<decimal>("Price")
                         .HasPrecision(15, 2)
@@ -300,6 +303,9 @@ namespace DiscontMarket.DAL.Migrations
 
                     b.Property<int>("ProductStatus")
                         .HasColumnType("integer");
+
+                    b.Property<long>("Quantity")
+                        .HasColumnType("bigint");
 
                     b.Property<long?>("UserID")
                         .HasColumnType("bigint");
@@ -511,15 +517,6 @@ namespace DiscontMarket.DAL.Migrations
                     b.Navigation("Tag");
                 });
 
-            modelBuilder.Entity("DiscontMarket.Domain.Models.Entities.Brend", b =>
-                {
-                    b.HasOne("DiscontMarket.Domain.Models.Entities.Product", "Product")
-                        .WithMany("Brends")
-                        .HasForeignKey("ProductID");
-
-                    b.Navigation("Product");
-                });
-
             modelBuilder.Entity("DiscontMarket.Domain.Models.Entities.Category", b =>
                 {
                     b.HasOne("DiscontMarket.Domain.Models.Entities.Product", "Product")
@@ -552,9 +549,17 @@ namespace DiscontMarket.DAL.Migrations
 
             modelBuilder.Entity("DiscontMarket.Domain.Models.Entities.Product", b =>
                 {
+                    b.HasOne("DiscontMarket.Domain.Models.Entities.Brend", "Brend")
+                        .WithOne("Product")
+                        .HasForeignKey("DiscontMarket.Domain.Models.Entities.Product", "ID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("DiscontMarket.Domain.Models.Entities.User", "User")
                         .WithMany("Products")
                         .HasForeignKey("UserID");
+
+                    b.Navigation("Brend");
 
                     b.Navigation("User");
                 });
@@ -615,10 +620,13 @@ namespace DiscontMarket.DAL.Migrations
                     b.Navigation("ProductAttributes");
                 });
 
+            modelBuilder.Entity("DiscontMarket.Domain.Models.Entities.Brend", b =>
+                {
+                    b.Navigation("Product");
+                });
+
             modelBuilder.Entity("DiscontMarket.Domain.Models.Entities.Product", b =>
                 {
-                    b.Navigation("Brends");
-
                     b.Navigation("Categories");
 
                     b.Navigation("Orders");

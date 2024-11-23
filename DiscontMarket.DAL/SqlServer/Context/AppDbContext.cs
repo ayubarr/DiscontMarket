@@ -10,11 +10,11 @@ namespace DiscontMarket.DAL.SqlServer.Context
     {
         public AppDbContext() : base()
         {
+            Database.EnsureCreated();
         }
 
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
         {
-            Database.EnsureCreated();
         }
 
         public DbSet<User> Users { get; set; }

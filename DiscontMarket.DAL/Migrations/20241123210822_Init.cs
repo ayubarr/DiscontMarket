@@ -65,7 +65,8 @@ namespace DiscontMarket.DAL.Migrations
                 {
                     ID = table.Column<long>(type: "bigint", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    AttributeName = table.Column<string>(type: "varchar", maxLength: 50, nullable: false)
+                    Name = table.Column<string>(type: "varchar", maxLength: 50, nullable: false),
+                    Type = table.Column<string>(type: "varchar", maxLength: 50, nullable: false)
                 },
                 constraints: table =>
                 {
@@ -212,8 +213,10 @@ namespace DiscontMarket.DAL.Migrations
                     ID = table.Column<long>(type: "bigint", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     ProductName = table.Column<string>(type: "varchar", maxLength: 50, nullable: false),
-                    Cost = table.Column<decimal>(type: "numeric(15,2)", precision: 15, scale: 2, nullable: false),
-                    AvailStatus = table.Column<bool>(type: "boolean", nullable: false),
+                    Price = table.Column<decimal>(type: "numeric(15,2)", precision: 15, scale: 2, nullable: false),
+                    Quantity = table.Column<long>(type: "bigint", nullable: false),
+                    ProductAvailability = table.Column<int>(type: "integer", nullable: false),
+                    ProductStatus = table.Column<int>(type: "integer", nullable: false),
                     UserID = table.Column<long>(type: "bigint", nullable: true)
                 },
                 constraints: table =>
@@ -232,8 +235,8 @@ namespace DiscontMarket.DAL.Migrations
                 {
                     ID = table.Column<long>(type: "bigint", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    BrendName = table.Column<string>(type: "varchar", maxLength: 50, nullable: false),
-                    Description = table.Column<string>(type: "varchar", maxLength: 500, nullable: false),
+                    Name = table.Column<string>(type: "varchar", maxLength: 50, nullable: false),
+                    Type = table.Column<string>(type: "varchar", maxLength: 50, nullable: false),
                     ProductID = table.Column<long>(type: "bigint", nullable: true)
                 },
                 constraints: table =>
@@ -253,7 +256,7 @@ namespace DiscontMarket.DAL.Migrations
                     ID = table.Column<long>(type: "bigint", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     Name = table.Column<string>(type: "varchar", maxLength: 50, nullable: false),
-                    Description = table.Column<string>(type: "varchar", maxLength: 500, nullable: false),
+                    Type = table.Column<string>(type: "varchar", maxLength: 50, nullable: false),
                     UserID = table.Column<long>(type: "bigint", nullable: true),
                     ProductID = table.Column<long>(type: "bigint", nullable: true)
                 },

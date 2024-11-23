@@ -7,14 +7,11 @@ namespace DiscontMarket.Domain.Models.Entities
     {
         public string Name { get; set; }
         public string Type { get; set; }
-        
-        
+
         public uint? UserID { get; set; }
         public User? User { get; set; }
         
         public uint? ProductID { get; set; }
         public Product? Product { get; set; }
-
- 
     }
 }
