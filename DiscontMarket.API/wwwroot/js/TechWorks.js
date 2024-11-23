@@ -88,14 +88,14 @@ authButton.addEventListener('click', () => {
     }
 
     // Отправка данных на сервер для проверки
-    fetch('https://192.168.192.59/сайт/', {
+    fetch('api/User/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ username, password })
     })
     .then(response => response.json())
     .then(data => {
-        if (data.success) {
+        if (data.statusCode === 200 && data.isSuccess) {
             // Успешный вход
             authContainer.classList.remove('active');
             dashboardContainer.classList.add('active');
