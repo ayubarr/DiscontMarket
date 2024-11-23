@@ -1,5 +1,6 @@
 ﻿using DiscontMarket.Domain.Models.Abstractions.BaseEntities;
 using DiscontMarket.Domain.Models.Abstractions.LinkEntities;
+using DiscontMarket.Domain.Models.Enums;
 
 namespace DiscontMarket.Domain.Models.Entities
 {
@@ -7,7 +8,8 @@ namespace DiscontMarket.Domain.Models.Entities
     {
         public  string ProductName { get; set; }
         public decimal Cost { get; set; }
-        public bool AvailStatus { get; set; }
+        public Availability ProductAvailability { get; set; }
+        public ProductStatus ProductStatus { get; set; }
 
 
         public List<Order>? Orders { get; set; }

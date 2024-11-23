@@ -19,10 +19,6 @@ namespace DiscontMarket.DAL.SqlServer.Configuration
                 p => p.Cost
             );
 
-            PropertyHelper<Product>.SetProperties(builder,
-                p => p.AvailStatus
-            );
-
             builder.HasOne(p => p.User)
                 .WithMany(u => u.Products)
                 .HasForeignKey(p => p.UserID);

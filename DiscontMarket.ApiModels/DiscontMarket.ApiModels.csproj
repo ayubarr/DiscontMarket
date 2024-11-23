@@ -17,6 +17,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\DiscontMarket.Validation\DiscontMarket.Validation.csproj" />
+    <ProjectReference Include="..\DiscontMarket\DiscontMarket.Domain.csproj" />
   </ItemGroup>
 
 </Project>

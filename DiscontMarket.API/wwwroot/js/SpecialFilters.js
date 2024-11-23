@@ -301,6 +301,4 @@ document.addEventListener('DOMContentLoaded', () => {
             console.error('Ошибка при отправке данных на сервер:', error);
         });
     }
-    
-    
 });
