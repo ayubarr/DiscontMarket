@@ -19,7 +19,8 @@ namespace DiscontMarket.DAL.Repository.Implementations
             ObjectValidator<Expression<Func<Product, bool>>>.CheckIsNotNullObject(filter);
 
             return GetAll()
-                .Where(filter)
+                .AsEnumerable()
+                .Where(filter.Compile())
                 .ToList();
         }
     }

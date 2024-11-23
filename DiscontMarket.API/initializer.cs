@@ -19,11 +19,10 @@ namespace DiscontMarket.API
     {
         public static IServiceCollection InitializeRepositories(this IServiceCollection services)
         {
-            #region Base_Repositories 
             services.AddScoped(typeof(IBaseRepository<>), typeof(BaseRepository<>));
             services.AddScoped(typeof(UserManager<>));
+            services.AddScoped(typeof(IProductRepository), typeof(ProductRepository));
 
-            #endregion
             return services;
         }
 
@@ -32,6 +31,8 @@ namespace DiscontMarket.API
             services.AddScoped<IUserStore<User>, UserStore<User, IdentityRole<uint>, AppDbContext, uint>>();
             services.AddScoped<IUserService, UserService>();
             services.AddScoped(typeof(IBaseService<>), typeof(BaseService<>));
+            services.AddScoped(typeof(IProductRepository), typeof(ProductRepository));
+            services.AddScoped(typeof(IProductService), typeof(ProductService));
 
             return services;
         }

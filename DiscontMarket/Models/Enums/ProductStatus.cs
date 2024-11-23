@@ -2,8 +2,8 @@
 {
     public enum ProductStatus
     {
-        Discont,
-        DamagedPackaging,
+        Discount,
+        DamagedPackage,
         MinorDefects,
     }
 }

@@ -19,7 +19,8 @@ builder.Services.AddDbContext<AppDbContext>(options => options.UseNpgsql(connect
 builder.Services
     .InitializeIdentity(configuration)
     .InitializeRepositories()
-    .InitializeServices();
+    .InitializeServices()
+    .SeedAdmins();
 
 // Настройка контроллеров
 builder.Services.AddControllers();

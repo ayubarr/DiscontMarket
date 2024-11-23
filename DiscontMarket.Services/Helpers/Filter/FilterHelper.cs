@@ -19,15 +19,18 @@ namespace DiscontMarket.Services.Helpers.Filter
             if (productFilterDto.MinPrice.HasValue)
                 filter = filter.And(p => p.Price >= productFilterDto.MinPrice);
 
-            if (productFilterDto.ProductAvailability.HasValue)
+
+
+            if (!string.IsNullOrEmpty(productFilterDto.ProductAvailability))
                 filter = filter.And(p => p.ProductAvailability.ToString()
-                    .Contains(productFilterDto.ProductAvailability.ToString().ToLower()));
+                    .Equals(productFilterDto.ProductAvailability, StringComparison.OrdinalIgnoreCase));
 
-            if (productFilterDto.ProductStatus.HasValue)
+            if (!string.IsNullOrEmpty(productFilterDto.ProductStatus))
                 filter = filter.And(p => p.ProductStatus.ToString()
-                    .Contains(productFilterDto.ProductStatus.ToString().ToLower()));
+                    .Equals(productFilterDto.ProductStatus, StringComparison.OrdinalIgnoreCase));
 
-            if(productFilterDto.categoryDTOs.Count  > 0)
+
+            if (productFilterDto.categoryDTOs is not null)
             {
                 foreach(var category in productFilterDto.categoryDTOs)
                 {
@@ -37,7 +40,7 @@ namespace DiscontMarket.Services.Helpers.Filter
                 }
             }
 
-            if (productFilterDto.attributeDTOs.Count > 0)
+            if (productFilterDto.attributeDTOs is not null)
             {
                 foreach (var attribute in productFilterDto.attributeDTOs)
                 {
