@@ -15,7 +15,7 @@ namespace DiscontMarket.DAL.SqlServer.Helpers
             {
                 builder.Property(property)
                     .HasMaxLength(isMaxLength ? DefaultConstraints.DefaultMaxLength : DefaultConstraints.DefaultLength)
-                    .HasColumnType(PgSqlColumnTypes.Varchar);
+                    .HasColumnType(PgSqlColumnType.Varchar);
             }
         }
       
@@ -27,7 +27,7 @@ namespace DiscontMarket.DAL.SqlServer.Helpers
             {
                 builder.Property(property)
                     .HasPrecision(DefaultConstraints.DefaultMaxPrecision, DefaultConstraints.DefaultMaxPrecisionDecimalPoint)
-                    .HasColumnType(PgSqlColumnTypes.Numeric);
+                    .HasColumnType(PgSqlColumnType.Numeric);
             }
         }
 
@@ -37,7 +37,7 @@ namespace DiscontMarket.DAL.SqlServer.Helpers
             foreach (var property in properties)
             {
                 builder.Property(property)
-                    .HasColumnType(PgSqlColumnTypes.Boolean);
+                    .HasColumnType(PgSqlColumnType.Boolean);
             }
         }
 
@@ -47,7 +47,7 @@ namespace DiscontMarket.DAL.SqlServer.Helpers
             foreach (var property in properties)
             {
                 builder.Property(property)
-                    .HasColumnType(PgSqlColumnTypes.Integer);
+                    .HasColumnType(PgSqlColumnType.Integer);
             }
         }
 
@@ -57,7 +57,7 @@ namespace DiscontMarket.DAL.SqlServer.Helpers
             foreach (var property in properties)
             {
                 builder.Property(property)
-                    .HasColumnType($"{PgSqlColumnTypes.Timestamp}({DefaultConstraints.DefaultMaxPrecisionDecimalPoint})");
+                    .HasColumnType($"{PgSqlColumnType.Timestamp}({DefaultConstraints.DefaultMaxPrecisionDecimalPoint})");
             }
         }
     }
