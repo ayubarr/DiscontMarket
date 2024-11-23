@@ -7,7 +7,7 @@ namespace DiscontMarket.ApiModels.DTO.EntityDTOs.Product
     {
         public uint ID { get; set; }
         public string ProductName { get; set; }
-        public decimal Cost { get; set; }
+        public decimal Price { get; set; }
         public bool AvailStatus { get; set; }
         public Availability ProductAvailability { get; set; }
         public ProductStatus ProductStatus { get; set; }

@@ -35,8 +35,21 @@ namespace DiscontMarket.Services.Helpers.Filter
                         .Contains(category.Name.ToLower()) && c.Type.ToLower()
                         .Contains(category.Type.ToLower())));
                 }
-
             }
+
+            if (productFilterDto.attributeDTOs.Count > 0)
+            {
+                foreach (var attribute in productFilterDto.attributeDTOs)
+                {
+                    filter = filter.And(p => p.ProductAttributes.Any(c => c.Attribute.Name.ToLower()
+                        .Contains(attribute.Name.ToLower()) && c.Attribute.Name.ToLower()
+                        .Contains(attribute.Type.ToLower())));
+                }
+            }
+
+            if (productFilterDto.Brend is not null)
+                filter = filter.And(p => p.Brend.Name.Contains(productFilterDto.Brend.Type)
+                    && p.Brend.Type.Contains(productFilterDto.Brend.Name));
 
             return filter;
         }

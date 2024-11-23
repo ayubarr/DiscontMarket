@@ -7,8 +7,10 @@ namespace DiscontMarket.Domain.Models.Entities
     public class AttributeEntity : BaseEntity
     {
        
-        public string AttributeName { get; set; }
-       
+        public string Name { get; set; }
+        public string Type { get; set; }
+
+
         public List <ProductAttribute>? ProductAttributes { get; set; }
         
     }

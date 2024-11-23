@@ -13,17 +13,14 @@ namespace DiscontMarket.DAL.SqlServer.Configuration
             builder.HasKey(b => b.ID);
 
             PropertyHelper<Brend>.SetProperties(builder, false,
-                b => b.BrendName
-            );
-
-            PropertyHelper<Brend>.SetProperties(builder, true,
-                b => b.Description
+                b => b.Name,
+                b => b.Type
             );
 
             // Описание связи для сушностей Brend и Product
             builder.HasOne(b => b.Product)
-                .WithMany(s => s.Brends)
-                .HasForeignKey(b => b.ProductID);
+                .WithOne(s => s.Brend)
+                .HasForeignKey<Brend>(b => b.ProductID);
         }
     }
 }

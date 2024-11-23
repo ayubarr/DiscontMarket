@@ -14,10 +14,7 @@ namespace DiscontMarket.DAL.SqlServer.Configuration
             builder.HasKey(c => c.ID);
 
             PropertyHelper<Category>.SetProperties(builder, false,
-                o => o.Name
-            );
-
-            PropertyHelper<Category>.SetProperties(builder, true,
+                o => o.Name,
                 c => c.Type
             );
 
