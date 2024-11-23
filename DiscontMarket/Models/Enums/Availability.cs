@@ -2,6 +2,8 @@
 {
     public enum Availability
     {
-
+        InStock,
+        PreorderLater,
+        PreorderTomorrow
     }
 }

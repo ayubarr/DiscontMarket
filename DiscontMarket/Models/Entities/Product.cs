@@ -8,6 +8,7 @@ namespace DiscontMarket.Domain.Models.Entities
     {
         public  string ProductName { get; set; }
         public decimal Price { get; set; }
+        public uint Quantity { get; set; }
         public Availability ProductAvailability { get; set; }
         public ProductStatus ProductStatus { get; set; }
 

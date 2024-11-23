@@ -18,7 +18,7 @@ namespace DiscontMarket.DAL.SqlServer.Configuration
             );
 
             PropertyHelper<Category>.SetProperties(builder, true,
-                c => c.Description
+                c => c.Type
             );
 
             //Описание связи сущностей Category и User

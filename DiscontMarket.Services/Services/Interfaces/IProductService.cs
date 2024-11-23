@@ -1,9 +1,12 @@
-﻿using DiscontMarket.ApiModels.Responce.Interfaces;
+﻿using DiscontMarket.ApiModels.DTO.EntityDTOs.Product;
+using DiscontMarket.ApiModels.Responce.Interfaces;
+using DiscontMarket.Domain.Models.Entities;
+using DiscontMarket.Domain.Models.Enums;
 
 namespace DiscontMarket.Services.Services.Interfaces
 {
-    internal interface IProductService
+    public interface IProductService : IBaseService<Product>
     {
-   //     Task<IBaseResponse<IEnumerable<T>>> GetAllProductsWithFiltersAsync();
+        IBaseResponse<IEnumerable<Product>> GetAllProducts(FilterProductDTO filterProductDTO, SortTypes? sortProductDTO);
     }
 }
