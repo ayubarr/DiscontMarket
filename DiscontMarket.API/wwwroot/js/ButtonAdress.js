@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
                     // После отправки запроса, проверяем текущий URL и выполняем редирект
                     const currentUrl = window.location.href;
-                    const targetUrl = `catalog.html?${category}=&in-stock=true&min-price=0&max-price=100000&preorder-tomorrow=true&preorder-later=true`; // Фильтры не передаются, дописаны для стартовых галочек
+                    const targetUrl = `catalog.html?${category}=&instock=true&min-price=0&max-price=100000&preordertomorrow=true&preorderlater=true`; // Фильтры не передаются, дописаны для стартовых галочек
 
                     if (currentUrl.endsWith(targetUrl)) {
                         console.log('Вы уже на этой странице.');

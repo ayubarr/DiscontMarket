@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const minPriceInput = document.getElementById('min-price');
-    const maxPriceInput = document.getElementById('max-price');
+    const minPriceInput = document.getElementById('minprice');
+    const maxPriceInput = document.getElementById('maxprice');
     const minSlider = document.getElementById('price-slider-min');
     const maxSlider = document.getElementById('price-slider-max');
     const sliderTrack = document.querySelector('.slider-track');
@@ -176,10 +176,10 @@ document.addEventListener('DOMContentLoaded', () => {
         const maxValue = maxSlider.value;
     
         // Записываем минимальную цену
-        newParams.set('min-price', minValue);
+        newParams.set('minprice', minValue);
     
         // Записываем максимальную цену
-        newParams.set('max-price', maxValue);
+        newParams.set('maxprice', maxValue);
     
         // Обновляем адресную строку без перезагрузки страницы
         window.history.replaceState({}, '', '?' + newParams.toString());
@@ -220,8 +220,8 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Сохранение состояния слайдера при загрузке страницы
     function initSliderValues() {
-        const minPrice = params.get('min-price');
-        const maxPrice = params.get('max-price');
+        const minPrice = params.get('minprice');
+        const maxPrice = params.get('maxprice');
     
         if (minPrice) {
             minSlider.value = minPrice;
@@ -261,22 +261,35 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     
         // Фильтры по чекбоксам
+        const stockCategories = ['instock', 'preorderlater', 'preordertomorrow'];
+        const statusCategories = ['discount', 'damagedpackage', 'minordefect'];
+    
+        activeFilters.stock = [];
+        activeFilters.status = [];
+    
         const checkboxes = filtersContainer.querySelectorAll('.checkbox');
         checkboxes.forEach(checkbox => {
             if (checkbox.classList.contains('active')) {
                 const filterId = checkbox.getAttribute('data-filter');
-                activeFilters[filterId] = true;
+                
+                if (stockCategories.includes(filterId)) {
+                    activeFilters.stock.push(filterId);
+                } else if (statusCategories.includes(filterId)) {
+                    activeFilters.status.push(filterId);
+                } else {
+                    activeFilters[filterId] = true;
+                }
             }
         });
     
         // Значения слайдеров
         const minPrice = minSlider.value;
         const maxPrice = maxSlider.value;
-        activeFilters['min-price'] = minPrice;
-        activeFilters['max-price'] = maxPrice;
+        activeFilters['minprice'] = minPrice;
+        activeFilters['maxprice'] = maxPrice;
     
         return activeFilters;
-    }
+    }    
 
     function sendFiltersToServer() {
         const filters = getActiveFilters();
