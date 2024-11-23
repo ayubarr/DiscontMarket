@@ -262,11 +262,16 @@ document.addEventListener('DOMContentLoaded', () => {
     
         // Фильтры по чекбоксам
         const stockCategories = ['instock', 'preorderlater', 'preordertomorrow'];
-        const statusCategories = ['discount', 'damagedpackage', 'minordefect'];
-        const brands = ['']
+        const statusCategories = ['discount', 'damagedpackage', 'minordefects'];
+        const brandsFilters = ['Samsung', 'LG', 'Xiaomi', 'Panasonic'];
+        const screenRezolution = ['HD', 'Full HD', 'QHD', '4K'];
+        const itemColor = ['white', 'black', 'silver'];
     
         activeFilters.stock = [];
         activeFilters.status = [];
+        activeFilters.brand = [];
+        activeFilters.rezolution = [];
+        activeFilters.color = [];
     
         const checkboxes = filtersContainer.querySelectorAll('.checkbox');
         checkboxes.forEach(checkbox => {
@@ -277,6 +282,15 @@ document.addEventListener('DOMContentLoaded', () => {
                     activeFilters.stock.push(filterId);
                 } else if (statusCategories.includes(filterId)) {
                     activeFilters.status.push(filterId);
+                }
+                else if (brandsFilters.includes(filterId)) {
+                    activeFilters.brand.push(filterId);
+                }
+                else if (screenRezolution.includes(filterId)) {
+                    activeFilters.rezolution.push(filterId);
+                }
+                else if (itemColor.includes(filterId)) {
+                    activeFilters.color.push(filterId);
                 } else {
                     activeFilters[filterId] = true;
                 }
