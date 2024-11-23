@@ -3,9 +3,9 @@ document.addEventListener('DOMContentLoaded', function () {
         tv: 'Телевизоры',
         tablet: 'Планшеты',
         fridge: 'Холодильники',
-        'built-in': 'Встраиваемая техника',
-        'washing-machine': 'Стиральные машины',
-        'small-appliances': 'Мелкая бытовая техника',
+        'builtin': 'Встраиваемая техника',
+        'washingmachine': 'Стиральные машины',
+        'smallappliances': 'Мелкая бытовая техника',
     };
 
     const params = new URLSearchParams(window.location.search);

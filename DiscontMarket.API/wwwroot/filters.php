@@ -10,16 +10,20 @@ $data = json_decode($inputData, true);
 
 // Проверяем, были ли данные получены корректно
 if ($data === null) {
-    // Если ошибка в данных, отправляем сообщение об ошибке
     echo json_encode(['status' => 'error', 'message' => 'Invalid JSON data']);
     exit;
 }
 
-// Дальше можно обработать данные, например, вывести их
-echo json_encode([
-    'status' => 'success',
-    'message' => 'Filters received successfully',
-    'received_data' => $data
-]);
+// Проверяем категории "stock" и "status"
+$stock = $data['stock'] ?? [];
+$status = $data['status'] ?? [];
 
-?>
+// Пример обработки массивов
+$response = [
+    'stock_categories' => $stock,
+    'status_categories' => $status,
+    'other_data' => $data
+];
+
+// Отправляем ответ
+echo json_encode(['status' => 'success', 'data' => $response]);

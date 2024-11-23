@@ -95,7 +95,7 @@ authButton.addEventListener('click', () => {
     })
     .then(response => response.json())
     .then(data => {
-        if (data.success) {
+        if (data.statusCode === 200 && data.isSuccess) {
             // Успешный вход
             authContainer.classList.remove('active');
             dashboardContainer.classList.add('active');
