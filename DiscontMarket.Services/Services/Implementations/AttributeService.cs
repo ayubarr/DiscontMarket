@@ -2,6 +2,7 @@
 using DiscontMarket.ApiModels.Responce.Helpers;
 using DiscontMarket.ApiModels.Responce.Interfaces;
 using DiscontMarket.DAL.Repository.Interfaces;
+using DiscontMarket.Domain.Models.Abstractions.LinkEntities;
 using DiscontMarket.Domain.Models.Entities;
 using DiscontMarket.Services.Helpers.Mapping;
 using DiscontMarket.Services.Services.Interfaces;
@@ -36,10 +37,9 @@ namespace DiscontMarket.Services.Services.Implementations
                     AttributeCategories = categories.Select(category => new AttributeCategory
                     {
                         Category = category // Связываем существующую категорию
+
                     }).ToList()
                 };
-
-                var entity = MapperHelper<CreateAttributeDTO, AttributeEntity>.Map(entityDTO);
 
                 _attributeRepository.Create(entity);
 
