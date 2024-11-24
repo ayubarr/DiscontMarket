@@ -298,10 +298,18 @@
       {
         "title": "Гарантия",
         "options": [
-          { "label": "1 год", "value": "1year" },
-          { "label": "2 года", "value": "2years" }
+          {
+            "label": "1 год",
+            "value": "1year"
+          },
+          {
+            "label": "2 года",
+            "value": "2years"
+          }
         ]
       }
     ]
   }
 }
+
+

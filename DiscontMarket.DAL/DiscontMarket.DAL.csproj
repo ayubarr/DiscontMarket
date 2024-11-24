@@ -23,6 +23,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\DiscontMarket.ApiModels\DiscontMarket.ApiModels.csproj" />
     <ProjectReference Include="..\DiscontMarket.Validation\DiscontMarket.Validation.csproj" />
     <ProjectReference Include="..\DiscontMarket\DiscontMarket.Domain.csproj" />
   </ItemGroup>

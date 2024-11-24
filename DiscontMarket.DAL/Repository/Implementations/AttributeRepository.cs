@@ -1,6 +1,8 @@
-﻿using DiscontMarket.DAL.Repository.Interfaces;
+﻿using DiscontMarket.ApiModels.DTO.EntityDTOs.Attribute;
+using DiscontMarket.DAL.Repository.Interfaces;
 using DiscontMarket.DAL.SqlServer.Context;
 using DiscontMarket.Domain.Models.Entities;
+using Microsoft.EntityFrameworkCore;
 
 namespace DiscontMarket.DAL.Repository.Implementations
 {
@@ -10,9 +12,28 @@ namespace DiscontMarket.DAL.Repository.Implementations
         {
         }
 
-        public IEnumerable<Product> GetBrandsByCategoryName(string categoryName)
+        public Dictionary<string, Dictionary<string, List<FilterAttributeDTO>>> GetAllAttributesGroupedByCategory()
         {
-            throw new NotImplementedException();
+            // Извлекаем данные из базы, включая связанные категории через AttributeCategories
+            var data = _context.Attributes
+                .Include(a => a.AttributeCategories)  // Подгружаем AttributeCategories
+                .ThenInclude(ac => ac.Category)       // Подгружаем саму категорию через AttributeCategories
+                .AsEnumerable()                      // Переключаемся на LINQ to Objects для удобства группировки
+                .GroupBy(a => a.AttributeCategories?.FirstOrDefault()?.Category?.Name) // Группируем по имени категории
+                .ToDictionary(
+                    categoryGroup => categoryGroup.Key, // Ключ — имя категории
+                    categoryGroup => categoryGroup
+                        .GroupBy(attr => attr.Name) // Внутри каждой категории группируем по имени атрибута
+                        .ToDictionary(
+                            attributeGroup => attributeGroup.Key, // Ключ — имя атрибута
+                            attributeGroup => attributeGroup.Select(attr => new FilterAttributeDTO
+                            {
+                                ID = attr.ID,
+                                Type = attr.Type
+                            }).ToList() // Преобразуем атрибуты в DTO
+                        )
+                );
+            return data;
         }
     }
 }

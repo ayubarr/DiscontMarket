@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using DiscontMarket.ApiModels.DTO.BaseDTOs;
 
 namespace DiscontMarket.ApiModels.DTO.EntityDTOs.Attribute
 {
-    public class UpdateAttributeDTO
+    public class UpdateAttributeDTO : BaseDTO
     {
         public string? Name { get; set; }
 
