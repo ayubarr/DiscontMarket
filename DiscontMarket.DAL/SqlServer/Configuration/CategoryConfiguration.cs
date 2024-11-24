@@ -14,9 +14,8 @@ namespace DiscontMarket.DAL.SqlServer.Configuration
             builder.HasKey(c => c.ID);
 
             PropertyHelper<Category>.SetProperties(builder, false,
-                o => o.Name,
-                c => c.Type
-            );
+                o => o.Name
+                );
 
             //Описание связи сущностей Category и User
             builder.HasOne(c => c.User)
