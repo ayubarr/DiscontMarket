@@ -5,7 +5,7 @@ namespace DiscontMarket.Domain.Models.Entities
     public class Image : BaseEntity
 
     {
-        public string PathFoto { get; set; }
+        public string Path { get; set; }
 
         public uint? ProductID { get; set; }
         public Product? Product { get; set; }

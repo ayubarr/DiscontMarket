@@ -13,6 +13,9 @@ namespace DiscontMarket.DAL.SqlServer.Configuration
         {
             builder.HasKey(i => i.ID);
 
+            PropertyHelper<Image>.SetProperties(builder, true,
+                i => i.Path
+            );
 
             //Описание связи сущностей Image и Product
             builder.HasOne(i => i.Product)
