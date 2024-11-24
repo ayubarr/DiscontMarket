@@ -10,10 +10,13 @@ namespace DiscontMarket.ApiModels.DTO.EntityDTOs.Product
     {
         public decimal? MaxPrice { get; set; }
         public decimal? MinPrice { get; set; }
-        public string? ProductAvailability { get; set; }
-        public string? ProductStatus { get; set; }
-        public List<CategoryDTO>? categoryDTOs { get; set; }
-        public List<AttributeDTO>? attributeDTOs { get; set; }
-        public BrendDTO? Brend { get; set; }
+        public List<string>? Availability { get; set; }
+        public List<string>? Status { get; set; }
+        public CategoryDTO? CategoryDTO { get; set; }
+        public List<AttributeDTO>? AttributeDTOs { get; set; }
+        public List<BrandDTO>? Brand { get; set; }
+
+
+        public SortTypes? SortOrder { get; set; }
     }
 }

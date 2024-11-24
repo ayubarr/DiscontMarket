@@ -5,21 +5,20 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace DiscontMarket.DAL.SqlServer.Configuration
 {
-    public class BrendConfiguration : IEntityTypeConfiguration<Brend>
+    public class BrandConfiguration : IEntityTypeConfiguration<Brand>
     {
-        public void Configure(EntityTypeBuilder<Brend> builder)
+        public void Configure(EntityTypeBuilder<Brand> builder)
         {
             builder.HasKey(b => b.ID);
 
-            PropertyHelper<Brend>.SetProperties(builder, false,
-                b => b.Name,
-                b => b.Type
+            PropertyHelper<Brand>.SetProperties(builder, false,
+                b => b.Name
             );
 
             // Описание связи для сушностей Brend и Product
             builder.HasOne(b => b.Product)
-                .WithOne(s => s.Brend)
-                .HasForeignKey<Brend>(b => b.ProductID);
+                .WithOne(s => s.Brand)
+                .HasForeignKey<Brand>(b => b.ProductID);
         }
     }
 }

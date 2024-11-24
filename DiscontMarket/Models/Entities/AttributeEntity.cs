@@ -11,7 +11,6 @@ namespace DiscontMarket.Domain.Models.Entities
         public string Type { get; set; }
 
 
-        public List <ProductAttribute>? ProductAttributes { get; set; }
-        
+        public List <ProductAttribute>? ProductAttributes { get; set; } 
     }
 }

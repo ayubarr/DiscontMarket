@@ -23,9 +23,6 @@ namespace DiscontMarket.Services.Services.Implementations
         {
             try
             {
-                Product p = _productRepository.GetById(4);
-                string pc = p.ProductAvailability.ToString().ToLower();
-
                 var filter = FilterHelper.CreateProductFilter(filterProductDTO);
 
                 var entities = _productRepository.GetFilteredProductsAsync(filter);

@@ -253,33 +253,33 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function getActiveFilters() {
         const activeFilters = {};
-    
+
         // Сортировка
         const activeSort = document.querySelector('.sorting-option.active');
         if (activeSort) {
             activeFilters.sort = activeSort.dataset.sort;
         }
-    
+
         // Фильтры по чекбоксам
         const stockCategories = ['instock', 'preorderlater', 'preordertomorrow'];
         const statusCategories = ['discount', 'damagedpackage', 'minordefects'];
         const brandsFilters = ['Samsung', 'LG', 'Xiaomi', 'Panasonic'];
-        const screenRezolution = ['HD', 'Full HD', 'QHD', '4K'];
+        const screenResolution = ['HD', 'Full HD', 'QHD', '4K'];
         const itemColor = ['white', 'black', 'silver'];
-    
-        activeFilters.stock = [];
+
+        activeFilters.availability = [];
         activeFilters.status = [];
         activeFilters.brand = [];
-        activeFilters.rezolution = [];
+        activeFilters.resolution = [];
         activeFilters.color = [];
-    
+
         const checkboxes = filtersContainer.querySelectorAll('.checkbox');
         checkboxes.forEach(checkbox => {
             if (checkbox.classList.contains('active')) {
                 const filterId = checkbox.getAttribute('data-filter');
-                
+
                 if (stockCategories.includes(filterId)) {
-                    activeFilters.stock.push(filterId);
+                    activeFilters.availability.push(filterId);
                 } else if (statusCategories.includes(filterId)) {
                     activeFilters.status.push(filterId);
                 }
@@ -287,8 +287,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     // Проверяем фильтры только если категория `tv`
                     if (brandsFilters.includes(filterId)) {
                         activeFilters.brand.push(filterId);
-                    } else if (screenRezolution.includes(filterId)) {
-                        activeFilters.rezolution.push(filterId);
+                    } else if (screenResolution.includes(filterId)) {
+                        activeFilters.resolution.push(filterId);
                     } else if (itemColor.includes(filterId)) {
                         activeFilters.color.push(filterId);
                     }
@@ -297,24 +297,24 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             }
         });
-    
+
         // Значения слайдеров
         const minPrice = minSlider.value;
         const maxPrice = maxSlider.value;
         activeFilters['minprice'] = minPrice;
         activeFilters['maxprice'] = maxPrice;
-    
+
         return activeFilters;
-    }    
+    }
 
     function sendFiltersToServer() {
         const filters = getActiveFilters();
         const category = params.keys().next().value; // Получаем категорию из URL
-    
+
         // Добавляем категорию в объект фильтров
-        filters.category = category;
-    
-        fetch('http://192.168.192.59/сайт/filters.php', {
+        filters.CategoryDTO = { Name: category };
+
+        fetch('api/Product/get-all', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -324,39 +324,39 @@ document.addEventListener('DOMContentLoaded', () => {
         .then(response => response.json())
         .then(data => {
             console.log('Данные успешно получены:', data);
-    
+
             const container = document.querySelector('.main-items-section');
-    
+
             if (!container) {
                 console.error('Контейнер для карточек не найден. Убедитесь, что HTML содержит .main-items-section .products-carousel.');
                 return;
             }
-    
+
             // Очищаем контейнер перед добавлением новых карточек
             container.innerHTML = '';
-    
+
             // Проверяем, что данные корректны
             if (data.data && Array.isArray(data.data)) {
                 data.data.forEach(product => {
                     const card = document.createElement('div');
                     card.classList.add('product-card-main');
-    
+
                     // Создаем содержимое карточки
                     card.innerHTML = `
-                        <img src="${product.image || 'default-image.png'}" alt="Товар" class="product-image">
-                        <div class="product-separator-main"></div>
-                        <p class="product-name-main">${product.productName}</p>
-                        <div class="product-price-container-main">
-                            <span class="product-price-main">${product.price} ₽</span>
-                            <button class="order-button-main">Оформить заказ</button>
-                        </div>
-                        <span class="compare-prices-main" data-product-name="${product.productName}">Сравнить цены</span>
-                    `;
-    
+                    <img src="${product.image || 'items/filters/no-image.png'}" alt="Товар" class="product-image">
+                    <div class="product-separator-main"></div>
+                    <p class="product-name-main">${product.productName}</p>
+                    <div class="product-price-container-main">
+                        <span class="product-price-main">${product.price} ₽</span>
+                        <button class="order-button-main">Оформить заказ</button>
+                    </div>
+                    <span class="compare-prices-main" data-product-name="${product.productName}">Сравнить цены</span>
+                `;
+
                     // Добавляем карточку в контейнер
                     container.appendChild(card);
                 });
-    
+
                 // Добавляем обработчики для всех кнопок "Сравнить цены"
                 const compareButtons = container.querySelectorAll('.compare-prices-main');
                 compareButtons.forEach(button => {
@@ -373,6 +373,5 @@ document.addEventListener('DOMContentLoaded', () => {
         .catch(error => {
             console.error('Ошибка при получении данных:', error);
         });
-    }     
-    
+    }
 });

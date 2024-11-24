@@ -1,18 +1,18 @@
 document.addEventListener('DOMContentLoaded', function () {
     // Получаем параметры из URL
     const urlParams = new URLSearchParams(window.location.search);
-    
+
     // Получаем первый ключ из параметров URL (категория)
     const category = urlParams.keys().next().value;
 
     if (category) {
         // Отправляем POST-запрос на сервер с категорией
-        fetch('http://192.168.192.59/сайт/filters.php', {
+        fetch('api/Product/get-all', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({ category: category })
+            body: JSON.stringify({ CategoryDTO: { Name: category } })
         })
         .then(response => response.json())
         .then(data => {
@@ -37,15 +37,15 @@ document.addEventListener('DOMContentLoaded', function () {
 
                     // Создаем содержимое карточки
                     card.innerHTML = `
-                        <img src="${product.image || 'default-image.png'}" alt="Товар" class="product-image">
-                        <div class="product-separator-main"></div>
-                        <p class="product-name-main">${product.productName}</p>
-                        <div class="product-price-container-main">
-                            <span class="product-price-main">${product.price} ₽</span>
-                            <button class="order-button-main">Оформить заказ</button>
-                        </div>
-                        <span class="compare-prices-main" data-product-name="${product.productName}">Сравнить цены</span>
-                    `;
+                    <img src="${product.image || 'items/filters/no-image.png'}" alt="Товар" class="product-image">
+                    <div class="product-separator-main"></div>
+                    <p class="product-name-main">${product.productName}</p>
+                    <div class="product-price-container-main">
+                        <span class="product-price-main">${product.price} ₽</span>
+                        <button class="order-button-main">Оформить заказ</button>
+                    </div>
+                    <span class="compare-prices-main" data-product-name="${product.productName}">Сравнить цены</span>
+                `;
 
                     // Добавляем карточку в контейнер
                     container.appendChild(card);

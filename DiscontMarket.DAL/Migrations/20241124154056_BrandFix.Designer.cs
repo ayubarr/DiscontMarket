@@ -3,6 +3,7 @@ using System;
 using DiscontMarket.DAL.SqlServer.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -11,9 +12,11 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace DiscontMarket.DAL.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20241124154056_BrandFix")]
+    partial class BrandFix
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -205,6 +208,11 @@ namespace DiscontMarket.DAL.Migrations
                     b.Property<long?>("ProductID")
                         .HasColumnType("bigint");
 
+                    b.Property<string>("Type")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("varchar");
+
                     b.HasKey("ID");
 
                     b.ToTable("Brends");
@@ -284,10 +292,6 @@ namespace DiscontMarket.DAL.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<long>("ID"));
 
-                    b.Property<string>("Availability")
-                        .IsRequired()
-                        .HasColumnType("text");
-
                     b.Property<long?>("BrandId")
                         .HasColumnType("bigint");
 
@@ -299,17 +303,21 @@ namespace DiscontMarket.DAL.Migrations
                         .HasPrecision(15, 2)
                         .HasColumnType("numeric");
 
+                    b.Property<string>("ProductAvailability")
+                        .IsRequired()
+                        .HasColumnType("text");
+
                     b.Property<string>("ProductName")
                         .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("varchar");
 
-                    b.Property<long>("Quantity")
-                        .HasColumnType("bigint");
-
-                    b.Property<string>("Status")
+                    b.Property<string>("ProductStatus")
                         .IsRequired()
                         .HasColumnType("text");
+
+                    b.Property<long>("Quantity")
+                        .HasColumnType("bigint");
 
                     b.Property<long?>("UserID")
                         .HasColumnType("bigint");

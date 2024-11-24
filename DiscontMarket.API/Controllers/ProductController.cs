@@ -18,11 +18,11 @@ namespace DiscontMarket.API.Controllers
 
         // Получить все продукты с фильтром и сортировкой
         //[Authorize(AuthenticationSchemes = "Bearer", Roles = "Admin")]
-        [HttpGet]
+        [HttpPost]
         [Route("get-all")]
-        public IActionResult GetAll([FromQuery] FilterProductDTO projectFilterDto, [FromQuery] SortTypes? sortOrder)
+        public IActionResult GetAll([FromBody] FilterProductDTO projectFilterDto)
         {
-            var response = _productService.GetAllProducts(projectFilterDto, sortOrder);
+            var response = _productService.GetAllProducts(projectFilterDto, projectFilterDto.SortOrder);
             return Ok(response.Data);
         }
 
