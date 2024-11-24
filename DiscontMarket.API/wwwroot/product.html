@@ -205,103 +205,27 @@
         
     </header>
 
-    <div class="main-body">
-
-        <div class="category-header" id="category-header">
-            Каталог >    
+    <div class="card-container">
+        <div class="image-list">
+            <img src="items/hits/1.png" alt="Image 1" class="thumbnail active" onclick="changeImage(this)">
+            <img src="items/hits/2.png" alt="Image 2" class="thumbnail" onclick="changeImage(this)">
+            <img src="items/hits/3.png" alt="Image 3" class="thumbnail" onclick="changeImage(this)">
+            <img src="items/hits/4.png" alt="Image 4" class="thumbnail" onclick="changeImage(this)">
+            <img src="items/hits/1.png" alt="Image 1" class="thumbnail" onclick="changeImage(this)">
+            <img src="items/hits/2.png" alt="Image 2" class="thumbnail" onclick="changeImage(this)">
+            <img src="items/hits/3.png" alt="Image 3" class="thumbnail" onclick="changeImage(this)">
+            <img src="items/hits/4.png" alt="Image 4" class="thumbnail" onclick="changeImage(this)">
+            <img src="items/hits/1.png" alt="Image 1" class="thumbnail" onclick="changeImage(this)">
+            <img src="items/hits/2.png" alt="Image 2" class="thumbnail" onclick="changeImage(this)">
+            <img src="items/hits/3.png" alt="Image 3" class="thumbnail" onclick="changeImage(this)">
+            <img src="items/hits/4.png" alt="Image 4" class="thumbnail" onclick="changeImage(this)">
         </div>
-
-        <div class="category-info">
-            <span class="category-name"></span>
-            <span class="product-count">20 товаров</span>
+        <div class="large-image-container">
+            <img src="items/hits/1.png" alt="Large Image" class="large-image" id="largeImage">
         </div>
-
-        <div class="content">
-            <div class="filters-container" id="filters-container">
-                <button class="close-button" id="filters-close">&times;</button>  
-                <div class="filter-block">
-                    <div class="filter-title">Наличие товара</div>
-                    <div class="filter-options">
-                        <div class="filter-option">
-                            <div class="checkbox" data-filter="instock"></div>
-                            <span>В наличии</span>
-                        </div>
-                        <div class="filter-option">
-                            <div class="checkbox" data-filter="preordertomorrow"></div>
-                            <span>Под заказ: завтра</span>
-                        </div>
-                        <div class="filter-option">
-                            <div class="checkbox" data-filter="preorderlater"></div>
-                            <span>Под заказ: позже</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="filter-block">
-                    <div class="filter-title">Цена</div>
-                    <div class="price-inputs">
-                        <input type="number" id="minprice" placeholder="От" value="0" />
-                        <input type="number" id="maxprice" placeholder="До" value="100000" />
-                    </div>
-                    <div class="price-slider">
-                        <div class="slider-track"></div>
-                        <input type="range" id="price-slider-min" class="slider-point" min="0" max="100000" value="0" step="1" />
-                        <input type="range" id="price-slider-max" class="slider-point" min="0" max="100000" value="100000" step="1" />
-                    </div>
-                </div>
-                <div class="filter-block">
-                    <div class="filter-title">Статус товара</div>
-                    <div class="filter-options">
-                        <div class="filter-option">
-                            <div class="checkbox" data-filter="discount"></div>
-                            <span>Дисконт</span>
-                        </div>
-                        <div class="filter-option">
-                            <div class="checkbox" data-filter="damagedpackage"></div>
-                            <span>П/У</span>
-                        </div>
-                        <div class="filter-option">
-                            <div class="checkbox" data-filter="minordefects"></div>
-                            <span>Мелкие дефекты</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="right-section">
-                <div class="button-row">
-                    <button class="action-button" id="filters-toggle">
-                        <img src="items/filters/filter-icon.png" alt="Фильтры" class="button-icon" />
-                        Фильтры
-                    </button>
-                    <button class="action-button" id="sorting-toggle">
-                        <img src="items/filters/sorting-icon1.png" alt="Сортировать" class="button-icon" />
-                        Сортировать
-                    </button>
-                </div>
-                <div class="sorting-container" id="sorting-container">
-                    <div class="sorting-option" data-sort="popularity">По популярности</div>
-                    <div class="sorting-option" data-sort="price">По цене</div>
-                    <div class="sorting-option" data-sort="rating">По рейтингу</div>
-                    <div class="sorting-option" data-sort="title">По названию</div>
-                    <div class="sorting-option" data-sort="quantity">По количеству</div>
-                </div>
-
-                <div class="main-items-section">
-                        <!-- Карточки товаров будут добавляться здесь -->
-                    </div>
-                </div>
-            </div>
-        </div>
+    </div>
+    
         
-
-
-        <!-- Раздел "Реклама низ"
-        <div class="advertisement-section-bottom">
-            <div class="advertisement-item-bottom">
-            <img src="items/advert/bottom/catalog/bottom_tv.png" alt="Реклама 1">
-            </div>
-        </div>-->
-
-        <!-- Контейнер для раздела под Товары по брендам -->
         <div class="bottom-container">
             <div class="content-wrapper">
                 <!-- Первый столбец -->
@@ -375,6 +299,42 @@
 <script src="js/FilterButtonActive.js"></script>
 <script src="js/TechnicalWorks.js"></script>
 <script src="js/firstloadonpage.js"></script>
+<script>
+    function changeImage(thumbnail) {
+    const largeImage = document.getElementById('largeImage');
+    const allThumbnails = document.querySelectorAll('.thumbnail');
+
+    largeImage.src = thumbnail.src;
+
+    allThumbnails.forEach(img => img.classList.remove('active'));
+    thumbnail.classList.add('active');
+}
+
+</script>
+<script>
+    const largeImageContainer = document.querySelector('.large-image-container');
+    const largeImage = document.querySelector('.large-image');
+
+    largeImage.addEventListener('mouseenter', () => {
+        // Увеличиваем изображение при наведении
+        largeImage.style.transform = 'scale(3)';
+    });
+
+    largeImage.addEventListener('mousemove', (event) => {
+        const rect = largeImage.getBoundingClientRect();
+        const x = ((event.clientX - rect.left) / rect.width) * 100;
+        const y = ((event.clientY - rect.top) / rect.height) * 100;
+
+        // Изменяем точку фокуса масштабирования
+        largeImage.style.transformOrigin = `${x}% ${y}%`;
+    });
+
+    largeImage.addEventListener('mouseleave', () => {
+        // Возвращаем изображение к нормальному размеру
+        largeImage.style.transform = 'scale(1)';
+    });
+
+</script>
     
 </body>
 </html

@@ -264,13 +264,13 @@ document.addEventListener('DOMContentLoaded', () => {
         const stockCategories = ['instock', 'preorderlater', 'preordertomorrow'];
         const statusCategories = ['discount', 'damagedpackage', 'minordefects'];
         const brandsFilters = ['Samsung', 'LG', 'Xiaomi', 'Panasonic'];
-        const screenRezolution = ['HD', 'Full HD', 'QHD', '4K'];
+        const screenResolution = ['HD', 'Full HD', 'QHD', '4K'];
         const itemColor = ['white', 'black', 'silver'];
     
-        activeFilters.stock = [];
+        activeFilters.availability = [];
         activeFilters.status = [];
         activeFilters.brand = [];
-        activeFilters.rezolution = [];
+        activeFilters.resolution = [];
         activeFilters.color = [];
     
         const checkboxes = filtersContainer.querySelectorAll('.checkbox');
@@ -279,7 +279,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const filterId = checkbox.getAttribute('data-filter');
                 
                 if (stockCategories.includes(filterId)) {
-                    activeFilters.stock.push(filterId);
+                    activeFilters.availability.push(filterId);
                 } else if (statusCategories.includes(filterId)) {
                     activeFilters.status.push(filterId);
                 }
@@ -287,8 +287,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     // Проверяем фильтры только если категория `tv`
                     if (brandsFilters.includes(filterId)) {
                         activeFilters.brand.push(filterId);
-                    } else if (screenRezolution.includes(filterId)) {
-                        activeFilters.rezolution.push(filterId);
+                    } else if (screenResolution.includes(filterId)) {
+                        activeFilters.resolution.push(filterId);
                     } else if (itemColor.includes(filterId)) {
                         activeFilters.color.push(filterId);
                     }
@@ -312,7 +312,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const category = params.keys().next().value; // Получаем категорию из URL
     
         // Добавляем категорию в объект фильтров
-        filters.category = category;
+        filters.CategoryDTO = {Name : category};
     
         fetch('http://192.168.192.59/сайт/filters.php', {
             method: 'POST',
@@ -343,14 +343,16 @@ document.addEventListener('DOMContentLoaded', () => {
     
                     // Создаем содержимое карточки
                     card.innerHTML = `
-                        <img src="${product.image || 'default-image.png'}" alt="Товар" class="product-image">
+                        <img src="${product.image || 'items/filters/no-image.png'}" alt="Товар" class="product-image">
                         <div class="product-separator-main"></div>
                         <p class="product-name-main">${product.productName}</p>
                         <div class="product-price-container-main">
                             <span class="product-price-main">${product.price} ₽</span>
                             <button class="order-button-main">Оформить заказ</button>
                         </div>
-                        <span class="compare-prices-main" data-product-name="${product.productName}">Сравнить цены</span>
+                        <div class="compare-prices-wrapper">
+                            <span class="compare-prices-main" data-product-name="${product.productName}">Сравнить цены</span>
+                        </div>
                     `;
     
                     // Добавляем карточку в контейнер

@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     headers: {
                         'Content-Type': 'application/json',
                     },
-                    body: JSON.stringify({ category: category }),
+                    body: JSON.stringify({ CategoryDTO: {Name : category}}),
                 })
                 .then(response => response.json())
                 .then(data => {
