@@ -283,14 +283,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 } else if (statusCategories.includes(filterId)) {
                     activeFilters.status.push(filterId);
                 }
-                else if (brandsFilters.includes(filterId)) {
-                    activeFilters.brand.push(filterId);
-                }
-                else if (screenRezolution.includes(filterId)) {
-                    activeFilters.rezolution.push(filterId);
-                }
-                else if (itemColor.includes(filterId)) {
-                    activeFilters.color.push(filterId);
+                else if (category === 'tv') {
+                    // Проверяем фильтры только если категория `tv`
+                    if (brandsFilters.includes(filterId)) {
+                        activeFilters.brand.push(filterId);
+                    } else if (screenRezolution.includes(filterId)) {
+                        activeFilters.rezolution.push(filterId);
+                    } else if (itemColor.includes(filterId)) {
+                        activeFilters.color.push(filterId);
+                    }
                 } else {
                     activeFilters[filterId] = true;
                 }
@@ -307,37 +308,71 @@ document.addEventListener('DOMContentLoaded', () => {
     }    
 
     function sendFiltersToServer() {
-        const filters = getActiveFilters(); // Получение активных фильтров
-        const params = new URLSearchParams(filters);
-
-        // Добавляем категорию из URL
-        const category = new URLSearchParams(window.location.search).get('category');
-        if (category) {
-            params.append('category', category);
-        }
-
-        // Отправка GET-запроса с параметрами строки
-        fetch(`/api/product/get-all?${params.toString()}`, {
-            method: 'GET',
+        const filters = getActiveFilters();
+        const category = params.keys().next().value; // Получаем категорию из URL
+    
+        // Добавляем категорию в объект фильтров
+        filters.category = category;
+    
+        fetch('http://192.168.192.59/сайт/filters.php', {
+            method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
+            body: JSON.stringify(filters),
         })
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
-                }
-                return response.json();
-            })
-            .then(data => {
-                console.log('Данные успешно получены:', data);
-                // Обработка ответа от сервера
-            })
-            .catch(error => {
-                console.error('Ошибка при отправке данных на сервер:', error);
-            });
-    }
-
+        .then(response => response.json())
+        .then(data => {
+            console.log('Данные успешно получены:', data);
     
+            const container = document.querySelector('.main-items-section');
+    
+            if (!container) {
+                console.error('Контейнер для карточек не найден. Убедитесь, что HTML содержит .main-items-section .products-carousel.');
+                return;
+            }
+    
+            // Очищаем контейнер перед добавлением новых карточек
+            container.innerHTML = '';
+    
+            // Проверяем, что данные корректны
+            if (data.data && Array.isArray(data.data)) {
+                data.data.forEach(product => {
+                    const card = document.createElement('div');
+                    card.classList.add('product-card-main');
+    
+                    // Создаем содержимое карточки
+                    card.innerHTML = `
+                        <img src="${product.image || 'default-image.png'}" alt="Товар" class="product-image">
+                        <div class="product-separator-main"></div>
+                        <p class="product-name-main">${product.productName}</p>
+                        <div class="product-price-container-main">
+                            <span class="product-price-main">${product.price} ₽</span>
+                            <button class="order-button-main">Оформить заказ</button>
+                        </div>
+                        <span class="compare-prices-main" data-product-name="${product.productName}">Сравнить цены</span>
+                    `;
+    
+                    // Добавляем карточку в контейнер
+                    container.appendChild(card);
+                });
+    
+                // Добавляем обработчики для всех кнопок "Сравнить цены"
+                const compareButtons = container.querySelectorAll('.compare-prices-main');
+                compareButtons.forEach(button => {
+                    button.addEventListener('click', () => {
+                        const productName = button.getAttribute('data-product-name');
+                        const yandexMarketURL = `https://market.yandex.ru/search?text=${encodeURIComponent(productName)}`;
+                        window.open(yandexMarketURL, '_blank'); // Открываем ссылку в новой вкладке
+                    });
+                });
+            } else {
+                console.warn('Нет данных товаров для отображения.');
+            }
+        })
+        .catch(error => {
+            console.error('Ошибка при получении данных:', error);
+        });
+    }     
     
 });
