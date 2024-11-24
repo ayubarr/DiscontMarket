@@ -10,5 +10,7 @@ namespace DiscontMarket.Services.Services.Interfaces
         IBaseResponse<IEnumerable<AttributeEntity>> GetAllByAttributesName(string attributeName);
 
         IBaseResponse<AttributeEntity> CreateAttribute(CreateAttributeDTO entityDTO);
+
+        Task<IBaseResponse<bool>> DeleteByNameAsync(string attributeName);
     }
 }
