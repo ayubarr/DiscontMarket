@@ -18,9 +18,26 @@ namespace DiscontMarket.Services.Services.Implementations
             _repository = repository;
         }
 
-        public IBaseResponse<T> Create(T entity)
+        public IBaseResponse<T> Create<Tmodel>(Tmodel entityDTO) where Tmodel : BaseDTO
         {
-            throw new NotImplementedException();
+            try
+            {
+                ObjectValidator<Tmodel>.CheckIsNotNullObject(entityDTO);
+
+                var entity = MapperHelper<Tmodel, T>.Map(entityDTO);
+
+                 _repository.Create(entity);
+
+                return ResponseFactory<T>.CreateSuccessResponse(entity);
+            }
+            catch (ArgumentNullException argNullException)
+            {
+                return ResponseFactory<T>.CreateNotFoundResponse(argNullException);
+            }
+            catch (Exception exception)
+            {
+                return ResponseFactory<T>.CreateErrorResponse(exception);
+            }
         }
 
         public async Task<IBaseResponse<T>> CreateAsync<Tmodel>(Tmodel entityDTO) where Tmodel : BaseDTO
@@ -45,11 +62,6 @@ namespace DiscontMarket.Services.Services.Implementations
             }
         }
 
-        public Task<IBaseResponse<bool>> DeleteAsync()
-        {
-            throw new NotImplementedException();
-        }
-
         public async Task<IBaseResponse<bool>> DeleteByIdAsync(uint Id)
         {
             try
@@ -67,7 +79,18 @@ namespace DiscontMarket.Services.Services.Implementations
 
         public IBaseResponse<IEnumerable<T>> GetAll()
         {
-            throw new NotImplementedException();
+            try
+            {
+                var entities = _repository.GetAll();
+                ObjectValidator<IQueryable<T>>.CheckIsNotNullObject(entities);
+
+                return ResponseFactory<IEnumerable<T>>.CreateSuccessResponse(entities);
+            }
+            catch (Exception ex)
+            {
+                return ResponseFactory<IEnumerable<T>>.CreateErrorResponse(ex);
+
+            }
         }
 
         public async Task<IBaseResponse<IEnumerable<T>>> GetAllAsync()
@@ -88,7 +111,18 @@ namespace DiscontMarket.Services.Services.Implementations
 
         public IBaseResponse<T> GetById(uint Id)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var entity = _repository.GetById(Id);
+                ObjectValidator<T>.CheckIsNotNullObject(entity);
+
+                return ResponseFactory<T>.CreateSuccessResponse(entity);
+            }
+            catch (Exception ex)
+            {
+                return ResponseFactory<T>.CreateErrorResponse(ex);
+
+            }
         }
 
         public async Task<IBaseResponse<T>> GetByIdAsync(uint Id)
@@ -125,5 +159,7 @@ namespace DiscontMarket.Services.Services.Implementations
 
             }
         }
+
+        
     }
 }
