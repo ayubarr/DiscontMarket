@@ -2,11 +2,10 @@
 using DiscontMarket.Domain.Models.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using System;
 
 namespace DiscontMarket.DAL.SqlServer.Configuration
 {
-    public class AttributeConfiguration : IEntityTypeConfiguration<AttributeEntity>
+    internal class AttributeConfiguration : IEntityTypeConfiguration<AttributeEntity>
     {
         public void Configure(EntityTypeBuilder<AttributeEntity> builder)
         {

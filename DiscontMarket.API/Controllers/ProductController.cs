@@ -1,5 +1,4 @@
 ﻿using DiscontMarket.ApiModels.DTO.EntityDTOs.Product;
-using DiscontMarket.Domain.Models.Enums;
 using DiscontMarket.Services.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
@@ -18,11 +17,11 @@ namespace DiscontMarket.API.Controllers
 
         // Получить все продукты с фильтром и сортировкой
         //[Authorize(AuthenticationSchemes = "Bearer", Roles = "Admin")]
-        [HttpGet]
+        [HttpPost]
         [Route("get-all")]
-        public IActionResult GetAll([FromQuery] FilterProductDTO projectFilterDto, [FromQuery] SortTypes? sortOrder)
+        public IActionResult GetAll([FromBody] FilterProductDTO projectFilterDto)
         {
-            var response = _productService.GetAllProducts(projectFilterDto, sortOrder);
+            var response = _productService.GetAllProducts(projectFilterDto, projectFilterDto.SortOrder);
             return Ok(response.Data);
         }
 
@@ -50,9 +49,9 @@ namespace DiscontMarket.API.Controllers
         //[Authorize(AuthenticationSchemes = "Bearer", Roles = "Admin")]
         [HttpPut]
         [Route("update/{projectid}")]
-        public async Task<IActionResult> Update(UpdateProductDTO projectDto)
+        public async Task<IActionResult> Update(UpdateProductDTO productDto)
         {
-            var response = await _productService.UpdateAsync(projectDto);
+            var response = await _productService.UpdateAsync(productDto);
             return Ok(response);
         }
 

@@ -3,6 +3,7 @@ using System;
 using DiscontMarket.DAL.SqlServer.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -11,9 +12,11 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace DiscontMarket.DAL.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20241124183718_AttributeCategory")]
+    partial class AttributeCategory
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -151,21 +154,6 @@ namespace DiscontMarket.DAL.Migrations
                     b.ToTable("AttributeCategory");
                 });
 
-            modelBuilder.Entity("DiscontMarket.Domain.Models.Abstractions.LinkEntities.BrandCategory", b =>
-                {
-                    b.Property<long>("BrandID")
-                        .HasColumnType("bigint");
-
-                    b.Property<long>("CategoryID")
-                        .HasColumnType("bigint");
-
-                    b.HasKey("BrandID", "CategoryID");
-
-                    b.HasIndex("CategoryID");
-
-                    b.ToTable("BrandCategory");
-                });
-
             modelBuilder.Entity("DiscontMarket.Domain.Models.Abstractions.LinkEntities.ProductAttribute", b =>
                 {
                     b.Property<long>("ProductID")
@@ -256,9 +244,14 @@ namespace DiscontMarket.DAL.Migrations
                     b.Property<long?>("ProductID")
                         .HasColumnType("bigint");
 
+                    b.Property<long?>("UserID")
+                        .HasColumnType("bigint");
+
                     b.HasKey("ID");
 
                     b.HasIndex("ProductID");
+
+                    b.HasIndex("UserID");
 
                     b.ToTable("Categories");
                 });
@@ -548,25 +541,6 @@ namespace DiscontMarket.DAL.Migrations
                     b.Navigation("Category");
                 });
 
-            modelBuilder.Entity("DiscontMarket.Domain.Models.Abstractions.LinkEntities.BrandCategory", b =>
-                {
-                    b.HasOne("DiscontMarket.Domain.Models.Entities.Brand", "Brand")
-                        .WithMany("BrandCategories")
-                        .HasForeignKey("BrandID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("DiscontMarket.Domain.Models.Entities.Category", "Category")
-                        .WithMany("BrandCategories")
-                        .HasForeignKey("CategoryID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Brand");
-
-                    b.Navigation("Category");
-                });
-
             modelBuilder.Entity("DiscontMarket.Domain.Models.Abstractions.LinkEntities.ProductAttribute", b =>
                 {
                     b.HasOne("DiscontMarket.Domain.Models.Entities.AttributeEntity", "Attribute")
@@ -611,7 +585,13 @@ namespace DiscontMarket.DAL.Migrations
                         .WithMany("Categories")
                         .HasForeignKey("ProductID");
 
+                    b.HasOne("DiscontMarket.Domain.Models.Entities.User", "User")
+                        .WithMany("Categories")
+                        .HasForeignKey("UserID");
+
                     b.Navigation("Product");
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("DiscontMarket.Domain.Models.Entities.Image", b =>
@@ -713,16 +693,12 @@ namespace DiscontMarket.DAL.Migrations
 
             modelBuilder.Entity("DiscontMarket.Domain.Models.Entities.Brand", b =>
                 {
-                    b.Navigation("BrandCategories");
-
                     b.Navigation("Product");
                 });
 
             modelBuilder.Entity("DiscontMarket.Domain.Models.Entities.Category", b =>
                 {
                     b.Navigation("AttributeCategories");
-
-                    b.Navigation("BrandCategories");
                 });
 
             modelBuilder.Entity("DiscontMarket.Domain.Models.Entities.Product", b =>
@@ -750,6 +726,8 @@ namespace DiscontMarket.DAL.Migrations
 
             modelBuilder.Entity("DiscontMarket.Domain.Models.Entities.User", b =>
                 {
+                    b.Navigation("Categories");
+
                     b.Navigation("Products");
                 });
 #pragma warning restore 612, 618

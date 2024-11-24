@@ -19,30 +19,27 @@ namespace DiscontMarket.Services.Helpers.Filter
             if (productFilterDto.MinPrice.HasValue)
                 filter = filter.And(p => p.Price >= productFilterDto.MinPrice);
 
+            if (productFilterDto.CategoryDTO is not null)       
+                filter = filter.And(p => p.Categories.Any(c => c.Name.ToLower()
+                    .Contains(productFilterDto.CategoryDTO.Name.ToLower())));
 
-
-            if (!string.IsNullOrEmpty(productFilterDto.ProductAvailability))
-                filter = filter.And(p => p.ProductAvailability.ToString()
-                    .Equals(productFilterDto.ProductAvailability, StringComparison.OrdinalIgnoreCase));
-
-            if (!string.IsNullOrEmpty(productFilterDto.ProductStatus))
-                filter = filter.And(p => p.ProductStatus.ToString()
-                    .Equals(productFilterDto.ProductStatus, StringComparison.OrdinalIgnoreCase));
-
-
-            if (productFilterDto.categoryDTOs is not null)
+            if (productFilterDto.Status is not null)
             {
-                foreach(var category in productFilterDto.categoryDTOs)
-                {
-                    filter = filter.And(p => p.Categories.Any(c => c.Name.ToLower()
-                        .Contains(category.Name.ToLower()) && c.Type.ToLower()
-                        .Contains(category.Type.ToLower())));
-                }
+                foreach (var status in productFilterDto.Status)
+                    filter = filter.And(p => p.Status.ToString()
+                        .Equals(status, StringComparison.OrdinalIgnoreCase));
             }
 
-            if (productFilterDto.attributeDTOs is not null)
+            if (productFilterDto.Availability is not null)
             {
-                foreach (var attribute in productFilterDto.attributeDTOs)
+                foreach (var availability in productFilterDto.Availability)
+                    filter = filter.And(p => p.Availability.ToString()
+                        .Equals(availability, StringComparison.OrdinalIgnoreCase));
+            }       
+
+            if (productFilterDto.AttributeDTOs is not null)
+            {
+                foreach (var attribute in productFilterDto.AttributeDTOs)
                 {
                     filter = filter.And(p => p.ProductAttributes.Any(c => c.Attribute.Name.ToLower()
                         .Contains(attribute.Name.ToLower()) && c.Attribute.Name.ToLower()
@@ -50,10 +47,13 @@ namespace DiscontMarket.Services.Helpers.Filter
                 }
             }
 
-            if (productFilterDto.Brend is not null)
-                filter = filter.And(p => p.Brend.Name.Contains(productFilterDto.Brend.Type)
-                    && p.Brend.Type.Contains(productFilterDto.Brend.Name));
-
+            if (productFilterDto.Brand is not null)
+            {
+                foreach (var brand in productFilterDto.Brand)
+                    filter = filter.And(p => p.Brand.Name
+                        .Equals(brand.Name, StringComparison.OrdinalIgnoreCase));
+            }
+            
             return filter;
         }
     }

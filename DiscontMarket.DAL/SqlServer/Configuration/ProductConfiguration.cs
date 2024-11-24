@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace DiscontMarket.DAL.SqlServer.Configuration
 {
-    public class ProductConfiguration : IEntityTypeConfiguration<Product>
+    internal class ProductConfiguration : IEntityTypeConfiguration<Product>
     {
         public void Configure(EntityTypeBuilder<Product> builder)
         {
@@ -20,13 +20,13 @@ namespace DiscontMarket.DAL.SqlServer.Configuration
                 p => p.Price
             );
 
-            builder.Property(p => p.ProductAvailability)
+            builder.Property(p => p.Availability)
                 .HasConversion(
                      v => v.ToString(), // Сохранение как строка
                      v => (Availability)Enum.Parse(typeof(Availability), v)
                 );
 
-            builder.Property(p => p.ProductStatus)
+            builder.Property(p => p.Status)
                 .HasConversion(
                     v => v.ToString(), // Сохранение как строка
                     v => (ProductStatus)Enum.Parse(typeof(ProductStatus), v)
@@ -36,9 +36,9 @@ namespace DiscontMarket.DAL.SqlServer.Configuration
                 .WithMany(u => u.Products)
                 .HasForeignKey(p => p.UserID);
 
-            builder.HasOne(p => p.Brend)
+            builder.HasOne(p => p.Brand)
                 .WithOne(b => b.Product)
-                .HasForeignKey<Product>(p => p.BrendId);
+                .HasForeignKey<Product>(p => p.BrandId);
             
         }
     }
