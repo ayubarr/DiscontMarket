@@ -10,6 +10,7 @@ namespace DiscontMarket.ApiModels.DTO.EntityDTOs.Product
         public uint Quantity { get; set; }
         public string ProductAvailability { get; set; }
         public string ProductStatus { get; set; }
+        public string ImagePath { get; set; }
 
         //Пользователь создавший продукт
         public uint? UserID { get; set; }
