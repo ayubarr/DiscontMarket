@@ -7,6 +7,7 @@ using DiscontMarket.Domain.Models.Entities;
 using DiscontMarket.Services.Helpers.Mapping;
 using DiscontMarket.Services.Services.Interfaces;
 using DiscontMarket.Validation;
+using System;
 
 namespace DiscontMarket.Services.Services.Implementations
 {
@@ -52,6 +53,27 @@ namespace DiscontMarket.Services.Services.Implementations
             catch (Exception exception)
             {
                 return ResponseFactory<AttributeEntity>.CreateErrorResponse(exception);
+            }
+        }
+
+        public async Task<IBaseResponse<bool>> DeleteByNameAsync(string attributeName)
+        {
+            try
+            {
+                StringValidator.CheckIsNotNull(attributeName);
+
+                var attribute = _attributeRepository.GetAll().Where(a => a.Name.Equals(attributeName)).FirstOrDefault();
+                if (attribute is null)
+                {
+                    throw new Exception($"not found atribute: {attributeName}");
+                }
+
+                await _attributeRepository.Delete(attribute);
+                return ResponseFactory<bool>.CreateSuccessResponse(true);
+            }
+            catch (Exception ex)
+            {
+                return ResponseFactory<bool>.CreateErrorResponse(ex);
             }
         }
 
