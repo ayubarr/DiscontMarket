@@ -18,6 +18,7 @@ namespace DiscontMarket.Domain.Models.Entities
         public List<Category>? Categories { get; set; }            
         public List<ProductAttribute>? ProductAttributes { get; set; }  
         public List<ProductTag>? ProductTags { get; set; }
+        public List<Image>? Images { get; set; }
 
         public uint? BrandId { get; set; }
         public Brand? Brand { get; set; }
