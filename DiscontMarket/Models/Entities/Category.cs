@@ -6,7 +6,6 @@ namespace DiscontMarket.Domain.Models.Entities
     public class Category : BaseEntity
     {
         public string Name { get; set; }
-        public string Type { get; set; }
 
         public uint? UserID { get; set; }
         public User? User { get; set; }
