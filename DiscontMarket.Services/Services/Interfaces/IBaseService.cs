@@ -7,7 +7,7 @@ namespace DiscontMarket.Services.Services.Interfaces
     public interface IBaseService<T>
         where T : BaseEntity
     {
-        IBaseResponse<T> Create(T entity);  
+        IBaseResponse<T> Create<Tmodel>(Tmodel entityDTO) where Tmodel : BaseDTO;
         Task<IBaseResponse<T>> CreateAsync<Tmodel>(Tmodel entityDTO) where Tmodel : BaseDTO;
 
         IBaseResponse<IEnumerable<T>> GetAll();
@@ -19,8 +19,6 @@ namespace DiscontMarket.Services.Services.Interfaces
         Task<IBaseResponse<T>> GetByIdAsync(uint Id);
 
         Task<IBaseResponse<bool>> UpdateAsync<TModel>(TModel entitieDto) where TModel : BaseDTO;
-
-        Task<IBaseResponse<bool>> DeleteAsync();
 
         Task<IBaseResponse<bool>> DeleteByIdAsync(uint Id);
     }
