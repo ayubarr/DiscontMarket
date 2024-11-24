@@ -1,13 +1,12 @@
 ﻿using DiscontMarket.DAL.SqlServer.Helpers;
 using DiscontMarket.Domain.Models.Entities;
-using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Microsoft.EntityFrameworkCore;
-using System;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 
 namespace DiscontMarket.DAL.SqlServer.Configuration
 {
-    public class ImageConfiguration : IEntityTypeConfiguration<Image>
+    internal class ImageConfiguration : IEntityTypeConfiguration<Image>
     {
         public void Configure(EntityTypeBuilder<Image> builder)
         {

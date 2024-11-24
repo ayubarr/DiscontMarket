@@ -1,4 +1,5 @@
 using DiscontMarket.Domain.Models.Abstractions.BaseEntities;
+using DiscontMarket.Domain.Models.Abstractions.LinkEntities;
 
 namespace DiscontMarket.Domain.Models.Entities
 {
@@ -9,6 +10,7 @@ namespace DiscontMarket.Domain.Models.Entities
         
         public uint? ProductID { get; set; }
         public Product? Product { get; set; }
-        
+
+        public List<BrandCategory>? BrandCategories { get; set; }
     }
 }

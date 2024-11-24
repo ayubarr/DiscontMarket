@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace DiscontMarket.DAL.SqlServer.Configuration
 {
-    public class BrandConfiguration : IEntityTypeConfiguration<Brand>
+    internal class BrandConfiguration : IEntityTypeConfiguration<Brand>
     {
         public void Configure(EntityTypeBuilder<Brand> builder)
         {

@@ -32,6 +32,7 @@ namespace DiscontMarket.DAL.SqlServer.Context
             base.OnModelCreating(builder);
 
             builder.ApplyConfigurationsFromAssembly(typeof(ApplicationUserConfiguration).Assembly)
+                .ApplyConfigurationsFromAssembly(typeof(AttributeCategoryConfiguration).Assembly)
                 .ApplyConfigurationsFromAssembly(typeof(AttributeConfiguration).Assembly)
                 .ApplyConfigurationsFromAssembly(typeof(BrandConfiguration).Assembly)               
                 .ApplyConfigurationsFromAssembly(typeof(CategoryConfiguration).Assembly)

@@ -14,6 +14,8 @@ namespace DiscontMarket.ApiModels.DTO.EntityDTOs.Product
 
         //Пользователь работавший с продуктом в последний раз
         public uint UserID { get; set; }
+
+
     }
 
 }

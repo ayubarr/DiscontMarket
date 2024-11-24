@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace DiscontMarket.DAL.SqlServer.Configuration
 {
-    public class OrderConfiguration : IEntityTypeConfiguration<Order>
+    internal class OrderConfiguration : IEntityTypeConfiguration<Order>
     {
         public void Configure(EntityTypeBuilder<Order> builder)
         {

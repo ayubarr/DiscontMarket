@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace DiscontMarket.DAL.SqlServer.Configuration
 {
-    public class SessionConfiguration : IEntityTypeConfiguration<Session>
+    internal class SessionConfiguration : IEntityTypeConfiguration<Session>
     {
         public void Configure(EntityTypeBuilder<Session> builder)
         {
