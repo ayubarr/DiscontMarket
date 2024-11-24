@@ -25,6 +25,7 @@ namespace DiscontMarket.DAL.SqlServer.Context
         public DbSet<Session> Sessions { get; set; }
         public DbSet<Tag> Tags { get; set; }
         public DbSet<AttributeEntity> Attributes { get; set; }
+        public DbSet<Image> Images { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
@@ -32,8 +33,9 @@ namespace DiscontMarket.DAL.SqlServer.Context
 
             builder.ApplyConfigurationsFromAssembly(typeof(ApplicationUserConfiguration).Assembly)
                 .ApplyConfigurationsFromAssembly(typeof(AttributeConfiguration).Assembly)
-                .ApplyConfigurationsFromAssembly(typeof(BrandConfiguration).Assembly)
+                .ApplyConfigurationsFromAssembly(typeof(BrandConfiguration).Assembly)               
                 .ApplyConfigurationsFromAssembly(typeof(CategoryConfiguration).Assembly)
+                .ApplyConfigurationsFromAssembly(typeof(ImageConfiguration).Assembly)
                 .ApplyConfigurationsFromAssembly(typeof(OrderConfiguration).Assembly)
                 .ApplyConfigurationsFromAssembly(typeof(ProductAttributeConfiguration).Assembly)
                 .ApplyConfigurationsFromAssembly(typeof(ProductConfiguration).Assembly)
