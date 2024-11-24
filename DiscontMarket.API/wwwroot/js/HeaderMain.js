@@ -99,7 +99,25 @@ window.addEventListener('load', updatePlaceholder);
 window.addEventListener('resize', updatePlaceholder);
 
 // Обработчик события для открытия/закрытия выпадающего списка
-document.getElementById('dropdownButton').addEventListener('click', function() {
+document.getElementById('dropdownButton').addEventListener('click', function(event) {
     const dropdownContent = document.getElementById('dropdownContent');
+    // Переключаем отображение списка
     dropdownContent.style.display = dropdownContent.style.display === 'block' ? 'none' : 'block';
+    
+    // Останавливаем дальнейшее распространение события, чтобы не сработал внешний обработчик
+    event.stopPropagation();
 });
+
+// Добавляем обработчик для касания (мобильные устройства) и кликов (ПК)
+['touchstart'].forEach(eventType => {
+    document.addEventListener(eventType, function (event) {
+        const dropdownContent = document.getElementById('dropdownContent');
+        const dropdownButton = document.getElementById('dropdownButton');
+        
+        // Проверяем, был ли клик/касание вне кнопки и списка
+        if (!dropdownContent.contains(event.target) && event.target !== dropdownButton) {
+            dropdownContent.style.display = 'none'; // Закрываем список
+        }
+    });
+});
+
