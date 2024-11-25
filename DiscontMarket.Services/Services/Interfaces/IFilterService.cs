@@ -4,6 +4,6 @@ namespace DiscontMarket.Services.Services.Interfaces
 {
     public interface IFilterService
     {
-        Dictionary<string, CategoryFiltersDTO> GetFilters();
+        Dictionary<string, FilterCategoryDTO> GetFilters();
     }
 }

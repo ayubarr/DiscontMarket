@@ -11,7 +11,7 @@
         public string Value { get; set; }
     }
 
-    public class CategoryFiltersDTO
+    public class FilterCategoryDTO
     {
         public List<FilterDTO> Filters { get; set; }
     }

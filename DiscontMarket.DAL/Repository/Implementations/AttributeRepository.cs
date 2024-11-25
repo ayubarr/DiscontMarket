@@ -23,13 +23,15 @@ namespace DiscontMarket.DAL.Repository.Implementations
                 .ToDictionary(
                     categoryGroup => categoryGroup.Key, // Ключ — имя категории
                     categoryGroup => categoryGroup
-                        .GroupBy(attr => attr.Name) // Внутри каждой категории группируем по имени атрибута
+                        .GroupBy(attr => attr.Type) // Внутри каждой категории группируем по имени атрибута
                         .ToDictionary(
                             attributeGroup => attributeGroup.Key, // Ключ — имя атрибута
                             attributeGroup => attributeGroup.Select(attr => new FilterAttributeDTO
                             {
                                 ID = attr.ID,
-                                Type = attr.Type
+                                Type = attr.Type,
+                                Name = attr.Name,
+                                NameTranslate = attr.NameTranslate
                             }).ToList() // Преобразуем атрибуты в DTO
                         )
                 );
