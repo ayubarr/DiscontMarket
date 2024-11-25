@@ -35,6 +35,7 @@ namespace DiscontMarket.Services.Services.Implementations
                 { 
                     Name =  entityDTO.CategoryName,
                     Type = entityDTO.Type,
+                    NameTranslate = entityDTO.TypeTranslate,
                     AttributeCategories = categories.Select(category => new AttributeCategory
                     {
                         Category = category // Связываем существующую категорию

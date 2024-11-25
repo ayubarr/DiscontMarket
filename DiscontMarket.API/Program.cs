@@ -23,7 +23,12 @@ builder.Services
     .SeedAdmins();
 
 // Настройка контроллеров
-builder.Services.AddControllers();
+builder.Services.AddControllers()
+    .AddJsonOptions(options =>
+    {
+        options.JsonSerializerOptions.ReferenceHandler = System.Text.Json.Serialization.ReferenceHandler.Preserve;
+        options.JsonSerializerOptions.DefaultIgnoreCondition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull;
+    }); 
 
 // Swagger
 builder.Services.AddEndpointsApiExplorer();

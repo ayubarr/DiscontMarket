@@ -39,10 +39,10 @@ namespace DiscontMarket.API.Controllers
         //[Authorize(AuthenticationSchemes = "Bearer", Roles = "Admin")]
         [HttpPost]
         [Route("create")]
-        public async Task<IActionResult> Create(CreateProductDTO createProductDto)
+        public  IActionResult Create(CreateProductDTO createProductDto)
         {
-            var response = await _productService.CreateAsync(createProductDto);
-            return Ok(response);
+            var response =  _productService.CreateProduct(createProductDto);
+            return Ok(response.Data);
         }
 
         // Обновить существующий продукт

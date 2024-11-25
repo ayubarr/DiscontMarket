@@ -37,8 +37,8 @@ namespace DiscontMarket.DAL.SqlServer.Configuration
                 .HasForeignKey(p => p.UserID);
 
             builder.HasOne(p => p.Brand)
-                .WithOne(b => b.Product)
-                .HasForeignKey<Product>(p => p.BrandId);
+                .WithMany(b => b.Products)
+                .HasForeignKey(p => p.BrandId);
             
         }
     }

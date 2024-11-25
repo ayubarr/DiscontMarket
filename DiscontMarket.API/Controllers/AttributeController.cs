@@ -1,7 +1,4 @@
-﻿
-using DiscontMarket.ApiModels.DTO.EntityDTOs.Attribute;
-using DiscontMarket.ApiModels.DTO.EntityDTOs.Product;
-using DiscontMarket.Services.Services.Implementations;
+﻿using DiscontMarket.ApiModels.DTO.EntityDTOs.Attribute;
 using DiscontMarket.Services.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 

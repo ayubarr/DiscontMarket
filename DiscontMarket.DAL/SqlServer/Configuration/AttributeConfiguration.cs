@@ -13,7 +13,8 @@ namespace DiscontMarket.DAL.SqlServer.Configuration
 
             PropertyHelper<AttributeEntity>.SetProperties(builder, false,
                 a => a.Name,
-                a => a.Type
+                a => a.Type,
+                a => a.NameTranslate
             );
 
         }

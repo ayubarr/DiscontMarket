@@ -14,11 +14,6 @@ namespace DiscontMarket.DAL.SqlServer.Configuration
             PropertyHelper<Brand>.SetProperties(builder, false,
                 b => b.Name
             );
-
-            // Описание связи для сушностей Brend и Product
-            builder.HasOne(b => b.Product)
-                .WithOne(s => s.Brand)
-                .HasForeignKey<Brand>(b => b.ProductID);
         }
     }
 }

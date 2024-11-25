@@ -3,6 +3,7 @@ using System;
 using DiscontMarket.DAL.SqlServer.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -11,9 +12,11 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace DiscontMarket.DAL.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20241125132416_NameTranslate2")]
+    partial class NameTranslate2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -237,6 +240,9 @@ namespace DiscontMarket.DAL.Migrations
                         .HasMaxLength(50)
                         .HasColumnType("varchar");
 
+                    b.Property<long?>("ProductID")
+                        .HasColumnType("bigint");
+
                     b.HasKey("ID");
 
                     b.ToTable("Brands");
@@ -361,7 +367,8 @@ namespace DiscontMarket.DAL.Migrations
 
                     b.HasKey("ID");
 
-                    b.HasIndex("BrandId");
+                    b.HasIndex("BrandId")
+                        .IsUnique();
 
                     b.HasIndex("UserID");
 
@@ -642,8 +649,8 @@ namespace DiscontMarket.DAL.Migrations
             modelBuilder.Entity("DiscontMarket.Domain.Models.Entities.Product", b =>
                 {
                     b.HasOne("DiscontMarket.Domain.Models.Entities.Brand", "Brand")
-                        .WithMany("Products")
-                        .HasForeignKey("BrandId");
+                        .WithOne("Product")
+                        .HasForeignKey("DiscontMarket.Domain.Models.Entities.Product", "BrandId");
 
                     b.HasOne("DiscontMarket.Domain.Models.Entities.User", "User")
                         .WithMany("Products")
@@ -716,7 +723,7 @@ namespace DiscontMarket.DAL.Migrations
                 {
                     b.Navigation("BrandCategories");
 
-                    b.Navigation("Products");
+                    b.Navigation("Product");
                 });
 
             modelBuilder.Entity("DiscontMarket.Domain.Models.Entities.Category", b =>

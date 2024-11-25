@@ -13,10 +13,9 @@ namespace DiscontMarket.Domain.Models.Entities
         public Availability Availability { get; set; }
         public ProductStatus Status { get; set; }
 
-
         public List<Order>? Orders { get; set; }
-        public List<Category>? Categories { get; set; }            
-        public List<ProductAttribute>? ProductAttributes { get; set; }  
+        public List<Category>? Categories { get; set; }
+        public List<ProductAttribute>? ProductAttributes { get; set; }
         public List<ProductTag>? ProductTags { get; set; }
         public List<Image>? Images { get; set; }
 
