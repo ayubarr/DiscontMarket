@@ -3,6 +3,7 @@ using System;
 using DiscontMarket.DAL.SqlServer.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -11,9 +12,11 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace DiscontMarket.DAL.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20241125180501_CategoryMigration")]
+    partial class CategoryMigration
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -328,7 +331,7 @@ namespace DiscontMarket.DAL.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<long?>("BrandID")
+                    b.Property<long?>("BrandId")
                         .HasColumnType("bigint");
 
                     b.Property<long?>("CategoryID")
@@ -359,7 +362,7 @@ namespace DiscontMarket.DAL.Migrations
 
                     b.HasKey("ID");
 
-                    b.HasIndex("BrandID");
+                    b.HasIndex("BrandId");
 
                     b.HasIndex("CategoryID");
 
@@ -634,7 +637,7 @@ namespace DiscontMarket.DAL.Migrations
                 {
                     b.HasOne("DiscontMarket.Domain.Models.Entities.Brand", "Brand")
                         .WithMany("Products")
-                        .HasForeignKey("BrandID");
+                        .HasForeignKey("BrandId");
 
                     b.HasOne("DiscontMarket.Domain.Models.Entities.Category", "Category")
                         .WithMany("Products")

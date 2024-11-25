@@ -5,16 +5,19 @@ namespace DiscontMarket.ApiModels.DTO.EntityDTOs.Product
 {
     public class ProductDTO : BaseDTO
     {
-        public uint ID { get; set; }
-        public string ProductName { get; set; }
-        public decimal Price { get; set; }
-        public bool AvailStatus { get; set; }
-        public Availability ProductAvailability { get; set; }
-        public ProductStatus ProductStatus { get; set; }
+        public uint id { get; set; }
+        public string productName { get; set; }
+        public decimal price { get; set; }
+        public string productAvailability { get; set; }
+        public string productStatus { get; set; }
+        public string image { get; set; }
+        public uint quantity { get; set; }
+
 
         //Пользователь работавший с продуктом в последний раз
-        public uint UserID { get; set; }
-
+        public uint? userid { get; set; }
+        public uint? categoryid { get; set; }
+        public uint? brendId { get; set; }
 
     }
 

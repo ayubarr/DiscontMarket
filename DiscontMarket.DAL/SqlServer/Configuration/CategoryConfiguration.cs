@@ -14,13 +14,7 @@ namespace DiscontMarket.DAL.SqlServer.Configuration
 
             PropertyHelper<Category>.SetProperties(builder, false,
                 o => o.Name
-                );
-
-
-            //Описание связи сущностей Category и Product
-            builder.HasOne(c => c.Product)
-               .WithMany(p => p.Categories)
-               .HasForeignKey(c => c.ProductID);
+            );    
         }
     }
 }

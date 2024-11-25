@@ -40,10 +40,10 @@ namespace DiscontMarket.Services.Services.Implementations
 
                 ObjectValidator<Brand>.CheckIsNotNullObject(brand);
 
-                var categories = _categoryRepository.GetAll()
-                    .Where(x => x.Name.Equals(entityDTO.CategoryName)).ToList();
+                var category = _categoryRepository.GetAll()
+                    .Where(x => x.Name.Equals(entityDTO.CategoryName)).FirstOrDefault();
 
-                ObjectValidator<List<Category>>.CheckIsNotNullObject(categories);
+                ObjectValidator<Category>.CheckIsNotNullObject(category);
 
                 var attributes = new List<AttributeEntity>();
                 foreach (var attributeName in entityDTO.AttributeNames)
@@ -89,7 +89,7 @@ namespace DiscontMarket.Services.Services.Implementations
                     Availability = availability,
                     Status = productStatus,
                     Brand = brand,
-                    Categories = categories,
+                    Category = category,
                     ProductAttributes = attributes.Select(attribute => new ProductAttribute
                     {
                         Attribute = attribute
@@ -110,23 +110,39 @@ namespace DiscontMarket.Services.Services.Implementations
             }
         }
 
-        public IBaseResponse<IEnumerable<Product>> GetAllProducts(FilterProductDTO filterProductDTO, SortTypes? sortType)
+        public IBaseResponse<IEnumerable<ProductDTO>> GetAllProducts(FilterProductDTO filterProductDTO, SortTypes? sortType)
         {
             try
             {
                 var filter = FilterHelper.CreateProductFilter(filterProductDTO);
 
                 var entities = _productRepository.GetFilteredProducts(filter);
+
                 ObjectValidator<IEnumerable<Product>>.CheckIsNotNullObject(entities);
 
                 entities = SortHelper.SortProducts(entities, sortType);
 
-                return ResponseFactory<IEnumerable<Product>>.CreateSuccessResponse(entities);
+
+                var productDto = entities.Select(product => new ProductDTO
+                {
+                    id = product.ID,
+                    productName = product.ProductName,
+                    price = product.Price,
+                    productAvailability = product.Availability.ToString(),
+                    productStatus = product.Status.ToString(),
+                    image = product.ImagePath,
+                    quantity = product.Quantity,
+                    userid = product.UserID,
+                    categoryid = product.CategoryID,
+                    brendId = product.BrandID,
+                }).AsEnumerable();
+
+
+                return ResponseFactory<IEnumerable<ProductDTO>>.CreateSuccessResponse(productDto);
             }
             catch (Exception ex)
             {
-                return ResponseFactory<IEnumerable<Product>>.CreateErrorResponse(ex);
-
+                return ResponseFactory<IEnumerable<ProductDTO>>.CreateErrorResponse(ex);
             }
 
         }

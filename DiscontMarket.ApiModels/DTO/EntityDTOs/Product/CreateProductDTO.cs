@@ -1,7 +1,4 @@
 ﻿using DiscontMarket.ApiModels.DTO.BaseDTOs;
-using DiscontMarket.ApiModels.DTO.EntityDTOs.Attribute;
-using DiscontMarket.ApiModels.DTO.EntityDTOs.Brend;
-using DiscontMarket.ApiModels.DTO.EntityDTOs.Category;
 using System.ComponentModel.DataAnnotations;
 
 
@@ -23,7 +20,7 @@ namespace DiscontMarket.ApiModels.DTO.EntityDTOs.Product
         public string Status { get; set; }
 
         [Required(ErrorMessage = "Brand Name is required")]
-        public string BrandName{ get; set; }
+        public string BrandName { get; set; }
 
         [Required(ErrorMessage = "Category Name is required")]
         public string CategoryName { get; set; }

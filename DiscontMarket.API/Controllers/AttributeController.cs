@@ -22,6 +22,7 @@ namespace DiscontMarket.API.Controllers
         public IActionResult GetAll([FromBody] string categoryName)
         {
             var response = _attributeService.GetAllByCategoryName(categoryName);
+
             if (response.IsSuccess)
                 return Ok(response.Data);
 

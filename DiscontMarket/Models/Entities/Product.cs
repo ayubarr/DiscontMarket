@@ -14,12 +14,16 @@ namespace DiscontMarket.Domain.Models.Entities
         public ProductStatus Status { get; set; }
 
         public List<Order>? Orders { get; set; }
-        public List<Category>? Categories { get; set; }
+
+
         public List<ProductAttribute>? ProductAttributes { get; set; }
         public List<ProductTag>? ProductTags { get; set; }
         public List<Image>? Images { get; set; }
 
-        public uint? BrandId { get; set; }
+
+        public uint? CategoryID { get; set; }
+        public Category? Category { get; set; }
+        public uint? BrandID { get; set; }
         public Brand? Brand { get; set; }
         public uint? UserID { get; set; }
         public User? User { get; set; }

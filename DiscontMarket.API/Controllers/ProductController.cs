@@ -1,6 +1,7 @@
 ﻿using DiscontMarket.ApiModels.DTO.EntityDTOs.Product;
 using DiscontMarket.Services.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 
 namespace DiscontMarket.API.Controllers
 {
@@ -42,7 +43,7 @@ namespace DiscontMarket.API.Controllers
         public  IActionResult Create(CreateProductDTO createProductDto)
         {
             var response =  _productService.CreateProduct(createProductDto);
-            return Ok(response.Data);
+            return Ok(response);
         }
 
         // Обновить существующий продукт

@@ -8,7 +8,7 @@ namespace DiscontMarket.Services.Services.Interfaces
 {
     public interface IProductService : IBaseService<Product>
     {
-        IBaseResponse<IEnumerable<Product>> GetAllProducts(FilterProductDTO filterProductDTO, SortTypes? sortProductDTO);
+        IBaseResponse<IEnumerable<ProductDTO>> GetAllProducts(FilterProductDTO filterProductDTO, SortTypes? sortProductDTO);
         IBaseResponse<Product> CreateProduct(CreateProductDTO entityDTO);
 
     }
