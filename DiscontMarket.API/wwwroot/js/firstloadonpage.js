@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function () {
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({ CategoryDTO: { Name: category } })
+            body: JSON.stringify({ CategoryDTO: { CategoryName: category } })
         })
         .then(response => response.json())
         .then(data => {
@@ -44,7 +44,9 @@ document.addEventListener('DOMContentLoaded', function () {
                         <span class="product-price-main">${product.price} ₽</span>
                         <button class="order-button-main">Оформить заказ</button>
                     </div>
-                    <span class="compare-prices-main" data-product-name="${product.productName}">Сравнить цены</span>
+                    <div class="compare-prices-wrapper">
+                         <span class="compare-prices-main" data-product-name="${product.productName}">Сравнить цены</span>
+                     </div>
                 `;
 
                     // Добавляем карточку в контейнер

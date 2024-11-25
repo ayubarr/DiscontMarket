@@ -5,7 +5,7 @@ namespace DiscontMarket.DAL.Repository.Interfaces
 {
     public interface IProductRepository : IBaseRepository<Product>  
     {
-        public IEnumerable<Product> GetFilteredProductsAsync(Expression<Func<Product, bool>> filter);
+        public IEnumerable<Product> GetFilteredProducts(Expression<Func<Product, bool>> filter);
 
     }
 }

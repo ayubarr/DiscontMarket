@@ -19,9 +19,9 @@ namespace DiscontMarket.Services.Helpers.Filter
             if (productFilterDto.MinPrice.HasValue)
                 filter = filter.And(p => p.Price >= productFilterDto.MinPrice);
 
-            if (productFilterDto.CategoryDTO is not null)       
-                filter = filter.And(p => p.Categories.Any(c => c.Name.ToLower()
-                    .Contains(productFilterDto.CategoryDTO.Name.ToLower())));
+            //if (productFilterDto.CategoryDTO is not null)       
+            //    filter = filter.And(p => p.Categories.Any(c => c.Name.ToLower()
+            //        .Contains(productFilterDto.CategoryDTO.CategoryName.ToLower())));
 
             if (productFilterDto.Status is not null)
             {

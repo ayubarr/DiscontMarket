@@ -14,7 +14,7 @@ namespace DiscontMarket.DAL.Repository.Implementations
 
         }
 
-        public IEnumerable<Product> GetFilteredProductsAsync(Expression<Func<Product, bool>> filter)
+        public IEnumerable<Product> GetFilteredProducts(Expression<Func<Product, bool>> filter)
         {
             ObjectValidator<Expression<Func<Product, bool>>>.CheckIsNotNullObject(filter);
 

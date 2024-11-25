@@ -25,7 +25,7 @@ namespace DiscontMarket.Services.Services.Implementations
             {
                 var filter = FilterHelper.CreateProductFilter(filterProductDTO);
 
-                var entities = _productRepository.GetFilteredProductsAsync(filter);
+                var entities = _productRepository.GetFilteredProducts(filter);
                 ObjectValidator<IEnumerable<Product>>.CheckIsNotNullObject(entities);
 
                 entities = SortHelper.SortProducts(entities, sortType);
