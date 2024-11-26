@@ -13,8 +13,8 @@ namespace DiscontMarket.ApiModels.DTO.EntityDTOs.Product
         public List<string>? Availability { get; set; }
         public List<string>? Status { get; set; }
         public CategoryDTO? CategoryDTO { get; set; }
-        public List<AttributeDTO>? AttributeDTOs { get; set; }
-        public List<BrandDTO>? Brand { get; set; }
+        public List<string>? Attributes { get; set; }
+        public List<string>? Brands { get; set; }
 
 
         public SortTypes? SortOrder { get; set; }

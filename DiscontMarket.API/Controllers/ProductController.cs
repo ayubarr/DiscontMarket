@@ -1,5 +1,6 @@
 ﻿using DiscontMarket.ApiModels.DTO.EntityDTOs.Product;
 using DiscontMarket.Services.Services.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 
@@ -17,7 +18,6 @@ namespace DiscontMarket.API.Controllers
         }
 
         // Получить все продукты с фильтром и сортировкой
-        //[Authorize(AuthenticationSchemes = "Bearer", Roles = "Admin")]
         [HttpPost]
         [Route("get-all")]
         public IActionResult GetAll([FromBody] FilterProductDTO projectFilterDto)

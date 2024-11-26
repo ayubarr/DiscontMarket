@@ -273,9 +273,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
         activeFilters.availability = [];
         activeFilters.status = [];
-        activeFilters.brand = [];
-        activeFilters.resolution = [];
-        activeFilters.color = [];
+
+        activeFilters.attributes = [];
+        activeFilters.brands = [];
 
         const checkboxes = filtersContainer.querySelectorAll('.checkbox');
         checkboxes.forEach(checkbox => {
@@ -287,14 +287,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 } else if (statusCategories.includes(filterId)) {
                     activeFilters.status.push(filterId);
                 }
-                else if (category === 'tv') {
+                if (category === 'tv') {
                     // Проверяем фильтры только если категория `tv`
                     if (brandsFilters.includes(filterId)) {
-                        activeFilters.brand.push(filterId);
-                    } else if (screenResolution.includes(filterId)) {
-                        activeFilters.resolution.push(filterId);
-                    } else if (itemColor.includes(filterId)) {
-                        activeFilters.color.push(filterId);
+                        activeFilters.brands.push(filterId);
+                    } else if (screenResolution.includes(filterId) || itemColor.includes(filterId)) {
+                        activeFilters.attributes.push(filterId);
                     }
                 } else {
                     activeFilters[filterId] = true;
@@ -318,6 +316,8 @@ document.addEventListener('DOMContentLoaded', () => {
         // Добавляем категорию в объект фильтров
         filters.CategoryDTO = { CategoryName: category };
 
+
+
         fetch('api/Product/get-all', {
             method: 'POST',
             headers: {
@@ -328,6 +328,8 @@ document.addEventListener('DOMContentLoaded', () => {
         .then(response => response.json())
         .then(data => {
             console.log('Данные успешно получены:', data);
+            console.log('Brands:', activeFilters.brands);
+            console.log('Attributes:', activeFilters.attributes);
 
             const container = document.querySelector('.main-items-section');
 
