@@ -41,7 +41,8 @@ namespace DiscontMarket.Services.Helpers.Filter
             if (!string.IsNullOrWhiteSpace(productFilterDto.CategoryDTO?.CategoryName))
                 filter = filter.And(p => p.Category != null &&
                                          p.Category.Name.ToLowerInvariant()
-                                         .Contains(productFilterDto.CategoryDTO.CategoryName.ToLowerInvariant()));
+                                         .Contains(productFilterDto.CategoryDTO.CategoryName.ToLowerInvariant())
+                );
 
             if (productFilterDto.MinPrice.HasValue && productFilterDto.MaxPrice.HasValue)
                 filter = filter.And(p => p.Price >= productFilterDto.MinPrice.Value &&
