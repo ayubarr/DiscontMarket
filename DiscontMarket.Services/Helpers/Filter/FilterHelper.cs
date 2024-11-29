@@ -44,17 +44,12 @@ namespace DiscontMarket.Services.Helpers.Filter
                                          .Contains(productFilterDto.CategoryDTO.CategoryName.ToLowerInvariant())
                 );
 
-            if (productFilterDto.MinPrice.HasValue && productFilterDto.MaxPrice.HasValue)
-                filter = filter.And(p => p.Price >= productFilterDto.MinPrice.Value &&
-                                         p.Price <= productFilterDto.MaxPrice.Value);
-            else
-            {
-                if (productFilterDto.MinPrice.HasValue)
-                    filter = filter.And(p => p.Price >= productFilterDto.MinPrice.Value);
+            if (productFilterDto.MinPrice.HasValue)
+                filter = filter.And(p => p.Price >= productFilterDto.MinPrice.Value);
 
-                if (productFilterDto.MaxPrice.HasValue)
-                    filter = filter.And(p => p.Price <= productFilterDto.MaxPrice.Value);
-            }
+            if (productFilterDto.MaxPrice.HasValue)
+                filter = filter.And(p => p.Price <= productFilterDto.MaxPrice.Value);
+            
 
             return filter;
         }
