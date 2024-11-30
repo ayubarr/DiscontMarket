@@ -1,4 +1,5 @@
 ﻿using DiscontMarket.ApiModels.DTO.EntityDTOs.Attribute;
+using DiscontMarket.ApiModels.DTO.EntityDTOs.Brand;
 using DiscontMarket.DAL.Repository.Interfaces;
 using DiscontMarket.DAL.SqlServer.Context;
 using DiscontMarket.Domain.Models.Entities;
@@ -12,7 +13,7 @@ namespace DiscontMarket.DAL.Repository.Implementations
         {
         }
 
-        public Dictionary<string, Dictionary<string, List<FilterAttributeDTO>>> GetAllAttributesGroupedByCategory()
+        public Dictionary<string, Dictionary<string, List<FilterAtributeAndBrandDTO>>> GetAllAttributesGroupedByCategory()
         {
             // Извлекаем данные из базы, включая связанные категории через AttributeCategories
             var data = _context.Attributes
@@ -26,7 +27,7 @@ namespace DiscontMarket.DAL.Repository.Implementations
                         .GroupBy(attr => attr.Type) // Внутри каждой категории группируем по имени атрибута
                         .ToDictionary(
                             attributeGroup => attributeGroup.Key, // Ключ — имя атрибута
-                            attributeGroup => attributeGroup.Select(attr => new FilterAttributeDTO
+                            attributeGroup => attributeGroup.Select(attr => new FilterAtributeAndBrandDTO
                             {
                                 ID = attr.ID,
                                 Type = attr.Type,

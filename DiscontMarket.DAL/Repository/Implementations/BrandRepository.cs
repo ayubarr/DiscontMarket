@@ -13,7 +13,7 @@ namespace DiscontMarket.DAL.Repository.Implementations
         {
         }
 
-        public Dictionary<string, Dictionary<string, List<FilterBrandDTO>>> GetAlBrandsGroupedByCategory()
+        public Dictionary<string, Dictionary<string, List<FilterAtributeAndBrandDTO>>> GetAllBrandsGroupedByCategory()
         {
             // Извлекаем данные из базы, включая связанные категории через BrandCategories
             var data = _context.Brands
@@ -24,10 +24,10 @@ namespace DiscontMarket.DAL.Repository.Implementations
                 .ToDictionary(
                     categoryGroup => categoryGroup.Key, // Ключ — имя категории
                     categoryGroup => categoryGroup
-                        .GroupBy(br => br.Type) // Внутри каждой категории группируем по имени атрибута
+                        .GroupBy(br => br.Type) // Внутри каждой категории группируем по имени бренда
                         .ToDictionary(
-                            attributeGroup => attributeGroup.Key, // Ключ — имя атрибута
-                            attributeGroup => attributeGroup.Select(br => new FilterBrandDTO
+                            attributeGroup => attributeGroup.Key, // Ключ — имя бренда
+                            attributeGroup => attributeGroup.Select(br => new FilterAtributeAndBrandDTO
                             {
                                 ID = br.ID,
                                 Type = br.Type,

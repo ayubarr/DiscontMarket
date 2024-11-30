@@ -23,6 +23,7 @@ namespace DiscontMarket.API
             services.AddScoped(typeof(UserManager<>));
             services.AddScoped(typeof(IProductRepository), typeof(ProductRepository));
             services.AddScoped(typeof(IAttributeRepository), typeof(AttributeRepository));
+            services.AddScoped(typeof(IBrandRepository), typeof(BrandRepository));
 
 
             return services;

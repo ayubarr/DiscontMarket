@@ -7,7 +7,6 @@ namespace DiscontMarket.Domain.Models.Entities
     {       
         public string Name { get; set; }
         public string NameTranslate { get; set; }
-
         public string Type { get; set; }
 
 
