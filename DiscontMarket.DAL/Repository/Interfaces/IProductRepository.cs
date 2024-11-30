@@ -3,7 +3,7 @@ using System.Linq.Expressions;
 
 namespace DiscontMarket.DAL.Repository.Interfaces
 {
-    public interface IProductRepository : IBaseRepository<Product>  
+    public interface IProductRepository : IBrandRepository<Product>  
     {
         public IEnumerable<Product> GetFilteredProducts(Expression<Func<Product, bool>> filter);
 

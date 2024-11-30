@@ -4,7 +4,7 @@ namespace DiscontMarket.ApiModels.DTO.EntityDTOs.Tag
 {
     public class CreateTagDTO : BaseDTO
     {
-        public string TagName { get; set; }
+        public string Name { get; set; }
     }
 }
 

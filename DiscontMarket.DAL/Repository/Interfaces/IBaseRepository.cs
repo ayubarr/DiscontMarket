@@ -2,7 +2,7 @@
 
 namespace DiscontMarket.DAL.Repository.Interfaces
 {
-    public interface IBaseRepository<T> where T : BaseEntity
+    public interface IBrandRepository<T> where T : BaseEntity
     {
         public Task CreateAsync(T entity);
 

@@ -8,7 +8,7 @@ namespace DiscontMarket.ApiModels.DTO.EntityDTOs.Category
 {
     public class UpdateCategoryDTO
     {
-        public string? CategoryName { get; set; }
+        public string? Name { get; set; }
 
     }
 }

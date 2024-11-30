@@ -3,7 +3,7 @@ using DiscontMarket.Domain.Models.Entities;
 
 namespace DiscontMarket.DAL.Repository.Interfaces
 {
-    public interface IBrandRepository : IBaseRepository<Brand>
+    public interface IBrandRepository : IBrandRepository<Brand>
     {
         Dictionary<string, Dictionary<string, List<FilterBrandDTO>>> GetAlBrandsGroupedByCategory();
 

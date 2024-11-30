@@ -14,12 +14,12 @@ namespace DiscontMarket.Services.Services.Implementations
     public class ProductService : BaseService<Product>, IProductService
     {
         private readonly IProductRepository _productRepository;
-        private readonly IBaseRepository<Brand> _brandRepository;
-        private readonly IBaseRepository<Category> _categoryRepository;
-        private readonly IBaseRepository<AttributeEntity> _attributeRepository;
+        private readonly IBrandRepository<Brand> _brandRepository;
+        private readonly IBrandRepository<Category> _categoryRepository;
+        private readonly IBrandRepository<AttributeEntity> _attributeRepository;
 
-        public ProductService(IProductRepository productRepository, IBaseRepository<Brand> brandRepository,
-            IBaseRepository<Category> categoryRepository, IBaseRepository<AttributeEntity> attributeRepository) : base(productRepository)
+        public ProductService(IProductRepository productRepository, IBrandRepository<Brand> brandRepository,
+            IBrandRepository<Category> categoryRepository, IBrandRepository<AttributeEntity> attributeRepository) : base(productRepository)
         {
             _productRepository = productRepository;
             _brandRepository = brandRepository;

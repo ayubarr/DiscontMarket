@@ -1,4 +1,4 @@
-﻿using DiscontMarket.ApiModels.DTO.EntityDTOs.Attribute;
+﻿using DiscontMarket.ApiModels.DTO.EntityDTOs.Brand;
 using DiscontMarket.ApiModels.DTO.EntityDTOs.Brand;
 using DiscontMarket.ApiModels.Responce.Helpers;
 using DiscontMarket.ApiModels.Responce.Interfaces;
@@ -14,13 +14,13 @@ namespace DiscontMarket.Services.Services.Implementations
 {
     public class BrandService : BaseService<Brand>, IBrandService
     {
-        private readonly IBaseRepository<AttributeEntity> _attributeRepository;
-        private readonly IBaseRepository<Category> _categoryRepository;
+        private readonly IBrandRepository<AttributeEntity> _brandRepository;
+        private readonly IBrandRepository<Category> _categoryRepository;
 
 
-        public BrandService(IBaseRepository<Brand> repository, IBaseRepository<Category> categoryRepository) : base(repository)
+        public BrandService(IBrandRepository<Brand> repository, IBrandRepository<Category> categoryRepository) : base(repository)
         {
-            _attributeRepository = repository;
+            _brandRepository = repository;
             _categoryRepository = categoryRepository;
         }
 
@@ -34,17 +34,17 @@ namespace DiscontMarket.Services.Services.Implementations
 
                 var entity = new Brand
                 {
-                    Name = entityDTO.BrandName,
-                    Type = entityDTO.Type,
-                    NameTranslate = entityDTO.TypeTranslate,
-                    AttributeCategories = categories.Select(category => new AttributeCategory
+                    Name = Brand.Name,
+                    Type = Brand.Type,
+                    NameTranslate = Brand.NameTranslate,
+                    BrandCategories = categories.Select(category => new BrandCategory
                     {
                         Category = category // Связываем существующую категорию
 
                     }).ToList()
                 };
 
-                _attributeRepository.Create(entity);
+                _brandRepository.Create(entity);
 
                 return ResponseFactory<Brand>.CreateSuccessResponse(entity);
             }
@@ -58,19 +58,19 @@ namespace DiscontMarket.Services.Services.Implementations
             }
         }
 
-        public async Task<IBaseResponse<bool>> DeleteByNameAsync(string attributeName)
+        public async Task<IBaseResponse<bool>> DeleteByNameAsync(string brandName)
         {
             try
             {
-                StringValidator.CheckIsNotNull(attributeName);
+                StringValidator.CheckIsNotNull(brandName);
 
-                var attribute = _attributeRepository.GetAll().Where(a => a.Name.Equals(attributeName)).FirstOrDefault();
+                var attribute = _brandRepository.GetAll().Where(a => a.Name.Equals(brandName)).FirstOrDefault();
                 if (attribute is null)
                 {
-                    throw new Exception($"not found atribute: {attributeName}");
+                    throw new Exception($"not found brand: {brandName}");
                 }
 
-                await _attributeRepository.Delete(attribute);
+                await _brandRepository.Delete(attribute);
                 return ResponseFactory<bool>.CreateSuccessResponse(true);
             }
             catch (Exception ex)
@@ -79,32 +79,32 @@ namespace DiscontMarket.Services.Services.Implementations
             }
         }
 
-        public IBaseResponse<IEnumerable<AttributeEntity>> GetAllByAttributesName(string attributeName)
+        public IBaseResponse<IEnumerable<Brand>> GetAllByBrandsName(string brandName)
         {
             try
             {
-                var atributes = _attributeRepository
+                var brands = _brandRepository
                     .GetAll()
-                    .Where(a => a.Name.Equals(attributeName))
+                    .Where(a => a.Name.Equals(brandName))
                     .AsEnumerable();
 
-                if (atributes is null)
+                if (brands is null)
                 {
-                    throw new Exception($"not found atribute: {attributeName}");
+                    throw new Exception($"not found brand: {brandName}");
                 }
 
-                ObjectValidator<IEnumerable<AttributeEntity>>.CheckIsNotNullObject(atributes);
+                ObjectValidator<IEnumerable<Brand>>.CheckIsNotNullObject(brands);
 
-                return ResponseFactory<IEnumerable<AttributeEntity>>.CreateSuccessResponse(atributes);
+                return ResponseFactory<IEnumerable<Brand>>.CreateSuccessResponse(brands);
             }
             catch (Exception ex)
             {
-                return ResponseFactory<IEnumerable<AttributeEntity>>.CreateErrorResponse(ex);
+                return ResponseFactory<IEnumerable<Brand>>.CreateErrorResponse(ex);
 
             }
         }
 
-        public IBaseResponse<IEnumerable<AttributeEntity>> GetAllByCategoryName(string categoryName)
+        public IBaseResponse<IEnumerable<Brand>> GetAllByCategoryName(string categoryName)
         {
             try
             {
@@ -118,18 +118,18 @@ namespace DiscontMarket.Services.Services.Implementations
                     throw new Exception($"not found category: {categoryName}");
                 }
 
-                var atributes = _attributeRepository.GetAll()
-                    .Where(a => a.AttributeCategories
+                var brands = _brandRepository.GetAll()
+                    .Where(a => a.BrandCategories
                     .Any(c => c.CategoryID == category.ID))
                     .AsEnumerable();
 
-                ObjectValidator<IEnumerable<AttributeEntity>>.CheckIsNotNullObject(atributes);
+                ObjectValidator<IEnumerable<Brand>>.CheckIsNotNullObject(brands);
 
-                return ResponseFactory<IEnumerable<AttributeEntity>>.CreateSuccessResponse(atributes);
+                return ResponseFactory<IEnumerable<Brand>>.CreateSuccessResponse(brands);
             }
             catch (Exception ex)
             {
-                return ResponseFactory<IEnumerable<AttributeEntity>>.CreateErrorResponse(ex);
+                return ResponseFactory<IEnumerable<Brand>>.CreateErrorResponse(ex);
 
             }
         }

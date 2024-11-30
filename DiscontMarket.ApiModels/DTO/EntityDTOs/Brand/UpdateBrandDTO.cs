@@ -8,7 +8,9 @@ namespace DiscontMarket.ApiModels.DTO.EntityDTOs.Brand
 {
     public class UpdateBrandDTO
     {
-        public string? BrandName { get; set; }
+        public string? Name { get; set; }
+
+        public string? Type { get; set; }
 
     }
 }
