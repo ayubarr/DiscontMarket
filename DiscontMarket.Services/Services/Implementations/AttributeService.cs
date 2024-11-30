@@ -13,13 +13,13 @@ namespace DiscontMarket.Services.Services.Implementations
 {
     public class AttributeService : BaseService<AttributeEntity>, IAttributeService
     {
-        private readonly IBrandRepository<AttributeEntity> _attributeRepository;
-        private readonly IBrandRepository<Category> _categoryRepository;
+        private readonly IAttributeRepository _attributeRepository;
+        private readonly IBaseRepository<Category> _categoryRepository;
 
 
-        public AttributeService(IBrandRepository<AttributeEntity> repository, IBrandRepository<Category> categoryRepository) : base(repository)
+        public AttributeService(IAttributeRepository attributeRepository, IBaseRepository<Category> categoryRepository) : base(attributeRepository)
         {
-            _attributeRepository = repository;
+            _attributeRepository = attributeRepository;
             _categoryRepository = categoryRepository;
         }
 

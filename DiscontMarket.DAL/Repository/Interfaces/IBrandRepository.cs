@@ -5,7 +5,7 @@ namespace DiscontMarket.DAL.Repository.Interfaces
 {
     public interface IBrandRepository : IBrandRepository<Brand>
     {
-        Dictionary<string, Dictionary<string, List<FilterBrandDTO>>> GetAlBrandsGroupedByCategory();
+        Dictionary<string, Dictionary<string, List<FilterAtributeAndBrandDTO>>> GetAllBrandsGroupedByCategory();
 
     }
 }
