@@ -1,6 +1,6 @@
 ﻿namespace DiscontMarket.ApiModels.DTO.EntityDTOs.Brand
 {
-    public class FilterBrandDTO
+    public class FilterAtributeAndBrandDTO
     {
         public uint ID { get; set; }
         public string Type { get; set; } 
