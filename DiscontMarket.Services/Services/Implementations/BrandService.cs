@@ -1,5 +1,4 @@
 ﻿using DiscontMarket.ApiModels.DTO.EntityDTOs.Brand;
-using DiscontMarket.ApiModels.DTO.EntityDTOs.Brand;
 using DiscontMarket.ApiModels.Responce.Helpers;
 using DiscontMarket.ApiModels.Responce.Interfaces;
 using DiscontMarket.DAL.Repository.Interfaces;
@@ -14,11 +13,12 @@ namespace DiscontMarket.Services.Services.Implementations
 {
     public class BrandService : BaseService<Brand>, IBrandService
     {
-        private readonly IBrandRepository<AttributeEntity> _brandRepository;
-        private readonly IBrandRepository<Category> _categoryRepository;
+        private readonly IBrandRepository _brandRepository;
+        private readonly IBaseRepository<Category> _categoryRepository;
 
 
-        public BrandService(IBrandRepository<Brand> repository, IBrandRepository<Category> categoryRepository) : base(repository)
+        public BrandService(IBrandRepository repository,
+            IBaseRepository<Category> categoryRepository) : base(repository)
         {
             _brandRepository = repository;
             _categoryRepository = categoryRepository;

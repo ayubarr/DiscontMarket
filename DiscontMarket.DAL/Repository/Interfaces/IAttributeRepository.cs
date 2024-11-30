@@ -4,7 +4,7 @@ using DiscontMarket.Domain.Models.Entities;
 
 namespace DiscontMarket.DAL.Repository.Interfaces
 {
-    public interface IAttributeRepository : IBrandRepository<AttributeEntity>
+    public interface IAttributeRepository : IBaseRepository<AttributeEntity>
     {
         Dictionary<string, Dictionary<string, List<FilterAtributeAndBrandDTO>>> GetAllAttributesGroupedByCategory();
 
