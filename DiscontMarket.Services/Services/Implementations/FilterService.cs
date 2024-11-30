@@ -8,6 +8,7 @@ namespace DiscontMarket.Services.Services.Implementations
     {
         private readonly IAttributeRepository _attributeRepository;
 
+
         public FilterService(IAttributeRepository attributeRepository)
         {
             _attributeRepository = attributeRepository;
