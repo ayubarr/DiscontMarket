@@ -2,9 +2,10 @@
 
 namespace DiscontMarket.ApiModels.DTO.EntityDTOs.Tag
 {
-    public class TagDTO : BaseDTO
+    public class UpdateTagDTO : BaseDTO
     {
-        public uint id { get; set; }
-        public string TagName { get; set; }
+        public string? TagName { get; set; }
     }
 }
+
+

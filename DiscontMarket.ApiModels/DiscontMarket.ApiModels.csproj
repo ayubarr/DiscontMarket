@@ -7,11 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="DTO\EntityDTOs\Session\" />
-    <Folder Include="DTO\EntityDTOs\Order\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\DiscontMarket.Validation\DiscontMarket.Validation.csproj" />
     <ProjectReference Include="..\DiscontMarket\DiscontMarket.Domain.csproj" />
   </ItemGroup>
