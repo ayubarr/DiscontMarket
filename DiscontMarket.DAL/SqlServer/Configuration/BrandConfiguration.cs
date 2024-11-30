@@ -12,7 +12,9 @@ namespace DiscontMarket.DAL.SqlServer.Configuration
             builder.HasKey(b => b.ID);
 
             PropertyHelper<Brand>.SetProperties(builder, false,
-                b => b.Name
+                b => b.Name,
+                b => b.Type,
+                b => b.NameTranslate
             );
         }
     }

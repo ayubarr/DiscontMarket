@@ -6,9 +6,20 @@ document.addEventListener('DOMContentLoaded', () => {
     const sliderTrack = document.querySelector('.slider-track');
     const filtersContainer = document.getElementById('filters-container');
     const sortingOptions = document.querySelectorAll('.sorting-option');
+    const showMoreButton = document.getElementById('show-more');
+    const productCountElement = document.querySelector('.product-count');
     const maxValue = parseInt(maxSlider?.max || 0);
 
     const params = new URLSearchParams(window.location.search);
+
+    let attributes = []; // Сюда будем записывать атрибуты
+    let brands = []; // Сюда будем записывать бренды
+
+    const brandsFilters = ['Samsung', 'LG', 'Xiaomi', 'Panasonic'];
+    const screenResolution = ['HD', 'Full HD', 'QHD', '4K'];
+    const itemColor = ['white', 'black', 'silver'];
+
+    const activeFilters = {};
 
     // Установить "По популярности" активным по умолчанию
     let activeSort = params.get('sort') || null; // По умолчанию "null"
@@ -87,7 +98,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (event.target.classList.contains('checkbox')) {
             event.target.classList.toggle('active');
             updateFiltersInURL(); // Обновление URL при выборе фильтра
-            // window.location.reload();                                          РАСКОМЕНТИТЬ
+            //window.location.reload();
         }
     });
 
@@ -103,12 +114,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const category = params.keys().next().value;
 
-    fetch('api/Filter/get-filters', {
-        method: 'GET',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-    })        .then(response => response.json())
+    fetch('api/Filter/get-filters')
+        .then(response => response.json())
         .then(data => {
             const categoryFilters = data[category];
             if (categoryFilters) {
@@ -202,12 +209,14 @@ document.addEventListener('DOMContentLoaded', () => {
         window.history.replaceState({}, '', '?' + newParams.toString());
 
         sendFiltersToServer();
+        window.location.reload();
     }
     
     // Обновление URL при изменении значений слайдеров или инпутов
     function handleSliderInput() {
         updateInputsFromSliders(); // Синхронизация инпутов
         updateFiltersInURL(); // Обновление URL
+        window.location.reload();
     }
     
     // Привязываем события
@@ -216,10 +225,12 @@ document.addEventListener('DOMContentLoaded', () => {
     minPriceInput.addEventListener('change', () => {
         updateSlidersFromInputs(); // Синхронизация слайдеров
         updateFiltersInURL(); // Обновление URL
+        window.location.reload();
     });
     maxPriceInput.addEventListener('change', () => {
         updateSlidersFromInputs(); // Синхронизация слайдеров
         updateFiltersInURL(); // Обновление URL
+        window.location.reload();
     });
     
     // Сохранение состояния слайдера при загрузке страницы
@@ -244,80 +255,99 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Инициализация активных фильтров при загрузке страницы
     function initActiveFilters() {
+        params.forEach((value, key) => {
+            if (brandsFilters.includes(key) && !brands.includes(key)) {
+                brands.push(key);  // Добавляем, если еще нет
+            } else if ((screenResolution.includes(key) || itemColor.includes(key)) && !attributes.includes(key)) {
+                attributes.push(key);  // Добавляем, если еще нет
+            }
+        });
+
+        // Логируем полученные фильтры для проверки
+        console.log('Attributes:', attributes);
+        console.log('Brands:', brands);
         const checkboxes = filtersContainer.querySelectorAll('.checkbox');
         checkboxes.forEach(checkbox => {
             const filterId = checkbox.getAttribute('data-filter');
             if (params.has(filterId)) {
                 checkbox.classList.add('active');
+                console.log(`Фильтр ${filterId} активирован из URL`);
             }
         });
     }
-    
-    initActiveFilters();
 
     function getActiveFilters() {
-        const activeFilters = {};
-
+    
         // Сортировка
         const activeSort = document.querySelector('.sorting-option.active');
         if (activeSort) {
             activeFilters.sort = activeSort.dataset.sort;
         }
-
+    
         // Фильтры по чекбоксам
         const stockCategories = ['instock', 'preorderlater', 'preordertomorrow'];
         const statusCategories = ['discount', 'damagedpackage', 'minordefects'];
         const brandsFilters = ['Samsung', 'LG', 'Xiaomi', 'Panasonic'];
         const screenResolution = ['HD', 'Full HD', 'QHD', '4K'];
-        const itemColor = ['white', 'black', 'silver'];
-
+        const itemColor = ['white', 'black', 'silver']; 
+    
         activeFilters.availability = [];
         activeFilters.status = [];
 
-        activeFilters.attributes = [];
-        activeFilters.brands = [];
+        activeFilters.Attributes = [];
+        activeFilters.Brands = [];
 
+        activeFilters.Attributes = [...attributes];  // Копирование массива
+        activeFilters.Brands = [...brands];  // Копирование массива
+    
         const checkboxes = filtersContainer.querySelectorAll('.checkbox');
         checkboxes.forEach(checkbox => {
             if (checkbox.classList.contains('active')) {
                 const filterId = checkbox.getAttribute('data-filter');
-
+                
                 if (stockCategories.includes(filterId)) {
                     activeFilters.availability.push(filterId);
                 } else if (statusCategories.includes(filterId)) {
                     activeFilters.status.push(filterId);
                 }
-                if (category === 'tv') {
+                else if (category === 'tv') {
                     // Проверяем фильтры только если категория `tv`
                     if (brandsFilters.includes(filterId)) {
-                        activeFilters.brands.push(filterId);
+                        if (!activeFilters.Brands.includes(filterId)) {
+                            activeFilters.Brands.push(filterId);
+                        }
                     } else if (screenResolution.includes(filterId) || itemColor.includes(filterId)) {
-                        activeFilters.attributes.push(filterId);
+                        if (!activeFilters.Attributes.includes(filterId)) {
+                            activeFilters.Attributes.push(filterId);
+                        }
                     }
                 } else {
-                    activeFilters[filterId] = true;
+                    if (!activeFilters[filterId]) {
+                        activeFilters[filterId] = true;
+                    }
                 }
             }
         });
-
+    
         // Значения слайдеров
         const minPrice = minSlider.value;
         const maxPrice = maxSlider.value;
         activeFilters['minprice'] = minPrice;
         activeFilters['maxprice'] = maxPrice;
-
+    
         return activeFilters;
-    }
+    }    
+
+    initSliderValues();
+    initActiveFilters();
 
     function sendFiltersToServer() {
         const filters = getActiveFilters();
         const category = params.keys().next().value; // Получаем категорию из URL
 
         // Добавляем категорию в объект фильтров
-        filters.CategoryDTO = { CategoryName: category };
-
-
-
+        filters.CategoryDTO = {Name : category};
+    
         fetch('api/Product/get-all', {
             method: 'POST',
             headers: {
@@ -328,44 +358,48 @@ document.addEventListener('DOMContentLoaded', () => {
         .then(response => response.json())
         .then(data => {
             console.log('Данные успешно получены:', data);
-            console.log('Brands:', activeFilters.brands);
-            console.log('Attributes:', activeFilters.attributes);
-
+    
             const container = document.querySelector('.main-items-section');
-
+    
             if (!container) {
                 console.error('Контейнер для карточек не найден. Убедитесь, что HTML содержит .main-items-section .products-carousel.');
                 return;
             }
-
+    
             // Очищаем контейнер перед добавлением новых карточек
             container.innerHTML = '';
-
+    
+            const products = data.data;
             // Проверяем, что данные корректны
-            if (data.data && Array.isArray(data.data)) {
-                data.data.forEach(product => {
+            if (products && Array.isArray(products)) {
+
+                const totalProducts = products.length;
+                if (productCountElement) {
+                    productCountElement.textContent = `${totalProducts} товаров`;
+                }
+
+                products.forEach(product => {
                     const card = document.createElement('div');
                     card.classList.add('product-card-main');
-
+    
                     // Создаем содержимое карточки
                     card.innerHTML = `
-                    <img src="${product.image || 'items/filters/no-image.png'}" alt="Товар" class="product-image">
-                    <div class="product-separator-main"></div>
-                    <p class="product-name-main">${product.productName}</p>
-                    <div class="product-price-container-main">
-                        <span class="product-price-main">${product.price} ₽</span>
-                        <button class="order-button-main">Оформить заказ</button>
-                    </div>
-                    <div class="compare-prices-wrapper">
-                         <span class="compare-prices-main" data-product-name="${product.productName}">Сравнить цены</span>
-                    </div>
-
-                `;
-
+                        <img src="${product.image || 'items/filters/no-image.png'}" alt="Товар" class="product-image">
+                        <div class="product-separator-main"></div>
+                        <p class="product-name-main">${product.productName}</p>
+                        <div class="product-price-container-main">
+                            <span class="product-price-main">${product.price} ₽</span>
+                            <button class="order-button-main">Оформить заказ</button>
+                        </div>
+                        <div class="compare-prices-wrapper">
+                            <span class="compare-prices-main" data-product-name="${product.productName}">Сравнить цены</span>
+                        </div>
+                    `;
+    
                     // Добавляем карточку в контейнер
                     container.appendChild(card);
                 });
-
+    
                 // Добавляем обработчики для всех кнопок "Сравнить цены"
                 const compareButtons = container.querySelectorAll('.compare-prices-main');
                 compareButtons.forEach(button => {
@@ -382,5 +416,8 @@ document.addEventListener('DOMContentLoaded', () => {
         .catch(error => {
             console.error('Ошибка при получении данных:', error);
         });
-    }
+    }     
+
+    sendFiltersToServer();
+    
 });

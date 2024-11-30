@@ -38,10 +38,10 @@ namespace DiscontMarket.Services.Helpers.Filter
                     (p, availability) => p.Availability.ToString().Equals(availability, StringComparison.OrdinalIgnoreCase)
                 ));
 
-            if (!string.IsNullOrWhiteSpace(productFilterDto.CategoryDTO?.CategoryName))
+            if (!string.IsNullOrWhiteSpace(productFilterDto.CategoryDTO?.Name))
                 filter = filter.And(p => p.Category != null &&
                                          p.Category.Name.ToLowerInvariant()
-                                         .Contains(productFilterDto.CategoryDTO.CategoryName.ToLowerInvariant())
+                                         .Contains(productFilterDto.CategoryDTO.Name.ToLowerInvariant())
                 );
 
             if (productFilterDto.MinPrice.HasValue)
@@ -52,7 +52,7 @@ namespace DiscontMarket.Services.Helpers.Filter
             
 
             return filter;
-        }
+        } 
 
         private static ExpressionStarter<Product> BuildSubFilter<T>(
             IEnumerable<T> items,
