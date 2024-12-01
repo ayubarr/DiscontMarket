@@ -1,7 +1,6 @@
 ﻿using DiscontMarket.ApiModels.DTO.EntityDTOs.Product;
 using DiscontMarket.ApiModels.Responce.Helpers;
 using DiscontMarket.ApiModels.Responce.Interfaces;
-using DiscontMarket.DAL.Migrations;
 using DiscontMarket.DAL.Repository.Interfaces;
 using DiscontMarket.Domain.Models.Abstractions.LinkEntities;
 using DiscontMarket.Domain.Models.Entities;
@@ -30,27 +29,46 @@ namespace DiscontMarket.Services.Services.Implementations
             _attributeRepository = attributeRepository;
             _imageRepository = imageRepository;
         }
+        private IBaseResponse<bool> UpdateProduct(Product entity)
+        {
+            try
+            {
+                ObjectValidator<Product>.CheckIsNotNullObject(entity);
 
-        public IBaseResponse<Product> CreateProduct(CreateProductDTO entityDTO)
+                _productRepository.Update(entity);
+                return ResponseFactory<bool>.CreateSuccessResponse(true);
+            }
+            catch (ArgumentNullException argNullException)
+            {
+                return ResponseFactory<bool>.CreateNotFoundResponse(argNullException);
+            }
+            catch (Exception exception)
+            {
+                return ResponseFactory<bool>.CreateErrorResponse(exception);
+            }
+        }
+
+        public IBaseResponse<bool> CreateProduct(CreateProductDTO entityDTO)
         {
             try
             {
                 ObjectValidator<CreateProductDTO>.CheckIsNotNullObject(entityDTO);
 
+               
                 var brand = _brandRepository
                     .GetAll()
-                    .Where(x => x.Name.Equals(entityDTO.BrandName))
+                    .Where(x => x.Name.Equals(entityDTO.brandname))
                     .FirstOrDefault();
 
                 ObjectValidator<Brand>.CheckIsNotNullObject(brand);
 
                 var category = _categoryRepository.GetAll()
-                    .Where(x => x.Name.Equals(entityDTO.CategoryName)).FirstOrDefault();
+                    .Where(x => x.Name.Equals(entityDTO.categoryname)).FirstOrDefault();
 
                 ObjectValidator<Category>.CheckIsNotNullObject(category);
 
                 var attributes = new List<AttributeEntity>();
-                foreach (var attributeName in entityDTO.AttributeNames)
+                foreach (var attributeName in entityDTO.characteristics)
                 {
                     if (_attributeRepository.GetAll().Any(a => a.Name.Equals(attributeName)))
                         attributes
@@ -67,32 +85,47 @@ namespace DiscontMarket.Services.Services.Implementations
 
 
                 Availability availability;
-                if (!Enum.TryParse(entityDTO.Availability, out availability))
+                if (!Enum.TryParse(entityDTO.availability, out availability))
                 {
-                    throw new Exception($"not found availability {entityDTO.Availability}");
+                    throw new Exception($"not found availability {entityDTO.availability}");
                 }
 
-                availability = (Availability)Enum.Parse(typeof(Availability), entityDTO.Availability);
+                availability = (Availability)Enum.Parse(typeof(Availability), entityDTO.availability);
 
 
                 ProductStatus productStatus;
-                if (!Enum.TryParse(entityDTO.Status, out productStatus))
+                if (!Enum.TryParse(entityDTO.status, out productStatus))
                 {
-                    throw new Exception($"not found product status {entityDTO.Status}");
+                    throw new Exception($"not found product status {entityDTO.status}");
                 }
 
-                productStatus = (ProductStatus)Enum.Parse(typeof(Availability), entityDTO.Availability);
+                productStatus = (ProductStatus)Enum.Parse(typeof(Availability), entityDTO.availability);
 
+                var images = new List<Image>();
+                string image = "";
+                if (entityDTO.images.Count > 0)
+                {
+                    foreach (var path in entityDTO.images)
+                    {
+                        images.Add(new Image
+                        {
+                            Path = path,
+                        });
+                    }
+                    image =  entityDTO.images.First();
+                }
+
+                var rating = Math.Round(4.1 + new Random().NextDouble() * 0.9, 1);
 
                 var entity = new Product
                 {
-                    ProductName = entityDTO.ProductName,
-                    Price = entityDTO.Price,
+                    ProductName = entityDTO.title,
+                    Price = entityDTO.price,
                     Quantity = entityDTO.Quantity,
-                    IconPath = entityDTO.ImagePath,
-                    Rating = entityDTO.Rating,
-                    Description = entityDTO.Description,
-                    FullDescription = entityDTO.FullDescription,
+                    IconPath = image,
+                    Rating = rating,
+                    Description = entityDTO.description,
+                    FullDescription = entityDTO.fullDescription,
                     Availability = availability,
                     Status = productStatus,
                     Brand = brand,
@@ -100,24 +133,46 @@ namespace DiscontMarket.Services.Services.Implementations
                     ProductAttributes = attributes.Select(attribute => new ProductAttribute
                     {
                         Attribute = attribute
-                    }).ToList()
+                    }).ToList(),
+                    Images = images,  
+                    UserID = 1,
                 };
 
+
+                if (_productRepository.GetAll().Any(p => p.ProductName.Equals(entityDTO.title))) return UpdateProduct(entity);
+                
                 _productRepository.Create(entity);
 
-                return ResponseFactory<Product>.CreateSuccessResponse(entity);
+                return ResponseFactory<bool>.CreateSuccessResponse(true);
             }
             catch (ArgumentNullException argNullException)
             {
-                return ResponseFactory<Product>.CreateNotFoundResponse(argNullException);
+                return ResponseFactory<bool>.CreateNotFoundResponse(argNullException);
             }
             catch (Exception exception)
             {
-                return ResponseFactory<Product>.CreateErrorResponse(exception);
+                return ResponseFactory<bool>.CreateErrorResponse(exception);
             }
         }
 
-        public IBaseResponse<IEnumerable<ProductDTO>> GetAllProducts(FilterProductDTO filterProductDTO, SortTypes? sortType)
+        public IBaseResponse<bool> DeleteByProductName(string productName)
+        {
+            try
+            {
+                var product = _productRepository.GetAll().Where(p => p.ProductName.Equals(productName)).FirstOrDefault();
+
+                ObjectValidator<Product>.CheckIsNotNullObject(product);
+
+                _productRepository.Delete(product);
+                return ResponseFactory<bool>.CreateSuccessResponse(true);
+            }
+            catch (Exception ex)
+            {
+                return ResponseFactory<bool>.CreateErrorResponse(ex);
+            }
+        }
+        private string xyu = "";
+        public IBaseResponse<IEnumerable<ProductDTO>> GetAllProducts(FilterProductDTO filterProductDTO, string? sortType)
         {
             try
             {
@@ -253,7 +308,6 @@ namespace DiscontMarket.Services.Services.Implementations
             catch (Exception ex)
             {
                 return ResponseFactory<GetProductDTO>.CreateErrorResponse(ex);
-
             }
         }
     }

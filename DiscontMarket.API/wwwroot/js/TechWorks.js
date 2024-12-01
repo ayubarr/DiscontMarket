@@ -311,14 +311,15 @@ document.getElementById('save-product-btn').addEventListener('click', () => {
     const price = document.getElementById('product-price').value;
     const images = document.getElementById('product-images').files;
     const status = document.getElementById('product-status').value;
-    const category = document.getElementById('category-select').value;
+    const categoryname = document.getElementById('category-select').value;
+    const availability = document.getElementById('product-availability').value;
 
     // Проверка обязательных полей
-    if (!category || !title || !description || !fullDescription || !price || images.length === 0 || !status) {
+    if (!categoryname || !title || !description || !fullDescription || !price || images.length === 0 || !status) {
         alert("Пожалуйста, заполните все обязательные поля.");
         return;
     }
-
+   
     // Проверка на отрицательное значение цены
     if (parseFloat(price) <= 0) {
         alert("Цена должна быть положительным числом.");
@@ -326,18 +327,24 @@ document.getElementById('save-product-btn').addEventListener('click', () => {
     }
 
     const characteristics = [];
-    const filters = categoryFilters[category]?.filters;
+    let brandname = '';
+    const filters = categoryFilters[categoryname]?.filters;
     if (filters) {
         filters.forEach(filter => {
             const value = document.getElementById(filter.title)?.value;
             if (value) {
-                characteristics.push({
-                    name: filter.title,
-                    value: value
-                });
+                if (filter.title.toLowerCase() === 'бренды') {
+                    brandname = value;
+                } else {
+                    characteristics.push({
+                        name: filter.title,
+                        value: value
+                    });
+                }
             }
         });
     }
+
 
     // Сохранение изображений в папке ./items/productimages/
     const imagePaths = [];
@@ -363,14 +370,19 @@ document.getElementById('save-product-btn').addEventListener('click', () => {
 
     // Создание объекта товара
     const newProduct = {
+        categoryname,
         title,
+        brandname,
         description,
         fullDescription,
         price,
         status,
+        availability,
         images: imagePaths,
         characteristics
     };
+
+
 
     console.log(newProduct);
 
@@ -409,7 +421,7 @@ document.getElementById('delete-product-btn').addEventListener('click', () => {
     const title = document.getElementById('product-delete-title').value.trim();
     
     if (title) {
-        fetch('http://192.168.192.59/сайт/delete_product.php', {
+        fetch('api/product/delete-by-name', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ title })

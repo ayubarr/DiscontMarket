@@ -6,32 +6,28 @@ namespace DiscontMarket.ApiModels.DTO.EntityDTOs.Product
 {
     public class CreateProductDTO : BaseDTO
     {
-        public string ProductName { get; set; }
-        public decimal Price { get; set; }
+        public string title { get; set; }
+        public decimal price { get; set; }
         public uint Quantity { get; set; }
-        public string ImagePath { get; set; }
-        public int Rating { get; set; }
-        public string Description { get; set; }
-        public string FullDescription { get; set; }
+        public List<string> images { get; set; }
+        public string description { get; set; }
+        public string fullDescription { get; set; }
 
 
 
         [Required(ErrorMessage = "Availability is required")]
-        public string Availability { get; set; }
+        public string availability { get; set; }
 
         [Required(ErrorMessage = "Status is required")]
-        public string Status { get; set; }
+        public string status { get; set; }
 
         [Required(ErrorMessage = "Brand Name is required")]
-        public string BrandName { get; set; }
+        public string brandname { get; set; }
 
         [Required(ErrorMessage = "Category Name is required")]
-        public string CategoryName { get; set; }
+        public string categoryname { get; set; }
 
         [Required(ErrorMessage = "Attribute Names is required")]
-        public List<string> AttributeNames { get; set; }
-
-        //Пользователь создавший продукт
-        public uint? UserID { get; set; } = 1;
+        public List<string> characteristics { get; set; }
     }
 }

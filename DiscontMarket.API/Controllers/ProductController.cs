@@ -22,6 +22,8 @@ namespace DiscontMarket.API.Controllers
         [Route("get-all")]
         public IActionResult GetAll([FromBody] FilterProductDTO projectFilterDto)
         {
+
+
             var response = _productService.GetAllProducts(projectFilterDto, projectFilterDto.SortOrder);
             return Ok(response);
         }
@@ -72,6 +74,17 @@ namespace DiscontMarket.API.Controllers
         public async Task<IActionResult> Update(UpdateProductDTO productDto)
         {
             var response = await _productService.UpdateAsync(productDto);
+            return Ok(response);
+        }
+
+
+        // Удалить продукт по ID
+        //[Authorize(AuthenticationSchemes = "Bearer", Roles = "Admin")]
+        [HttpDelete]
+        [Route("delete-by-name")]
+        public IActionResult Delete(string name)
+        {
+            var response =  _productService.DeleteByProductName(name);
             return Ok(response);
         }
 
