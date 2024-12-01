@@ -151,7 +151,7 @@ namespace DiscontMarket.Services.Services.Implementations
 
         }
 
-        public IBaseResponse<GetProductDTO> GetProductByIdAsync(uint Id)
+        public IBaseResponse<GetProductDTO> GetProductById(uint Id)
         {
             try
             {
@@ -161,15 +161,14 @@ namespace DiscontMarket.Services.Services.Implementations
 
                 var productImages = _imageRepository
                     .GetAll()
-                    .Where(i => i.ProductID == Id)
+                    .Where(i => i.ProductID == product.ID)
                     .Select(i => i.Path)
                     .ToList();
-
 
                 // Получаем характеристики продукта через контейнер атрибутов
                 var characteristics = _attributeRepository
                     .GetAll()
-                    .Where(a => a.ProductAttributes!.Any(pa => pa.ProductID == Id))
+                    .Where(a => a.ProductAttributes!.Any(pa => pa.ProductID == product.ID))
                     .Select(a => new
                     {
                         Name = a.Type,
@@ -178,13 +177,63 @@ namespace DiscontMarket.Services.Services.Implementations
                     .Where(attr => !string.IsNullOrEmpty(attr.Name) && !string.IsNullOrEmpty(attr.Value))
                     .ToDictionary(attr => attr.Name!, attr => attr.Value!) ?? new Dictionary<string, string>();
 
-
-
-
                 var productDto = new GetProductDTO
                 {
                     productId = product.ID,
                     title =  product.ProductName,
+                    rating = product.Rating,
+                    description = product.Description,
+                    price = product.Price,
+                    characteristics = characteristics,
+                    images = productImages,
+                    fullDescription = product.FullDescription,
+
+                };
+
+                ObjectValidator<GetProductDTO>.CheckIsNotNullObject(productDto);
+
+                return ResponseFactory<GetProductDTO>.CreateSuccessResponse(productDto);
+            }
+            catch (Exception ex)
+            {
+                return ResponseFactory<GetProductDTO>.CreateErrorResponse(ex);
+
+            }
+        }
+
+        public IBaseResponse<GetProductDTO> GetProductByName(string name)
+        {
+            try
+            {
+                var product = _productRepository
+                    .GetAll()
+                    .Where(p => p.Equals(name)).FirstOrDefault();
+
+                ObjectValidator<Product>.CheckIsNotNullObject(product);
+
+                var productImages = _imageRepository
+                    .GetAll()
+                    .Where(i => i.ProductID == product.ID)
+                    .Select(i => i.Path)
+                    .ToList();
+
+
+                // Получаем характеристики продукта через контейнер атрибутов
+                var characteristics = _attributeRepository
+                    .GetAll()
+                    .Where(a => a.ProductAttributes!.Any(pa => pa.ProductID == product.ID))
+                    .Select(a => new
+                    {
+                        Name = a.Type,
+                        Value = a.NameTranslate
+                    })
+                    .Where(attr => !string.IsNullOrEmpty(attr.Name) && !string.IsNullOrEmpty(attr.Value))
+                    .ToDictionary(attr => attr.Name!, attr => attr.Value!) ?? new Dictionary<string, string>();
+
+                var productDto = new GetProductDTO
+                {
+                    productId = product.ID,
+                    title = product.ProductName,
                     rating = product.Rating,
                     description = product.Description,
                     price = product.Price,

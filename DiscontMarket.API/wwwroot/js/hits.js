@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
     // Подгрузка хитов продаж
-    fetch('http://192.168.192.59/сайт/filters.php', {
+    fetch('api/Product/get-all', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',

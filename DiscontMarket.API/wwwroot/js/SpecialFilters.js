@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let categoryFilters = {};
 
-    fetch('http://192.168.192.59/сайт/load.php', {
+    fetch('api/Filter/get-filters', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -129,7 +129,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const category = params.keys().next().value;
 
-    fetch('js/json/SortedFilters.json')
+       fetch('api/Filter/get-filters')
         .then(response => response.json())
         .then(data => {
             const categoryFilters = data[category];
@@ -311,13 +311,13 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     
         const category = params.keys().next().value; // Получаем текущую категорию из URL
-    const currentCategoryFilters = categoryFilters[category] || {};
+        const currentCategoryFilters = categoryFilters[category] || {};
     
-    activeFilters.AttributeDTOs = [...attributedtos];
-    activeFilters.BrandDTOs = [...branddtos];
+        activeFilters.AttributeDTOs = [...attributedtos];
+        activeFilters.BrandDTOs = [...branddtos];
     
-    const checkboxes = filtersContainer.querySelectorAll('.checkbox');
-    checkboxes.forEach(checkbox => {
+        const checkboxes = filtersContainer.querySelectorAll('.checkbox');
+        checkboxes.forEach(checkbox => {
         if (checkbox.classList.contains('active')) {
             const filterId = checkbox.getAttribute('data-filter');
             if (currentCategoryFilters.brands?.includes(filterId)) {
@@ -341,18 +341,18 @@ document.addEventListener('DOMContentLoaded', () => {
         return activeFilters;
     }    
 
-    initSliderValues();
-    initActiveFilters();
+        initSliderValues();
+        initActiveFilters();
 
-    let currentIndex = 5; // Начальный индекс для следующих товаров
+        let currentIndex = 8; // Начальный индекс для следующих товаров
 
-    function sendFiltersToServer() {
-        const filters = getActiveFilters();
-        const category = params.keys().next().value; // Получаем категорию из URL
+        function sendFiltersToServer() {
+            const filters = getActiveFilters();
+            const category = params.keys().next().value; // Получаем категорию из URL
     
         filters.CategoryDTO = { Name: category }; // Добавляем категорию в фильтры
     
-        fetch('http://192.168.192.59/сайт/filters.php', {
+        fetch('api/Product/get-all', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -373,7 +373,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
     
             container.innerHTML = ''; // Очищаем контейнер
-            currentIndex = 5; // Сбрасываем индекс при обновлении фильтров
+            currentIndex = 8; // Сбрасываем индекс при обновлении фильтров
             const products = data.data;
     
             if (products && Array.isArray(products)) {
@@ -382,9 +382,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     productCountElement.textContent = `${totalProducts} товаров`;
                 }
     
-                renderProductCards(products.slice(0, 5), container); // Показываем первые 5 товаров
+                renderProductCards(products.slice(0, 8), container); // Показываем первые 5 товаров
     
-                if (products.length > 5) {
+                if (products.length > 8) {
                     showMoreButton.style.display = 'block';
                 } else {
                     showMoreButton.style.display = 'none';
@@ -392,11 +392,11 @@ document.addEventListener('DOMContentLoaded', () => {
     
                 showMoreButton.onclick = () => {
                     // Подгружаем следующие 5 товаров
-                    const nextProducts = products.slice(currentIndex, currentIndex + 5);
+                    const nextProducts = products.slice(currentIndex, currentIndex + 8);
                     renderProductCards(nextProducts, container);
     
                     // Обновляем текущий индекс
-                    currentIndex += 5;
+                    currentIndex += 8;
     
                     if (currentIndex >= products.length) {
                         showMoreButton.style.display = 'none'; // Скрываем кнопку, если товаров больше нет
