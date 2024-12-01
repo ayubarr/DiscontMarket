@@ -33,9 +33,9 @@ namespace DiscontMarket.Services.Services.Implementations
 
                 var entity = new AttributeEntity 
                 { 
-                    Name =  entityDTO.CategoryName,
+                    Name =  entityDTO.Name,
                     Type = entityDTO.Type,
-                    NameTranslate = entityDTO.TypeTranslate,
+                    NameTranslate = entityDTO.NameTranslate,
                     AttributeCategories = categories.Select(category => new AttributeCategory
                     {
                         Category = category // Связываем существующую категорию
@@ -78,27 +78,27 @@ namespace DiscontMarket.Services.Services.Implementations
             }
         }
 
-        public IBaseResponse<IEnumerable<AttributeEntity>> GetAllByAttributesName(string attributeName)
+ 
+
+        public IBaseResponse<IEnumerable<string>> GetAllByAttributesByType(string attributeType)
         {
             try
             {
-                var atributes = _attributeRepository
-                    .GetAll()
-                    .Where(a => a.Name.Equals(attributeName))
-                    .AsEnumerable();
+                var atributes = _attributeRepository.GetAttributeNamesByType(attributeType);
 
                 if (atributes is null)
                 {
-                    throw new Exception($"not found atribute: {attributeName}");
+                    throw new Exception($"not found atribute type: {attributeType}");
                 }
 
-                ObjectValidator<IEnumerable<AttributeEntity>>.CheckIsNotNullObject(atributes);
 
-                return ResponseFactory<IEnumerable<AttributeEntity>>.CreateSuccessResponse(atributes);
+                ObjectValidator<IEnumerable<string>>.CheckIsNotNullObject(atributes);
+
+                return ResponseFactory<IEnumerable<string>>.CreateSuccessResponse(atributes);
             }
             catch (Exception ex)
             {
-                return ResponseFactory<IEnumerable<AttributeEntity>>.CreateErrorResponse(ex);
+                return ResponseFactory<IEnumerable<string>>.CreateErrorResponse(ex);
 
             }
         }
@@ -107,10 +107,8 @@ namespace DiscontMarket.Services.Services.Implementations
         {
             try
             {
-                var category = _categoryRepository
-                    .GetAll()
-                    .Where(c => c.Name.Equals(categoryName))
-                    .FirstOrDefault();
+                var category = GetCategory(categoryName);
+
 
                 if (category == null)
                 {
@@ -131,6 +129,38 @@ namespace DiscontMarket.Services.Services.Implementations
                 return ResponseFactory<IEnumerable<AttributeEntity>>.CreateErrorResponse(ex);
 
             }
+        }
+
+        public IBaseResponse<IEnumerable<string>> GetAllAttributeTypesByCategoryName(string categoryName)
+        {
+            try
+            {
+                var category = GetCategory(categoryName);
+
+                if (category == null)
+                {
+                    throw new Exception($"not found category: {categoryName}");
+                }
+
+                var atributes = _attributeRepository.GetAttributeTypesByCategory(category);
+                    
+                ObjectValidator<IEnumerable<string>>.CheckIsNotNullObject(atributes);
+
+                return ResponseFactory<IEnumerable<string>>.CreateSuccessResponse(atributes);
+            }
+            catch (Exception ex)
+            {
+                return ResponseFactory<IEnumerable<string>>.CreateErrorResponse(ex);
+
+            }
+        }
+
+        private Category GetCategory(string categoryName)
+        {
+            return _categoryRepository
+                    .GetAll()
+                    .Where(c => c.Name.Equals(categoryName))
+                    .FirstOrDefault();
         }
     }
 }

@@ -3,6 +3,7 @@ using System;
 using DiscontMarket.DAL.SqlServer.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -11,9 +12,11 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace DiscontMarket.DAL.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20241201140022_initProduct")]
+    partial class initProduct
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -356,8 +359,7 @@ namespace DiscontMarket.DAL.Migrations
 
                     b.Property<string>("IconPath")
                         .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("varchar");
+                        .HasColumnType("text");
 
                     b.Property<decimal>("Price")
                         .HasPrecision(15, 2)
@@ -370,9 +372,6 @@ namespace DiscontMarket.DAL.Migrations
 
                     b.Property<long>("Quantity")
                         .HasColumnType("bigint");
-
-                    b.Property<int>("Rating")
-                        .HasColumnType("integer");
 
                     b.Property<string>("Status")
                         .IsRequired()

@@ -38,5 +38,24 @@ namespace DiscontMarket.DAL.Repository.Implementations
                 );
             return data;
         }
+
+        public List<string> GetAttributeNamesByType(string attributeType)
+        {
+            return _context.Attributes
+                .Where(x => x.Type.ToLower()
+                .Equals(attributeType.ToLower()))
+                .Select(x => x.Name)
+                .ToList();
+        }
+
+        public List<string> GetAttributeTypesByCategory(Category category)
+        {
+            return _context.Attributes
+               .Where(a => a.AttributeCategories.Any(c => c.CategoryID == category.ID))
+               .Select(a => a.Type)
+               .Distinct()
+               .ToList();
+
+        }
     }
 }

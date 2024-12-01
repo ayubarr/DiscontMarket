@@ -7,10 +7,13 @@ namespace DiscontMarket.Services.Services.Interfaces
     public interface IAttributeService : IBaseService<AttributeEntity>
     {
         IBaseResponse<IEnumerable<AttributeEntity>> GetAllByCategoryName(string categoryName);
-        IBaseResponse<IEnumerable<AttributeEntity>> GetAllByAttributesName(string attributeName);
+        IBaseResponse<IEnumerable<string>> GetAllByAttributesByType(string attributeName);
+        IBaseResponse<IEnumerable<string>> GetAllAttributeTypesByCategoryName(string categoryName);
 
         IBaseResponse<AttributeEntity> CreateAttribute(CreateAttributeDTO entityDTO);
 
         Task<IBaseResponse<bool>> DeleteByNameAsync(string attributeName);
+
+
     }
 }

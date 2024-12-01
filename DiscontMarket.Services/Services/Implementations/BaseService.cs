@@ -12,8 +12,8 @@ namespace DiscontMarket.Services.Services.Implementations
     public class BaseService<T> : IBaseService<T>
         where T : BaseEntity
     {
-        private readonly IBrandRepository<T> _repository;
-        public BaseService(IBrandRepository<T> repository)
+        private readonly IBaseRepository<T> _repository;
+        public BaseService(IBaseRepository<T> repository)
         {
             _repository = repository;
         }

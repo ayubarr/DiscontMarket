@@ -34,9 +34,9 @@ namespace DiscontMarket.Services.Services.Implementations
 
                 var entity = new Brand
                 {
-                    Name = Brand.Name,
-                    Type = Brand.Type,
-                    NameTranslate = Brand.NameTranslate,
+                    Name = entityDTO.Name,
+                    Type = "Бренды",
+                    NameTranslate = entityDTO.NameTranslate,
                     BrandCategories = categories.Select(category => new BrandCategory
                     {
                         Category = category // Связываем существующую категорию

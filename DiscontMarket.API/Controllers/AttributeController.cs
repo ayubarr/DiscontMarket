@@ -19,7 +19,7 @@ namespace DiscontMarket.API.Controllers
         //[Authorize(AuthenticationSchemes = "Bearer", Roles = "Admin")]
         [HttpPost]
         [Route("get-by-category")]
-        public IActionResult GetAll([FromBody] string categoryName)
+        public IActionResult GetAllByCategory([FromBody] string categoryName)
         {
             var response = _attributeService.GetAllByCategoryName(categoryName);
 
@@ -29,12 +29,24 @@ namespace DiscontMarket.API.Controllers
             return BadRequest(response.Message);
         }
 
+        [HttpPost]
+        [Route("get-types-by-category")]
+        public IActionResult GetAllAttributeTypesByCategory([FromBody] string categoryName)
+        {
+            var response = _attributeService.GetAllAttributeTypesByCategoryName(categoryName);
+
+            if (response.IsSuccess)
+                return Ok(response.Data);
+
+            return BadRequest(response.Message);
+        }
+
         // Получение атрибутов по названию атрибута
         [HttpPost]
-        [Route("get-by-attribute")]
-        public IActionResult GetAllByAttributeName([FromBody] string attributeName)
+        [Route("get-names-by-attribute-type")]
+        public IActionResult GetAllByAttributeName([FromBody] string attributeType)
         {
-            var response = _attributeService.GetAllByAttributesName(attributeName);
+            var response = _attributeService.GetAllByAttributesByType(attributeType);
             if (response.IsSuccess)
                 return Ok(response.Data);
 

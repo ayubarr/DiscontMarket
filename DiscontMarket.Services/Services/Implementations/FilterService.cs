@@ -30,22 +30,7 @@ namespace DiscontMarket.Services.Services.Implementations
                );
 
 
-            // Группируем атрибуты по категориям и преобразуем в нужный формат
-            //var result = combinedData.ToDictionary(
-            //    category => category.Key,
-            //    category => new FilterCategoryDTO
-            //    {
-            //        Filters = category.Value.Select(attr => new FilterDTO
-            //        {
-            //            Title = attr.Key,
-            //            Options = attr.Value.Select(option => new FilterOptionDTO
-            //            {
-            //                Label = option.NameTranslate,
-            //                Value = option.Name
-            //            }).ToList()
-            //        }).ToList()
-            //    }
-            //);
+           
 
             var result = combinedData.ToDictionary(
                 group => group.Key,

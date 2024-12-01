@@ -19,7 +19,7 @@ namespace DiscontMarket.API
     {
         public static IServiceCollection InitializeRepositories(this IServiceCollection services)
         {
-            services.AddScoped(typeof(IBrandRepository<>), typeof(BaseRepository<>));
+            services.AddScoped(typeof(IBaseRepository<>), typeof(BaseRepository<>));
             services.AddScoped(typeof(UserManager<>));
             services.AddScoped(typeof(IProductRepository), typeof(ProductRepository));
             services.AddScoped(typeof(IAttributeRepository), typeof(AttributeRepository));

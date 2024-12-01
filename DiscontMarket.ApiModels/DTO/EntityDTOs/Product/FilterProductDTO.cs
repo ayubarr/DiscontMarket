@@ -1,6 +1,4 @@
 ﻿using DiscontMarket.ApiModels.DTO.BaseDTOs;
-using DiscontMarket.ApiModels.DTO.EntityDTOs.Attribute;
-using DiscontMarket.ApiModels.DTO.EntityDTOs.Brend;
 using DiscontMarket.ApiModels.DTO.EntityDTOs.Category;
 using DiscontMarket.Domain.Models.Enums;
 

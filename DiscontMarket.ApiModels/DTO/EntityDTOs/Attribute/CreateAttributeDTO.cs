@@ -6,7 +6,7 @@ namespace DiscontMarket.ApiModels.DTO.EntityDTOs.Attribute
     {
         public string Name { get; set; }
         public string Type { get; set; }
-        public string TypeTranslate { get; set; }
+        public string NameTranslate { get; set; }
 
         public string CategoryName { get; set; }
     }

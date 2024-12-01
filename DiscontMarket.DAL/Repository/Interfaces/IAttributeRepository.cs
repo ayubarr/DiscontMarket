@@ -8,5 +8,10 @@ namespace DiscontMarket.DAL.Repository.Interfaces
     {
         Dictionary<string, Dictionary<string, List<FilterAtributeAndBrandDTO>>> GetAllAttributesGroupedByCategory();
 
+        List<string> GetAttributeNamesByType(string attributeType);
+
+        List<string> GetAttributeTypesByCategory(Category attributeType);
+
+
     }
 }

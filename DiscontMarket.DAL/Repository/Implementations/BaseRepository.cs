@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace DiscontMarket.DAL.Repository.Implementations
 {
-    public class BaseRepository<T> : IBrandRepository<T>
+    public class BaseRepository<T> : IBaseRepository<T>
         where T : BaseEntity
     {
         protected readonly AppDbContext _context;

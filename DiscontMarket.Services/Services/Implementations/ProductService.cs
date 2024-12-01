@@ -1,6 +1,7 @@
 ﻿using DiscontMarket.ApiModels.DTO.EntityDTOs.Product;
 using DiscontMarket.ApiModels.Responce.Helpers;
 using DiscontMarket.ApiModels.Responce.Interfaces;
+using DiscontMarket.DAL.Migrations;
 using DiscontMarket.DAL.Repository.Interfaces;
 using DiscontMarket.Domain.Models.Abstractions.LinkEntities;
 using DiscontMarket.Domain.Models.Entities;
@@ -14,17 +15,20 @@ namespace DiscontMarket.Services.Services.Implementations
     public class ProductService : BaseService<Product>, IProductService
     {
         private readonly IProductRepository _productRepository;
-        private readonly IBrandRepository<Brand> _brandRepository;
-        private readonly IBrandRepository<Category> _categoryRepository;
-        private readonly IBrandRepository<AttributeEntity> _attributeRepository;
+        private readonly IBaseRepository<Brand> _brandRepository;
+        private readonly IBaseRepository<Category> _categoryRepository;
+        private readonly IBaseRepository<AttributeEntity> _attributeRepository;
+        private readonly IBaseRepository<Image> _imageRepository;
 
-        public ProductService(IProductRepository productRepository, IBrandRepository<Brand> brandRepository,
-            IBrandRepository<Category> categoryRepository, IBrandRepository<AttributeEntity> attributeRepository) : base(productRepository)
+        public ProductService(IProductRepository productRepository, IBaseRepository<Brand> brandRepository,
+            IBaseRepository<Category> categoryRepository, IBaseRepository<AttributeEntity> attributeRepository, 
+            IBaseRepository<Image> imageRepository) : base(productRepository)
         {
             _productRepository = productRepository;
             _brandRepository = brandRepository;
             _categoryRepository = categoryRepository;
             _attributeRepository = attributeRepository;
+            _imageRepository = imageRepository;
         }
 
         public IBaseResponse<Product> CreateProduct(CreateProductDTO entityDTO)
@@ -85,7 +89,7 @@ namespace DiscontMarket.Services.Services.Implementations
                     ProductName = entityDTO.ProductName,
                     Price = entityDTO.Price,
                     Quantity = entityDTO.Quantity,
-                    ImagePath = entityDTO.ImagePath,
+                    IconPath = entityDTO.ImagePath,
                     Availability = availability,
                     Status = productStatus,
                     Brand = brand,
@@ -130,7 +134,7 @@ namespace DiscontMarket.Services.Services.Implementations
                     price = product.Price,
                     productAvailability = product.Availability.ToString(),
                     productStatus = product.Status.ToString(),
-                    image = product.ImagePath,
+                    image = product.IconPath,
                     quantity = product.Quantity,
                     userid = product.UserID,
                     categoryid = product.CategoryID,
@@ -145,6 +149,60 @@ namespace DiscontMarket.Services.Services.Implementations
                 return ResponseFactory<IEnumerable<ProductDTO>>.CreateErrorResponse(ex);
             }
 
+        }
+
+        public IBaseResponse<GetProductDTO> GetProductByIdAsync(uint Id)
+        {
+            try
+            {
+                var product = _productRepository.GetById(Id);
+
+                ObjectValidator<Product>.CheckIsNotNullObject(product);
+
+                var productImages = _imageRepository
+                    .GetAll()
+                    .Where(i => i.ProductID == Id)
+                    .Select(i => i.Path)
+                    .ToList();
+
+
+                // Получаем характеристики продукта через контейнер атрибутов
+                var characteristics = _attributeRepository
+                    .GetAll()
+                    .Where(a => a.ProductAttributes!.Any(pa => pa.ProductID == Id))
+                    .Select(a => new
+                    {
+                        Name = a.Type,
+                        Value = a.NameTranslate
+                    })
+                    .Where(attr => !string.IsNullOrEmpty(attr.Name) && !string.IsNullOrEmpty(attr.Value))
+                    .ToDictionary(attr => attr.Name!, attr => attr.Value!) ?? new Dictionary<string, string>();
+
+
+
+
+                var productDto = new GetProductDTO
+                {
+                    productId = product.ID,
+                    title =  product.ProductName,
+                    rating = product.Rating,
+                    description = product.Description,
+                    price = product.Price,
+                    characteristics = characteristics,
+                    images = productImages,
+                    fullDescription = product.FullDescription,
+
+                };
+
+                ObjectValidator<GetProductDTO>.CheckIsNotNullObject(productDto);
+
+                return ResponseFactory<GetProductDTO>.CreateSuccessResponse(productDto);
+            }
+            catch (Exception ex)
+            {
+                return ResponseFactory<GetProductDTO>.CreateErrorResponse(ex);
+
+            }
         }
     }
 }

@@ -9,7 +9,12 @@ namespace DiscontMarket.Domain.Models.Entities
         public string ProductName { get; set; }
         public decimal Price { get; set; }
         public uint Quantity { get; set; }
-        public string ImagePath { get; set; }
+        public string IconPath { get; set; }
+        public int Rating { get; set; }
+
+        public string Description { get; set; }
+        public string FullDescription { get; set; }
+
         public Availability Availability { get; set; }
         public ProductStatus Status { get; set; }
 

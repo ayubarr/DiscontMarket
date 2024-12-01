@@ -13,11 +13,20 @@ namespace DiscontMarket.DAL.SqlServer.Configuration
             builder.HasKey(p => p.ID);
 
             PropertyHelper<Product>.SetProperties(builder, false,
-               p => p.ProductName
+               p => p.ProductName,
+               p => p.IconPath
+            );
+
+            PropertyHelper<Product>.SetProperties(builder, true,
+              p => p.Description,
+              p => p.FullDescription
             );
 
             PropertyHelper<Product>.SetProperties(builder,
-                p => p.Price
+              p => p.Price
+            );
+            PropertyHelper<Product>.SetProperties(builder,
+              p => p.Rating
             );
 
             builder.Property(p => p.Availability)
