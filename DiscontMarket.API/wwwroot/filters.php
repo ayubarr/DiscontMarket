@@ -14,17 +14,8 @@ $products = [
         "quantity" => 10,
         "productAvailability" => "instock",
         "productStatus" => "discount",
-        "userID" => 101,
+        "id" => 101,
         "brendId" => 1
-    ],
-    [
-        "productName" => "Смартфон Xiaomi Redmi Note 12",
-        "price" => 20000,
-        "quantity" => 25,
-        "productAvailability" => "preorderlater",
-        "productStatus" => "discount",
-        "userID" => 102,
-        "brendId" => 2
     ],
     [
         "productName" => "Ноутбук LG Gram",
@@ -32,7 +23,7 @@ $products = [
         "quantity" => 5,
         "productAvailability" => "preordertomorrow",
         "productStatus" => "discount",
-        "userID" => 103,
+        "id" => 103,
         "brendId" => 3
     ],
     [
@@ -41,7 +32,7 @@ $products = [
         "quantity" => 7,
         "productAvailability" => "instock",
         "productStatus" => "discount",
-        "userID" => 104,
+        "id" => 104,
         "brendId" => 4
     ],
     [
@@ -50,7 +41,7 @@ $products = [
         "quantity" => 85,
         "productAvailability" => "preorderlater",
         "productStatus" => "discount",
-        "userID" => 105,
+        "id" => 105,
         "brendId" => 2
     ],
     [
@@ -59,7 +50,7 @@ $products = [
         "quantity" => 20,
         "productAvailability" => "preordertomorrow",
         "productStatus" => "discount",
-        "userID" => 106,
+        "id" => 106,
         "brendId" => 3
     ],
     [
@@ -68,7 +59,7 @@ $products = [
         "quantity" => 21,
         "productAvailability" => "instock",
         "productStatus" => "discount",
-        "userID" => 107,
+        "id" => 107,
         "brendId" => 4
     ]
 ];

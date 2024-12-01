@@ -88,7 +88,7 @@ authButton.addEventListener('click', () => {
     }
 
     // Отправка данных на сервер для проверки
-    fetch('https://192.168.192.59/сайт/', {
+    fetch('http://192.168.192.59/сайт/login.php', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ username, password })
@@ -103,7 +103,7 @@ authButton.addEventListener('click', () => {
             localStorage.removeItem('attempts');
             attemptCounter = 0;
 
-            sessionEndTime = Date.now() + 10 * 60000; // Сессия длится 10 минут
+            sessionEndTime = Date.now() + 60 * 60000; // Сессия длится 10 минут
             localStorage.setItem('sessionEndTime', sessionEndTime);
 
             startSessionTimer();
@@ -212,8 +212,222 @@ document.querySelectorAll('.file-input').forEach(input => {
 });
 
 document.getElementById('manage-products-btn').addEventListener('click', () => {
-    alert('Открытие интерфейса управления товарами...');
+    document.getElementById('manage-products-container').style.display = 'block';
+    document.getElementById('dashboard-container').style.display = 'none';
 });
+
+// Возврат на панель управления
+document.getElementById('back-btn-products').addEventListener('click', () => {
+    document.getElementById('manage-products-container').style.display = 'none';
+    document.getElementById('dashboard-container').style.display = 'block';
+});
+
+// Обработчик выбора категории
+document.getElementById('category-select').addEventListener('change', (event) => {
+    const category = event.target.value;
+    updateCharacteristicsFields(category);
+});
+
+// Вызов функции для инициализации характеристик при загрузке страницы
+window.addEventListener('DOMContentLoaded', function () {
+    updateCharacteristics();  // При первой загрузке отображаем характеристики для первой категории
+});
+
+// Загрузка данных характеристик из PHP (JSON)
+let categoryFilters = {};
+
+// Получаем фильтры через POST-запрос
+fetch('http://192.168.192.59/сайт/loadallcharacteristics.php', {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ action: 'getCategoryFilters' })
+})
+    .then(response => response.json())
+    .then(data => {
+        categoryFilters = data;
+    })
+    .catch(error => {
+        console.error('Ошибка загрузки фильтров:', error);
+    });
+
+document.getElementById('product-images').addEventListener('change', (event) => {
+    const files = event.target.files;
+    const validFiles = [];
+    const dataTransfer = new DataTransfer(); // Создание нового объекта для хранения файлов
+
+    Array.from(files).forEach((file) => {
+        if (!file.name.toLowerCase().endsWith('.png')) {
+            alert(`Файл ${file.name} не является изображением .png`);
+            return;
+        }
+
+        const img = new Image();
+        img.src = URL.createObjectURL(file);
+        img.onload = () => {
+            if (img.width !== 490 || img.height !== 490) {
+                alert(`Изображение ${file.name} должно быть размером 490x490 пикселей.`);
+            } else {
+                validFiles.push(file);
+                dataTransfer.items.add(file); // Добавляем только валидные файлы
+            }
+
+            // Обновляем input только после завершения проверки каждого файла
+            if (validFiles.length === dataTransfer.items.length) {
+                event.target.files = dataTransfer.files;
+            }
+        };
+    });
+
+    // Удаляем все файлы из input, пока не пройдет проверка
+    event.target.files = dataTransfer.files;
+});
+
+// Функция для обновления характеристик в зависимости от категории
+function updateCharacteristicsFields(category) {
+    const container = document.getElementById('characteristics-container');
+    container.innerHTML = ''; // Очищаем старые поля
+
+    // Проверка на существующие фильтры для выбранной категории
+    if (category && categoryFilters[category]) {
+        const filters = categoryFilters[category].filters;
+        filters.forEach(filter => {
+            const filterHTML = `
+                <label for="${filter.title}">${filter.title}:</label>
+                <select id="${filter.title}" required>
+                    ${filter.options.map(option => `<option value="${option.value}">${option.label}</option>`).join('')}
+                </select>
+            `;
+            container.innerHTML += filterHTML;
+        });
+    }
+}
+
+// Обработчик сохранения товара
+document.getElementById('save-product-btn').addEventListener('click', () => {
+    const title = document.getElementById('product-title').value;
+    const description = document.getElementById('product-description').value;
+    const fullDescription = document.getElementById('product-full-description').value;
+    const price = document.getElementById('product-price').value;
+    const images = document.getElementById('product-images').files;
+    const status = document.getElementById('product-status').value;
+    const category = document.getElementById('category-select').value;
+
+    // Проверка обязательных полей
+    if (!category || !title || !description || !fullDescription || !price || images.length === 0 || !status) {
+        alert("Пожалуйста, заполните все обязательные поля.");
+        return;
+    }
+
+    // Проверка на отрицательное значение цены
+    if (parseFloat(price) <= 0) {
+        alert("Цена должна быть положительным числом.");
+        return;
+    }
+
+    const characteristics = [];
+    const filters = categoryFilters[category]?.filters;
+    if (filters) {
+        filters.forEach(filter => {
+            const value = document.getElementById(filter.title)?.value;
+            if (value) {
+                characteristics.push({
+                    name: filter.title,
+                    value: value
+                });
+            }
+        });
+    }
+
+    // Сохранение изображений в папке ./items/productimages/
+    const imagePaths = [];
+    Array.from(images).forEach((file, index) => {
+        const formData = new FormData();
+        formData.append('image', file);
+        formData.append('imageName', `productimage_${Date.now()}_${index}.png`);
+
+        // Отправка изображения на сервер с сохранением
+        fetch('http://192.168.192.59/сайт/saveimage.php', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            // Добавляем путь к изображению в массив
+            imagePaths.push(data.imagePath);
+        })
+        .catch(error => {
+            console.error('Ошибка сохранения изображения:', error);
+        });
+    });
+
+    // Создание объекта товара
+    const newProduct = {
+        title,
+        description,
+        fullDescription,
+        price,
+        status,
+        images: imagePaths,
+        characteristics
+    };
+
+    console.log(newProduct);
+
+    // Отправка данных товара на сервер
+    fetch('http://192.168.192.59/сайт/saveproduct.php', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(newProduct)
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log('Товар успешно сохранен:', data);
+    })
+    .catch(error => {
+        console.error('Ошибка отправки данных товара:', error);
+    });
+});
+
+
+
+
+document.getElementById('delete-products-btn').addEventListener('click', () => {
+    document.getElementById('dashboard-container').style.display = 'none';
+    document.getElementById('delete-products-container').style.display = 'block';
+});
+
+// Возврат на панель управления
+document.getElementById('back-btn-delete').addEventListener('click', () => {
+    document.getElementById('delete-products-container').style.display = 'none';
+    document.getElementById('dashboard-container').style.display = 'block';
+});
+
+document.getElementById('delete-product-btn').addEventListener('click', () => {
+    const title = document.getElementById('product-delete-title').value.trim();
+    
+    if (title) {
+        fetch('http://192.168.192.59/сайт/delete_product.php', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ title })
+        })
+        .then(response => response.json())
+        .then(data => {
+            document.getElementById('delete-result').innerText = data.message;
+        })
+        .catch(error => {
+            console.error('Ошибка:', error);
+        });
+    } else {
+        alert('Введите название товара.');
+    }
+});
+
+
 
 const maintenanceBtn = document.getElementById('maintenance-btn');
 

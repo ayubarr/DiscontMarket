@@ -6,19 +6,34 @@ document.addEventListener('DOMContentLoaded', () => {
     const sliderTrack = document.querySelector('.slider-track');
     const filtersContainer = document.getElementById('filters-container');
     const sortingOptions = document.querySelectorAll('.sorting-option');
-    const showMoreButton = document.getElementById('show-more');
-    const productCountElement = document.querySelector('.product-count');
     const maxValue = parseInt(maxSlider?.max || 0);
 
     const params = new URLSearchParams(window.location.search);
 
-    let attributes = []; // Сюда будем записывать атрибуты
-    let brands = []; // Сюда будем записывать бренды
+    let attributedtos = []; // Сюда будем записывать атрибуты
+    let branddtos = []; // Сюда будем записывать бренды
 
-    const brandsFilters = ['Samsung', 'LG', 'Xiaomi', 'Panasonic'];
-    const screenResolution = ['HD', 'Full HD', 'QHD', '4K'];
-    const itemColor = ['white', 'black', 'silver'];
+    let categoryFilters = {};
 
+    fetch('http://192.168.192.59/сайт/load.php', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+    .then(response => response.json())
+    .then(data => {
+        
+        // Обновление categoryFilters данными из PHP
+        Object.keys(data).forEach(category => {
+            categoryFilters[category] = {
+                brands: data[category].brands,
+                attributes: data[category].attributes
+            };
+        });
+        
+        console.log('Обновленные категории:', categoryFilters);
+        
     const activeFilters = {};
 
     // Установить "По популярности" активным по умолчанию
@@ -114,7 +129,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const category = params.keys().next().value;
 
-    fetch('api/Filter/get-filters')
+    fetch('js/json/SortedFilters.json')
         .then(response => response.json())
         .then(data => {
             const categoryFilters = data[category];
@@ -181,6 +196,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 newParams.delete(filterId);
             }
         });
+
+        attributedtos = Array.from(newParams.keys()).filter(key => categoryFilters[category]?.attributes.includes(key));
+        branddtos = Array.from(newParams.keys()).filter(key => categoryFilters[category]?.brands.includes(key));
     
         // Добавляем значения слайдера
         const minValue = minSlider.value;
@@ -255,17 +273,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Инициализация активных фильтров при загрузке страницы
     function initActiveFilters() {
+        const category = params.keys().next().value; // Получаем текущую категорию из URL
+        
+        const currentCategoryFilters = categoryFilters[category];
+        if (!currentCategoryFilters) return;
+    
         params.forEach((value, key) => {
-            if (brandsFilters.includes(key) && !brands.includes(key)) {
-                brands.push(key);  // Добавляем, если еще нет
-            } else if ((screenResolution.includes(key) || itemColor.includes(key)) && !attributes.includes(key)) {
-                attributes.push(key);  // Добавляем, если еще нет
+            if (currentCategoryFilters.brands.includes(key) && !branddtos.includes(key)) {
+                branddtos.push(key);
+            } else if (currentCategoryFilters.attributes.includes(key) && !attributedtos.includes(key)) {
+                attributedtos.push(key);
             }
         });
-
-        // Логируем полученные фильтры для проверки
-        console.log('Attributes:', attributes);
-        console.log('Brands:', brands);
+    
+        branddtos = branddtos.filter(filter => params.has(filter));
+        attributedtos = attributedtos.filter(filter => params.has(filter));
+    
+        console.log('AttributeDTOs:', attributedtos);
+        console.log('BrandDTOs:', branddtos);
+    
         const checkboxes = filtersContainer.querySelectorAll('.checkbox');
         checkboxes.forEach(checkbox => {
             const filterId = checkbox.getAttribute('data-filter');
@@ -274,7 +300,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 console.log(`Фильтр ${filterId} активирован из URL`);
             }
         });
-    }
+    }    
 
     function getActiveFilters() {
     
@@ -284,50 +310,27 @@ document.addEventListener('DOMContentLoaded', () => {
             activeFilters.sort = activeSort.dataset.sort;
         }
     
-        // Фильтры по чекбоксам
-        const stockCategories = ['instock', 'preorderlater', 'preordertomorrow'];
-        const statusCategories = ['discount', 'damagedpackage', 'minordefects'];
-        const brandsFilters = ['Samsung', 'LG', 'Xiaomi', 'Panasonic'];
-        const screenResolution = ['HD', 'Full HD', 'QHD', '4K'];
-        const itemColor = ['white', 'black', 'silver']; 
+        const category = params.keys().next().value; // Получаем текущую категорию из URL
+    const currentCategoryFilters = categoryFilters[category] || {};
     
-        activeFilters.availability = [];
-        activeFilters.status = [];
-
-        activeFilters.Attributes = [];
-        activeFilters.Brands = [];
-
-        activeFilters.Attributes = [...attributes];  // Копирование массива
-        activeFilters.Brands = [...brands];  // Копирование массива
+    activeFilters.AttributeDTOs = [...attributedtos];
+    activeFilters.BrandDTOs = [...branddtos];
     
-        const checkboxes = filtersContainer.querySelectorAll('.checkbox');
-        checkboxes.forEach(checkbox => {
-            if (checkbox.classList.contains('active')) {
-                const filterId = checkbox.getAttribute('data-filter');
-                
-                if (stockCategories.includes(filterId)) {
-                    activeFilters.availability.push(filterId);
-                } else if (statusCategories.includes(filterId)) {
-                    activeFilters.status.push(filterId);
+    const checkboxes = filtersContainer.querySelectorAll('.checkbox');
+    checkboxes.forEach(checkbox => {
+        if (checkbox.classList.contains('active')) {
+            const filterId = checkbox.getAttribute('data-filter');
+            if (currentCategoryFilters.brands?.includes(filterId)) {
+                if (!activeFilters.BrandDTOs.includes(filterId)) {
+                    activeFilters.BrandDTOs.push(filterId);
                 }
-                else if (category === 'tv') {
-                    // Проверяем фильтры только если категория `tv`
-                    if (brandsFilters.includes(filterId)) {
-                        if (!activeFilters.Brands.includes(filterId)) {
-                            activeFilters.Brands.push(filterId);
-                        }
-                    } else if (screenResolution.includes(filterId) || itemColor.includes(filterId)) {
-                        if (!activeFilters.Attributes.includes(filterId)) {
-                            activeFilters.Attributes.push(filterId);
-                        }
-                    }
-                } else {
-                    if (!activeFilters[filterId]) {
-                        activeFilters[filterId] = true;
-                    }
+            } else if (currentCategoryFilters.attributes?.includes(filterId)) {
+                if (!activeFilters.AttributeDTOs.includes(filterId)) {
+                    activeFilters.AttributeDTOs.push(filterId);
                 }
             }
-        });
+        }
+    });
     
         // Значения слайдеров
         const minPrice = minSlider.value;
@@ -341,14 +344,15 @@ document.addEventListener('DOMContentLoaded', () => {
     initSliderValues();
     initActiveFilters();
 
+    let currentIndex = 5; // Начальный индекс для следующих товаров
+
     function sendFiltersToServer() {
         const filters = getActiveFilters();
         const category = params.keys().next().value; // Получаем категорию из URL
-
-        // Добавляем категорию в объект фильтров
-        filters.CategoryDTO = {Name : category};
     
-        fetch('api/Product/get-all', {
+        filters.CategoryDTO = { Name: category }; // Добавляем категорию в фильтры
+    
+        fetch('http://192.168.192.59/сайт/filters.php', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -360,55 +364,56 @@ document.addEventListener('DOMContentLoaded', () => {
             console.log('Данные успешно получены:', data);
     
             const container = document.querySelector('.main-items-section');
+            const showMoreButton = document.getElementById('show-more');
+            const productCountElement = document.querySelector('.product-count');
     
             if (!container) {
-                console.error('Контейнер для карточек не найден. Убедитесь, что HTML содержит .main-items-section .products-carousel.');
+                console.error('Контейнер для карточек не найден.');
                 return;
             }
     
-            // Очищаем контейнер перед добавлением новых карточек
-            container.innerHTML = '';
-    
+            container.innerHTML = ''; // Очищаем контейнер
+            currentIndex = 5; // Сбрасываем индекс при обновлении фильтров
             const products = data.data;
-            // Проверяем, что данные корректны
+    
             if (products && Array.isArray(products)) {
-
                 const totalProducts = products.length;
                 if (productCountElement) {
                     productCountElement.textContent = `${totalProducts} товаров`;
                 }
-
-                products.forEach(product => {
-                    const card = document.createElement('div');
-                    card.classList.add('product-card-main');
     
-                    // Создаем содержимое карточки
-                    card.innerHTML = `
-                        <img src="${product.image || 'items/filters/no-image.png'}" alt="Товар" class="product-image">
-                        <div class="product-separator-main"></div>
-                        <p class="product-name-main">${product.productName}</p>
-                        <div class="product-price-container-main">
-                            <span class="product-price-main">${product.price} ₽</span>
-                            <button class="order-button-main">Оформить заказ</button>
-                        </div>
-                        <div class="compare-prices-wrapper">
-                            <span class="compare-prices-main" data-product-name="${product.productName}">Сравнить цены</span>
-                        </div>
-                    `;
+                renderProductCards(products.slice(0, 5), container); // Показываем первые 5 товаров
     
-                    // Добавляем карточку в контейнер
-                    container.appendChild(card);
+                if (products.length > 5) {
+                    showMoreButton.style.display = 'block';
+                } else {
+                    showMoreButton.style.display = 'none';
+                }
+    
+                showMoreButton.onclick = () => {
+                    // Подгружаем следующие 5 товаров
+                    const nextProducts = products.slice(currentIndex, currentIndex + 5);
+                    renderProductCards(nextProducts, container);
+    
+                    // Обновляем текущий индекс
+                    currentIndex += 5;
+    
+                    if (currentIndex >= products.length) {
+                        showMoreButton.style.display = 'none'; // Скрываем кнопку, если товаров больше нет
+                    }
+                };
+    
+                container.addEventListener('click', (event) => {
+                    const target = event.target;
+                    const card = target.closest('.product-card-main');
+                    if (card && !target.closest('.order-button-main') && !target.closest('.compare-prices-main')) {
+                        const productId = card.getAttribute('data-id');
+                        if (productId) {
+                            window.location.href = `product.html?id=${productId}`;
+                        }
+                    }
                 });
     
-                // Добавляем обработчики для всех кнопок "Сравнить цены"
-                const compareButtons = container.querySelectorAll('.compare-prices-main');
-                compareButtons.forEach(button => {
-                    button.addEventListener('click', () => {
-                        const productName = button.getAttribute('data-product-name');
-                        const yandexMarketURL = `https://market.yandex.ru/search?text=${encodeURIComponent(productName)}`;
-                        window.open(yandexMarketURL, '_blank'); // Открываем ссылку в новой вкладке
-                    });
-                });
             } else {
                 console.warn('Нет данных товаров для отображения.');
             }
@@ -416,8 +421,47 @@ document.addEventListener('DOMContentLoaded', () => {
         .catch(error => {
             console.error('Ошибка при получении данных:', error);
         });
-    }     
+    }
+    
+    function renderProductCards(products, container) {
+        products.forEach(product => {
+            const card = document.createElement('div');
+            card.classList.add('product-card-main');
+            if (product.id !== undefined) {
+                card.setAttribute('data-id', product.id.toString());
+            }
+    
+            card.innerHTML = `
+                <img src="${product.image || 'items/filters/no-image.png'}" alt="Товар" class="product-image">
+                <div class="product-separator-main"></div>
+                <p class="product-name-main">${product.productName}</p>
+                <div class="product-price-container-main">
+                    <span class="product-price-main">${product.price} ₽</span>
+                    <button class="order-button-main">Оформить заказ</button>
+                </div>
+                <div class="compare-prices-wrapper">
+                    <span class="compare-prices-main" data-product-name="${product.productName}">Сравнить цены</span>
+                </div>
+            `;
+            container.appendChild(card);
+        });
+    
+        const compareButtons = container.querySelectorAll('.compare-prices-main');
+        compareButtons.forEach(button => {
+            button.addEventListener('click', (event) => {
+                event.stopPropagation();
+                const productName = button.getAttribute('data-product-name');
+                const yandexMarketURL = `https://market.yandex.ru/search?text=${encodeURIComponent(productName)}`;
+                window.open(yandexMarketURL, '_blank');
+            });
+        });
+    }
+    
 
     sendFiltersToServer();
+    })
+    .catch(error => {
+        console.error('Ошибка при загрузке данных:', error);
+    });
     
 });
