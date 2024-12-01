@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     return; // Останавливаем дальнейшее выполнение
                 } else {
                 // Отправляем POST-запрос на сервер с категорией
-                fetch('http://192.168.192.59/сайт/filters.php', {
+                fetch('api/Product/get-all', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',

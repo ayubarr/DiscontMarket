@@ -31,9 +31,19 @@ namespace DiscontMarket.API.Controllers
         [Route("get-by-id")]
         public IActionResult GetProductByProductID([FromBody] uint productId)
         {
-            var response = _productService.GetProductByIdAsync(productId);
+            var response = _productService.GetProductById(productId);
             return Ok(response);
         }
+
+        // Получить все продукты с фильтром и сортировкой
+        [HttpPost]
+        [Route("get-by-name")]
+        public IActionResult GetProductByProductName([FromBody] string productName)
+        {
+            var response = _productService.GetProductByName(productName);
+            return Ok(response);
+        }
+
 
         // Получить продукт по ID
         //[Authorize(AuthenticationSchemes = "Bearer", Roles = "Admin")]

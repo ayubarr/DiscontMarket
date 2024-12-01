@@ -6,7 +6,7 @@ document.querySelector('.search-input').addEventListener('input', function() {
         resultsContainer.innerHTML = '';
         resultsContainer.style.display = 'none'; // Скрыть контейнер
     } else if (query.length >= 2) {
-        fetch('http://192.168.192.59/сайт/search.php', {
+        fetch('api/Product/get-by-name', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ query: query })

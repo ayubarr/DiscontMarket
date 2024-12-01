@@ -88,7 +88,7 @@ authButton.addEventListener('click', () => {
     }
 
     // Отправка данных на сервер для проверки
-    fetch('http://192.168.192.59/сайт/login.php', {
+    fetch('api/User/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ username, password })
@@ -236,13 +236,12 @@ window.addEventListener('DOMContentLoaded', function () {
 // Загрузка данных характеристик из PHP (JSON)
 let categoryFilters = {};
 
-// Получаем фильтры через POST-запрос
-fetch('http://192.168.192.59/сайт/loadallcharacteristics.php', {
-    method: 'POST',
+// Получаем фильтры через GET-запрос
+fetch('api/Filter/get-all', {
+    method: 'GET',
     headers: {
         'Content-Type': 'application/json'
     },
-    body: JSON.stringify({ action: 'getCategoryFilters' })
 })
     .then(response => response.json())
     .then(data => {
@@ -349,7 +348,7 @@ document.getElementById('save-product-btn').addEventListener('click', () => {
         formData.append('imageName', `productimage_${Date.now()}_${index}.png`);
 
         // Отправка изображения на сервер с сохранением
-        fetch('http://192.168.192.59/сайт/saveimage.php', {
+        fetch('saveimage.php', {
             method: 'POST',
             body: formData
         })
@@ -378,7 +377,7 @@ document.getElementById('save-product-btn').addEventListener('click', () => {
     console.log(newProduct);
 
     // Отправка данных товара на сервер
-    fetch('http://192.168.192.59/сайт/saveproduct.php', {
+    fetch('api/Products/create', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
