@@ -25,9 +25,6 @@ namespace DiscontMarket.DAL.SqlServer.Configuration
             PropertyHelper<Product>.SetProperties(builder,
               p => p.Price
             );
-            PropertyHelper<Product>.SetProperties(builder,
-              p => p.Rating
-            );
 
             builder.Property(p => p.Availability)
                 .HasConversion(

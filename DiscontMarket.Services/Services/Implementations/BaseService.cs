@@ -158,8 +158,6 @@ namespace DiscontMarket.Services.Services.Implementations
                 return ResponseFactory<bool>.CreateErrorResponse(ex);
 
             }
-        }
-
-        
+        }       
     }
 }

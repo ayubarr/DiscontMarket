@@ -75,6 +75,17 @@ namespace DiscontMarket.API.Controllers
             return Ok(response);
         }
 
+
+        // Удалить продукт по ID
+        //[Authorize(AuthenticationSchemes = "Bearer", Roles = "Admin")]
+        [HttpDelete]
+        [Route("delete-by-name")]
+        public IActionResult Delete(string name)
+        {
+            var response =  _productService.DeleteByProductName(name);
+            return Ok(response);
+        }
+
         // Удалить продукт по ID
         //[Authorize(AuthenticationSchemes = "Bearer", Roles = "Admin")]
         [HttpDelete]

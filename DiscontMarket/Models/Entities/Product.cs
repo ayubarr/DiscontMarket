@@ -10,7 +10,7 @@ namespace DiscontMarket.Domain.Models.Entities
         public decimal Price { get; set; }
         public uint Quantity { get; set; }
         public string IconPath { get; set; }
-        public int Rating { get; set; }
+        public double Rating { get; set; }
 
         public string Description { get; set; }
         public string FullDescription { get; set; }

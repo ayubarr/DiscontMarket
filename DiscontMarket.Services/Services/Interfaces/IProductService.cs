@@ -13,5 +13,8 @@ namespace DiscontMarket.Services.Services.Interfaces
         IBaseResponse<GetProductDTO> GetProductByName(string name);
 
         IBaseResponse<Product> CreateProduct(CreateProductDTO entityDTO);
+
+        IBaseResponse<bool> DeleteByProductName(string productName);
+
     }
 }
