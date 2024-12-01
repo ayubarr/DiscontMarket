@@ -2,7 +2,7 @@
 
 namespace DiscontMarket.ApiModels.DTO.EntityDTOs.Brand
 {
-    public class CreateBtandDTO : BaseDTO
+    public class CreateBrandDTO : BaseDTO
     {
         public string Type { get; set; }
         public string Name { get; set; }

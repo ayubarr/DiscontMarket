@@ -80,7 +80,7 @@ namespace DiscontMarket.Services.Services.Implementations
 
  
 
-        public IBaseResponse<IEnumerable<string>> GetAllByAttributesByType(string attributeType)
+        public IBaseResponse<IEnumerable<string>> GetAllAttributesByType(string attributeType)
         {
             try
             {

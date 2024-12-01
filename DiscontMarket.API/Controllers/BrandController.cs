@@ -1,4 +1,4 @@
-﻿using DiscontMarket.ApiModels.DTO.EntityDTOs.Attribute;
+﻿using DiscontMarket.ApiModels.DTO.EntityDTOs.Brand;
 using DiscontMarket.Services.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
@@ -7,21 +7,21 @@ namespace DiscontMarket.API.Controllers
 
     [Route("api/[controller]")]
     [ApiController]
-    public class AttributeController : ControllerBase
+    public class BrandController : ControllerBase
     {
-        private readonly IAttributeService _attributeService;
+        private readonly IBrandService _brandService;
 
-        public AttributeController(IAttributeService attributeService)
+        public BrandController(IBrandService brandService)
         {
-            _attributeService = attributeService;
+            _brandService = brandService;
         }
 
         //[Authorize(AuthenticationSchemes = "Bearer", Roles = "Admin")]
-        [HttpPost]
+        [HttpGet]
         [Route("get-by-category")]
         public IActionResult GetAllByCategory([FromBody] string categoryName)
         {
-            var response = _attributeService.GetAllByCategoryName(categoryName);
+            var response = _brandService.GetAllByCategoryName(categoryName);
 
             if (response.IsSuccess)
                 return Ok(response.Data);
@@ -29,11 +29,11 @@ namespace DiscontMarket.API.Controllers
             return BadRequest(response.Message);
         }
 
-        [HttpPost]
+        [HttpGet]
         [Route("get-types-by-category")]
-        public IActionResult GetAllAttributeTypesByCategory([FromBody] string categoryName)
+        public IActionResult GetAllBrandTypesByCategory([FromBody] string categoryName)
         {
-            var response = _attributeService.GetAllAttributeTypesByCategoryName(categoryName);
+            var response = _brandService.GetAllBrandTypesByCategoryName(categoryName);
 
             if (response.IsSuccess)
                 return Ok(response.Data);
@@ -42,49 +42,49 @@ namespace DiscontMarket.API.Controllers
         }
 
         // Получение атрибутов по названию атрибута
-        [HttpPost]
+        [HttpGet]
         [Route("get-names-by-attribute-type")]
-        public IActionResult GetAllByAttributeName([FromBody] string attributeType)
+        public IActionResult GetAllByBrandName([FromBody] string brandType)
         {
-            var response = _attributeService.GetAllAttributesByType(attributeType);
+            var response = _brandService.GetAllBrandNames(brandType);
             if (response.IsSuccess)
                 return Ok(response.Data);
 
             return BadRequest(response.Message);
         }
 
-        // Создание нового атрибута
+        // Создание нового бренда
         [HttpPost]
         [Route("create")]
-        public IActionResult CreateAttribute([FromBody] CreateAttributeDTO entityDTO)
+        public IActionResult CreateBrand([FromBody] CreateBrandDTO entityDTO)
         {
             if (entityDTO == null)
-                return BadRequest("Invalid attribute data.");
+                return BadRequest("Invalid brand data.");
 
-            var response = _attributeService.CreateAttribute(entityDTO);
+            var response = _brandService.CreateBrand(entityDTO);
             if (response.IsSuccess)
                 return Ok(response);
 
             return BadRequest(response.Message);
         }
 
-        // Обновить существующий продукт
+        // Обновить существующий бренд
         //[Authorize(AuthenticationSchemes = "Bearer", Roles = "Admin")]
         [HttpPut]
         [Route("update/{projectid}")]
-        public async Task<IActionResult> Update(UpdateAttributeDTO attributeDto)
+        public async Task<IActionResult> Update(UpdateBrandDTO brandDto)
         {
-            var response = await _attributeService.UpdateAsync(attributeDto);
+            var response = await _brandService.UpdateAsync(brandDto);
             return Ok(response);
         }
 
-        // Удалить продукт по ID
+        // Удалить бренд по ID
         //[Authorize(AuthenticationSchemes = "Bearer", Roles = "Admin")]
         [HttpDelete]
         [Route("delete")]
-        public async Task<IActionResult> Delete([FromBody] string attributeName)
+        public async Task<IActionResult> Delete([FromBody] string brandName)
         {
-            var response = await _attributeService.DeleteByNameAsync(attributeName);
+            var response = await _brandService.DeleteByNameAsync(brandName);
             return Ok(response);
         }
     }
