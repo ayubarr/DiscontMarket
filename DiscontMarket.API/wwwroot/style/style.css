@@ -246,7 +246,6 @@ body {
 .catalog-icon {
   width: 8px;
   height: 11.5px;
-  background-image: url('img/catalog-icon.svg');
   background-size: cover;
   margin-left: 24px;
   margin-right: 12px;
@@ -698,15 +697,15 @@ body {
   display: flex;
   align-items: center;
   margin-top: 27px;
-  padding: 0 14.7%;
-  z-index: 1;
+  padding: 0 14.9%;
+
 }
 
 .carousel-container {
   position: relative;
   overflow: hidden;
   width: 100%;
-  z-index: 1;
+
 }
 
 .carousel {
@@ -759,13 +758,13 @@ body {
   height: 50px;
   border-radius: 50%; /* Делает кнопку круглой */
   cursor: pointer;
-  z-index: 10;
+
   display: flex;
   justify-content: center;
   align-items: center;
   opacity: 0; /* Скрываем кнопки изначально */
   transition: opacity 0.3s ease-in-out; /* Плавное появление */
-  z-index: 3;
+
 }
 
 /* Позиционирование кнопок слева и справа */
@@ -870,6 +869,7 @@ body {
   flex-direction: column;
   align-items: center;
   scroll-snap-align: start;  /* Прокрутка с фиксированной точкой на каждой карточке */
+  cursor: pointer;
   position: relative;
   flex-shrink: 0;
 }
@@ -915,6 +915,7 @@ body {
 }
 
 .order-button {
+  margin-top: 15%;
   width: 139px;
   height: 49px;
   background-color: #fff;
@@ -1430,6 +1431,7 @@ body {
   align-items: center;
   scroll-snap-align: start;  /* Прокрутка с фиксированной точкой на каждой карточке */
   position: relative;
+  cursor: pointer;
   flex-shrink: 0;
 }
 
@@ -1480,7 +1482,7 @@ body {
   color: #000;
 }
 
-.order-button-main {
+.order-button-main, .order-button-product {
   width: 139px;
   height: 49px;
   background-color: #fff;
@@ -1493,7 +1495,7 @@ body {
   border: none;
 }
 
-.order-button-main:hover {
+.order-button-main:hover, .order-button-product:hover {
   background-color: #005bff; /* Цвет фона при наведении */
   color: #fff; /* Цвет текста при наведении */
 }
@@ -1512,9 +1514,13 @@ body {
 .card-container {
   display: flex;
   padding: 0 15%;
-  gap: 20px;
   align-items: flex-start;
-  user-select: none; /* Запрещает выделение изображения */
+}
+
+.left-wrapper {
+  margin-right: 10px;
+  display: flex;
+  align-items: flex-start;
 }
 
 .image-list {
@@ -1522,9 +1528,8 @@ body {
   flex-direction: column;
   gap: 5px;
   overflow-y: auto;
-  max-height: 491px;
+  max-height: 490px;
   margin-top: 20px;
-
   /* Скрываем скролл, оставляя прокрутку */
   scrollbar-width: none; /* Firefox */
 }
@@ -1534,8 +1539,9 @@ body {
 }
 
 .thumbnail {
-  width: 80px;
-  height: 80px;
+  margin-right: 10px;
+  max-width: 100px;
+  max-height: 100px;
   object-fit: cover;
   cursor: pointer;
   border: 2px solid transparent;
@@ -1543,32 +1549,266 @@ body {
 }
 
 .thumbnail:hover {
-  transform: scale(1.1);
-  border-color: #007BFF;
+  border-color: #005BFF;
 }
 
 .thumbnail.active {
-  border-color: #007BFF;
+  border-color: #005BFF;
 }
 
 .large-image-container {
   position: relative;
   overflow: hidden;
-  width: 491px;
-  height: 491px;
+  max-width: 491px;
+  max-height: 491px;
   margin-top: 20px;
 }
 
 .large-image {
-  width: 491px;
-  height: 491px;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
   transition: transform 0.3s ease;
   cursor: crosshair;
 }
 
+.product-title-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.product-title {
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 500; /* Medium */
+  font-size: 30px;
+  color: black;
+  margin-top: 20px;
+}
+
+.rating-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Расстояние между звездами и текстом рейтинга */
+}
+
+.rating {
+  display: flex;
+  gap: 5px;
+}
+
+.star {
+  width: 20px;
+  height: 20px;
+  background: #b9b9b9; /* Серый цвет для пустой звезды */
+  clip-path: polygon(
+      50% 0%, 63% 38%, 100% 38%, 
+      69% 59%, 82% 100%, 50% 75%, 
+      18% 100%, 31% 59%, 0% 38%, 
+      37% 38%
+  ); /* Форма звезды */
+  position: relative;
+  overflow: hidden; /* Чтобы заполнение оставалось внутри формы звезды */
+}
+
+.star .fill {
+  width: 100%; /* Заполнение идет вертикально */
+  height: 100%;
+  background: linear-gradient(to top, #005BFF 50%, transparent 50%); /* Начальное заполнение */
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.rating-value {
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 500; /* Light */
+  font-size: 20px;
+  color: #000000;
+}
+
+.product-description {
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 400; /* Regular */
+  font-size: 15px;
+  color: #9899A1;
+  margin-top: 10px;
+  max-width: 500px;
+}
+
+.product-price {
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 500; /* Regular */
+  font-size: 30px;
+  display: flex;
+  align-items: center;
+  color: #000000;
+  margin-top: 50px;
+}
+
+.order-button-product {
+  margin-left: 485px;
+}
+
+.product-characteristics {
+  margin-top: 20px;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.characteristics-title {
+  font-size: 20px;
+  font-weight: 400; /* Regular */
+  color: #000000;
+  margin-bottom: 10px;
+}
+
+.characteristics-list {
+  font-size: 15px;
+  font-weight: 400; /* Regular */
+  color: #000000;
+}
+
+.characteristics-list .characteristic-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.characteristics-list .characteristic-name {
+  color: #9899A1;
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.characteristics-list .dots {
+  flex-grow: 1;
+  border-bottom: 1px dotted #9899A1;
+  margin: 0 10px;
+  height: 1px;
+}
+
+.characteristics-list .characteristic-value {
+  color: #000000;
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.product-full-description {
+  padding: 0 15%;
+  margin-top: 20px;
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 400; 
+  font-size: 16px;
+  line-height: 1.6;
+  color: #000000;
+}
+
+.product-full-title {
+  padding: 0 15%;
+  margin-top: 40px;
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 500; 
+  font-size: 30px;
+  line-height: 1.6;
+  color: #000000;
+}
+
+.indicator-container {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: none;
+  gap: 8px;
+}
+
+.indicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #ccc;
+  cursor: pointer;
+}
+
+.indicator.active {
+  background-color: #005BFF;
+}
+
+.search-results {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background: #fff;
+  border: 1px solid #e6e6e6;
+  display: none;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 10px;
+  z-index: 1;
+  max-height: 400px; /* Высота для 10 карточек по ~40px + отступы */
+  overflow-y: auto; /* Вертикальная прокрутка */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.search-results::-webkit-scrollbar {
+  display: none;
+}
+
+.product-card-search {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  width: calc(100%);
+  padding: 10px;
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.product-card-search img {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+}
+
+.product-card-search span {
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 300;
+}
+
+.show-more-button {
+  background-color: #005BFF;
+  color: white;
+  font-family: 'Ubuntu', sans-serif;
+  width: 100%-35px;
+  padding: 15px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  text-align: center;
+  margin-top: 10px;
+  margin-left: 35px;
+
+}
+.show-more-button:hover {
+  background-color: #0049cc;
+}
+
+
+
+
+
+
+@media (max-width: 1700px) {
+  .product-price-main {
+    font-size: 20px;
+  }
+}
 
 @media (max-width: 1516px) {
+  .product-price-main {
+    font-size: 24px;
+  }
   .location {
     font-size: 80%;
   }
@@ -1616,6 +1856,15 @@ body {
   .content {
     margin: 20px 10px;
   }
+  .card-container {
+    padding: 0 10px;
+  }
+  .product-full-title, .product-full-description {
+    padding: 0 10px;
+  }
+  .left-wrapper {
+    margin-right: 50px;
+  }
 }
 
 @media (max-width: 1278px) {
@@ -1624,9 +1873,61 @@ body {
   }
 }
 
+@media (max-width: 1148px) {
+  .product-title {
+    font-size: 25px;
+  }
+
+  .star {
+    width: 20px;
+    height: 20px;
+    background: #b9b9b9; /* Серый цвет для пустой звезды */
+    clip-path: polygon(
+        50% 0%, 63% 38%, 100% 38%, 
+        69% 59%, 82% 100%, 50% 75%, 
+        18% 100%, 31% 59%, 0% 38%, 
+        37% 38%
+    ); /* Форма звезды */
+    position: relative;
+    overflow: hidden; /* Чтобы заполнение оставалось внутри формы звезды */
+  }
+  
+  .rating-value {
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 500; /* Light */
+    font-size: 20px;
+    color: #000000;
+  }
+  
+  .product-description {
+    font-size: 15px;
+  }
+  
+  .product-price {
+    font-size: 25px;
+  }
+  
+  .order-button-product {
+    margin-left: 285px;
+  }
+  
+  .product-characteristics {
+    margin-top: 15px;
+    font-family: 'Ubuntu', sans-serif;
+  }
+  
+  .characteristics-title {
+    font-size: 15px;
+  }
+  
+  .characteristics-list {
+    font-size: 13px;
+  }
+}
+
 @media (max-width: 1080px) {
   .button-grid {
-  flex-wrap: wrap;
+    flex-wrap: wrap;
   }
   .sorting-container {
     gap: 20px;
@@ -1637,6 +1938,100 @@ body {
 }
 
 @media (max-width: 869px) {
+  .show-more-button {
+    margin-left: 0px;
+  
+  }
+  .card-container {
+    display: flex;
+    flex-direction: column;
+    padding: 0 10px;
+    align-items: center;
+  }
+  .product-title {
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 500; /* Medium */
+    font-size: 30px;
+    color: black;
+    margin-top: 20px;
+  }
+  
+  .product-price {
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 500; /* Regular */
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    color: #000000;
+    margin-top: 50px;
+  }
+  
+  .order-button-product {
+    margin-left: 400px;
+  }
+  
+  .product-characteristics {
+    margin-top: 20px;
+    font-family: 'Ubuntu', sans-serif;
+  }
+  
+  .characteristics-title {
+    font-size: 20px;
+    font-weight: 400; /* Regular */
+    color: #000000;
+    margin-bottom: 10px;
+  }
+  
+  .characteristics-list {
+    font-size: 15px;
+    font-weight: 400; /* Regular */
+    color: #000000;
+  }
+  
+  .characteristics-list .characteristic-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+  }
+  
+  .characteristics-list .characteristic-name {
+    color: #9899A1;
+    font-size: 15px;
+    font-weight: 400;
+  }
+  
+  .characteristics-list .dots {
+    flex-grow: 1;
+    border-bottom: 1px dotted #9899A1;
+    margin: 0 10px;
+    height: 1px;
+  }
+  
+  .characteristics-list .characteristic-value {
+    color: #000000;
+    font-size: 15px;
+    font-weight: 400;
+  }
+  
+  .product-full-description {
+    padding: 0 10px;
+    margin-top: 20px;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 400; 
+    font-size: 16px;
+    line-height: 1.6;
+    color: #000000;
+  }
+  
+  .product-full-title {
+    padding: 0 10px;
+    margin-top: 40px;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 500; 
+    font-size: 30px;
+    line-height: 1.6;
+    color: #000000;
+  }
   .main-items-section {
     display: grid;
     gap: 15px; /* Зазор между карточками */
@@ -1781,6 +2176,22 @@ body {
   background-color: #f0f0f0;
 }
 
+
+.image-list {
+  display: none;
+}
+
+.large-image-container {
+  position: relative;
+}
+
+.left-wrapper {
+  margin-right: 0px;
+}
+.indicator-container {
+  display: flex;
+}
+
 }
 
 @media (min-width: 870px) {
@@ -1803,6 +2214,13 @@ body {
     font-size: 10px;
   }
 }
+
+@media (max-width: 680px) {
+  .advertisement {
+    padding: 0 0px !important;
+  }
+}
+
 @media (max-width: 681px) {
   .bottom-container {
     margin-top: 0px;
@@ -1812,6 +2230,128 @@ body {
 @media (max-width: 682px) {
   .main-items-section {
     grid-template-columns: repeat(1, 1fr); /* 1 карточки в строке по умолчанию */
+  }
+}
+
+@media (max-width: 670px) {
+  .card-container {
+    display: flex;
+    flex-direction: column;
+    padding: 0 10px;
+  }
+  .product-full-title, .product-full-description {
+    align-items: flex-start;
+    padding: 0 10px;
+  }
+  .product-title {
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 500; /* Medium */
+    font-size: 30px;
+    color: black;
+    margin-top: 20px;
+  }
+
+  .star {
+    width: 15px;
+    height: 15px;
+    background: #b9b9b9; /* Серый цвет для пустой звезды */
+    clip-path: polygon(
+        50% 0%, 63% 38%, 100% 38%, 
+        69% 59%, 82% 100%, 50% 75%, 
+        18% 100%, 31% 59%, 0% 38%, 
+        37% 38%
+    ); /* Форма звезды */
+    position: relative;
+    overflow: hidden; /* Чтобы заполнение оставалось внутри формы звезды */
+  }
+  
+  .star .fill {
+    width: 100%; /* Заполнение идет вертикально */
+    height: 100%;
+    background: linear-gradient(to top, #005BFF 50%, transparent 50%); /* Начальное заполнение */
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  
+  .rating-value {
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 500; /* Light */
+    font-size: 20px;
+    color: #000000;
+  }
+  
+  .product-description {
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 400; /* Regular */
+    font-size: 15px;
+    color: #9899A1;
+    margin-top: 10px;
+    max-width: 500px;
+  }
+  
+  .product-price {
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 500; /* Regular */
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    color: #000000;
+    margin-top: 50px;
+  }
+  
+  .order-button-product {
+    margin-left: calc(55% - 50px);
+  }
+  
+  .product-characteristics {
+    margin-top: 20px;
+    width: 100%;
+    font-family: 'Ubuntu', sans-serif;
+  }
+  
+  .characteristics-title {
+    font-size: 20px;
+    font-weight: 400; /* Regular */
+    color: #000000;
+    margin-bottom: 10px;
+  }
+  
+  .characteristics-list {
+    font-size: 15px;
+    font-weight: 400; /* Regular */
+    color: #000000;
+  }
+  
+  .characteristics-list .characteristic-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+  }
+  
+  .characteristics-list .characteristic-name {
+    color: #9899A1;
+    font-size: 15px;
+    font-weight: 400;
+  }
+  
+  .characteristics-list .dots {
+    flex-grow: 1;
+    border-bottom: 1px dotted #9899A1;
+    margin: 0 10px;
+    height: 1px;
+  }
+  
+  .characteristics-list .characteristic-value {
+    color: #000000;
+    font-size: 15px;
+    font-weight: 400;
+  }
+}
+
+@media (max-width: 540px) {
+  .order-button-product {
+    margin-left: calc(55% - 50px);
   }
 }
 

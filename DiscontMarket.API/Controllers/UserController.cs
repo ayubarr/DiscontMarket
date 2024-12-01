@@ -75,8 +75,8 @@ namespace DiscontMarket.API.Controllers
             return Unauthorized(response.Message);
         }
 
-        [Authorize(AuthenticationSchemes = "Bearer", Roles = "Admin")]
         [HttpPost]
+        [Authorize(AuthenticationSchemes = "Bearer")]
         [Route("register")]
         public async Task<IActionResult> Register([FromBody] RegisterModel model)
         {
