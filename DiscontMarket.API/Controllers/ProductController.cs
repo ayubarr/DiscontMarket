@@ -22,8 +22,6 @@ namespace DiscontMarket.API.Controllers
         [Route("get-all")]
         public IActionResult GetAll([FromBody] FilterProductDTO projectFilterDto)
         {
-
-
             var response = _productService.GetAllProducts(projectFilterDto, projectFilterDto.SortOrder);
             return Ok(response);
         }

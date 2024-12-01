@@ -17,7 +17,7 @@ namespace DiscontMarket.API.Controllers
         }
 
         //[Authorize(AuthenticationSchemes = "Bearer", Roles = "Admin")]
-        [HttpGet]
+        [HttpPost]
         [Route("get-by-category")]
         public IActionResult GetAllByCategory([FromBody] string categoryName)
         {
@@ -29,7 +29,7 @@ namespace DiscontMarket.API.Controllers
             return BadRequest(response.Message);
         }
 
-        [HttpGet]
+        [HttpPost]
         [Route("get-types-by-category")]
         public IActionResult GetAllBrandTypesByCategory([FromBody] string categoryName)
         {
@@ -42,7 +42,7 @@ namespace DiscontMarket.API.Controllers
         }
 
         // Получение атрибутов по названию атрибута
-        [HttpGet]
+        [HttpPost]
         [Route("get-names-by-attribute-type")]
         public IActionResult GetAllByBrandName([FromBody] string brandType)
         {

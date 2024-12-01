@@ -9,18 +9,22 @@ document.addEventListener('DOMContentLoaded', () => {
     const maxValue = parseInt(maxSlider?.max || 0);
 
     const params = new URLSearchParams(window.location.search);
+    const category = params.keys().next().value;
+    console.log('Категория', category);
 
     let attributedtos = []; // Сюда будем записывать атрибуты
     let branddtos = []; // Сюда будем записывать бренды
 
     let categoryFilters = {};
 
-    fetch('api/Filter/get-filters', {
+    fetch('api/Attribute/get-all-names', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
-        }
+        },
+        body: JSON.stringify({ category: category })
     })
+
     .then(response => response.json())
     .then(data => {
         
@@ -313,20 +317,20 @@ document.addEventListener('DOMContentLoaded', () => {
         const category = params.keys().next().value; // Получаем текущую категорию из URL
         const currentCategoryFilters = categoryFilters[category] || {};
     
-        activeFilters.Attributes = [...attributedtos];
-        activeFilters.Brands = [...branddtos];
+        activeFilters.attributes = [...attributedtos];
+        activeFilters.brands = [...branddtos];
     
         const checkboxes = filtersContainer.querySelectorAll('.checkbox');
         checkboxes.forEach(checkbox => {
         if (checkbox.classList.contains('active')) {
             const filterId = checkbox.getAttribute('data-filter');
             if (currentCategoryFilters.brands?.includes(filterId)) {
-                if (!activeFilters.Brands.includes(filterId)) {
-                    activeFilters.Brands.push(filterId);
+                if (!activeFilters.brands.includes(filterId)) {
+                    activeFilters.brands.push(filterId);
                 }
             } else if (currentCategoryFilters.attributes?.includes(filterId)) {
-                if (!activeFilters.Attributes.includes(filterId)) {
-                    activeFilters.Attributes.push(filterId);
+                if (!activeFilters.attributes.includes(filterId)) {
+                    activeFilters.attributes.push(filterId);
                 }
             }
         }

@@ -10,7 +10,7 @@ namespace DiscontMarket.DAL.Repository.Interfaces
 
         List<string> GetAttributeNamesByType(string attributeType);
 
-        List<string> GetAttributeTypesByCategory(Category attributeType);
+        List<string> GetAttributeTypesByCategory(Category category);
 
 
     }

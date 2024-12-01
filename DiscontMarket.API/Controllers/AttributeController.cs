@@ -16,6 +16,20 @@ namespace DiscontMarket.API.Controllers
             _attributeService = attributeService;
         }
 
+
+        [HttpPost]
+        [Route("get-all-names")]
+        public IActionResult GetAllNamesByCategory ([FromBody] string categoryName)
+        {
+            var response = _attributeService.GetAllNames(categoryName);
+
+            if (response.IsSuccess)
+                return Ok(response.Data);
+
+            return BadRequest(response.Message);
+        }
+
+
         //[Authorize(AuthenticationSchemes = "Bearer", Roles = "Admin")]
         [HttpPost]
         [Route("get-by-category")]
@@ -44,7 +58,7 @@ namespace DiscontMarket.API.Controllers
         // Получение атрибутов по названию атрибута
         [HttpPost]
         [Route("get-names-by-attribute-type")]
-        public IActionResult GetAllByAttributeName([FromBody] string attributeType)
+        public IActionResult GetAllAttributesByType([FromBody] string attributeType)
         {
             var response = _attributeService.GetAllAttributesByType(attributeType);
             if (response.IsSuccess)

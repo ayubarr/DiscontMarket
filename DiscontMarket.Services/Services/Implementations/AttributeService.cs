@@ -13,12 +13,14 @@ namespace DiscontMarket.Services.Services.Implementations
     {
         private readonly IAttributeRepository _attributeRepository;
         private readonly IBaseRepository<Category> _categoryRepository;
+        private readonly IBrandRepository _brandRepository;
 
 
-        public AttributeService(IAttributeRepository attributeRepository, IBaseRepository<Category> categoryRepository) : base(attributeRepository)
+        public AttributeService(IAttributeRepository attributeRepository, IBaseRepository<Category> categoryRepository, IBrandRepository brandRepository) : base(attributeRepository)
         {
             _attributeRepository = attributeRepository;
             _categoryRepository = categoryRepository;
+            _brandRepository = brandRepository;
         }
 
         public IBaseResponse<AttributeEntity> CreateAttribute(CreateAttributeDTO entityDTO)
@@ -159,6 +161,69 @@ namespace DiscontMarket.Services.Services.Implementations
                     .GetAll()
                     .Where(c => c.Name.Equals(categoryName))
                     .FirstOrDefault();
+        }
+
+        public IBaseResponse<AttributeBrandDTO> GetAllNames(string categoryName)
+        {
+            try
+            {
+                // Получаем категорию по имени
+                var category = GetCategory(categoryName);
+
+                if (category == null)
+                {
+                    throw new Exception($"Category not found: {categoryName}");
+                }
+
+                // Получаем типы атрибутов для категории
+                var attributeTypes = _attributeRepository.GetAttributeTypesByCategory(category);
+
+                if (attributeTypes == null || !attributeTypes.Any())
+                {
+                    throw new Exception($"No attribute types found for category: {categoryName}");
+                }
+
+                // Собираем все атрибуты
+                var allAttributes = new List<string>();
+
+
+                var brands = _brandRepository.GetAll().Where(b => b.Type.Equals("Бренды")).Select(x => x.Name).ToList();
+
+                if (brands == null || !brands.Any())
+                {
+                    throw new Exception($"No attributes found for type: {"Бренды"}");
+                }
+
+                foreach (var attributeType in attributeTypes)
+                {
+                    var attributes = _attributeRepository.GetAttributeNamesByType(attributeType);
+
+                    if (attributes == null || !attributes.Any())
+                    {
+                        throw new Exception($"No attributes found for type: {attributeType}");
+                    }
+
+                    // Добавляем атрибуты в общий список
+                    allAttributes.AddRange(attributes);
+                }
+
+                var attributeAndBrands = new AttributeBrandDTO()
+                {
+                    Brands = brands,
+                    Attributes = allAttributes
+                };
+
+                // Проверяем, что результат не пуст
+                ObjectValidator<AttributeBrandDTO>.CheckIsNotNullObject(attributeAndBrands);
+
+                // Возвращаем успешный ответ
+                return ResponseFactory<AttributeBrandDTO>.CreateSuccessResponse(attributeAndBrands);
+            }
+            catch (Exception ex)
+            {
+                // Возвращаем ошибку
+                return ResponseFactory<AttributeBrandDTO>.CreateErrorResponse(ex);
+            }
         }
     }
 }
