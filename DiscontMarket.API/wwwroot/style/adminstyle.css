@@ -134,3 +134,136 @@ body {
 #back-btn:hover {
     background-color: #0045cc;
 }
+
+.manage-products-container {
+    background-color: #fff;
+    margin-top: 50%;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 900px;
+    overflow: auto;
+    display: none;
+}
+
+.manage-products-container.active {
+    display: block;
+}
+
+h2 {
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.product-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+}
+
+label {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 5px;
+    text-align: left;
+    width: 100%;
+    padding-left: 5px;
+}
+
+input[type="text"],
+input[type="number"],
+textarea,
+select,
+input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+textarea:focus,
+select:focus {
+    border-color: #005BFF;
+    outline: none;
+}
+
+textarea {
+    height: 100px;
+    resize: none;
+}
+
+#category-select {
+    padding: 12px;
+}
+
+#product-images {
+    padding: 5px;
+}
+
+#characteristics-container {
+    width: 100%;
+    padding: 10px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    display: block;
+}
+
+
+#save-product-btn, #delete-product-btn {
+    background-color: #005BFF;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    padding: 12px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    width: 100%;
+}
+
+#save-product-btn:hover, #delete-product-btn:hover {
+    background-color: #0045cc;
+}
+
+#back-btn-products, #back-btn-delete {
+    align-self: flex-start;
+    background-color: #005BFF;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#back-btn-products:hover, #back-btn-delete:hover {
+    background-color: #0045cc;
+}
+
+.delete-products-container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    display: none; /* Скрыто по умолчанию */
+}
+
+.delete-products-container.active {
+    display: block;
+}
+
+.delete-products-container h2 {
+    margin-bottom: 30px;
+    color: #333;
+}
+

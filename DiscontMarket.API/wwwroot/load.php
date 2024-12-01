@@ -1,4 +1,5 @@
-{
+<?php
+$jsonData = '{
   "tv": {
     "filters": [
       {
@@ -305,3 +306,36 @@
     ]
   }
 }
+';
+
+$data = json_decode($jsonData, true);
+
+// Функция для получения фильтров всех категорий
+function getCategoryFilters($data) {
+    $result = [];
+
+    foreach ($data as $category => $categoryData) {
+        $brands = [];
+        $attributes = [];
+
+        foreach ($categoryData['filters'] as $filter) {
+            if ($filter['title'] === 'Бренды') {
+                foreach ($filter['options'] as $option) {
+                    $brands[] = $option['value'];
+                }
+            } else {
+                foreach ($filter['options'] as $option) {
+                    $attributes[] = $option['value'];
+                }
+            }
+        }
+
+        $result[$category] = ['brands' => $brands, 'attributes' => $attributes];
+    }
+
+    return $result;
+}
+
+header('Content-Type: application/json');
+echo json_encode(getCategoryFilters($data), JSON_UNESCAPED_UNICODE);
+?>

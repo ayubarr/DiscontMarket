@@ -9,7 +9,6 @@ using DiscontMarket.Services.Services.Interfaces;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
-using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 
@@ -85,7 +84,7 @@ namespace DiscontMarket.API
             return services;
         }
 
-       
+
         public static async Task InitializeRoles(this IServiceCollection services)
         {
             services.AddScoped<RoleManager<IdentityRole>>();
@@ -137,6 +136,6 @@ namespace DiscontMarket.API
 
             await userManager.CreateAsync(admin);
             await userManager.AddToRoleAsync(admin, RoleType.Admin.ToString());
-        }     
+        }
     }
 }
