@@ -29,26 +29,26 @@ namespace DiscontMarket.Services.Services.Implementations
             _attributeRepository = attributeRepository;
             _imageRepository = imageRepository;
         }
-        public IBaseResponse<Product> UpdateProduct(Product entity)
+        private IBaseResponse<bool> UpdateProduct(Product entity)
         {
             try
             {
                 ObjectValidator<Product>.CheckIsNotNullObject(entity);
 
                 _productRepository.Update(entity);
-                return ResponseFactory<Product>.CreateSuccessResponse(entity);
+                return ResponseFactory<bool>.CreateSuccessResponse(true);
             }
             catch (ArgumentNullException argNullException)
             {
-                return ResponseFactory<Product>.CreateNotFoundResponse(argNullException);
+                return ResponseFactory<bool>.CreateNotFoundResponse(argNullException);
             }
             catch (Exception exception)
             {
-                return ResponseFactory<Product>.CreateErrorResponse(exception);
+                return ResponseFactory<bool>.CreateErrorResponse(exception);
             }
         }
 
-        public IBaseResponse<Product> CreateProduct(CreateProductDTO entityDTO)
+        public IBaseResponse<bool> CreateProduct(CreateProductDTO entityDTO)
         {
             try
             {
@@ -143,15 +143,15 @@ namespace DiscontMarket.Services.Services.Implementations
                 
                 _productRepository.Create(entity);
 
-                return ResponseFactory<Product>.CreateSuccessResponse(entity);
+                return ResponseFactory<bool>.CreateSuccessResponse(true);
             }
             catch (ArgumentNullException argNullException)
             {
-                return ResponseFactory<Product>.CreateNotFoundResponse(argNullException);
+                return ResponseFactory<bool>.CreateNotFoundResponse(argNullException);
             }
             catch (Exception exception)
             {
-                return ResponseFactory<Product>.CreateErrorResponse(exception);
+                return ResponseFactory<bool>.CreateErrorResponse(exception);
             }
         }
 
@@ -171,8 +171,8 @@ namespace DiscontMarket.Services.Services.Implementations
                 return ResponseFactory<bool>.CreateErrorResponse(ex);
             }
         }
-
-        public IBaseResponse<IEnumerable<ProductDTO>> GetAllProducts(FilterProductDTO filterProductDTO, SortTypes? sortType)
+        private string xyu = "";
+        public IBaseResponse<IEnumerable<ProductDTO>> GetAllProducts(FilterProductDTO filterProductDTO, string? sortType)
         {
             try
             {

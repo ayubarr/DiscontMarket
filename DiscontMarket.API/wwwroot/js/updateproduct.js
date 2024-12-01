@@ -120,7 +120,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // Получение данных товара через запрос
-    fetch("http://192.168.192.59/сайт/product.php", {
+    fetch("api/Product/get-by-id", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",

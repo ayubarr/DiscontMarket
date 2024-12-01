@@ -15,6 +15,6 @@ namespace DiscontMarket.ApiModels.DTO.EntityDTOs.Product
         public List<string>? Brands { get; set; }
 
 
-        public SortTypes? SortOrder { get; set; }
+        public string? SortOrder { get; set; }
     }
 }
