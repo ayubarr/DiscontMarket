@@ -38,5 +38,23 @@ namespace DiscontMarket.DAL.Repository.Implementations
                 );
             return data;
         }
+
+        public List<string> GetBrandNamesByType(string brandType)
+        {
+            return _context.Brands
+                           .Where(x => x.Type.ToLower()
+                           .Equals(brandType.ToLower()))
+                           .Select(x => x.Name)
+                           .ToList();
+        }
+
+        public List<string> GetBrandTypesByCategory(Category category)
+        {
+            return _context.Brands
+                         .Where(a => a.BrandCategories.Any(c => c.CategoryID == category.ID))
+                         .Select(a => a.Type)
+                         .Distinct()
+                         .ToList();
+        }
     }
 }

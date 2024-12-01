@@ -46,7 +46,7 @@ namespace DiscontMarket.API.Controllers
         [Route("get-names-by-attribute-type")]
         public IActionResult GetAllByBrandName([FromBody] string brandType)
         {
-            var response = _brandService.GetAllBrandNames(brandType);
+            var response = _brandService.GetAllBrandsByType(brandType);
             if (response.IsSuccess)
                 return Ok(response.Data);
 

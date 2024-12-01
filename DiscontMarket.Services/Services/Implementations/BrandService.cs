@@ -5,10 +5,8 @@ using DiscontMarket.DAL.Repository.Implementations;
 using DiscontMarket.DAL.Repository.Interfaces;
 using DiscontMarket.Domain.Models.Abstractions.LinkEntities;
 using DiscontMarket.Domain.Models.Entities;
-using DiscontMarket.Services.Helpers.Mapping;
 using DiscontMarket.Services.Services.Interfaces;
 using DiscontMarket.Validation;
-using System;
 
 namespace DiscontMarket.Services.Services.Implementations
 {
@@ -25,11 +23,11 @@ namespace DiscontMarket.Services.Services.Implementations
             _categoryRepository = categoryRepository;
         }
 
-        public IBaseResponse<Brand> CreateBrand(CreateBtandDTO entityDTO)
+        public IBaseResponse<Brand> CreateBrand(CreateBrandDTO entityDTO)
         {
             try
             {
-                ObjectValidator<CreateBtandDTO>.CheckIsNotNullObject(entityDTO);
+                ObjectValidator<CreateBrandDTO>.CheckIsNotNullObject(entityDTO);
 
                 var categories = _categoryRepository.GetAll().Where(c => c.Name.Equals(entityDTO.CategoryName));
 
@@ -103,33 +101,6 @@ namespace DiscontMarket.Services.Services.Implementations
             }
         }
 
-        public IBaseResponse<IEnumerable<string>> GetAllByBrandsName(string brandName)
-        {
-            try
-            {
-                var brands = _brandRepository
-                    .GetAll()
-                    .Where(a => a.Name.Equals(brandName))
-                    .AsEnumerable();
-
-                if (brands is null)
-                {
-                    throw new Exception($"not found brand: {brandName}");
-                }
-
-                ObjectValidator<IEnumerable<Brand>>.CheckIsNotNullObject(brands);
-
-                return ResponseFactory<IEnumerable<Brand>>.CreateSuccessResponse(brands);
-            }
-            catch (Exception ex)
-            {
-                return ResponseFactory<IEnumerable<Brand>>.CreateErrorResponse(ex);
-
-            }
-        }
-
-
-
         public IBaseResponse<IEnumerable<string>> GetAllBrandTypesByCategoryName(string categoryName)
         {
             try
@@ -158,10 +129,7 @@ namespace DiscontMarket.Services.Services.Implementations
         {
             try
             {
-                var category = _categoryRepository
-                    .GetAll()
-                    .Where(c => c.Name.Equals(categoryName))
-                    .FirstOrDefault();
+                var category = GetCategory(categoryName);
 
                 if (category == null)
                 {
@@ -191,5 +159,27 @@ namespace DiscontMarket.Services.Services.Implementations
                     .FirstOrDefault();
         }
 
+        public IBaseResponse<IEnumerable<string>> GetAllBrandsByType(string brandType)
+        {
+            try
+            {
+                var brands = _brandRepository.GetBrandNamesByType(brandType);
+
+                if (brands is null)
+                {
+                    throw new Exception($"not found atribute type: {brandType}");
+                }
+
+
+                ObjectValidator<IEnumerable<string>>.CheckIsNotNullObject(brands);
+
+                return ResponseFactory<IEnumerable<string>>.CreateSuccessResponse(brands);
+            }
+            catch (Exception ex)
+            {
+                return ResponseFactory<IEnumerable<string>>.CreateErrorResponse(ex);
+
+            }
+        }
     }
 }
