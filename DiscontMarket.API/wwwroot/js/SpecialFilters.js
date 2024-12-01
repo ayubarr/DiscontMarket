@@ -315,22 +315,22 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     
         const category = params.keys().next().value; // Получаем текущую категорию из URL
-        const currentCategoryFilters = categoryFilters[category] || {};
+        const currentCategoryFilters = categoryFilters[category] || {}; 
     
-        activeFilters.attributes = [...attributedtos];
-        activeFilters.brands = [...branddtos];
+        activeFilters.Attributes = [...attributedtos];
+        activeFilters.Brands = [...branddtos];
     
         const checkboxes = filtersContainer.querySelectorAll('.checkbox');
         checkboxes.forEach(checkbox => {
         if (checkbox.classList.contains('active')) {
             const filterId = checkbox.getAttribute('data-filter');
             if (currentCategoryFilters.brands?.includes(filterId)) {
-                if (!activeFilters.brands.includes(filterId)) {
-                    activeFilters.brands.push(filterId);
+                if (!activeFilters.Brands.includes(filterId)) {
+                    activeFilters.Brands.push(filterId);
                 }
             } else if (currentCategoryFilters.attributes?.includes(filterId)) {
-                if (!activeFilters.attributes.includes(filterId)) {
-                    activeFilters.attributes.push(filterId);
+                if (!activeFilters.Attributes.includes(filterId)) {
+                    activeFilters.Attributes.push(filterId);
                 }
             }
         }
