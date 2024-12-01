@@ -313,6 +313,7 @@ document.getElementById('save-product-btn').addEventListener('click', () => {
     const images = document.getElementById('product-images').files;
     const status = document.getElementById('product-status').value;
     const category = document.getElementById('category-select').value;
+    const availability = document.getElementById('product-availability').value;
 
     // Проверка обязательных полей
     if (!category || !title || !description || !fullDescription || !price || images.length === 0 || !status) {
@@ -369,6 +370,7 @@ document.getElementById('save-product-btn').addEventListener('click', () => {
         fullDescription,
         price,
         status,
+        availability,
         images: imagePaths,
         characteristics
     };
@@ -386,11 +388,29 @@ document.getElementById('save-product-btn').addEventListener('click', () => {
     .then(response => response.json())
     .then(data => {
         console.log('Товар успешно сохранен:', data);
+
+        resetProductForm();
     })
     .catch(error => {
         console.error('Ошибка отправки данных товара:', error);
+
+        resetProductForm();
     });
 });
+
+function resetProductForm() {
+    document.getElementById('product-title').value = '';
+    document.getElementById('product-description').value = '';
+    document.getElementById('product-full-description').value = '';
+    document.getElementById('product-price').value = '';
+    document.getElementById('product-status').value = '';
+    document.getElementById('category-select').value = 'Выберите категорию';  // Сброс категории
+    document.getElementById('product-images').value = '';  // Очистка файлов
+
+    // Очистка характеристик
+    const container = document.getElementById('characteristics-container');
+    container.innerHTML = '';
+}
 
 
 
