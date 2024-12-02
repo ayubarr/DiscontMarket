@@ -12,7 +12,7 @@ namespace DiscontMarket.Services.Services.Interfaces
 
         IBaseResponse<AttributeEntity> CreateAttribute(CreateAttributeDTO entityDTO);
 
-        IBaseResponse<AttributeBrandDTO> GetAllNames(string categoryName);
+        IBaseResponse<CategoryFilters> GetAllNames(string categoryName);
 
         Task<IBaseResponse<bool>> DeleteByNameAsync(string attributeName);
 

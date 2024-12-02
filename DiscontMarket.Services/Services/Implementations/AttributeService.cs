@@ -163,7 +163,7 @@ namespace DiscontMarket.Services.Services.Implementations
                     .FirstOrDefault();
         }
 
-        public IBaseResponse<AttributeBrandDTO> GetAllNames(string categoryName)
+        public IBaseResponse<CategoryFilters> GetAllNames(string categoryName)
         {
             try
             {
@@ -207,22 +207,22 @@ namespace DiscontMarket.Services.Services.Implementations
                     allAttributes.AddRange(attributes);
                 }
 
-                var attributeAndBrands = new AttributeBrandDTO()
+                var attributeAndBrands = new CategoryFilters()
                 {
                     Brands = brands,
                     Attributes = allAttributes
                 };
 
                 // Проверяем, что результат не пуст
-                ObjectValidator<AttributeBrandDTO>.CheckIsNotNullObject(attributeAndBrands);
+                ObjectValidator<CategoryFilters>.CheckIsNotNullObject(attributeAndBrands);
 
                 // Возвращаем успешный ответ
-                return ResponseFactory<AttributeBrandDTO>.CreateSuccessResponse(attributeAndBrands);
+                return ResponseFactory<CategoryFilters>.CreateSuccessResponse(attributeAndBrands);
             }
             catch (Exception ex)
             {
                 // Возвращаем ошибку
-                return ResponseFactory<AttributeBrandDTO>.CreateErrorResponse(ex);
+                return ResponseFactory<CategoryFilters>.CreateErrorResponse(ex);
             }
         }
     }

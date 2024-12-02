@@ -22,23 +22,20 @@ document.addEventListener('DOMContentLoaded', () => {
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ category: category })
+        body: JSON.stringify(category)
     })
-
     .then(response => response.json())
     .then(data => {
-        
+
         // Обновление categoryFilters данными из PHP
-        Object.keys(data).forEach(category => {
-            categoryFilters[category] = {
-                brands: data[category].brands,
-                attributes: data[category].attributes
-            };
-        });
+        categoryFilters = {
+            brands: data.brands,
+            attributes: data.attributes,
+        };
         
         console.log('Обновленные категории:', categoryFilters);
         
-    const activeFilters = {};
+    let activeFilters = {};
 
     // Установить "По популярности" активным по умолчанию
     let activeSort = params.get('sort') || null; // По умолчанию "null"
@@ -117,7 +114,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (event.target.classList.contains('checkbox')) {
             event.target.classList.toggle('active');
             updateFiltersInURL(); // Обновление URL при выборе фильтра
-            //window.location.reload();
+            window.location.reload();
         }
     });
 
@@ -131,7 +128,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     updateSliderTrack();
 
-    const category = params.keys().next().value;
 
        fetch('api/Filter/get-filters')
         .then(response => response.json())
@@ -203,6 +199,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         attributedtos = Array.from(newParams.keys()).filter(key => categoryFilters[category]?.attributes.includes(key));
         branddtos = Array.from(newParams.keys()).filter(key => categoryFilters[category]?.brands.includes(key));
+
     
         // Добавляем значения слайдера
         const minValue = minSlider.value;
@@ -277,9 +274,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Инициализация активных фильтров при загрузке страницы
     function initActiveFilters() {
-        const category = params.keys().next().value; // Получаем текущую категорию из URL
-        
-        const currentCategoryFilters = categoryFilters[category];
+
+        console.log("initActiveFilters")
+        const currentCategoryFilters = categoryFilters;
         if (!currentCategoryFilters) return;
     
         params.forEach((value, key) => {
@@ -304,27 +301,43 @@ document.addEventListener('DOMContentLoaded', () => {
                 console.log(`Фильтр ${filterId} активирован из URL`);
             }
         });
+
     }    
 
     function getActiveFilters() {
-    
         // Сортировка
         const activeSort = document.querySelector('.sorting-option.active');
         if (activeSort) {
             activeFilters.sort = activeSort.dataset.sort;
         }
-    
-        const category = params.keys().next().value; // Получаем текущую категорию из URL
-        const currentCategoryFilters = categoryFilters[category] || {}; 
-    
+
+        const stockCategories = ['instock', 'preorderlater', 'preordertomorrow'];
+        const statusCategories = ['discount', 'damagedpackage', 'minordefects'];
+
+        activeFilters = {
+            availability: [],
+            status: [],
+        };
+
         activeFilters.Attributes = [...attributedtos];
         activeFilters.Brands = [...branddtos];
-    
+
+        console.log('activeFilters.Attributes: ', activeFilters.Attributes);
+        console.log('activeFilters.Brands: ', activeFilters.Brands);
+
+ 
+        const currentCategoryFilters = categoryFilters[category] || {}; 
+
         const checkboxes = filtersContainer.querySelectorAll('.checkbox');
         checkboxes.forEach(checkbox => {
         if (checkbox.classList.contains('active')) {
             const filterId = checkbox.getAttribute('data-filter');
-            if (currentCategoryFilters.brands?.includes(filterId)) {
+            if (stockCategories.includes(filterId)) {
+                activeFilters.availability.push(filterId);
+            } else if (statusCategories.includes(filterId)) {
+                activeFilters.status.push(filterId);
+            }
+            else if (currentCategoryFilters.brands?.includes(filterId)) {
                 if (!activeFilters.Brands.includes(filterId)) {
                     activeFilters.Brands.push(filterId);
                 }
@@ -352,7 +365,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         function sendFiltersToServer() {
             const filters = getActiveFilters();
-            const category = params.keys().next().value; // Получаем категорию из URL
     
         filters.CategoryDTO = { Name: category }; // Добавляем категорию в фильтры
     
