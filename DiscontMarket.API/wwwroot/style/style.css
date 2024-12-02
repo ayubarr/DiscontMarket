@@ -1795,6 +1795,67 @@ body {
 }
 
 
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    z-index: 999;
+}
+
+.order-card {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.order-card-content {
+    position: relative;
+}
+
+.order-message {
+    font-family: 'Ubuntu Light', sans-serif;
+    font-size: 16px;
+    color: #000;
+    margin-bottom: 10px;
+}
+
+.order-phone {
+    font-family: 'Ubuntu Light', sans-serif;
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+    .order-phone span {
+        font-weight: bold;
+    }
+
+.call-button {
+    background-color: #005BFF;
+    color: #fff;
+    font-family: 'Ubuntu Regular', sans-serif;
+    font-size: 16px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.close-order-card {
+    margin-left: 95%;
+    font-size: 20px;
+    cursor: pointer;
+}
 
 
 

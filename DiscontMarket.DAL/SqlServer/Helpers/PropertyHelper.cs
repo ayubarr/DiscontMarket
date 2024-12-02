@@ -52,6 +52,16 @@ namespace DiscontMarket.DAL.SqlServer.Helpers
         }
 
         internal static void SetProperties(EntityTypeBuilder<T> builder,
+           params Expression<Func<T, double>>[] properties)
+        {
+            foreach (var property in properties)
+            {
+                builder.Property(property)
+                    .HasColumnType(PgSqlColumnType.DoublePrecision);
+            }
+        }
+
+        internal static void SetProperties(EntityTypeBuilder<T> builder,
             params Expression<Func<T, DateTime>>[] properties)
         {
             foreach (var property in properties)

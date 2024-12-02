@@ -20,19 +20,24 @@ namespace DiscontMarket.DAL.Repository.Implementations
                 .Include(a => a.BrandCategories)  // Подгружаем BrandCategories
                 .ThenInclude(ac => ac.Category)       // Подгружаем саму категорию через BrandCategories
                 .AsEnumerable()                      // Переключаемся на LINQ to Objects для удобства группировки
-                .GroupBy(a => a.BrandCategories?.FirstOrDefault()?.Category?.Name) // Группируем по имени категории
+                .SelectMany(b => b.BrandCategories.Select(bc => new
+                {
+                    CategoryName = bc.Category.Name,
+                    Brand = b
+                }))
+                .GroupBy(x => x.CategoryName) // Группируем по имени категории
                 .ToDictionary(
                     categoryGroup => categoryGroup.Key, // Ключ — имя категории
                     categoryGroup => categoryGroup
-                        .GroupBy(br => br.Type) // Внутри каждой категории группируем по имени бренда
+                        .GroupBy(br => br.Brand.Type) // Внутри каждой категории группируем по имени бренда
                         .ToDictionary(
                             attributeGroup => attributeGroup.Key, // Ключ — имя бренда
                             attributeGroup => attributeGroup.Select(br => new FilterAtributeAndBrandDTO
                             {
-                                ID = br.ID,
-                                Type = br.Type,
-                                Name = br.Name,
-                                NameTranslate = br.NameTranslate
+                                ID = br.Brand.ID,
+                                Type = br.Brand.Type,
+                                Name = br.Brand.Name,
+                                NameTranslate = br.Brand.NameTranslate
                             }).ToList() // Преобразуем атрибуты в DTO
                         )
                 );

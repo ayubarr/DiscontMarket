@@ -307,9 +307,6 @@ document.addEventListener('DOMContentLoaded', () => {
     function getActiveFilters() {
         // Сортировка
         const activeSort = document.querySelector('.sorting-option.active');
-        if (activeSort) {
-            activeFilters.sort = activeSort.dataset.sort;
-        }
 
         const stockCategories = ['instock', 'preorderlater', 'preordertomorrow'];
         const statusCategories = ['discount', 'damagedpackage', 'minordefects'];
@@ -317,14 +314,15 @@ document.addEventListener('DOMContentLoaded', () => {
         activeFilters = {
             availability: [],
             status: [],
+            sort: activeSort.dataset.sort
         };
 
         activeFilters.Attributes = [...attributedtos];
         activeFilters.Brands = [...branddtos];
 
-        console.log('activeFilters.Attributes: ', activeFilters.Attributes);
-        console.log('activeFilters.Brands: ', activeFilters.Brands);
+        console.log('activeSort ', activeSort);
 
+        console.log('activeFilters.sort ', activeFilters.sort);
  
         const currentCategoryFilters = categoryFilters[category] || {}; 
 
@@ -470,6 +468,59 @@ document.addEventListener('DOMContentLoaded', () => {
                 const yandexMarketURL = `https://market.yandex.ru/search?text=${encodeURIComponent(productName)}`;
                 window.open(yandexMarketURL, '_blank');
             });
+        });
+
+        function showOrderConfirmation() {
+            let orderCard = document.querySelector('.order-card');
+            let overlay = document.querySelector('.overlay');
+
+            // Если слой затемнения еще не создан, создаем его
+            if (!overlay) {
+                overlay = document.createElement('div');
+                overlay.classList.add('overlay');
+                document.body.appendChild(overlay);
+            }
+
+            // Если карточка еще не создана, создаем её
+            if (!orderCard) {
+                orderCard = document.createElement('div');
+                orderCard.classList.add('order-card');
+
+                orderCard.innerHTML = `
+                <div class="order-card-content">
+                    <span class="close-order-card">&times;</span>
+                    <p class="order-message">Заказ успешно оформлен</p>
+                    <p class="order-phone">Номер для связи с магазином: <span>8 (981) 210-48-31</span></p>
+                    <button class="call-button">Позвонить</button>
+                </div>
+            `;
+                document.body.appendChild(orderCard);
+            }
+
+            // Показываем карточку и слой затемнения
+            orderCard.style.display = 'block';
+            overlay.style.display = 'block';
+
+            // Обработчик закрытия карточки по крестику
+            orderCard.querySelector('.close-order-card').addEventListener('click', closeOrderCard);
+
+            // Закрытие при клике на затемненный слой
+            overlay.addEventListener('click', closeOrderCard);
+
+            function closeOrderCard() {
+                orderCard.style.display = 'none';
+                overlay.style.display = 'none';
+            }
+
+            // Обработчик кнопки Позвонить
+            orderCard.querySelector('.call-button').addEventListener('click', () => {
+                window.location.href = 'tel:+79812104831';
+            });
+        }
+
+        // Добавление обработчика события на кнопку "Оформить заказ"
+        document.querySelectorAll('.order-button-main').forEach(button => {
+            button.addEventListener('click', showOrderConfirmation);
         });
     }
     

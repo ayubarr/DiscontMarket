@@ -20,7 +20,11 @@ namespace DiscontMarket.Services.Services.Implementations
         {
             // Пример данных из базы данных
             var attributeData = _attributeRepository.GetAllAttributesGroupedByCategory();
+                
+
             var brandData = _brandRepository.GetAllBrandsGroupedByCategory();
+
+
 
             var combinedData = brandData
                .Concat(attributeData)
@@ -29,8 +33,6 @@ namespace DiscontMarket.Services.Services.Implementations
                    pair => pair.Value // Берём значения словаря
                );
 
-
-           
 
             var result = combinedData.ToDictionary(
                 group => group.Key,

@@ -20,9 +20,27 @@ namespace DiscontMarket.API.Controllers
         // Получить все продукты с фильтром и сортировкой
         [HttpPost]
         [Route("get-all")]
-        public IActionResult GetAll([FromBody] FilterProductDTO projectFilterDto)
+        public IActionResult GetAll([FromBody] FilterProductDTO producttFilterDto)
         {
-            var response = _productService.GetAllProducts(projectFilterDto, projectFilterDto.SortOrder);
+            var response = _productService.GetAllProducts(producttFilterDto, producttFilterDto.Sort);
+            return Ok(response);
+        }
+
+        // Получить все продукты с фильтром и сортировкой
+        [HttpGet]
+        [Route("get-all-news")]
+        public IActionResult GetAllNews()
+        {
+            var response = _productService.GetAllProductsNews( );
+            return Ok(response);
+        }
+
+        // Получить все продукты с фильтром и сортировкой
+        [HttpGet]
+        [Route("get-all-hits")]
+        public IActionResult GetAllHits()
+        {
+            var response = _productService.GetAllProductsHits();
             return Ok(response);
         }
 

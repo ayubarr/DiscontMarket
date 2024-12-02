@@ -58,24 +58,24 @@ namespace DiscontMarket.Services.Services.Implementations
                
                 var brand = _brandRepository
                     .GetAll()
-                    .Where(x => x.Name.Equals(entityDTO.brandname))
+                    .Where(x => x.Name.ToLower().Equals(entityDTO.brandname.ToLower()))
                     .FirstOrDefault();
 
                 ObjectValidator<Brand>.CheckIsNotNullObject(brand);
 
                 var category = _categoryRepository.GetAll()
-                    .Where(x => x.Name.Equals(entityDTO.categoryname)).FirstOrDefault();
+                    .Where(x => x.Name.ToLower().Equals(entityDTO.categoryname.ToLower())).FirstOrDefault();
 
                 ObjectValidator<Category>.CheckIsNotNullObject(category);
 
                 var attributes = new List<AttributeEntity>();
                 foreach (var attributeName in entityDTO.characteristics)
                 {
-                    if (_attributeRepository.GetAll().Any(a => a.Name.Equals(attributeName)))
+                    if (_attributeRepository.GetAll().Any(a => a.Name.ToLower().Equals(attributeName.ToLower())))
                         attributes
                             .Add(_attributeRepository
                             .GetAll()
-                            .Where(a => a.Name.Equals(attributeName))
+                            .Where(a => a.Name.ToLower().Equals(attributeName.ToLower()))
                             .First());
                 }
 
@@ -86,21 +86,21 @@ namespace DiscontMarket.Services.Services.Implementations
 
 
                 Availability availability;
-                if (!Enum.TryParse(entityDTO.availability, out availability))
+                if (!Enum.TryParse(entityDTO.availability, true, out availability))
                 {
                     throw new Exception($"not found availability {entityDTO.availability}");
                 }
 
-                availability = (Availability)Enum.Parse(typeof(Availability), entityDTO.availability);
+                availability = (Availability)Enum.Parse(typeof(Availability), entityDTO.availability, true);
 
 
                 ProductStatus productStatus;
-                if (!Enum.TryParse(entityDTO.status, out productStatus))
+                if (!Enum.TryParse(entityDTO.status, true, out productStatus))
                 {
                     throw new Exception($"not found product status {entityDTO.status}");
                 }
 
-                productStatus = (ProductStatus)Enum.Parse(typeof(Availability), entityDTO.availability);
+                productStatus = (ProductStatus)Enum.Parse(typeof(ProductStatus), entityDTO.status, true);
 
                 var images = new List<Image>();
                 string image = "";
@@ -318,6 +318,82 @@ namespace DiscontMarket.Services.Services.Implementations
             {
                 // Возвращаем ошибочный ответ
                 return ResponseFactory<IEnumerable<GetProductDTO>>.CreateErrorResponse(ex);
+            }
+        }
+
+        public IBaseResponse<IEnumerable<ProductDTO>> GetAllProductsNews()
+        {
+            try
+            {
+                const decimal NewsPrice = 14000;
+                const int NewsCount = 12;
+
+                var entities = _productRepository.GetAll()
+                    .Where(p => p.Price >= NewsPrice)
+                    .Take(NewsCount)
+                    .ToList();
+
+                ObjectValidator<IEnumerable<Product>>.CheckIsNotNullObject(entities);
+
+
+                var productDto = entities.Select(product => new ProductDTO
+                {
+                    id = product.ID,
+                    productName = product.ProductName,
+                    price = product.Price,
+                    productAvailability = product.Availability.ToString(),
+                    productStatus = product.Status.ToString(),
+                    image = product.IconPath,
+                    quantity = product.Quantity,
+                    userid = product.UserID,
+                    categoryid = product.CategoryID,
+                    brendId = product.BrandID,
+                }).AsEnumerable();
+
+
+                return ResponseFactory<IEnumerable<ProductDTO>>.CreateSuccessResponse(productDto);
+            }
+            catch (Exception ex)
+            {
+                return ResponseFactory<IEnumerable<ProductDTO>>.CreateErrorResponse(ex);
+            }
+        }
+
+        public IBaseResponse<IEnumerable<ProductDTO>> GetAllProductsHits()
+        {
+            try
+            {
+                const double HitRating = 4.5;
+                const int HitsCount = 12;
+
+                var entities = _productRepository.GetAll()
+                    .Where(p => p.Rating >= HitRating) 
+                    .Take(HitsCount) 
+                    .ToList();
+
+                ObjectValidator<IEnumerable<Product>>.CheckIsNotNullObject(entities);
+
+              
+                var productDto = entities.Select(product => new ProductDTO
+                {
+                    id = product.ID,
+                    productName = product.ProductName,
+                    price = product.Price,
+                    productAvailability = product.Availability.ToString(),
+                    productStatus = product.Status.ToString(),
+                    image = product.IconPath,
+                    quantity = product.Quantity,
+                    userid = product.UserID,
+                    categoryid = product.CategoryID,
+                    brendId = product.BrandID,
+                }).AsEnumerable();
+
+
+                return ResponseFactory<IEnumerable<ProductDTO>>.CreateSuccessResponse(productDto);
+            }
+            catch (Exception ex)
+            {
+                return ResponseFactory<IEnumerable<ProductDTO>>.CreateErrorResponse(ex);
             }
         }
     }

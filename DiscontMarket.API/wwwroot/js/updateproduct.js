@@ -112,6 +112,59 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
+    function showOrderConfirmation() {
+        let orderCard = document.querySelector('.order-card');
+        let overlay = document.querySelector('.overlay');
+
+        // Если слой затемнения еще не создан, создаем его
+        if (!overlay) {
+            overlay = document.createElement('div');
+            overlay.classList.add('overlay');
+            document.body.appendChild(overlay);
+        }
+
+        // Если карточка еще не создана, создаем её
+        if (!orderCard) {
+            orderCard = document.createElement('div');
+            orderCard.classList.add('order-card');
+
+            orderCard.innerHTML = `
+                <div class="order-card-content">
+                    <span class="close-order-card">&times;</span>
+                    <p class="order-message">Заказ успешно оформлен</p>
+                    <p class="order-phone">Номер для связи с магазином: <span>8 (981) 210-48-31</span></p>
+                    <button class="call-button">Позвонить</button>
+                </div>
+            `;
+            document.body.appendChild(orderCard);
+        }
+
+        // Показываем карточку и слой затемнения
+        orderCard.style.display = 'block';
+        overlay.style.display = 'block';
+
+        // Обработчик закрытия карточки по крестику
+        orderCard.querySelector('.close-order-card').addEventListener('click', closeOrderCard);
+
+        // Закрытие при клике на затемненный слой
+        overlay.addEventListener('click', closeOrderCard);
+
+        function closeOrderCard() {
+            orderCard.style.display = 'none';
+            overlay.style.display = 'none';
+        }
+
+        // Обработчик кнопки Позвонить
+        orderCard.querySelector('.call-button').addEventListener('click', () => {
+            window.location.href = 'tel:+79812104831';
+        });
+    }
+
+    // Добавление обработчика события на кнопку "Оформить заказ"
+    document.querySelectorAll('.order-button-product').forEach(button => {
+        button.addEventListener('click', showOrderConfirmation);
+    });
+
     // Обработчик смены большого изображения
     function changeImage(imgElement) {
         const thumbnails = document.querySelectorAll(".thumbnail");

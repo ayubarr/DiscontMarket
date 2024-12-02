@@ -26,16 +26,20 @@ namespace DiscontMarket.DAL.SqlServer.Configuration
               p => p.Price
             );
 
+             PropertyHelper<Product>.SetProperties(builder,
+              p => p.Rating
+            );
+
             builder.Property(p => p.Availability)
                 .HasConversion(
                      v => v.ToString(), // Сохранение как строка
-                     v => (Availability)Enum.Parse(typeof(Availability), v)
+                     v => (Availability)Enum.Parse(typeof(Availability), v, true)
                 );
-
+            
             builder.Property(p => p.Status)
                 .HasConversion(
                     v => v.ToString(), // Сохранение как строка
-                    v => (ProductStatus)Enum.Parse(typeof(ProductStatus), v)
+                    v => (ProductStatus)Enum.Parse(typeof(ProductStatus), v, true)
                 );
 
             builder.HasOne(p => p.User)

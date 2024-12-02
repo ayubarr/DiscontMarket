@@ -19,20 +19,25 @@ namespace DiscontMarket.DAL.Repository.Implementations
             var data = _context.Attributes
                 .Include(a => a.AttributeCategories)  // Подгружаем AttributeCategories
                 .ThenInclude(ac => ac.Category)       // Подгружаем саму категорию через AttributeCategories
-                .AsEnumerable()                      // Переключаемся на LINQ to Objects для удобства группировки
-                .GroupBy(a => a.AttributeCategories?.FirstOrDefault()?.Category?.Name) // Группируем по имени категории
+                .AsEnumerable()                      // Переключаемся на LINQ to Objects для удобства обработки
+                .SelectMany(a => a.AttributeCategories.Select(ac => new
+                {
+                    CategoryName = ac.Category.Name, // Имя категории
+                    Attribute = a                    // Атрибут
+                }))
+                .GroupBy(x => x.CategoryName)        // Группируем по имени категории
                 .ToDictionary(
                     categoryGroup => categoryGroup.Key, // Ключ — имя категории
                     categoryGroup => categoryGroup
-                        .GroupBy(attr => attr.Type) // Внутри каждой категории группируем по имени атрибута
+                        .GroupBy(x => x.Attribute.Type) // Внутри каждой категории группируем по типу атрибута
                         .ToDictionary(
-                            attributeGroup => attributeGroup.Key, // Ключ — имя атрибута
+                            attributeGroup => attributeGroup.Key, // Ключ — тип атрибута
                             attributeGroup => attributeGroup.Select(attr => new FilterAtributeAndBrandDTO
                             {
-                                ID = attr.ID,
-                                Type = attr.Type,
-                                Name = attr.Name,
-                                NameTranslate = attr.NameTranslate
+                                ID = attr.Attribute.ID,
+                                Type = attr.Attribute.Type,
+                                Name = attr.Attribute.Name,
+                                NameTranslate = attr.Attribute.NameTranslate
                             }).ToList() // Преобразуем атрибуты в DTO
                         )
                 );
