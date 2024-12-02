@@ -1,7 +1,8 @@
 document.addEventListener("DOMContentLoaded", function () {
     const urlParams = new URLSearchParams(window.location.search);
-    const productId = urlParams.get('id');
+    const productId = parseInt(urlParams.get('id'), 10); // Преобразование в int с основанием 10
     console.log(productId);
+
     const characteristicsList = document.getElementById("characteristicsList");
     const productFullDescription = document.getElementById("productFullDescription");
     const productDescription = document.getElementById("productDescription");
@@ -125,7 +126,7 @@ document.addEventListener("DOMContentLoaded", function () {
         headers: {
             "Content-Type": "application/json",
         },
-        body: JSON.stringify({ productId: productId }),
+        body: JSON.stringify(productId),
     })
         .then((response) => response.json())
         .then((data) => {

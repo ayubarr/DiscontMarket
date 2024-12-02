@@ -29,10 +29,10 @@ namespace DiscontMarket.API.Controllers
         // Получить все продукты с фильтром и сортировкой
         [HttpPost]
         [Route("get-by-id")]
-        public IActionResult GetProductByProductID([FromBody] uint productId)
+        public IActionResult GetProductByProductID([FromBody] int productId)
         {
-            var response = _productService.GetProductById(productId);
-            return Ok(response);
+            var response = _productService.GetProductById((uint)productId);
+            return Ok(response.Data);
         }
 
         // Получить все продукты с фильтром и сортировкой
@@ -40,8 +40,8 @@ namespace DiscontMarket.API.Controllers
         [Route("get-by-name")]
         public IActionResult GetProductByProductName([FromBody] string productName)
         {
-            var response = _productService.GetProductByName(productName);
-            return Ok(response);
+            var response = _productService.GetProductsByName(productName);
+            return Ok(response.Data);
         }
 
 

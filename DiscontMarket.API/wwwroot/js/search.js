@@ -1,15 +1,15 @@
 document.querySelector('.search-input').addEventListener('input', function() {
     const resultsContainer = document.querySelector('.search-results');
-    const query = this.value.trim(); // Убираем лишние пробелы
+    const productName = this.value.trim(); // Убираем лишние пробелы
 
-    if (query.length <= 1) {
+    if (productName.length <= 1) {
         resultsContainer.innerHTML = '';
         resultsContainer.style.display = 'none'; // Скрыть контейнер
-    } else if (query.length >= 2) {
+    } else if (productName.length >= 2) {
         fetch('api/Product/get-by-name', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ query: query })
+            body: JSON.stringify(productName)
         })
         .then(response => response.json())
         .then(data => {

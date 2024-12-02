@@ -10,7 +10,7 @@ namespace DiscontMarket.Services.Services.Interfaces
         IBaseResponse<IEnumerable<ProductDTO>> GetAllProducts(FilterProductDTO filterProductDTO, string? sortProductDTO);
         IBaseResponse<GetProductDTO> GetProductById(uint Id);
 
-        IBaseResponse<GetProductDTO> GetProductByName(string name);
+        IBaseResponse<IEnumerable<GetProductDTO>> GetProductsByName(string name);
 
         IBaseResponse<bool> CreateProduct(CreateProductDTO entityDTO);
 

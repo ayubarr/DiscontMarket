@@ -1,15 +1,16 @@
 ﻿using DiscontMarket.ApiModels.DTO.BaseDTOs;
+using DiscontMarket.ApiModels.DTO.EntityDTOs.Attribute;
 
 namespace DiscontMarket.ApiModels.DTO.EntityDTOs.Product
 {
     public class GetProductDTO : BaseDTO
     {
-        public uint productId { get; set; }
+        public int productId { get; set; }
         public string title { get; set; }
         public double rating { get; set; }
         public string description { get; set; }
         public decimal price { get; set; }
-        public Dictionary<string, string> characteristics { get; set; }
+        public List<CharacteristicDTO> characteristics { get; set; }
         public List<string> images { get; set; }
         public string fullDescription { get; set; }
     }

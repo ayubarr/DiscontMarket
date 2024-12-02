@@ -1,4 +1,5 @@
-﻿using DiscontMarket.ApiModels.DTO.EntityDTOs.Product;
+﻿using DiscontMarket.ApiModels.DTO.EntityDTOs.Attribute;
+using DiscontMarket.ApiModels.DTO.EntityDTOs.Product;
 using DiscontMarket.ApiModels.Responce.Helpers;
 using DiscontMarket.ApiModels.Responce.Interfaces;
 using DiscontMarket.DAL.Repository.Interfaces;
@@ -227,17 +228,16 @@ namespace DiscontMarket.Services.Services.Implementations
                 var characteristics = _attributeRepository
                     .GetAll()
                     .Where(a => a.ProductAttributes!.Any(pa => pa.ProductID == product.ID))
-                    .Select(a => new
+                    .Select(a => new CharacteristicDTO()
                     {
                         Name = a.Type,
                         Value = a.NameTranslate
                     })
-                    .Where(attr => !string.IsNullOrEmpty(attr.Name) && !string.IsNullOrEmpty(attr.Value))
-                    .ToDictionary(attr => attr.Name!, attr => attr.Value!) ?? new Dictionary<string, string>();
+                    .Where(attr => !string.IsNullOrEmpty(attr.Name) && !string.IsNullOrEmpty(attr.Value)).ToList();
 
                 var productDto = new GetProductDTO
                 {
-                    productId = product.ID,
+                    productId = (int)product.ID,
                     title =  product.ProductName,
                     rating = product.Rating,
                     description = product.Description,
@@ -259,55 +259,65 @@ namespace DiscontMarket.Services.Services.Implementations
             }
         }
 
-        public IBaseResponse<GetProductDTO> GetProductByName(string name)
+        public IBaseResponse<IEnumerable<GetProductDTO>> GetProductsByName(string name)
         {
             try
             {
-                var product = _productRepository
+                // Получаем список продуктов, соответствующих имени или содержащих имя в названии
+                var products = _productRepository
                     .GetAll()
-                    .Where(p => p.Equals(name)).FirstOrDefault();
-
-                ObjectValidator<Product>.CheckIsNotNullObject(product);
-
-                var productImages = _imageRepository
-                    .GetAll()
-                    .Where(i => i.ProductID == product.ID)
-                    .Select(i => i.Path)
+                    .Where(p => p.ProductName.ToLower().Contains(name.ToLower()))
                     .ToList();
 
+                // Проверяем, что продукты найдены
+                ObjectValidator<List<Product>>.CheckIsNotNullObject(products);
 
-                // Получаем характеристики продукта через контейнер атрибутов
-                var characteristics = _attributeRepository
-                    .GetAll()
-                    .Where(a => a.ProductAttributes!.Any(pa => pa.ProductID == product.ID))
-                    .Select(a => new
-                    {
-                        Name = a.Type,
-                        Value = a.NameTranslate
-                    })
-                    .Where(attr => !string.IsNullOrEmpty(attr.Name) && !string.IsNullOrEmpty(attr.Value))
-                    .ToDictionary(attr => attr.Name!, attr => attr.Value!) ?? new Dictionary<string, string>();
-
-                var productDto = new GetProductDTO
+                // Создаем список DTO
+                var productDtos = products.Select(product =>
                 {
-                    productId = product.ID,
-                    title = product.ProductName,
-                    rating = product.Rating,
-                    description = product.Description,
-                    price = product.Price,
-                    characteristics = characteristics,
-                    images = productImages,
-                    fullDescription = product.FullDescription,
+                    // Получаем изображения продукта
+                    var productImages = _imageRepository
+                        .GetAll()
+                        .Where(i => i.ProductID == product.ID)
+                        .Select(i => i.Path)
+                        .ToList();
 
-                };
+                    // Получаем характеристики продукта через контейнер атрибутов
+                    var characteristics = _attributeRepository
+                        .GetAll()
+                        .Where(a => a.ProductAttributes!.Any(pa => pa.ProductID == product.ID))
+                        .Select(a => new CharacteristicDTO
+                        {
+                            Name = a.Type,
+                            Value = a.NameTranslate
+                        })
+                        .Where(attr => !string.IsNullOrEmpty(attr.Name) && !string.IsNullOrEmpty(attr.Value))
+                        .ToList();
 
-                ObjectValidator<GetProductDTO>.CheckIsNotNullObject(productDto);
+                    // Формируем DTO объекта
+                    return new GetProductDTO
+                    {
+                        productId = (int)product.ID,
+                        title = product.ProductName,
+                        rating = product.Rating,
+                        description = product.Description,
+                        price = product.Price,
+                        characteristics = characteristics,
+                        images = productImages,
+                        fullDescription = product.FullDescription
+                    };
+                }).ToList();
 
-                return ResponseFactory<GetProductDTO>.CreateSuccessResponse(productDto);
+                // Проверяем, что DTO корректно создан
+                ObjectValidator<IEnumerable<GetProductDTO>>.CheckIsNotNullObject(productDtos);
+
+                // Возвращаем успешный ответ
+                return ResponseFactory<IEnumerable<GetProductDTO>>.CreateSuccessResponse(productDtos);
             }
             catch (Exception ex)
             {
-                return ResponseFactory<GetProductDTO>.CreateErrorResponse(ex);
+                // Возвращаем ошибочный ответ
+                return ResponseFactory<IEnumerable<GetProductDTO>>.CreateErrorResponse(ex);
             }
         }
     }
