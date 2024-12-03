@@ -11,6 +11,8 @@ namespace DiscontMarket.Services.Services.Interfaces
         IBaseResponse<IEnumerable<ProductDTO>> GetAllProductsNews();
         IBaseResponse<IEnumerable<ProductDTO>> GetAllProductsHits();
 
+        public IBaseResponse<IEnumerable<ProductDTO>> GetAllProductsByStatus(FilterProductDTO filterProductDTO, string? sortType, string status);
+
         IBaseResponse<GetProductDTO> GetProductById(uint Id);
 
         IBaseResponse<IEnumerable<GetProductDTO>> GetProductsByName(string name);

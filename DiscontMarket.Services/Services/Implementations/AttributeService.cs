@@ -1,5 +1,6 @@
 ﻿using DiscontMarket.ApiModels.DTO.EntityDTOs.Attribute;
 using DiscontMarket.ApiModels.Responce.Helpers;
+using DiscontMarket.ApiModels.Responce.Implementations;
 using DiscontMarket.ApiModels.Responce.Interfaces;
 using DiscontMarket.DAL.Repository.Interfaces;
 using DiscontMarket.Domain.Models.Abstractions.LinkEntities;
@@ -172,6 +173,20 @@ namespace DiscontMarket.Services.Services.Implementations
 
                 if (category == null)
                 {
+                    if(categoryName == "discount" || categoryName == "damagedpackage" || categoryName == "minordefects")
+                    {
+                        return new BaseResponse<CategoryFilters>
+                        {
+                            IsSuccess = true,
+                            Data = new CategoryFilters()
+                            {
+                                Brands = null,
+                                Attributes = null
+                            },
+                            StatusCode = 200,
+                        };
+                    }
+
                     throw new Exception($"Category not found: {categoryName}");
                 }
 

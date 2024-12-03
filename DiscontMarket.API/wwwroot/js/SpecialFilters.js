@@ -28,11 +28,15 @@ document.addEventListener('DOMContentLoaded', () => {
     .then(data => {
 
         // Обновление categoryFilters данными из PHP
-        categoryFilters = {
-            brands: data.brands,
-            attributes: data.attributes,
-        };
-        
+        if (data.brands && data.attributes) {
+            {
+                categoryFilters = {
+                    brands: data.brands,
+                    attributes: data.attributes,
+                };
+            }
+
+        }
         console.log('Обновленные категории:', categoryFilters);
         
     let activeFilters = {};
@@ -278,18 +282,20 @@ document.addEventListener('DOMContentLoaded', () => {
         console.log("initActiveFilters")
         const currentCategoryFilters = categoryFilters;
         if (!currentCategoryFilters) return;
-    
-        params.forEach((value, key) => {
-            if (currentCategoryFilters.brands.includes(key) && !branddtos.includes(key)) {
-                branddtos.push(key);
-            } else if (currentCategoryFilters.attributes.includes(key) && !attributedtos.includes(key)) {
-                attributedtos.push(key);
-            }
-        });
-    
-        branddtos = branddtos.filter(filter => params.has(filter));
-        attributedtos = attributedtos.filter(filter => params.has(filter));
-    
+
+        if (data.brands && data.attributes) {
+
+            params.forEach((value, key) => {
+                if (currentCategoryFilters.brands.includes(key) && !branddtos.includes(key)) {
+                    branddtos.push(key);
+                } else if (currentCategoryFilters.attributes.includes(key) && !attributedtos.includes(key)) {
+                    attributedtos.push(key);
+                }
+            });
+
+            branddtos = branddtos.filter(filter => params.has(filter));
+            attributedtos = attributedtos.filter(filter => params.has(filter));
+        }
         console.log('AttributeDTOs:', attributedtos);
         console.log('BrandDTOs:', branddtos);
     

@@ -52,7 +52,34 @@ namespace DiscontMarket.Services.Helpers.Filter
             
 
             return filter;
-        } 
+        }
+
+        public static ExpressionStarter<Product> CreateProductFilterWitoutAttributes(FilterProductDTO? productFilterDto)
+        {
+            var filter = PredicateBuilder.New<Product>(true);
+
+            if (productFilterDto.Status is not null)
+                filter = filter.And(BuildSubFilter(
+                    productFilterDto.Status,
+                    (p, status) => p.Status.ToString().Equals(status, StringComparison.OrdinalIgnoreCase)
+                ));
+
+            if (productFilterDto.Availability is not null)
+                filter = filter.And(BuildSubFilter(
+                    productFilterDto.Availability,
+                    (p, availability) => p.Availability.ToString().Equals(availability, StringComparison.OrdinalIgnoreCase)
+                ));
+
+            if (productFilterDto.MinPrice.HasValue)
+                filter = filter.And(p => p.Price >= productFilterDto.MinPrice.Value);
+
+            if (productFilterDto.MaxPrice.HasValue)
+                filter = filter.And(p => p.Price <= productFilterDto.MaxPrice.Value);
+
+            return filter;
+        }
+
+
 
         private static ExpressionStarter<Product> BuildSubFilter<T>(
             IEnumerable<T> items,

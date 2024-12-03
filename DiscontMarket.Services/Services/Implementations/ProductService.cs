@@ -396,5 +396,52 @@ namespace DiscontMarket.Services.Services.Implementations
                 return ResponseFactory<IEnumerable<ProductDTO>>.CreateErrorResponse(ex);
             }
         }
+
+        public IBaseResponse<IEnumerable<ProductDTO>> GetAllProductsByStatus( FilterProductDTO filterProductDTO, string? sortType, string status)
+        {
+            try
+            {            
+                ProductStatus productStatus;
+                if (!Enum.TryParse(status, true, out productStatus))
+                {
+                    throw new Exception($"not found product status {status}");
+                }
+
+                productStatus = (ProductStatus)Enum.Parse(typeof(ProductStatus), status, true);
+
+                var filter = FilterHelper.CreateProductFilterWitoutAttributes(filterProductDTO);
+
+                var entities = _productRepository.GetFilteredProducts(filter)
+                    .Where(p => p.Status.Equals(productStatus));
+
+                ObjectValidator<IEnumerable<Product>>.CheckIsNotNullObject(entities);
+
+                entities = SortHelper.SortProducts(entities, sortType);
+
+            
+                ObjectValidator<IEnumerable<Product>>.CheckIsNotNullObject(entities);
+
+                var productDto = entities.Select(product => new ProductDTO
+                {
+                    id = product.ID,
+                    productName = product.ProductName,
+                    price = product.Price,
+                    productAvailability = product.Availability.ToString(),
+                    productStatus = product.Status.ToString(),
+                    image = product.IconPath,
+                    quantity = product.Quantity,
+                    userid = product.UserID,
+                    categoryid = product.CategoryID,
+                    brendId = product.BrandID,
+                }).AsEnumerable();
+
+
+                return ResponseFactory<IEnumerable<ProductDTO>>.CreateSuccessResponse(productDto);
+            }
+            catch (Exception ex)
+            {
+                return ResponseFactory<IEnumerable<ProductDTO>>.CreateErrorResponse(ex);
+            }
+        }
     }
 }

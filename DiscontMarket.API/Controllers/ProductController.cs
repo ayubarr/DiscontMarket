@@ -23,14 +23,16 @@ namespace DiscontMarket.API.Controllers
         // Получить все продукты с фильтром и сортировкой
         [HttpPost]
         [Route("get-all")]
-        public IActionResult GetAll([FromBody] FilterProductDTO producttFilterDto)
+        public IActionResult GetAll([FromBody] FilterProductDTO productFilterDto)
         {
-            if (!IsCategory(producttFilterDto))
+            if (!IsCategory(productFilterDto))
             {
-                producttFilterDto.CategoryDTO.Name = GetCategoryName();
+                var status = productFilterDto.CategoryDTO.Name;
+                var responseByStatus =  _productService.GetAllProductsByStatus(productFilterDto, productFilterDto.Sort, status);
+                return Ok(responseByStatus);
             }
 
-            var response = _productService.GetAllProducts(producttFilterDto, producttFilterDto.Sort);
+            var response = _productService.GetAllProducts(productFilterDto, productFilterDto.Sort);
             return Ok(response);
         }
 
