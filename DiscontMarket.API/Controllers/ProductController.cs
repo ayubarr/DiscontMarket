@@ -1,4 +1,5 @@
 ﻿using DiscontMarket.ApiModels.DTO.EntityDTOs.Product;
+using DiscontMarket.Services.Services.Implementations;
 using DiscontMarket.Services.Services.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -11,10 +12,12 @@ namespace DiscontMarket.API.Controllers
     public class ProductController : ControllerBase
     {
         private readonly IProductService _productService;
+        private readonly ICategoryService _categoryService;
 
-        public ProductController(IProductService productService)
+        public ProductController(IProductService productService, ICategoryService categoryService)
         {
             _productService = productService;
+            _categoryService = categoryService;
         }
 
         // Получить все продукты с фильтром и сортировкой
@@ -22,8 +25,27 @@ namespace DiscontMarket.API.Controllers
         [Route("get-all")]
         public IActionResult GetAll([FromBody] FilterProductDTO producttFilterDto)
         {
+            if (!IsCategory(producttFilterDto))
+            {
+                producttFilterDto.CategoryDTO.Name = GetCategoryName();
+            }
+
             var response = _productService.GetAllProducts(producttFilterDto, producttFilterDto.Sort);
             return Ok(response);
+        }
+
+        [HttpGet]
+        [Route("get-random-category")]
+        public IActionResult GetRandomCategory()
+        {
+            var response = _categoryService.GetAllNames();
+                
+            var categories = response.Data.ToList();
+            var category = categories[new Random().Next(0, categories.Count)];
+
+            response.Data = new List<string>() { category };
+
+            return Ok(response.Data);
         }
 
         // Получить все продукты с фильтром и сортировкой
@@ -112,6 +134,38 @@ namespace DiscontMarket.API.Controllers
         {
             var response = await _productService.DeleteByIdAsync(id);
             return Ok(response);
+        }
+
+        private bool IsCategory(FilterProductDTO producttFilterDto)
+        {
+            if(producttFilterDto == null || producttFilterDto.CategoryDTO == null || producttFilterDto.CategoryDTO.Name == null) return false;
+
+            switch (producttFilterDto.CategoryDTO.Name.ToLower())
+            {
+                case "discount": 
+                    break;
+
+                case "damagedpackage":
+                    break;
+
+                case "minordefects":
+                    break;
+
+                    default:
+                    return true;
+            }
+            return false;
+        }
+
+        private string GetCategoryName()
+        {
+            var categories = GetCategories().ToList();
+            return categories[new Random().Next(0, categories.Count)];
+        }
+
+        private IEnumerable<string> GetCategories()
+        {
+            return _categoryService.GetAllNames().Data;
         }
     }
 }

@@ -7,9 +7,16 @@ document.addEventListener('DOMContentLoaded', function () {
             // Получаем значение из атрибута data-category
             const category = button.getAttribute('data-category');
 
+            // Проверяем, если значение data-category одно из требуемых
+            let targetUrl = '';
+            if (category === 'discount' || category === 'damagedpackage' || category === 'minordefects') {
+                targetUrl = `catalog.html?${category}=&instock=true&minprice=0&maxprice=100000&preordertomorrow=true&preorderlater=true&${category}=true`;
+            } else {
+                targetUrl = `catalog.html?${category}=&instock=true&minprice=0&maxprice=100000&preordertomorrow=true&preorderlater=true`;
+            }
+
             // После отправки запроса, проверяем текущий URL и выполняем редирект
             const currentUrl = window.location.href;
-            const targetUrl = `catalog.html?${category}=&instock=true&minprice=0&maxprice=100000&preordertomorrow=true&preorderlater=true`; // Фильтры не передаются, дописаны для стартовых галочек
 
             // Проверяем, есть ли значение data-category
             if (category) {
