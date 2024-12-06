@@ -12,12 +12,12 @@ namespace DiscontMarket.ApiModels.Auth
         /// Имя пользователя
         /// </summary>
         [Required(ErrorMessage = "User is required")]
-        public string? Username { get; set; }
+        public string? username { get; set; }
 
         /// <summary>
         /// Пароль пользователя
         /// </summary>
         [Required(ErrorMessage = "Password is required")]
-        public string? Password { get; set; }
+        public string? password { get; set; }
     }
 }

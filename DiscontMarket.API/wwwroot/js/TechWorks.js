@@ -43,7 +43,7 @@ function authenticateUser(username, password) {
         .then(response => response.json())
         .then(data => {
             if (data.statusCode === 200 && data.isSuccess) {
-                if (token === data.token) {
+                if (token === data.data.token) {
                     console.log('Токены совпадают.');
                     return true; // Токены совпадают
                 } else {
@@ -120,48 +120,51 @@ authButton.addEventListener('click', () => {
     }
 
     // Отправка данных на сервер для проверки
-    fetch('api/user/login', {
+    fetch('/api/User/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ username, password })
     })
-        .then(response => response.json())
+    .then(response => response.json())
         .then(data => {
-            if (data.statusCode === 200 && data.isSuccess) {
-                token = localStorage.setItem('authToken', data.token);
+            console.log('Response data:', data); // Проверяем структуру данных
+             console.log('token:', data.data.token);
+        if (data.statusCode === 200 && data.isSuccess) {
+           localStorage.setItem('authToken', data.data.token);
+           token = localStorage.getItem('authToken');
+           
+            // Успешный вход
+            authContainer.classList.remove('active');
+            dashboardContainer.classList.add('active');
+            errorMsg.textContent = '';
+            localStorage.removeItem('attempts');
+            attemptCounter = 0;
 
-                // Успешный вход
-                authContainer.classList.remove('active');
-                dashboardContainer.classList.add('active');
-                errorMsg.textContent = '';
-                localStorage.removeItem('attempts');
-                attemptCounter = 0;
+            sessionEndTime = Date.now() + 60 * 60000;
+            localStorage.setItem('sessionEndTime', sessionEndTime);
 
-                sessionEndTime = Date.now() + 60 * 60000;
-                localStorage.setItem('sessionEndTime', sessionEndTime);
+            startSessionTimer();
+        } else {
+            // Ошибка входа
+            attemptCounter++;
+            localStorage.setItem('attempts', attemptCounter);
+            errorMsg.textContent = `Ошибка: ${data.message}. Осталось попыток: ${3 - attemptCounter}`;
 
-                startSessionTimer();
+            if (attemptCounter >= 3) {
+                blockTime = Date.now() + 10 * 60000;
+                localStorage.setItem('blockTime', blockTime);
+                errorMsg.textContent = 'Вход заблокирован на 10 минут.';
             } else {
-                // Ошибка входа
-                attemptCounter++;
-                localStorage.setItem('attempts', attemptCounter);
-                errorMsg.textContent = `Ошибка: ${data.message}. Осталось попыток: ${3 - attemptCounter}`;
-
-                if (attemptCounter >= 3) {
-                    blockTime = Date.now() + 10 * 60000;
-                    localStorage.setItem('blockTime', blockTime);
-                    errorMsg.textContent = 'Вход заблокирован на 10 минут.';
-                } else {
-                    // Активируем капчу
-                    captchaContainer.style.display = 'block';
-                    currentCaptcha = generateCaptcha();
-                }
+                // Активируем капчу
+                captchaContainer.style.display = 'block';
+                currentCaptcha = generateCaptcha();
             }
-        })
-        .catch(error => {
-            errorMsg.textContent = 'Ошибка соединения с сервером.';
-            console.error('Ошибка:', error);
-        });
+        }
+    })
+    .catch(error => {
+        errorMsg.textContent = 'Ошибка соединения с сервером.';
+        console.error('Ошибка:', error);
+    });
 });
 
 // Проверка блокировки и активной сессии при загрузке страницы
@@ -180,10 +183,9 @@ const editAdsContainer = document.getElementById('edit-ads-container');
 
 // Переключение между меню и редактированием рекламы
 editAdsBtn.addEventListener('click', () => {
-    if (authenticateUser(username, password)) {
         dashboardContainer.style.display = 'none';
         editAdsContainer.style.display = 'block';
-    }
+    
 });
 
 backBtn.addEventListener('click', () => {
@@ -218,30 +220,34 @@ document.querySelectorAll('.file-input').forEach(input => {
                     return;
                 }
 
-                if (authenticateUser(username, password)) {
-                    // Если все проверки пройдены, отправляем файл на сервер
-                    const formData = new FormData();
-                    formData.append('file', file);
-                    formData.append('path', path);
-                    formData.append('width', requiredWidth);
-                    formData.append('height', requiredHeight);
+                // Подготовка данных для отправки на сервер
+                const dataToSend = {
+                    path: path,
+                    image: e.target.result.split(',')[1], // Получаем base64 строку изображения
+                    imageName: file.name,
+                    width: requiredWidth,
+                    height: requiredHeight
+                };
 
-                    fetch('../upload.php', {
-                        method: 'POST',
-                        body: formData
+                // Отправка запроса на сервер через новый API
+                fetch('/api/image/load-image', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(dataToSend),
+                })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.success) {
+                            alert('Файл успешно загружен');
+                            const img = field.querySelector('img');
+                            img.src = e.target.result; // Обновляем превью изображения
+                        } else {
+                            alert(data.error || 'Ошибка загрузки');
+                        }
                     })
-                        .then(response => response.json())
-                        .then(data => {
-                            if (data.success) {
-                                alert('Файл успешно загружен');
-                                const img = field.querySelector('img');
-                                img.src = e.target.result; // Обновляем превью изображения
-                            } else {
-                                alert(data.error || 'Ошибка загрузки');
-                            }
-                        })
-                        .catch(err => alert('Ошибка соединения с сервером'));
-                }
+                    .catch(err => alert('Ошибка соединения с сервером'));
             };
             imgTemp.src = e.target.result;
         };
@@ -250,10 +256,9 @@ document.querySelectorAll('.file-input').forEach(input => {
 });
 
 document.getElementById('manage-products-btn').addEventListener('click', () => {
-    if (authenticateUser(username, password)) {
         document.getElementById('manage-products-container').style.display = 'block';
         document.getElementById('dashboard-container').style.display = 'none';
-    }
+    
 });
 
 // Возврат на панель управления
@@ -270,16 +275,14 @@ document.getElementById('category-select').addEventListener('change', (event) =>
 
 // Вызов функции для инициализации характеристик при загрузке страницы
 window.addEventListener('DOMContentLoaded', function () {
-    if (authenticateUser(username, password)) {
         updateCharacteristics();  // При первой загрузке отображаем характеристики для первой категории
-    }
+    
 });
 
 // Загрузка данных характеристик из PHP (JSON)
 let categoryFilters = {};
 
 
-if (authenticateUser(username, password)) {
     // Получаем фильтры через POST-запрос
     fetch('api/filter/get-filters', {
         method: 'GET',
@@ -294,7 +297,7 @@ if (authenticateUser(username, password)) {
         .catch(error => {
             console.error('Ошибка загрузки фильтров:', error);
         });
-}
+
 
 document.getElementById('product-images').addEventListener('change', (event) => {
     const files = event.target.files;
@@ -392,57 +395,79 @@ document.getElementById('save-product-btn').addEventListener('click', () => {
         });
     }
 
-    // Сохранение изображений в папке ./items/productimages/
     let imagePaths = [];
-    Array.from(images).forEach((file, index) => {
-        if (authenticateUser(username, password)) {
-            const formData = new FormData();
-            formData.append('image', file);
-            formData.append('imageName', `productimage_${Date.now()}_${index}.png`);
+    const uploadPromises = Array.from(images).map((file, index) => {
+        return new Promise((resolve, reject) => {
+                const reader = new FileReader();
 
-            // Отправка изображения на сервер с сохранением
-            fetch('saveimage.php', {
-                method: 'POST',
-                body: formData
-            })
-            .then(response => response.json())
-            .then(data => {
-                // Добавляем путь к изображению в массив
-                imagePaths.push(data.imagePath);
-            })
-            .catch(error => {
-                console.error('Ошибка сохранения изображения:', error);
-            });
-        }
+                // Когда изображение будет прочитано, выполняем отправку
+                reader.onloadend = () => {
+                    const base64Image = reader.result.split(',')[1]; // Извлекаем Base64 строку из результата
+
+                    // Формируем объект для отправки на сервер
+                    const dataToSend = {
+                        image: base64Image,
+                        imageName: `productimage_${Date.now()}_${index}.png`
+                    };
+
+                    console.log(dataToSend); // Логируем, чтобы проверить данные перед отправкой
+
+                    // Отправка изображения на сервер с сохранением
+                    fetch('api/Image/upload-image', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(dataToSend) // Отправляем данные как JSON
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        // Добавляем путь к изображению в массив
+                        console.log('data.imagePath: ', data.imagePath);
+                        imagePaths.push(data.imagePath);
+                        resolve();
+                    })
+                    .catch(error => {
+                        console.error('Ошибка сохранения изображения:', error);
+                        reject(error);
+                    });
+                };
+
+                // Читаем файл как Data URL (Base64)
+                reader.readAsDataURL(file);
+
+        });
     });
 
-    // Создание объекта товара
-    const newProduct = {
-        categoryname,
-        title,
-        brandname,
-        quantity,
-        description,
-        fullDescription,
-        price,
-        status,
-        availability,
-        imagePaths,
-        characteristics
-    };
+    // Ждем завершения всех загрузок
+    Promise.all(uploadPromises)
+        .then(() => {
+            // Создание объекта товара
+            const newProduct = {
+                categoryname,
+                title,
+                brandname,
+                quantity,
+                description,
+                fullDescription,
+                price,
+                status,
+                availability,
+                imagePaths,
+                characteristics
+            };
 
-
-    console.log(newProduct);
-
-    if (authenticateUser(username, password)) {
-        // Отправка данных товара на сервер
-        fetch('api/Product/create', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(newProduct)
-        })
+            console.log(newProduct);
+            console.log("Bearer token", token);
+            // Отправка данных товара на сервер
+            fetch('api/Product/create', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${token}`
+                },
+                body: JSON.stringify(newProduct)
+            })
             .then(response => response.json())
             .then(data => {
                 console.log('Товар успешно сохранен:', data);
@@ -454,7 +479,12 @@ document.getElementById('save-product-btn').addEventListener('click', () => {
 
                 resetProductForm();
             });
-    }
+            
+        })
+        .catch(error => {
+            console.error('Ошибка загрузки изображений:', error);
+        });
+
 });
 
 function resetProductForm() {
@@ -475,10 +505,9 @@ function resetProductForm() {
 
 
 document.getElementById('delete-products-btn').addEventListener('click', () => {
-    if (authenticateUser(username, password)) {
         document.getElementById('dashboard-container').style.display = 'none';
         document.getElementById('delete-products-container').style.display = 'block';
-    }
+    
 });
 
 // Возврат на панель управления
@@ -490,7 +519,6 @@ document.getElementById('back-btn-delete').addEventListener('click', () => {
 document.getElementById('delete-product-btn').addEventListener('click', () => {
     const title = document.getElementById('product-delete-title').value.trim();
 
-    if (title && authenticateUser(username, password)) {
         fetch('http://192.168.192.59/сайт/delete_product.php', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
@@ -503,16 +531,12 @@ document.getElementById('delete-product-btn').addEventListener('click', () => {
             .catch(error => {
                 console.error('Ошибка:', error);
             });
-    } else {
-        alert('Введите название товара.');
-    }
 });
 
 
 
 const maintenanceBtn = document.getElementById('maintenance-btn');
 
-if (authenticateUser(username, password)) {
     // Проверка текущего состояния
     fetch('maintenance.php')
         .then(response => response.json())
@@ -523,12 +547,11 @@ if (authenticateUser(username, password)) {
                 maintenanceBtn.textContent = 'Закрыть сайт на техническое обслуживание';
             }
         });
-}
+
 
 // Обработка нажатия кнопки
 maintenanceBtn.addEventListener('click', () => {
     const isUnderMaintenance = maintenanceBtn.textContent.includes('Закрыть');
-    if (authenticateUser(username, password)) {
         fetch('maintenance.php', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
@@ -544,12 +567,11 @@ maintenanceBtn.addEventListener('click', () => {
                     alert('Ошибка обновления статуса');
                 }
             });
-    }
+    
 });
 
 // Создаём переменную для хранения ссылки на плашку
 let maintenanceBanner;
-if (authenticateUser(username, password)) {
     // Проверка текущего состояния
     fetch('maintenance.php')
         .then(response => response.json())
@@ -558,7 +580,7 @@ if (authenticateUser(username, password)) {
                 showBanner(); // Показать плашку, если сайт в режиме обслуживания
             }
         });
-}
+
 
 // Функция для показа плашки
 function showBanner() {
@@ -584,7 +606,6 @@ function hideBanner() {
 // Обработка нажатия кнопки
 maintenanceBtn.addEventListener('click', () => {
     const isUnderMaintenance = maintenanceBtn.textContent.includes('Закрыть');
-    if (authenticateUser(username, password)) {
         fetch('maintenance.php', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
@@ -608,17 +629,16 @@ maintenanceBtn.addEventListener('click', () => {
                     alert('Ошибка обновления статуса');
                 }
             });
-    }
+    
 });
 
 
 
 document.getElementById('edit-attributes-btn').addEventListener('click', function () {
-    if (authenticateUser(username, password)) {
         document.getElementById('dashboard-container').style.display = 'none';
         document.getElementById('attribute-editor-container').style.display = 'block';
         loadAttributes(jsonData); // Подгружаем атрибуты
-    }
+    
 });
 
 document.getElementById('back-btn-attributes').addEventListener('click', function () {
@@ -632,7 +652,6 @@ document.getElementById('save-attributes-btn').addEventListener('click', functio
 
 
 function loadData() {
-    if (authenticateUser(username, password)) {
         fetch('http://192.168.192.59/сайт/attributes.php', {
             method: 'POST',
             headers: {
@@ -642,7 +661,7 @@ function loadData() {
             .then(response => response.json())
             .then(data => renderCategories(data))
             .catch(error => console.error('Error loading data:', error));
-    }
+    
 }
 
 function renderCategories(data) {
@@ -791,7 +810,6 @@ function saveAttributes() {
     });
 
     // Отправляем данные на сервер
-    if (authenticateUser(username, password)) {
         fetch('http://192.168.192.59/сайт/attributes.php', {
             method: 'POST',
             headers: {
@@ -806,7 +824,7 @@ function saveAttributes() {
             .catch(error => {
                 console.error('Ошибка при отправке данных:', error);
             });
-    }
+    
 
     // Выводим данные в консоль для проверки перед отправкой
     console.log('Отправленные данные:', JSON.stringify(data, null, 2));

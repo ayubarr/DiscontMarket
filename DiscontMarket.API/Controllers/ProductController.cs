@@ -1,9 +1,8 @@
-﻿using DiscontMarket.ApiModels.DTO.EntityDTOs.Product;
-using DiscontMarket.Services.Services.Implementations;
+﻿using DiscontMarket.ApiModels.DTO.EntityDTOs.Image;
+using DiscontMarket.ApiModels.DTO.EntityDTOs.Product;
 using DiscontMarket.Services.Services.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Newtonsoft.Json;
 
 namespace DiscontMarket.API.Controllers
 {
@@ -28,7 +27,7 @@ namespace DiscontMarket.API.Controllers
             if (!IsCategory(productFilterDto))
             {
                 var status = productFilterDto.CategoryDTO.Name;
-                var responseByStatus =  _productService.GetAllProductsByStatus(productFilterDto, productFilterDto.Sort, status);
+                var responseByStatus = _productService.GetAllProductsByStatus(productFilterDto, productFilterDto.Sort, status);
                 return Ok(responseByStatus);
             }
 
@@ -41,7 +40,7 @@ namespace DiscontMarket.API.Controllers
         public IActionResult GetRandomCategory()
         {
             var response = _categoryService.GetAllNames();
-                
+
             var categories = response.Data.ToList();
             var category = categories[new Random().Next(0, categories.Count)];
 
@@ -55,7 +54,7 @@ namespace DiscontMarket.API.Controllers
         [Route("get-all-news")]
         public IActionResult GetAllNews()
         {
-            var response = _productService.GetAllProductsNews( );
+            var response = _productService.GetAllProductsNews();
             return Ok(response);
         }
 
@@ -98,12 +97,12 @@ namespace DiscontMarket.API.Controllers
         }
 
         // Создать новый продукт
-       // [Authorize(AuthenticationSchemes = "Bearer")]
+        [Authorize(AuthenticationSchemes = "Bearer")]
         [HttpPost]
         [Route("create")]
-        public  IActionResult Create([FromBody] CreateProductDTO newProduct)
+        public IActionResult Create([FromBody] CreateProductDTO newProduct)
         {
-            var response =  _productService.CreateProduct(newProduct);
+            var response = _productService.CreateProduct(newProduct);
             return Ok(response);
         }
 
@@ -124,7 +123,7 @@ namespace DiscontMarket.API.Controllers
         [Route("delete-by-name")]
         public IActionResult Delete(string name)
         {
-            var response =  _productService.DeleteByProductName(name);
+            var response = _productService.DeleteByProductName(name);
             return Ok(response);
         }
 
@@ -140,11 +139,11 @@ namespace DiscontMarket.API.Controllers
 
         private bool IsCategory(FilterProductDTO producttFilterDto)
         {
-            if(producttFilterDto == null || producttFilterDto.CategoryDTO == null || producttFilterDto.CategoryDTO.Name == null) return false;
+            if (producttFilterDto == null || producttFilterDto.CategoryDTO == null || producttFilterDto.CategoryDTO.Name == null) return false;
 
             switch (producttFilterDto.CategoryDTO.Name.ToLower())
             {
-                case "discount": 
+                case "discount":
                     break;
 
                 case "damagedpackage":
@@ -153,11 +152,12 @@ namespace DiscontMarket.API.Controllers
                 case "minordefects":
                     break;
 
-                    default:
+                default:
                     return true;
             }
             return false;
         }
+
 
         private string GetCategoryName()
         {

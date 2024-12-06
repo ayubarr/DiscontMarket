@@ -9,7 +9,7 @@
         /// <summary>
         /// Токен аунтификации
         /// </summary>
-        public string Token { get; set; }
+        public string token { get; set; }
 
         /// <summary>
         /// Дата истечения срока действия токена аунтификации

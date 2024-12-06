@@ -59,6 +59,9 @@ builder.Services.AddSwaggerGen(x =>
     });
 
     x.CustomSchemaIds(t => t.FullName);
+
+    // Добавляем фильтр для обработки multipart/form-data
+    x.OperationFilter<SwaggerFileOperationFilter>();
 });
 
 // CORS

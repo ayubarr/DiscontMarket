@@ -2,8 +2,8 @@
 
 namespace DiscontMarket.ApiModels.DTO.EntityDTOs.Image
 {
-    public class CreateImageDTO : BaseDTO
+    public class GetImageDTO : BaseDTO
     {
-        public string Path { get; set; }
+        public string imagePath { get; set; }
     }
 }

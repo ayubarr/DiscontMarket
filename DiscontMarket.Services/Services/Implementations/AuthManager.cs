@@ -37,8 +37,8 @@ namespace DiscontMarket.Services.Services.Implementations
             try
             {
                 ObjectValidator<LoginModel>.CheckIsNotNullObject(model);
-                var user = await _userManager.FindByNameAsync(model.Username);
-                if (user != null && await _userManager.CheckPasswordAsync(user, model.Password))
+                var user = await _userManager.FindByNameAsync(model.username);
+                if (user != null && await _userManager.CheckPasswordAsync(user, model.password))
                 {
                     var authClaims = new List<Claim>
             {
@@ -59,7 +59,7 @@ namespace DiscontMarket.Services.Services.Implementations
 
                         return ResponseFactory<AuthResultStruct>.CreateSuccessResponse(new AuthResultStruct
                         {
-                            Token = new JwtSecurityTokenHandler().WriteToken(token),
+                            token = new JwtSecurityTokenHandler().WriteToken(token),
                             RefreshToken = refreshToken,
                             Expiration = token.ValidTo,
                         });
@@ -172,7 +172,7 @@ namespace DiscontMarket.Services.Services.Implementations
 
                 return ResponseFactory<AuthResultStruct>.CreateSuccessResponse(new AuthResultStruct
                 {
-                    Token = new JwtSecurityTokenHandler().WriteToken(newAccessToken),
+                    token = new JwtSecurityTokenHandler().WriteToken(newAccessToken),
                     RefreshToken = newRefreshToken,
                     Expiration = newAccessToken.ValidTo
                 });
