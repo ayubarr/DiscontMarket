@@ -9,6 +9,9 @@ const sessionTimerDisplay = document.createElement('div');
 let attemptCounter = parseInt(localStorage.getItem('attempts')) || 0;
 let blockTime = parseInt(localStorage.getItem('blockTime')) || 0;
 let sessionEndTime = parseInt(localStorage.getItem('sessionEndTime')) || 0;
+let token;
+let username;
+let password;
 
 // Стили для таймера
 sessionTimerDisplay.style.cssText = `
@@ -30,6 +33,34 @@ function generateCaptcha() {
     document.getElementById('captcha-text').textContent = captcha;
     return captcha;
 }
+
+function authenticateUser(username, password) {
+    const url = 'api/user/login';
+    const headers = { 'Content-Type': 'application/json' };
+    const body = JSON.stringify({ username, password });
+
+    return fetch(url, { method: 'POST', headers, body })
+        .then(response => response.json())
+        .then(data => {
+            if (data.statusCode === 200 && data.isSuccess) {
+                if (token === data.token) {
+                    console.log('Токены совпадают.');
+                    return true; // Токены совпадают
+                } else {
+                    console.log('Токены не совпадают. Обновляем токен.');
+                    return false; // Токены не совпадают
+                }
+            } else {
+                console.error(`Ошибка авторизации: ${data.message}`);
+                return false; // Ошибка авторизации
+            }
+        })
+        .catch(error => {
+            console.error('Ошибка соединения с сервером:', error);
+            return false; // Ошибка соединения
+        });
+}
+
 
 let currentCaptcha = generateCaptcha();
 
@@ -65,6 +96,7 @@ function startSessionTimer() {
         if (remainingTime <= 0) {
             clearInterval(interval);
             sessionTimerDisplay.style.display = 'none';
+            localStorage.removeItem('authToken');
             alert('Сессия истекла. Авторизуйтесь снова.');
             localStorage.removeItem('sessionEndTime');
             location.reload(); // Перезагрузка страницы
@@ -73,8 +105,8 @@ function startSessionTimer() {
 }
 
 authButton.addEventListener('click', () => {
-    const username = usernameField.value;
-    const password = passwordField.value;
+    username = usernameField.value;
+    password = passwordField.value;
     const captchaInput = document.getElementById('captcha-input').value;
 
     // Проверка состояния блокировки
@@ -88,46 +120,48 @@ authButton.addEventListener('click', () => {
     }
 
     // Отправка данных на сервер для проверки
-    fetch('api/User/login', {
+    fetch('api/user/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ username, password })
     })
-    .then(response => response.json())
-    .then(data => {
-        if (data.statusCode === 200 && data.isSuccess) {
-            // Успешный вход
-            authContainer.classList.remove('active');
-            dashboardContainer.classList.add('active');
-            errorMsg.textContent = '';
-            localStorage.removeItem('attempts');
-            attemptCounter = 0;
+        .then(response => response.json())
+        .then(data => {
+            if (data.statusCode === 200 && data.isSuccess) {
+                token = localStorage.setItem('authToken', data.token);
 
-            sessionEndTime = Date.now() + 60 * 60000; // Сессия длится 10 минут
-            localStorage.setItem('sessionEndTime', sessionEndTime);
+                // Успешный вход
+                authContainer.classList.remove('active');
+                dashboardContainer.classList.add('active');
+                errorMsg.textContent = '';
+                localStorage.removeItem('attempts');
+                attemptCounter = 0;
 
-            startSessionTimer();
-        } else {
-            // Ошибка входа
-            attemptCounter++;
-            localStorage.setItem('attempts', attemptCounter);
-            errorMsg.textContent = `Ошибка: ${data.message}. Осталось попыток: ${3 - attemptCounter}`;
+                sessionEndTime = Date.now() + 60 * 60000;
+                localStorage.setItem('sessionEndTime', sessionEndTime);
 
-            if (attemptCounter >= 3) {
-                blockTime = Date.now() + 10 * 60000; // Блокировка на 10 минут
-                localStorage.setItem('blockTime', blockTime);
-                errorMsg.textContent = 'Вход заблокирован на 10 минут.';
+                startSessionTimer();
             } else {
-                // Активируем капчу
-                captchaContainer.style.display = 'block';
-                currentCaptcha = generateCaptcha();
+                // Ошибка входа
+                attemptCounter++;
+                localStorage.setItem('attempts', attemptCounter);
+                errorMsg.textContent = `Ошибка: ${data.message}. Осталось попыток: ${3 - attemptCounter}`;
+
+                if (attemptCounter >= 3) {
+                    blockTime = Date.now() + 10 * 60000;
+                    localStorage.setItem('blockTime', blockTime);
+                    errorMsg.textContent = 'Вход заблокирован на 10 минут.';
+                } else {
+                    // Активируем капчу
+                    captchaContainer.style.display = 'block';
+                    currentCaptcha = generateCaptcha();
+                }
             }
-        }
-    })
-    .catch(error => {
-        errorMsg.textContent = 'Ошибка соединения с сервером.';
-        console.error('Ошибка:', error);
-    });
+        })
+        .catch(error => {
+            errorMsg.textContent = 'Ошибка соединения с сервером.';
+            console.error('Ошибка:', error);
+        });
 });
 
 // Проверка блокировки и активной сессии при загрузке страницы
@@ -146,8 +180,10 @@ const editAdsContainer = document.getElementById('edit-ads-container');
 
 // Переключение между меню и редактированием рекламы
 editAdsBtn.addEventListener('click', () => {
-    dashboardContainer.style.display = 'none';
-    editAdsContainer.style.display = 'block';
+    if (authenticateUser(username, password)) {
+        dashboardContainer.style.display = 'none';
+        editAdsContainer.style.display = 'block';
+    }
 });
 
 backBtn.addEventListener('click', () => {
@@ -182,28 +218,30 @@ document.querySelectorAll('.file-input').forEach(input => {
                     return;
                 }
 
-                // Если все проверки пройдены, отправляем файл на сервер
-                const formData = new FormData();
-                formData.append('file', file);
-                formData.append('path', path);
-                formData.append('width', requiredWidth);
-                formData.append('height', requiredHeight);
+                if (authenticateUser(username, password)) {
+                    // Если все проверки пройдены, отправляем файл на сервер
+                    const formData = new FormData();
+                    formData.append('file', file);
+                    formData.append('path', path);
+                    formData.append('width', requiredWidth);
+                    formData.append('height', requiredHeight);
 
-                fetch('upload.php', {
-                    method: 'POST',
-                    body: formData
-                })
-                    .then(response => response.json())
-                    .then(data => {
-                        if (data.success) {
-                            alert('Файл успешно загружен');
-                            const img = field.querySelector('img');
-                            img.src = e.target.result; // Обновляем превью изображения
-                        } else {
-                            alert(data.error || 'Ошибка загрузки');
-                        }
+                    fetch('../upload.php', {
+                        method: 'POST',
+                        body: formData
                     })
-                    .catch(err => alert('Ошибка соединения с сервером'));
+                        .then(response => response.json())
+                        .then(data => {
+                            if (data.success) {
+                                alert('Файл успешно загружен');
+                                const img = field.querySelector('img');
+                                img.src = e.target.result; // Обновляем превью изображения
+                            } else {
+                                alert(data.error || 'Ошибка загрузки');
+                            }
+                        })
+                        .catch(err => alert('Ошибка соединения с сервером'));
+                }
             };
             imgTemp.src = e.target.result;
         };
@@ -212,8 +250,10 @@ document.querySelectorAll('.file-input').forEach(input => {
 });
 
 document.getElementById('manage-products-btn').addEventListener('click', () => {
-    document.getElementById('manage-products-container').style.display = 'block';
-    document.getElementById('dashboard-container').style.display = 'none';
+    if (authenticateUser(username, password)) {
+        document.getElementById('manage-products-container').style.display = 'block';
+        document.getElementById('dashboard-container').style.display = 'none';
+    }
 });
 
 // Возврат на панель управления
@@ -230,26 +270,31 @@ document.getElementById('category-select').addEventListener('change', (event) =>
 
 // Вызов функции для инициализации характеристик при загрузке страницы
 window.addEventListener('DOMContentLoaded', function () {
-    updateCharacteristics();  // При первой загрузке отображаем характеристики для первой категории
+    if (authenticateUser(username, password)) {
+        updateCharacteristics();  // При первой загрузке отображаем характеристики для первой категории
+    }
 });
 
 // Загрузка данных характеристик из PHP (JSON)
 let categoryFilters = {};
 
-// Получаем фильтры через GET-запрос
-fetch('api/Filter/get-all', {
-    method: 'GET',
-    headers: {
-        'Content-Type': 'application/json'
-    },
-})
-    .then(response => response.json())
-    .then(data => {
-        categoryFilters = data;
+
+if (authenticateUser(username, password)) {
+    // Получаем фильтры через POST-запрос
+    fetch('api/filter/get-filters', {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json'
+        },
     })
-    .catch(error => {
-        console.error('Ошибка загрузки фильтров:', error);
-    });
+        .then(response => response.json())
+        .then(data => {
+            categoryFilters = data;
+        })
+        .catch(error => {
+            console.error('Ошибка загрузки фильтров:', error);
+        });
+}
 
 document.getElementById('product-images').addEventListener('change', (event) => {
     const files = event.target.files;
@@ -313,13 +358,14 @@ document.getElementById('save-product-btn').addEventListener('click', () => {
     const status = document.getElementById('product-status').value;
     const categoryname = document.getElementById('category-select').value;
     const availability = document.getElementById('product-availability').value;
+    const quantity = document.getElementById('product-quantity').value;
 
     // Проверка обязательных полей
-    if (!categoryname || !title || !description || !fullDescription || !price || images.length === 0 || !status) {
+    if (!categoryname || !title || !description || !fullDescription || !price || images.length === 0 || !status || !quantity) {
         alert("Пожалуйста, заполните все обязательные поля.");
         return;
     }
-   
+
     // Проверка на отрицательное значение цены
     if (parseFloat(price) <= 0) {
         alert("Цена должна быть положительным числом.");
@@ -328,6 +374,7 @@ document.getElementById('save-product-btn').addEventListener('click', () => {
 
     const characteristics = [];
     let brandname = '';
+
     const filters = categoryFilters[categoryname]?.filters;
     if (filters) {
         filters.forEach(filter => {
@@ -345,27 +392,28 @@ document.getElementById('save-product-btn').addEventListener('click', () => {
         });
     }
 
-
     // Сохранение изображений в папке ./items/productimages/
-    const imagePaths = [];
+    let imagePaths = [];
     Array.from(images).forEach((file, index) => {
-        const formData = new FormData();
-        formData.append('image', file);
-        formData.append('imageName', `productimage_${Date.now()}_${index}.png`);
+        if (authenticateUser(username, password)) {
+            const formData = new FormData();
+            formData.append('image', file);
+            formData.append('imageName', `productimage_${Date.now()}_${index}.png`);
 
-        // Отправка изображения на сервер с сохранением
-        fetch('saveimage.php', {
-            method: 'POST',
-            body: formData
-        })
-        .then(response => response.json())
-        .then(data => {
-            // Добавляем путь к изображению в массив
-            imagePaths.push(data.imagePath);
-        })
-        .catch(error => {
-            console.error('Ошибка сохранения изображения:', error);
-        });
+            // Отправка изображения на сервер с сохранением
+            fetch('saveimage.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Добавляем путь к изображению в массив
+                imagePaths.push(data.imagePath);
+            })
+            .catch(error => {
+                console.error('Ошибка сохранения изображения:', error);
+            });
+        }
     });
 
     // Создание объекта товара
@@ -373,42 +421,64 @@ document.getElementById('save-product-btn').addEventListener('click', () => {
         categoryname,
         title,
         brandname,
+        quantity,
         description,
         fullDescription,
         price,
         status,
         availability,
-        images: imagePaths,
+        imagePaths,
         characteristics
     };
 
 
-
     console.log(newProduct);
 
-    // Отправка данных товара на сервер
-    fetch('api/Products/create', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(newProduct)
-    })
-    .then(response => response.json())
-    .then(data => {
-        console.log('Товар успешно сохранен:', data);
-    })
-    .catch(error => {
-        console.error('Ошибка отправки данных товара:', error);
-    });
+    if (authenticateUser(username, password)) {
+        // Отправка данных товара на сервер
+        fetch('api/Product/create', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(newProduct)
+        })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Товар успешно сохранен:', data);
+
+                resetProductForm();
+            })
+            .catch(error => {
+                console.error('Ошибка отправки данных товара:', error);
+
+                resetProductForm();
+            });
+    }
 });
+
+function resetProductForm() {
+    document.getElementById('product-title').value = '';
+    document.getElementById('product-description').value = '';
+    document.getElementById('product-full-description').value = '';
+    document.getElementById('product-price').value = '';
+    document.getElementById('product-status').value = '';
+    document.getElementById('category-select').value = 'Выберите категорию';  // Сброс категории
+    document.getElementById('product-images').value = '';  // Очистка файлов
+
+    // Очистка характеристик
+    const container = document.getElementById('characteristics-container');
+    container.innerHTML = '';
+}
 
 
 
 
 document.getElementById('delete-products-btn').addEventListener('click', () => {
-    document.getElementById('dashboard-container').style.display = 'none';
-    document.getElementById('delete-products-container').style.display = 'block';
+    if (authenticateUser(username, password)) {
+        document.getElementById('dashboard-container').style.display = 'none';
+        document.getElementById('delete-products-container').style.display = 'block';
+    }
 });
 
 // Возврат на панель управления
@@ -419,20 +489,20 @@ document.getElementById('back-btn-delete').addEventListener('click', () => {
 
 document.getElementById('delete-product-btn').addEventListener('click', () => {
     const title = document.getElementById('product-delete-title').value.trim();
-    
-    if (title) {
-        fetch('api/product/delete-by-name', {
+
+    if (title && authenticateUser(username, password)) {
+        fetch('http://192.168.192.59/сайт/delete_product.php', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ title })
         })
-        .then(response => response.json())
-        .then(data => {
-            document.getElementById('delete-result').innerText = data.message;
-        })
-        .catch(error => {
-            console.error('Ошибка:', error);
-        });
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('delete-result').innerText = data.message;
+            })
+            .catch(error => {
+                console.error('Ошибка:', error);
+            });
     } else {
         alert('Введите название товара.');
     }
@@ -442,48 +512,53 @@ document.getElementById('delete-product-btn').addEventListener('click', () => {
 
 const maintenanceBtn = document.getElementById('maintenance-btn');
 
-// Проверка текущего состояния
-fetch('maintenance.php')
-    .then(response => response.json())
-    .then(data => {
-        if (data.is_under_maintenance) {
-            maintenanceBtn.textContent = 'Завершить технические работы';
-        } else {
-            maintenanceBtn.textContent = 'Закрыть сайт на техническое обслуживание';
-        }
-    });
+if (authenticateUser(username, password)) {
+    // Проверка текущего состояния
+    fetch('maintenance.php')
+        .then(response => response.json())
+        .then(data => {
+            if (data.is_under_maintenance) {
+                maintenanceBtn.textContent = 'Завершить технические работы';
+            } else {
+                maintenanceBtn.textContent = 'Закрыть сайт на техническое обслуживание';
+            }
+        });
+}
 
 // Обработка нажатия кнопки
 maintenanceBtn.addEventListener('click', () => {
     const isUnderMaintenance = maintenanceBtn.textContent.includes('Закрыть');
-    fetch('maintenance.php', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ is_under_maintenance: isUnderMaintenance })
-    })
-    .then(response => response.json())
-    .then(data => {
-        if (data.success) {
-            maintenanceBtn.textContent = isUnderMaintenance
-                ? 'Завершить технические работы'
-                : 'Закрыть сайт на техническое обслуживание';
-        } else {
-            alert('Ошибка обновления статуса');
-        }
-    });
+    if (authenticateUser(username, password)) {
+        fetch('maintenance.php', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ is_under_maintenance: isUnderMaintenance })
+        })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    maintenanceBtn.textContent = isUnderMaintenance
+                        ? 'Завершить технические работы'
+                        : 'Закрыть сайт на техническое обслуживание';
+                } else {
+                    alert('Ошибка обновления статуса');
+                }
+            });
+    }
 });
 
 // Создаём переменную для хранения ссылки на плашку
 let maintenanceBanner;
-
-// Проверка текущего состояния
-fetch('maintenance.php')
-    .then(response => response.json())
-    .then(data => {
-        if (data.is_under_maintenance) {
-            showBanner(); // Показать плашку, если сайт в режиме обслуживания
-        }
-    });
+if (authenticateUser(username, password)) {
+    // Проверка текущего состояния
+    fetch('maintenance.php')
+        .then(response => response.json())
+        .then(data => {
+            if (data.is_under_maintenance) {
+                showBanner(); // Показать плашку, если сайт в режиме обслуживания
+            }
+        });
+}
 
 // Функция для показа плашки
 function showBanner() {
@@ -509,27 +584,232 @@ function hideBanner() {
 // Обработка нажатия кнопки
 maintenanceBtn.addEventListener('click', () => {
     const isUnderMaintenance = maintenanceBtn.textContent.includes('Закрыть');
-    fetch('maintenance.php', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ is_under_maintenance: isUnderMaintenance })
-    })
-    .then(response => response.json())
-    .then(data => {
-        if (data.success) {
-            maintenanceBtn.textContent = isUnderMaintenance
-                ? 'Завершить технические работы'
-                : 'Закрыть сайт на техническое обслуживание';
+    if (authenticateUser(username, password)) {
+        fetch('maintenance.php', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ is_under_maintenance: isUnderMaintenance })
+        })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    maintenanceBtn.textContent = isUnderMaintenance
+                        ? 'Завершить технические работы'
+                        : 'Закрыть сайт на техническое обслуживание';
 
-            // Динамическое управление плашкой
-            if (isUnderMaintenance) {
-                showBanner(); // Показываем плашку
-            } else {
-                hideBanner(); // Убираем плашку
-            }
+                    // Динамическое управление плашкой
+                    if (isUnderMaintenance) {
+                        showBanner(); // Показываем плашку
+                    } else {
+                        hideBanner(); // Убираем плашку
+                    }
 
-        } else {
-            alert('Ошибка обновления статуса');
+                } else {
+                    alert('Ошибка обновления статуса');
+                }
+            });
+    }
+});
+
+
+
+document.getElementById('edit-attributes-btn').addEventListener('click', function () {
+    if (authenticateUser(username, password)) {
+        document.getElementById('dashboard-container').style.display = 'none';
+        document.getElementById('attribute-editor-container').style.display = 'block';
+        loadAttributes(jsonData); // Подгружаем атрибуты
+    }
+});
+
+document.getElementById('back-btn-attributes').addEventListener('click', function () {
+    document.getElementById('attribute-editor-container').style.display = 'none';
+    document.getElementById('dashboard-container').style.display = 'block';
+});
+
+document.getElementById('save-attributes-btn').addEventListener('click', function () {
+    saveAttributes();
+});
+
+
+function loadData() {
+    if (authenticateUser(username, password)) {
+        fetch('http://192.168.192.59/сайт/attributes.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        })
+            .then(response => response.json())
+            .then(data => renderCategories(data))
+            .catch(error => console.error('Error loading data:', error));
+    }
+}
+
+function renderCategories(data) {
+    const categoriesContainer = document.getElementById('attribute-categories');
+    categoriesContainer.innerHTML = '';
+
+    Object.keys(data).forEach(category => {
+        const categoryData = data[category];
+
+        // Создаем элемент категории
+        const categoryElement = document.createElement('div');
+        categoryElement.classList.add('attribute-category');
+        categoryElement.innerHTML = `
+            <h3 class="category-title">${category}</h3>
+            <div class="attribute-list" style="display: none;"></div>
+            <button class="add-attribute-btn" style="display: none;">Добавить атрибут</button>
+        `;
+
+        const attributeList = categoryElement.querySelector('.attribute-list');
+        const addAttributeButton = categoryElement.querySelector('.add-attribute-btn');
+
+        categoryData.filters.forEach(attribute => {
+            const attributeElement = createAttributeElement(attribute);
+            attributeList.appendChild(attributeElement);
+        });
+
+        // Показать кнопку добавления атрибута при клике на категорию
+        categoryElement.querySelector('.category-title').addEventListener('click', function () {
+            const isVisible = attributeList.style.display === 'block';
+            attributeList.style.display = isVisible ? 'none' : 'block';
+            addAttributeButton.style.display = isVisible ? 'none' : 'block'; // Показать/скрыть кнопку
+        });
+
+        // Добавить обработчик для кнопки добавления атрибута
+        addAttributeButton.addEventListener('click', function () {
+            const newAttribute = {
+                title: "Новый атрибут", // Начальное название атрибута
+                options: [] // Пустые опции
+            };
+            const newAttributeElement = createAttributeElement(newAttribute);
+            attributeList.appendChild(newAttributeElement);
+        });
+
+        categoriesContainer.appendChild(categoryElement);
+    });
+}
+
+function removeCyrillic(event) {
+    const value = event.target.value;
+    event.target.value = value.replace(/[А-Яа-яЁё]/g, ''); // Удаляет все символы кириллицы
+}
+
+function createAttributeElement(attribute) {
+    const attributeElement = document.createElement('div');
+    attributeElement.classList.add('attribute-item');
+    attributeElement.innerHTML = `
+        <div class="attribute-header">
+            <input type="text" value="${attribute.title}" class="attribute-title-input" />
+            <button class="remove-attribute-btn">Удалить</button>
+        </div>
+        <div class="options-list">
+            ${attribute.options.map(option => ` 
+                <div class="option-item">
+                    <input type="text" value="${option.label}" />
+                    <input type="text" value="${option.value}" />
+                    <button class="remove-option-btn">Удалить</button>
+                </div>
+            `).join('')}
+            <button class="add-option-btn">Добавить характеристику</button>
+        </div>
+    `;
+
+    // Обработчик удаления атрибута
+    attributeElement.querySelector('.remove-attribute-btn').addEventListener('click', function () {
+        attributeElement.remove();
+    });
+
+    // Обработчик добавления новой опции
+    attributeElement.querySelector('.add-option-btn').addEventListener('click', function () {
+        const optionItem = document.createElement('div');
+        optionItem.classList.add('option-item');
+        optionItem.innerHTML = `
+            <input type="text" placeholder="Label" />
+            <input type="text" placeholder="Value" />
+            <button class="remove-option-btn">Удалить</button>
+        `;
+        optionItem.querySelector('.remove-option-btn').addEventListener('click', function () {
+            optionItem.remove();
+        });
+
+        // Добавляем характеристику в конец списка
+        const optionsList = attributeElement.querySelector('.options-list');
+        optionsList.appendChild(optionItem);
+
+        // Перемещаем кнопку добавления в конец списка
+        const addButton = attributeElement.querySelector('.add-option-btn');
+        optionsList.appendChild(addButton);
+    });
+
+    // Делегирование события на родительский элемент для удаления кириллицы в input[type="text"]
+    attributeElement.querySelector('.options-list').addEventListener('input', function (event) {
+        if (event.target && event.target.matches('input[type="text"]:nth-child(2)')) {
+            removeCyrillic(event);
         }
     });
-});
+
+    return attributeElement;
+}
+
+// Инициализация
+loadData();
+
+function saveAttributes() {
+    // Собираем данные из всех категорий
+    const categories = document.querySelectorAll('.attribute-category');
+    const data = {};
+
+    categories.forEach(categoryElement => {
+        const categoryTitle = categoryElement.querySelector('.category-title').textContent.trim();
+        const attributeList = categoryElement.querySelector('.attribute-list');
+
+        const categoryData = {
+            filters: []
+        };
+
+        // Проходим по всем атрибутам в категории
+        const attributeItems = attributeList.querySelectorAll('.attribute-item');
+        attributeItems.forEach(attributeItem => {
+            const title = attributeItem.querySelector('.attribute-title-input').value.trim();
+            const options = [];
+
+            // Собираем опции для атрибута
+            const optionItems = attributeItem.querySelectorAll('.option-item');
+            optionItems.forEach(optionItem => {
+                const label = optionItem.querySelector('input[type="text"]:nth-child(1)').value.trim();
+                const value = optionItem.querySelector('input[type="text"]:nth-child(2)').value.trim();
+                options.push({ label, value });
+            });
+
+            // Добавляем атрибут с его опциями в категорию
+            categoryData.filters.push({ title, options });
+        });
+
+        // Добавляем категорию в итоговые данные
+        data[categoryTitle] = categoryData;
+    });
+
+    // Отправляем данные на сервер
+    if (authenticateUser(username, password)) {
+        fetch('http://192.168.192.59/сайт/attributes.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data)
+        })
+            .then(response => response.json())
+            .then(responseData => {
+                console.log('Сохраненные данные:', responseData);  // Выводим результат в консоль
+            })
+            .catch(error => {
+                console.error('Ошибка при отправке данных:', error);
+            });
+    }
+
+    // Выводим данные в консоль для проверки перед отправкой
+    console.log('Отправленные данные:', JSON.stringify(data, null, 2));
+    alert('Изменения сохранены!');
+}
+

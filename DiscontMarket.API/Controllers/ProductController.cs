@@ -98,12 +98,12 @@ namespace DiscontMarket.API.Controllers
         }
 
         // Создать новый продукт
-        //[Authorize(AuthenticationSchemes = "Bearer", Roles = "Admin")]
+       // [Authorize(AuthenticationSchemes = "Bearer")]
         [HttpPost]
         [Route("create")]
-        public  IActionResult Create(CreateProductDTO createProductDto)
+        public  IActionResult Create([FromBody] CreateProductDTO newProduct)
         {
-            var response =  _productService.CreateProduct(createProductDto);
+            var response =  _productService.CreateProduct(newProduct);
             return Ok(response);
         }
 
@@ -119,7 +119,7 @@ namespace DiscontMarket.API.Controllers
 
 
         // Удалить продукт по ID
-        //[Authorize(AuthenticationSchemes = "Bearer", Roles = "Admin")]
+        [Authorize(AuthenticationSchemes = "Bearer")]
         [HttpDelete]
         [Route("delete-by-name")]
         public IActionResult Delete(string name)

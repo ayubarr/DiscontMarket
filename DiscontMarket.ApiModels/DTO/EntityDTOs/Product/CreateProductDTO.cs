@@ -1,4 +1,5 @@
 ﻿using DiscontMarket.ApiModels.DTO.BaseDTOs;
+using DiscontMarket.ApiModels.DTO.EntityDTOs.Attribute;
 using System.ComponentModel.DataAnnotations;
 
 
@@ -8,8 +9,8 @@ namespace DiscontMarket.ApiModels.DTO.EntityDTOs.Product
     {
         public string title { get; set; }
         public decimal price { get; set; }
-        public uint Quantity { get; set; }
-        public List<string> images { get; set; }
+        public uint quantity { get; set; }
+        public List<string> imagePaths { get; set; }
         public string description { get; set; }
         public string fullDescription { get; set; }
 
@@ -28,6 +29,6 @@ namespace DiscontMarket.ApiModels.DTO.EntityDTOs.Product
         public string categoryname { get; set; }
 
         [Required(ErrorMessage = "Attribute Names is required")]
-        public List<string> characteristics { get; set; }
+        public List<CharacteristicDTO> characteristics { get; set; }
     }
 }

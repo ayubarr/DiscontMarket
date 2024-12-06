@@ -13,11 +13,14 @@ namespace DiscontMarket.API.Controllers
     {
         private readonly IAuthManager<User> _authService;
         private readonly IUserService _userService;
+        private readonly ITokenManager<User> _tokenManager;
 
-        public UserController(IAuthManager<User> authManager, IUserService userService)
+
+        public UserController(IAuthManager<User> authManager, IUserService userService, ITokenManager<User> tokenManager)
         {
             _authService = authManager;
             _userService = userService;
+            _tokenManager = tokenManager;
         }
 
         [Authorize(AuthenticationSchemes = "Bearer", Roles = "Admin")]
@@ -84,5 +87,18 @@ namespace DiscontMarket.API.Controllers
 
             return Ok(result);
         }
+
+        [HttpPost]
+        [Route("update-token")]
+        public async Task<IActionResult> RefreshToken([FromBody] TokenModel model)
+        {
+            var response = await _tokenManager.UpdateToken(model);
+            if (response.IsSuccess)
+            {
+                return Ok(response);
+            }
+            return Unauthorized(response.Message);
+        }
+
     }
 }

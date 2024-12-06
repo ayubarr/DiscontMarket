@@ -54,6 +54,8 @@ namespace DiscontMarket.API
                 return new AuthManager<User>(userManager, configuration);
             });
 
+            services.AddScoped(typeof(ITokenManager<User>), typeof(AuthManager<User>));
+
             services.AddAuthentication(options =>
             {
                 options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;

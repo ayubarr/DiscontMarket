@@ -22,14 +22,25 @@
     <div class="dashboard-container" id="dashboard-container">
         <img src="items/header/logo.png" alt="Логотип">
         <button id="edit-ads-btn">Редактирование рекламы</button>
+        <button id="edit-attributes-btn">Редактирование атрибутов</button>
         <button id="manage-products-btn">Добавление товаров</button>
         <button id="delete-products-btn">Удаление товаров</button>
         <button id="maintenance-btn">Закрыть сайт на техническое обслуживание</button>
     </div>
 
+    <div class="attribute-editor-container" id="attribute-editor-container" style="display: none;">
+        <button id="back-btn-attributes">← Назад</button>
+        <h2>Редактирование атрибутов</h2>
+        <div id="attribute-categories">
+            <!-- Сюда будет динамически подгружаться список категорий и атрибутов -->
+        </div>
+        <button id="save-attributes-btn">Сохранить изменения</button>
+    </div>
+
     <!-- Интерфейс редактирования рекламы -->
     <div class="edit-ads-container" id="edit-ads-container" style="display: none;">
         <button id="back-btn">← Назад</button>
+        <h2>Реклама</h2>
         <div class="ad-fields">
             <div class="ad-field" data-path="items/advert/header/head_first.png" data-width="1371" data-height="485">
                 <img src="items/advert/header/head_first.png" alt="Реклама 1">
@@ -68,7 +79,44 @@
                 <input type="file" accept=".png" class="file-input">
             </div>
         </div>
+        <h2>Бренды</h2>
+        <div class="ad-fields">
+            <div class="ad-field" data-path="items/brands/1.png" data-width="96" data-height="53">
+                <img src="items/brands/1.png" alt="Бренд 1">
+                <input type="file" accept=".png" class="file-input">
+            </div>
+            <div class="ad-field" data-path="items/brands/2.png" data-width="96" data-height="53">
+                <img src="items/brands/2.png" alt="Бренд 2">
+                <input type="file" accept=".png" class="file-input">
+            </div>
+            <div class="ad-field" data-path="items/brands/3.png" data-width="96" data-height="53">
+                <img src="items/brands/3.png" alt="Бренд 3">
+                <input type="file" accept=".png" class="file-input">
+            </div>
+            <div class="ad-field" data-path="items/brands/4.png" data-width="96" data-height="53">
+                <img src="items/brands/4.png" alt="Бренд 4">
+                <input type="file" accept=".png" class="file-input">
+            </div>
+            <div class="ad-field" data-path="items/brands/5.png" data-width="96" data-height="53">
+                <img src="items/brands/5.png" alt="Бренд 5">
+                <input type="file" accept=".png" class="file-input">
+            </div>
+            <div class="ad-field" data-path="items/brands/6.png" data-width="96" data-height="53">
+                <img src="items/brands/6.png" alt="Бренд 6">
+                <input type="file" accept=".png" class="file-input">
+            </div>
+            <div class="ad-field" data-path="items/brands/7.png" data-width="96" data-height="53">
+                <img src="items/brands/7.png" alt="Бренд 7">
+                <input type="file" accept=".png" class="file-input">
+            </div>
+            <div class="ad-field" data-path="items/brands/8.png" data-width="96" data-height="53">
+                <img src="items/brands/8.png" alt="Бренд 8">
+                <input type="file" accept=".png" class="file-input">
+            </div>
+        </div>
     </div>
+
+
 
     <div class="manage-products-container" id="manage-products-container" style="display: none;">
         <button id="back-btn-products">← Назад</button>
@@ -81,24 +129,27 @@
                 <option value="tv">Телевизоры</option>
                 <option value="tablet">Планшеты</option>
                 <option value="fridge">Холодильники</option>
-                <option value="oven">Встраиваемая техника</option>
-                <option value="washer">Стиральные машины</option>
-                <option value="small-appliances">Мелкая бытовая техника</option>
+                <option value="builtin">Встраиваемая техника</option>
+                <option value="washingmachine">Стиральные машины</option>
+                <option value="smallappliances">Мелкая бытовая техника</option>
             </select>
-    
+
             <!-- Основные поля товара -->
             <label for="product-title">Название товара:</label>
             <input type="text" id="product-title" placeholder="Введите название товара" />
-    
+
             <label for="product-description">Описание:</label>
             <textarea id="product-description" placeholder="Введите описание товара"></textarea>
-    
+
             <label for="product-full-description">Полное описание:</label>
             <textarea id="product-full-description" placeholder="Введите полное описание товара"></textarea>
-    
+
             <label for="product-price">Цена:</label>
             <input type="number" id="product-price" placeholder="Введите цену товара" />
-    
+
+            <label for="product-quantity">Количество:</label>
+            <input type="number" id="product-quantity" placeholder="Введите количество" />
+
             <label for="product-status">Статус товара:</label>
             <select id="product-status">
                 <option value="discount">Дисконт</option>
@@ -112,13 +163,13 @@
                 <option value="preordertomorrow">Под заказ: Завтра</option>
                 <option value="preorderlater">Под заказ: Позже</option>
             </select>
-    
+
             <label for="product-images">Изображения товара:</label>
             <input type="file" id="product-images" accept="image/*" multiple />
-    
+
             <!-- Динамические характеристики в зависимости от категории -->
             <div id="characteristics-container"></div>
-    
+
             <!-- Кнопка для добавления товара -->
             <button id="save-product-btn">Сохранить товар</button>
         </div>
@@ -131,10 +182,10 @@
         <button id="delete-product-btn">Удалить товар</button>
         <div id="delete-result"></div>
     </div>
-    
-    
 
 
-<script src="js/TechWorks.js"></script>
+
+
+    <script src="js/TechWorks.js"></script>
 </body>
 </html>

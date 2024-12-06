@@ -68,14 +68,29 @@ namespace DiscontMarket.Services.Services.Implementations
 
                 ObjectValidator<Category>.CheckIsNotNullObject(category);
 
-                var attributes = new List<AttributeEntity>();
-                foreach (var attributeName in entityDTO.characteristics)
+
+                var characteristics = _attributeRepository
+                .GetAll()
+                .Where(a => a.AttributeCategories!.Any(ac => ac.CategoryID == category.ID))
+                .Select(a => new CharacteristicDTO()
                 {
-                    if (_attributeRepository.GetAll().Any(a => a.Name.ToLower().Equals(attributeName.ToLower())))
+                    Name = a.Type,
+                    Value = a.NameTranslate
+                })
+                .Where(attr => !string.IsNullOrEmpty(attr.Name) && !string.IsNullOrEmpty(attr.Value)).ToList();
+
+
+
+                var attributes = new List<AttributeEntity>();
+                foreach (var attribute in entityDTO.characteristics)
+                {
+                    if (_attributeRepository.GetAll().Any(a => a.Name.ToLower().Equals(attribute.Value.ToLower()) 
+                            && a.Type.ToLower().Equals(attribute.Name.ToLower())))
                         attributes
                             .Add(_attributeRepository
                             .GetAll()
-                            .Where(a => a.Name.ToLower().Equals(attributeName.ToLower()))
+                            .Where(a => a.Name.ToLower().Equals(attribute.Value.ToLower()) 
+                                && a.Type.ToLower().Equals(attribute.Name.ToLower()))
                             .First());
                 }
 
@@ -104,16 +119,16 @@ namespace DiscontMarket.Services.Services.Implementations
 
                 var images = new List<Image>();
                 string image = "";
-                if (entityDTO.images.Count > 0)
+                if (entityDTO.imagePaths.Count > 0)
                 {
-                    foreach (var path in entityDTO.images)
+                    foreach (var path in entityDTO.imagePaths)
                     {
                         images.Add(new Image
                         {
                             Path = path,
                         });
                     }
-                    image =  entityDTO.images.First();
+                    image =  entityDTO.imagePaths.First();
                 }
 
                 var rating = Math.Round(4.1 + new Random().NextDouble() * 0.9, 1);
@@ -122,7 +137,7 @@ namespace DiscontMarket.Services.Services.Implementations
                 {
                     ProductName = entityDTO.title,
                     Price = entityDTO.price,
-                    Quantity = entityDTO.Quantity,
+                    Quantity = entityDTO.quantity,
                     IconPath = image,
                     Rating = rating,
                     Description = entityDTO.description,
