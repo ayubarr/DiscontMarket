@@ -9,6 +9,13 @@ body {
     font-family: Arial, sans-serif;
 }
 
+.char-counter {
+    bottom: 10px;
+    right: 10px;
+    font-size: 12px;
+    color: gray;
+}
+
 .auth-container,
 .dashboard-container {
     text-align: center;

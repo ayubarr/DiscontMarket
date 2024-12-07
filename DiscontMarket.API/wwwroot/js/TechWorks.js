@@ -265,6 +265,17 @@ window.addEventListener('DOMContentLoaded', function () {
     
 });
 
+function updateRemainingChars(textarea, counterId, maxLength) {
+    const remainingChars = maxLength - textarea.value.length;
+    document.getElementById(counterId).textContent = `Осталось символов: ${remainingChars}`;
+}
+
+function updateCharCount(textarea, counterId, maxLength) {
+    const currentLength = textarea.value.length;
+    const counter = document.getElementById(counterId);
+    counter.textContent = `${currentLength} / ${maxLength}`;
+}
+
 // Загрузка данных характеристик из PHP (JSON)
 let categoryFilters = {};
 
