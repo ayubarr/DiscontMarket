@@ -8,7 +8,14 @@ namespace DiscontMarket.API.Controllers
     [Route("api/[controller]")]
     public class MaintenanceController : ControllerBase
     {
-        private const string Filename = "maintenance.json";
+        private readonly string _filePath;
+
+        public MaintenanceController(IWebHostEnvironment env)
+        {
+            // Формируем абсолютный путь к maintenance.json
+            _filePath = Path.Combine(env.WebRootPath, "js", "json", "maintenance.json");
+        }
+
 
         // GET: Получение текущего состояния
         [HttpGet]
@@ -16,9 +23,9 @@ namespace DiscontMarket.API.Controllers
         [Authorize(AuthenticationSchemes = "Bearer")]
         public IActionResult GetMaintenanceState()
         {
-            if (System.IO.File.Exists(Filename))
+            if (System.IO.File.Exists(_filePath))
             {
-                var json = System.IO.File.ReadAllText(Filename);
+                var json = System.IO.File.ReadAllText(_filePath);
                 return Ok(JsonSerializer.Deserialize<object>(json));
             }
 
@@ -39,7 +46,7 @@ namespace DiscontMarket.API.Controllers
             var newState = new { is_under_maintenance = isUnderMaintenance.IsUnderMaintenance };
             var json = JsonSerializer.Serialize(newState);
 
-            await System.IO.File.WriteAllTextAsync(Filename, json);
+            await System.IO.File.WriteAllTextAsync(_filePath, json);
 
             return Ok(new { success = true });
         }

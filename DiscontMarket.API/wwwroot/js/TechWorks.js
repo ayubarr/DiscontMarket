@@ -554,7 +554,7 @@ maintenanceBtn.addEventListener('click', () => {
                 'Content-Type': 'application/json',
                 'Authorization': `Bearer ${token}`
             },
-            body: JSON.stringify(isUnderMaintenance)
+            body: JSON.stringify({ isUnderMaintenance })
         })
         .then(response => response.json())
         .then(data => {
@@ -617,7 +617,7 @@ maintenanceBtn.addEventListener('click', () => {
                 'Content-Type': 'application/json',
                 'Authorization': `Bearer ${token}`
             },
-            body: JSON.stringify(isUnderMaintenance)
+            body: JSON.stringify({ isUnderMaintenance })
         })
             .then(response => response.json())
             .then(data => {
