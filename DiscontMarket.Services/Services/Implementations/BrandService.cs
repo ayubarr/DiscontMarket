@@ -69,7 +69,7 @@ namespace DiscontMarket.Services.Services.Implementations
                     throw new Exception($"not found brand: {brandName}");
                 }
 
-                await _brandRepository.Delete(attribute);
+                await _brandRepository.DeleteAsync(attribute);
                 return ResponseFactory<bool>.CreateSuccessResponse(true);
             }
             catch (Exception ex)

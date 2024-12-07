@@ -1,4 +1,5 @@
 ﻿using DiscontMarket.ApiModels.DTO.EntityDTOs.Attribute;
+using DiscontMarket.ApiModels.DTO.EntityDTOs.Image;
 using DiscontMarket.ApiModels.DTO.EntityDTOs.Product;
 using DiscontMarket.ApiModels.Responce.Helpers;
 using DiscontMarket.ApiModels.Responce.Interfaces;
@@ -36,7 +37,7 @@ namespace DiscontMarket.Services.Services.Implementations
             {
                 ObjectValidator<Product>.CheckIsNotNullObject(entity);
 
-                _productRepository.Update(entity);
+                _productRepository.UpdateProduct(entity);
                 return ResponseFactory<bool>.CreateSuccessResponse(true);
             }
             catch (ArgumentNullException argNullException)
@@ -155,8 +156,12 @@ namespace DiscontMarket.Services.Services.Implementations
                 };
 
 
-                if (_productRepository.GetAll().Any(p => p.ProductName.Equals(entityDTO.title))) return UpdateProduct(entity);
-                
+                var existingProduct = _productRepository.GetAll().Where(p => p.ProductName.Equals(entityDTO.title)).FirstOrDefault();
+                if (existingProduct != null)
+                {
+                    entity.ID = existingProduct.ID; 
+                    return UpdateProduct(entity);
+                }
                 _productRepository.Create(entity);
 
                 return ResponseFactory<bool>.CreateSuccessResponse(true);
@@ -171,20 +176,27 @@ namespace DiscontMarket.Services.Services.Implementations
             }
         }
 
-        public IBaseResponse<bool> DeleteByProductName(string productName)
+        public IBaseResponse<List<GetImageDTO>> DeleteByProductName(string productName)
         {
             try
             {
                 var product = _productRepository.GetAll().Where(p => p.ProductName.Equals(productName)).FirstOrDefault();
 
                 ObjectValidator<Product>.CheckIsNotNullObject(product);
+                var images = _imageRepository.GetAll().Where(i => i.ProductID.Equals(product.ID)).ToList(); 
+                var imageDTOs = new List<GetImageDTO>();
 
+                if (images != null) {
+                    foreach (var image in images)
+                        imageDTOs.Add(new GetImageDTO() { imagePath = image.Path });
+                }
+          
                 _productRepository.Delete(product);
-                return ResponseFactory<bool>.CreateSuccessResponse(true);
+                return ResponseFactory<List<GetImageDTO>>.CreateSuccessResponse(imageDTOs);
             }
             catch (Exception ex)
             {
-                return ResponseFactory<bool>.CreateErrorResponse(ex);
+                return ResponseFactory<List<GetImageDTO>>.CreateErrorResponse(ex);
             }
         }
         private string xyu = "";

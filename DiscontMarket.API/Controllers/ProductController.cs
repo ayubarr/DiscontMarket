@@ -26,8 +26,7 @@ namespace DiscontMarket.API.Controllers
         {
             if (!IsCategory(productFilterDto))
             {
-                var status = productFilterDto.CategoryDTO.Name;
-                var responseByStatus = _productService.GetAllProductsByStatus(productFilterDto, productFilterDto.Sort, status);
+                var responseByStatus = _productService.GetAllProducts(productFilterDto, productFilterDto.Sort);
                 return Ok(responseByStatus);
             }
 
@@ -97,8 +96,8 @@ namespace DiscontMarket.API.Controllers
         }
 
         // Создать новый продукт
-        [Authorize(AuthenticationSchemes = "Bearer")]
         [HttpPost]
+        [Authorize(AuthenticationSchemes = "Bearer")]
         [Route("create")]
         public IActionResult Create([FromBody] CreateProductDTO newProduct)
         {
@@ -107,8 +106,8 @@ namespace DiscontMarket.API.Controllers
         }
 
         // Обновить существующий продукт
-        //[Authorize(AuthenticationSchemes = "Bearer", Roles = "Admin")]
         [HttpPut]
+        [Authorize(AuthenticationSchemes = "Bearer")]
         [Route("update/{projectid}")]
         public async Task<IActionResult> Update(UpdateProductDTO productDto)
         {
@@ -117,19 +116,38 @@ namespace DiscontMarket.API.Controllers
         }
 
 
-        // Удалить продукт по ID
+        [HttpPost]
         [Authorize(AuthenticationSchemes = "Bearer")]
-        [HttpDelete]
         [Route("delete-by-name")]
-        public IActionResult Delete(string name)
+        public IActionResult Delete([FromBody]string productName)
         {
-            var response = _productService.DeleteByProductName(name);
+            var response = _productService.DeleteByProductName(productName);
+
+            if (!response.IsSuccess)
+            {
+                return BadRequest(response);
+            }
+
+            var images = response.Data;
+            if (images != null)
+            {
+                foreach (var image in images)
+                {
+                    if (!string.IsNullOrEmpty(image.imagePath) && System.IO.File.Exists(image.imagePath))
+                    {
+                        System.IO.File.Delete(image.imagePath); // Удаление файла
+                    }                 
+                }
+            }
+
+
             return Ok(response);
         }
 
         // Удалить продукт по ID
         //[Authorize(AuthenticationSchemes = "Bearer", Roles = "Admin")]
         [HttpDelete]
+        [Authorize(AuthenticationSchemes = "Bearer")]
         [Route("delete/{id}")]
         public async Task<IActionResult> Delete(uint id)
         {
@@ -157,8 +175,6 @@ namespace DiscontMarket.API.Controllers
             }
             return false;
         }
-
-
         private string GetCategoryName()
         {
             var categories = GetCategories().ToList();

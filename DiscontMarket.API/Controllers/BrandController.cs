@@ -1,5 +1,6 @@
 ﻿using DiscontMarket.ApiModels.DTO.EntityDTOs.Brand;
 using DiscontMarket.Services.Services.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DiscontMarket.API.Controllers
@@ -16,7 +17,6 @@ namespace DiscontMarket.API.Controllers
             _brandService = brandService;
         }
 
-        //[Authorize(AuthenticationSchemes = "Bearer", Roles = "Admin")]
         [HttpPost]
         [Route("get-by-category")]
         public IActionResult GetAllByCategory([FromBody] string categoryName)
@@ -55,6 +55,7 @@ namespace DiscontMarket.API.Controllers
 
         // Создание нового бренда
         [HttpPost]
+        [Authorize(AuthenticationSchemes = "Bearer")]
         [Route("create")]
         public IActionResult CreateBrand([FromBody] CreateBrandDTO entityDTO)
         {
@@ -69,8 +70,8 @@ namespace DiscontMarket.API.Controllers
         }
 
         // Обновить существующий бренд
-        //[Authorize(AuthenticationSchemes = "Bearer", Roles = "Admin")]
         [HttpPut]
+        [Authorize(AuthenticationSchemes = "Bearer")]
         [Route("update/{projectid}")]
         public async Task<IActionResult> Update(UpdateBrandDTO brandDto)
         {
@@ -79,8 +80,8 @@ namespace DiscontMarket.API.Controllers
         }
 
         // Удалить бренд по ID
-        //[Authorize(AuthenticationSchemes = "Bearer", Roles = "Admin")]
         [HttpDelete]
+        [Authorize(AuthenticationSchemes = "Bearer")]
         [Route("delete")]
         public async Task<IActionResult> Delete([FromBody] string brandName)
         {

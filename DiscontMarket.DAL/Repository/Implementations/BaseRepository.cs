@@ -75,10 +75,10 @@ namespace DiscontMarket.DAL.Repository.Implementations
         public async Task DeleteById(uint id)
         {
             var entity = await GetByIdAsync(id);
-            await Delete(entity);
+            await DeleteAsync(entity);
         }
 
-        public async Task Delete(T entity)
+        public async Task DeleteAsync(T entity)
         {
             ObjectValidator<T>.CheckIsNotNullObject(entity);
 
@@ -86,6 +86,13 @@ namespace DiscontMarket.DAL.Repository.Implementations
             await _context.SaveChangesAsync();
         }
 
+        public void Delete(T entity)
+        {
+            ObjectValidator<T>.CheckIsNotNullObject(entity);
 
+            _context.Attach(entity);
+            _dbSet.Remove(entity);
+            _context.SaveChanges();
+        }
     }
 }

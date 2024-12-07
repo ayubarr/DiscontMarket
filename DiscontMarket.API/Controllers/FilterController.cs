@@ -1,4 +1,6 @@
-﻿using DiscontMarket.Services.Services.Interfaces;
+﻿using DiscontMarket.ApiModels.DTO.BaseDTOs;
+using DiscontMarket.Services.Services.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DiscontMarket.API.Controllers
@@ -21,5 +23,17 @@ namespace DiscontMarket.API.Controllers
             var filters = _filterService.GetFilters();
             return Ok(filters);
         }
+
+        [HttpPost]
+        [Route("set-filters")]
+        [Authorize(AuthenticationSchemes = "Bearer")]
+        public IActionResult SetFilters([FromBody] Dictionary<string, FilterCategoryDTO> data)
+        {
+            var response = _filterService.SetFilters(data);
+            return Ok(response);
+
+        }
+
+
     }
 }

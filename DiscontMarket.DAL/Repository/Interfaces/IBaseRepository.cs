@@ -18,7 +18,8 @@ namespace DiscontMarket.DAL.Repository.Interfaces
 
         public Task Update(T entity);
 
-        public Task Delete(T entity);
+        public Task DeleteAsync(T entity);
+        public void Delete(T entity);
 
         public Task DeleteById(uint id);
 

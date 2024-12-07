@@ -1,5 +1,6 @@
 ﻿using DiscontMarket.ApiModels.DTO.EntityDTOs.Attribute;
 using DiscontMarket.Services.Services.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DiscontMarket.API.Controllers
@@ -69,6 +70,7 @@ namespace DiscontMarket.API.Controllers
 
         // Создание нового атрибута
         [HttpPost]
+        [Authorize(AuthenticationSchemes = "Bearer")]
         [Route("create")]
         public IActionResult CreateAttribute([FromBody] CreateAttributeDTO entityDTO)
         {
@@ -85,6 +87,7 @@ namespace DiscontMarket.API.Controllers
         // Обновить существующий продукт
         //[Authorize(AuthenticationSchemes = "Bearer", Roles = "Admin")]
         [HttpPut]
+        [Authorize(AuthenticationSchemes = "Bearer")]
         [Route("update/{projectid}")]
         public async Task<IActionResult> Update(UpdateAttributeDTO attributeDto)
         {
@@ -95,6 +98,7 @@ namespace DiscontMarket.API.Controllers
         // Удалить продукт по ID
         //[Authorize(AuthenticationSchemes = "Bearer", Roles = "Admin")]
         [HttpDelete]
+        [Authorize(AuthenticationSchemes = "Bearer")]
         [Route("delete")]
         public async Task<IActionResult> Delete([FromBody] string attributeName)
         {

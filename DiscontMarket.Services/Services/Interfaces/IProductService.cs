@@ -1,4 +1,5 @@
-﻿using DiscontMarket.ApiModels.DTO.EntityDTOs.Product;
+﻿using DiscontMarket.ApiModels.DTO.EntityDTOs.Image;
+using DiscontMarket.ApiModels.DTO.EntityDTOs.Product;
 using DiscontMarket.ApiModels.Responce.Interfaces;
 using DiscontMarket.Domain.Models.Entities;
 using DiscontMarket.Domain.Models.Enums;
@@ -11,7 +12,7 @@ namespace DiscontMarket.Services.Services.Interfaces
         IBaseResponse<IEnumerable<ProductDTO>> GetAllProductsNews();
         IBaseResponse<IEnumerable<ProductDTO>> GetAllProductsHits();
 
-        public IBaseResponse<IEnumerable<ProductDTO>> GetAllProductsByStatus(FilterProductDTO filterProductDTO, string? sortType, string status);
+        IBaseResponse<IEnumerable<ProductDTO>> GetAllProductsByStatus(FilterProductDTO filterProductDTO, string? sortType, string status);
 
         IBaseResponse<GetProductDTO> GetProductById(uint Id);
 
@@ -19,7 +20,7 @@ namespace DiscontMarket.Services.Services.Interfaces
 
         IBaseResponse<bool> CreateProduct(CreateProductDTO entityDTO);
 
-        IBaseResponse<bool> DeleteByProductName(string productName);
+        IBaseResponse<List<GetImageDTO>> DeleteByProductName(string productName);
 
     }
 }

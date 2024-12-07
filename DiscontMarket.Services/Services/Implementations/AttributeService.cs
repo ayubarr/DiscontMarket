@@ -70,7 +70,7 @@ namespace DiscontMarket.Services.Services.Implementations
                     throw new Exception($"not found atribute: {attributeName}");
                 }
 
-                await _attributeRepository.Delete(attribute);
+                await _attributeRepository.DeleteAsync(attribute);
                 return ResponseFactory<bool>.CreateSuccessResponse(true);
             }
             catch (Exception ex)

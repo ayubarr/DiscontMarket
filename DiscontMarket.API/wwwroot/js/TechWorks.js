@@ -34,34 +34,6 @@ function generateCaptcha() {
     return captcha;
 }
 
-function authenticateUser(username, password) {
-    const url = 'api/user/login';
-    const headers = { 'Content-Type': 'application/json' };
-    const body = JSON.stringify({ username, password });
-
-    return fetch(url, { method: 'POST', headers, body })
-        .then(response => response.json())
-        .then(data => {
-            if (data.statusCode === 200 && data.isSuccess) {
-                if (token === data.data.token) {
-                    console.log('Токены совпадают.');
-                    return true; // Токены совпадают
-                } else {
-                    console.log('Токены не совпадают. Обновляем токен.');
-                    return false; // Токены не совпадают
-                }
-            } else {
-                console.error(`Ошибка авторизации: ${data.message}`);
-                return false; // Ошибка авторизации
-            }
-        })
-        .catch(error => {
-            console.error('Ошибка соединения с сервером:', error);
-            return false; // Ошибка соединения
-        });
-}
-
-
 let currentCaptcha = generateCaptcha();
 
 function checkBlockStatus() {
@@ -83,8 +55,18 @@ function checkBlockStatus() {
     return true;
 }
 
+
+function endSession() {
+    clearInterval(interval);
+    sessionTimerDisplay.style.display = 'none';
+    localStorage.removeItem('authToken');
+    alert('Сессия истекла. Авторизуйтесь снова.');
+    localStorage.removeItem('sessionEndTime');
+    location.reload(); // Перезагрузка страницы
+}
+
 function startSessionTimer() {
-    const interval = setInterval(() => {
+    interval = setInterval(() => {
         const now = Date.now();
         const remainingTime = Math.max(sessionEndTime - now, 0);
         const minutes = Math.floor(remainingTime / 60000);
@@ -94,15 +76,18 @@ function startSessionTimer() {
         sessionTimerDisplay.style.display = 'block';
 
         if (remainingTime <= 0) {
-            clearInterval(interval);
-            sessionTimerDisplay.style.display = 'none';
-            localStorage.removeItem('authToken');
-            alert('Сессия истекла. Авторизуйтесь снова.');
-            localStorage.removeItem('sessionEndTime');
-            location.reload(); // Перезагрузка страницы
+            endSession();
         }
     }, 1000);
 }
+
+const exit_btn = document.getElementById('exit-btn');
+
+// Переключение между меню и редактированием рекламы
+exit_btn.addEventListener('click', () => {
+    endSession();
+});
+
 
 authButton.addEventListener('click', () => {
     username = usernameField.value;
@@ -234,6 +219,7 @@ document.querySelectorAll('.file-input').forEach(input => {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${token}`
                     },
                     body: JSON.stringify(dataToSend),
                 })
@@ -290,13 +276,13 @@ let categoryFilters = {};
             'Content-Type': 'application/json'
         },
     })
-        .then(response => response.json())
-        .then(data => {
-            categoryFilters = data;
-        })
-        .catch(error => {
-            console.error('Ошибка загрузки фильтров:', error);
-        });
+    .then(response => response.json())
+    .then(data => {
+        categoryFilters = data;
+    })
+    .catch(error => {
+        console.error('Ошибка загрузки фильтров:', error);
+    });
 
 
 document.getElementById('product-images').addEventListener('change', (event) => {
@@ -416,7 +402,8 @@ document.getElementById('save-product-btn').addEventListener('click', () => {
                     fetch('api/Image/upload-image', {
                         method: 'POST',
                         headers: {
-                            'Content-Type': 'application/json'
+                            'Content-Type': 'application/json',
+                            'Authorization': `Bearer ${token}`
                         },
                         body: JSON.stringify(dataToSend) // Отправляем данные как JSON
                     })
@@ -517,12 +504,15 @@ document.getElementById('back-btn-delete').addEventListener('click', () => {
 });
 
 document.getElementById('delete-product-btn').addEventListener('click', () => {
-    const title = document.getElementById('product-delete-title').value.trim();
+    const productName = document.getElementById('product-delete-title').value.trim();
 
-        fetch('http://192.168.192.59/сайт/delete_product.php', {
+    fetch('api/Product/delete-by-name', {
             method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ title })
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
+            },
+            body: JSON.stringify( productName )
         })
             .then(response => response.json())
             .then(data => {
@@ -554,7 +544,10 @@ maintenanceBtn.addEventListener('click', () => {
     const isUnderMaintenance = maintenanceBtn.textContent.includes('Закрыть');
         fetch('maintenance.php', {
             method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
+            },
             body: JSON.stringify({ is_under_maintenance: isUnderMaintenance })
         })
             .then(response => response.json())
@@ -608,7 +601,10 @@ maintenanceBtn.addEventListener('click', () => {
     const isUnderMaintenance = maintenanceBtn.textContent.includes('Закрыть');
         fetch('maintenance.php', {
             method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
+            },
             body: JSON.stringify({ is_under_maintenance: isUnderMaintenance })
         })
             .then(response => response.json())
@@ -637,7 +633,7 @@ maintenanceBtn.addEventListener('click', () => {
 document.getElementById('edit-attributes-btn').addEventListener('click', function () {
         document.getElementById('dashboard-container').style.display = 'none';
         document.getElementById('attribute-editor-container').style.display = 'block';
-        loadAttributes(jsonData); // Подгружаем атрибуты
+        loadData(); // Подгружаем атрибуты
     
 });
 
@@ -652,15 +648,15 @@ document.getElementById('save-attributes-btn').addEventListener('click', functio
 
 
 function loadData() {
-        fetch('http://192.168.192.59/сайт/attributes.php', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-        })
-            .then(response => response.json())
-            .then(data => renderCategories(data))
-            .catch(error => console.error('Error loading data:', error));
+    fetch('api/filter/get-filters', {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+    })
+    .then(response => response.json())
+    .then(data => renderCategories(data))
+    .catch(error => console.error('Error loading data:', error));
     
 }
 
@@ -761,6 +757,14 @@ function createAttributeElement(attribute) {
         optionsList.appendChild(addButton);
     });
 
+    // Обработчик удаления существующих строк опций
+    const removeOptionButtons = attributeElement.querySelectorAll('.remove-option-btn');
+    removeOptionButtons.forEach(button => {
+        button.addEventListener('click', function (event) {
+            event.target.closest('.option-item').remove();
+        });
+    });
+
     // Делегирование события на родительский элемент для удаления кириллицы в input[type="text"]
     attributeElement.querySelector('.options-list').addEventListener('input', function (event) {
         if (event.target && event.target.matches('input[type="text"]:nth-child(2)')) {
@@ -772,62 +776,48 @@ function createAttributeElement(attribute) {
 }
 
 // Инициализация
-loadData();
-
 function saveAttributes() {
-    // Собираем данные из всех категорий
     const categories = document.querySelectorAll('.attribute-category');
     const data = {};
 
-    categories.forEach(categoryElement => {
-        const categoryTitle = categoryElement.querySelector('.category-title').textContent.trim();
-        const attributeList = categoryElement.querySelector('.attribute-list');
+    categories.forEach(category => {
+        const categoryTitle = category.querySelector('.category-title').textContent;
+        const attributeList = category.querySelector('.attribute-list');
+        const filters = [];
 
-        const categoryData = {
-            filters: []
-        };
-
-        // Проходим по всем атрибутам в категории
         const attributeItems = attributeList.querySelectorAll('.attribute-item');
         attributeItems.forEach(attributeItem => {
-            const title = attributeItem.querySelector('.attribute-title-input').value.trim();
+            const title = attributeItem.querySelector('.attribute-title-input').value;
             const options = [];
 
-            // Собираем опции для атрибута
             const optionItems = attributeItem.querySelectorAll('.option-item');
             optionItems.forEach(optionItem => {
-                const label = optionItem.querySelector('input[type="text"]:nth-child(1)').value.trim();
-                const value = optionItem.querySelector('input[type="text"]:nth-child(2)').value.trim();
+                const label = optionItem.querySelector('input[type="text"]:nth-child(1)').value;
+                const value = optionItem.querySelector('input[type="text"]:nth-child(2)').value;
                 options.push({ label, value });
             });
 
-            // Добавляем атрибут с его опциями в категорию
-            categoryData.filters.push({ title, options });
+            filters.push({ title, options });
         });
 
-        // Добавляем категорию в итоговые данные
-        data[categoryTitle] = categoryData;
+        data[categoryTitle.toLowerCase()] = { filters };
     });
 
-    // Отправляем данные на сервер
-        fetch('http://192.168.192.59/сайт/attributes.php', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(data)
-        })
-            .then(response => response.json())
-            .then(responseData => {
-                console.log('Сохраненные данные:', responseData);  // Выводим результат в консоль
-            })
-            .catch(error => {
-                console.error('Ошибка при отправке данных:', error);
-            });
-    
+    console.log('Отправляемые данные:', JSON.stringify(data));
 
-    // Выводим данные в консоль для проверки перед отправкой
-    console.log('Отправленные данные:', JSON.stringify(data, null, 2));
-    alert('Изменения сохранены!');
+    // Преобразуем данные в формат JSON и отправляем на сервер
+    fetch('api/Filters/set-filters', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json', 
+            'Authorization': `Bearer ${token}`
+        },
+        body: JSON.stringify( data ),
+    })
+    .then(response => response.json())
+    .then(responseData => {
+        console.log('Данные успешно сохранены', responseData);
+    })
+    .catch(error => console.error('Ошибка при сохранении данных:', error));
 }
 

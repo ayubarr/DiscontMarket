@@ -19,7 +19,7 @@ namespace DiscontMarket.DAL.SqlServer.Configuration
             //Описание связи сущностей Image и Product
             builder.HasOne(i => i.Product)
                .WithMany(p => p.Images)
-               .HasForeignKey(i => i.ProductID);
+               .HasForeignKey(i => i.ProductID);          
         }
     }
 }

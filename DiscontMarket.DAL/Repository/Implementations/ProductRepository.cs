@@ -26,5 +26,23 @@ namespace DiscontMarket.DAL.Repository.Implementations
                 .Where(filter.Compile())
                 .ToList();
         }
+
+        void IProductRepository.UpdateProduct(Product entity)
+        {
+            ObjectValidator<Product>.CheckIsNotNullObject(entity);
+
+            // Проверяем, существует ли сущность в базе данных по идентификатору
+            var existingEntity =  _dbSet.Find(entity.ID); // Предполагается, что у T есть свойство Id
+
+            if (existingEntity == null)
+            {
+                throw new InvalidOperationException("Entity not found.");
+            }
+
+            // Обновляем значения полей сущности, за исключением идентификатора, если это необходимо
+            _context.Entry(existingEntity).CurrentValues.SetValues(entity);
+
+            _context.SaveChanges();
+        }
     }
 }

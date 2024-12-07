@@ -1,5 +1,6 @@
 ﻿using DiscontMarket.ApiModels.DTO.EntityDTOs.Attribute;
 using DiscontMarket.ApiModels.DTO.EntityDTOs.Image;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Drawing;
 using System.Drawing.Imaging;
@@ -12,6 +13,7 @@ namespace DiscontMarket.API.Controllers
     {
 
         [HttpPost]
+        [Authorize(AuthenticationSchemes = "Bearer")]
         [Route("upload-image")]
         public async Task<IActionResult> UploadImage([FromBody] SaveImageDTO dataToSend)
         {
@@ -22,7 +24,7 @@ namespace DiscontMarket.API.Controllers
 
             try
             {
-                var targetDir = Path.Combine(Directory.GetCurrentDirectory(), "items", "productimages");
+                var targetDir = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "items", "productimages");
 
                 if (!Directory.Exists(targetDir))
                 {
@@ -39,7 +41,7 @@ namespace DiscontMarket.API.Controllers
                 //var imagePath = $"items/productimages/{dataToSend.imageName}" ;
                 //var response = ResponseFactory<string>.CreateSuccessResponse(imagePath);
 
-                var imagePath = $"items/productimages/{dataToSend.imageName}";
+                var imagePath = $"/items/productimages/{dataToSend.imageName}";
                 return Ok(new { imagePath });
 
                 //  return Ok(response);
@@ -52,6 +54,7 @@ namespace DiscontMarket.API.Controllers
 
 
         [HttpPost]
+        [Authorize(AuthenticationSchemes = "Bearer")]
         [Route("load-image")]
         public async Task<IActionResult> LoadImage([FromBody] ImageDTO dataToSend)
         {
