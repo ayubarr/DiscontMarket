@@ -33,7 +33,5 @@ namespace DiscontMarket.API.Controllers
             return Ok(response);
 
         }
-
-
     }
 }

@@ -1,4 +1,5 @@
 ﻿using DiscontMarket.ApiModels.DTO.BaseDTOs;
+using DiscontMarket.ApiModels.DTO.EntityDTOs.Attribute;
 using DiscontMarket.ApiModels.DTO.EntityDTOs.Brand;
 using DiscontMarket.ApiModels.Responce.Helpers;
 using DiscontMarket.ApiModels.Responce.Interfaces;
@@ -13,12 +14,20 @@ namespace DiscontMarket.Services.Services.Implementations
     {
         private readonly IAttributeRepository _attributeRepository;
         private readonly IBrandRepository _brandRepository;
+        private readonly IAttributeService _attributeService;
+        private readonly IBrandService _brandService;
+        private readonly ICategoryService _categoryService;
 
 
-        public FilterService(IAttributeRepository attributeRepository, IBrandRepository brandRepository)
+
+        public FilterService(IAttributeRepository attributeRepository, IBrandRepository brandRepository,
+            IAttributeService attributeService, IBrandService brandService, ICategoryService categoryService)
         {
             _attributeRepository = attributeRepository;
             _brandRepository = brandRepository;
+            _attributeService = attributeService;
+            _brandService = brandService;
+            _categoryService = categoryService;
         }
 
         public Dictionary<string, FilterCategoryDTO> GetFilters()
@@ -47,7 +56,7 @@ namespace DiscontMarket.Services.Services.Implementations
                         .Select(item => new FilterDTO
                         {
                             Title = item.Key,
-                            Options = item.Value.Select(option => new FilterOptionDTO
+                            Options = item.Value.Select(option => new OptionDTO
                             {
                                 Label = option.NameTranslate,
                                 Value = option.Name
@@ -75,13 +84,13 @@ namespace DiscontMarket.Services.Services.Implementations
                     // Атрибуты
                     if (currentAttributes.ContainsKey(categoryName))
                     {
-                        UpdateAttributes(currentAttributes[categoryName], updatedFilterCategory.Filters);
+                        UpdateAttributes(currentAttributes[categoryName], updatedFilterCategory.Filters, categoryName);
                     }
 
                     // Бренды
                     if (currentBrands.ContainsKey(categoryName))
                     {
-                        UpdateBrands(currentBrands[categoryName], updatedFilterCategory.Filters);
+                        UpdateBrands(currentBrands[categoryName], updatedFilterCategory.Filters, categoryName);
                     }
                 }
 
@@ -94,120 +103,171 @@ namespace DiscontMarket.Services.Services.Implementations
             }
         }
 
-        private void UpdateAttributes(
-        Dictionary<string, List<FilterAtributeAndBrandDTO>> currentAttributes,
-        List<FilterDTO> updatedFilters)
+        private void UpdateAttributes(Dictionary<string, List<FilterAtributeAndBrandDTO>> currentAttributes, List<FilterDTO> updatedFilters, string categoryName)
         {
+            var updatedCategories = updatedFilters.Select(filter => filter.Title).ToHashSet(StringComparer.OrdinalIgnoreCase);
+
+            var categoriesToRemove = currentAttributes.Keys
+                .Where(currentCategory => !updatedCategories.Contains(currentCategory))
+                .ToList();
+
+            foreach (var categoryToRemove in categoriesToRemove)
+            {
+                var itemsToRemove = currentAttributes[categoryToRemove];
+
+                foreach (var item in itemsToRemove)
+                {
+                    _attributeService.DeleteByName(item.Name);
+                }
+
+                currentAttributes.Remove(categoryToRemove);
+            }
+
             foreach (var updatedFilter in updatedFilters)
             {
                 var type = updatedFilter.Title;
+                if (type == "Бренды") continue;
+
                 if (currentAttributes.ContainsKey(type))
                 {
                     var currentItems = currentAttributes[type];
 
-                    // Обновляем или добавляем новые атрибуты
                     foreach (var updatedOption in updatedFilter.Options)
                     {
-                        var existingItem = currentItems.FirstOrDefault(x => x.Name == updatedOption.Value);
-                        if (existingItem != null)
+                        var newItem = new FilterAtributeAndBrandDTO
                         {
-                            // Обновление
-                            existingItem.NameTranslate = updatedOption.Label;
-                        }
-                        else
-                        {
-                            // Добавление нового
-                            var newItem = new FilterAtributeAndBrandDTO
-                            {
-                                Type = type,
-                                Name = updatedOption.Value,
-                                NameTranslate = updatedOption.Label
-                            };
-                            currentItems.Add(newItem);
+                            Type = type,
+                            Name = updatedOption.Value,
+                            NameTranslate = updatedOption.Label
+                        };
+                        currentItems.Add(newItem);
 
-                            var newItemDb = new AttributeEntity
-                            {
-                                Type = type,
-                                Name = updatedOption.Value,
-                                NameTranslate = updatedOption.Label
-                            };
-                            _attributeRepository.Create(newItemDb);
-                        }
+                        var newItemDto = new CreateAttributeDTO
+                        {
+                            Type = type,
+                            Name = updatedOption.Value,
+                            NameTranslate = updatedOption.Label,
+                            CategoryName = categoryName,
+                        };
+
+                        _attributeService.CreateAttribute(newItemDto);                        
                     }
 
-                    // Удаляем удаленные атрибуты
                     var updatedNames = updatedFilter.Options.Select(x => x.Value).ToHashSet();
                     var itemsToRemove = currentItems.Where(x => !updatedNames.Contains(x.Name)).ToList();
                     foreach (var itemToRemove in itemsToRemove)
                     {
+                        currentItems.Remove(itemToRemove);
+                        _attributeService.DeleteByName(itemToRemove.Name);
+                    }
+                }
+                else
+                {
+                    var newItems = updatedFilter.Options.Select(updatedOption => new FilterAtributeAndBrandDTO
+                    {
+                        Type = type,
+                        Name = updatedOption.Value,
+                        NameTranslate = updatedOption.Label
+                    }).ToList();
 
-                        var itemToRemoveDb = new AttributeEntity
+                    currentAttributes[type] = newItems;
+
+                    foreach (var newItem in newItems)
+                    {
+                        var newItemDto = new CreateAttributeDTO
                         {
-                            Type = itemToRemove.Type,
-                            Name = itemToRemove.Name,
-                            NameTranslate = itemToRemove.NameTranslate
+                            Type = type,
+                            Name = newItem.Name,
+                            NameTranslate = newItem.NameTranslate,
+                            CategoryName = categoryName
                         };
-                        currentItems.Remove(itemToRemove);                      
-                        _attributeRepository.Delete(itemToRemoveDb);
+                        _attributeService.CreateAttribute(newItemDto);
                     }
                 }
             }
         }
 
-        private void UpdateBrands(
-            Dictionary<string, List<FilterAtributeAndBrandDTO>> currentBrands,
-            List<FilterDTO> updatedFilters)
+        private void UpdateBrands(Dictionary<string, List<FilterAtributeAndBrandDTO>> currentBrands, List<FilterDTO> updatedFilters, string categoryName)
         {
+            var updatedCategories = updatedFilters.Select(filter => filter.Title).ToHashSet(StringComparer.OrdinalIgnoreCase);
+
+            var categoriesToRemove = currentBrands.Keys
+                .Where(currentCategory => !updatedCategories.Contains(currentCategory))
+                .ToList();
+
+            foreach (var categoryToRemove in categoriesToRemove)
+            {
+                var itemsToRemove = currentBrands[categoryToRemove];
+
+                foreach (var item in itemsToRemove)
+                {
+                    _brandService.DeleteByName(item.Name);
+                }
+
+                currentBrands.Remove(categoryToRemove);
+            }
+
             foreach (var updatedFilter in updatedFilters)
             {
                 var type = updatedFilter.Title;
+                if (type != "Бренды") continue;
+
+
                 if (currentBrands.ContainsKey(type))
                 {
                     var currentItems = currentBrands[type];
 
-                    // Обновляем или добавляем новые бренды
                     foreach (var updatedOption in updatedFilter.Options)
                     {
-                        var existingItem = currentItems.FirstOrDefault(x => x.Name == updatedOption.Value);
-                        if (existingItem != null)
+                        var newItem = new FilterAtributeAndBrandDTO
                         {
-                            // Обновление
-                            existingItem.NameTranslate = updatedOption.Label;
-                        }
-                        else
-                        {
-                            // Добавление нового
-                            var newItem = new FilterAtributeAndBrandDTO
-                            {
-                                Type = type,
-                                Name = updatedOption.Value,
-                                NameTranslate = updatedOption.Label
-                            };
-                            currentItems.Add(newItem);
+                            Type = type,
+                            Name = updatedOption.Value,
+                            NameTranslate = updatedOption.Label
+                        };
+                        currentItems.Add(newItem);
 
-                            var newItemDb = new Brand
-                            {
-                                Type = type,
-                                Name = updatedOption.Value,
-                                NameTranslate = updatedOption.Label
-                            };
-                            _brandRepository.Create(newItemDb);
-                        }
+                        var newItemDto = new CreateBrandDTO
+                        {
+                            Type = type,
+                            Name = updatedOption.Value,
+                            NameTranslate = updatedOption.Label,
+                            CategoryName = categoryName 
+                        };
+
+                        _brandService.CreateBrand(newItemDto);                
                     }
 
-                    // Удаляем удаленные бренды
                     var updatedNames = updatedFilter.Options.Select(x => x.Value).ToHashSet();
                     var itemsToRemove = currentItems.Where(x => !updatedNames.Contains(x.Name)).ToList();
                     foreach (var itemToRemove in itemsToRemove)
                     {
-                        var itemToRemoveDb = new Brand
-                        {
-                            Type = itemToRemove.Type,
-                            Name = itemToRemove.Name,
-                            NameTranslate = itemToRemove.NameTranslate
-                        };
                         currentItems.Remove(itemToRemove);
-                        _brandRepository.Delete(itemToRemoveDb);
+                        _brandService.DeleteByName(itemToRemove.Name);
+                    }
+                }
+                else
+                {
+                    var newItems = updatedFilter.Options.Select(updatedOption => new FilterAtributeAndBrandDTO
+                    {
+                        Type = type,
+                        Name = updatedOption.Value,
+                        NameTranslate = updatedOption.Label
+                    }).ToList();
+
+                    currentBrands[type] = newItems;
+
+                    foreach (var newItem in newItems)
+                    {
+                        var newItemDto = new CreateBrandDTO
+                        {
+                            Type = type,
+                            Name = newItem.Name,
+                            NameTranslate = newItem.NameTranslate,
+                            CategoryName = categoryName
+                        };
+
+                        _brandService.CreateBrand(newItemDto);
                     }
                 }
             }

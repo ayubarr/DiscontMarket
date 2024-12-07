@@ -12,6 +12,7 @@ namespace DiscontMarket.DAL.Repository.Interfaces
 
         List<string> GetAttributeTypesByCategory(Category category);
 
+        public void UpdateAttribute(AttributeEntity entity);
 
     }
 }

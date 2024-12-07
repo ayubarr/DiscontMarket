@@ -528,51 +528,63 @@ document.getElementById('delete-product-btn').addEventListener('click', () => {
 const maintenanceBtn = document.getElementById('maintenance-btn');
 
     // Проверка текущего состояния
-    fetch('maintenance.php')
-        .then(response => response.json())
-        .then(data => {
-            if (data.is_under_maintenance) {
-                maintenanceBtn.textContent = 'Завершить технические работы';
-            } else {
-                maintenanceBtn.textContent = 'Закрыть сайт на техническое обслуживание';
-            }
-        });
+    fetch('api/Maintenance/get-maintenance', {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}`
+        },
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.is_under_maintenance) {
+            maintenanceBtn.textContent = 'Завершить технические работы';
+        } else {
+            maintenanceBtn.textContent = 'Закрыть сайт на техническое обслуживание';
+        }
+    });
 
 
 // Обработка нажатия кнопки
 maintenanceBtn.addEventListener('click', () => {
     const isUnderMaintenance = maintenanceBtn.textContent.includes('Закрыть');
-        fetch('maintenance.php', {
+        fetch('api/Maintenance/set-maintenance', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
                 'Authorization': `Bearer ${token}`
             },
-            body: JSON.stringify({ is_under_maintenance: isUnderMaintenance })
+            body: JSON.stringify(isUnderMaintenance)
         })
-            .then(response => response.json())
-            .then(data => {
-                if (data.success) {
-                    maintenanceBtn.textContent = isUnderMaintenance
-                        ? 'Завершить технические работы'
-                        : 'Закрыть сайт на техническое обслуживание';
-                } else {
-                    alert('Ошибка обновления статуса');
-                }
-            });
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                maintenanceBtn.textContent = isUnderMaintenance
+                    ? 'Завершить технические работы'
+                    : 'Закрыть сайт на техническое обслуживание';
+            } else {
+                alert('Ошибка обновления статуса');
+            }
+        });
     
 });
 
 // Создаём переменную для хранения ссылки на плашку
 let maintenanceBanner;
     // Проверка текущего состояния
-    fetch('maintenance.php')
-        .then(response => response.json())
-        .then(data => {
-            if (data.is_under_maintenance) {
-                showBanner(); // Показать плашку, если сайт в режиме обслуживания
-            }
-        });
+    fetch('api/Maintenance/get-maintenance', {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}`
+        },
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.is_under_maintenance) {
+            showBanner(); // Показать плашку, если сайт в режиме обслуживания
+        }
+    });
 
 
 // Функция для показа плашки
@@ -599,13 +611,13 @@ function hideBanner() {
 // Обработка нажатия кнопки
 maintenanceBtn.addEventListener('click', () => {
     const isUnderMaintenance = maintenanceBtn.textContent.includes('Закрыть');
-        fetch('maintenance.php', {
+        fetch('api/Maintenance/set-maintenance', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
                 'Authorization': `Bearer ${token}`
             },
-            body: JSON.stringify({ is_under_maintenance: isUnderMaintenance })
+            body: JSON.stringify(isUnderMaintenance)
         })
             .then(response => response.json())
             .then(data => {
@@ -803,16 +815,17 @@ function saveAttributes() {
         data[categoryTitle.toLowerCase()] = { filters };
     });
 
+
     console.log('Отправляемые данные:', JSON.stringify(data));
 
     // Преобразуем данные в формат JSON и отправляем на сервер
-    fetch('api/Filters/set-filters', {
+    fetch('api/Filter/set-filters', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json', 
             'Authorization': `Bearer ${token}`
         },
-        body: JSON.stringify( data ),
+        body: JSON.stringify(data),
     })
     .then(response => response.json())
     .then(responseData => {

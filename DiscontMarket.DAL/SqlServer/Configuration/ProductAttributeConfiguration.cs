@@ -19,7 +19,7 @@ namespace DiscontMarket.DAL.SqlServer.Configuration
             builder.HasOne(pa => pa.Attribute)
                 .WithMany(a => a.ProductAttributes)
                 .HasForeignKey(p => p.AttributeID)
-                .OnDelete(DeleteBehavior.Restrict);
+                .OnDelete(DeleteBehavior.Cascade);
 
         }
     }

@@ -9,8 +9,8 @@ namespace DiscontMarket.Services.Services.Interfaces
         IBaseResponse<IEnumerable<Brand>> GetAllByCategoryName(string categoryName);
         IBaseResponse<IEnumerable<string>> GetAllBrandsByType(string brandType);
         IBaseResponse<IEnumerable<string>> GetAllBrandTypesByCategoryName(string categoryName);
-        IBaseResponse<Brand> CreateBrand(CreateBrandDTO entityDTO);
-
+        IBaseResponse<bool> CreateBrand(CreateBrandDTO entityDTO);
         Task<IBaseResponse<bool>> DeleteByNameAsync(string brandName);
+        IBaseResponse<bool> DeleteByName(string brandName);
     }
 }

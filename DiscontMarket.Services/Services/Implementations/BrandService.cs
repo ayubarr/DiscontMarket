@@ -23,7 +23,7 @@ namespace DiscontMarket.Services.Services.Implementations
             _categoryRepository = categoryRepository;
         }
 
-        public IBaseResponse<Brand> CreateBrand(CreateBrandDTO entityDTO)
+        public IBaseResponse<bool> CreateBrand(CreateBrandDTO entityDTO)
         {
             try
             {
@@ -43,19 +43,50 @@ namespace DiscontMarket.Services.Services.Implementations
                     }).ToList()
                 };
 
+                var existingBrand = _brandRepository.GetAll()
+                   .Where(p => p.Name.ToLower()
+                   .Equals(entityDTO.Name.ToLower()))
+                   .FirstOrDefault();
+                if (existingBrand != null)
+                {
+                    entity.ID = existingBrand.ID;
+                    return UpdateBrand(entity);
+                }
+
+
                 _brandRepository.Create(entity);
 
-                return ResponseFactory<Brand>.CreateSuccessResponse(entity);
+                return ResponseFactory<bool>.CreateSuccessResponse(true);
             }
             catch (ArgumentNullException argNullException)
             {
-                return ResponseFactory<Brand>.CreateNotFoundResponse(argNullException);
+                return ResponseFactory<bool>.CreateNotFoundResponse(argNullException);
             }
             catch (Exception exception)
             {
-                return ResponseFactory<Brand>.CreateErrorResponse(exception);
+                return ResponseFactory<bool>.CreateErrorResponse(exception);
             }
         }
+
+        private IBaseResponse<bool> UpdateBrand(Brand entity)
+        {
+            try
+            {
+                ObjectValidator<Brand>.CheckIsNotNullObject(entity);
+
+                _brandRepository.UpdateBrand(entity);
+                return ResponseFactory<bool>.CreateSuccessResponse(true);
+            }
+            catch (ArgumentNullException argNullException)
+            {
+                return ResponseFactory<bool>.CreateNotFoundResponse(argNullException);
+            }
+            catch (Exception exception)
+            {
+                return ResponseFactory<bool>.CreateErrorResponse(exception);
+            }
+        }
+
 
         public async Task<IBaseResponse<bool>> DeleteByNameAsync(string brandName)
         {
@@ -70,6 +101,27 @@ namespace DiscontMarket.Services.Services.Implementations
                 }
 
                 await _brandRepository.DeleteAsync(attribute);
+                return ResponseFactory<bool>.CreateSuccessResponse(true);
+            }
+            catch (Exception ex)
+            {
+                return ResponseFactory<bool>.CreateErrorResponse(ex);
+            }
+        }
+
+        public  IBaseResponse<bool> DeleteByName(string brandName)
+        {
+            try
+            {
+                StringValidator.CheckIsNotNull(brandName);
+
+                var attribute = _brandRepository.GetAll().Where(a => a.Name.Equals(brandName)).FirstOrDefault();
+                if (attribute is null)
+                {
+                    throw new Exception($"not found brand: {brandName}");
+                }
+
+                _brandRepository.Delete(attribute);
                 return ResponseFactory<bool>.CreateSuccessResponse(true);
             }
             catch (Exception ex)

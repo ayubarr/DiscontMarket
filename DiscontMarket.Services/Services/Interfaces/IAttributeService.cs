@@ -10,11 +10,12 @@ namespace DiscontMarket.Services.Services.Interfaces
         IBaseResponse<IEnumerable<string>> GetAllAttributesByType(string attributeName);
         IBaseResponse<IEnumerable<string>> GetAllAttributeTypesByCategoryName(string categoryName);
 
-        IBaseResponse<AttributeEntity> CreateAttribute(CreateAttributeDTO entityDTO);
+        IBaseResponse<bool> CreateAttribute(CreateAttributeDTO entityDTO);
 
         IBaseResponse<CategoryFilters> GetAllNames(string categoryName);
 
         Task<IBaseResponse<bool>> DeleteByNameAsync(string attributeName);
+        IBaseResponse<bool> DeleteByName(string attributeName);
 
 
     }

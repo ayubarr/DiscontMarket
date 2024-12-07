@@ -3,6 +3,7 @@ using DiscontMarket.ApiModels.DTO.EntityDTOs.Brand;
 using DiscontMarket.DAL.Repository.Interfaces;
 using DiscontMarket.DAL.SqlServer.Context;
 using DiscontMarket.Domain.Models.Entities;
+using DiscontMarket.Validation;
 using Microsoft.EntityFrameworkCore;
 
 namespace DiscontMarket.DAL.Repository.Implementations
@@ -60,6 +61,24 @@ namespace DiscontMarket.DAL.Repository.Implementations
                          .Select(a => a.Type)
                          .Distinct()
                          .ToList();
+        }
+
+        public void UpdateBrand(Brand entity)
+        {
+            ObjectValidator<Brand>.CheckIsNotNullObject(entity);
+
+            // Проверяем, существует ли сущность в базе данных по идентификатору
+            var existingEntity = _dbSet.Find(entity.ID); // Предполагается, что у T есть свойство Id
+
+            if (existingEntity == null)
+            {
+                throw new InvalidOperationException("Entity not found.");
+            }
+
+            // Обновляем значения полей сущности, за исключением идентификатора, если это необходимо
+            _context.Entry(existingEntity).CurrentValues.SetValues(entity);
+
+            _context.SaveChanges();
         }
     }
 }

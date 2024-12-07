@@ -27,12 +27,12 @@ namespace DiscontMarket.DAL.Repository.Implementations
                 .ToList();
         }
 
-        void IProductRepository.UpdateProduct(Product entity)
+        public void UpdateProduct(Product entity)
         {
             ObjectValidator<Product>.CheckIsNotNullObject(entity);
 
             // Проверяем, существует ли сущность в базе данных по идентификатору
-            var existingEntity =  _dbSet.Find(entity.ID); // Предполагается, что у T есть свойство Id
+            var existingEntity = _dbSet.Find(entity.ID); // Предполагается, что у T есть свойство Id
 
             if (existingEntity == null)
             {

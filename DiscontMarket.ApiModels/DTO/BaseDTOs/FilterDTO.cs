@@ -3,9 +3,9 @@
     public class FilterDTO
     {
         public string Title { get; set; }
-        public List<FilterOptionDTO> Options { get; set; }
+        public List<OptionDTO> Options { get; set; }
     }
-    public class FilterOptionDTO
+    public class OptionDTO
     {
         public string Label { get; set; }
         public string Value { get; set; }

@@ -12,11 +12,15 @@ namespace DiscontMarket.DAL.SqlServer.Configuration
 
             builder.HasOne(bc => bc.Brand)
                 .WithMany(b => b.BrandCategories)
-                .HasForeignKey(bc => bc.BrandID);
+                .HasForeignKey(bc => bc.BrandID)
+                .OnDelete(DeleteBehavior.Cascade);
+
 
             builder.HasOne(bc => bc.Category)
                 .WithMany(c => c.BrandCategories)
-                .HasForeignKey(bc => bc.CategoryID);
+                .HasForeignKey(bc => bc.CategoryID)
+                .OnDelete(DeleteBehavior.Cascade);
+
         }
     }
 }

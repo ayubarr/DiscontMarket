@@ -10,5 +10,7 @@ namespace DiscontMarket.DAL.Repository.Interfaces
 
         List<string> GetBrandTypesByCategory(Category category);
 
+        public void UpdateBrand(Brand entity);
+
     }
 }

@@ -7,9 +7,11 @@ namespace DiscontMarket.Services.Services.Interfaces
 {
     public interface ICategoryService : IBaseService<Category>
     {
-        public IBaseResponse<bool> CreateCategory(CreateCategoryDTO entityDTO);
+        IBaseResponse<bool> CreateCategory(CreateCategoryDTO entityDTO);
         IBaseResponse<IEnumerable<string>> GetAllNames();
         Task<IBaseResponse<bool>> DeleteByNameAsync(string attributeName);
+
+        IBaseResponse<bool> DeleteByName(string name);
 
     }
 }

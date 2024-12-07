@@ -2,6 +2,7 @@
 using DiscontMarket.ApiModels.Responce.Helpers;
 using DiscontMarket.ApiModels.Responce.Implementations;
 using DiscontMarket.ApiModels.Responce.Interfaces;
+using DiscontMarket.DAL.Repository.Implementations;
 using DiscontMarket.DAL.Repository.Interfaces;
 using DiscontMarket.Domain.Models.Abstractions.LinkEntities;
 using DiscontMarket.Domain.Models.Entities;
@@ -24,7 +25,7 @@ namespace DiscontMarket.Services.Services.Implementations
             _brandRepository = brandRepository;
         }
 
-        public IBaseResponse<AttributeEntity> CreateAttribute(CreateAttributeDTO entityDTO)
+        public IBaseResponse<bool> CreateAttribute(CreateAttributeDTO entityDTO)
         {
             try
             {
@@ -44,17 +45,49 @@ namespace DiscontMarket.Services.Services.Implementations
                     }).ToList()
                 };
 
+                var existingAttribute = _attributeRepository.GetAll()
+                    .Where(p => p.Name.ToLower()
+                    .Equals(entityDTO.Name.ToLower()))
+                    .FirstOrDefault();
+
+
+                if (existingAttribute != null)
+                {
+                    entity.ID = existingAttribute.ID;
+                    return UpdateAttribute(entity);
+                }
+
                 _attributeRepository.Create(entity);
 
-                return ResponseFactory<AttributeEntity>.CreateSuccessResponse(entity);
+                return ResponseFactory<bool>.CreateSuccessResponse(true);
             }
             catch (ArgumentNullException argNullException)
             {
-                return ResponseFactory<AttributeEntity>.CreateNotFoundResponse(argNullException);
+                return ResponseFactory<bool>.CreateNotFoundResponse(argNullException);
             }
             catch (Exception exception)
             {
-                return ResponseFactory<AttributeEntity>.CreateErrorResponse(exception);
+                return ResponseFactory<bool>.CreateErrorResponse(exception);
+            }
+        }
+
+
+        private IBaseResponse<bool> UpdateAttribute(AttributeEntity entity)
+        {
+            try
+            {
+                ObjectValidator<AttributeEntity>.CheckIsNotNullObject(entity);
+
+                _attributeRepository.UpdateAttribute(entity);
+                return ResponseFactory<bool>.CreateSuccessResponse(true);
+            }
+            catch (ArgumentNullException argNullException)
+            {
+                return ResponseFactory<bool>.CreateNotFoundResponse(argNullException);
+            }
+            catch (Exception exception)
+            {
+                return ResponseFactory<bool>.CreateErrorResponse(exception);
             }
         }
 
@@ -78,8 +111,27 @@ namespace DiscontMarket.Services.Services.Implementations
                 return ResponseFactory<bool>.CreateErrorResponse(ex);
             }
         }
+        public  IBaseResponse<bool> DeleteByName(string attributeName)
+        {
+            try
+            {
+                StringValidator.CheckIsNotNull(attributeName);
 
- 
+                var attribute = _attributeRepository.GetAll().Where(a => a.Name.Equals(attributeName)).FirstOrDefault();
+                if (attribute is null)
+                {
+                    throw new Exception($"not found atribute: {attributeName}");
+                }
+
+                 _attributeRepository.Delete(attribute);
+                return ResponseFactory<bool>.CreateSuccessResponse(true);
+            }
+            catch (Exception ex)
+            {
+                return ResponseFactory<bool>.CreateErrorResponse(ex);
+            }
+        }
+
 
         public IBaseResponse<IEnumerable<string>> GetAllAttributesByType(string attributeType)
         {

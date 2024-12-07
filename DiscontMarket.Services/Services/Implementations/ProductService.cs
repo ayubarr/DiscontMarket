@@ -156,7 +156,7 @@ namespace DiscontMarket.Services.Services.Implementations
                 };
 
 
-                var existingProduct = _productRepository.GetAll().Where(p => p.ProductName.Equals(entityDTO.title)).FirstOrDefault();
+                var existingProduct = _productRepository.GetAll().Where(p => p.ProductName.ToLower().Equals(entityDTO.title.ToLower())).FirstOrDefault();
                 if (existingProduct != null)
                 {
                     entity.ID = existingProduct.ID; 

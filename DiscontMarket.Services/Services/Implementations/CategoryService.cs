@@ -66,6 +66,28 @@ namespace DiscontMarket.Services.Services.Implementations
             }
         }
 
+
+        public IBaseResponse<bool> DeleteByName(string name)
+        {
+            try
+            {
+                StringValidator.CheckIsNotNull(name);
+
+                var attribute = _categoryRepository.GetAll().Where(a => a.Name.ToLower().Equals(name.ToLower())).FirstOrDefault();
+                if (attribute is null)
+                {
+                    throw new Exception($"not found atribute: {name}");
+                }
+
+                 _categoryRepository.DeleteAsync(attribute);
+                return ResponseFactory<bool>.CreateSuccessResponse(true);
+            }
+            catch (Exception ex)
+            {
+                return ResponseFactory<bool>.CreateErrorResponse(ex);
+            }
+        }
+
         public IBaseResponse<IEnumerable<string>> GetAllNames()
         {
             try

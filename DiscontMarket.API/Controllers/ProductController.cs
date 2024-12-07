@@ -26,7 +26,7 @@ namespace DiscontMarket.API.Controllers
         {
             if (!IsCategory(productFilterDto))
             {
-                var responseByStatus = _productService.GetAllProducts(productFilterDto, productFilterDto.Sort);
+                var responseByStatus = _productService.GetAllProductsByStatus(productFilterDto, productFilterDto.Sort, productFilterDto.CategoryDTO.Name);
                 return Ok(responseByStatus);
             }
 
