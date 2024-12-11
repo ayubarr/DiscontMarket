@@ -1,11 +1,14 @@
 ﻿using DiscontMarket.ApiModels.DTO.BaseDTOs;
 using DiscontMarket.ApiModels.DTO.EntityDTOs.Attribute;
 using DiscontMarket.ApiModels.DTO.EntityDTOs.Brand;
+using DiscontMarket.ApiModels.DTO.EntityDTOs.Category;
+using DiscontMarket.ApiModels.DTO.EntityDTOs.Product;
 using DiscontMarket.ApiModels.Responce.Helpers;
 using DiscontMarket.ApiModels.Responce.Interfaces;
 using DiscontMarket.DAL.Repository.Interfaces;
-using DiscontMarket.Domain.Models.Entities;
+using DiscontMarket.Domain.Models.Enums;
 using DiscontMarket.Services.Services.Interfaces;
+using DiscontMarket.Validation;
 using Microsoft.EntityFrameworkCore;
 
 namespace DiscontMarket.Services.Services.Implementations
@@ -17,17 +20,19 @@ namespace DiscontMarket.Services.Services.Implementations
         private readonly IAttributeService _attributeService;
         private readonly IBrandService _brandService;
         private readonly ICategoryService _categoryService;
+        private readonly IProductService _productService;
 
 
 
         public FilterService(IAttributeRepository attributeRepository, IBrandRepository brandRepository,
-            IAttributeService attributeService, IBrandService brandService, ICategoryService categoryService)
+            IAttributeService attributeService, IBrandService brandService, ICategoryService categoryService, IProductService productService)
         {
             _attributeRepository = attributeRepository;
             _brandRepository = brandRepository;
             _attributeService = attributeService;
             _brandService = brandService;
             _categoryService = categoryService;
+            _productService = productService;
         }
 
         public Dictionary<string, FilterCategoryDTO> GetFilters()
@@ -67,6 +72,55 @@ namespace DiscontMarket.Services.Services.Implementations
 
             return result;
         }
+
+        public IBaseResponse<int> GetMaxPriceByCategory(string category)
+        {
+            try
+            {
+                StringValidator.CheckIsNotNull(category);
+
+                var productDto = new FilterProductDTO();
+                productDto.CategoryDTO = new CategoryDTO { Name = category };
+                var products = _productService.GetAllProducts(productDto, SortTypes.Popularity.ToString());
+
+                ObjectValidator<IBaseResponse<IEnumerable<ProductDTO>>>.CheckIsNotNullObject(products);
+                ObjectValidator<IEnumerable<ProductDTO>>.CheckIsNotNullObject(products.Data);
+
+                int maxPrice = (int)products.Data.Max(x => x.price);
+
+
+                // Сохраняем изменения
+                return ResponseFactory<int>.CreateSuccessResponse(maxPrice);
+            }
+            catch (Exception ex)
+            {
+                return ResponseFactory<int>.CreateErrorResponse(ex);
+            }
+        }
+
+        public IBaseResponse<int> GetMinPriceByCategory(string category)
+        {
+            try
+            {
+                StringValidator.CheckIsNotNull(category);
+
+                var productDto = new FilterProductDTO();
+                productDto.CategoryDTO = new CategoryDTO { Name = category };
+                var products = _productService.GetAllProducts(productDto, SortTypes.Popularity.ToString());
+
+                ObjectValidator<IBaseResponse<IEnumerable<ProductDTO>>>.CheckIsNotNullObject(products);
+                ObjectValidator<IEnumerable<ProductDTO>>.CheckIsNotNullObject(products.Data);
+
+                int minPrice = (int)products.Data.Min(x => x.price);
+
+                return ResponseFactory<int>.CreateSuccessResponse(minPrice);
+            }
+            catch (Exception ex)
+            {
+                return ResponseFactory<int>.CreateErrorResponse(ex);
+            }
+        }
+
         public IBaseResponse<bool> SetFilters(Dictionary<string, FilterCategoryDTO> updatedFilters)
         {
             try

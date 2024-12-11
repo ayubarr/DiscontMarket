@@ -1,4 +1,5 @@
 ﻿using DiscontMarket.ApiModels.DTO.BaseDTOs;
+using DiscontMarket.Domain.Models.Entities;
 using DiscontMarket.Services.Services.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -32,6 +33,23 @@ namespace DiscontMarket.API.Controllers
             var response = _filterService.SetFilters(data);
             return Ok(response);
 
+        }
+
+        [HttpPost]
+        [Route("get-min")]
+        public IActionResult GetMinPrice([FromBody] string category)
+        {
+            var response = _filterService.GetMinPriceByCategory(category);
+            return Ok(response.Data);
+
+        }
+
+        [HttpPost]
+        [Route("get-max")]
+        public IActionResult GetMaxPrice([FromBody] string category)
+        {
+            var response = _filterService.GetMaxPriceByCategory(category);
+            return Ok(response.Data); 
         }
     }
 }

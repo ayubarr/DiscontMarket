@@ -7,5 +7,10 @@ namespace DiscontMarket.Services.Services.Interfaces
     {
         Dictionary<string, FilterCategoryDTO> GetFilters();
         IBaseResponse<bool> SetFilters(Dictionary<string, FilterCategoryDTO> updatedFilters);
+
+        IBaseResponse<int> GetMinPriceByCategory(string category);
+        IBaseResponse<int> GetMaxPriceByCategory(string category);
+
+
     }
 }

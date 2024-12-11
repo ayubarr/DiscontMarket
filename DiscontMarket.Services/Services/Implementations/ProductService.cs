@@ -146,7 +146,9 @@ namespace DiscontMarket.Services.Services.Implementations
                     Availability = availability,
                     Status = productStatus,
                     Brand = brand,
+                    BrandID = brand.ID,
                     Category = category,
+                    CategoryID = category.ID,
                     ProductAttributes = attributes.Select(attribute => new ProductAttribute
                     {
                         Attribute = attribute

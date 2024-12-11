@@ -1,3 +1,68 @@
+const params = new URLSearchParams(window.location.search);
+const category = params.keys().next().value;
+// Функция для получения минимальной цены
+function getMinPrice(category) {
+    return fetch('api/Filter/get-min', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(category)
+    })
+        .then(response => response.json());
+}
+
+// Функция для получения максимальной цены
+function getMaxPrice(category) {
+    return fetch('api/Filter/get-max', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(category)
+    })
+        .then(response => response.json());
+}
+
+// Инициализация с категориями или другими параметрами фильтрации
+
+// Получаем минимальные и максимальные значения цен
+Promise.all([getMinPrice(category), getMaxPrice(category)])
+    .then(([minPrice, maxPrice]) => {
+        // Обновляем значения в input и ползунках
+        let minInput = document.getElementById('minprice');
+        let maxInput = document.getElementById('maxprice');
+        let minSlider = document.getElementById('price-slider-min');
+        let maxSlider = document.getElementById('price-slider-max');
+        document.getElementById("price-slider-min").value = minPrice;
+        document.getElementById("price-slider-max").value = maxPrice;
+        document.getElementById("minprice").value = minPrice;
+        document.getElementById("maxprice").value = maxPrice;
+        minSlider.min = minPrice;
+        minSlider.max = maxPrice;
+        maxSlider.max = maxPrice;
+        maxSlider.min = minPrice;
+
+
+
+        console.log("minSlider.value", minSlider.value);
+        console.log("maxSlider.value", maxSlider.value);
+
+        console.log("minSlider.min", minSlider.min);
+        console.log("minSlider.max", minSlider.max);
+        console.log();
+        console.log("maxSlider.max", maxSlider.max);
+        console.log("maxSlider.min", maxSlider.min);
+        console.log();
+
+        console.log("minInput.value", minInput.value);
+        console.log("maxInput.value", maxInput.value);
+
+
+    })
+    .catch(error => console.error('Ошибка при получении данных цен:', error));
+
+
 document.addEventListener('DOMContentLoaded', () => {
     const minPriceInput = document.getElementById('minprice');
     const maxPriceInput = document.getElementById('maxprice');
@@ -8,14 +73,39 @@ document.addEventListener('DOMContentLoaded', () => {
     const sortingOptions = document.querySelectorAll('.sorting-option');
     const maxValue = parseInt(maxSlider?.max || 0);
 
-    const params = new URLSearchParams(window.location.search);
-    const category = params.keys().next().value;
+
     console.log('Категория', category);
 
     let attributedtos = []; // Сюда будем записывать атрибуты
     let branddtos = []; // Сюда будем записывать бренды
 
     let categoryFilters = {};
+
+    //fetch('api/Filter/get-min', {
+    //    method: 'POST',
+    //    headers: {
+    //        'Content-Type': 'application/json'
+    //    },
+    //    body: JSON.stringify(category)
+    //})
+    //    .then(response => response.json())
+    //    .then(data => {
+    //        min = data;
+    //    });
+
+
+    //fetch('api/Filter/get-max', {
+    //    method: 'POST',
+    //    headers: {
+    //        'Content-Type': 'application/json'
+    //    },
+    //    body: JSON.stringify(category)
+    //})
+    //    .then(response => response.json())
+    //    .then(data => {
+    //        max = data;
+    //    });
+
 
     fetch('api/Attribute/get-all-names', {
         method: 'POST',
