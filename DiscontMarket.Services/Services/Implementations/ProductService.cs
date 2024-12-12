@@ -145,7 +145,7 @@ namespace DiscontMarket.Services.Services.Implementations
                     FullDescription = entityDTO.fullDescription,
                     Availability = availability,
                     Status = productStatus,
-                    Brand = brand,
+                    Brand = brand ,
                     BrandID = brand.ID,
                     Category = category,
                     CategoryID = category.ID,

@@ -207,13 +207,13 @@
                 <div class="filter-block">
                     <div class="filter-title">Цена</div>
                     <div class="price-inputs">
-                        <input type="number" id="minprice" placeholder="От" value="0" />
-                        <input type="number" id="maxprice" placeholder="До" value="100000" />
+                        <input type="number" id="minprice" placeholder="От" value="" />
+                        <input type="number" id="maxprice" placeholder="До" value="" />
                     </div>
                     <div class="price-slider">
                         <div class="slider-track"></div>
-                        <input type="range" id="price-slider-min" class="slider-point" min="0" max="100000" value="0" step="1" />
-                        <input type="range" id="price-slider-max" class="slider-point" min="0" max="100000" value="100000" step="1" />
+                        <input type="range" id="price-slider-min" class="slider-point" min="" max="" value="" step="1" />
+                        <input type="range" id="price-slider-max" class="slider-point" min="" max="" value="" step="1" />
                     </div>
                 </div>
                 <div class="filter-block">
@@ -329,6 +329,58 @@
             <a>&copy; Первый бытовой, 2024</a>
         </div>
     </div>
+
+
+    <script>
+
+        const params = new URLSearchParams(window.location.search);
+        const category = params.keys().next().value;
+        async function initialize() {
+            try {
+                const [minPrice, maxPrice] = await Promise.all([
+                    fetch('api/Filter/get-min', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(category)
+                    }).then(response => response.json()),
+
+                    fetch('api/Filter/get-max', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(category)
+                    }).then(response => response.json())
+                ]);
+
+                // Обновляем значения в input и ползунках
+                const minInput = document.getElementById('minprice');
+                const maxInput = document.getElementById('maxprice');
+                const minSlider = document.getElementById('price-slider-min');
+                const maxSlider = document.getElementById('price-slider-max');
+
+                minInput.setAttribute("value", minPrice);
+                maxInput.setAttribute("value", maxPrice);
+                minSlider.setAttribute("value", minPrice);
+                maxSlider.setAttribute("value", maxPrice);
+
+                minSlider.min = minPrice;
+                minSlider.max = maxPrice;
+                maxSlider.max = maxPrice;
+                maxSlider.min = minPrice;
+
+            } catch (error) {
+                console.error('Ошибка при получении данных цен:', error);
+            }
+
+        }
+
+        initialize();
+
+
+    </script>
 
     <script src="js/HeaderMain.js"></script>
     <script src="js/ButtonAdress.js"></script>
