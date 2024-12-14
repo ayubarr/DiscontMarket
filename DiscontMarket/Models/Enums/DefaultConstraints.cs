@@ -10,7 +10,7 @@ namespace DiscontMarket.Domain.Models.Enums
     {
         // Длина строк
         public const int DefaultLength = 50;                  // Допустимая длина строки
-        public const int DefaultMaxLength = 500;              // Допустимая максимальная длина строки 
+        public const int DefaultMaxLength = 5000;             // Допустимая максимальная длина строки 
 
         // Точность чисел
         public const int DefaultPrecision = 12;              // Допустимая длина числа

@@ -27,7 +27,7 @@ namespace DiscontMarket.API.Controllers
 
         [HttpPost]
         [Route("set-filters")]
-        [Authorize(AuthenticationSchemes = "Bearer")]
+       // [Authorize(AuthenticationSchemes = "Bearer")]
         public IActionResult SetFilters([FromBody] Dictionary<string, FilterCategoryDTO> data)
         {
             var response = _filterService.SetFilters(data);

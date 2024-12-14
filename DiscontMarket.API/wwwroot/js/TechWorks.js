@@ -110,46 +110,46 @@ authButton.addEventListener('click', () => {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ username, password })
     })
-    .then(response => response.json())
+        .then(response => response.json())
         .then(data => {
             console.log('Response data:', data); // Проверяем структуру данных
-             console.log('token:', data.data.token);
-        if (data.statusCode === 200 && data.isSuccess) {
-           localStorage.setItem('authToken', data.data.token);
-           token = localStorage.getItem('authToken');
-           
-            // Успешный вход
-            authContainer.classList.remove('active');
-            dashboardContainer.classList.add('active');
-            errorMsg.textContent = '';
-            localStorage.removeItem('attempts');
-            attemptCounter = 0;
+            console.log('token:', data.data.token);
+            if (data.statusCode === 200 && data.isSuccess) {
+                localStorage.setItem('authToken', data.data.token);
+                token = localStorage.getItem('authToken');
 
-            sessionEndTime = Date.now() + 60 * 60000;
-            localStorage.setItem('sessionEndTime', sessionEndTime);
+                // Успешный вход
+                authContainer.classList.remove('active');
+                dashboardContainer.classList.add('active');
+                errorMsg.textContent = '';
+                localStorage.removeItem('attempts');
+                attemptCounter = 0;
 
-            startSessionTimer();
-        } else {
-            // Ошибка входа
-            attemptCounter++;
-            localStorage.setItem('attempts', attemptCounter);
-            errorMsg.textContent = `Ошибка: ${data.message}. Осталось попыток: ${3 - attemptCounter}`;
+                sessionEndTime = Date.now() + 60 * 60000;
+                localStorage.setItem('sessionEndTime', sessionEndTime);
 
-            if (attemptCounter >= 3) {
-                blockTime = Date.now() + 10 * 60000;
-                localStorage.setItem('blockTime', blockTime);
-                errorMsg.textContent = 'Вход заблокирован на 10 минут.';
+                startSessionTimer();
             } else {
-                // Активируем капчу
-                captchaContainer.style.display = 'block';
-                currentCaptcha = generateCaptcha();
+                // Ошибка входа
+                attemptCounter++;
+                localStorage.setItem('attempts', attemptCounter);
+                errorMsg.textContent = `Ошибка: ${data.message}. Осталось попыток: ${3 - attemptCounter}`;
+
+                if (attemptCounter >= 3) {
+                    blockTime = Date.now() + 10 * 60000;
+                    localStorage.setItem('blockTime', blockTime);
+                    errorMsg.textContent = 'Вход заблокирован на 10 минут.';
+                } else {
+                    // Активируем капчу
+                    captchaContainer.style.display = 'block';
+                    currentCaptcha = generateCaptcha();
+                }
             }
-        }
-    })
-    .catch(error => {
-        errorMsg.textContent = 'Ошибка соединения с сервером.';
-        console.error('Ошибка:', error);
-    });
+        })
+        .catch(error => {
+            errorMsg.textContent = 'Ошибка соединения с сервером.';
+            console.error('Ошибка:', error);
+        });
 });
 
 // Проверка блокировки и активной сессии при загрузке страницы
@@ -168,9 +168,9 @@ const editAdsContainer = document.getElementById('edit-ads-container');
 
 // Переключение между меню и редактированием рекламы
 editAdsBtn.addEventListener('click', () => {
-        dashboardContainer.style.display = 'none';
-        editAdsContainer.style.display = 'block';
-    
+    dashboardContainer.style.display = 'none';
+    editAdsContainer.style.display = 'block';
+
 });
 
 backBtn.addEventListener('click', () => {
@@ -195,45 +195,45 @@ document.querySelectorAll('.file-input').forEach(input => {
             return;
         }
 
-        // Проверка размеров изображения
+        // Чтение файла
         const reader = new FileReader();
         reader.onload = function (e) {
             const imgTemp = new Image();
             imgTemp.onload = function () {
+                // Проверка размеров изображения
                 if (imgTemp.width !== requiredWidth || imgTemp.height !== requiredHeight) {
-                    alert(`Неверный размер. Требуется ${requiredWidth}x${requiredHeight}px`);
-                    return;
+                    // Масштабирование изображения
+                    const canvas = document.createElement('canvas');
+                    const ctx = canvas.getContext('2d');
+                    canvas.width = requiredWidth;
+                    canvas.height = requiredHeight;
+                    ctx.drawImage(imgTemp, 0, 0, requiredWidth, requiredHeight);
+
+                    // Конвертация canvas в base64
+                    const resizedImage = canvas.toDataURL('image/png').split(',')[1];
+
+                    // Подготовка данных для отправки
+                    const dataToSend = {
+                        path: path,
+                        image: resizedImage,
+                        imageName: file.name,
+                        width: requiredWidth,
+                        height: requiredHeight
+                    };
+
+                    sendToServer(dataToSend, field, e.target.result);
+                } else {
+                    // Если размеры корректные, отправляем исходное изображение
+                    const dataToSend = {
+                        path: path,
+                        image: e.target.result.split(',')[1],
+                        imageName: file.name,
+                        width: requiredWidth,
+                        height: requiredHeight
+                    };
+
+                    sendToServer(dataToSend, field, e.target.result);
                 }
-
-                // Подготовка данных для отправки на сервер
-                const dataToSend = {
-                    path: path,
-                    image: e.target.result.split(',')[1], // Получаем base64 строку изображения
-                    imageName: file.name,
-                    width: requiredWidth,
-                    height: requiredHeight
-                };
-
-                // Отправка запроса на сервер через новый API
-                fetch('/api/image/load-image', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'Authorization': `Bearer ${token}`
-                    },
-                    body: JSON.stringify(dataToSend),
-                })
-                    .then(response => response.json())
-                    .then(data => {
-                        if (data.success) {
-                            alert('Файл успешно загружен');
-                            const img = field.querySelector('img');
-                            img.src = e.target.result; // Обновляем превью изображения
-                        } else {
-                            alert(data.error || 'Ошибка загрузки');
-                        }
-                    })
-                    .catch(err => alert('Ошибка соединения с сервером'));
             };
             imgTemp.src = e.target.result;
         };
@@ -241,10 +241,33 @@ document.querySelectorAll('.file-input').forEach(input => {
     });
 });
 
+// Функция отправки данных на сервер
+function sendToServer(dataToSend, field, previewSrc) {
+    fetch('/api/image/load-image', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}` // Замените `token` на актуальный токен авторизации
+        },
+        body: JSON.stringify(dataToSend),
+    })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                const img = field.querySelector('img');
+                img.src = previewSrc; // Обновляем превью изображения
+            } else {
+                alert(data.error || 'Ошибка загрузки');
+            }
+        })
+        .catch(err => alert('Ошибка соединения с сервером'));
+}
+
+
 document.getElementById('manage-products-btn').addEventListener('click', () => {
-        document.getElementById('manage-products-container').style.display = 'block';
-        document.getElementById('dashboard-container').style.display = 'none';
-    
+    document.getElementById('manage-products-container').style.display = 'block';
+    document.getElementById('dashboard-container').style.display = 'none';
+
 });
 
 // Возврат на панель управления
@@ -261,8 +284,8 @@ document.getElementById('category-select').addEventListener('change', (event) =>
 
 // Вызов функции для инициализации характеристик при загрузке страницы
 window.addEventListener('DOMContentLoaded', function () {
-        updateCharacteristics();  // При первой загрузке отображаем характеристики для первой категории
-    
+    updateCharacteristics();  // При первой загрузке отображаем характеристики для первой категории
+
 });
 
 function updateRemainingChars(textarea, counterId, maxLength) {
@@ -280,13 +303,13 @@ function updateCharCount(textarea, counterId, maxLength) {
 let categoryFilters = {};
 
 
-    // Получаем фильтры через POST-запрос
-    fetch('api/filter/get-filters', {
-        method: 'GET',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-    })
+// Получаем фильтры через POST-запрос
+fetch('api/filter/get-filters', {
+    method: 'GET',
+    headers: {
+        'Content-Type': 'application/json'
+    },
+})
     .then(response => response.json())
     .then(data => {
         categoryFilters = data;
@@ -307,21 +330,44 @@ document.getElementById('product-images').addEventListener('change', (event) => 
             return;
         }
 
-        const img = new Image();
-        img.src = URL.createObjectURL(file);
-        img.onload = () => {
-            if (img.width !== 490 || img.height !== 490) {
-                alert(`Изображение ${file.name} должно быть размером 490x490 пикселей.`);
-            } else {
-                validFiles.push(file);
-                dataTransfer.items.add(file); // Добавляем только валидные файлы
-            }
+        const reader = new FileReader();
+        reader.onload = () => {
+            const img = new Image();
+            img.src = reader.result;
 
-            // Обновляем input только после завершения проверки каждого файла
-            if (validFiles.length === dataTransfer.items.length) {
-                event.target.files = dataTransfer.files;
-            }
+            img.onload = () => {
+                if (img.width !== 490 || img.height !== 490) {
+                    // Масштабирование изображения
+                    const canvas = document.createElement('canvas');
+                    const ctx = canvas.getContext('2d');
+                    canvas.width = 490;
+                    canvas.height = 490;
+                    ctx.drawImage(img, 0, 0, 490, 490);
+
+                    // Конвертация canvas в Blob
+                    canvas.toBlob((blob) => {
+                        const resizedFile = new File([blob], file.name, { type: 'image/png' });
+                        validFiles.push(resizedFile);
+                        dataTransfer.items.add(resizedFile);
+
+                        // Обновляем input после всех обработок
+                        if (validFiles.length === Array.from(files).length) {
+                            event.target.files = dataTransfer.files;
+                        }
+                    }, 'image/png');
+                } else {
+                    validFiles.push(file);
+                    dataTransfer.items.add(file);
+
+                    // Обновляем input после всех обработок
+                    if (validFiles.length === Array.from(files).length) {
+                        event.target.files = dataTransfer.files;
+                    }
+                }
+            };
         };
+
+        reader.readAsDataURL(file);
     });
 
     // Удаляем все файлы из input, пока не пройдет проверка
@@ -395,29 +441,29 @@ document.getElementById('save-product-btn').addEventListener('click', () => {
     let imagePaths = [];
     const uploadPromises = Array.from(images).map((file, index) => {
         return new Promise((resolve, reject) => {
-                const reader = new FileReader();
+            const reader = new FileReader();
 
-                // Когда изображение будет прочитано, выполняем отправку
-                reader.onloadend = () => {
-                    const base64Image = reader.result.split(',')[1]; // Извлекаем Base64 строку из результата
+            // Когда изображение будет прочитано, выполняем отправку
+            reader.onloadend = () => {
+                const base64Image = reader.result.split(',')[1]; // Извлекаем Base64 строку из результата
 
-                    // Формируем объект для отправки на сервер
-                    const dataToSend = {
-                        image: base64Image,
-                        imageName: `productimage_${Date.now()}_${index}.png`
-                    };
+                // Формируем объект для отправки на сервер
+                const dataToSend = {
+                    image: base64Image,
+                    imageName: `productimage_${Date.now()}_${index}.png`
+                };
 
-                    console.log(dataToSend); // Логируем, чтобы проверить данные перед отправкой
+                console.log(dataToSend); // Логируем, чтобы проверить данные перед отправкой
 
-                    // Отправка изображения на сервер с сохранением
-                    fetch('api/Image/upload-image', {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json',
-                            'Authorization': `Bearer ${token}`
-                        },
-                        body: JSON.stringify(dataToSend) // Отправляем данные как JSON
-                    })
+                // Отправка изображения на сервер с сохранением
+                fetch('api/Image/upload-image', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${token}`
+                    },
+                    body: JSON.stringify(dataToSend) // Отправляем данные как JSON
+                })
                     .then(response => response.json())
                     .then(data => {
                         // Добавляем путь к изображению в массив
@@ -429,10 +475,10 @@ document.getElementById('save-product-btn').addEventListener('click', () => {
                         console.error('Ошибка сохранения изображения:', error);
                         reject(error);
                     });
-                };
+            };
 
-                // Читаем файл как Data URL (Base64)
-                reader.readAsDataURL(file);
+            // Читаем файл как Data URL (Base64)
+            reader.readAsDataURL(file);
 
         });
     });
@@ -466,18 +512,18 @@ document.getElementById('save-product-btn').addEventListener('click', () => {
                 },
                 body: JSON.stringify(newProduct)
             })
-            .then(response => response.json())
-            .then(data => {
-                console.log('Товар успешно сохранен:', data);
+                .then(response => response.json())
+                .then(data => {
+                    console.log('Товар успешно сохранен:', data);
 
-                resetProductForm();
-            })
-            .catch(error => {
-                console.error('Ошибка отправки данных товара:', error);
+                    resetProductForm();
+                })
+                .catch(error => {
+                    console.error('Ошибка отправки данных товара:', error);
 
-                resetProductForm();
-            });
-            
+                    resetProductForm();
+                });
+
         })
         .catch(error => {
             console.error('Ошибка загрузки изображений:', error);
@@ -503,9 +549,9 @@ function resetProductForm() {
 
 
 document.getElementById('delete-products-btn').addEventListener('click', () => {
-        document.getElementById('dashboard-container').style.display = 'none';
-        document.getElementById('delete-products-container').style.display = 'block';
-    
+    document.getElementById('dashboard-container').style.display = 'none';
+    document.getElementById('delete-products-container').style.display = 'block';
+
 });
 
 // Возврат на панель управления
@@ -518,34 +564,34 @@ document.getElementById('delete-product-btn').addEventListener('click', () => {
     const productName = document.getElementById('product-delete-title').value.trim();
 
     fetch('api/Product/delete-by-name', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${token}`
-            },
-            body: JSON.stringify( productName )
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}`
+        },
+        body: JSON.stringify(productName)
+    })
+        .then(response => response.json())
+        .then(data => {
+            document.getElementById('delete-result').innerText = data.message;
         })
-            .then(response => response.json())
-            .then(data => {
-                document.getElementById('delete-result').innerText = data.message;
-            })
-            .catch(error => {
-                console.error('Ошибка:', error);
-            });
+        .catch(error => {
+            console.error('Ошибка:', error);
+        });
 });
 
 
 
 const maintenanceBtn = document.getElementById('maintenance-btn');
 
-    // Проверка текущего состояния
-    fetch('api/Maintenance/get-maintenance', {
-        method: 'GET',
-        headers: {
-            'Content-Type': 'application/json',
-            'Authorization': `Bearer ${token}`
-        },
-    })
+// Проверка текущего состояния
+fetch('api/Maintenance/get-maintenance', {
+    method: 'GET',
+    headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${token}`
+    },
+})
     .then(response => response.json())
     .then(data => {
         if (data.is_under_maintenance) {
@@ -559,14 +605,14 @@ const maintenanceBtn = document.getElementById('maintenance-btn');
 // Обработка нажатия кнопки
 maintenanceBtn.addEventListener('click', () => {
     const isUnderMaintenance = maintenanceBtn.textContent.includes('Закрыть');
-        fetch('api/Maintenance/set-maintenance', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${token}`
-            },
-            body: JSON.stringify({ isUnderMaintenance })
-        })
+    fetch('api/Maintenance/set-maintenance', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}`
+        },
+        body: JSON.stringify({ isUnderMaintenance })
+    })
         .then(response => response.json())
         .then(data => {
             if (data.success) {
@@ -577,19 +623,19 @@ maintenanceBtn.addEventListener('click', () => {
                 alert('Ошибка обновления статуса');
             }
         });
-    
+
 });
 
 // Создаём переменную для хранения ссылки на плашку
 let maintenanceBanner;
-    // Проверка текущего состояния
-    fetch('api/Maintenance/get-maintenance', {
-        method: 'GET',
-        headers: {
-            'Content-Type': 'application/json',
-            'Authorization': `Bearer ${token}`
-        },
-    })
+// Проверка текущего состояния
+fetch('api/Maintenance/get-maintenance', {
+    method: 'GET',
+    headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${token}`
+    },
+})
     .then(response => response.json())
     .then(data => {
         if (data.is_under_maintenance) {
@@ -622,42 +668,42 @@ function hideBanner() {
 // Обработка нажатия кнопки
 maintenanceBtn.addEventListener('click', () => {
     const isUnderMaintenance = maintenanceBtn.textContent.includes('Закрыть');
-        fetch('api/Maintenance/set-maintenance', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${token}`
-            },
-            body: JSON.stringify({ isUnderMaintenance })
-        })
-            .then(response => response.json())
-            .then(data => {
-                if (data.success) {
-                    maintenanceBtn.textContent = isUnderMaintenance
-                        ? 'Завершить технические работы'
-                        : 'Закрыть сайт на техническое обслуживание';
+    fetch('api/Maintenance/set-maintenance', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}`
+        },
+        body: JSON.stringify({ isUnderMaintenance })
+    })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                maintenanceBtn.textContent = isUnderMaintenance
+                    ? 'Завершить технические работы'
+                    : 'Закрыть сайт на техническое обслуживание';
 
-                    // Динамическое управление плашкой
-                    if (isUnderMaintenance) {
-                        showBanner(); // Показываем плашку
-                    } else {
-                        hideBanner(); // Убираем плашку
-                    }
-
+                // Динамическое управление плашкой
+                if (isUnderMaintenance) {
+                    showBanner(); // Показываем плашку
                 } else {
-                    alert('Ошибка обновления статуса');
+                    hideBanner(); // Убираем плашку
                 }
-            });
-    
+
+            } else {
+                alert('Ошибка обновления статуса');
+            }
+        });
+
 });
 
 
 
 document.getElementById('edit-attributes-btn').addEventListener('click', function () {
-        document.getElementById('dashboard-container').style.display = 'none';
-        document.getElementById('attribute-editor-container').style.display = 'block';
-        loadData(); // Подгружаем атрибуты
-    
+    document.getElementById('dashboard-container').style.display = 'none';
+    document.getElementById('attribute-editor-container').style.display = 'block';
+    loadData(); // Подгружаем атрибуты
+
 });
 
 document.getElementById('back-btn-attributes').addEventListener('click', function () {
@@ -677,10 +723,10 @@ function loadData() {
             'Content-Type': 'application/json'
         },
     })
-    .then(response => response.json())
-    .then(data => renderCategories(data))
-    .catch(error => console.error('Error loading data:', error));
-    
+        .then(response => response.json())
+        .then(data => renderCategories(data))
+        .catch(error => console.error('Error loading data:', error));
+
 }
 
 function renderCategories(data) {
@@ -833,15 +879,15 @@ function saveAttributes() {
     fetch('api/Filter/set-filters', {
         method: 'POST',
         headers: {
-            'Content-Type': 'application/json', 
+            'Content-Type': 'application/json',
             'Authorization': `Bearer ${token}`
         },
         body: JSON.stringify(data),
     })
-    .then(response => response.json())
-    .then(responseData => {
-        console.log('Данные успешно сохранены', responseData);
-    })
-    .catch(error => console.error('Ошибка при сохранении данных:', error));
+        .then(response => response.json())
+        .then(responseData => {
+            console.log('Данные успешно сохранены', responseData);
+        })
+        .catch(error => console.error('Ошибка при сохранении данных:', error));
 }
 
