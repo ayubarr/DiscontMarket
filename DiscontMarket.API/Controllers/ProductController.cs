@@ -78,9 +78,9 @@ namespace DiscontMarket.API.Controllers
         // Получить все продукты с фильтром и сортировкой
         [HttpPost]
         [Route("get-by-name")]
-        public IActionResult GetProductByProductName([FromBody] string productName)
+        public IActionResult GetProductByProductName([FromBody] SearchData searchData)
         {
-            var response = _productService.GetProductsByName(productName);
+            var response = _productService.GetProductByNameAndCategory(searchData);
             return Ok(response.Data);
         }
 

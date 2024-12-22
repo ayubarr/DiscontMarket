@@ -23,7 +23,7 @@
         <img src="items/header/logo.png" alt="Логотип">
         <button id="edit-ads-btn">Редактирование рекламы</button>
         <button id="edit-attributes-btn">Редактирование атрибутов</button>
-        <button id="manage-products-btn">Добавление товаров</button>
+        <button id="manage-products-btn">Добавление/Редактирование товаров</button>
         <button id="delete-products-btn">Удаление товаров</button>
         <button id="maintenance-btn">Закрыть сайт на техническое обслуживание</button>
         <button id="exit-btn">Выход</button>
@@ -122,6 +122,7 @@
     <div class="manage-products-container" id="manage-products-container" style="display: none;">
         <button id="back-btn-products">← Назад</button>
         <h2>Добавление/Редактирование товара</h2>
+        <h5>Для редактирования товара, выберите его категорию и введите точное название, после чего нажмите на поиск товара</h5>
         <div class="product-form">
             <!-- Поле выбора категории -->
             <label for="category-select">Выберите категорию:</label>
@@ -138,6 +139,8 @@
             <!-- Основные поля товара -->
             <label for="product-title">Название товара:</label>
             <input type="text" id="product-title" placeholder="Введите название товара" />
+            <button id="search-product-btn">Поиск по названию</button>
+
 
             <label for="product-description">Описание:</label>
             <textarea id="product-description"

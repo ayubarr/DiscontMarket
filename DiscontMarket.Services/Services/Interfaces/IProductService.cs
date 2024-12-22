@@ -17,6 +17,8 @@ namespace DiscontMarket.Services.Services.Interfaces
         IBaseResponse<GetProductDTO> GetProductById(uint Id);
 
         IBaseResponse<IEnumerable<GetProductDTO>> GetProductsByName(string name);
+        IBaseResponse<GetFullProductDto> GetProductByNameAndCategory(SearchData name);
+
 
         IBaseResponse<bool> CreateProduct(CreateProductDTO entityDTO);
 

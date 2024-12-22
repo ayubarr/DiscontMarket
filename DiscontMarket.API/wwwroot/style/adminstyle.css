@@ -129,7 +129,7 @@ body {
         font-size: 14px;
     }
 
-#back-btn {
+#back-btn, #search-product-btn {
     align-self: flex-start;
     background-color: #005BFF;
     color: white;

@@ -112,8 +112,6 @@ authButton.addEventListener('click', () => {
     })
         .then(response => response.json())
         .then(data => {
-            console.log('Response data:', data); // Проверяем структуру данных
-            console.log('token:', data.data.token);
             if (data.statusCode === 200 && data.isSuccess) {
                 localStorage.setItem('authToken', data.data.token);
                 token = localStorage.getItem('authToken');
@@ -318,6 +316,79 @@ fetch('api/filter/get-filters', {
         console.error('Ошибка загрузки фильтров:', error);
     });
 
+document.getElementById('search-product-btn').addEventListener('click', () => {
+    // Получаем значения из полей
+    const title = document.getElementById('product-title').value;
+    const categoryname = document.getElementById('category-select').value;
+
+    // Проверяем заполнение обязательных полей
+    if (!categoryname || !title) {
+        alert("Пожалуйста, выберите категорию и введите название товара.");
+        return;
+    }
+
+    // Формируем объект для отправки на сервер
+    const searchData = {
+        categoryname: categoryname,
+        title: title
+    };
+
+    // Логируем данные перед отправкой
+
+    // Отправляем POST-запрос на сервер
+    fetch('api/Product/get-by-name', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(searchData)
+    })
+        .then(response => response.json())
+        .then(data => {
+
+            // Заполняем поля автоматически из ответа
+            document.getElementById('product-description').value = data.description || "";
+            document.getElementById('product-full-description').value = data.fullDescription || "";
+            document.getElementById('product-price').value = data.price || "";
+            document.getElementById('product-quantity').value = data.quantity || "";
+            document.getElementById('product-status').value = data.status || "discount";
+            document.getElementById('product-availability').value = data.availability || "instock";
+
+            // Загрузка файлов в поле (если есть изображения)
+            const fileInput = document.getElementById('product-images');
+            if (data.images && Array.isArray(data.images)) {
+                // Конвертируем изображения в файлы и загружаем их в поле
+                const files = data.images.map(imageUrl => {
+                    // Создаем объект File для каждого изображения
+                    const file = new File([imageUrl], imageUrl.split('/').pop(), { type: 'image/jpeg' });
+                    return file;
+                });
+
+                // Присваиваем файлы полю
+                const dataTransfer = new DataTransfer();
+                files.forEach(file => dataTransfer.items.add(file));
+                fileInput.files = dataTransfer.files;
+            }
+
+            // Заполняем характеристики в уже существующие поля
+            const characteristicsContainer = document.getElementById('characteristics-container');
+            if (data.characteristics && Array.isArray(data.characteristics)) {
+                data.characteristics.forEach(char => {
+                    // Находим соответствующее поле для характеристики
+                    const characteristicField = document.getElementById(char);
+                    if (characteristicField) {
+                        // Если поле существует, выбираем нужное значение
+                        characteristicField.value = char.value;
+                    }
+                });
+            }
+        })
+        .catch(error => {
+            console.error("Ошибка при выполнении поиска:", error);
+            alert("Произошла ошибка при загрузке данных.");
+        });
+});
+
 
 document.getElementById('product-images').addEventListener('change', (event) => {
     const files = event.target.files;
@@ -407,7 +478,7 @@ document.getElementById('save-product-btn').addEventListener('click', () => {
     const quantity = document.getElementById('product-quantity').value;
 
     // Проверка обязательных полей
-    if (!categoryname || !title || !description || !fullDescription || !price || images.length === 0 || !status || !quantity) {
+    if (!categoryname || !title || !description || !fullDescription || !price || !status || !quantity) {
         alert("Пожалуйста, заполните все обязательные поля.");
         return;
     }
@@ -453,8 +524,6 @@ document.getElementById('save-product-btn').addEventListener('click', () => {
                     imageName: `productimage_${Date.now()}_${index}.png`
                 };
 
-                console.log(dataToSend); // Логируем, чтобы проверить данные перед отправкой
-
                 // Отправка изображения на сервер с сохранением
                 fetch('api/Image/upload-image', {
                     method: 'POST',
@@ -467,7 +536,6 @@ document.getElementById('save-product-btn').addEventListener('click', () => {
                     .then(response => response.json())
                     .then(data => {
                         // Добавляем путь к изображению в массив
-                        console.log('data.imagePath: ', data.imagePath);
                         imagePaths.push(data.imagePath);
                         resolve();
                     })
@@ -501,8 +569,6 @@ document.getElementById('save-product-btn').addEventListener('click', () => {
                 characteristics
             };
 
-            console.log(newProduct);
-            console.log("Bearer token", token);
             // Отправка данных товара на сервер
             fetch('api/Product/create', {
                 method: 'POST',
@@ -514,7 +580,6 @@ document.getElementById('save-product-btn').addEventListener('click', () => {
             })
                 .then(response => response.json())
                 .then(data => {
-                    console.log('Товар успешно сохранен:', data);
 
                     resetProductForm();
                 })
@@ -873,7 +938,6 @@ function saveAttributes() {
     });
 
 
-    console.log('Отправляемые данные:', JSON.stringify(data));
 
     // Преобразуем данные в формат JSON и отправляем на сервер
     fetch('api/Filter/set-filters', {
@@ -886,7 +950,6 @@ function saveAttributes() {
     })
         .then(response => response.json())
         .then(responseData => {
-            console.log('Данные успешно сохранены', responseData);
         })
         .catch(error => console.error('Ошибка при сохранении данных:', error));
 }

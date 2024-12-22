@@ -11,7 +11,6 @@ const maxValue = parseInt(maxSlider?.max || 0);
 const params = new URLSearchParams(window.location.search);
 const category = params.keys().next().value;
 
-console.log('Категория', category);
 
 let attributedtos = []; // Сюда будем записывать атрибуты
 let branddtos = []; // Сюда будем записывать бренды
@@ -39,7 +38,6 @@ fetch('api/Attribute/get-all-names', {
             }
 
         }
-        console.log('Обновленные категории:', categoryFilters);
 
         let activeFilters = {};
 
@@ -282,7 +280,6 @@ fetch('api/Attribute/get-all-names', {
         // Инициализация активных фильтров при загрузке страницы
         function initActiveFilters() {
 
-            console.log("initActiveFilters")
             const currentCategoryFilters = categoryFilters;
             if (!currentCategoryFilters) return;
 
@@ -299,15 +296,12 @@ fetch('api/Attribute/get-all-names', {
                 branddtos = branddtos.filter(filter => params.has(filter));
                 attributedtos = attributedtos.filter(filter => params.has(filter));
             }
-            console.log('AttributeDTOs:', attributedtos);
-            console.log('BrandDTOs:', branddtos);
 
             const checkboxes = filtersContainer.querySelectorAll('.checkbox');
             checkboxes.forEach(checkbox => {
                 const filterId = checkbox.getAttribute('data-filter');
                 if (params.has(filterId)) {
                     checkbox.classList.add('active');
-                    console.log(`Фильтр ${filterId} активирован из URL`);
                 }
             });
 
@@ -329,9 +323,6 @@ fetch('api/Attribute/get-all-names', {
             activeFilters.Attributes = [...attributedtos];
             activeFilters.Brands = [...branddtos];
 
-            console.log('activeSort ', activeSort);
-
-            console.log('activeFilters.sort ', activeFilters.sort);
 
             const currentCategoryFilters = categoryFilters[category] || {};
 
@@ -384,7 +375,6 @@ fetch('api/Attribute/get-all-names', {
             })
                 .then(response => response.json())
                 .then(data => {
-                    console.log('Данные успешно получены:', data);
 
                     const container = document.querySelector('.main-items-section');
                     const showMoreButton = document.getElementById('show-more');
@@ -474,7 +464,11 @@ fetch('api/Attribute/get-all-names', {
                 button.addEventListener('click', (event) => {
                     event.stopPropagation();
                     const productName = button.getAttribute('data-product-name');
-                    const yandexMarketURL = `https://market.yandex.ru/search?text=${encodeURIComponent(productName)}`;
+                    const sanitizedProductName = productName
+                        .replace(/["']/g, '')  // Удаляем кавычки
+                        .replace(/\s+/g, ' ') // Убираем лишние пробелы
+                        .trim();              // Убираем пробелы по краям
+                    const yandexMarketURL = `https://market.yandex.ru/search?text=${encodeURIComponent(sanitizedProductName)}`;
                     window.open(yandexMarketURL, '_blank');
                 });
             });

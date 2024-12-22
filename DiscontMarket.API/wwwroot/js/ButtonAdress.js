@@ -50,7 +50,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 // Проверяем, есть ли значение data-category
                 if (category) {
                     if (currentUrl.endsWith(targetUrl)) {
-                        console.log('Вы уже на этой странице.');
                         return; // Останавливаем дальнейшее выполнение
                     } else {
                     // Отправляем POST-запрос на сервер с категорией
@@ -63,8 +62,6 @@ document.addEventListener('DOMContentLoaded', function () {
                     })
                     .then(response => response.json())
                     .then(data => {
-                        console.log('Данные успешно отправлены:', data);
-
                         // Перенаправляем на catalog.html с добавлением параметра
                         window.location.href = targetUrl;
                     })

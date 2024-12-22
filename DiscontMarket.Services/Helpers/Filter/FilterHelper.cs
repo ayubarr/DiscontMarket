@@ -70,6 +70,7 @@ namespace DiscontMarket.Services.Helpers.Filter
                     (p, availability) => p.Availability.ToString().Equals(availability, StringComparison.OrdinalIgnoreCase)
                 ));
 
+
             if (productFilterDto.MinPrice.HasValue)
                 filter = filter.And(p => p.Price >= productFilterDto.MinPrice.Value);
 

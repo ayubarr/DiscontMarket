@@ -10,6 +10,7 @@ using DiscontMarket.Domain.Models.Enums;
 using DiscontMarket.Services.Helpers.Filter;
 using DiscontMarket.Services.Services.Interfaces;
 using DiscontMarket.Validation;
+using Microsoft.EntityFrameworkCore;
 
 namespace DiscontMarket.Services.Services.Implementations
 {
@@ -438,10 +439,10 @@ namespace DiscontMarket.Services.Services.Implementations
 
                 productStatus = (ProductStatus)Enum.Parse(typeof(ProductStatus), status, true);
 
+                filterProductDTO.Status = new List<string> { productStatus.ToString() };
                 var filter = FilterHelper.CreateProductFilterWitoutAttributes(filterProductDTO);
 
-                var entities = _productRepository.GetFilteredProducts(filter)
-                    .Where(p => p.Status.Equals(productStatus));
+                var entities = _productRepository.GetFilteredProducts(filter);
 
                 ObjectValidator<IEnumerable<Product>>.CheckIsNotNullObject(entities);
 
@@ -462,7 +463,7 @@ namespace DiscontMarket.Services.Services.Implementations
                     userid = product.UserID,
                     categoryid = product.CategoryID,
                     brendId = product.BrandID,
-                }).AsEnumerable();
+                }).ToList();
 
 
                 return ResponseFactory<IEnumerable<ProductDTO>>.CreateSuccessResponse(productDto);
@@ -470,6 +471,76 @@ namespace DiscontMarket.Services.Services.Implementations
             catch (Exception ex)
             {
                 return ResponseFactory<IEnumerable<ProductDTO>>.CreateErrorResponse(ex);
+            }
+        }
+
+        public IBaseResponse<GetFullProductDto> GetProductByNameAndCategory(SearchData data)
+        {
+            try
+            {
+                // Получаем список продуктов, соответствующих имени или содержащих имя в названии
+                var category = _categoryRepository.GetAll().Where(x => x.Name.ToLower().Equals(data.categoryname.ToLower())).FirstOrDefault();
+
+                ObjectValidator<Category>.CheckIsNotNullObject(category);
+
+                var products = _productRepository
+                    .GetAll()
+                    .Where(p => p.ProductName.ToLower().Equals(data.title.ToLower())
+                         && p.CategoryID == category.ID)
+                    .ToList();
+
+                // Проверяем, что продукты найдены
+                ObjectValidator<List<Product>>.CheckIsNotNullObject(products);
+
+                // Создаем список DTO
+                var productDtos = products.Select(product =>
+                {
+                    // Получаем изображения продукта
+                    var productImages = _imageRepository
+                        .GetAll()
+                        .Where(i => i.ProductID == product.ID)
+                        .Select(i => i.Path)
+                        .ToList();
+
+                    // Получаем характеристики продукта через контейнер атрибутов
+                    var characteristics = _attributeRepository
+                        .GetAll()
+                        .Where(a => a.ProductAttributes!.Any(pa => pa.ProductID == product.ID))
+                        .Select(a => new CharacteristicDTO
+                        {
+                            Name = a.Type,
+                            Value = a.NameTranslate
+                        })
+                        .Where(attr => !string.IsNullOrEmpty(attr.Name) && !string.IsNullOrEmpty(attr.Value))
+                        .ToList();
+
+                    // Формируем DTO объекта
+                    return new GetFullProductDto
+                    {
+                        productId = (int)product.ID,
+                        title = product.ProductName,
+                        rating = product.Rating,
+                        description = product.Description,
+                        price = product.Price,
+                        quantity = product.Quantity,
+                        characteristics = characteristics,
+                        images = productImages,
+                        fullDescription = product.FullDescription
+                    };
+                }).ToList();
+
+                var productDto = productDtos.FirstOrDefault();
+                
+                // Проверяем, что DTO корректно создан
+                ObjectValidator<GetFullProductDto>.CheckIsNotNullObject(productDto);
+
+                // Возвращаем успешный ответ
+                return ResponseFactory<GetFullProductDto>.CreateSuccessResponse(productDto);
+            }
+            catch (Exception ex)
+            {
+                // Возвращаем ошибочный ответ
+                return ResponseFactory<GetFullProductDto>.CreateErrorResponse(ex);
             }
         }
     }

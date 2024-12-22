@@ -80,6 +80,21 @@ namespace DiscontMarket.Services.Services.Implementations
                 StringValidator.CheckIsNotNull(category);
 
                 var productDto = new FilterProductDTO();
+
+                if (!IsCategory(category))
+                {
+                    var productsWithoutCategory = _productService.GetAllProductsByStatus(productDto, SortTypes.Popularity.ToString(), category);
+
+                    ObjectValidator<IBaseResponse<IEnumerable<ProductDTO>>>.CheckIsNotNullObject(productsWithoutCategory);
+                    ObjectValidator<IEnumerable<ProductDTO>>.CheckIsNotNullObject(productsWithoutCategory.Data);
+
+                    int maxPriceWithoutCategory = (int)productsWithoutCategory.Data.Max(x => x.price);
+
+                    return ResponseFactory<int>.CreateSuccessResponse(maxPriceWithoutCategory);
+                }
+
+
+
                 productDto.CategoryDTO = new CategoryDTO { Name = category };
                 var products = _productService.GetAllProducts(productDto, SortTypes.Popularity.ToString());
 
@@ -102,10 +117,24 @@ namespace DiscontMarket.Services.Services.Implementations
         {
             try
             {
-                StringValidator.CheckIsNotNull(category);
-
+                StringValidator.CheckIsNotNull(category);           
                 var productDto = new FilterProductDTO();
+
+                if (!IsCategory(category))
+                {
+                    var productsWithoutCategory = _productService.GetAllProductsByStatus(productDto, SortTypes.Popularity.ToString(), category);
+
+                    ObjectValidator<IBaseResponse<IEnumerable<ProductDTO>>>.CheckIsNotNullObject(productsWithoutCategory);
+                    ObjectValidator<IEnumerable<ProductDTO>>.CheckIsNotNullObject(productsWithoutCategory.Data);
+
+                    int minPriceAllProducts = (int)productsWithoutCategory.Data.Min(x => x.price);
+
+                    return ResponseFactory<int>.CreateSuccessResponse(minPriceAllProducts);
+                }
+
+
                 productDto.CategoryDTO = new CategoryDTO { Name = category };
+
                 var products = _productService.GetAllProducts(productDto, SortTypes.Popularity.ToString());
 
                 ObjectValidator<IBaseResponse<IEnumerable<ProductDTO>>>.CheckIsNotNullObject(products);
@@ -119,6 +148,25 @@ namespace DiscontMarket.Services.Services.Implementations
             {
                 return ResponseFactory<int>.CreateErrorResponse(ex);
             }
+        }
+
+        private bool IsCategory(string category)
+        {
+            switch (category.ToLower())
+            {
+                case "discount":
+                    break;
+
+                case "damagedpackage":
+                    break;
+
+                case "minordefects":
+                    break;
+
+                default:
+                    return true;
+            }
+            return false;
         }
 
         public IBaseResponse<bool> SetFilters(Dictionary<string, FilterCategoryDTO> updatedFilters)

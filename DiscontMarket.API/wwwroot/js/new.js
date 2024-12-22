@@ -47,7 +47,11 @@ document.addEventListener('DOMContentLoaded', function () {
                 button.addEventListener('click', (event) => {
                     event.stopPropagation();
                     const productName = button.getAttribute('data-product-name');
-                    const yandexMarketURL = `https://market.yandex.ru/search?text=${encodeURIComponent(productName)}`;
+                    const sanitizedProductName = productName
+                        .replace(/["']/g, '')  // Удаляем кавычки
+                        .replace(/\s+/g, ' ') // Убираем лишние пробелы
+                        .trim();              // Убираем пробелы по краям
+                    const yandexMarketURL = `https://market.yandex.ru/search?text=${encodeURIComponent(sanitizedProductName)}`;
                     window.open(yandexMarketURL, '_blank');
                 });
             });
