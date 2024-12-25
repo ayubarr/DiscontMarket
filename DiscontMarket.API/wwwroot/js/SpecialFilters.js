@@ -444,18 +444,31 @@ fetch('api/Attribute/get-all-names', {
                     card.setAttribute('data-id', product.id.toString());
                 }
 
+                let status = 'Дисконт';
+
+                if (product.productStatus === 'discount') {
+                    status = 'Дисконт';
+                }
+                else if (product.productStatus === 'damagedpackage') {
+                    status = 'П/У';
+                }
+                else if (product.productStatus === 'minordefects') {
+                    status = 'Мелкие дефекты';
+                }
+
                 card.innerHTML = `
-        <img src="${product.image || 'items/filters/no-image.png'}" alt="Товар" class="product-image">
-        <div class="product-separator-main"></div>
-        <p class="product-name-main">${product.productName}</p>
-        <div class="product-price-container-main">
-            <span class="product-price-main">${product.price} ₽</span>
-            <button class="order-button-main">Оформить заказ</button>
-        </div>
-        <div class="compare-prices-wrapper">
-            <span class="compare-prices-main" data-product-name="${product.productName}">Сравнить цены</span>
-        </div>
-    `;
+                <img src="${product.image || 'items/filters/no-image.png'}" alt="Товар" class="product-image">
+                <div class="product-separator-main"></div>
+                <p class="product-name-main">${product.productName}</p>
+                <div class="product-price-container-main">
+                    <span class="product-price-main">${product.price} ₽</span>
+                    <button class="order-button-main">Оформить заказ</button>
+                </div>
+                <div class="compare-prices-wrapper">
+                    <span class="compare-status-main">${status}</span>
+                    <span class="compare-prices-main" data-product-name="${product.productName}">Сравнить цены</span>
+                </div>
+            `;
                 container.appendChild(card);
             });
 
@@ -465,15 +478,187 @@ fetch('api/Attribute/get-all-names', {
                     event.stopPropagation();
                     const productName = button.getAttribute('data-product-name');
                     const sanitizedProductName = productName
-                        .replace(/["']/g, '')  // Удаляем кавычки
+                        .replace(/["'']/g, '')  // Удаляем кавычки
                         .replace(/\s+/g, ' ') // Убираем лишние пробелы
                         .trim();              // Убираем пробелы по краям
+                    console.log("sanitized", sanitizedProductName);
                     const yandexMarketURL = `https://market.yandex.ru/search?text=${encodeURIComponent(sanitizedProductName)}`;
                     window.open(yandexMarketURL, '_blank');
                 });
             });
-        }
+            function showStatusInfo(statusText) {
+                let statusCard = document.querySelector('.status-card');
+                let overlay = document.querySelector('.overlay');
 
+                // Если слой затемнения еще не создан, создаем его
+                if (!overlay) {
+                    overlay = document.createElement('div');
+                    overlay.classList.add('overlay');
+                    document.body.appendChild(overlay);
+                }
+
+                // Если карточка еще не создана, создаем её
+                if (!statusCard) {
+                    statusCard = document.createElement('div');
+                    statusCard.classList.add('status-card');
+
+                    statusCard.innerHTML = `
+                    <div class="status-card-content">
+                        <span class="close-status-card">&times;</span>
+                        <p class="status-message">${statusText}</p>
+                    </div>
+                `;
+                    document.body.appendChild(statusCard);
+                }
+
+                // Устанавливаем текст в карточке
+                statusCard.querySelector('.status-message').textContent = statusText;
+
+                // Показываем карточку и слой затемнения
+                statusCard.style.display = 'block';
+                overlay.style.display = 'block';
+
+                // Обработчик закрытия карточки по крестику
+                statusCard.querySelector('.close-status-card').addEventListener('click', closeStatusCard);
+
+                // Закрытие при клике на затемненный слой
+                overlay.addEventListener('click', closeStatusCard);
+
+                function closeStatusCard() {
+                    statusCard.style.display = 'none';
+                    overlay.style.display = 'none';
+                }
+            }
+
+            // Добавляем обработчик на элементы с классом compare-status-main
+            document.querySelectorAll('.compare-status-main').forEach(button => {
+                button.addEventListener('click', (event) => {
+                    event.stopPropagation();
+                    const productStatus = button.textContent.trim();
+
+                    let statusText = '';
+                    if (productStatus === 'Дисконт') {
+                        statusText = 'Этот товар имеет скидку и продается по акционной цене.';
+                    } else if (productStatus === 'П/У') {
+                        statusText = 'Этот товар имеет поврежденную упаковку.';
+                    } else if (productStatus === 'Мелкие дефекты') {
+                        statusText = 'Этот товар имеет незначительные дефекты.';
+                    }
+
+                    showStatusInfo(statusText);
+                });
+            });
+
+            function showOrderConfirmation() {
+                let orderCard = document.querySelector('.order-card');
+                let overlay = document.querySelector('.overlay');
+
+                // Если слой затемнения еще не создан, создаем его
+                if (!overlay) {
+                    overlay = document.createElement('div');
+                    overlay.classList.add('overlay');
+                    document.body.appendChild(overlay);
+                }
+
+                // Если карточка еще не создана, создаем её
+                if (!orderCard) {
+                    orderCard = document.createElement('div');
+                    orderCard.classList.add('order-card');
+
+                    orderCard.innerHTML = `
+                    <div class="order-card-content">
+                        <span class="close-order-card">&times;</span>
+                        <p class="order-phone">Для завершения оформления заказа оставьте свой номер телефона или свяжитесь с менеджером по телефону: <span>8 (981) 210-48-31</span></p>
+                        <input type="tel" class="phone-input" placeholder="+7XXXXXXXXXX" maxlength="12" oninput="if (!this.value.startsWith('+7')) this.value = '+7' + this.value.replace(/[^0-9]/g, '').slice(2); else this.value = '+7' + this.value.slice(2).replace(/[^0-9]/g, '');" />
+                        <button class="submit-button">Отправить</button>
+                        <button class="call-button">Позвонить</button>
+                    </div>
+                `;
+                    document.body.appendChild(orderCard);
+
+                    // Закрытие окна по клику на крестик
+                    orderCard.querySelector('.close-order-card').addEventListener('click', () => {
+                        orderCard.style.display = 'none';
+                    });
+
+                    // Обработчик для кнопки "Отправить"
+                    orderCard.querySelector('.submit-button').addEventListener('click', () => {
+                        const phoneInput = orderCard.querySelector('.phone-input').value.trim();
+
+                        if (phoneInput.length === 12) {
+                            // Первый запрос для проверки почты
+                            fetch('https://your-server.com/get-email', {
+                                method: 'GET',
+                                headers: {
+                                    'Content-Type': 'application/json',
+                                },
+                            })
+                                .then(response => response.json()) // Парсим JSON-ответ
+                                .then(data => {
+                                    if (data?.email) { // Проверяем email из ответа
+                                        // Второй запрос для отправки данных
+                                        fetch('https://your-server.com/send-email', {
+                                            method: 'POST',
+                                            headers: {
+                                                'Content-Type': 'application/json',
+                                            },
+                                            body: JSON.stringify({ phone: phoneInput, email: data.email }),
+                                        })
+                                            .then(response => {
+                                                if (response.ok) {
+                                                    alert(`Номер телефона ${phoneInput} успешно отправлен!`);
+                                                    orderCard.style.display = 'none';
+                                                    overlay.style.display = 'none';
+                                                } else {
+                                                    alert('Ошибка при отправке номера. Попробуйте еще раз.');
+                                                }
+                                            })
+                                            .catch(error => {
+                                                console.error('Ошибка при отправке данных:', error);
+                                                alert('Произошла ошибка при отправке.');
+                                            });
+                                    } else {
+                                        alert('Ошибка: email не найден.');
+                                    }
+                                })
+                                .catch(error => {
+                                    console.error('Ошибка при получении email:', error);
+                                    alert('Произошла ошибка при получении email.');
+                                });
+                        } else {
+                            alert('Пожалуйста, введите номер телефона.');
+                        }
+                    });
+                }
+
+                // Показываем карточку и слой затемнения
+                orderCard.style.display = 'block';
+                overlay.style.display = 'block';
+
+                // Обработчик закрытия карточки по крестику
+                orderCard.querySelector('.close-order-card').addEventListener('click', closeOrderCard);
+
+                // Закрытие при клике на затемненный слой
+                overlay.addEventListener('click', closeOrderCard);
+
+                function closeOrderCard() {
+                    orderCard.style.display = 'none';
+                    overlay.style.display = 'none';
+                }
+
+                // Обработчик кнопки Позвонить
+                orderCard.querySelector('.call-button').addEventListener('click', () => {
+                    window.location.href = 'tel:+79812104831';
+                });
+            }
+
+            // Добавление обработчика события на кнопку "Оформить заказ"
+            document.querySelectorAll('.order-button-main').forEach(button => {
+                button.addEventListener('click', showOrderConfirmation);
+            });
+
+
+        }
 
         sendFiltersToServer();
     })

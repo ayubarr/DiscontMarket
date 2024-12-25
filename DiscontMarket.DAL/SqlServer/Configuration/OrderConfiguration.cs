@@ -11,8 +11,8 @@ namespace DiscontMarket.DAL.SqlServer.Configuration
         {
             builder.HasKey(o => o.ID);
 
-            PropertyHelper<Order>.SetProperties(builder,
-                o => o.TotalCost
+            PropertyHelper<Order>.SetProperties(builder, false,
+                o => o.ClientsPhoneNumber
             );
      
             PropertyHelper<Order>.SetProperties(builder,

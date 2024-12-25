@@ -41,6 +41,7 @@ namespace DiscontMarket.API
             services.AddScoped(typeof(IFilterService), typeof(FilterService));
             services.AddScoped(typeof(ICategoryService), typeof(CategoryService));
             services.AddScoped(typeof(IBrandService), typeof(BrandService));
+            services.AddScoped(typeof(IOrderService), typeof(OrderService));
 
             return services;
         }

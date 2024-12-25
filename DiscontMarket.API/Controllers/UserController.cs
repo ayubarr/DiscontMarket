@@ -100,5 +100,10 @@ namespace DiscontMarket.API.Controllers
             return Unauthorized(response.Message);
         }
 
+        //[HttpPost]
+        //[Authorize(AuthenticationSchemes = "Bearer")]
+        //[Route("register")]
+        //public 
+
     }
 }
