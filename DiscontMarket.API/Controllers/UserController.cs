@@ -100,10 +100,18 @@ namespace DiscontMarket.API.Controllers
             return Unauthorized(response.Message);
         }
 
-        //[HttpPost]
-        //[Authorize(AuthenticationSchemes = "Bearer")]
-        //[Route("register")]
-        //public 
 
+        [HttpPost]
+        [Authorize(AuthenticationSchemes = "Bearer")]
+        [Route("update-email")]
+        public async Task<IActionResult> UpdateEmail([FromBody] string emailEdit)
+        {
+            var response = await _userService.UpdateAdminsEmail(emailEdit);
+            if (response.IsSuccess)
+            {
+                return Ok(response);
+            }
+            return Unauthorized(response.Message);
+        }
     }
 }

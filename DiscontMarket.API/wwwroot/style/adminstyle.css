@@ -9,13 +9,6 @@ body {
     font-family: Arial, sans-serif;
 }
 
-.char-counter {
-    bottom: 10px;
-    right: 10px;
-    font-size: 12px;
-    color: gray;
-}
-
 .auth-container,
 .dashboard-container {
     text-align: center;
@@ -102,6 +95,13 @@ body {
     overflow-y: auto;
 }
 
+.char-counter {
+    bottom: 10px;
+    right: 10px;
+    font-size: 12px;
+    color: gray;
+}
+
 .ad-fields {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -129,7 +129,7 @@ body {
         font-size: 14px;
     }
 
-#back-btn, #search-product-btn {
+#back-btn, #search-product-btn, #back-btn-email, #back-btn-checkorder {
     align-self: flex-start;
     background-color: #005BFF;
     color: white;
@@ -227,7 +227,7 @@ textarea {
 }
 
 
-#save-product-btn, #delete-product-btn, #save-attributes-btn {
+#save-product-btn, #delete-product-btn, #save-attributes-btn, #edit-email-btn, #check-order-btn {
     background-color: #005BFF;
     color: #fff;
     border: none;
@@ -259,7 +259,7 @@ textarea {
         background-color: #0045cc;
     }
 
-.delete-products-container {
+.delete-products-container, .edit-email-container {
     background-color: #fff;
     padding: 30px;
     border-radius: 10px;
@@ -382,3 +382,58 @@ textarea {
     .add-attribute-btn:hover {
         background-color: #009ACD; /* Темно-голубой при наведении */
     }
+
+/* Общее оформление таблицы */
+#order-result table {
+    width: 100%;
+    border-collapse: collapse; /* Убираем двойные границы */
+    margin: 20px 0;
+    font-family: 'Arial', sans-serif;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1); /* Легкая тень для таблицы */
+}
+
+/* Стилизация заголовков таблицы */
+#order-result th {
+    background-color: #007BFF; /* Цвет фона для заголовков */
+    color: white; /* Цвет текста */
+    padding: 12px 15px;
+    text-align: left;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-bottom: 2px solid #ddd; /* Линия под заголовком */
+}
+
+/* Стилизация строк таблицы */
+#order-result td {
+    padding: 10px 15px;
+    border-bottom: 1px solid #f2f2f2; /* Линия между строками */
+}
+
+/* Эффект при наведении на строки */
+#order-result tr:hover {
+    background-color: #f1f1f1; /* Цвет фона при наведении */
+}
+
+/* Стиль для кнопок сортировки */
+#order-result button {
+    padding: 5px 10px;
+    background-color: #28a745; /* Зеленая кнопка */
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-left: 10px;
+    transition: background-color 0.3s; /* Плавное изменение цвета */
+}
+
+    /* Эффект при наведении на кнопки */
+    #order-result button:hover {
+        background-color: #218838; /* Темнее при наведении */
+    }
+
+/* Стиль для области прокручиваемого контейнера */
+#order-result {
+    max-height: 30em;
+    overflow-y: auto;
+}

@@ -2,7 +2,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const urlParams = new URLSearchParams(window.location.search);
     const productId = parseInt(urlParams.get('id'), 10); // Преобразование в int с основанием 10
     console.log(productId);
-
     const characteristicsList = document.getElementById("characteristicsList");
     const productFullDescription = document.getElementById("productFullDescription");
     const productDescription = document.getElementById("productDescription");
@@ -131,12 +130,86 @@ document.addEventListener("DOMContentLoaded", function () {
             orderCard.innerHTML = `
                 <div class="order-card-content">
                     <span class="close-order-card">&times;</span>
-                    <p class="order-message">Заказ успешно оформлен</p>
-                    <p class="order-phone">Номер для связи с магазином: <span>8 (981) 210-48-31</span></p>
+                    <p class="order-phone">Для завершения оформления заказа оставьте свой номер телефона или свяжитесь с менеджером по телефону: <span>8 (981) 210-48-31</span></p>
+                    <input type="tel" class="phone-input" placeholder="+7XXXXXXXXXX" maxlength="12" oninput="if (!this.value.startsWith('+7')) this.value = '+7' + this.value.replace(/[^0-9]/g, '').slice(2); else this.value = '+7' + this.value.slice(2).replace(/[^0-9]/g, '');" />
+                    <input type="name" class="name-input" placeholder="Введите ФИО" maxlength="50"/>
+                    <button class="submit-button">Отправить</button>
                     <button class="call-button">Позвонить</button>
                 </div>
             `;
             document.body.appendChild(orderCard);
+
+            // Закрытие окна по клику на крестик
+            orderCard.querySelector('.close-order-card').addEventListener('click', () => {
+                orderCard.style.display = 'none';
+            });
+
+            // Обработчик для кнопки "Отправить"
+            orderCard.querySelector('.submit-button').addEventListener('click', () => {
+                let phoneInput = orderCard.querySelector('.phone-input').value.trim();
+                let nameInput = orderCard.querySelector('.name-input').value.trim();
+                let currentURL = window.location.href;
+
+                if (phoneInput.length === 12) {
+                    // Первый запрос для проверки почты
+                    fetch('api/Order/get-email', { 
+                        method: 'GET',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                    })
+                    .then(response => response.json()) // Парсим JSON-ответ
+                    .then(data => {
+                        if (data?.data) { // Проверяем email из ответа
+                            // Второй запрос для отправки данных
+                            let currentDateTime = new Date().toLocaleString("ru-RU", {
+                                year: 'numeric',
+                                month: '2-digit',
+                                day: '2-digit',
+                                hour: '2-digit',
+                                minute: '2-digit'
+                            }).replace(',', '');
+
+                            let order = {
+                                phoneNumber: phoneInput,
+                                email: data.data,
+                                name: nameInput,
+                                url: currentURL,
+                                datetime: currentDateTime
+                            };
+
+                            fetch('api/Order/send-info', { 
+                                method: 'POST',
+                                headers: {
+                                    'Content-Type': 'application/json',
+                                },
+                                body: JSON.stringify(order),
+                            })
+                            .then(response => {
+                                if (response.ok) {
+                                    alert(`Номер телефона ${phoneInput} успешно отправлен!`);
+                                    orderCard.style.display = 'none';
+                                    overlay.style.display = 'none';
+                                } else {
+                                    alert('Ошибка при отправке номера. Попробуйте еще раз.');
+                                }
+                            })
+                            .catch(error => {
+                                console.error('Ошибка при отправке данных:', error);
+                                alert('Произошла ошибка при отправке.');
+                            });
+                        } else {
+                            alert('Ошибка: email не найден.');
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Ошибка при получении email:', error);
+                        alert('Произошла ошибка при получении email.');
+                    });
+                } else {
+                    alert('Пожалуйста, введите номер телефона.');
+                }
+            });
         }
 
         // Показываем карточку и слой затемнения
@@ -181,17 +254,17 @@ document.addEventListener("DOMContentLoaded", function () {
         },
         body: JSON.stringify(productId),
     })
-        .then((response) => response.json())
-        .then((data) => {
-            renderProductDetails(data);
-            console.log('Успех', data);
-            if (data.title) {
-                document.title = data.title;
-            } else {
-                document.title = "Товар не найден";
-            }
-        })
-        .catch((error) => {
-            console.error("Ошибка загрузки данных о товаре:", error);
-        });
+    .then((response) => response.json())
+    .then((data) => {
+        renderProductDetails(data);
+        console.log('Успех', data);
+        if (data.title) {
+            document.title = data.title;
+        } else {
+            document.title = "Товар не найден";
+        }
+    })
+    .catch((error) => {
+        console.error("Ошибка загрузки данных о товаре:", error);
+    });
 });

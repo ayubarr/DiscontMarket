@@ -937,8 +937,6 @@ function saveAttributes() {
         data[categoryTitle.toLowerCase()] = { filters };
     });
 
-
-
     // Преобразуем данные в формат JSON и отправляем на сервер
     fetch('api/Filter/set-filters', {
         method: 'POST',
@@ -954,3 +952,137 @@ function saveAttributes() {
         .catch(error => console.error('Ошибка при сохранении данных:', error));
 }
 
+document.getElementById('edit-email-btn').addEventListener('click', () => {
+    document.getElementById('dashboard-container').style.display = 'none';
+    document.getElementById('edit-email-container').style.display = 'block';
+
+});
+
+// Возврат на панель управления
+document.getElementById('back-btn-email').addEventListener('click', () => {
+    document.getElementById('edit-email-container').style.display = 'none';
+    document.getElementById('dashboard-container').style.display = 'block';
+});
+
+document.getElementById('edit-email-btn').addEventListener('click', () => {
+    const emailEdit = document.getElementById('edit-email-title').value.trim();
+
+    fetch('api/User/update-email', { //заменить на редактирование почты
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}`
+        },
+        body: JSON.stringify(emailEdit)
+    })
+        .then(response => response.json())
+        .then(data => {
+            document.getElementById('edit-result').innerText = data.message;
+        })
+        .catch(error => {
+            console.error('Ошибка:', error);
+        });
+});
+
+
+
+
+// Переход к разделу "Проверка заказа"
+document.getElementById('check-orderlist-btn').addEventListener('click', () => {
+    document.getElementById('dashboard-container').style.display = 'none';
+    document.getElementById('check-order-container').style.display = 'block';
+});
+
+// Возврат на панель управления
+document.getElementById('back-btn-checkorder').addEventListener('click', () => {
+    document.getElementById('check-order-container').style.display = 'none';
+    document.getElementById('dashboard-container').style.display = 'block';
+});
+
+// Обработка поиска и отображения данных в таблице
+document.getElementById('check-order-btn').addEventListener('click', () => {
+    const order = document.getElementById('check-order-list').value.trim();
+
+    // Отправка POST-запроса
+    fetch('api/Order/get-orders', {   // список ордеров
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}` // Убедитесь, что переменная token определена
+        },
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error(`HTTP ошибка: ${response.status}`);
+        }
+        return response.json();
+    })
+    .then(data => {
+        // Если данные обернуты в объект, извлекаем массив
+        const results = data;
+
+
+        if (!Array.isArray(results.data) || results.data.length === 0) {
+            document.getElementById('order-result').innerHTML = "<p>Результаты не найдены</p>";
+            return;
+        }
+        renderTable(results.data); // Функция для отображения таблицы
+    })
+    .catch(error => {
+        console.error('Ошибка:', error);
+        document.getElementById('order-result').innerHTML = `<p>Ошибка: ${error.message}</p>`;
+    });
+});
+
+// Функция для отображения данных в виде таблицы
+function renderTable(data) {
+    let tableHTML = `
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Телефон</th>
+                    <th>
+                        ФИО
+                        <button id="sort-name">Сортировать</button>
+                    </th>
+                    <th>URL</th>
+                    <th>
+                    Дата/Время
+                    <button id="sort-datetime">Сортировать</button>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+    `;
+
+    data.forEach((item, index) => {
+        tableHTML += `
+            <tr>
+                <td>${index + 1}</td>
+                <td>${item.phone}</td>
+                <td>${item.name}</td>
+                <td>${item.url}</td>
+                <td>${item.datetime}</td>
+            </tr>
+        `;
+    });
+
+    tableHTML += `
+            </tbody>
+        </table>
+    `;
+
+    document.getElementById('order-result').innerHTML = tableHTML;
+
+    // Добавляем обработчик для сортировки
+    document.getElementById('sort-name').addEventListener('click', () => {
+        const sortedData = [...data].sort((a, b) => a.name.localeCompare(b.name));
+        renderTable(sortedData); // Перерисовываем таблицу
+    });
+
+    document.getElementById('sort-datetime').addEventListener('click', () => {
+        const sortedData = [...data].sort((a, b) => new Date(a.datetime) - new Date(b.datetime));
+        renderTable(sortedData); // Перерисовываем таблицу
+    });
+}

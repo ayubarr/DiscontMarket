@@ -13,5 +13,9 @@ namespace DiscontMarket.Services.Services.Interfaces
         Task<IBaseResponse<bool>> UpdateUserAsync(uint userId, UpdateUserDTO userDto);
     
         Task<IBaseResponse<bool>> DeleteUserByIdAsync(uint userId);
+
+        Task<IBaseResponse<string>> GetAdminsEmail();
+
+        Task<IBaseResponse<string>> UpdateAdminsEmail(string email);
     }
 }

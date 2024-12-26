@@ -4,6 +4,7 @@ using DiscontMarket.DAL.SqlServer.Context;
 using DiscontMarket.Domain.Models.Abstractions.BaseEntities;
 using DiscontMarket.Domain.Models.Entities;
 using DiscontMarket.Domain.Models.Enums;
+using DiscontMarket.Services.Helpers.Constants;
 using DiscontMarket.Services.Services.Implementations;
 using DiscontMarket.Services.Services.Interfaces;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -24,6 +25,8 @@ namespace DiscontMarket.API
             services.AddScoped(typeof(IAttributeRepository), typeof(AttributeRepository));
             services.AddScoped(typeof(IBrandRepository), typeof(BrandRepository));
             services.AddScoped(typeof(ICategoryRepository), typeof(CategoryRepository));
+            services.AddScoped(typeof(IOrderRepository), typeof(OrderRepository));
+
 
 
 
@@ -35,7 +38,6 @@ namespace DiscontMarket.API
             services.AddScoped<IUserStore<User>, UserStore<User, IdentityRole<uint>, AppDbContext, uint>>();
             services.AddScoped<IUserService, UserService>();
             services.AddScoped(typeof(IBaseService<>), typeof(BaseService<>));
-            services.AddScoped(typeof(IProductRepository), typeof(ProductRepository));
             services.AddScoped(typeof(IProductService), typeof(ProductService));
             services.AddScoped(typeof(IAttributeService), typeof(AttributeService));
             services.AddScoped(typeof(IFilterService), typeof(FilterService));
@@ -118,8 +120,9 @@ namespace DiscontMarket.API
         public async static Task SeedAdmins(this IServiceCollection services)
         {
             var userManager = services.BuildServiceProvider().GetRequiredService<UserManager<User>>();
-            const uint adminId = 0;
-            const string adminName = "Admin";
+            uint adminId = AdminInfo.Id;
+            string adminName = AdminInfo.adminName;
+            string adminEmail = AdminInfo.Email;
 
             var user = await userManager.FindByNameAsync(adminName);
             if (user != null) return;
@@ -127,17 +130,17 @@ namespace DiscontMarket.API
             var admin = new User()
             {
                 Id = adminId,
-                FirstName = "Admin",
-                LastName = "Admin",
-                MiddleName = "Admin",
-                Email = "admin@admin.com",
+                FirstName = adminName,
+                LastName = adminName,
+                MiddleName = adminName,
+                Email = adminEmail,
                 UserName = adminName,
-                NormalizedUserName = "Admin".Normalize(),
-                NormalizedEmail = "admin@admin.com".Normalize(),
+                NormalizedUserName = adminName.Normalize(),
+                NormalizedEmail = adminEmail.Normalize(),
             };
 
             var passwordHasher = new PasswordHasher<ApplicationUser>();
-            admin.PasswordHash = passwordHasher.HashPassword(admin, "P@ssw0rd!");
+            admin.PasswordHash = passwordHasher.HashPassword(admin, AdminInfo.Password);
 
 
             await userManager.CreateAsync(admin);

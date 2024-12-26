@@ -2,10 +2,10 @@
 using DiscontMarket.ApiModels.Responce.Helpers;
 using DiscontMarket.ApiModels.Responce.Interfaces;
 using DiscontMarket.Domain.Models.Entities;
+using DiscontMarket.Services.Helpers.Constants;
 using DiscontMarket.Services.Services.Interfaces;
 using DiscontMarket.Validation;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore;
 
 namespace DiscontMarket.Services.Services.Implementations
 {
@@ -22,7 +22,7 @@ namespace DiscontMarket.Services.Services.Implementations
         {
             try
             {
-                var users =  _userManager.Users.ToList();
+                var users = _userManager.Users.ToList();
                 ObjectValidator<IEnumerable<User>>.CheckIsNotNullObject(users);
 
                 return ResponseFactory<IEnumerable<User>>.CreateSuccessResponse(users);
@@ -55,6 +55,27 @@ namespace DiscontMarket.Services.Services.Implementations
             catch (Exception ex)
             {
                 return ResponseFactory<User>.CreateErrorResponse(ex);
+            }
+        }
+
+
+        public async Task<IBaseResponse<string>> GetAdminsEmail()
+        {
+            try
+            {
+                var user = await _userManager.FindByNameAsync(AdminInfo.adminName);
+
+                ObjectValidator<User>.CheckIsNotNullObject(user);
+
+                return ResponseFactory<string>.CreateSuccessResponse(user.Email);
+            }
+            catch (ArgumentNullException ex)
+            {
+                return ResponseFactory<string>.CreateNotFoundResponse(ex);
+            }
+            catch (Exception ex)
+            {
+                return ResponseFactory<string>.CreateErrorResponse(ex);
             }
         }
 
@@ -114,6 +135,29 @@ namespace DiscontMarket.Services.Services.Implementations
             catch (Exception ex)
             {
                 return ResponseFactory<bool>.CreateErrorResponse(ex);
+            }
+        }
+
+        public async Task<IBaseResponse<string>> UpdateAdminsEmail(string email)
+        {
+            try
+            {
+                var user = await _userManager.FindByNameAsync(AdminInfo.adminName);
+
+                ObjectValidator<User>.CheckIsNotNullObject(user);
+
+                user.Email = email; 
+                _userManager.UpdateAsync(user);
+
+                return ResponseFactory<string>.CreateSuccessResponse(user.Email);
+            }
+            catch (ArgumentNullException ex)
+            {
+                return ResponseFactory<string>.CreateNotFoundResponse(ex);
+            }
+            catch (Exception ex)
+            {
+                return ResponseFactory<string>.CreateErrorResponse(ex);
             }
         }
     }

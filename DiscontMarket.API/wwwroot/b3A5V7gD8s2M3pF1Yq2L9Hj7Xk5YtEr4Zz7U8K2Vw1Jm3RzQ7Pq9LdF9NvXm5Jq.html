@@ -23,10 +23,28 @@
         <img src="items/header/logo.png" alt="Логотип">
         <button id="edit-ads-btn">Редактирование рекламы</button>
         <button id="edit-attributes-btn">Редактирование атрибутов</button>
-        <button id="manage-products-btn">Добавление/Редактирование товаров</button>
+        <button id="manage-products-btn">Добавление товаров</button>
         <button id="delete-products-btn">Удаление товаров</button>
+        <button id="edit-email-btn">Смена почты</button>
+        <button id="check-orderlist-btn">Заказы</button>
         <button id="maintenance-btn">Закрыть сайт на техническое обслуживание</button>
         <button id="exit-btn">Выход</button>
+    </div>
+
+    <div class="edit-email-container" id="edit-email-container" style="display: none;">
+        <button id="back-btn-email">← Назад</button>
+        <h2>Смена почты</h2>
+        <input type="text" id="edit-email-title" placeholder="Введите новую почту">
+        <button id="edit-email-btn">Обновить почту</button>
+        <div id="edit-result"></div>
+    </div>
+
+    <div class="check-order-container" id="check-order-container" style="display: none;">
+        <button id="back-btn-checkorder">← Назад</button>
+        <h2>Заказы</h2>
+        <input type="text" id="check-order-list" placeholder="Введите заказ">
+        <button id="check-order-btn">Поиск</button>
+        <div id="order-result"></div>
     </div>
 
     <div class="attribute-editor-container" id="attribute-editor-container" style="display: none;">
@@ -122,17 +140,16 @@
     <div class="manage-products-container" id="manage-products-container" style="display: none;">
         <button id="back-btn-products">← Назад</button>
         <h2>Добавление/Редактирование товара</h2>
-        <h5>Для редактирования товара, выберите его категорию и введите точное название, после чего нажмите на поиск товара</h5>
         <div class="product-form">
             <!-- Поле выбора категории -->
             <label for="category-select">Выберите категорию:</label>
             <select id="category-select">
                 <option value="" disabled selected>Выберите категорию</option>
                 <option value="tv">Телевизоры</option>
-                <option value="tablet">Планшеты</option>
+                <option value="dishwashers">Посудомоечные машины</option>
                 <option value="fridge">Холодильники</option>
-                <option value="builtin">Встраиваемая техника</option>
-                <option value="washingmachine">Стиральные машины</option>
+                <option value="builtin">Плиты и духовые шкафы</option>
+                <option value="washingmachine">Стиральные и сушильные машины</option>
                 <option value="smallappliances">Мелкая бытовая техника</option>
             </select>
 
@@ -141,9 +158,8 @@
             <input type="text" id="product-title" placeholder="Введите название товара" />
             <button id="search-product-btn">Поиск по названию</button>
 
-
             <label for="product-description">Описание:</label>
-            <textarea id="product-description"
+            <textarea id="product-description" S
                       placeholder="Введите описание товара"
                       maxlength="135"
                       oninput="updateRemainingChars(this, 'description-counter', 135)"></textarea>
@@ -152,9 +168,9 @@
             <label for="product-full-description">Полное описание:</label>
             <textarea id="product-full-description"
                       placeholder="Введите полное описание товара"
-                      maxlength="5000"
-                      oninput="updateRemainingChars(this, 'full-description-counter', 5000)"></textarea>
-            <span id="full-description-counter" class="char-counter">Осталось символов: 5000</span>
+                      maxlength="500"
+                      oninput="updatSeRemainingChars(this, 'full-description-counter', 500)"></textarea>
+            <span id="full-description-counter" class="char-counter">Осталось символов: 500</span>
 
             <label for="product-price">Цена:</label>
             <input type="number" id="product-price" placeholder="Введите цену товара" />
@@ -197,7 +213,7 @@
 
 
 
-
+    <script src="js/cache.js"></script>
     <script src="js/TechWorks.js"></script>
 </body>
 </html>

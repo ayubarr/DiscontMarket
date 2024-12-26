@@ -10,7 +10,7 @@ const maxValue = parseInt(maxSlider?.max || 0);
 
 const params = new URLSearchParams(window.location.search);
 const category = params.keys().next().value;
-
+let currentURL;
 
 let attributedtos = []; // Сюда будем записывать атрибуты
 let branddtos = []; // Сюда будем записывать бренды
@@ -570,6 +570,7 @@ fetch('api/Attribute/get-all-names', {
                         <span class="close-order-card">&times;</span>
                         <p class="order-phone">Для завершения оформления заказа оставьте свой номер телефона или свяжитесь с менеджером по телефону: <span>8 (981) 210-48-31</span></p>
                         <input type="tel" class="phone-input" placeholder="+7XXXXXXXXXX" maxlength="12" oninput="if (!this.value.startsWith('+7')) this.value = '+7' + this.value.replace(/[^0-9]/g, '').slice(2); else this.value = '+7' + this.value.slice(2).replace(/[^0-9]/g, '');" />
+                        <input type="name" class="name-input" placeholder="Введите ФИО" maxlength="50"/>
                         <button class="submit-button">Отправить</button>
                         <button class="call-button">Позвонить</button>
                     </div>
@@ -583,11 +584,12 @@ fetch('api/Attribute/get-all-names', {
 
                     // Обработчик для кнопки "Отправить"
                     orderCard.querySelector('.submit-button').addEventListener('click', () => {
-                        const phoneInput = orderCard.querySelector('.phone-input').value.trim();
+                        let phoneInput = orderCard.querySelector('.phone-input').value.trim();
+                        let nameInput = orderCard.querySelector('.name-input').value.trim();
 
                         if (phoneInput.length === 12) {
                             // Первый запрос для проверки почты
-                            fetch('https://your-server.com/get-email', {
+                            fetch('api/Order/get-email', {
                                 method: 'GET',
                                 headers: {
                                     'Content-Type': 'application/json',
@@ -595,14 +597,30 @@ fetch('api/Attribute/get-all-names', {
                             })
                                 .then(response => response.json()) // Парсим JSON-ответ
                                 .then(data => {
-                                    if (data?.email) { // Проверяем email из ответа
+                                    if (data?.data) { // Проверяем email из ответа
                                         // Второй запрос для отправки данных
-                                        fetch('https://your-server.com/send-email', {
+                                        let currentDateTime = new Date().toLocaleString("ru-RU", {
+                                            year: 'numeric',
+                                            month: '2-digit',
+                                            day: '2-digit',
+                                            hour: '2-digit',
+                                            minute: '2-digit'
+                                        }).replace(',', '');
+
+                                        let order = {
+                                            phoneNumber: phoneInput,
+                                            email: data.data,
+                                            name: nameInput,
+                                            url: currentURL,
+                                            datetime: currentDateTime
+                                        };
+
+                                        fetch('api/Order/send-info', { 
                                             method: 'POST',
                                             headers: {
                                                 'Content-Type': 'application/json',
                                             },
-                                            body: JSON.stringify({ phone: phoneInput, email: data.email }),
+                                            body: JSON.stringify(order),
                                         })
                                             .then(response => {
                                                 if (response.ok) {
@@ -654,12 +672,24 @@ fetch('api/Attribute/get-all-names', {
 
             // Добавление обработчика события на кнопку "Оформить заказ"
             document.querySelectorAll('.order-button-main').forEach(button => {
-                button.addEventListener('click', showOrderConfirmation);
+                button.addEventListener('click', (event) => {
+                    const target = event.target;
+                    const card = target.closest('.product-card-main');
+
+                    if (card) {
+                        const productId = card.getAttribute('data-id');
+                        if (productId) {
+                            let domain = window.location.origin;
+                            currentURL = `${domain}/product.html?id=${productId}`;
+                        }
+                    }
+
+                    // Вызов функции для отображения подтверждения заказа
+                    showOrderConfirmation();
+                });
             });
 
-
         }
-
         sendFiltersToServer();
     })
     .catch(error => {

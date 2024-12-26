@@ -3,6 +3,7 @@ using System;
 using DiscontMarket.DAL.SqlServer.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -11,9 +12,11 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace DiscontMarket.DAL.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20241226203334_initOrders")]
+    partial class initOrders
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -301,11 +304,6 @@ namespace DiscontMarket.DAL.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<long>("ID"));
 
-                    b.Property<string>("ClientsName")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("varchar");
-
                     b.Property<int>("Condition")
                         .HasColumnType("integer");
 
@@ -324,6 +322,11 @@ namespace DiscontMarket.DAL.Migrations
 
                     b.Property<long?>("ProductID")
                         .HasColumnType("bigint");
+
+                    b.Property<string>("SentByEmail")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("varchar");
 
                     b.Property<long?>("SessionID")
                         .HasColumnType("bigint");
@@ -654,13 +657,11 @@ namespace DiscontMarket.DAL.Migrations
                 {
                     b.HasOne("DiscontMarket.Domain.Models.Entities.Product", "Product")
                         .WithMany("Orders")
-                        .HasForeignKey("ProductID")
-                        .OnDelete(DeleteBehavior.Restrict);
+                        .HasForeignKey("ProductID");
 
                     b.HasOne("DiscontMarket.Domain.Models.Entities.Session", "Session")
                         .WithMany("Orders")
-                        .HasForeignKey("SessionID")
-                        .OnDelete(DeleteBehavior.Restrict);
+                        .HasForeignKey("SessionID");
 
                     b.Navigation("Product");
 

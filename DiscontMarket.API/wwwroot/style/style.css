@@ -453,7 +453,7 @@ body {
     transition: background-color 0.3s, color 0.3s;
 }
 
-.img-tv, .img-tablet, .img-fridge, .img-built-in, .img-washing, .img-small-appliances, .img-discount, .img-damaged-packaging, .img-minor-defects {
+.img-tv, .img-dishwashers, .img-fridge, .img-built-in, .img-washing, .img-small-appliances, .img-discount, .img-damaged-packaging, .img-minor-defects {
     width: 40px;
     height: 30px;
 }
@@ -947,16 +947,6 @@ body {
         background-color: #005bff; /* Цвет фона при наведении */
         color: #fff; /* Цвет текста при наведении */
     }
-
-.compare-prices {
-    font-size: 13px;
-    cursor: pointer;
-    font-family: 'Ubuntu', sans-serif;
-    color: #9899a1;
-    position: absolute;
-    bottom: 40px;
-    margin-left: 125px;
-}
 
 .advertisement-section, .advertisement-section-bottom {
     display: flex;
@@ -1534,7 +1524,16 @@ body {
         color: #fff; /* Цвет текста при наведении */
     }
 
-.compare-prices-main {
+.compare-prices-main, .compare-prices {
+    font-size: 13px;
+    cursor: pointer;
+    font-family: 'Ubuntu', sans-serif;
+    color: #9899a1;
+    position: absolute;
+    bottom: 20px;
+}
+
+.compare-status-main {
     font-size: 13px;
     cursor: pointer;
     font-family: 'Ubuntu', sans-serif;
@@ -1620,7 +1619,6 @@ body {
     font-size: 30px;
     color: black;
     margin-top: 20px;
-    max-width: 700px;
 }
 
 .rating-wrapper {
@@ -1841,7 +1839,7 @@ body {
     z-index: 999;
 }
 
-.order-card {
+.order-card, .status-card {
     position: fixed;
     top: 50%;
     left: 50%;
@@ -1850,6 +1848,7 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     z-index: 1000;
     padding: 20px;
+    max-width: 500px;
     border-radius: 8px;
 }
 
@@ -1875,7 +1874,7 @@ body {
         font-weight: bold;
     }
 
-.call-button {
+.call-button, .submit-button {
     background-color: #005BFF;
     color: #fff;
     font-family: 'Ubuntu Regular', sans-serif;
@@ -1886,10 +1885,27 @@ body {
     cursor: pointer;
 }
 
-.close-order-card {
+.close-order-card, .close-status-card {
     margin-left: 95%;
     font-size: 20px;
     cursor: pointer;
+}
+
+
+.phone-input, .name-input {
+    display: block;
+    width: calc(100% - 2px);
+    box-sizing: border-box;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.phone-input, .name-input {
+    border: 1px solid #ccc;
+    padding-left: 10px;
+    transition: border-color 0.3s ease;
 }
 
 

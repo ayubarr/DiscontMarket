@@ -8,7 +8,10 @@ namespace DiscontMarket.Domain.Models.Entities
     {
         public DateTime CreationDate { get; set; }
         public Condition Condition { get; set; } = Condition.Pending;
-        public string ClientsPhoneNumber { get; set; }
+        public string PhoneNumber { get; set; }
+        public string ProductAddress { get; set; }
+        public string ClientsName { get; set; }
+
 
         //Связь с сущностью Session
         public uint? SessionID { get; set; }

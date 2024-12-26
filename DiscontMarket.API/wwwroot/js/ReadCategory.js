@@ -1,10 +1,10 @@
 document.addEventListener('DOMContentLoaded', function () {
     const categoryNames = {
         tv: 'Телевизоры',
-        tablet: 'Планшеты',
+        dishwashers: 'Посудомоечные машины',
         fridge: 'Холодильники',
-        'builtin': 'Встраиваемая техника',
-        'washingmachine': 'Стиральные машины',
+        'builtin': 'Плиты и духовые шкафы',
+        'washingmachine': 'Стиральные и сушильные машины',
         'smallappliances': 'Мелкая бытовая техника',
     };
 
