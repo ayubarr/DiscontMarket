@@ -92,11 +92,12 @@ document.addEventListener('DOMContentLoaded', function () {
                         statusCard.classList.add('status-card');
 
                         statusCard.innerHTML = `
-                        <div class="status-card-content">
-                            <span class="close-status-card">&times;</span>
-                            <p class="status-message">${statusText}</p>
-                        </div>
-                    `;
+                    <div class="status-card-content">
+                        <span class="close-status-card">&times;</span>
+                        <p class="status-message">${statusText}</p>
+                        <button class="call-button">Позвонить</button>
+                    </div>
+                `;
                         document.body.appendChild(statusCard);
                     }
 
@@ -117,6 +118,10 @@ document.addEventListener('DOMContentLoaded', function () {
                         statusCard.style.display = 'none';
                         overlay.style.display = 'none';
                     }
+                    // Обработчик кнопки Позвонить
+                    statusCard.querySelector('.call-button').addEventListener('click', () => {
+                        window.location.href = 'tel:+79812104831';
+                    });
                 }
 
                 // Добавляем обработчик на элементы с классом compare-status-main
@@ -125,15 +130,8 @@ document.addEventListener('DOMContentLoaded', function () {
                         event.stopPropagation();
                         const productStatus = button.textContent.trim();
 
-                        let statusText = '';
-                        if (productStatus === 'Дисконт') {
-                            statusText = 'Этот товар имеет скидку и продается по акционной цене.';
-                        } else if (productStatus === 'П/У') {
-                            statusText = 'Этот товар имеет поврежденную упаковку.';
-                        } else if (productStatus === 'Мелкие дефекты') {
-                            statusText = 'Этот товар имеет незначительные дефекты.';
-                        }
-
+                        let statusText = 'Уценённый товар может иметь незначительные повреждения не влияющие на работоспособность. Более точную информацию можно узнать у менеджера.';
+                  
                         showStatusInfo(statusText);
                     });
                 });
