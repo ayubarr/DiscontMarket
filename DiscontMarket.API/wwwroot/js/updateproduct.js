@@ -1,7 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
     const urlParams = new URLSearchParams(window.location.search);
     const productId = parseInt(urlParams.get('id'), 10); // Преобразование в int с основанием 10
-    console.log(productId);
     const characteristicsList = document.getElementById("characteristicsList");
     const productFullDescription = document.getElementById("productFullDescription");
     const productDescription = document.getElementById("productDescription");
@@ -257,7 +256,6 @@ document.addEventListener("DOMContentLoaded", function () {
     .then((response) => response.json())
     .then((data) => {
         renderProductDetails(data);
-        console.log('Успех', data);
         if (data.title) {
             document.title = data.title;
         } else {

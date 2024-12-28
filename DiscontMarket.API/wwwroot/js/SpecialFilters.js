@@ -481,7 +481,6 @@ fetch('api/Attribute/get-all-names', {
                         .replace(/["'']/g, '')  // Удаляем кавычки
                         .replace(/\s+/g, ' ') // Убираем лишние пробелы
                         .trim();              // Убираем пробелы по краям
-                    console.log("sanitized", sanitizedProductName);
                     const yandexMarketURL = `https://market.yandex.ru/search?text=${encodeURIComponent(sanitizedProductName)}`;
                     window.open(yandexMarketURL, '_blank');
                 });

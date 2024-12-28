@@ -9,11 +9,9 @@ document.addEventListener('DOMContentLoaded', function () {
     })
         .then(response => response.json())
         .then(data => {
-            console.log('Лучшие новинки успешно получены:', data);
             const newProductsContainer = document.querySelector('.products-carousel-new');
 
             if (!newProductsContainer) {
-                console.error('Контейнер для лучших новинок не найден.');
                 return;
             }
 
@@ -268,7 +266,6 @@ document.addEventListener('DOMContentLoaded', function () {
                             if (productId) {
                                 let domain = window.location.origin;
                                 currentURL = `${domain}/product.html?id=${productId}`;
-                                console.log("currentURL: ", currentURL);
                             }
                         }
 
@@ -288,10 +285,8 @@ document.addEventListener('DOMContentLoaded', function () {
 // Обработчик для кликов по карточкам товаров из результатов поиска
 document.querySelector('.products-carousel-new').addEventListener('click', function (event) {
     const card = event.target.closest('.product-card');
-    console.log('Да');
     if (card && !event.target.classList.contains('order-button')) {
         const productId = card.getAttribute('data-id');
-        console.log('id', productId);
         if (productId) {
             window.location.href = `product.html?id=${productId}`;
         }

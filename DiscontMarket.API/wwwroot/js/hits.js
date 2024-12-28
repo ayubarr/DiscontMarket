@@ -9,11 +9,9 @@ document.addEventListener('DOMContentLoaded', function () {
     })
     .then(response => response.json())
     .then(data => {
-        console.log('Хиты продаж успешно получены:', data);
         const hitsContainer = document.querySelector('.products-carousel');
 
         if (!hitsContainer) {
-            console.error('Контейнер для хитов продаж не найден.');
             return;
         }
 
@@ -28,9 +26,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 hitCard.setAttribute('data-id', hit.id);
 
                 let status = 'Дисконт';
-                console.log("hit", hit);
-                console.log("hit productStatus", hit.productStatus);
-
 
                 if (hit.productStatus === 'discount' || hit.productStatus === 'Discount') {
                     status = 'Дисконт';
@@ -203,7 +198,6 @@ document.addEventListener('DOMContentLoaded', function () {
                                             datetime: currentDateTime
                                         };
 
-                                        console.log("order:", order);
 
                                         fetch('api/Order/send-info', { 
                                             method: 'POST',
@@ -271,7 +265,6 @@ document.addEventListener('DOMContentLoaded', function () {
                         if (productId) {
                             let domain = window.location.origin;
                             currentURL = `${domain}/product.html?id=${productId}`;
-                            console.log("currentURL: ", currentURL);
                         }
                     }
 
@@ -291,10 +284,8 @@ document.addEventListener('DOMContentLoaded', function () {
 // Обработчик для кликов по карточкам товаров из результатов поиска
 document.querySelector('.products-carousel').addEventListener('click', function (event) {
     const card = event.target.closest('.product-card');
-    console.log('Да');
     if (card && !event.target.classList.contains('order-button')) {
         const productId = card.getAttribute('data-id');
-        console.log('id', productId);
         if (productId) {
             window.location.href = `product.html?id=${productId}`;
         }
