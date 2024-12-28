@@ -29,18 +29,20 @@ document.addEventListener('DOMContentLoaded', function () {
 
                     let status = 'Дисконт';
 
-                    if (product.productStatus === 'discount') {
+
+                    if (product.productStatus === 'discount' || product.productStatus === 'Discount') {
                         status = 'Дисконт';
                     }
-                    else if (product.productStatus === 'damagedpackage') {
+                    else if (product.productStatus === 'damagedpackage' || product.productStatus === 'DamagedPackage') {
                         status = 'П/У';
                     }
-                    else if (product.productStatus === 'minordefects') {
+                    else if (product.productStatus === 'minordefects' || product.productStatus === 'MinorDefects') {
                         status = 'Мелкие дефекты';
                     }
                     else {
                         status = 'None';
                     }
+
 
                     productCard.innerHTML = `
                     <img src="${product.image || 'items/filters/no-image.png'}" alt="Товар" class="product-image">

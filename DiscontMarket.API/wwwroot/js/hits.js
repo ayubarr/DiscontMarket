@@ -28,14 +28,17 @@ document.addEventListener('DOMContentLoaded', function () {
                 hitCard.setAttribute('data-id', hit.id);
 
                 let status = 'Дисконт';
+                console.log("hit", hit);
+                console.log("hit productStatus", hit.productStatus);
 
-                if (hit.productStatus === 'discount') {
+
+                if (hit.productStatus === 'discount' || hit.productStatus === 'Discount') {
                     status = 'Дисконт';
                 }
-                else if (hit.productStatus === 'damagedpackage') {
+                else if (hit.productStatus === 'damagedpackage' || hit.productStatus === 'DamagedPackage') {
                     status = 'П/У';
                 }
-                else if (hit.productStatus === 'minordefects') {
+                else if (hit.productStatus === 'minordefects' || hit.productStatus === 'MinorDefects') {
                     status = 'Мелкие дефекты';
                 }
                 else {

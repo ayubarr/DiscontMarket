@@ -227,7 +227,7 @@ textarea {
 }
 
 
-#save-product-btn, #delete-product-btn, #save-attributes-btn, #edit-email-btn, #check-order-btn {
+#save-product-btn, #delete-product-btn, #save-attributes-btn, #edit-email-btn, #check-order-btn, #edit-email-btn-load {
     background-color: #005BFF;
     color: #fff;
     border: none;
@@ -239,9 +239,10 @@ textarea {
     width: 100%;
 }
 
-    #save-product-btn:hover, #delete-product-btn:hover {
-        background-color: #0045cc;
-    }
+
+#save-product-btn:hover, #delete-product-btn:hover {
+    background-color: #0045cc;
+}
 
 #back-btn-products, #back-btn-delete, #back-btn-attributes {
     align-self: flex-start;

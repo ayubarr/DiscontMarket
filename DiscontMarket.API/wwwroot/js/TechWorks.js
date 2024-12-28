@@ -123,7 +123,7 @@ authButton.addEventListener('click', () => {
                 localStorage.removeItem('attempts');
                 attemptCounter = 0;
 
-                sessionEndTime = Date.now() + 60 * 60000;
+                sessionEndTime = Date.now() + 720 * 60000;
                 localStorage.setItem('sessionEndTime', sessionEndTime);
 
                 startSessionTimer();
@@ -964,7 +964,7 @@ document.getElementById('back-btn-email').addEventListener('click', () => {
     document.getElementById('dashboard-container').style.display = 'block';
 });
 
-document.getElementById('edit-email-btn').addEventListener('click', () => {
+document.getElementById('edit-email-btn-load').addEventListener('click', () => {
     const emailEdit = document.getElementById('edit-email-title').value.trim();
 
     fetch('api/User/update-email', { //заменить на редактирование почты
@@ -1060,7 +1060,7 @@ function renderTable(data) {
         tableHTML += `
             <tr>
                 <td>${index + 1}</td>
-                <td>${item.phone}</td>
+                <td>${item.phoneNumber}</td>
                 <td>${item.name}</td>
                 <td>${item.url}</td>
                 <td>${item.datetime}</td>
