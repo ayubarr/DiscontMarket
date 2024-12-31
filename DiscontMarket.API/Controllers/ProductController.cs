@@ -131,12 +131,18 @@ namespace DiscontMarket.API.Controllers
             var images = response.Data;
             if (images != null)
             {
+                var basePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/items/productimages");
                 foreach (var image in images)
                 {
-                    if (!string.IsNullOrEmpty(image.imagePath) && System.IO.File.Exists(image.imagePath))
+                    if (!string.IsNullOrEmpty(image.imagePath))
                     {
-                        System.IO.File.Delete(image.imagePath); // Удаление файла
-                    }                 
+                        var fullPath = Path.Combine(basePath, image.imagePath.Replace("items/productimages", "").TrimStart('/', '\\'));
+
+                        if (System.IO.File.Exists(fullPath))
+                        {
+                            System.IO.File.Delete(fullPath); // Удаление файла
+                        }
+                    }
                 }
             }
 

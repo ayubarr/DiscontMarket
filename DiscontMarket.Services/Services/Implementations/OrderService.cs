@@ -1,7 +1,6 @@
 ﻿using DiscontMarket.ApiModels.DTO.EntityDTOs.Order;
 using DiscontMarket.ApiModels.Responce.Helpers;
 using DiscontMarket.ApiModels.Responce.Interfaces;
-using DiscontMarket.DAL.Migrations;
 using DiscontMarket.DAL.Repository.Interfaces;
 using DiscontMarket.Domain.Models.Entities;
 using DiscontMarket.Services.Helpers.Constants;
@@ -22,9 +21,9 @@ namespace DiscontMarket.Services.Services.Implementations
 
 
 
-        public OrderService(IOrderRepository orderRepository, 
-            IBaseRepository<Session> sessionRepository, 
-            IProductRepository productRepository) : base(orderRepository) 
+        public OrderService(IOrderRepository orderRepository,
+            IBaseRepository<Session> sessionRepository,
+            IProductRepository productRepository) : base(orderRepository)
         {
             _httpClient = new HttpClient();
             _orderRepository = orderRepository;
@@ -37,7 +36,7 @@ namespace DiscontMarket.Services.Services.Implementations
             try
             {
                 string botToken = "7533367208:AAF3QhldFUt8tlYIaCNB-GyXYKjUh7_Gq-Y"; // Замените на токен вашего бота
-             // string chatId = "1106336448"; // Замените на ID вашего чата https://api.telegram.org/bot7533367208:AAF3QhldFUt8tlYIaCNB-GyXYKjUh7_Gq-Y/getUpdates
+                                                                                    // string chatId = "1106336448"; // Замените на ID вашего чата https://api.telegram.org/bot7533367208:AAF3QhldFUt8tlYIaCNB-GyXYKjUh7_Gq-Y/getUpdates
                 string chatId = "379382151";
                 string ClientName = string.IsNullOrWhiteSpace(orderInfo.name) ? "НЕ УКАЗАНО КЛИЕНТОМ" : orderInfo.name;
                 string message = $"Новый заказ:\n" +
@@ -69,7 +68,7 @@ namespace DiscontMarket.Services.Services.Implementations
 
         public IBaseResponse<bool> SendToEmail(OrderRequest orderInfo)
         {
-            try 
+            try
             {
                 string fromEmail = EmailInfo.Email;
                 string fromPassword = EmailInfo.Password;
@@ -148,12 +147,12 @@ namespace DiscontMarket.Services.Services.Implementations
                     throw new Exception("Incorrect product id format");
                 }
 
-                productId = uint.Parse(productIdStr);   
+                productId = uint.Parse(productIdStr);
 
                 var product = _productRepository.GetById(productId);
                 var sessionEntity = _sessionRepository.GetAll().Where(s => s.InitialTime.Equals(creationDateInUtcPlus3)).FirstOrDefault();
 
-                var entity = new Order               
+                var entity = new Order
                 {
                     CreationDate = creationDate,
                     Condition = Domain.Models.Enums.Condition.Confirmed,
@@ -184,10 +183,10 @@ namespace DiscontMarket.Services.Services.Implementations
         {
             try
             {
-               List<OrderRequest> orders =  _orderRepository.GetAllOrders()
-                    .Take(1000)
-                    .ToList();
-               ObjectValidator<List<OrderRequest>>.CheckIsNotNullObject(orders);
+                List<OrderRequest> orders = _orderRepository.GetAllOrders()
+                     .Take(1000)
+                     .ToList();
+                ObjectValidator<List<OrderRequest>>.CheckIsNotNullObject(orders);
 
                 return ResponseFactory<List<OrderRequest>>.CreateSuccessResponse(orders);
             }

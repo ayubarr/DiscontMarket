@@ -31,7 +31,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Models", "Models", "{26EF01
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DiscontMarket.ApiModels", "DiscontMarket.ApiModels\DiscontMarket.ApiModels.csproj", "{5BFCA7E0-F126-4FF3-9E3E-847B2DD31061}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiscontMarket.API", "DiscontMarket.API\DiscontMarket.API.csproj", "{BB54E275-B1DC-42A5-85D9-07E7F53FC4DE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DiscontMarket.API", "DiscontMarket.API\DiscontMarket.API.csproj", "{BB54E275-B1DC-42A5-85D9-07E7F53FC4DE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{847E8C3F-69BA-46E6-B4B0-5AC13F029D13}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

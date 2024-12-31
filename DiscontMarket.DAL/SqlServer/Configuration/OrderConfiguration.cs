@@ -25,13 +25,13 @@ namespace DiscontMarket.DAL.SqlServer.Configuration
             builder.HasOne(o => o.Session)
                 .WithMany(s => s.Orders)
                 .HasForeignKey(o => o.SessionID)
-                .OnDelete(DeleteBehavior.Restrict);
+                .OnDelete(DeleteBehavior.SetNull);
 
             //Описание связи для сушностей Product и Order
             builder.HasOne(o => o.Product)
                 .WithMany(p => p.Orders)
                 .HasForeignKey(o => o.ProductID)
-                .OnDelete(DeleteBehavior.Restrict);
+                .OnDelete(DeleteBehavior.SetNull);
         }
     }
 }

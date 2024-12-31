@@ -183,7 +183,7 @@ namespace DiscontMarket.Services.Services.Implementations
         {
             try
             {
-                var product = _productRepository.GetAll().Where(p => p.ProductName.Equals(productName)).FirstOrDefault();
+                var product = _productRepository.GetAll().Where(p => p.ProductName.ToLower().Equals(productName.ToLower())).FirstOrDefault();
 
                 ObjectValidator<Product>.CheckIsNotNullObject(product);
                 var images = _imageRepository.GetAll().Where(i => i.ProductID.Equals(product.ID)).ToList(); 
