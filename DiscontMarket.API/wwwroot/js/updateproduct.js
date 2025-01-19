@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", function () {
         // Заполняем цену
         if (data.price) {
             productPrice.setAttribute("data-price", data.price);
-            priceValue.textContent = data.price;
+            priceValue.textContent = data.price.toLocaleString('ru-RU');
         }
 
         // Заполняем характеристики товара

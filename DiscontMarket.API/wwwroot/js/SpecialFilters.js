@@ -461,7 +461,7 @@ fetch('api/Attribute/get-all-names', {
                 <div class="product-separator-main"></div>
                 <p class="product-name-main">${product.productName}</p>
                 <div class="product-price-container-main">
-                    <span class="product-price-main">${product.price} ₽</span>
+                    <span class="product-price-main">${product.price.toLocaleString('ru-RU')} ₽</span>
                     <button class="order-button-main">Оформить заказ</button>
                 </div>
                 <div class="compare-prices-wrapper">
