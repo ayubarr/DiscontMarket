@@ -19,7 +19,11 @@ namespace DiscontMarket.DAL.SqlServer.Configuration
                e => e.NormalizedEmail,
                e => e.PasswordHash,
                e => e.SecurityStamp,
-               e => e.ConcurrencyStamp);
+               e => e.ConcurrencyStamp,
+               e => e.ClientsVk,
+               e => e.ClientsTelegram,
+               e => e.ClientsWhatsapp,
+               e => e.PhoneNumber);
         }
     }    
 }

@@ -10,6 +10,10 @@ namespace DiscontMarket.Domain.Models.Entities
 
         public string MiddleName { get; set; }
 
+        public string? ClientsVk { get; set; }
+        public string? ClientsTelegram { get; set; }
+        public string? ClientsWhatsapp { get; set; }
+
         public List<Product>? Products { get; set; }
     }
 }

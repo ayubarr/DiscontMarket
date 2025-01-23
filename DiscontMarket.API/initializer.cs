@@ -137,6 +137,10 @@ namespace DiscontMarket.API
                 UserName = adminName,
                 NormalizedUserName = adminName.Normalize(),
                 NormalizedEmail = adminEmail.Normalize(),
+                ClientsVk = AdminInfo.Vk,
+                ClientsTelegram = AdminInfo.Telegram,
+                ClientsWhatsapp = AdminInfo.WhatsApp,
+                PhoneNumber = AdminInfo.PhoneNumber,
             };
 
             var passwordHasher = new PasswordHasher<ApplicationUser>();

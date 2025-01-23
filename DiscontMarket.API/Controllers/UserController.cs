@@ -36,6 +36,10 @@ namespace DiscontMarket.API.Controllers
                 LastName = user.LastName,
                 MiddleName = user.MiddleName,
                 Email = user.Email,
+                PhoneNumber = user.PhoneNumber,
+                ClientsVk = user.ClientsVk,
+                ClientsWhatsapp = user.ClientsWhatsapp,
+                ClientsTelegram = user.ClientsTelegram,
             });
 
             return Ok(userDtos);
@@ -107,6 +111,58 @@ namespace DiscontMarket.API.Controllers
         public async Task<IActionResult> UpdateEmail([FromBody] string emailEdit)
         {
             var response = await _userService.UpdateAdminsEmail(emailEdit);
+            if (response.IsSuccess)
+            {
+                return Ok(response);
+            }
+            return Unauthorized(response.Message);
+        }
+
+        [HttpPost]
+        [Authorize(AuthenticationSchemes = "Bearer")]
+        [Route("update-whatsapp")]
+        public async Task<IActionResult> UpdateNumber([FromBody] string numberEdit)
+        {
+            var response = await _userService.UpdateAdminsNumber(numberEdit);
+            if (response.IsSuccess)
+            {
+                return Ok(response);
+            }
+            return Unauthorized(response.Message);
+        }
+
+        [HttpPost]
+        [Authorize(AuthenticationSchemes = "Bearer")]
+        [Route("update-number")]
+        public async Task<IActionResult> UpdateWhatsapp([FromBody] string whatsappEdit)
+        {
+            var response = await _userService.UpdateAdminsWhatsApp(whatsappEdit);
+            if (response.IsSuccess)
+            {
+                return Ok(response);
+            }
+            return Unauthorized(response.Message);
+        }
+
+        [HttpPost]
+        [Authorize(AuthenticationSchemes = "Bearer")]
+        [Route("update-telegram")]
+        public async Task<IActionResult> UpdateTelegram([FromBody] string telegramEdit)
+        {
+            var response = await _userService.UpdateAdminsTelegram(telegramEdit);
+            if (response.IsSuccess)
+            {
+                return Ok(response);
+            }
+            return Unauthorized(response.Message);
+        }
+
+        [HttpPost]
+        [Authorize(AuthenticationSchemes = "Bearer")]
+        [Route("update-vk")]
+        public async Task<IActionResult> UpdateVk([FromBody] string vkEdit)
+        {
+            var response = await _userService.UpdateAdminsVk(vkEdit);
             if (response.IsSuccess)
             {
                 return Ok(response);

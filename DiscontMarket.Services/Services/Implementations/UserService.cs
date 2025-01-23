@@ -160,5 +160,97 @@ namespace DiscontMarket.Services.Services.Implementations
                 return ResponseFactory<string>.CreateErrorResponse(ex);
             }
         }
+
+        public async Task<IBaseResponse<string>> UpdateAdminsNumber(string number)
+        {
+            try
+            {
+                var user = await _userManager.FindByNameAsync(AdminInfo.adminName);
+
+                ObjectValidator<User>.CheckIsNotNullObject(user);
+
+                user.PhoneNumber = number;
+                _userManager.UpdateAsync(user);
+
+                return ResponseFactory<string>.CreateSuccessResponse(user.Email);
+            }
+            catch (ArgumentNullException ex)
+            {
+                return ResponseFactory<string>.CreateNotFoundResponse(ex);
+            }
+            catch (Exception ex)
+            {
+                return ResponseFactory<string>.CreateErrorResponse(ex);
+            }
+        }
+
+        public async Task<IBaseResponse<string>> UpdateAdminsWhatsApp(string whatsapp)
+        {
+            try
+            {
+                var user = await _userManager.FindByNameAsync(AdminInfo.adminName);
+
+                ObjectValidator<User>.CheckIsNotNullObject(user);
+
+                user.ClientsWhatsapp = whatsapp;
+                _userManager.UpdateAsync(user);
+
+                return ResponseFactory<string>.CreateSuccessResponse(user.Email);
+            }
+            catch (ArgumentNullException ex)
+            {
+                return ResponseFactory<string>.CreateNotFoundResponse(ex);
+            }
+            catch (Exception ex)
+            {
+                return ResponseFactory<string>.CreateErrorResponse(ex);
+            }
+        }
+
+        public async Task<IBaseResponse<string>> UpdateAdminsTelegram(string clientsTelegram)
+        {
+            try
+            {
+                var user = await _userManager.FindByNameAsync(AdminInfo.adminName);
+
+                ObjectValidator<User>.CheckIsNotNullObject(user);
+
+                user.ClientsTelegram = clientsTelegram;
+                _userManager.UpdateAsync(user);
+
+                return ResponseFactory<string>.CreateSuccessResponse(user.Email);
+            }
+            catch (ArgumentNullException ex)
+            {
+                return ResponseFactory<string>.CreateNotFoundResponse(ex);
+            }
+            catch (Exception ex)
+            {
+                return ResponseFactory<string>.CreateErrorResponse(ex);
+            }
+        }
+
+        public async Task<IBaseResponse<string>> UpdateAdminsVk(string vk)
+        {
+            try
+            {
+                var user = await _userManager.FindByNameAsync(AdminInfo.adminName);
+
+                ObjectValidator<User>.CheckIsNotNullObject(user);
+
+                user.ClientsVk = vk;
+                _userManager.UpdateAsync(user);
+
+                return ResponseFactory<string>.CreateSuccessResponse(user.Email);
+            }
+            catch (ArgumentNullException ex)
+            {
+                return ResponseFactory<string>.CreateNotFoundResponse(ex);
+            }
+            catch (Exception ex)
+            {
+                return ResponseFactory<string>.CreateErrorResponse(ex);
+            }
+        }
     }
 }

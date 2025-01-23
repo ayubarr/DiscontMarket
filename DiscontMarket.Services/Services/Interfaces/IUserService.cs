@@ -17,5 +17,10 @@ namespace DiscontMarket.Services.Services.Interfaces
         Task<IBaseResponse<string>> GetAdminsEmail();
 
         Task<IBaseResponse<string>> UpdateAdminsEmail(string email);
+        Task<IBaseResponse<string>> UpdateAdminsNumber(string email);
+        Task<IBaseResponse<string>> UpdateAdminsWhatsApp(string email);
+        Task<IBaseResponse<string>> UpdateAdminsTelegram(string email);
+        Task<IBaseResponse<string>> UpdateAdminsVk(string email);
+
     }
 }
