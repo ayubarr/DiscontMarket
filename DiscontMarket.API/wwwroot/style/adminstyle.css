@@ -20,65 +20,65 @@ body {
     display: none; /* Скрыто по умолчанию */
 }
 
-    .auth-container.active,
-    .dashboard-container.active {
-        display: block;
-    }
+.auth-container.active,
+.dashboard-container.active {
+    display: block;
+}
 
-    .auth-container img,
-    .dashboard-container img {
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-        margin-bottom: 20px;
-    }
+.auth-container img,
+.dashboard-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    margin-bottom: 20px;
+}
 
-    .auth-container input[type="text"],
-    .auth-container input[type="password"],
-    .auth-container button {
-        display: block;
-        width: calc(100% - 2px);
-        box-sizing: border-box;
-        padding: 10px;
-        margin-bottom: 15px;
-        border-radius: 5px;
-        font-size: 16px;
-    }
+.auth-container input[type="text"],
+.auth-container input[type="password"],
+.auth-container button {
+    display: block;
+    width: calc(100% - 2px);
+    box-sizing: border-box;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    font-size: 16px;
+}
 
-    .auth-container input[type="text"],
-    .auth-container input[type="password"] {
-        border: 1px solid #ccc;
-        padding-left: 10px;
-        transition: border-color 0.3s ease;
-    }
+.auth-container input[type="text"],
+.auth-container input[type="password"] {
+    border: 1px solid #ccc;
+    padding-left: 10px;
+    transition: border-color 0.3s ease;
+}
 
-        .auth-container input[type="text"]:focus,
-        .auth-container input[type="password"]:focus {
-            border-color: #005BFF;
-            outline: none;
-        }
+.auth-container input[type="text"]:focus,
+.auth-container input[type="password"]:focus {
+    border-color: #005BFF;
+    outline: none;
+}
 
-    .auth-container button,
-    .dashboard-container button {
-        background-color: #005BFF;
-        color: #fff;
-        border: none;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-    }
+.auth-container button,
+.dashboard-container button {
+    background-color: #005BFF;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
 
-        .auth-container button:hover,
-        .dashboard-container button:hover {
-            background-color: #0045cc;
-        }
+.auth-container button:hover,
+.dashboard-container button:hover {
+    background-color: #0045cc;
+}
 
-    .dashboard-container button {
-        margin-top: 10px;
-        width: calc(100% - 2px);
-        padding: 15px;
-        border-radius: 8px;
-        font-size: 16px;
-    }
+.dashboard-container button {
+    margin-top: 10px;
+    width: calc(100% - 2px);
+    padding: 15px;
+    border-radius: 8px;
+    font-size: 16px;
+}
 
 .edit-ads-container {
     display: flex;
@@ -117,19 +117,19 @@ body {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-    .ad-field img {
-        max-width: 100%;
-        border-radius: 5px;
-        margin-bottom: 10px;
-    }
+.ad-field img {
+    max-width: 100%;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
 
-    .ad-field input {
-        width: 100%;
-        padding: 5px;
-        font-size: 14px;
-    }
+.ad-field input {
+    width: 100%;
+    padding: 5px;
+    font-size: 14px;
+}
 
-#back-btn, #search-product-btn, #back-btn-email, #back-btn-checkorder {
+#back-btn, #search-product-btn, #back-btn-email, #back-btn-checkorder, #back-btn-contacts {
     align-self: flex-start;
     background-color: #005BFF;
     color: white;
@@ -141,9 +141,9 @@ body {
     transition: background-color 0.3s ease;
 }
 
-    #back-btn:hover {
-        background-color: #0045cc;
-    }
+#back-btn:hover {
+    background-color: #0045cc;
+}
 
 .manage-products-container {
     background-color: #fff;
@@ -157,9 +157,9 @@ body {
     display: none;
 }
 
-    .manage-products-container.active {
-        display: block;
-    }
+.manage-products-container.active {
+    display: block;
+}
 
 h2 {
     margin-bottom: 30px;
@@ -197,13 +197,13 @@ input[type="file"] {
     transition: border-color 0.3s ease;
 }
 
-    input[type="text"]:focus,
-    input[type="number"]:focus,
-    textarea:focus,
-    select:focus {
-        border-color: #005BFF;
-        outline: none;
-    }
+input[type="text"]:focus,
+input[type="number"]:focus,
+textarea:focus,
+select:focus {
+    border-color: #005BFF;
+    outline: none;
+}
 
 textarea {
     height: 100px;
@@ -227,7 +227,7 @@ textarea {
 }
 
 
-#save-product-btn, #delete-product-btn, #save-attributes-btn, #edit-email-btn, #check-order-btn, #edit-email-btn-load {
+#save-product-btn, #delete-product-btn, #save-attributes-btn, #edit-email-btn, #check-order-btn, #edit-email-btn-load, #edit-contacts-btn-load, #edit-contactsvk-btn-load, #edit-contactstg-btn-load, #edit-contactswt-btn-load, #edit-contactstime-btn-load, #edit-contactsreturn-btn-load, #edit-contactsphone-btn-load, #edit-contactsadres-btn-load, #edit-contactstextinfo-btn-load {
     background-color: #005BFF;
     color: #fff;
     border: none;
@@ -238,7 +238,6 @@ textarea {
     transition: background-color 0.3s ease;
     width: 100%;
 }
-
 
 #save-product-btn:hover, #delete-product-btn:hover {
     background-color: #0045cc;
@@ -256,11 +255,11 @@ textarea {
     transition: background-color 0.3s ease;
 }
 
-    #back-btn-products:hover, #back-btn-delete:hover {
-        background-color: #0045cc;
-    }
+#back-btn-products:hover, #back-btn-delete:hover {
+    background-color: #0045cc;
+}
 
-.delete-products-container, .edit-email-container {
+.delete-products-container, .edit-email-container, .edit-contacts-container {
     background-color: #fff;
     padding: 30px;
     border-radius: 10px;
@@ -269,14 +268,18 @@ textarea {
     display: none; /* Скрыто по умолчанию */
 }
 
-    .delete-products-container.active {
-        display: block;
-    }
+.edit-contacts-container {
+    margin-top: 1500px;
+}
 
-    .delete-products-container h2 {
-        margin-bottom: 30px;
-        color: #333;
-    }
+.delete-products-container.active {
+    display: block;
+}
+
+.delete-products-container h2 {
+    margin-bottom: 30px;
+    color: #333;
+}
 
 
 
@@ -313,9 +316,9 @@ textarea {
     align-items: center;
 }
 
-    .attribute-header label {
-        font-size: 16px;
-    }
+.attribute-header label {
+    font-size: 16px;
+}
 
 .remove-attribute-btn {
     background-color: #ff6b6b;
@@ -326,9 +329,9 @@ textarea {
     border-radius: 5px;
 }
 
-    .remove-attribute-btn:hover {
-        background-color: #ff4d4d;
-    }
+.remove-attribute-btn:hover {
+    background-color: #ff4d4d;
+}
 
 .option-item {
     display: flex;
@@ -336,13 +339,13 @@ textarea {
     margin-top: 5px;
 }
 
-    .option-item input[type="text"] {
-        flex: 1;
-        padding: 5px;
-        margin-right: 10px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-    }
+.option-item input[type="text"] {
+    flex: 1;
+    padding: 5px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
 
 .remove-option-btn {
     background-color: #ff6b6b;
@@ -353,9 +356,9 @@ textarea {
     border-radius: 5px;
 }
 
-    .remove-option-btn:hover {
-        background-color: #ff4d4d;
-    }
+.remove-option-btn:hover {
+    background-color: #ff4d4d;
+}
 
 .add-option-btn {
     background-color: #4caf50;
@@ -367,9 +370,9 @@ textarea {
     border-radius: 5px;
 }
 
-    .add-option-btn:hover {
-        background-color: #45a049;
-    }
+.add-option-btn:hover {
+    background-color: #45a049;
+}
 
 .add-attribute-btn {
     background-color: #00BFFF; /* Голубой цвет */
@@ -380,9 +383,9 @@ textarea {
     cursor: pointer;
 }
 
-    .add-attribute-btn:hover {
-        background-color: #009ACD; /* Темно-голубой при наведении */
-    }
+.add-attribute-btn:hover {
+    background-color: #009ACD; /* Темно-голубой при наведении */
+}
 
 /* Общее оформление таблицы */
 #order-result table {
@@ -428,10 +431,10 @@ textarea {
     transition: background-color 0.3s; /* Плавное изменение цвета */
 }
 
-    /* Эффект при наведении на кнопки */
-    #order-result button:hover {
-        background-color: #218838; /* Темнее при наведении */
-    }
+/* Эффект при наведении на кнопки */
+#order-result button:hover {
+    background-color: #218838; /* Темнее при наведении */
+}
 
 /* Стиль для области прокручиваемого контейнера */
 #order-result {

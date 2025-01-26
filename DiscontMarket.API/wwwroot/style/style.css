@@ -366,7 +366,7 @@ body {
   font-size: 15px;
   color: #000000; /* Черный цвет */
   line-height: 35px; 
-  margin-left: 70px;
+  margin-left: 65px;
 }
 
 .free-call {
@@ -1859,7 +1859,7 @@ body {
   font-weight: bold;
 }
 
-.call-button, .submit-button {
+.call-button, .submit-button, .submit-button-return {
   background-color: #005BFF;
   color: #fff;
   font-family: 'Ubuntu Regular', sans-serif;
@@ -1891,6 +1891,25 @@ body {
     border: 1px solid #ccc;
     padding-left: 10px;
     transition: border-color 0.3s ease;
+}
+
+.phone-input-return, .name-input-return, .email-input-return, .subject-input-return, .message-input-return {
+  display: block;
+  width: calc(40%);
+  max-width: calc(40%);
+  max-height: 400px;
+  min-height: 40px;
+  box-sizing: border-box;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.phone-input-return, .name-input-return, .email-input-return, .subject-input-return, .message-input-return {
+  border: 1px solid #ccc;
+  padding-left: 10px;
+  transition: border-color 0.3s ease;
 }
 
 

@@ -28,6 +28,7 @@
         <button id="edit-email-btn">Смена почты</button>
         <button id="check-orderlist-btn">Заказы</button>
         <button id="maintenance-btn">Закрыть сайт на техническое обслуживание</button>
+        <button id="edit-contacts-btn">Смена ссылок/контактов/адресов/времени</button>
         <button id="exit-btn">Выход</button>
     </div>
 
@@ -37,6 +38,56 @@
         <input type="text" id="edit-email-title" placeholder="Введите новую почту">
         <button id="edit-email-btn-load">Обновить почту</button>
         <div id="edit-result"></div>
+    </div>
+
+    <div class="edit-contacts-container" id="edit-contacts-container" style="display: none;">
+        <button id="back-btn-contacts">← Назад</button>
+        <h2>Смена контакта в шапке (Тех.поддержка)</h2>
+        <input type="text" id="edit-contacts-title" placeholder="Введите ссылку на новый контакт">
+        <button id="edit-contacts-btn-load">Обновить контакт</button>
+        <div id="edit-result-contacts"></div>
+
+        <h2>Смена контакта в нижней панели (ВК)</h2>
+        <input type="text" id="edit-contactsvk-title" placeholder="Введите ссылку на новый контакт">
+        <button id="edit-contactsvk-btn-load">Обновить контакт</button>
+        <div id="edit-result-contactsvk"></div>
+
+        <h2>Смена контакта в нижней панели (ТГ)</h2>
+        <input type="text" id="edit-contactstg-title" placeholder="Введите ссылку на новый контакт">
+        <button id="edit-contactstg-btn-load">Обновить контакт</button>
+        <div id="edit-result-contactstg"></div>
+
+        <h2>Смена контакта в нижней панели (ВАТСАП)</h2>
+        <input type="text" id="edit-contactswt-title" placeholder="Введите ссылку на новый контакт">
+        <button id="edit-contactswt-btn-load">Обновить контакт</button>
+        <div id="edit-result-contactswt"></div>
+
+        <h2>Смена времени работы</h2>
+        <input type="text" id="edit-contactstime-title" placeholder="Введите время работы (Пн-Вс, 10:00-20:00)">
+        <button id="edit-contactstime-btn-load">Обновить время</button>
+        <div id="edit-result-contactstime"></div>
+
+        <h2>Смена номера телефона</h2>
+        <input type="text" id="edit-contactsphone-title" placeholder="Введите телефон (78901112233)">
+        <button id="edit-contactsphone-btn-load">Обновить номер</button>
+        <div id="edit-result-contactsphone"></div>
+
+        <h2>Смена текста возврата</h2>
+        <textarea id="edit-contactsreturn-title" placeholder="Введите новый текст для страницы возврата"></textarea>
+        <button id="edit-contactsreturn-btn-load">Обновить текст</button>
+        <div id="edit-result-contactsreturn"></div>
+
+        <h2>Смена адреса</h2>
+        <input type="text" id="edit-contactstextadres-title" placeholder="Введите текст нового адреса">
+        <input type="text" id="edit-contactshrefadres-title" placeholder="Введите ссылку нового адреса">
+        <input type="text" id="edit-contactshrefmapadres-title" placeholder="Введите ссылку нового фрейма(карты) адреса">
+        <button id="edit-contactsadres-btn-load">Обновить текст</button>
+        <div id="edit-result-contactsadres"></div>
+
+        <h2>Смена текста контактов</h2>
+        <textarea id="edit-contactstextinfo-title" placeholder="Введите текст для страницы контактов"></textarea>
+        <button id="edit-contactstextinfo-btn-load">Обновить текст</button>
+        <div id="edit-result-contactstextinfo"></div>
     </div>
 
     <div class="check-order-container" id="check-order-container" style="display: none;">
@@ -59,14 +110,7 @@
     <!-- Интерфейс редактирования рекламы -->
     <div class="edit-ads-container" id="edit-ads-container" style="display: none;">
         <button id="back-btn">← Назад</button>
-        <h1>Реклама</h1>
-        <h2>
-            Рекомендуемые размеры картинок:<br>
-            реклама верх 1371х485<br>
-            реклама центр 557х229 и квадратики 260х229<br>
-            реклама низ 681х229<br><br>
-            Формат .png
-        </h2>
+        <h2>Реклама</h2>
         <div class="ad-fields">
             <div class="ad-field" data-path="items/advert/header/head_first.png" data-width="1371" data-height="485">
                 <img src="items/advert/header/head_first.png" alt="Реклама 1">
@@ -105,12 +149,7 @@
                 <input type="file" accept=".png" class="file-input">
             </div>
         </div>
-        <h1>Бренды</h1>
-        <h2>
-            Рекомендуемые размеры картинок <br>
-            для брендов 96х53<br><br>
-            Формат .png
-        </h2>
+        <h2>Бренды</h2>
         <div class="ad-fields">
             <div class="ad-field" data-path="items/brands/1.png" data-width="96" data-height="53">
                 <img src="items/brands/1.png" alt="Бренд 1">
@@ -146,12 +185,12 @@
             </div>
         </div>
     </div>
-
-
+    
+    
 
     <div class="manage-products-container" id="manage-products-container" style="display: none;">
         <button id="back-btn-products">← Назад</button>
-        <h1>Добавление/Редактирование товара</h1>
+        <h2>Добавление/Редактирование товара</h2>
         <div class="product-form">
             <!-- Поле выбора категории -->
             <label for="category-select">Выберите категорию:</label>
@@ -164,32 +203,32 @@
                 <option value="washingmachine">Стиральные и сушильные машины</option>
                 <option value="smallappliances">Мелкая бытовая техника</option>
             </select>
-
+    
             <!-- Основные поля товара -->
             <label for="product-title">Название товара:</label>
             <input type="text" id="product-title" placeholder="Введите название товара" />
             <button id="search-product-btn">Поиск по названию</button>
-
+    
             <label for="product-description">Описание:</label>
-            <textarea id="product-description" S
-                      placeholder="Введите описание товара"
-                      maxlength="135"
-                      oninput="updateRemainingChars(this, 'description-counter', 135)"></textarea>
+            <textarea id="product-description"
+            placeholder="Введите описание товара"
+            maxlength="135"
+            oninput="updateRemainingChars(this, 'description-counter', 135)"></textarea>
             <span id="description-counter" class="char-counter">Осталось символов: 135</span>
-
+    
             <label for="product-full-description">Полное описание:</label>
-            <textarea id="product-full-description"
-                      placeholder="Введите полное описание товара"
-                      maxlength="500"
-                      oninput="updatSeRemainingChars(this, 'full-description-counter', 500)"></textarea>
+            <textarea id="product-full-description" 
+            placeholder="Введите полное описание товара"
+            maxlength="500"
+            oninput="updatSeRemainingChars(this, 'full-description-counter', 500)"></textarea>
             <span id="full-description-counter" class="char-counter">Осталось символов: 500</span>
-
+    
             <label for="product-price">Цена:</label>
             <input type="number" id="product-price" placeholder="Введите цену товара" />
 
             <label for="product-quantity">Количество:</label>
             <input type="number" id="product-quantity" placeholder="Введите количество" />
-
+    
             <label for="product-status">Статус товара:</label>
             <select id="product-status">
                 <option value="discount">Дисконт</option>
@@ -203,17 +242,13 @@
                 <option value="preordertomorrow">Под заказ: Завтра</option>
                 <option value="preorderlater">Под заказ: Позже</option>
             </select>
-            <h2>
-                Рекомендуемые размеры картинок для<br>
-                Изображения товара - 490х490<br><br />
-                Формат .png
-            </h2>
+    
             <label for="product-images">Изображения товара:</label>
             <input type="file" id="product-images" accept="image/*" multiple />
-
+    
             <!-- Динамические характеристики в зависимости от категории -->
             <div id="characteristics-container"></div>
-
+    
             <!-- Кнопка для добавления товара -->
             <button id="save-product-btn">Сохранить товар</button>
         </div>
@@ -226,10 +261,10 @@
         <button id="delete-product-btn">Удалить товар</button>
         <div id="delete-result"></div>
     </div>
+    
+    
 
-
-
-    <script src="js/cache.js"></script>
-    <script src="js/TechWorks.js"></script>
+<script src="js/cache.js"></script>
+<script src="js/TechWorks.js"></script>
 </body>
 </html>

@@ -984,8 +984,212 @@ document.getElementById('edit-email-btn-load').addEventListener('click', () => {
         });
 });
 
+document.getElementById('edit-contacts-btn').addEventListener('click', () => {
+    document.getElementById('dashboard-container').style.display = 'none';
+    document.getElementById('edit-contacts-container').style.display = 'block';
 
+});
 
+// Возврат на панель управления
+document.getElementById('back-btn-contacts').addEventListener('click', () => {
+document.getElementById('edit-contacts-container').style.display = 'none';
+document.getElementById('dashboard-container').style.display = 'block';
+});
+
+document.getElementById('edit-contacts-btn-load').addEventListener('click', () => {
+    const techcontactsEdit = document.getElementById('edit-contacts-title').value.trim();
+
+    fetch('api/User/update-support', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
+            },
+            body: JSON.stringify( techcontactsEdit )
+        })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('edit-result-contacts').innerText = data.message;
+            })
+            .catch(error => {
+                console.error('Ошибка:', error);
+            });
+    });
+
+document.getElementById('edit-contactsvk-btn-load').addEventListener('click', () => {
+    const vkcontactsEdit = document.getElementById('edit-contactsvk-title').value.trim();
+
+    fetch('api/User/update-vk', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
+            },
+            body: JSON.stringify( vkcontactsEdit )
+        })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('edit-result-contactsvk').innerText = data.message;
+            })
+            .catch(error => {
+                console.error('Ошибка:', error);
+            });
+    });
+
+document.getElementById('edit-contactstg-btn-load').addEventListener('click', () => {
+    const tgcontactsEdit = document.getElementById('edit-contactstg-title').value.trim();
+
+    fetch('api/User/update-telegram', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
+            },
+            body: JSON.stringify( tgcontactsEdit )
+        })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('edit-result-contactstg').innerText = data.message;
+            })
+            .catch(error => {
+                console.error('Ошибка:', error);
+            });
+    });
+
+document.getElementById('edit-contactswt-btn-load').addEventListener('click', () => {
+    const wtcontactsEdit = document.getElementById('edit-contactswt-title').value.trim();
+
+    fetch('api/User/update-whatsapp', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
+            },
+            body: JSON.stringify( wtcontactsEdit )
+        })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('edit-result-contactswt').innerText = data.message;
+            })
+            .catch(error => {
+                console.error('Ошибка:', error);
+            });
+    });
+
+document.getElementById('edit-contactstime-btn-load').addEventListener('click', () => {
+    const timecontactsEdit = document.getElementById('edit-contactstime-title').value.trim();
+
+    fetch('api/User/update-worktime', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
+            },
+            body: JSON.stringify( timecontactsEdit )
+        })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('edit-result-contactstime').innerText = data.message;
+            })
+            .catch(error => {
+                console.error('Ошибка:', error);
+            });
+    });
+
+document.getElementById('edit-contactsphone-btn-load').addEventListener('click', () => {
+    const phonecontactsEdit = document.getElementById('edit-contactsphone-title').value.trim();
+
+    fetch('api/User/update-number', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
+            },
+            body: JSON.stringify( phonecontactsEdit )
+        })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('edit-result-contactsphone').innerText = data.message;
+            })
+            .catch(error => {
+                console.error('Ошибка:', error);
+            });
+    });
+
+document.getElementById('edit-contactsreturn-btn-load').addEventListener('click', () => {
+    const returncontactsEdit = document.getElementById('edit-contactsreturn-title').value.trim();
+
+    fetch('api/User/update-returns-text', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
+            },
+            body: JSON.stringify( returncontactsEdit )
+        })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('edit-result-contactsreturn').innerText = data.message;
+            })
+            .catch(error => {
+                console.error('Ошибка:', error);
+            });
+    });
+
+document.getElementById('edit-contactsadres-btn-load').addEventListener('click', () => {
+    const textadrescontactsEdit = document.getElementById('edit-contactstextadres-title').value.trim();
+    const hrefadrescontactsEdit = document.getElementById('edit-contactshrefadres-title').value.trim();
+    const hrefmapadrescontactsEdit = document.getElementById('edit-contactshrefmapadres-title').value.trim();
+
+        // Проверка на пустые поля
+        if (!textadrescontactsEdit || !hrefadrescontactsEdit || !hrefmapadrescontactsEdit) {
+            alert('Пожалуйста, заполните все поля.');
+            return;
+        }
+
+        // Создаем объект с данными формы
+        const adressData = {
+            textAdress: textadrescontactsEdit,
+            hrefAdress: hrefadrescontactsEdit,
+            hrefmapAdress: hrefmapadrescontactsEdit
+        };
+
+    fetch('api/User/update-adress', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
+            },
+            body: JSON.stringify(adressData)
+        })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('edit-result-contactsadres').innerText = data.message;
+            })
+            .catch(error => {
+                console.error('Ошибка:', error);
+            });
+    });
+
+document.getElementById('edit-contactstextinfo-btn-load').addEventListener('click', () => {
+    const textinfocontactsEdit = document.getElementById('edit-contactstextinfo-title').value.trim();
+
+    fetch('api/User/update-contacts', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
+            },
+            body: JSON.stringify(textinfocontactsEdit)
+        })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('edit-result-contactstextinfo').innerText = data.message;
+            })
+            .catch(error => {
+                console.error('Ошибка:', error);
+            });
+    });
 
 // Переход к разделу "Проверка заказа"
 document.getElementById('check-orderlist-btn').addEventListener('click', () => {

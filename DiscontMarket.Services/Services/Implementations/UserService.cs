@@ -79,6 +79,40 @@ namespace DiscontMarket.Services.Services.Implementations
             }
         }
 
+        public async Task<IBaseResponse<UserData>> GetUserData()
+        {
+            try
+            {
+                var user = await _userManager.FindByNameAsync(AdminInfo.adminName);
+
+                ObjectValidator<User>.CheckIsNotNullObject(user);
+
+                var userData = new UserData
+                {
+                    techLink = user.SupportContacts,
+                    vkLink = user.ClientsVk,
+                    tgLink = user.ClientsTelegram,
+                    wtLink = user.ClientsWhatsapp,
+                    time = user.WorkTimeInfo,
+                    phoneNumber = user.PhoneNumber,
+                    returnText = user.ReturnsText,
+                    textAdress = user.TextAdress,
+                    hrefAdress = user.HrefAdress,
+                    hrefmapAdress = user.HrefmapAdress,
+                    textInfo = user.ContactInfoText,
+                };
+                
+                return ResponseFactory<UserData>.CreateSuccessResponse(userData);
+            }
+            catch (ArgumentNullException ex)
+            {
+                return ResponseFactory<UserData>.CreateNotFoundResponse(ex);
+            }
+            catch (Exception ex)
+            {
+                return ResponseFactory<UserData>.CreateErrorResponse(ex);
+            }        }
+
         public async Task<IBaseResponse<bool>> UpdateUserAsync(uint userId, UpdateUserDTO userDto)
         {
             try
@@ -138,7 +172,7 @@ namespace DiscontMarket.Services.Services.Implementations
             }
         }
 
-        public async Task<IBaseResponse<string>> UpdateAdminsEmail(string email)
+        public async Task<IBaseResponse<string>> UpdateAdminProperty<T>(Func<User, T> propertySelector, Action<User, T> propertyUpdater, T newValue)
         {
             try
             {
@@ -146,100 +180,8 @@ namespace DiscontMarket.Services.Services.Implementations
 
                 ObjectValidator<User>.CheckIsNotNullObject(user);
 
-                user.Email = email; 
-                _userManager.UpdateAsync(user);
-
-                return ResponseFactory<string>.CreateSuccessResponse(user.Email);
-            }
-            catch (ArgumentNullException ex)
-            {
-                return ResponseFactory<string>.CreateNotFoundResponse(ex);
-            }
-            catch (Exception ex)
-            {
-                return ResponseFactory<string>.CreateErrorResponse(ex);
-            }
-        }
-
-        public async Task<IBaseResponse<string>> UpdateAdminsNumber(string number)
-        {
-            try
-            {
-                var user = await _userManager.FindByNameAsync(AdminInfo.adminName);
-
-                ObjectValidator<User>.CheckIsNotNullObject(user);
-
-                user.PhoneNumber = number;
-                _userManager.UpdateAsync(user);
-
-                return ResponseFactory<string>.CreateSuccessResponse(user.Email);
-            }
-            catch (ArgumentNullException ex)
-            {
-                return ResponseFactory<string>.CreateNotFoundResponse(ex);
-            }
-            catch (Exception ex)
-            {
-                return ResponseFactory<string>.CreateErrorResponse(ex);
-            }
-        }
-
-        public async Task<IBaseResponse<string>> UpdateAdminsWhatsApp(string whatsapp)
-        {
-            try
-            {
-                var user = await _userManager.FindByNameAsync(AdminInfo.adminName);
-
-                ObjectValidator<User>.CheckIsNotNullObject(user);
-
-                user.ClientsWhatsapp = whatsapp;
-                _userManager.UpdateAsync(user);
-
-                return ResponseFactory<string>.CreateSuccessResponse(user.Email);
-            }
-            catch (ArgumentNullException ex)
-            {
-                return ResponseFactory<string>.CreateNotFoundResponse(ex);
-            }
-            catch (Exception ex)
-            {
-                return ResponseFactory<string>.CreateErrorResponse(ex);
-            }
-        }
-
-        public async Task<IBaseResponse<string>> UpdateAdminsTelegram(string clientsTelegram)
-        {
-            try
-            {
-                var user = await _userManager.FindByNameAsync(AdminInfo.adminName);
-
-                ObjectValidator<User>.CheckIsNotNullObject(user);
-
-                user.ClientsTelegram = clientsTelegram;
-                _userManager.UpdateAsync(user);
-
-                return ResponseFactory<string>.CreateSuccessResponse(user.Email);
-            }
-            catch (ArgumentNullException ex)
-            {
-                return ResponseFactory<string>.CreateNotFoundResponse(ex);
-            }
-            catch (Exception ex)
-            {
-                return ResponseFactory<string>.CreateErrorResponse(ex);
-            }
-        }
-
-        public async Task<IBaseResponse<string>> UpdateAdminsVk(string vk)
-        {
-            try
-            {
-                var user = await _userManager.FindByNameAsync(AdminInfo.adminName);
-
-                ObjectValidator<User>.CheckIsNotNullObject(user);
-
-                user.ClientsVk = vk;
-                _userManager.UpdateAsync(user);
+                propertyUpdater(user, newValue);
+                await _userManager.UpdateAsync(user);
 
                 return ResponseFactory<string>.CreateSuccessResponse(user.Email);
             }

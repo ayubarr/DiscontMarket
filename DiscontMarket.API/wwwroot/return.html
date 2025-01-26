@@ -169,132 +169,59 @@
         
     </header>
 
-    <div class="main-body">
-
-        <div class="category-header" id="category-header">
-            Каталог >    
+    <div class="product-full-info">
+        <h1>Возврат</h1>
+        <p class="returntext">Товар может иметь транспортные или косметические дефекты, за более подробной информацией по наличию дефектов, напишите пожалуйста в чат магазина. Менеджер пришлет вам подробное описание дефектов и фото(если они есть). Товар на официальной гарантии. Отсутствует заводская упаковка. Дополнительно упакуем для бережной доставки.</p>
+        <!-- Карточка -->
+        <div id="order-card" class="order-card-content">
+            <p class="order-phone">Для возврата заполните форму</p>
+            <input type="tel" class="phone-input-return" placeholder="Телефон (например, +7XXXXXXXXXX)" maxlength="12" 
+                oninput="if (!this.value.startsWith('+7')) this.value = '+7' + this.value.replace(/[^0-9]/g, '').slice(2); else this.value = '+7' + this.value.slice(2).replace(/[^0-9]/g, '');" />
+            <input type="text" class="name-input-return" placeholder="Имя" maxlength="50"/> 
+            <input type="email" class="email-input-return" placeholder="Почта" maxlength="50"/> 
+            <input type="text" class="subject-input-return" placeholder="Тема обращения" maxlength="50"/>
+            <textarea class="message-input-return" placeholder="Текст обращения" maxlength="1000"></textarea>
+            <button class="submit-button-return">Отправить</button>
         </div>
-
-        <div class="category-info">
-            <span class="category-name"></span>
-            <span class="product-count"></span>
-        </div>
-
-        <div class="content">
-            <div class="filters-container" id="filters-container">
-                <button class="close-button" id="filters-close">&times;</button>  
-                <div class="filter-block">
-                    <div class="filter-title">Наличие товара</div>
-                    <div class="filter-options">
-                        <div class="filter-option">
-                            <div class="checkbox" data-filter="instock"></div>
-                            <span>В наличии</span>
-                        </div>
-                        <div class="filter-option">
-                            <div class="checkbox" data-filter="preordertomorrow"></div>
-                            <span>Под заказ: завтра</span>
-                        </div>
-                        <div class="filter-option">
-                            <div class="checkbox" data-filter="preorderlater"></div>
-                            <span>Под заказ: позже</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="filter-block">
-                    <div class="filter-title">Цена</div>
-                    <div class="price-inputs">
-                        <input type="number" id="minprice" placeholder="От" value="20000" />
-                        <input type="number" id="maxprice" placeholder="До" value="80000" />
-                    </div>
-                    <div class="price-slider">
-                        <div class="slider-track"></div>
-                        <input type="range" id="price-slider-min" class="slider-point" min="20000" max="80000" value="20000" step="1" />
-                        <input type="range" id="price-slider-max" class="slider-point" min="20000" max="80000" value="80000" step="1" />
-                    </div>
-                </div>
-                <div class="filter-block">
-                    <div class="filter-title">Статус товара</div>
-                    <div class="filter-options">
-                        <div class="filter-option">
-                            <div class="checkbox" data-filter="discount"></div>
-                            <span>Дисконт</span>
-                        </div>
-                        <div class="filter-option">
-                            <div class="checkbox" data-filter="damagedpackage"></div>
-                            <span>П/У</span>
-                        </div>
-                        <div class="filter-option">
-                            <div class="checkbox" data-filter="minordefects"></div>
-                            <span>Мелкие дефекты</span>
-                        </div>
-                    </div>
-                </div>
+    </div>
+    
+    <div class="bottom-container">
+        <div class="content-wrapper">
+            <!-- Первый столбец -->
+            <div class="column">
+                <a class="column-title">Покупателям</a>
+                <a href="return.html" class="column-item">Гарантия</a>
+                <a href="https://vk.com/topic-228485577_53276302" class="column-item" target="_blank">Доставка</a>
+                <a href="https://vk.com/topic-228485577_53276275" class="column-item" target="_blank">Оплата</a>
+                <a href="return.html" class="column-item">Возврат</a>
             </div>
-            <div class="right-section">
-                <div class="button-row">
-                    <button class="action-button" id="filters-toggle">
-                        <img src="items/filters/filter-icon.png" alt="Фильтры" class="button-icon" />
-                        Фильтры
-                    </button>
-                    <button class="action-button" id="sorting-toggle">
-                        <img src="items/filters/sorting-icon1.png" alt="Сортировать" class="button-icon" />
-                        Сортировать
-                    </button>
-                </div>
-                <div class="sorting-container" id="sorting-container">
-                    <div class="sorting-option" data-sort="popularity">По популярности</div>
-                    <div class="sorting-option" data-sort="price">По цене</div>
-                    <div class="sorting-option" data-sort="rating">По рейтингу</div>
-                    <div class="sorting-option" data-sort="title">По названию</div>
-                    <div class="sorting-option" data-sort="quantity">По количеству</div>
-                </div>
 
-                <div class="main-items-section">
-                        <!-- Карточки товаров будут добавляться здесь -->
-                    </div>
-                    <button id="show-more" class="show-more-button" style="display: none;">Показать еще</button>
+            <!-- Второй столбец -->
+            <div class="column">
+                <a class="column-title">Информация</a>
+                <a href="adress.html" class="column-item">О магазине</a>
+            </div>
+
+            <!-- Третий столбец -->
+            <div class="column">
+                <a class="column-title">Поддержка</a>
+                <a href="https://vk.com/topic-228485577_53276280" class="column-item">Тех.поддержка</a>
+                <a href="https://vk.com/topic-228485577_53276288" class="column-item" target="_blank">FAQ</a>
+                <a href="https://vk.com/im?media=&sel=-228485577" class="column-item" target="_blank">Задать вопрос</a>
+            </div>
+
+            <!-- Четвертый столбец -->
+            <div class="column">
+                <a class="column-title">Контакты</a>
+                <a href="tel:+79812104831" class="contact-item">+7 (981) 210-48-31</a>
+                <a href="https://yandex.ru/maps/2/saint-petersburg/house/ulitsa_bekhtereva_2sh/Z0kYcgdjSUUCQFtjfXVxdH1mZA==/?ll=30.403004%2C59.905150&z=17.13" target="_blank" class="contact-address">Санкт-Петербург, ул. Бехтерева 2, лит. Ш</a>
+                <div class="social-icons">
+                    <a href="https://vk.com/club228485577" class="VK" target="_blank"><img src="items/bottom/vk.svg" alt="VK"></a>
+                    <a href="https://web.telegram.org/k/#@pervyi_bytovoy" class="TG" target="_blank"><img src="items/bottom/tg.png" alt="Telegram"></a>
+                    <a href="#" class="WT" target="_blank"><img src="items/bottom/whatsapp.png" alt="WhatsApp"></a>
                 </div>
             </div>
         </div>
-
-        <!-- Контейнер для раздела под Товары по брендам -->
-        <div class="bottom-container">
-            <div class="content-wrapper">
-                <!-- Первый столбец -->
-                <div class="column">
-                    <a class="column-title">Покупателям</a>
-                    <a href="return.html" class="column-item">Гарантия</a>
-                    <a href="https://vk.com/topic-228485577_53276302" class="column-item" target="_blank">Доставка</a>
-                    <a href="https://vk.com/topic-228485577_53276275" class="column-item" target="_blank">Оплата</a>
-                    <a href="return.html" class="column-item">Возврат</a>
-                </div>
-
-                <!-- Второй столбец -->
-                <div class="column">
-                    <a class="column-title">Информация</a>
-                    <a href="adress.html" class="column-item">О магазине</a>
-                </div>
-
-                <!-- Третий столбец -->
-                <div class="column">
-                    <a class="column-title">Поддержка</a>
-                    <a href="https://vk.com/topic-228485577_53276280" class="column-item" target="_blank">Тех.поддержка</a>
-                    <a href="https://vk.com/topic-228485577_53276288" class="column-item" target="_blank">FAQ</a>
-                    <a href="https://vk.com/im?media=&sel=-228485577" class="column-item" target="_blank">Задать вопрос</a>
-                </div>
-
-                <!-- Четвертый столбец -->
-                <div class="column">
-                    <a class="column-title">Контакты</a>
-                    <a href="tel:+79812104831" class="contact-item">+7 (981) 210-48-31</a>
-                    <a href="https://yandex.ru/maps/2/saint-petersburg/house/ulitsa_bekhtereva_2sh/Z0kYcgdjSUUCQFtjfXVxdH1mZA==/?ll=30.403004%2C59.905150&z=17.13" target="_blank" class="contact-address">Санкт-Петербург, ул. Бехтерева 2, лит. Ш</a>
-                    <div class="social-icons">
-                        <a href="https://vk.com/club228485577" class="VK" target="_blank"><img src="items/bottom/vk.svg" alt="VK"></a>
-                        <a href="https://web.telegram.org/k/#@pervyi_bytovoy" class="TG" target="_blank"><img src="items/bottom/tg.png" alt="Telegram"></a>
-                        <a href="#" class="WT" target="_blank"><img src="items/bottom/whatsapp.png" alt="WhatsApp"></a>
-                    </div>
-                </div>
-            </div>
 
             <!-- Сепаратор -->
             <div class="separator-up"></div>
@@ -313,20 +240,17 @@
                 <a>&copy; Первый бытовой, 2024</a>
             </div>
         </div>
-
 <script src="js/loadlinks.js"></script>
 <script src="js/HeaderMain.js"></script>
 <script src="js/ButtonAdress.js"></script>
-<script src="js/ReadCategory.js"></script>
 <script src="js/LoadPage.js"></script>
 <script src="js/MainPageLoad.js"></script>
 <script src="js/MobileCatalogButton.js"></script>
-<script src="js/FiltersBox.js"></script>
-<script src="js/SpecialFilters.js"></script>
-<script src="js/FilterButtonActive.js"></script>
 <script src="js/TechnicalWorks.js"></script>
-<script src="js/firstloadonpage.js"></script>
+<script src="js/loadproduct.js"></script>
+<script src="js/updateproduct.js"></script>
 <script src="js/search.js"></script>
-    
+<script src="js/return.js"></script>
+
 </body>
 </html>

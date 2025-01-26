@@ -15,12 +15,12 @@ namespace DiscontMarket.Services.Services.Interfaces
         Task<IBaseResponse<bool>> DeleteUserByIdAsync(uint userId);
 
         Task<IBaseResponse<string>> GetAdminsEmail();
+        
+        Task<IBaseResponse<UserData>> GetUserData();
 
-        Task<IBaseResponse<string>> UpdateAdminsEmail(string email);
-        Task<IBaseResponse<string>> UpdateAdminsNumber(string email);
-        Task<IBaseResponse<string>> UpdateAdminsWhatsApp(string email);
-        Task<IBaseResponse<string>> UpdateAdminsTelegram(string email);
-        Task<IBaseResponse<string>> UpdateAdminsVk(string email);
+        Task<IBaseResponse<string>> UpdateAdminProperty<T>(Func<User, T> propertySelector,
+            Action<User, T> propertyUpdater, T newValue);
+
 
     }
 }

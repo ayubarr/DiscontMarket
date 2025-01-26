@@ -23,7 +23,14 @@ namespace DiscontMarket.DAL.SqlServer.Configuration
                e => e.ClientsVk,
                e => e.ClientsTelegram,
                e => e.ClientsWhatsapp,
-               e => e.PhoneNumber);
+               e => e.PhoneNumber,
+               e => e.SupportContacts,
+               e => e.WorkTimeInfo,
+               e => e.ReturnsText,
+               e => e.TextAdress,
+               e => e.HrefAdress,
+               e => e.HrefmapAdress,
+               e => e.ContactInfoText);
         }
     }    
 }
