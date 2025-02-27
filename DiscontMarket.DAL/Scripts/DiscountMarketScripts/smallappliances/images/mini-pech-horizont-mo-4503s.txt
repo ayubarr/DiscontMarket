@@ -1,0 +1,4 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-horizont-mo-4503s_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Horizont MO-4503S'));

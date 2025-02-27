@@ -1,0 +1,50 @@
+﻿INSERT INTO "Products" 
+("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription",
+"Availability", "Status", "CategoryID", "BrandID", "UserID") 
+VALUES
+ ('Телевизор Garlyn 43GTV1QLED', 41995, 19, '/items/productimages/televizor-garlyn-43gtv1qled_0.png', 4.48, '', 'Телевизор Garlyn 43GTV1QLED оснащен 43-дюймовым экраном с матрицей VA, созданным по технологии QLED. Его разрешение — 3840х2160 Пикс. Модель поддерживает решение HDR, которое улучшает цветопередачу. Операционная система WebOS обеспечивает простое управление и удобный поиск контента. В комплект входит пульт ДУ, можно использовать голосовые команды. Предусмотрена поддержка Smart TV. За подключение внешних устройств и носителей информации отвечают интерфейсы HDMI и порты USB. Телевизор можно установить на настольную подставку, которая входит в комплект.', 'InStock', 'Discount', 1, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Garlyn'), 1);
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Garlyn 43GTV1QLED'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '4K Ultra HD (3840x2160 Пикс)' AND "Type" = 'Экран));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Garlyn 43GTV1QLED'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '43' AND "Type" = 'Диагональ));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Garlyn 43GTV1QLED'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '60' AND "Type" = 'Частота обновления));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Garlyn 43GTV1QLED'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'QLED' AND "Type" = 'Технология экрана));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Garlyn 43GTV1QLED'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'Direct LED' AND "Type" = 'Тип светодиодной подсветки));
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-garlyn-43gtv1qled_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Garlyn 43GTV1QLED'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-garlyn-43gtv1qled_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Garlyn 43GTV1QLED'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-garlyn-43gtv1qled_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Garlyn 43GTV1QLED'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-garlyn-43gtv1qled_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Garlyn 43GTV1QLED'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-garlyn-43gtv1qled_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Garlyn 43GTV1QLED'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-garlyn-43gtv1qled_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Garlyn 43GTV1QLED'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-garlyn-43gtv1qled_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Garlyn 43GTV1QLED'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-garlyn-43gtv1qled_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Garlyn 43GTV1QLED'));

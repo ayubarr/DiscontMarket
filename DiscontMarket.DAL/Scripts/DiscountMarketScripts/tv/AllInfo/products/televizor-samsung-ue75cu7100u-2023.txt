@@ -1,0 +1,67 @@
+﻿INSERT INTO "Products" 
+("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription",
+"Availability", "Status", "CategoryID", "BrandID", "UserID") 
+VALUES
+ ('Телевизор Samsung UE75CU7100U (2023)', 62499, 16, '/items/productimages/televizor-samsung-ue75cu7100u-2023_0.png', 4.82, '', 'Телевизор Samsung UE75CU7100U основан на процессоре Crystal 4K и ОС Tizen. Модель получила 75-дюймовую панель с частотой обновления 60 Гц. Прибор поддерживает технологию HDR, цифровое шумоподавление и Smart TV. За чистое звучание отвечает акустика Dolby Digital Plus мощностью 20 Вт. Благодаря встроенным модулям Bluetooth и Wi-Fi можно управлять устройством при помощи смартфона.
+
+На корпусе телевизора расположились разъемы HDMI в количестве трех штук, USB-порт, LAN и DVB CAM. Аппарат получил настольную подставку и поддержку крепления VESA 400х400 для настенного монтажа. Допускается воспроизведение с USB-носителя.', 'InStock', 'Discount', 1, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Samsung'), 1);
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung UE75CU7100U (2023)'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '4K Ultra HD (3840x2160 Пикс)' AND "Type" = 'Экран));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung UE75CU7100U (2023)'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '75' AND "Type" = 'Диагональ));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung UE75CU7100U (2023)'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '60' AND "Type" = 'Частота обновления));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung UE75CU7100U (2023)'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'LED' AND "Type" = 'Технология экрана));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung UE75CU7100U (2023)'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'Edge LED' AND "Type" = 'Тип светодиодной подсветки));
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-samsung-ue75cu7100u-2023_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung UE75CU7100U (2023)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-samsung-ue75cu7100u-2023_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung UE75CU7100U (2023)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-samsung-ue75cu7100u-2023_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung UE75CU7100U (2023)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-samsung-ue75cu7100u-2023_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung UE75CU7100U (2023)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-samsung-ue75cu7100u-2023_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung UE75CU7100U (2023)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-samsung-ue75cu7100u-2023_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung UE75CU7100U (2023)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-samsung-ue75cu7100u-2023_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung UE75CU7100U (2023)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-samsung-ue75cu7100u-2023_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung UE75CU7100U (2023)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-samsung-ue75cu7100u-2023_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung UE75CU7100U (2023)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-samsung-ue75cu7100u-2023_9.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung UE75CU7100U (2023)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-samsung-ue75cu7100u-2023_10.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung UE75CU7100U (2023)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-samsung-ue75cu7100u-2023_11.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung UE75CU7100U (2023)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-samsung-ue75cu7100u-2023_12.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung UE75CU7100U (2023)'));

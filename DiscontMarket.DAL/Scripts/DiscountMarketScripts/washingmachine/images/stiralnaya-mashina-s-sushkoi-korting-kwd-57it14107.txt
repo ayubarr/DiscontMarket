@@ -1,0 +1,28 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-s-sushkoi-korting-kwd-57it14107_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина с сушкой Korting KWD 57IT14107'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-s-sushkoi-korting-kwd-57it14107_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина с сушкой Korting KWD 57IT14107'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-s-sushkoi-korting-kwd-57it14107_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина с сушкой Korting KWD 57IT14107'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-s-sushkoi-korting-kwd-57it14107_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина с сушкой Korting KWD 57IT14107'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-s-sushkoi-korting-kwd-57it14107_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина с сушкой Korting KWD 57IT14107'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-s-sushkoi-korting-kwd-57it14107_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина с сушкой Korting KWD 57IT14107'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-s-sushkoi-korting-kwd-57it14107_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина с сушкой Korting KWD 57IT14107'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-s-sushkoi-korting-kwd-57it14107_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина с сушкой Korting KWD 57IT14107'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-s-sushkoi-korting-kwd-57it14107_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина с сушкой Korting KWD 57IT14107'));

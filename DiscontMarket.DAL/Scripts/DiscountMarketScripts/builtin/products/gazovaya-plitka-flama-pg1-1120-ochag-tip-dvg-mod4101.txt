@@ -1,0 +1,54 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Газовая плитка Flama ПГ1 1120 ОЧАГ тип DVG мод.4101', 2849, 16, '/items/productimages/gazovaya-plitka-flama-pg1-1120-ochag-tip-dvg-mod4101_0.png', 4.73, '', '', 'InStock', 'Discount', 4, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Flama'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Газовая плитка Flama ПГ1 1120 ОЧАГ тип DVG мод.4101'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Газовая плитка Flama ПГ1 1120 ОЧАГ тип DVG мод.4101' 
+        AND a."Name" = '1' 
+        AND a."Type" = 'Количество конфорок'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Газовая плитка Flama ПГ1 1120 ОЧАГ тип DVG мод.4101' 
+        AND a."Name" = 'эмалированная сталь' 
+        AND a."Type" = 'Материал варочной поверхности'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Газовая плитка Flama ПГ1 1120 ОЧАГ тип DVG мод.4101' 
+        AND a."Name" = 'стальная' 
+        AND a."Type" = 'Решетка'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Газовая плитка Flama ПГ1 1120 ОЧАГ тип DVG мод.4101' 
+        AND a."Name" = 'белый' 
+        AND a."Type" = 'Цвет'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/gazovaya-plitka-flama-pg1-1120-ochag-tip-dvg-mod4101_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Газовая плитка Flama ПГ1 1120 ОЧАГ тип DVG мод.4101'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/gazovaya-plitka-flama-pg1-1120-ochag-tip-dvg-mod4101_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Газовая плитка Flama ПГ1 1120 ОЧАГ тип DVG мод.4101'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/gazovaya-plitka-flama-pg1-1120-ochag-tip-dvg-mod4101_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Газовая плитка Flama ПГ1 1120 ОЧАГ тип DVG мод.4101'));

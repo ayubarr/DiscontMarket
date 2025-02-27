@@ -1,0 +1,72 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Встраиваемая посудомоечная машина 45 см Gorenje GV532E10W', 21999, 14, '/items/productimages/vstraivaemaya-posudomoechnaya-mashina-45-sm-gorenje-gv532e10w_0.png', 4.61, '', '<p>Встраиваемая посудомоечная машина 45 см Gorenje GV532E10W вмещает до девяти комплектов посуды. Узкая модель обладает шириной 44,8 см, высота и глубина стандартные и составляют 81,5 см и 55 см соответственно. Установка производится в нишу размерами 82x56x45 см. <br><br>• <strong>Пять программ</strong> <br>«Ежедневная», «Интенсивная», «Экономичная», «Быстрая» и «Предварительное ополаскивание» — можно подобрать оптимальный вариант в зависимости от типа загрязнения. <br><br>• <strong>Половинная загрузка</strong> <br>Экономит ресурсы при малом количестве посуды. <br><br>• <strong>Энергоэффективность класса А++</strong> <br>Расход электроэнергии за цикл составляет 0,8 кВт*ч, воды — 9 л. <br><br>Внутреннее оборудование состоит из двух коробов, оснащенных складными держателями для тарелок и полочками для чашек, и корзины для столовых приборов. Два разбрызгивателя S-образной формы равномерно охватывают все пространство моющей камеры. Верхний короб переставляется по высоте, что дает возможность адаптировать пространство под текущие нужды. Мощность подключения — 1760 Вт. Уровень шума при работе достигает 47 дБ. Безопасность обеспечивается системой защиты от протечек AquaStop.</p>', 'InStock', 'Discount', 28, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Gorenje'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 45 см Gorenje GV532E10W'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Встраиваемая посудомоечная машина 45 см Gorenje GV532E10W' 
+        AND a."Name" = '9' 
+        AND a."Type" = 'Расход воды за цикл'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Встраиваемая посудомоечная машина 45 см Gorenje GV532E10W' 
+        AND a."Name" = '9 комплектов' 
+        AND a."Type" = 'Максимальная вместимость'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Встраиваемая посудомоечная машина 45 см Gorenje GV532E10W' 
+        AND a."Name" = '5' 
+        AND a."Type" = 'Количество программ мойки'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Встраиваемая посудомоечная машина 45 см Gorenje GV532E10W' 
+        AND a."Name" = 'стандартный' 
+        AND a."Type" = 'Мотор'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Встраиваемая посудомоечная машина 45 см Gorenje GV532E10W' 
+        AND a."Name" = '82*56*45' 
+        AND a."Type" = 'Размер ниши, мм (В*Ш*Г)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-45-sm-gorenje-gv532e10w_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 45 см Gorenje GV532E10W'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-45-sm-gorenje-gv532e10w_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 45 см Gorenje GV532E10W'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-45-sm-gorenje-gv532e10w_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 45 см Gorenje GV532E10W'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-45-sm-gorenje-gv532e10w_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 45 см Gorenje GV532E10W'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-45-sm-gorenje-gv532e10w_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 45 см Gorenje GV532E10W'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-45-sm-gorenje-gv532e10w_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 45 см Gorenje GV532E10W'));

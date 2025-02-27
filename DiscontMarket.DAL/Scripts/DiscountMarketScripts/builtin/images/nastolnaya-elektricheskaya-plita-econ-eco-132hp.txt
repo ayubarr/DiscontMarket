@@ -1,0 +1,16 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/nastolnaya-elektricheskaya-plita-econ-eco-132hp_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Настольная электрическая плита Econ ECO-132HP'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/nastolnaya-elektricheskaya-plita-econ-eco-132hp_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Настольная электрическая плита Econ ECO-132HP'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/nastolnaya-elektricheskaya-plita-econ-eco-132hp_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Настольная электрическая плита Econ ECO-132HP'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/nastolnaya-elektricheskaya-plita-econ-eco-132hp_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Настольная электрическая плита Econ ECO-132HP'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/nastolnaya-elektricheskaya-plita-econ-eco-132hp_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Настольная электрическая плита Econ ECO-132HP'));

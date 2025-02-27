@@ -1,0 +1,61 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Микроволновая печь с грилем Gorenje Classico MO4250CLI', 8749, 10, '/items/productimages/mikrovolnovaya-pech-s-grilem-gorenje-classico-mo4250cli_0.png', 4.58, '', 'Gorenje MO4250CLI – функциональная микроволновая печь с увеличенным объемом камеры. Благодаря технологии STIRRER без поворотного стола волны равномерно распределяются, обеспечивая отличный вкус приготовленных блюд. 
+
+Попробуйте сделать омлет с овощами или испечь кекс за 10 минут! В этой печи можно использовать большую посуду – делайте несколько порций одновременно.  Подавайте блюда всегда горячими с помощью функции подогрева!
+
+Уникальный ретро-дизайн с роскошным золотым декором станет стильным акцентом на вашей кухне. Купите Gorenje MO4250CLI – готовьте легко и быстро!', 'InStock', 'Discount', 6, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Gorenje'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Микроволновая печь с грилем Gorenje Classico MO4250CLI'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Микроволновая печь с грилем Gorenje Classico MO4250CLI' 
+        AND a."Name" = '20' 
+        AND a."Type" = 'Полезный объем'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Микроволновая печь с грилем Gorenje Classico MO4250CLI' 
+        AND a."Name" = 'эмалированный металл' 
+        AND a."Type" = 'Внутреннее покрытие'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Микроволновая печь с грилем Gorenje Classico MO4250CLI' 
+        AND a."Name" = 'механический' 
+        AND a."Type" = 'Тип управления'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Микроволновая печь с грилем Gorenje Classico MO4250CLI' 
+        AND a."Name" = 'слоновая кость' 
+        AND a."Type" = 'Цвет'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Микроволновая печь с грилем Gorenje Classico MO4250CLI' 
+        AND a."Name" = '3' 
+        AND a."Type" = 'Количество ступеней мощности'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-s-grilem-gorenje-classico-mo4250cli_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь с грилем Gorenje Classico MO4250CLI'));

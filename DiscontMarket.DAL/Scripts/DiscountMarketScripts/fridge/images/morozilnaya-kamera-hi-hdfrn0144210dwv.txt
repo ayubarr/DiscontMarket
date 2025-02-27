@@ -1,0 +1,16 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-hi-hdfrn0144210dwv_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Hi HDFRN0144210DWV'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-hi-hdfrn0144210dwv_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Hi HDFRN0144210DWV'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-hi-hdfrn0144210dwv_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Hi HDFRN0144210DWV'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-hi-hdfrn0144210dwv_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Hi HDFRN0144210DWV'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-hi-hdfrn0144210dwv_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Hi HDFRN0144210DWV'));

@@ -1,0 +1,77 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Морозильная камера Бирюса 114', 12645, 12, '/items/productimages/morozilnaya-kamera-birusa-114_0.png', 4.5, '', 'Морозильная камера «Бирюса» 114 белого цвета со стандартным компрессором относится к климатическому классу N-ST. Модель объемом 130 л с хладагентом R 600a способна замораживать до 12 кг/сутки. Потребляемая мощность составляет 75 Вт. В год устройство с LED-освещением потребляет 223 кВт*ч электроэнергии, что соответствует А классу энергоэффективности. Тип управления — механический.
+
+Внутри встроено пять прозрачных пластиковых ящиков. Присутствует режим «Быстрая заморозка». Размораживание происходит вручную. Звуковой и световой сигналы сообщат о повышении температуры в камере. Хранение продуктов при отключении питания возможно до 10 ч. Металлические перенавешиваемые двери открываются направо. Максимальный уровень шума не превышает 41 дБ. Габаритные размеры — 122,5х60,5х48 см. Вес — 29 кг.', 'InStock', 'Discount', 3, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Бирюса'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Морозильная камера Бирюса 114'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Морозильная камера Бирюса 114' 
+        AND a."Name" = 'стандартный' 
+        AND a."Type" = 'Тип компрессора'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Морозильная камера Бирюса 114' 
+        AND a."Name" = '122.5*48*60.5 см' 
+        AND a."Type" = 'Габаритные размеры (В*Ш*Г)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Морозильная камера Бирюса 114' 
+        AND a."Name" = 'A' 
+        AND a."Type" = 'Класс энергоэффективности'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Морозильная камера Бирюса 114' 
+        AND a."Name" = 'Да' 
+        AND a."Type" = 'Режим суперзамораживания'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Морозильная камера Бирюса 114' 
+        AND a."Name" = 'механический' 
+        AND a."Type" = 'Тип управления'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-birusa-114_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Бирюса 114'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-birusa-114_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Бирюса 114'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-birusa-114_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Бирюса 114'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-birusa-114_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Бирюса 114'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-birusa-114_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Бирюса 114'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-birusa-114_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Бирюса 114'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-birusa-114_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Бирюса 114'));

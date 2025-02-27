@@ -1,0 +1,40 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-skyworth-50q66g_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор SKYWORTH 50Q66G'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-skyworth-50q66g_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор SKYWORTH 50Q66G'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-skyworth-50q66g_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор SKYWORTH 50Q66G'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-skyworth-50q66g_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор SKYWORTH 50Q66G'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-skyworth-50q66g_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор SKYWORTH 50Q66G'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-skyworth-50q66g_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор SKYWORTH 50Q66G'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-skyworth-50q66g_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор SKYWORTH 50Q66G'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-skyworth-50q66g_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор SKYWORTH 50Q66G'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-skyworth-50q66g_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор SKYWORTH 50Q66G'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-skyworth-50q66g_9.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор SKYWORTH 50Q66G'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-skyworth-50q66g_10.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор SKYWORTH 50Q66G'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-skyworth-50q66g_11.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор SKYWORTH 50Q66G'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-skyworth-50q66g_12.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор SKYWORTH 50Q66G'));

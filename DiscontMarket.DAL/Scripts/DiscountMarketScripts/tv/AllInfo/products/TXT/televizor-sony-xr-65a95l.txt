@@ -1,0 +1,49 @@
+﻿INSERT INTO "Products" 
+("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription",
+"Availability", "Status", "CategoryID", "BrandID", "UserID") 
+VALUES
+ ('Телевизор Sony XR-65A95L', 249995, 12, '/items/productimages/televizor-sony-xr-65a95l_0.png', 4.66, '', 'Телевизор Sony XR-65A95L серого цвета представлен в габаритных размерах 84х144х32 см. На стену устройство крепится через подвес VESA 300x300. Размеры без подставки — 83х144х4 см. Экран 16:9 выполнен по технологиям OLED, HDR с диагональю 165 см. Разрешение Ultra HD составляет 3840х2160 пикс. Частота обновления — 120 Гц. Цифровое шумоподавление позволяет снизить помехи. Мощность низкочастотных АС — 60 Вт. Устройство мощностью 275 Вт работает на операционной системе Google TV.
+
+Предусмотрены поддержка Smart TV, Sleep-таймер, голосовое управление с помощником Google Assistant. Встроен Wi-Fi и Bluetooth, который позволяет использовать смартфон в качестве пульта ДУ. Защита от детей заблокирует кнопки и исключит доступ к нежелательному контенту. Цифровой тюнер DVB представлен в форматах: T/T2/C/C2/S/S2. Разъемы для подключения дополнительных устройств: вход HDMI 2.1 и 2.0 (четыре); порт USB 2.0 тип A (два); LAN-разъем (RJ45). Вес равен 31 кг с подставкой и 27 кг без подставки.', 'InStock', 'Discount', 1, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Sony'), 1);
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Sony XR-65A95L'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '4K Ultra HD (3840x2160 Пикс)' AND "Type" = 'Экран));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Sony XR-65A95L'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '65' AND "Type" = 'Диагональ));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Sony XR-65A95L'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '120' AND "Type" = 'Частота обновления));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Sony XR-65A95L'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'OLED' AND "Type" = 'Технология экрана));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Sony XR-65A95L'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'OLED' AND "Type" = 'Тип светодиодной подсветки));
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-sony-xr-65a95l_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Sony XR-65A95L'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-sony-xr-65a95l_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Sony XR-65A95L'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-sony-xr-65a95l_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Sony XR-65A95L'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-sony-xr-65a95l_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Sony XR-65A95L'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-sony-xr-65a95l_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Sony XR-65A95L'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-sony-xr-65a95l_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Sony XR-65A95L'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-sony-xr-65a95l_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Sony XR-65A95L'));

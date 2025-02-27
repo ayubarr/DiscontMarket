@@ -1,0 +1,69 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Холодильник Samsung RT35K5440S8 нержавеющая сталь', 44999, 14, '/items/productimages/holodilnik-samsung-rt35k5440s8-nerzhaveushhaya-stal_0.png', 4.94, '', 'Холодильник Samsung RT35K5440S8 с камерой, которая вмещает 273 л. Для размещения продуктов предусмотрены три полки. Они изготовлены из закаленного стекла, поэтому не требуют сложного ухода и легко отмываются от загрязнений. Мясные и сырные нарезки можно хранить в зоне свежести. Морозильная камера объемом 89 л предусматривает один ящик для удобного разделения мясных изделий. Модель работает с комфортным шумом 39 дБ. Система No Frost делает комфортной эксплуатацию прибора. Благодаря высокому классу энергоэффективности А+ он экономит расход электроэнергии.', 'InStock', 'Discount', 3, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Samsung'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Холодильник Samsung RT35K5440S8 нержавеющая сталь'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Samsung RT35K5440S8 нержавеющая сталь' 
+        AND a."Name" = 'инверторный' 
+        AND a."Type" = 'Тип компрессора'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Samsung RT35K5440S8 нержавеющая сталь' 
+        AND a."Name" = '67.5' 
+        AND a."Type" = 'Ширина'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Samsung RT35K5440S8 нержавеющая сталь' 
+        AND a."Name" = '71.5' 
+        AND a."Type" = 'Глубина'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Samsung RT35K5440S8 нержавеющая сталь' 
+        AND a."Name" = '171.5' 
+        AND a."Type" = 'Высота'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Samsung RT35K5440S8 нержавеющая сталь' 
+        AND a."Name" = '362' 
+        AND a."Type" = 'Общий объем'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-samsung-rt35k5440s8-nerzhaveushhaya-stal_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Samsung RT35K5440S8 нержавеющая сталь'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-samsung-rt35k5440s8-nerzhaveushhaya-stal_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Samsung RT35K5440S8 нержавеющая сталь'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-samsung-rt35k5440s8-nerzhaveushhaya-stal_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Samsung RT35K5440S8 нержавеющая сталь'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-samsung-rt35k5440s8-nerzhaveushhaya-stal_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Samsung RT35K5440S8 нержавеющая сталь'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-samsung-rt35k5440s8-nerzhaveushhaya-stal_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Samsung RT35K5440S8 нержавеющая сталь'));

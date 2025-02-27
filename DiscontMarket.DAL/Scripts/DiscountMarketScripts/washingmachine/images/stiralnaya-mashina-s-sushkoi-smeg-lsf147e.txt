@@ -1,0 +1,19 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-s-sushkoi-smeg-lsf147e_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина с сушкой Smeg LSF147E'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-s-sushkoi-smeg-lsf147e_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина с сушкой Smeg LSF147E'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-s-sushkoi-smeg-lsf147e_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина с сушкой Smeg LSF147E'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-s-sushkoi-smeg-lsf147e_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина с сушкой Smeg LSF147E'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-s-sushkoi-smeg-lsf147e_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина с сушкой Smeg LSF147E'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-s-sushkoi-smeg-lsf147e_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина с сушкой Smeg LSF147E'));

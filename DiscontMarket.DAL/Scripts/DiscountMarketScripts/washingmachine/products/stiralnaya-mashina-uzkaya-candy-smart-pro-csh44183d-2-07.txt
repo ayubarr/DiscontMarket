@@ -1,0 +1,86 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Стиральная машина узкая Candy Smart Pro CSH44183D/2-07', 18499, 16, '/items/productimages/stiralnaya-mashina-uzkaya-candy-smart-pro-csh44183d-2-07_0.png', 4.7, '', 'Стиральная машина Candy Smart Pro CSH44183D/2-07 глубиной 44 см поместится даже в небольшую ванную комнату. Модель вмещает до 8 кг белья и оснащена 16 режимами стирки, в том числе для хлопка, синтетики, шерсти. 
+
+• <b>Обработка паром</b> 
+Режим с паром позволяет уничтожить 99% бактерий, убрать неприятные запахи, в том числе внутри барабана. 
+
+• <b>Таймер</b> 
+Отсрочка старта на 24 часа позволяет запускать машину в удобное время, в том числе ночью. 
+
+Максимальная скорость отжима составляет 1200 об/мин (регулируется). Уровень шума при стирке не превышает 51 дБ и 75 дБ при отжиме. Управление осуществляется при помощи поворотного регулятора и кнопок. Дисплей отображает остаток времени до конца стирки. Панель управления блокируется от случайного нажатия.', 'InStock', 'Discount', 5, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Candy'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая Candy Smart Pro CSH44183D/2-07'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина узкая Candy Smart Pro CSH44183D/2-07' 
+        AND a."Name" = '8' 
+        AND a."Type" = 'Максимальная загрузка'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина узкая Candy Smart Pro CSH44183D/2-07' 
+        AND a."Name" = '1200' 
+        AND a."Type" = 'Максимальная скорость отжима'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина узкая Candy Smart Pro CSH44183D/2-07' 
+        AND a."Name" = 'стандартный' 
+        AND a."Type" = 'Мотор'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина узкая Candy Smart Pro CSH44183D/2-07' 
+        AND a."Name" = 'Да' 
+        AND a."Type" = 'Обработка паром'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина узкая Candy Smart Pro CSH44183D/2-07' 
+        AND a."Name" = '85*60*49.3 см' 
+        AND a."Type" = 'Габаритные размеры (В*Ш*Г)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-uzkaya-candy-smart-pro-csh44183d-2-07_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая Candy Smart Pro CSH44183D/2-07'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-uzkaya-candy-smart-pro-csh44183d-2-07_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая Candy Smart Pro CSH44183D/2-07'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-uzkaya-candy-smart-pro-csh44183d-2-07_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая Candy Smart Pro CSH44183D/2-07'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-uzkaya-candy-smart-pro-csh44183d-2-07_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая Candy Smart Pro CSH44183D/2-07'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-uzkaya-candy-smart-pro-csh44183d-2-07_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая Candy Smart Pro CSH44183D/2-07'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-uzkaya-candy-smart-pro-csh44183d-2-07_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая Candy Smart Pro CSH44183D/2-07'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-uzkaya-candy-smart-pro-csh44183d-2-07_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая Candy Smart Pro CSH44183D/2-07'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-uzkaya-candy-smart-pro-csh44183d-2-07_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая Candy Smart Pro CSH44183D/2-07'));

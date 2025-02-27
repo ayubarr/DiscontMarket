@@ -1,0 +1,19 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-samsung-ue85cu7100uxce_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung UE85CU7100UXCE'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-samsung-ue85cu7100uxce_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung UE85CU7100UXCE'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-samsung-ue85cu7100uxce_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung UE85CU7100UXCE'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-samsung-ue85cu7100uxce_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung UE85CU7100UXCE'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-samsung-ue85cu7100uxce_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung UE85CU7100UXCE'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-samsung-ue85cu7100uxce_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung UE85CU7100UXCE'));

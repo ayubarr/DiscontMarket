@@ -1,0 +1,13 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnyi-lar-aucma-bd-206gex_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильный ларь Aucma BD-206GEX'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnyi-lar-aucma-bd-206gex_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильный ларь Aucma BD-206GEX'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnyi-lar-aucma-bd-206gex_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильный ларь Aucma BD-206GEX'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnyi-lar-aucma-bd-206gex_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильный ларь Aucma BD-206GEX'));

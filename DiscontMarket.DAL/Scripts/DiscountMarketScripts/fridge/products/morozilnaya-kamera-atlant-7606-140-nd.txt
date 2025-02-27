@@ -1,0 +1,87 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Морозильная камера ATLANT 7606-140 ND', 27395, 13, '/items/productimages/morozilnaya-kamera-atlant-7606-140-nd_0.png', 4.31, '', '', 'InStock', 'Discount', 3, (SELECT "ID" FROM "Brands" WHERE "Name" = 'ATLANT'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Морозильная камера ATLANT 7606-140 ND'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Морозильная камера ATLANT 7606-140 ND' 
+        AND a."Name" = 'стандартный' 
+        AND a."Type" = 'Тип компрессора'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Морозильная камера ATLANT 7606-140 ND' 
+        AND a."Name" = '186.8*59.5*62.9 см' 
+        AND a."Type" = 'Габаритные размеры (В*Ш*Г)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Морозильная камера ATLANT 7606-140 ND' 
+        AND a."Name" = 'A+' 
+        AND a."Type" = 'Класс энергоэффективности'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Морозильная камера ATLANT 7606-140 ND' 
+        AND a."Name" = 'Да' 
+        AND a."Type" = 'Режим суперзамораживания'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Морозильная камера ATLANT 7606-140 ND' 
+        AND a."Name" = 'электронный' 
+        AND a."Type" = 'Тип управления'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-atlant-7606-140-nd_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера ATLANT 7606-140 ND'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-atlant-7606-140-nd_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера ATLANT 7606-140 ND'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-atlant-7606-140-nd_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера ATLANT 7606-140 ND'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-atlant-7606-140-nd_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера ATLANT 7606-140 ND'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-atlant-7606-140-nd_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера ATLANT 7606-140 ND'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-atlant-7606-140-nd_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера ATLANT 7606-140 ND'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-atlant-7606-140-nd_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера ATLANT 7606-140 ND'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-atlant-7606-140-nd_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера ATLANT 7606-140 ND'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-atlant-7606-140-nd_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера ATLANT 7606-140 ND'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-atlant-7606-140-nd_9.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера ATLANT 7606-140 ND'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-atlant-7606-140-nd_10.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера ATLANT 7606-140 ND'));

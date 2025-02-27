@@ -1,0 +1,69 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Стиральная машина узкая Indesit IWSD 51051 CIS', 12499, 11, '/items/productimages/stiralnaya-mashina-uzkaya-indesit-iwsd-51051-cis_0.png', 4.95, '', 'Узкая стиральная машина Indesit IWSD 51051 CIS из серии Eco Time хорошо подходит для небольших квартир и обеспечивает высокое качество стирки.
+
+ПРОСТОЕ УПРАВЛЕНИЕ
+В этой модели реализована несложная механическо-электронная система управления. Владелец легко может выбрать нужную программу или задать параметры при помощи удобных переключателей и кнопок, а информация выводится на цифровой дисплей.
+
+ФУНКЦИЯ Eco Time
+Функцией Eco Time можно воспользоваться для стирки до 3 кг белья. Она позволяет ускорить стирку на 30 %, а также снизить расходы воды и электроэнергии на 40 % относительно расхода, характерного для обычного цикла.
+
+РЕЖИМЫ -СПОРТ- И -ДЖИНСЫ-
+Стиральная машина оснащена рядом специальных программ, предназначенных для эффективной стирки определённых видов одежды. В частности, предусмотрены режимы для стирки спортивной одежды, а также вещей из джинсовой ткани.
+
+ОТЛОЖЕННЫЙ СТАРТ
+Функция -Отложенный старт- с таймером, рассчитанным на срок до 24 часов, позволяет выбрать время стирки, наиболее удобное для владельца. Достаточно загрузить вещи, выбрать программу и установить время, после чего стирка начнётся автоматически.', 'InStock', 'Discount', 5, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Indesit'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая Indesit IWSD 51051 CIS'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина узкая Indesit IWSD 51051 CIS' 
+        AND a."Name" = '5' 
+        AND a."Type" = 'Максимальная загрузка'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина узкая Indesit IWSD 51051 CIS' 
+        AND a."Name" = '1000' 
+        AND a."Type" = 'Максимальная скорость отжима'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина узкая Indesit IWSD 51051 CIS' 
+        AND a."Name" = 'стандартный' 
+        AND a."Type" = 'Мотор'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина узкая Indesit IWSD 51051 CIS' 
+        AND a."Name" = '85*59.5*42 см' 
+        AND a."Type" = 'Габаритные размеры (В*Ш*Г)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина узкая Indesit IWSD 51051 CIS' 
+        AND a."Name" = 'дополнительная опция' 
+        AND a."Type" = 'Тип защиты от протечек'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-uzkaya-indesit-iwsd-51051-cis_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая Indesit IWSD 51051 CIS'));

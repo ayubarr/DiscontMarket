@@ -1,0 +1,84 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Встраиваемая посудомоечная машина 45 см Bosch SPV4HMX55Q', 32495, 12, '/items/productimages/vstraivaemaya-posudomoechnaya-mashina-45-sm-bosch-spv4hmx55q_0.png', 4.53, '', '', 'InStock', 'Discount', 28, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Bosch'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 45 см Bosch SPV4HMX55Q'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Встраиваемая посудомоечная машина 45 см Bosch SPV4HMX55Q' 
+        AND a."Name" = '9.5' 
+        AND a."Type" = 'Расход воды за цикл'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Встраиваемая посудомоечная машина 45 см Bosch SPV4HMX55Q' 
+        AND a."Name" = '10 комплектов' 
+        AND a."Type" = 'Максимальная вместимость'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Встраиваемая посудомоечная машина 45 см Bosch SPV4HMX55Q' 
+        AND a."Name" = '6' 
+        AND a."Type" = 'Количество программ мойки'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Встраиваемая посудомоечная машина 45 см Bosch SPV4HMX55Q' 
+        AND a."Name" = 'инверторный' 
+        AND a."Type" = 'Мотор'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Встраиваемая посудомоечная машина 45 см Bosch SPV4HMX55Q' 
+        AND a."Name" = '815-875x450x550' 
+        AND a."Type" = 'Размер ниши, мм (В*Ш*Г)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-45-sm-bosch-spv4hmx55q_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 45 см Bosch SPV4HMX55Q'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-45-sm-bosch-spv4hmx55q_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 45 см Bosch SPV4HMX55Q'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-45-sm-bosch-spv4hmx55q_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 45 см Bosch SPV4HMX55Q'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-45-sm-bosch-spv4hmx55q_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 45 см Bosch SPV4HMX55Q'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-45-sm-bosch-spv4hmx55q_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 45 см Bosch SPV4HMX55Q'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-45-sm-bosch-spv4hmx55q_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 45 см Bosch SPV4HMX55Q'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-45-sm-bosch-spv4hmx55q_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 45 см Bosch SPV4HMX55Q'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-45-sm-bosch-spv4hmx55q_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 45 см Bosch SPV4HMX55Q'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-45-sm-bosch-spv4hmx55q_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 45 см Bosch SPV4HMX55Q'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-45-sm-bosch-spv4hmx55q_9.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 45 см Bosch SPV4HMX55Q'));

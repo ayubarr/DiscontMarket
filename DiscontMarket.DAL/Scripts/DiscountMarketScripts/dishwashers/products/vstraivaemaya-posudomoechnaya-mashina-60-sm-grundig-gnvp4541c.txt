@@ -1,0 +1,79 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Встраиваемая посудомоечная машина 60 см Grundig GNVP4541C', 45499, 5, '/items/productimages/vstraivaemaya-posudomoechnaya-mashina-60-sm-grundig-gnvp4541c_0.png', 4.2, '', 'Встраиваемая посудомоечная машина Grundig GNVP4541C шириной 60 см оснащена инверторным двигателем, снижающим уровень шума и вибрации и отличающимся долговечностью. Вместимость модели составляет до 16 комплектов посуды, предусмотрено восемь режимов мытья: интенсивный, быстрый, для стекла, автоматический, экономичный, гигиена, предварительное ополаскивание, 30 минутная программа. 
+
+Загружать можно половинной количество посуды: это позволяет не копить кухонную утварь и мыть по мере необходимости. Любую программу можно отрегулировать и сократить по времени. Таймер на 24 час позволяет задавать запуск в удобное время. Расход воды за цикл не превышает 9,5 л, электроэнергии — 0,86 кВт*ч. 
+
+Внутренняя поверхность из нержавеющей стали устойчива к ржавчине, не впитывает запахи. По окончании мыться на полу высвечивается луч. Панель управления сенсорная, ее можно заблокировать от случайного нажатия. Модель оснащена дисплеем, показывающим время до конца программы, и системой защиты от протечек. В комплекте поставляется воронка для засыпания соли. Вес посудомоечной машины — 40,5 кг.', 'InStock', 'Discount', 28, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Grundig'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 60 см Grundig GNVP4541C'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Встраиваемая посудомоечная машина 60 см Grundig GNVP4541C' 
+        AND a."Name" = '9.5' 
+        AND a."Type" = 'Расход воды за цикл'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Встраиваемая посудомоечная машина 60 см Grundig GNVP4541C' 
+        AND a."Name" = '16 комплектов' 
+        AND a."Type" = 'Максимальная вместимость'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Встраиваемая посудомоечная машина 60 см Grundig GNVP4541C' 
+        AND a."Name" = '8' 
+        AND a."Type" = 'Количество программ мойки'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Встраиваемая посудомоечная машина 60 см Grundig GNVP4541C' 
+        AND a."Name" = 'инверторный' 
+        AND a."Type" = 'Мотор'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Встраиваемая посудомоечная машина 60 см Grundig GNVP4541C' 
+        AND a."Name" = '818*598*550' 
+        AND a."Type" = 'Размер ниши, мм (В*Ш*Г)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-60-sm-grundig-gnvp4541c_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 60 см Grundig GNVP4541C'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-60-sm-grundig-gnvp4541c_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 60 см Grundig GNVP4541C'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-60-sm-grundig-gnvp4541c_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 60 см Grundig GNVP4541C'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-60-sm-grundig-gnvp4541c_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 60 см Grundig GNVP4541C'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-60-sm-grundig-gnvp4541c_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 60 см Grundig GNVP4541C'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-60-sm-grundig-gnvp4541c_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 60 см Grundig GNVP4541C'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-60-sm-grundig-gnvp4541c_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 60 см Grundig GNVP4541C'));

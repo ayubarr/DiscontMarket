@@ -1,0 +1,16 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-hi-m020b06_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло Hi M020B06'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-hi-m020b06_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло Hi M020B06'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-hi-m020b06_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло Hi M020B06'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-hi-m020b06_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло Hi M020B06'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-hi-m020b06_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло Hi M020B06'));

@@ -1,0 +1,75 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Встраиваемая посудомоечная машина 60 см Maunfeld MLP-12IMRO', 38995, 6, '/items/productimages/vstraivaemaya-posudomoechnaya-mashina-60-sm-maunfeld-mlp-12imro_0.png', 4.61, '', 'Встраиваемая посудомоечная машина Maunfeld MLP-12IMRO белого цвета подходит для встраивания в нишу шириной 60 см и вмещает до 14 комплектов посуды. Корпус изготовлен из металла. Есть функция неполной загрузки. Расход воды за цикл составляет 9,9 л. Потребление электроэнергии за один цикл — 0,83 кВт*ч. У модели управление при помощи сенсорных кнопок, встроен цифровой дисплей. Световая индикация отображает режим работы, позволяет контролировать наличие моющих средств. Об отсутствии подачи воды также известит световой индикатор. Есть восемь программ мойки. Время работы мини-программы составляет 30 минут. Минимальный температурный режим работы — +45°C, максимальный — +70°C. Доступна функция отложенного старта до 24 часов.
+Модель оснащена тремя корзинами с регулировкой высоты, в том числе корзиной для столовых приборов. Сушка конденсационная. О завершении работы уведомят звуковой сигнал, световая индикация «Луч на полу» и автоматическое открывание двери.
+Возможно использование таблеток и моющих средств «3 в 1». Есть система защиты от протечек «Аквастоп». Машина выполнена с использованием системы VortexWash, дополнительный разбрызгиватель обеспечивает интенсивную чистку в специальной зоне нижней полки.
+Уровень шума достигает 44 дБ. В комплекте: выдвижной лоток для столовых приборов, воронка для засыпания соли. Габариты составляют 59,8x55х81,5 см. Вес — 39,6 кг.', 'InStock', 'Discount', 28, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Maunfeld'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 60 см Maunfeld MLP-12IMRO'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Встраиваемая посудомоечная машина 60 см Maunfeld MLP-12IMRO' 
+        AND a."Name" = '10' 
+        AND a."Type" = 'Расход воды за цикл'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Встраиваемая посудомоечная машина 60 см Maunfeld MLP-12IMRO' 
+        AND a."Name" = '14 комплектов' 
+        AND a."Type" = 'Максимальная вместимость'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Встраиваемая посудомоечная машина 60 см Maunfeld MLP-12IMRO' 
+        AND a."Name" = '9' 
+        AND a."Type" = 'Количество программ мойки'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Встраиваемая посудомоечная машина 60 см Maunfeld MLP-12IMRO' 
+        AND a."Name" = 'стандартный' 
+        AND a."Type" = 'Мотор'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Встраиваемая посудомоечная машина 60 см Maunfeld MLP-12IMRO' 
+        AND a."Name" = '82*60*58 см' 
+        AND a."Type" = 'Размер ниши, мм (В*Ш*Г)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-60-sm-maunfeld-mlp-12imro_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 60 см Maunfeld MLP-12IMRO'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-60-sm-maunfeld-mlp-12imro_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 60 см Maunfeld MLP-12IMRO'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-60-sm-maunfeld-mlp-12imro_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 60 см Maunfeld MLP-12IMRO'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-60-sm-maunfeld-mlp-12imro_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 60 см Maunfeld MLP-12IMRO'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-60-sm-maunfeld-mlp-12imro_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 60 см Maunfeld MLP-12IMRO'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-60-sm-maunfeld-mlp-12imro_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 60 см Maunfeld MLP-12IMRO'));

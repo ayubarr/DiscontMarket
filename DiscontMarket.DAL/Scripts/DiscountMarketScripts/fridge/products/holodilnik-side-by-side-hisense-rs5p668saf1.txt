@@ -1,0 +1,91 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Холодильник (Side-by-Side) Hisense RS5P668SAF1', 80499, 18, '/items/productimages/holodilnik-side-by-side-hisense-rs5p668saf1_0.png', 4.98, '', 'Холодильник Side-by-Side Hisense RS5P668SAF1, серый, обладает общим объемом 688 л и габаритами 179,5х91х71,7 см. Вес прибора — 100 кг. 
+
+• <b>Технология No Frost Plus</b> 
+Предотвращает образования инея на стенках и продуктах, избавляет от хлопот, связанных с ручным размораживанием. 
+
+• <b>Metal Tech Cooling</b> 
+Задняя внутренняя стенка оснащена металлической панелью. Это позволяет более эффективно поддерживать температуру и быстрее выравнивать ее после открывания двери. 
+
+• <b>Инверторный компрессор</b> 
+Отличается надежностью, долговечностью и сниженным потреблением электроэнергии. Энергопотребление соответствует классу А и составляет 476 кВт*ч в год. Уровень шума не превышает 39 дБ. 
+
+Холодильная камера оборудована четырьмя стеклянными полками, четырьмя дверными карманами и двумя контейнерами для фруктов и овощей. В морозильном отделении — шесть полок, два выдвижных ящика и четыре дверных кармана. В сутки можно заморозить до 13 кг продуктов. В холодильнике используется яркое и экономичное светодиодное освещение, которое не влияет на внутренний микроклимат и долго не требует замены. 
+
+Управление электронное, на фасадной стороне расположен сенсорный дисплей. Поддерживается несколько специальных режимов работы, среди которых быстрое охлаждение и быстрое замораживание, которые пригодятся при крупной загрузке. О непредусмотренном повышении температуры и слишком долго открытой двери оповещает звуковой сигнал. Холодильником можно управлять и со смартфона, связь производится по Wi-Fi.', 'InStock', 'Discount', 3, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Hisense'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Холодильник (Side-by-Side) Hisense RS5P668SAF1'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник (Side-by-Side) Hisense RS5P668SAF1' 
+        AND a."Name" = 'инверторный' 
+        AND a."Type" = 'Тип компрессора'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник (Side-by-Side) Hisense RS5P668SAF1' 
+        AND a."Name" = '179.5*91*71.7 см' 
+        AND a."Type" = 'Габаритные размеры (В*Ш*Г)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник (Side-by-Side) Hisense RS5P668SAF1' 
+        AND a."Name" = '688' 
+        AND a."Type" = 'Общий объем'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник (Side-by-Side) Hisense RS5P668SAF1' 
+        AND a."Name" = 'влажная/сухая' 
+        AND a."Type" = 'Тип зоны сохранения свежести'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник (Side-by-Side) Hisense RS5P668SAF1' 
+        AND a."Name" = 'со смартфона/электронный' 
+        AND a."Type" = 'Тип управления'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-side-by-side-hisense-rs5p668saf1_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник (Side-by-Side) Hisense RS5P668SAF1'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-side-by-side-hisense-rs5p668saf1_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник (Side-by-Side) Hisense RS5P668SAF1'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-side-by-side-hisense-rs5p668saf1_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник (Side-by-Side) Hisense RS5P668SAF1'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-side-by-side-hisense-rs5p668saf1_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник (Side-by-Side) Hisense RS5P668SAF1'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-side-by-side-hisense-rs5p668saf1_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник (Side-by-Side) Hisense RS5P668SAF1'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-side-by-side-hisense-rs5p668saf1_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник (Side-by-Side) Hisense RS5P668SAF1'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-side-by-side-hisense-rs5p668saf1_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник (Side-by-Side) Hisense RS5P668SAF1'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-side-by-side-hisense-rs5p668saf1_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник (Side-by-Side) Hisense RS5P668SAF1'));

@@ -1,0 +1,93 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Встраиваемая посудомоечная машина Monsher MD 4501', 19995, 6, '/items/productimages/vstraivaemaya-posudomoechnaya-mashina-monsher-md-4501_0.png', 4.91, '', 'Встраиваемая посудомоечная машина Monsher MD 4501 — узкая модель габаритами 815х450х550 мм и весом 33,3 кг. За раз можно вымыть до девяти комплектов посуды. Уровней загрузки два, короба оснащены полочкой для чашек, держателями для тарелок, в комплект входит корзина для столовых приборов. Верхний короб регулируется по высоте. 
+Предустановлено пять программ: «Автоматическая», «Интенсивная», «Эко», «90 минут» и «Быстрая». Поддерживается половинная загрузка, которая позволит сэкономить ресурсы, если грязной посуды немного. 
+Панель управления кнопочная, встроенный дисплей отображает активный режим, светодиодные индикаторы — прочие параметры работы, включая необходимость добавить соль и ополаскиватель. Начать мойку в нужное время позволит таймер отложенного старта, который устанавливается на срок до 24 часов. Сушка производится конденсационным методом. 
+Мощность подключения составляет 2100 Вт. За цикл тратится 0,69 кВт*ч, что соответствует классу энергопотребления А. Расход воды за цикл — 10 л. Уровень шума при работе не превышает 49 дБ. Для установки посудомоечной машины требуется ниша размерами 82х45х58 см. Вес навешиваемого фасада не должен превышать 5 кг.', 'InStock', 'Discount', 28, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Monsher'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина Monsher MD 4501'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Встраиваемая посудомоечная машина Monsher MD 4501' 
+        AND a."Name" = '9' 
+        AND a."Type" = 'Расход воды за цикл'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Встраиваемая посудомоечная машина Monsher MD 4501' 
+        AND a."Name" = '9 комплектов' 
+        AND a."Type" = 'Максимальная вместимость'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Встраиваемая посудомоечная машина Monsher MD 4501' 
+        AND a."Name" = '5' 
+        AND a."Type" = 'Количество программ мойки'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Встраиваемая посудомоечная машина Monsher MD 4501' 
+        AND a."Name" = 'стандартный' 
+        AND a."Type" = 'Мотор'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Встраиваемая посудомоечная машина Monsher MD 4501' 
+        AND a."Name" = '820×450×580' 
+        AND a."Type" = 'Размер ниши, мм (В*Ш*Г)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-monsher-md-4501_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина Monsher MD 4501'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-monsher-md-4501_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина Monsher MD 4501'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-monsher-md-4501_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина Monsher MD 4501'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-monsher-md-4501_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина Monsher MD 4501'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-monsher-md-4501_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина Monsher MD 4501'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-monsher-md-4501_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина Monsher MD 4501'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-monsher-md-4501_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина Monsher MD 4501'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-monsher-md-4501_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина Monsher MD 4501'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-monsher-md-4501_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина Monsher MD 4501'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-monsher-md-4501_9.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина Monsher MD 4501'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-monsher-md-4501_10.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина Monsher MD 4501'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-monsher-md-4501_11.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина Monsher MD 4501'));

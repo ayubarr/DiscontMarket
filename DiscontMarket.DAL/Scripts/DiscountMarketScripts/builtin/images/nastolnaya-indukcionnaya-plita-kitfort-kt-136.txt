@@ -1,0 +1,19 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/nastolnaya-indukcionnaya-plita-kitfort-kt-136_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Настольная индукционная плита Kitfort КТ-136'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/nastolnaya-indukcionnaya-plita-kitfort-kt-136_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Настольная индукционная плита Kitfort КТ-136'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/nastolnaya-indukcionnaya-plita-kitfort-kt-136_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Настольная индукционная плита Kitfort КТ-136'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/nastolnaya-indukcionnaya-plita-kitfort-kt-136_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Настольная индукционная плита Kitfort КТ-136'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/nastolnaya-indukcionnaya-plita-kitfort-kt-136_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Настольная индукционная плита Kitfort КТ-136'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/nastolnaya-indukcionnaya-plita-kitfort-kt-136_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Настольная индукционная плита Kitfort КТ-136'));

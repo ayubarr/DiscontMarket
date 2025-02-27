@@ -1,0 +1,13 @@
+﻿
+        INSERT INTO "Brands" ("NameTranslate", "Name", "Type") 
+        SELECT 'Oursson', 'Oursson', 'Бренды'
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Brands" WHERE "Name" = 'Oursson'
+        );
+
+        INSERT INTO "BrandCategory" ("BrandID", "CategoryID") 
+        SELECT b."ID", c."ID" FROM "Brands" b, "Categories" c 
+        WHERE b."Name" = 'Oursson' AND c."Name" = 'smallappliances'
+        AND NOT EXISTS (
+            SELECT 1 FROM "BrandCategory" WHERE "BrandID" = b."ID" AND "CategoryID" = c."ID"
+        );

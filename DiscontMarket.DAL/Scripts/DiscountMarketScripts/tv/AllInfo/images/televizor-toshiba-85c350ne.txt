@@ -1,0 +1,28 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-toshiba-85c350ne_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Toshiba 85C350NE'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-toshiba-85c350ne_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Toshiba 85C350NE'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-toshiba-85c350ne_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Toshiba 85C350NE'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-toshiba-85c350ne_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Toshiba 85C350NE'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-toshiba-85c350ne_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Toshiba 85C350NE'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-toshiba-85c350ne_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Toshiba 85C350NE'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-toshiba-85c350ne_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Toshiba 85C350NE'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-toshiba-85c350ne_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Toshiba 85C350NE'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-toshiba-85c350ne_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Toshiba 85C350NE'));

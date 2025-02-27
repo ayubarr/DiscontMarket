@@ -1,0 +1,28 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-hisense-65a6n_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hisense 65A6N'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-hisense-65a6n_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hisense 65A6N'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-hisense-65a6n_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hisense 65A6N'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-hisense-65a6n_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hisense 65A6N'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-hisense-65a6n_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hisense 65A6N'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-hisense-65a6n_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hisense 65A6N'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-hisense-65a6n_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hisense 65A6N'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-hisense-65a6n_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hisense 65A6N'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-hisense-65a6n_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hisense 65A6N'));

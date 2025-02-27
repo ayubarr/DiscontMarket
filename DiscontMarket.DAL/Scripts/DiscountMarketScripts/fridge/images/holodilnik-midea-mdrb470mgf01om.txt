@@ -1,0 +1,34 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-midea-mdrb470mgf01om_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Midea MDRB470MGF01OM'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-midea-mdrb470mgf01om_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Midea MDRB470MGF01OM'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-midea-mdrb470mgf01om_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Midea MDRB470MGF01OM'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-midea-mdrb470mgf01om_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Midea MDRB470MGF01OM'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-midea-mdrb470mgf01om_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Midea MDRB470MGF01OM'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-midea-mdrb470mgf01om_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Midea MDRB470MGF01OM'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-midea-mdrb470mgf01om_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Midea MDRB470MGF01OM'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-midea-mdrb470mgf01om_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Midea MDRB470MGF01OM'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-midea-mdrb470mgf01om_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Midea MDRB470MGF01OM'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-midea-mdrb470mgf01om_9.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Midea MDRB470MGF01OM'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-midea-mdrb470mgf01om_10.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Midea MDRB470MGF01OM'));

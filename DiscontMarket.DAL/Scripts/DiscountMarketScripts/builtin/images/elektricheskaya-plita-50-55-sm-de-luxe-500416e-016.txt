@@ -1,0 +1,4 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/elektricheskaya-plita-50-55-sm-de-luxe-500416e-016_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Электрическая плита (50-55 см) De luxe 5004.16Э-016'));

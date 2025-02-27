@@ -1,0 +1,19 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-goldstar-lt-40f1100_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор GoldStar LT-40F1100'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-goldstar-lt-40f1100_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор GoldStar LT-40F1100'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-goldstar-lt-40f1100_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор GoldStar LT-40F1100'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-goldstar-lt-40f1100_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор GoldStar LT-40F1100'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-goldstar-lt-40f1100_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор GoldStar LT-40F1100'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-goldstar-lt-40f1100_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор GoldStar LT-40F1100'));

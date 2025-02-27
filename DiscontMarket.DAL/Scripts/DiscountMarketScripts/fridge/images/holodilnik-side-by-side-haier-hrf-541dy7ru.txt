@@ -1,0 +1,16 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-side-by-side-haier-hrf-541dy7ru_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник (Side-by-Side) Haier HRF-541DY7RU'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-side-by-side-haier-hrf-541dy7ru_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник (Side-by-Side) Haier HRF-541DY7RU'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-side-by-side-haier-hrf-541dy7ru_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник (Side-by-Side) Haier HRF-541DY7RU'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-side-by-side-haier-hrf-541dy7ru_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник (Side-by-Side) Haier HRF-541DY7RU'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-side-by-side-haier-hrf-541dy7ru_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник (Side-by-Side) Haier HRF-541DY7RU'));

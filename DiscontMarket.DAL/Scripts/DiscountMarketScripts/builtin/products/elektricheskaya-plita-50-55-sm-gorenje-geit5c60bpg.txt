@@ -1,0 +1,76 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Электрическая плита (50-55 см) Gorenje GEIT5C60BPG', 44999, 8, '/items/productimages/elektricheskaya-plita-50-55-sm-gorenje-geit5c60bpg_0.png', 4.3, '', 'Электрическая плита Gorenje GEIT5C60BPG черного цвета оснащена четырьмя индукционными конфорками и духовкой объемом 70 л. За нагрев посуды отвечают две конфорки диаметром 180 мм и мощностью 1,5 кВт, конфорка диаметром 145 мм и мощностью 1,2 кВт и большая конфорка диаметром 210 мм и мощностью 1,5 кВт. Есть электронная система управления с программатором, которую можно заблокировать для защиты от детей. Предусмотрен индикатор остаточного тепла на каждой конфорке. 
+Духовка мультифункциональная, поддерживает вентиляционный нагрев, верхний и нижний жар, режим для приготовления пиццы и замороженных продуктов, есть функция очистки паром и режим Air Fry для ускоренного выпекания. На заднюю стенку духовки установлена лампа освещения. Мощность плиты — 10,5 кВт, класс энергоэффективности — А. В комплекте — глубокий и обычный противни, металлическая решетка.', 'InStock', 'Discount', 4, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Gorenje'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Электрическая плита (50-55 см) Gorenje GEIT5C60BPG'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Электрическая плита (50-55 см) Gorenje GEIT5C60BPG' 
+        AND a."Name" = '70' 
+        AND a."Type" = 'Объем духовки'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Электрическая плита (50-55 см) Gorenje GEIT5C60BPG' 
+        AND a."Name" = '11' 
+        AND a."Type" = 'Режимы работы духовки'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Электрическая плита (50-55 см) Gorenje GEIT5C60BPG' 
+        AND a."Name" = 'Да' 
+        AND a."Type" = 'Конвекция'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Электрическая плита (50-55 см) Gorenje GEIT5C60BPG' 
+        AND a."Name" = 'индукционные' 
+        AND a."Type" = 'Тип конфорок'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Электрическая плита (50-55 см) Gorenje GEIT5C60BPG' 
+        AND a."Name" = 'Да' 
+        AND a."Type" = 'Индикация текущей температуры'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/elektricheskaya-plita-50-55-sm-gorenje-geit5c60bpg_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Электрическая плита (50-55 см) Gorenje GEIT5C60BPG'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/elektricheskaya-plita-50-55-sm-gorenje-geit5c60bpg_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Электрическая плита (50-55 см) Gorenje GEIT5C60BPG'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/elektricheskaya-plita-50-55-sm-gorenje-geit5c60bpg_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Электрическая плита (50-55 см) Gorenje GEIT5C60BPG'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/elektricheskaya-plita-50-55-sm-gorenje-geit5c60bpg_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Электрическая плита (50-55 см) Gorenje GEIT5C60BPG'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/elektricheskaya-plita-50-55-sm-gorenje-geit5c60bpg_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Электрическая плита (50-55 см) Gorenje GEIT5C60BPG'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/elektricheskaya-plita-50-55-sm-gorenje-geit5c60bpg_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Электрическая плита (50-55 см) Gorenje GEIT5C60BPG'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/elektricheskaya-plita-50-55-sm-gorenje-geit5c60bpg_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Электрическая плита (50-55 см) Gorenje GEIT5C60BPG'));

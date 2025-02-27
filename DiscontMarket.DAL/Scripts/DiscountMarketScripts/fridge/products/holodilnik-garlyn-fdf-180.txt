@@ -1,0 +1,75 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Холодильник Garlyn FDF-180', 79995, 12, '/items/productimages/holodilnik-garlyn-fdf-180_0.png', 4.35, '', 'Встраиваемый холодильник Garlyn FDF-180 типа Side-by-side оснащен четырьмя распашными дверями со скрытыми ручками. В этой модели реализована технология Clean Flow G: воздух распределяется равномерно, угольные фильтры предотвращают появления неприятных запахов. Для установки требуется ниша размером 180х79х70 см. 
+
+Морозильная камера объемом 131 л состоит из двух отделений, в каждой — по одной открытой полке и по два ящика. Мощность замораживания составляет до 16 кг/сутки. Отсек оборудован механическим ледогенератором. 
+
+Холодильная часть вместимостью 268 л оснащена тремя полками, четырьмя дверными карманами и двумя ящиками для овощей и фруктов. В зоне свежести можно регулировать уровень влажность. Предусмотрен отсек Soft Cool Zone, где поддерживается температура около 0°С, что позволяет быстро охладить лимонад или сок, долго хранить, например, рыбу и мясо без заморозки. Встроен диспенсер для напитков. 
+
+Эта модель обладает классом энергоэффективности А+: годовой расход электричества не превышает 365 кВт*ч. При аварийном отключения питания холод внутри сохраняется в течение 20 часов. В случае, когда дверь открыта слишком долго, раздается звуковой сигнал. Инверторный компрессор обеспечивает тихую работу: максимальный уровень шума — всего 43 дБ. В обоих отделениях установлено освещение.', 'InStock', 'Discount', 3, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Garlyn'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Холодильник Garlyn FDF-180'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Garlyn FDF-180' 
+        AND a."Name" = 'инверторный' 
+        AND a."Type" = 'Тип компрессора'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Garlyn FDF-180' 
+        AND a."Name" = '1800*900*700 см' 
+        AND a."Type" = 'Габаритные размеры (В*Ш*Г)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Garlyn FDF-180' 
+        AND a."Name" = '470' 
+        AND a."Type" = 'Общий объем'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Garlyn FDF-180' 
+        AND a."Name" = 'настраиваемая' 
+        AND a."Type" = 'Тип зоны сохранения свежести'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Garlyn FDF-180' 
+        AND a."Name" = 'сенсорное' 
+        AND a."Type" = 'Тип управления'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-garlyn-fdf-180_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Garlyn FDF-180'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-garlyn-fdf-180_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Garlyn FDF-180'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-garlyn-fdf-180_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Garlyn FDF-180'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-garlyn-fdf-180_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Garlyn FDF-180'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-garlyn-fdf-180_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Garlyn FDF-180'));

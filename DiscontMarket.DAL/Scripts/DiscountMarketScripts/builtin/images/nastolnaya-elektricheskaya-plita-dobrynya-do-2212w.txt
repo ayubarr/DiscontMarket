@@ -1,0 +1,13 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/nastolnaya-elektricheskaya-plita-dobrynya-do-2212w_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Настольная электрическая плита Добрыня DO-2212W'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/nastolnaya-elektricheskaya-plita-dobrynya-do-2212w_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Настольная электрическая плита Добрыня DO-2212W'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/nastolnaya-elektricheskaya-plita-dobrynya-do-2212w_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Настольная электрическая плита Добрыня DO-2212W'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/nastolnaya-elektricheskaya-plita-dobrynya-do-2212w_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Настольная электрическая плита Добрыня DO-2212W'));

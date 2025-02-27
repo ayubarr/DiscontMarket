@@ -1,0 +1,51 @@
+﻿INSERT INTO "Products" 
+("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription",
+"Availability", "Status", "CategoryID", "BrandID", "UserID") 
+VALUES
+ ('Телевизор Toshiba 32V35LE', 10999, 16, '/items/productimages/televizor-toshiba-32v35le_0.png', 4.97, '', 'Телевизор Toshiba 32V35LE с операционной системой Android 11 с интуитивно понятным интерфейсом. Благодаря безрамочному экрану просматривать фильмы и сериалы можно в комфортных условиях. Экран с технологией IPS и разрешением 1388x766 Пикс обеспечивает оптимальное соотношение яркости и контрастности.
+
+За счет цифрового шумоподавления минимизируется искажение картинки при просмотре телепередач, фильмов и сериалов. Благодаря наличию Wi-Fi-модуля устройство подключается к Интернету. С помощью системы Smart TV можно подключать подписки на различные интерактивные сервисы, а также упростить поиски любимых фильмов и приложений.
+
+Режим родительского контроля позволяет установить пароль на нежелательные каналы, браузеры и социальные сети. Для подключения внешних носителей предусмотрены порты и разъемы. Модель устанавливается на подставку или крепится к стене. Корпус рекомендуется очищать от пыли и загрязнений влажной салфеткой.', 'InStock', 'Discount', 1, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Toshiba'), 1);
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Toshiba 32V35LE'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'HD (1366x768 Пикс)' AND "Type" = 'Экран));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Toshiba 32V35LE'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '32' AND "Type" = 'Диагональ));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Toshiba 32V35LE'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '60' AND "Type" = 'Частота обновления));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Toshiba 32V35LE'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'LED' AND "Type" = 'Технология экрана));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Toshiba 32V35LE'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'Direct LED' AND "Type" = 'Тип светодиодной подсветки));
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-toshiba-32v35le_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Toshiba 32V35LE'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-toshiba-32v35le_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Toshiba 32V35LE'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-toshiba-32v35le_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Toshiba 32V35LE'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-toshiba-32v35le_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Toshiba 32V35LE'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-toshiba-32v35le_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Toshiba 32V35LE'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-toshiba-32v35le_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Toshiba 32V35LE'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-toshiba-32v35le_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Toshiba 32V35LE'));

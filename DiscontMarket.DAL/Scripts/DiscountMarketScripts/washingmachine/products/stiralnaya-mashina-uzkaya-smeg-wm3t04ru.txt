@@ -1,0 +1,80 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Стиральная машина узкая Smeg WM3T04RU', 45349, 15, '/items/productimages/stiralnaya-mashina-uzkaya-smeg-wm3t04ru_0.png', 4.7, '', 'Стиральная машина «Премиум» Smeg WM3T04RU в корпусе классической белой расцветки оснащена барабаном с максимальной загрузкой 10 кг. На фронтальной панели располагается LED-дисплей, на котором отображается индикация оставшегося времени и другие настройки. Управление стиральной машиной электронное, осуществляется посредством поворотного переключателя и сенсорных кнопок. Скорость отжима варьируется, максимум составляет 1400 об/мин.
+Дверца стиральной машины выполнена в контрастном черном цвете. Она оснащена хромированной окантовкой. У модели 15 программ работы, включая специальный гипоаллергенный режим. Температуру нагрева воды можно варьировать, установив значения 20°C / 30°C / 40°C / 60°C / 90°C. Стиральная машина оснащена функцией отложенного старта от 1 до 23 часов. 
+Модель оборудована инверторным (бесщеточным) двигателем. Барабан стиральной машины изготовлена из нержавеющей стали, бак сделан из полипропилена. Диаметр дверцы — 33 см, максимальный угол открывания — 160°. Предусмотрена система пеноподавления, автоматическая регуляция загрузки, блокировка панели управления, защита от перелива. Простоту ухода за стиральной машиной обеспечивает легкий доступ к фильтру.', 'InStock', 'Discount', 5, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Smeg'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая Smeg WM3T04RU'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина узкая Smeg WM3T04RU' 
+        AND a."Name" = '10' 
+        AND a."Type" = 'Максимальная загрузка'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина узкая Smeg WM3T04RU' 
+        AND a."Name" = '1400' 
+        AND a."Type" = 'Максимальная скорость отжима'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина узкая Smeg WM3T04RU' 
+        AND a."Name" = 'инверторный' 
+        AND a."Type" = 'Мотор'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина узкая Smeg WM3T04RU' 
+        AND a."Name" = 'Да' 
+        AND a."Type" = 'Обработка паром'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина узкая Smeg WM3T04RU' 
+        AND a."Name" = '84.5*59.7*62.3 см' 
+        AND a."Type" = 'Габаритные размеры (В*Ш*Г)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-uzkaya-smeg-wm3t04ru_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая Smeg WM3T04RU'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-uzkaya-smeg-wm3t04ru_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая Smeg WM3T04RU'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-uzkaya-smeg-wm3t04ru_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая Smeg WM3T04RU'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-uzkaya-smeg-wm3t04ru_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая Smeg WM3T04RU'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-uzkaya-smeg-wm3t04ru_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая Smeg WM3T04RU'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-uzkaya-smeg-wm3t04ru_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая Smeg WM3T04RU'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-uzkaya-smeg-wm3t04ru_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая Smeg WM3T04RU'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-uzkaya-smeg-wm3t04ru_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая Smeg WM3T04RU'));

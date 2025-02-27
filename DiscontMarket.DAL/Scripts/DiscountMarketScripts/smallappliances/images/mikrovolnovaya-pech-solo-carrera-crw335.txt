@@ -1,0 +1,19 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-carrera-crw335_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло Carrera CRW335'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-carrera-crw335_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло Carrera CRW335'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-carrera-crw335_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло Carrera CRW335'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-carrera-crw335_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло Carrera CRW335'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-carrera-crw335_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло Carrera CRW335'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-carrera-crw335_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло Carrera CRW335'));

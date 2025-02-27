@@ -1,0 +1,16 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-panasonic-nn-st254mzpe_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло Panasonic NN-ST254MZPE'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-panasonic-nn-st254mzpe_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло Panasonic NN-ST254MZPE'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-panasonic-nn-st254mzpe_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло Panasonic NN-ST254MZPE'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-panasonic-nn-st254mzpe_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло Panasonic NN-ST254MZPE'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-panasonic-nn-st254mzpe_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло Panasonic NN-ST254MZPE'));

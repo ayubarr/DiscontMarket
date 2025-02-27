@@ -1,0 +1,4 @@
+﻿INSERT INTO "Brands" ("NameTranslate", "Name", "Type") VALUES
+('National', 'National', 'Бренды');
+INSERT INTO "BrandCategory" ("BrandID", "CategoryID") VALUES
+((SELECT "ID" FROM "Brands" WHERE "Name" = 'National'), (SELECT "ID" FROM "Categories" WHERE "Name" = 'tv'));

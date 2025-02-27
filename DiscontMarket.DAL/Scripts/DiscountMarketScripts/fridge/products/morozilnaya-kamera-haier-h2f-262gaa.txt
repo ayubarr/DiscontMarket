@@ -1,0 +1,76 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Морозильная камера Haier H2F-262GAA', 42999, 17, '/items/productimages/morozilnaya-kamera-haier-h2f-262gaa_0.png', 4.6, '', 'Морозильная камера Haier H2F-262GAA позволит хранить значительный запас продуктов долгое время. Отлично подходит для большой семьи благодаря полезному объему 262 л. Есть семь отделений для удобной организации пространства. Пластиковые ящики устойчивы к низким температурам и механическому воздействию, что обеспечивает длительный срок эксплуатации.
+
+Система No Frost исключает необходимость ручного размораживания. Регулировка градусов и другое управление осуществляется на ярком сенсорном дисплее.
+
+Благодаря классу энергоэффективности А+, экономично расходуется электроэнергия и природные ресурсы. Внутреннее LED освещение отвечает за увеличенный период работы, яркость свечения и медленный расход ламп.', 'InStock', 'Discount', 3, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Haier'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Морозильная камера Haier H2F-262GAA'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Морозильная камера Haier H2F-262GAA' 
+        AND a."Name" = 'стандартный' 
+        AND a."Type" = 'Тип компрессора'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Морозильная камера Haier H2F-262GAA' 
+        AND a."Name" = '186.5*59.5*65 см' 
+        AND a."Type" = 'Габаритные размеры (В*Ш*Г)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Морозильная камера Haier H2F-262GAA' 
+        AND a."Name" = 'A+' 
+        AND a."Type" = 'Класс энергоэффективности'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Морозильная камера Haier H2F-262GAA' 
+        AND a."Name" = 'Да' 
+        AND a."Type" = 'Режим суперзамораживания'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Морозильная камера Haier H2F-262GAA' 
+        AND a."Name" = 'электронный' 
+        AND a."Type" = 'Тип управления'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-haier-h2f-262gaa_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Haier H2F-262GAA'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-haier-h2f-262gaa_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Haier H2F-262GAA'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-haier-h2f-262gaa_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Haier H2F-262GAA'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-haier-h2f-262gaa_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Haier H2F-262GAA'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-haier-h2f-262gaa_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Haier H2F-262GAA'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-haier-h2f-262gaa_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Haier H2F-262GAA'));

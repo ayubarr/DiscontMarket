@@ -1,0 +1,99 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Стиральная машина с сушкой Haier HWD80-BP14979', 46999, 18, '/items/productimages/stiralnaya-mashina-s-sushkoi-haier-hwd80-bp14979_0.png', 4.22, '', 'Стиральная машина Haier HWD80-BP14979 – практичная модель, которая станет подходящим решением для большой семьи. За раз можно загрузить до 8 кг белья для стирки и до 5 кг для сушки. 
+
+ОБРАТИТЕ ВНИМАНИЕ 
+Прибор оснащён бесщёточным инверторным мотором, производитель даёт на него 12-летнюю гарантию. Подобная конструкция не только надёжна и долговечна, но и экономична и издаёт меньше шума при работе. 
+
+ХОРОШО ПРИДУМАНО 
+Барабан Pillow гарантирует бережное обращение с самыми тонкими и требовательными в уходе вещами. Его внутренняя поверхность выполнена в виде подушечек, ткань по которым легко скользит и не повреждается. 
+
+НА СТРАЖЕ ГИГИЕНЫ 
+К вашим услугам программы по типу тканей и по виду изделий: «Хлопок», «Шерсть», «Детское бельё» и другие. Кроме того, есть возможность обработки паром. Она особенно пригодится, если вещь нельзя стирать и поможет освежить её, устранит неприятные запахи, вернёт форму. UV-обработка обеспечит эффективное уничтожение бактерий и вирусов, причём не только на текстиле, но и в барабане. Параметры сушки настраиваются по времени при помощи таймера или по остаточной влажности. 
+
+НИЧЕГО СЛОЖНОГО 
+Управление просто и интуитивно понятно. Сенсорный дисплей русифицирован и дополнен традиционным поворотным регулятором. Внутренняя подсветка барабана облегчит загрузку и выемку белья. Безопасность гарантируется надёжной системой защиты от протечек AquaStop.', 'InStock', 'Discount', 5, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Haier'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Стиральная машина с сушкой Haier HWD80-BP14979'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина с сушкой Haier HWD80-BP14979' 
+        AND a."Name" = '8' 
+        AND a."Type" = 'Максимальная загрузка'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина с сушкой Haier HWD80-BP14979' 
+        AND a."Name" = '5' 
+        AND a."Type" = 'Загрузка при сушке(хлопок)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина с сушкой Haier HWD80-BP14979' 
+        AND a."Name" = '1400' 
+        AND a."Type" = 'Максимальная скорость отжима'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина с сушкой Haier HWD80-BP14979' 
+        AND a."Name" = 'инверторный' 
+        AND a."Type" = 'Мотор'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина с сушкой Haier HWD80-BP14979' 
+        AND a."Name" = 'Да' 
+        AND a."Type" = 'Обработка паром'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-s-sushkoi-haier-hwd80-bp14979_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина с сушкой Haier HWD80-BP14979'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-s-sushkoi-haier-hwd80-bp14979_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина с сушкой Haier HWD80-BP14979'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-s-sushkoi-haier-hwd80-bp14979_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина с сушкой Haier HWD80-BP14979'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-s-sushkoi-haier-hwd80-bp14979_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина с сушкой Haier HWD80-BP14979'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-s-sushkoi-haier-hwd80-bp14979_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина с сушкой Haier HWD80-BP14979'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-s-sushkoi-haier-hwd80-bp14979_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина с сушкой Haier HWD80-BP14979'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-s-sushkoi-haier-hwd80-bp14979_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина с сушкой Haier HWD80-BP14979'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-s-sushkoi-haier-hwd80-bp14979_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина с сушкой Haier HWD80-BP14979'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-s-sushkoi-haier-hwd80-bp14979_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина с сушкой Haier HWD80-BP14979'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-s-sushkoi-haier-hwd80-bp14979_9.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина с сушкой Haier HWD80-BP14979'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-s-sushkoi-haier-hwd80-bp14979_10.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина с сушкой Haier HWD80-BP14979'));

@@ -1,0 +1,73 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Холодильник ATLANT 4625-101', 23795, 9, '/items/productimages/holodilnik-atlant-4625-101_0.png', 4.65, '', 'Холодильник с нижней морозильной камерой ATLANT 4625-101 — это модель с зоной свежести объемом 19 л, в которой можно хранить продукты до момента приготовления. Устройство отличается низким уровнем шума — всего 39 дБ, поэтому не потревожит ваш сон. Прибор может эксплуатироваться при температуре в пределах 16-38°С. Благодаря наличию функции самодиагностики оборудование самостоятельно обнаружит неисправности и оповестит о них.
+
+Холодильная камера объемом 205 л включает в себя три стеклянных полки и ящик для овощей и фруктов с регулируемым разделителем. Для некрупных продуктов предусмотрен подвесной контейнер Pull Box, положение которого можно менять. Подставка для бутылок позволит эргономично разместить напитки. Дверца дополнена четырьмя пластиковыми полочками и лотком для яиц. Морозильная камера вместительностью 159 л оснащена четырьмя ящиками и поддоном для замораживания. Производительность прибора составляет 7,2 кг/сутки.
+
+Холодильник потребляет всего 323 кВт*ч в год, поэтому относится к A классу энергоэффективности. Модель управляется с помощью электронной панели. Холодильная камера размораживается капельным способом, морозильная — вручную. Двери с эмалевым покрытием со скрытой ручкой можно перевешивать. При отключении электричества прибор сохранит холод в автономном режиме на протяжении 20 ч. Благодаря антибактериальному покрытию в отделениях не будут размножаться патогенные микроорганизмы. Доступна функция суперзамораживания и LED-подсветка.', 'InStock', 'Discount', 3, (SELECT "ID" FROM "Brands" WHERE "Name" = 'ATLANT'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Холодильник ATLANT 4625-101'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник ATLANT 4625-101' 
+        AND a."Name" = 'стандартный' 
+        AND a."Type" = 'Тип компрессора'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник ATLANT 4625-101' 
+        AND a."Name" = '206.8' 
+        AND a."Type" = 'Высота'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник ATLANT 4625-101' 
+        AND a."Name" = '59.5' 
+        AND a."Type" = 'Ширина'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник ATLANT 4625-101' 
+        AND a."Name" = '62.9' 
+        AND a."Type" = 'Глубина'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник ATLANT 4625-101' 
+        AND a."Name" = '378' 
+        AND a."Type" = 'Общий объем'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-atlant-4625-101_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник ATLANT 4625-101'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-atlant-4625-101_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник ATLANT 4625-101'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-atlant-4625-101_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник ATLANT 4625-101'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-atlant-4625-101_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник ATLANT 4625-101'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-atlant-4625-101_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник ATLANT 4625-101'));

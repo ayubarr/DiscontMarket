@@ -1,0 +1,4 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/elektricheskaya-plita-50-55-sm-kraft-kf-fsk50603cegw_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Электрическая плита (50-55 см) Kraft KF-FSK50603CEGW'));

@@ -1,0 +1,37 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-toshiba-65c450me_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Toshiba 65C450ME'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-toshiba-65c450me_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Toshiba 65C450ME'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-toshiba-65c450me_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Toshiba 65C450ME'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-toshiba-65c450me_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Toshiba 65C450ME'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-toshiba-65c450me_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Toshiba 65C450ME'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-toshiba-65c450me_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Toshiba 65C450ME'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-toshiba-65c450me_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Toshiba 65C450ME'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-toshiba-65c450me_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Toshiba 65C450ME'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-toshiba-65c450me_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Toshiba 65C450ME'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-toshiba-65c450me_9.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Toshiba 65C450ME'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-toshiba-65c450me_10.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Toshiba 65C450ME'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-toshiba-65c450me_11.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Toshiba 65C450ME'));

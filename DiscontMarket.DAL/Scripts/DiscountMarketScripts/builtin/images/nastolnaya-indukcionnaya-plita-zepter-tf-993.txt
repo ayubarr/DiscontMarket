@@ -1,0 +1,16 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/nastolnaya-indukcionnaya-plita-zepter-tf-993_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Настольная индукционная плита Zepter TF-993'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/nastolnaya-indukcionnaya-plita-zepter-tf-993_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Настольная индукционная плита Zepter TF-993'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/nastolnaya-indukcionnaya-plita-zepter-tf-993_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Настольная индукционная плита Zepter TF-993'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/nastolnaya-indukcionnaya-plita-zepter-tf-993_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Настольная индукционная плита Zepter TF-993'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/nastolnaya-indukcionnaya-plita-zepter-tf-993_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Настольная индукционная плита Zepter TF-993'));

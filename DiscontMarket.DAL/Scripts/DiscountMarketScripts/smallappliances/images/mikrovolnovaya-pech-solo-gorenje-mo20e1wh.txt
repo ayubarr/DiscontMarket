@@ -1,0 +1,4 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-gorenje-mo20e1wh_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло Gorenje MO20E1WH'));

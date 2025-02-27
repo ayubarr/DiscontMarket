@@ -1,0 +1,62 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Микроволновая печь соло Krona Quantum 44 Mr/Ix', 6245, 18, '/items/productimages/mikrovolnovaya-pech-solo-krona-quantum-44-mr-ix_0.png', 4.58, '', 'Krona Quantum 44 — микроволновая печь, изготавливаемая в корпусе из нержавеющей стали. Оснащается встроенным дисплеем. Управляется при помощи механических кнопок на корпусе и поворотной шайбы. Предусмотрено восемь рецептов для автоприготовления. Доступно пять уровней мощности. Устройство оснащается встроенным таймером от 1 до 95 минут. Полезный объем внутреннего пространства аппарата составляет 20 л. Максимальная мощность микроволновки — 800 Вт. 
+
+Микроволновка оснащается кабелем питания длиной 1 м. Внутреннее пространство покрыто легко очищаемой эмалью Easy Clean. Габаритные размеры устройства составляют 237 х 433 х 27 мм, а масса — 11 кг.', 'InStock', 'Discount', 6, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Krona'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло Krona Quantum 44 Mr/Ix'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Микроволновая печь соло Krona Quantum 44 Mr/Ix' 
+        AND a."Name" = '20' 
+        AND a."Type" = 'Полезный объем'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Микроволновая печь соло Krona Quantum 44 Mr/Ix' 
+        AND a."Name" = '25.5' 
+        AND a."Type" = 'Диаметр поворотного стола'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Микроволновая печь соло Krona Quantum 44 Mr/Ix' 
+        AND a."Name" = 'эмаль легкой очистки' 
+        AND a."Type" = 'Внутреннее покрытие'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Микроволновая печь соло Krona Quantum 44 Mr/Ix' 
+        AND a."Name" = 'электромеханический' 
+        AND a."Type" = 'Тип управления'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Микроволновая печь соло Krona Quantum 44 Mr/Ix' 
+        AND a."Name" = 'нержавеющая сталь/ зеркальный' 
+        AND a."Type" = 'Цвет'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-krona-quantum-44-mr-ix_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло Krona Quantum 44 Mr/Ix'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-krona-quantum-44-mr-ix_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло Krona Quantum 44 Mr/Ix'));

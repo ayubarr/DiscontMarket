@@ -1,0 +1,75 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Стиральная машина с сушкой Bosch WDS28460ME', 49995, 10, '/items/productimages/stiralnaya-mashina-s-sushkoi-bosch-wds28460me_0.png', 4.82, '', '', 'InStock', 'Discount', 5, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Bosch'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Стиральная машина с сушкой Bosch WDS28460ME'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина с сушкой Bosch WDS28460ME' 
+        AND a."Name" = '8' 
+        AND a."Type" = 'Максимальная загрузка'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина с сушкой Bosch WDS28460ME' 
+        AND a."Name" = '1400' 
+        AND a."Type" = 'Максимальная скорость отжима'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина с сушкой Bosch WDS28460ME' 
+        AND a."Name" = 'инверторный' 
+        AND a."Type" = 'Мотор'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина с сушкой Bosch WDS28460ME' 
+        AND a."Name" = 'полная' 
+        AND a."Type" = 'Тип защиты от протечек'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина с сушкой Bosch WDS28460ME' 
+        AND a."Name" = 'Да' 
+        AND a."Type" = 'Индикация времени до конца программы'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-s-sushkoi-bosch-wds28460me_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина с сушкой Bosch WDS28460ME'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-s-sushkoi-bosch-wds28460me_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина с сушкой Bosch WDS28460ME'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-s-sushkoi-bosch-wds28460me_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина с сушкой Bosch WDS28460ME'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-s-sushkoi-bosch-wds28460me_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина с сушкой Bosch WDS28460ME'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-s-sushkoi-bosch-wds28460me_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина с сушкой Bosch WDS28460ME'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-s-sushkoi-bosch-wds28460me_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина с сушкой Bosch WDS28460ME'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-s-sushkoi-bosch-wds28460me_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина с сушкой Bosch WDS28460ME'));

@@ -1,0 +1,4 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-econ-ex-32hs002w-smart-white_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Econ EX-32HS002W SMART White'));

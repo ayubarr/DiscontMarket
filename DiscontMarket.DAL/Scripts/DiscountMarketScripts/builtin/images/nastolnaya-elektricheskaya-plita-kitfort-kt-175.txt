@@ -1,0 +1,19 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/nastolnaya-elektricheskaya-plita-kitfort-kt-175_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Настольная электрическая плита Kitfort КТ-175'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/nastolnaya-elektricheskaya-plita-kitfort-kt-175_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Настольная электрическая плита Kitfort КТ-175'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/nastolnaya-elektricheskaya-plita-kitfort-kt-175_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Настольная электрическая плита Kitfort КТ-175'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/nastolnaya-elektricheskaya-plita-kitfort-kt-175_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Настольная электрическая плита Kitfort КТ-175'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/nastolnaya-elektricheskaya-plita-kitfort-kt-175_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Настольная электрическая плита Kitfort КТ-175'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/nastolnaya-elektricheskaya-plita-kitfort-kt-175_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Настольная электрическая плита Kitfort КТ-175'));

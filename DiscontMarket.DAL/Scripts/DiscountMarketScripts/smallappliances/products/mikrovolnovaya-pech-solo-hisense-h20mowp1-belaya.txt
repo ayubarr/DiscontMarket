@@ -1,0 +1,75 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Микроволновая печь соло Hisense H20MOWP1 белая', 3499, 6, '/items/productimages/mikrovolnovaya-pech-solo-hisense-h20mowp1-belaya_0.png', 4.39, '', 'Микроволновая печь соло Hisense H20MOWP1 белого цвета с пятью ступенями мощности оснащена встроенным светодиодным освещением. Объем — 20 л. Присутствует звуковой таймер. Фронтальная панель сделана из прочного пластика. Внутренняя часть корпуса покрыта гладкой эмалью. Габариты модели — 26,1х32,6х45,5 см. Вес изделия — 10,2 кг. Мощность прибора — 1,25 кВт. Диаметр поворотного стола составляет 25,5 см. Способ управления — механический. Присутствует функция размораживания по времени. Устройство отключается при открытии дверцы.', 'InStock', 'Discount', 6, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Hisense'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло Hisense H20MOWP1 белая'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Микроволновая печь соло Hisense H20MOWP1 белая' 
+        AND a."Name" = '20' 
+        AND a."Type" = 'Полезный объем'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Микроволновая печь соло Hisense H20MOWP1 белая' 
+        AND a."Name" = '25.5' 
+        AND a."Type" = 'Диаметр поворотного стола'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Микроволновая печь соло Hisense H20MOWP1 белая' 
+        AND a."Name" = 'эмаль' 
+        AND a."Type" = 'Внутреннее покрытие'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Микроволновая печь соло Hisense H20MOWP1 белая' 
+        AND a."Name" = 'механический' 
+        AND a."Type" = 'Тип управления'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Микроволновая печь соло Hisense H20MOWP1 белая' 
+        AND a."Name" = 'белый' 
+        AND a."Type" = 'Цвет'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-hisense-h20mowp1-belaya_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло Hisense H20MOWP1 белая'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-hisense-h20mowp1-belaya_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло Hisense H20MOWP1 белая'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-hisense-h20mowp1-belaya_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло Hisense H20MOWP1 белая'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-hisense-h20mowp1-belaya_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло Hisense H20MOWP1 белая'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-hisense-h20mowp1-belaya_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло Hisense H20MOWP1 белая'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-hisense-h20mowp1-belaya_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло Hisense H20MOWP1 белая'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-hisense-h20mowp1-belaya_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло Hisense H20MOWP1 белая'));

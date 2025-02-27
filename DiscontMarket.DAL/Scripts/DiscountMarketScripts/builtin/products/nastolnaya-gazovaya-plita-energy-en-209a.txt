@@ -1,0 +1,54 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Настольная газовая плита Energy EN-209A', 545, 6, '/items/productimages/nastolnaya-gazovaya-plita-energy-en-209a_0.png', 4.64, '', 'Настольная газовая плита Energy EN-002A компактного размера, поэтому удобна в эксплуатации. Модель оснащена одной конфоркой, с помощью которой можно приготовить блюдо или вскипятить воду. Для томления или тушения предусмотрена функция минимального огня. С помощью механических поворотных регуляторов осуществляется управление моделью. Металлическая решетка характеризуется износоустойчивостью и не подвержена образованию коррозии. Поверхность плиты рекомендуется очищать от загрязнений посредством влажной салфетки.', 'InStock', 'Discount', 4, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Energy'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Настольная газовая плита Energy EN-209A'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Настольная газовая плита Energy EN-209A' 
+        AND a."Name" = '1' 
+        AND a."Type" = 'Количество конфорок'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Настольная газовая плита Energy EN-209A' 
+        AND a."Name" = 'металл' 
+        AND a."Type" = 'Материал варочной поверхности'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Настольная газовая плита Energy EN-209A' 
+        AND a."Name" = 'металлическая' 
+        AND a."Type" = 'Решетка'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Настольная газовая плита Energy EN-209A' 
+        AND a."Name" = 'белый' 
+        AND a."Type" = 'Цвет'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/nastolnaya-gazovaya-plita-energy-en-209a_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Настольная газовая плита Energy EN-209A'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/nastolnaya-gazovaya-plita-energy-en-209a_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Настольная газовая плита Energy EN-209A'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/nastolnaya-gazovaya-plita-energy-en-209a_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Настольная газовая плита Energy EN-209A'));

@@ -1,0 +1,28 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-uzkaya-schaub-lorenz-slw-fw7234-d_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая Schaub Lorenz SLW FW7234 D'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-uzkaya-schaub-lorenz-slw-fw7234-d_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая Schaub Lorenz SLW FW7234 D'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-uzkaya-schaub-lorenz-slw-fw7234-d_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая Schaub Lorenz SLW FW7234 D'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-uzkaya-schaub-lorenz-slw-fw7234-d_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая Schaub Lorenz SLW FW7234 D'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-uzkaya-schaub-lorenz-slw-fw7234-d_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая Schaub Lorenz SLW FW7234 D'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-uzkaya-schaub-lorenz-slw-fw7234-d_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая Schaub Lorenz SLW FW7234 D'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-uzkaya-schaub-lorenz-slw-fw7234-d_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая Schaub Lorenz SLW FW7234 D'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-uzkaya-schaub-lorenz-slw-fw7234-d_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая Schaub Lorenz SLW FW7234 D'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-uzkaya-schaub-lorenz-slw-fw7234-d_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая Schaub Lorenz SLW FW7234 D'));

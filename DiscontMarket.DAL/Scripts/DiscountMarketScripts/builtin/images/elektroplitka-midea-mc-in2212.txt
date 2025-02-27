@@ -1,0 +1,16 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/elektroplitka-midea-mc-in2212_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Электроплитка Midea MC-IN2212'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/elektroplitka-midea-mc-in2212_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Электроплитка Midea MC-IN2212'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/elektroplitka-midea-mc-in2212_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Электроплитка Midea MC-IN2212'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/elektroplitka-midea-mc-in2212_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Электроплитка Midea MC-IN2212'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/elektroplitka-midea-mc-in2212_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Электроплитка Midea MC-IN2212'));

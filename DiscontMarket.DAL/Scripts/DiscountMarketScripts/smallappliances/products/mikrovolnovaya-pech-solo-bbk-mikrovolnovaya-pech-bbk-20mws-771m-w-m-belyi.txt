@@ -1,0 +1,67 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Микроволновая печь соло BBK Микроволновая печь BBK 20MWS-771M/W-M белый', 4624, 8, '/items/productimages/mikrovolnovaya-pech-solo-bbk-mikrovolnovaya-pech-bbk-20mws-771m-w-m-belyi_0.png', 4.49, '', 'Микроволновая печь BBK «Соло» 20MWS-771M/W-M белого цвета с внутренним эмалированным покрытием легко поддается чистке. Объем ее камеры составляет 20 л. Управление осуществляется при помощи двух поворотных переключателей: один отвечает за выбор мощности, другой устанавливает время готовки. Есть подсветка рабочей области и звуковой сигнал, срабатывающий по окончании работы.
+Фронтальная панель устройства выполнена из термоустойчивого пластика и стекла. Дверца открывается в левую сторону при помощи ручки. Показатель потребляемой мощности — 1200 Вт. Габариты — 26,2x45,2x33 см. Диаметр стеклянного поворотного столика равен 24,5 см.', 'InStock', 'Discount', 6, (SELECT "ID" FROM "Brands" WHERE "Name" = 'BBK'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло BBK Микроволновая печь BBK 20MWS-771M/W-M белый'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Микроволновая печь соло BBK Микроволновая печь BBK 20MWS-771M/W-M белый' 
+        AND a."Name" = '20' 
+        AND a."Type" = 'Полезный объем'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Микроволновая печь соло BBK Микроволновая печь BBK 20MWS-771M/W-M белый' 
+        AND a."Name" = '245' 
+        AND a."Type" = 'Диаметр поворотного стола'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Микроволновая печь соло BBK Микроволновая печь BBK 20MWS-771M/W-M белый' 
+        AND a."Name" = 'эмалированный металл' 
+        AND a."Type" = 'Внутреннее покрытие'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Микроволновая печь соло BBK Микроволновая печь BBK 20MWS-771M/W-M белый' 
+        AND a."Name" = 'механический' 
+        AND a."Type" = 'Тип управления'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Микроволновая печь соло BBK Микроволновая печь BBK 20MWS-771M/W-M белый' 
+        AND a."Name" = 'белый' 
+        AND a."Type" = 'Цвет'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-bbk-mikrovolnovaya-pech-bbk-20mws-771m-w-m-belyi_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло BBK Микроволновая печь BBK 20MWS-771M/W-M белый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-bbk-mikrovolnovaya-pech-bbk-20mws-771m-w-m-belyi_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло BBK Микроволновая печь BBK 20MWS-771M/W-M белый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-bbk-mikrovolnovaya-pech-bbk-20mws-771m-w-m-belyi_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло BBK Микроволновая печь BBK 20MWS-771M/W-M белый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-bbk-mikrovolnovaya-pech-bbk-20mws-771m-w-m-belyi_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло BBK Микроволновая печь BBK 20MWS-771M/W-M белый'));

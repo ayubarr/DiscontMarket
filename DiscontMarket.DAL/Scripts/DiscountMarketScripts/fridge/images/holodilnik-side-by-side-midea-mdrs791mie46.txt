@@ -1,0 +1,19 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-side-by-side-midea-mdrs791mie46_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник (Side-by-Side) Midea MDRS791MIE46'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-side-by-side-midea-mdrs791mie46_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник (Side-by-Side) Midea MDRS791MIE46'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-side-by-side-midea-mdrs791mie46_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник (Side-by-Side) Midea MDRS791MIE46'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-side-by-side-midea-mdrs791mie46_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник (Side-by-Side) Midea MDRS791MIE46'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-side-by-side-midea-mdrs791mie46_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник (Side-by-Side) Midea MDRS791MIE46'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-side-by-side-midea-mdrs791mie46_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник (Side-by-Side) Midea MDRS791MIE46'));

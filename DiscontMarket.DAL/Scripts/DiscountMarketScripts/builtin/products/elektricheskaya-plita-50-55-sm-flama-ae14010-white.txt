@@ -1,0 +1,63 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Электрическая плита (50-55 см) Flama АЕ14010 White', 11999, 8, '/items/productimages/elektricheskaya-plita-50-55-sm-flama-ae14010-white_0.png', 4.63, '', 'Ширина электрической плиты Flama АЕ14010 всего 50,5 см, поэтому она станет удачным решением для небольшой кухни. Эта модель – подходящий вариант для тех, кому не требуются технические «навороты» и большое количество режимов работы. Четыре чугунных конфорки, духовой шкаф – всё, что нужно для повседневного приготовления пищи.
+
+УДОБНО И ЭФФЕКТИВНО
+У прибора простое в использовании и надёжное механическое управление: поворотные регуляторы. Духовка снабжена двумя нагревательными элементами (верхним и нижним), поэтому тепло равномерно охватывает продукты. Вы сможете делать выпечку сразу на нескольких противнях, запекать большие порции мяса или целую птицу. В комплект поставки входят металлическая решётка и глубокий противень, что избавит вас от поисков подходящих аксессуаров.
+
+БЕЗОПАСНО И ПРАКТИЧНО
+Благодаря двойному остеклению дверца не станет горячей снаружи, к ней можно смело прикасаться, не опасаясь ожога. Внутренняя подсветка позволит контролировать ход приготовления. В нижней части плиты есть отсек, снабжённый откидной крышкой. В нём будет удобно хранить посуду и прочую кухонную утварь.', 'InStock', 'Discount', 4, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Flama'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Электрическая плита (50-55 см) Flama АЕ14010 White'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Электрическая плита (50-55 см) Flama АЕ14010 White' 
+        AND a."Name" = '50' 
+        AND a."Type" = 'Объем духовки'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Электрическая плита (50-55 см) Flama АЕ14010 White' 
+        AND a."Name" = '4' 
+        AND a."Type" = 'Режимы работы духовки'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Электрическая плита (50-55 см) Flama АЕ14010 White' 
+        AND a."Name" = 'чугунные' 
+        AND a."Type" = 'Тип конфорок'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Электрическая плита (50-55 см) Flama АЕ14010 White' 
+        AND a."Name" = 'эмалированный металл' 
+        AND a."Type" = 'Внутреннее покрытие'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Электрическая плита (50-55 см) Flama АЕ14010 White' 
+        AND a."Name" = '2-слойное' 
+        AND a."Type" = 'Стекло дверцы духовки'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/elektricheskaya-plita-50-55-sm-flama-ae14010-white_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Электрическая плита (50-55 см) Flama АЕ14010 White'));

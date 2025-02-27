@@ -1,0 +1,4 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-birusa-h960nf_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Бирюса H960NF'));

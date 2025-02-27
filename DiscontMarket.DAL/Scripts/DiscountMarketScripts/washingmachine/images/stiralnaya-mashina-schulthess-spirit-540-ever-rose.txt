@@ -1,0 +1,7 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-schulthess-spirit-540-ever-rose_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Schulthess Spirit 540 Ever Rose'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-schulthess-spirit-540-ever-rose_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Schulthess Spirit 540 Ever Rose'));

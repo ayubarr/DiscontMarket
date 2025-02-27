@@ -1,0 +1,7 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/gazovaya-plita-60-sm-kraft-kf-fsk5404agwg_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Газовая плита (60 см) Kraft KF-FSK5404AGWG'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/gazovaya-plita-60-sm-kraft-kf-fsk5404agwg_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Газовая плита (60 см) Kraft KF-FSK5404AGWG'));

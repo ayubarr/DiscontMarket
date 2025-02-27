@@ -1,0 +1,25 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-s-grilem-lg-mh63m38gisw-s-grilem_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь с грилем LG MH63M38GISW с грилем'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-s-grilem-lg-mh63m38gisw-s-grilem_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь с грилем LG MH63M38GISW с грилем'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-s-grilem-lg-mh63m38gisw-s-grilem_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь с грилем LG MH63M38GISW с грилем'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-s-grilem-lg-mh63m38gisw-s-grilem_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь с грилем LG MH63M38GISW с грилем'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-s-grilem-lg-mh63m38gisw-s-grilem_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь с грилем LG MH63M38GISW с грилем'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-s-grilem-lg-mh63m38gisw-s-grilem_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь с грилем LG MH63M38GISW с грилем'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-s-grilem-lg-mh63m38gisw-s-grilem_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь с грилем LG MH63M38GISW с грилем'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-s-grilem-lg-mh63m38gisw-s-grilem_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь с грилем LG MH63M38GISW с грилем'));

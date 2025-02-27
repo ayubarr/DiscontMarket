@@ -1,0 +1,16 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnyi-lar-birusa-305kx_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильный ларь Бирюса 305KX'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnyi-lar-birusa-305kx_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильный ларь Бирюса 305KX'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnyi-lar-birusa-305kx_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильный ларь Бирюса 305KX'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnyi-lar-birusa-305kx_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильный ларь Бирюса 305KX'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnyi-lar-birusa-305kx_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильный ларь Бирюса 305KX'));

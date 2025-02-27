@@ -1,0 +1,40 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/elektricheskaya-plita-50-55-sm-gorenje-gec5b41wg_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Электрическая плита (50-55 см) Gorenje GEC5B41WG'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/elektricheskaya-plita-50-55-sm-gorenje-gec5b41wg_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Электрическая плита (50-55 см) Gorenje GEC5B41WG'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/elektricheskaya-plita-50-55-sm-gorenje-gec5b41wg_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Электрическая плита (50-55 см) Gorenje GEC5B41WG'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/elektricheskaya-plita-50-55-sm-gorenje-gec5b41wg_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Электрическая плита (50-55 см) Gorenje GEC5B41WG'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/elektricheskaya-plita-50-55-sm-gorenje-gec5b41wg_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Электрическая плита (50-55 см) Gorenje GEC5B41WG'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/elektricheskaya-plita-50-55-sm-gorenje-gec5b41wg_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Электрическая плита (50-55 см) Gorenje GEC5B41WG'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/elektricheskaya-plita-50-55-sm-gorenje-gec5b41wg_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Электрическая плита (50-55 см) Gorenje GEC5B41WG'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/elektricheskaya-plita-50-55-sm-gorenje-gec5b41wg_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Электрическая плита (50-55 см) Gorenje GEC5B41WG'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/elektricheskaya-plita-50-55-sm-gorenje-gec5b41wg_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Электрическая плита (50-55 см) Gorenje GEC5B41WG'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/elektricheskaya-plita-50-55-sm-gorenje-gec5b41wg_9.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Электрическая плита (50-55 см) Gorenje GEC5B41WG'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/elektricheskaya-plita-50-55-sm-gorenje-gec5b41wg_10.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Электрическая плита (50-55 см) Gorenje GEC5B41WG'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/elektricheskaya-plita-50-55-sm-gorenje-gec5b41wg_11.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Электрическая плита (50-55 см) Gorenje GEC5B41WG'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/elektricheskaya-plita-50-55-sm-gorenje-gec5b41wg_12.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Электрическая плита (50-55 см) Gorenje GEC5B41WG'));

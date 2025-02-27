@@ -1,0 +1,61 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Холодильник Pozis RK-102 Ruby красный', 15299, 7, '/items/productimages/holodilnik-pozis-rk-102-ruby-krasnyi_0.png', 4.95, '', 'Холодильник «Позис» RK-102 красного цвета оснащен холодильной камерой и морозилкой с ручной системой разморозки объемом 205 л и 80 л соответственно. Модель работает на базе хладагента R600a. Температура в холодильной камере варьируется от 0°С до 10°С, в морозилке -18°С и ниже. Расход электроэнергии в сутки составляет 1,08 кВт*ч, уровень шума не превышает 40 Дб, класс энергопотребления — В.
+В холодильной камере расположены три стеклянных полки, три дверных кармана и два ящика для хранения фруктов и овощей, в морозилке есть два выдвижных ящика. Размер холодильника — 1620х640х600 мм, вес — 59 кг.', 'InStock', 'Discount', 3, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Pozis'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Холодильник Pozis RK-102 Ruby красный'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Pozis RK-102 Ruby красный' 
+        AND a."Name" = 'стандартный' 
+        AND a."Type" = 'Тип компрессора'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Pozis RK-102 Ruby красный' 
+        AND a."Name" = '165' 
+        AND a."Type" = 'Высота'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Pozis RK-102 Ruby красный' 
+        AND a."Name" = '60' 
+        AND a."Type" = 'Ширина'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Pozis RK-102 Ruby красный' 
+        AND a."Name" = '65' 
+        AND a."Type" = 'Глубина'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Pozis RK-102 Ruby красный' 
+        AND a."Name" = '245' 
+        AND a."Type" = 'Общий объем'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-pozis-rk-102-ruby-krasnyi_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Pozis RK-102 Ruby красный'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-pozis-rk-102-ruby-krasnyi_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Pozis RK-102 Ruby красный'));

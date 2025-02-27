@@ -1,0 +1,28 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-uzkaya-samsung-ww70ag5s21cxld_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая Samsung WW70AG5S21CXLD'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-uzkaya-samsung-ww70ag5s21cxld_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая Samsung WW70AG5S21CXLD'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-uzkaya-samsung-ww70ag5s21cxld_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая Samsung WW70AG5S21CXLD'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-uzkaya-samsung-ww70ag5s21cxld_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая Samsung WW70AG5S21CXLD'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-uzkaya-samsung-ww70ag5s21cxld_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая Samsung WW70AG5S21CXLD'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-uzkaya-samsung-ww70ag5s21cxld_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая Samsung WW70AG5S21CXLD'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-uzkaya-samsung-ww70ag5s21cxld_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая Samsung WW70AG5S21CXLD'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-uzkaya-samsung-ww70ag5s21cxld_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая Samsung WW70AG5S21CXLD'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-uzkaya-samsung-ww70ag5s21cxld_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая Samsung WW70AG5S21CXLD'));

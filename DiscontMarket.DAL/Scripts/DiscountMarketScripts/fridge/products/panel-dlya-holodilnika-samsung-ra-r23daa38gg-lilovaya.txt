@@ -1,0 +1,60 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Панель для холодильника Samsung RA-R23DAA38GG лиловая', 9749, 14, '/items/productimages/panel-dlya-holodilnika-samsung-ra-r23daa38gg-lilovaya_0.png', 4.17, '', '', 'InStock', 'Discount', 3, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Samsung'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Панель для холодильника Samsung RA-R23DAA38GG лиловая'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Панель для холодильника Samsung RA-R23DAA38GG лиловая' 
+        AND a."Name" = 'Bespoke (RA-R23DAA38GG)' 
+        AND a."Type" = 'Серия'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Панель для холодильника Samsung RA-R23DAA38GG лиловая' 
+        AND a."Name" = 'стекло' 
+        AND a."Type" = 'Материал'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Панель для холодильника Samsung RA-R23DAA38GG лиловая' 
+        AND a."Name" = 'винтовой' 
+        AND a."Type" = 'Тип крепления'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Панель для холодильника Samsung RA-R23DAA38GG лиловая' 
+        AND a."Name" = 'для Samsung RZ32T7435AP/RR39T7475AP' 
+        AND a."Type" = 'Совместимость'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Панель для холодильника Samsung RA-R23DAA38GG лиловая' 
+        AND a."Name" = 'лиловый' 
+        AND a."Type" = 'Цвет'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/panel-dlya-holodilnika-samsung-ra-r23daa38gg-lilovaya_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Панель для холодильника Samsung RA-R23DAA38GG лиловая'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/panel-dlya-holodilnika-samsung-ra-r23daa38gg-lilovaya_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Панель для холодильника Samsung RA-R23DAA38GG лиловая'));

@@ -1,0 +1,86 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Электрическая плита (50-55 см) Gefest ЭП Н Д 5560-03 0158', 24999, 16, '/items/productimages/elektricheskaya-plita-50-55-sm-gefest-ep-n-d-5560-03-0158_0.png', 4.81, '', 'Электрическая плита Gefest ЭП Н Д 5560-03 0158 в корпусе черного цвета оборудована стеклокерамической варочной поверхностью, с которой без усилий удаляются загрязнения. На панели не образуются потертости и царапины. Прибор снабжен выдвижным ящиком для хранения посуды. 
+Четыре конфорки обладают разной мощностью, на одной можно увеличить зону нагрева, чтобы использовать посуду большого размера. Встроенный индикатор показывает, когда к плите можно прикасаться без риска получить ожог. Управление обеспечивают механические поворотные регуляторы. 
+Духовка объемом 55 л снабжена дверью из двухслойного стекла. В шкаф заложены восемь режимов, включая конвекцию и гриль. Максимальная температура нагрева составляет 240°С. Эта модель оснащена электромеханическим вертелом и металлическими направляющими. В комплект входят два противня, скребок, решетка. Размеры плиты — 85х58,5х50 см, вес — 42 кг.', 'InStock', 'Discount', 4, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Gefest'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Электрическая плита (50-55 см) Gefest ЭП Н Д 5560-03 0158'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Электрическая плита (50-55 см) Gefest ЭП Н Д 5560-03 0158' 
+        AND a."Name" = '55' 
+        AND a."Type" = 'Объем духовки'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Электрическая плита (50-55 см) Gefest ЭП Н Д 5560-03 0158' 
+        AND a."Name" = '8' 
+        AND a."Type" = 'Режимы работы духовки'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Электрическая плита (50-55 см) Gefest ЭП Н Д 5560-03 0158' 
+        AND a."Name" = 'Да' 
+        AND a."Type" = 'Конвекция'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Электрическая плита (50-55 см) Gefest ЭП Н Д 5560-03 0158' 
+        AND a."Name" = 'Hi-Light' 
+        AND a."Type" = 'Тип конфорок'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Электрическая плита (50-55 см) Gefest ЭП Н Д 5560-03 0158' 
+        AND a."Name" = 'Да' 
+        AND a."Type" = 'Индикация текущей температуры'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/elektricheskaya-plita-50-55-sm-gefest-ep-n-d-5560-03-0158_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Электрическая плита (50-55 см) Gefest ЭП Н Д 5560-03 0158'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/elektricheskaya-plita-50-55-sm-gefest-ep-n-d-5560-03-0158_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Электрическая плита (50-55 см) Gefest ЭП Н Д 5560-03 0158'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/elektricheskaya-plita-50-55-sm-gefest-ep-n-d-5560-03-0158_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Электрическая плита (50-55 см) Gefest ЭП Н Д 5560-03 0158'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/elektricheskaya-plita-50-55-sm-gefest-ep-n-d-5560-03-0158_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Электрическая плита (50-55 см) Gefest ЭП Н Д 5560-03 0158'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/elektricheskaya-plita-50-55-sm-gefest-ep-n-d-5560-03-0158_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Электрическая плита (50-55 см) Gefest ЭП Н Д 5560-03 0158'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/elektricheskaya-plita-50-55-sm-gefest-ep-n-d-5560-03-0158_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Электрическая плита (50-55 см) Gefest ЭП Н Д 5560-03 0158'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/elektricheskaya-plita-50-55-sm-gefest-ep-n-d-5560-03-0158_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Электрическая плита (50-55 см) Gefest ЭП Н Д 5560-03 0158'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/elektricheskaya-plita-50-55-sm-gefest-ep-n-d-5560-03-0158_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Электрическая плита (50-55 см) Gefest ЭП Н Д 5560-03 0158'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/elektricheskaya-plita-50-55-sm-gefest-ep-n-d-5560-03-0158_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Электрическая плита (50-55 см) Gefest ЭП Н Д 5560-03 0158'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/elektricheskaya-plita-50-55-sm-gefest-ep-n-d-5560-03-0158_9.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Электрическая плита (50-55 см) Gefest ЭП Н Д 5560-03 0158'));

@@ -1,0 +1,4 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/gazovaya-plitka-flama-tng-3201-w_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Газовая плитка Flama TNG 3201 W'));

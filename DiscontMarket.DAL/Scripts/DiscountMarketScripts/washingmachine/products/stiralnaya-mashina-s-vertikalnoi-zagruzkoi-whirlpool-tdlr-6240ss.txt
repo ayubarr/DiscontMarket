@@ -1,0 +1,69 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Стиральная машина с вертикальной загрузкой Whirlpool TDLR 6240SS', 34937, 13, '/items/productimages/stiralnaya-mashina-s-vertikalnoi-zagruzkoi-whirlpool-tdlr-6240ss_0.png', 4.78, '', '', 'InStock', 'Discount', 5, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Whirlpool'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Стиральная машина с вертикальной загрузкой Whirlpool TDLR 6240SS'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина с вертикальной загрузкой Whirlpool TDLR 6240SS' 
+        AND a."Name" = '6' 
+        AND a."Type" = 'Максимальная загрузка'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина с вертикальной загрузкой Whirlpool TDLR 6240SS' 
+        AND a."Name" = 'стандартный' 
+        AND a."Type" = 'Мотор'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина с вертикальной загрузкой Whirlpool TDLR 6240SS' 
+        AND a."Name" = '1000' 
+        AND a."Type" = 'Максимальная скорость отжима'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина с вертикальной загрузкой Whirlpool TDLR 6240SS' 
+        AND a."Name" = 'Да' 
+        AND a."Type" = 'Автоматическая парковка барабана'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина с вертикальной загрузкой Whirlpool TDLR 6240SS' 
+        AND a."Name" = 'Да' 
+        AND a."Type" = 'Индикация времени до конца программы'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-s-vertikalnoi-zagruzkoi-whirlpool-tdlr-6240ss_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина с вертикальной загрузкой Whirlpool TDLR 6240SS'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-s-vertikalnoi-zagruzkoi-whirlpool-tdlr-6240ss_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина с вертикальной загрузкой Whirlpool TDLR 6240SS'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-s-vertikalnoi-zagruzkoi-whirlpool-tdlr-6240ss_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина с вертикальной загрузкой Whirlpool TDLR 6240SS'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-s-vertikalnoi-zagruzkoi-whirlpool-tdlr-6240ss_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина с вертикальной загрузкой Whirlpool TDLR 6240SS'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-s-vertikalnoi-zagruzkoi-whirlpool-tdlr-6240ss_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина с вертикальной загрузкой Whirlpool TDLR 6240SS'));

@@ -1,0 +1,22 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-gorenje-nrk6202aw4-belyi_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Gorenje NRK6202AW4 белый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-gorenje-nrk6202aw4-belyi_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Gorenje NRK6202AW4 белый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-gorenje-nrk6202aw4-belyi_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Gorenje NRK6202AW4 белый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-gorenje-nrk6202aw4-belyi_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Gorenje NRK6202AW4 белый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-gorenje-nrk6202aw4-belyi_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Gorenje NRK6202AW4 белый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-gorenje-nrk6202aw4-belyi_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Gorenje NRK6202AW4 белый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-gorenje-nrk6202aw4-belyi_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Gorenje NRK6202AW4 белый'));

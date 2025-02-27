@@ -1,0 +1,75 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Настольная электрическая плита Centek CT-1509 Siberia (2 комфорки)', 1650, 13, '/items/productimages/nastolnaya-elektricheskaya-plita-centek-ct-1509-siberia-2-komforki_0.png', 4.46, '', 'Настольная электрическая плита Centek CT-1509 оснащена двумя конфорками спирального типа. Диаметр каждой конфорки составляет 14 см, а мощность — 1 кВт. Они быстро нагреваются и равномерно прогревают стенки посуды, ускоряя процесс приготовления пищи. Устройство работает от электросети напряжением 220 В. На передней панели располагаются индикаторы включения конфорок. Там же есть два поворотных регулятора, с помощью которых можно настроить необходимую температуру. Варочная панель плиты покрыта гладкой эмалью, что облегчает уход. Корпус сделан из металла, устойчивого к деформации, воздействию высоких температур и естественному износу.', 'InStock', 'Discount', 4, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Centek'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Настольная электрическая плита Centek CT-1509 Siberia (2 комфорки)'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Настольная электрическая плита Centek CT-1509 Siberia (2 комфорки)' 
+        AND a."Name" = '2' 
+        AND a."Type" = 'Количество конфорок'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Настольная электрическая плита Centek CT-1509 Siberia (2 комфорки)' 
+        AND a."Name" = 'спиральные' 
+        AND a."Type" = 'Тип конфорок'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Настольная электрическая плита Centek CT-1509 Siberia (2 комфорки)' 
+        AND a."Name" = '2000' 
+        AND a."Type" = 'Потребляемая мощность'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Настольная электрическая плита Centek CT-1509 Siberia (2 комфорки)' 
+        AND a."Name" = 'эмалированный металл' 
+        AND a."Type" = 'Материал варочной поверхности'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Настольная электрическая плита Centek CT-1509 Siberia (2 комфорки)' 
+        AND a."Name" = 'Да' 
+        AND a."Type" = 'Автоматическое выключение'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/nastolnaya-elektricheskaya-plita-centek-ct-1509-siberia-2-komforki_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Настольная электрическая плита Centek CT-1509 Siberia (2 комфорки)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/nastolnaya-elektricheskaya-plita-centek-ct-1509-siberia-2-komforki_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Настольная электрическая плита Centek CT-1509 Siberia (2 комфорки)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/nastolnaya-elektricheskaya-plita-centek-ct-1509-siberia-2-komforki_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Настольная электрическая плита Centek CT-1509 Siberia (2 комфорки)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/nastolnaya-elektricheskaya-plita-centek-ct-1509-siberia-2-komforki_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Настольная электрическая плита Centek CT-1509 Siberia (2 комфорки)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/nastolnaya-elektricheskaya-plita-centek-ct-1509-siberia-2-komforki_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Настольная электрическая плита Centek CT-1509 Siberia (2 комфорки)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/nastolnaya-elektricheskaya-plita-centek-ct-1509-siberia-2-komforki_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Настольная электрическая плита Centek CT-1509 Siberia (2 комфорки)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/nastolnaya-elektricheskaya-plita-centek-ct-1509-siberia-2-komforki_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Настольная электрическая плита Centek CT-1509 Siberia (2 комфорки)'));

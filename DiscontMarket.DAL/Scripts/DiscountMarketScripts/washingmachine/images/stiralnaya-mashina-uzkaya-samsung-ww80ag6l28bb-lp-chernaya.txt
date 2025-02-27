@@ -1,0 +1,16 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-uzkaya-samsung-ww80ag6l28bb-lp-chernaya_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая Samsung WW80AG6L28BB/LP черная'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-uzkaya-samsung-ww80ag6l28bb-lp-chernaya_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая Samsung WW80AG6L28BB/LP черная'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-uzkaya-samsung-ww80ag6l28bb-lp-chernaya_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая Samsung WW80AG6L28BB/LP черная'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-uzkaya-samsung-ww80ag6l28bb-lp-chernaya_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая Samsung WW80AG6L28BB/LP черная'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-uzkaya-samsung-ww80ag6l28bb-lp-chernaya_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая Samsung WW80AG6L28BB/LP черная'));

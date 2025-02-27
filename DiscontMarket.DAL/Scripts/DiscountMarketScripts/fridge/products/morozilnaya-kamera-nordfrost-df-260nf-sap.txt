@@ -1,0 +1,93 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Морозильная камера Nordfrost DF 260NF SAP', 15995, 15, '/items/productimages/morozilnaya-kamera-nordfrost-df-260nf-sap_0.png', 4.89, '', '', 'InStock', 'Discount', 3, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Nordfrost'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Морозильная камера Nordfrost DF 260NF SAP'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Морозильная камера Nordfrost DF 260NF SAP' 
+        AND a."Name" = 'стандартный' 
+        AND a."Type" = 'Тип компрессора'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Морозильная камера Nordfrost DF 260NF SAP' 
+        AND a."Name" = '93.3*57.4*62.5 см' 
+        AND a."Type" = 'Габаритные размеры (В*Ш*Г)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Морозильная камера Nordfrost DF 260NF SAP' 
+        AND a."Name" = 'A+' 
+        AND a."Type" = 'Класс энергоэффективности'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Морозильная камера Nordfrost DF 260NF SAP' 
+        AND a."Name" = 'механический' 
+        AND a."Type" = 'Тип управления'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Морозильная камера Nordfrost DF 260NF SAP' 
+        AND a."Name" = '190' 
+        AND a."Type" = 'Энергопотребление в год'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-nordfrost-df-260nf-sap_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Nordfrost DF 260NF SAP'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-nordfrost-df-260nf-sap_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Nordfrost DF 260NF SAP'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-nordfrost-df-260nf-sap_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Nordfrost DF 260NF SAP'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-nordfrost-df-260nf-sap_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Nordfrost DF 260NF SAP'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-nordfrost-df-260nf-sap_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Nordfrost DF 260NF SAP'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-nordfrost-df-260nf-sap_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Nordfrost DF 260NF SAP'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-nordfrost-df-260nf-sap_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Nordfrost DF 260NF SAP'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-nordfrost-df-260nf-sap_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Nordfrost DF 260NF SAP'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-nordfrost-df-260nf-sap_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Nordfrost DF 260NF SAP'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-nordfrost-df-260nf-sap_9.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Nordfrost DF 260NF SAP'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-nordfrost-df-260nf-sap_10.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Nordfrost DF 260NF SAP'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-nordfrost-df-260nf-sap_11.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Nordfrost DF 260NF SAP'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-nordfrost-df-260nf-sap_12.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Nordfrost DF 260NF SAP'));

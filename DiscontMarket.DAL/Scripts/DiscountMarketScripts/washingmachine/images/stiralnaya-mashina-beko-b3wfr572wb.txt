@@ -1,0 +1,19 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-beko-b3wfr572wb_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Beko B3WFR572WB'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-beko-b3wfr572wb_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Beko B3WFR572WB'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-beko-b3wfr572wb_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Beko B3WFR572WB'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-beko-b3wfr572wb_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Beko B3WFR572WB'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-beko-b3wfr572wb_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Beko B3WFR572WB'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-beko-b3wfr572wb_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Beko B3WFR572WB'));

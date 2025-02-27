@@ -1,0 +1,89 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Холодильник Liebherr CNsff 5703-22 001', 41999, 16, '/items/productimages/holodilnik-liebherr-cnsff-5703-22-001_0.png', 4.82, '', 'Холодильник Liebherr CNsff 5703-22 001, нержавеющая сталь — двухкамерная модель общим полезным объемом 360 л. 
+
+• <b>Контейнер EasyFresh</b> 
+Предназначен для хранения фруктов, овощей и зелени при увеличенной влажности. Она повышается естественным образом под воздействием продуктов и не испаряется благодаря закрытой конструкции. 
+
+• <b>Технология DuoCooling</b> 
+Контуров охлаждения два. Это повышает эффективность, предотвращает смешивание запахов. 
+
+• <b>Не требует ручного размораживания</b> 
+В холодильной камере используется капельный метод, в морозильной — технология No Frost. 
+Внутреннее оснащение состоит из пяти стеклянных полок, из которых четыре регулируются по высоте, четырех дверных карманов и подвеса для бутылок. Подсветка светодиодная — отличается высокой яркостью и не влияет на внутренний микроклимат. Оборудование морозильной камеры представлено тремя выдвижными ящиками. В сутки можно заморозить до 16 кг свежих продуктов, при отключении питания припасы будут сохраняться от таяния в течение 24 часов. 
+
+Управление сенсорное. Поддерживаются режимы «Суперохлаждение», «Суперзамораживание, «Отпуск», «Охлаждение напитков», «Шаббат». О слишком долго открытой двери и непредусмотренном повышении температуры оповещают звуковые и световые сигналы. Холодильник способен проводить самодиагностику и выявлять источник проблемы при возникновении каких-то неполадок. 
+
+В основе системы охлаждения — стандартный компрессор, энергопотребление соответствует классу А и составляет 405 кВт*ч в год. Уровень шума не превышает 39 дБ. Габариты Liebherr CNsff 5703-22 001: 201,5х59,7х67,5 см, вес — 76 кг.', 'InStock', 'Discount', 3, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Liebherr'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Холодильник Liebherr CNsff 5703-22 001'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Liebherr CNsff 5703-22 001' 
+        AND a."Name" = 'стандартный' 
+        AND a."Type" = 'Тип компрессора'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Liebherr CNsff 5703-22 001' 
+        AND a."Name" = '201.5' 
+        AND a."Type" = 'Высота'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Liebherr CNsff 5703-22 001' 
+        AND a."Name" = '59.7' 
+        AND a."Type" = 'Ширина'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Liebherr CNsff 5703-22 001' 
+        AND a."Name" = '67.5' 
+        AND a."Type" = 'Глубина'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Liebherr CNsff 5703-22 001' 
+        AND a."Name" = '454' 
+        AND a."Type" = 'Общий объем'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-liebherr-cnsff-5703-22-001_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Liebherr CNsff 5703-22 001'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-liebherr-cnsff-5703-22-001_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Liebherr CNsff 5703-22 001'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-liebherr-cnsff-5703-22-001_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Liebherr CNsff 5703-22 001'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-liebherr-cnsff-5703-22-001_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Liebherr CNsff 5703-22 001'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-liebherr-cnsff-5703-22-001_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Liebherr CNsff 5703-22 001'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-liebherr-cnsff-5703-22-001_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Liebherr CNsff 5703-22 001'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-liebherr-cnsff-5703-22-001_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Liebherr CNsff 5703-22 001'));

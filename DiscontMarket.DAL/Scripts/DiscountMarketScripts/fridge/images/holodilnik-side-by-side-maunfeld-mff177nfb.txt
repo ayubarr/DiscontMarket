@@ -1,0 +1,16 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-side-by-side-maunfeld-mff177nfb_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник (Side-by-Side) Maunfeld MFF177NFB'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-side-by-side-maunfeld-mff177nfb_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник (Side-by-Side) Maunfeld MFF177NFB'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-side-by-side-maunfeld-mff177nfb_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник (Side-by-Side) Maunfeld MFF177NFB'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-side-by-side-maunfeld-mff177nfb_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник (Side-by-Side) Maunfeld MFF177NFB'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-side-by-side-maunfeld-mff177nfb_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник (Side-by-Side) Maunfeld MFF177NFB'));

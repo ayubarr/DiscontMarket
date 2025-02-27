@@ -1,0 +1,16 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-bbk-23mwc-881t-b-m_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло BBK 23MWC-881T/B-M'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-bbk-23mwc-881t-b-m_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло BBK 23MWC-881T/B-M'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-bbk-23mwc-881t-b-m_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло BBK 23MWC-881T/B-M'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-bbk-23mwc-881t-b-m_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло BBK 23MWC-881T/B-M'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-bbk-23mwc-881t-b-m_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло BBK 23MWC-881T/B-M'));

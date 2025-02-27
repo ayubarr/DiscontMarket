@@ -1,0 +1,22 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-beko-wrs-5511-bww_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Beko WRS 5511 BWW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-beko-wrs-5511-bww_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Beko WRS 5511 BWW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-beko-wrs-5511-bww_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Beko WRS 5511 BWW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-beko-wrs-5511-bww_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Beko WRS 5511 BWW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-beko-wrs-5511-bww_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Beko WRS 5511 BWW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-beko-wrs-5511-bww_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Beko WRS 5511 BWW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-beko-wrs-5511-bww_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Beko WRS 5511 BWW'));

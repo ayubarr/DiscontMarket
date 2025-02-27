@@ -1,0 +1,19 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-s-grilem-gorenje-mo20a4bh_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь с грилем Gorenje MO20A4BH'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-s-grilem-gorenje-mo20a4bh_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь с грилем Gorenje MO20A4BH'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-s-grilem-gorenje-mo20a4bh_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь с грилем Gorenje MO20A4BH'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-s-grilem-gorenje-mo20a4bh_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь с грилем Gorenje MO20A4BH'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-s-grilem-gorenje-mo20a4bh_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь с грилем Gorenje MO20A4BH'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-s-grilem-gorenje-mo20a4bh_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь с грилем Gorenje MO20A4BH'));

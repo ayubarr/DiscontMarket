@@ -1,0 +1,72 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Настольная индукционная плита Kitfort КТ-107', 1845, 16, '/items/productimages/nastolnaya-indukcionnaya-plita-kitfort-kt-107_0.png', 4.12, '', 'Настольная индукционная плита Kitfort КТ-107 обладает одной конфоркой диаметром 26 см и мощностью 1,8 кВт. Габариты прибора — 32,5х28х6,3 см. Модель черного цвета, выполнена из стеклокерамики. Управление кнопочное, можно выбрать один из восьми режимов работы. Панель управления расположена спереди. Есть красная световая индикация включения и режима работы. Доступна блокировка от случайного изменения параметров приготовления и от управления детьми. Устройство снабжено системой защиты от перегрева. Мощность модели составляет 1800 Вт. Допустимая нагрузка не должна превышать 10 кг, рекомендуемый диаметр используемой посуды — от 12 до 26 см. Вес плиты составляет 1,7 кг.', 'InStock', 'Discount', 4, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Kitfort'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Настольная индукционная плита Kitfort КТ-107'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Настольная индукционная плита Kitfort КТ-107' 
+        AND a."Name" = '1' 
+        AND a."Type" = 'Количество конфорок'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Настольная индукционная плита Kitfort КТ-107' 
+        AND a."Name" = 'индукционные' 
+        AND a."Type" = 'Тип конфорок'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Настольная индукционная плита Kitfort КТ-107' 
+        AND a."Name" = '1800' 
+        AND a."Type" = 'Потребляемая мощность'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Настольная индукционная плита Kitfort КТ-107' 
+        AND a."Name" = 'стеклокерамика' 
+        AND a."Type" = 'Материал варочной поверхности'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Настольная индукционная плита Kitfort КТ-107' 
+        AND a."Name" = 'Да' 
+        AND a."Type" = 'Автоматическое выключение'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/nastolnaya-indukcionnaya-plita-kitfort-kt-107_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Настольная индукционная плита Kitfort КТ-107'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/nastolnaya-indukcionnaya-plita-kitfort-kt-107_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Настольная индукционная плита Kitfort КТ-107'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/nastolnaya-indukcionnaya-plita-kitfort-kt-107_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Настольная индукционная плита Kitfort КТ-107'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/nastolnaya-indukcionnaya-plita-kitfort-kt-107_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Настольная индукционная плита Kitfort КТ-107'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/nastolnaya-indukcionnaya-plita-kitfort-kt-107_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Настольная индукционная плита Kitfort КТ-107'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/nastolnaya-indukcionnaya-plita-kitfort-kt-107_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Настольная индукционная плита Kitfort КТ-107'));

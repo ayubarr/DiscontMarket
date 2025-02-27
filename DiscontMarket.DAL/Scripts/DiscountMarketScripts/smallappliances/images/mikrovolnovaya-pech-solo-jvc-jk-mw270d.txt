@@ -1,0 +1,13 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-jvc-jk-mw270d_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло JVC JK-MW270D'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-jvc-jk-mw270d_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло JVC JK-MW270D'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-jvc-jk-mw270d_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло JVC JK-MW270D'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-jvc-jk-mw270d_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло JVC JK-MW270D'));

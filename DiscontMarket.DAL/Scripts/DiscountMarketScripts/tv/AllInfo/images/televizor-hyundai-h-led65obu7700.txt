@@ -1,0 +1,4 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-hyundai-h-led65obu7700_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hyundai H-LED65OBU7700'));

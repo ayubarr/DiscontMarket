@@ -1,0 +1,70 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Холодильник Gorenje RK4181PS4', 22545, 8, '/items/productimages/holodilnik-gorenje-rk4181ps4_0.png', 4.26, '', 'Холодильник с нижней морозильной камерой Gorenje RK4181PS4 состоит из двух отделений общим объемом 277 л. В холодильном отсеке четыре полки из стекла и один ящик для овощей и фруктов. В двери четыре дополнительные полочки, которые могут использоваться для хранения продуктов в упаковках и напитков. Устройство размораживается вручную. Прибор отличается экономичностью (класс энергоэффективности — A+), так как потребляет всего 248 кВт*ч в год.
+
+Морозильная камера объемом 77 л работает с производительностью 3 кг/сутки. В отделе три выдвижных пластиковых ящика. Устройство управляется механическим способом. Холодильник оснащен внутренней светодиодной подсветкой. Уровень шума не превышает 39 дБ, поэтому прибор не слышно даже ночью. Двери можно перевесить на другую сторону.
+
+Холодильник, относящийся к климатическим классам N-ST, рекомендуется эксплуатировать при температуре, не выходящей за пределы 16-38°С. Металлический корпус защищен от коррозии эмалевым покрытием. Для легкого открывания дверь оснащена внутренней горизонтальной ручкой. Прибор способен автономно сохранять холод до 15 ч при отключении электричества. Модель комплектуется подставкой для яиц и формой для льда.', 'InStock', 'Discount', 3, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Gorenje'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Холодильник Gorenje RK4181PS4'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Gorenje RK4181PS4' 
+        AND a."Name" = 'стандартный' 
+        AND a."Type" = 'Тип компрессора'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Gorenje RK4181PS4' 
+        AND a."Name" = '180' 
+        AND a."Type" = 'Высота'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Gorenje RK4181PS4' 
+        AND a."Name" = '55' 
+        AND a."Type" = 'Ширина'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Gorenje RK4181PS4' 
+        AND a."Name" = '55.7' 
+        AND a."Type" = 'Глубина'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Gorenje RK4181PS4' 
+        AND a."Name" = '277' 
+        AND a."Type" = 'Общий объем'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-gorenje-rk4181ps4_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Gorenje RK4181PS4'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-gorenje-rk4181ps4_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Gorenje RK4181PS4'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-gorenje-rk4181ps4_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Gorenje RK4181PS4'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-gorenje-rk4181ps4_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Gorenje RK4181PS4'));

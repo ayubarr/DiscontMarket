@@ -1,0 +1,16 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-samsung-ue43du7100uxru_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung UE43DU7100UXRU'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-samsung-ue43du7100uxru_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung UE43DU7100UXRU'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-samsung-ue43du7100uxru_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung UE43DU7100UXRU'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-samsung-ue43du7100uxru_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung UE43DU7100UXRU'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-samsung-ue43du7100uxru_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung UE43DU7100UXRU'));

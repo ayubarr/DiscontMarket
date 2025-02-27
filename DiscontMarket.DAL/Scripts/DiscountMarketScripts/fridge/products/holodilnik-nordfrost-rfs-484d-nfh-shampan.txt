@@ -1,0 +1,72 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Холодильник Nordfrost RFS 484D NFH шампань', 50895, 19, '/items/productimages/holodilnik-nordfrost-rfs-484d-nfh-shampan_0.png', 4.49, '', '', 'InStock', 'Discount', 3, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Nordfrost'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Холодильник Nordfrost RFS 484D NFH шампань'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Nordfrost RFS 484D NFH шампань' 
+        AND a."Name" = 'инверторный' 
+        AND a."Type" = 'Тип компрессора'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Nordfrost RFS 484D NFH шампань' 
+        AND a."Name" = '178*83.6*63.6 см' 
+        AND a."Type" = 'Габаритные размеры (В*Ш*Г)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Nordfrost RFS 484D NFH шампань' 
+        AND a."Name" = '472' 
+        AND a."Type" = 'Общий объем'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Nordfrost RFS 484D NFH шампань' 
+        AND a."Name" = 'отсутствует' 
+        AND a."Type" = 'Тип зоны сохранения свежести'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Nordfrost RFS 484D NFH шампань' 
+        AND a."Name" = 'электронное/ сенсорное' 
+        AND a."Type" = 'Тип управления'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-nordfrost-rfs-484d-nfh-shampan_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Nordfrost RFS 484D NFH шампань'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-nordfrost-rfs-484d-nfh-shampan_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Nordfrost RFS 484D NFH шампань'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-nordfrost-rfs-484d-nfh-shampan_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Nordfrost RFS 484D NFH шампань'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-nordfrost-rfs-484d-nfh-shampan_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Nordfrost RFS 484D NFH шампань'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-nordfrost-rfs-484d-nfh-shampan_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Nordfrost RFS 484D NFH шампань'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-nordfrost-rfs-484d-nfh-shampan_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Nordfrost RFS 484D NFH шампань'));

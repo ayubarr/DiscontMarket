@@ -1,0 +1,99 @@
+﻿INSERT INTO "Products" 
+("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription",
+"Availability", "Status", "CategoryID", "BrandID", "UserID") 
+VALUES
+ ('Телевизор Haier 50 Smart TV S2 Pro', 21999, 8, '/items/productimages/televizor-haier-50-smart-tv-s2-pro_0.png', 4.92, '', 'Телевизор Haier 50 Smart TV S2 Pro — это 50-дюймовая модель разрешением 4K UHD (3840х2160 пикселей), простая и удобная операционная система Android TV и множество современных технологий для повышения качества изображения. 
+
+• <b>HQLED-экран, технология квантовых точек Quantum Dot и поддержка HDR 10</b> 
+Обеспечивают передачу около миллиарда цветов, высокую яркость, контрастность и четкость. Даже в самых темных сценах детализация не снижается, черный и белый цвета отображаются максимально точно. 
+
+• <b>Технология МЕМС</b> 
+Анализирует контент и добавляет в видеоряд промежуточные кадры, чтобы добиться исключительной плавности в динамичных сценах. Особенно полезна при просмотре спортивных трансляций. 
+
+• <b>2 Гб оперативной памяти и 16 Гб постоянной</b> 
+Система работает быстро и стабильно, без промедлений реагирует на команды пульта и дает возможность устанавливать дополнительные приложения. 
+
+• <b>Технология dbx-tv</b> 
+Громкость регулируется автоматически в зависимости от исходного уровня. 
+
+Телевизор обладает широкими возможностями для подключения разнообразного оборудования и оснащен двумя входами USB 2.0 Type A, четырьмя входами HDMI 2.1, слотом CI, оптическим выходом, 3,5-миллиметровым выходом на наушники. Кроме того, интегрирован разъем LAN для проводного интернета. Альтернатива — беспроводной доступ в Сеть по Wi-Fi. Поддерживается и Bluetooth версии 5.1. 
+
+Телевизор Haier 50 Smart TV S2 Pro поставляется с подставкой, также его можно повесить на стену при помощи кронштейна VESA 400х300 (приобретается дополнительно).', 'InStock', 'Discount', 1, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Haier'), 1);
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Haier 50 Smart TV S2 Pro'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '4K Ultra HD (3840x2160 Пикс)' AND "Type" = 'Экран));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Haier 50 Smart TV S2 Pro'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '50' AND "Type" = 'Диагональ));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Haier 50 Smart TV S2 Pro'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '60' AND "Type" = 'Частота обновления));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Haier 50 Smart TV S2 Pro'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'QLED' AND "Type" = 'Технология экрана));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Haier 50 Smart TV S2 Pro'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'Direct LED' AND "Type" = 'Тип светодиодной подсветки));
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-haier-50-smart-tv-s2-pro_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Haier 50 Smart TV S2 Pro'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-haier-50-smart-tv-s2-pro_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Haier 50 Smart TV S2 Pro'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-haier-50-smart-tv-s2-pro_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Haier 50 Smart TV S2 Pro'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-haier-50-smart-tv-s2-pro_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Haier 50 Smart TV S2 Pro'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-haier-50-smart-tv-s2-pro_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Haier 50 Smart TV S2 Pro'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-haier-50-smart-tv-s2-pro_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Haier 50 Smart TV S2 Pro'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-haier-50-smart-tv-s2-pro_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Haier 50 Smart TV S2 Pro'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-haier-50-smart-tv-s2-pro_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Haier 50 Smart TV S2 Pro'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-haier-50-smart-tv-s2-pro_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Haier 50 Smart TV S2 Pro'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-haier-50-smart-tv-s2-pro_9.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Haier 50 Smart TV S2 Pro'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-haier-50-smart-tv-s2-pro_10.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Haier 50 Smart TV S2 Pro'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-haier-50-smart-tv-s2-pro_11.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Haier 50 Smart TV S2 Pro'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-haier-50-smart-tv-s2-pro_12.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Haier 50 Smart TV S2 Pro'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-haier-50-smart-tv-s2-pro_13.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Haier 50 Smart TV S2 Pro'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-haier-50-smart-tv-s2-pro_14.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Haier 50 Smart TV S2 Pro'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-haier-50-smart-tv-s2-pro_15.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Haier 50 Smart TV S2 Pro'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-haier-50-smart-tv-s2-pro_16.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Haier 50 Smart TV S2 Pro'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-haier-50-smart-tv-s2-pro_17.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Haier 50 Smart TV S2 Pro'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-haier-50-smart-tv-s2-pro_18.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Haier 50 Smart TV S2 Pro'));

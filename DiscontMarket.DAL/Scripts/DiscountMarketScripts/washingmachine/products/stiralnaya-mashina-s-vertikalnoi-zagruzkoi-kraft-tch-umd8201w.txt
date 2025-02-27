@@ -1,0 +1,77 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Стиральная машина с вертикальной загрузкой Kraft TCH-UMD8201W', 23749, 14, '/items/productimages/stiralnaya-mashina-s-vertikalnoi-zagruzkoi-kraft-tch-umd8201w_0.png', 4.28, '', 'Отдельностоящая стиральная машина с вертикальной загрузкой Kraft TCH-UMD8201W мощностью 2100 Вт поддерживает одновременную обработку до 8 кг белья. Расход воды в течение одного цикла — 52 л, энергопотребление — 0.92 кВт. Прибор габаритными размерами 875х610х400 мм оснащен барабаном с системой автоочистки, автоматической парковкой и плавным открытием створок. Предусмотрена функция дозагрузки белья и самодиагностика. 
+Блок управления машиной включает механический регулятор режимов, клавишу включения, кнопки выбора температуры (20°С-90°С), интенсивности отжима (600-1300 об/мин), настройки дополнительных функций. Информация о состоянии устройства выводится на электронное табло. Модель поддерживает 16 автоматических программ, среди которых «Хлопок», «Джинс», «Синтетика», «Шерсть», «Деликатная», «Детские вещи». Функция отложенного старта (1-24 часа) позволяет установить подходящее время стирки. Режим «Моя программа» дает возможность самостоятельно настроить подходящие параметры стирки и сохранить их в памяти настройки для последующей активации одним касанием. 
+Предусмотрены контроль пенообразования, защита устройства от случайного включения и скачков напряжения в сети. При отключении электроэнергии модель сохраняет в памяти предыдущие настройки и впоследствии продолжает стирку с момента остановки.', 'InStock', 'Discount', 5, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Kraft'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Стиральная машина с вертикальной загрузкой Kraft TCH-UMD8201W'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина с вертикальной загрузкой Kraft TCH-UMD8201W' 
+        AND a."Name" = '8' 
+        AND a."Type" = 'Максимальная загрузка'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина с вертикальной загрузкой Kraft TCH-UMD8201W' 
+        AND a."Name" = 'инверторный' 
+        AND a."Type" = 'Мотор'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина с вертикальной загрузкой Kraft TCH-UMD8201W' 
+        AND a."Name" = '1200' 
+        AND a."Type" = 'Максимальная скорость отжима'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина с вертикальной загрузкой Kraft TCH-UMD8201W' 
+        AND a."Name" = 'Да' 
+        AND a."Type" = 'Автоматическая парковка барабана'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина с вертикальной загрузкой Kraft TCH-UMD8201W' 
+        AND a."Name" = 'Да' 
+        AND a."Type" = 'Индикация этапов программы'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-s-vertikalnoi-zagruzkoi-kraft-tch-umd8201w_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина с вертикальной загрузкой Kraft TCH-UMD8201W'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-s-vertikalnoi-zagruzkoi-kraft-tch-umd8201w_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина с вертикальной загрузкой Kraft TCH-UMD8201W'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-s-vertikalnoi-zagruzkoi-kraft-tch-umd8201w_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина с вертикальной загрузкой Kraft TCH-UMD8201W'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-s-vertikalnoi-zagruzkoi-kraft-tch-umd8201w_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина с вертикальной загрузкой Kraft TCH-UMD8201W'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-s-vertikalnoi-zagruzkoi-kraft-tch-umd8201w_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина с вертикальной загрузкой Kraft TCH-UMD8201W'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-s-vertikalnoi-zagruzkoi-kraft-tch-umd8201w_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина с вертикальной загрузкой Kraft TCH-UMD8201W'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-s-vertikalnoi-zagruzkoi-kraft-tch-umd8201w_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина с вертикальной загрузкой Kraft TCH-UMD8201W'));

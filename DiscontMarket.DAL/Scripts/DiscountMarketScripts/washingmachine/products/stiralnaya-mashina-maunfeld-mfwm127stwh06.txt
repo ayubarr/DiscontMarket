@@ -1,0 +1,90 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Стиральная машина Maunfeld MFWM127STWH06', 29195, 17, '/items/productimages/stiralnaya-mashina-maunfeld-mfwm127stwh06_0.png', 4.11, '', 'Белая стиральная машина Maunfeld MFWM127STWH06 оснащена инверторным мотором, который автоматический регулирует мощность и скорость вращения. Габариты — 85х59,5х47 см. Вес изделия — 55 кг. Модель вмещает до 7 кг белья. Скорость отжима достигает 1200 оборотов в минуту. Присутствует защита от детей, режим очистки барабана. Возможна дозагрузка белья во время программы. Способ управления прибором — сенсорный. Тип загрузки — фронтальный. Уровень шума во время стирки не превышает 59 дБ, сушки — 79 дБ. Максимальная температура нагрева воды — 90°С.', 'InStock', 'Discount', 5, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Maunfeld'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Стиральная машина Maunfeld MFWM127STWH06'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина Maunfeld MFWM127STWH06' 
+        AND a."Name" = '7' 
+        AND a."Type" = 'Максимальная загрузка'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина Maunfeld MFWM127STWH06' 
+        AND a."Name" = '1200' 
+        AND a."Type" = 'Максимальная скорость отжима'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина Maunfeld MFWM127STWH06' 
+        AND a."Name" = 'инверторный' 
+        AND a."Type" = 'Мотор'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина Maunfeld MFWM127STWH06' 
+        AND a."Name" = 'Да' 
+        AND a."Type" = 'Обработка паром'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина Maunfeld MFWM127STWH06' 
+        AND a."Name" = '85*59.5*47 см' 
+        AND a."Type" = 'Габаритные размеры (В*Ш*Г)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-maunfeld-mfwm127stwh06_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Maunfeld MFWM127STWH06'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-maunfeld-mfwm127stwh06_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Maunfeld MFWM127STWH06'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-maunfeld-mfwm127stwh06_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Maunfeld MFWM127STWH06'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-maunfeld-mfwm127stwh06_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Maunfeld MFWM127STWH06'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-maunfeld-mfwm127stwh06_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Maunfeld MFWM127STWH06'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-maunfeld-mfwm127stwh06_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Maunfeld MFWM127STWH06'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-maunfeld-mfwm127stwh06_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Maunfeld MFWM127STWH06'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-maunfeld-mfwm127stwh06_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Maunfeld MFWM127STWH06'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-maunfeld-mfwm127stwh06_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Maunfeld MFWM127STWH06'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-maunfeld-mfwm127stwh06_9.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Maunfeld MFWM127STWH06'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-maunfeld-mfwm127stwh06_10.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Maunfeld MFWM127STWH06'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-maunfeld-mfwm127stwh06_11.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Maunfeld MFWM127STWH06'));

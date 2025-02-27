@@ -1,0 +1,55 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Стиральная машина с вертикальной загрузкой Midea MFE05W70/W-RU', 25499, 14, '/items/productimages/stiralnaya-mashina-s-vertikalnoi-zagruzkoi-midea-mfe05w70-w-ru_0.png', 4.86, '', 'Стиральная машина с вертикальной загрузкой Midea MFE05W70/W-RU характеризуется компактными габаритами — 87,5х40х61 см. Объем барабана с опцией автоматической парковки равен 51 л. Он способен вмещать в себя до 7 кг белья. Максимальная скорость отжима составляет 1200 оборотов в минуту. При необходимости ее можно регулировать. Модель расходует во время работы 52 литра воды. Уровень шума при стирке составляет 64 дБ. Техника обладает классом энергоэффективности А. Энергопотребление за один цикл достигает 0,75 кВт*ч.
+Управление моделью — электронное, осуществляется посредством поворотного механизма. Класс стирки — А, отжима — С. Стиральная машина предусматривает несколько режимов работы — «детские вещи», «спорт», «хлопок», «шерсть» и другие. Встроенный таймер позволяет устанавливать отложенный старт до 24 часов. Потребляемая мощность составляет 2100 Вт. Вес техники — 56 кг.', 'InStock', 'Discount', 5, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Midea'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Стиральная машина с вертикальной загрузкой Midea MFE05W70/W-RU'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина с вертикальной загрузкой Midea MFE05W70/W-RU' 
+        AND a."Name" = '7' 
+        AND a."Type" = 'Максимальная загрузка'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина с вертикальной загрузкой Midea MFE05W70/W-RU' 
+        AND a."Name" = 'стандартный' 
+        AND a."Type" = 'Мотор'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина с вертикальной загрузкой Midea MFE05W70/W-RU' 
+        AND a."Name" = '1200' 
+        AND a."Type" = 'Максимальная скорость отжима'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-s-vertikalnoi-zagruzkoi-midea-mfe05w70-w-ru_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина с вертикальной загрузкой Midea MFE05W70/W-RU'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-s-vertikalnoi-zagruzkoi-midea-mfe05w70-w-ru_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина с вертикальной загрузкой Midea MFE05W70/W-RU'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-s-vertikalnoi-zagruzkoi-midea-mfe05w70-w-ru_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина с вертикальной загрузкой Midea MFE05W70/W-RU'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-s-vertikalnoi-zagruzkoi-midea-mfe05w70-w-ru_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина с вертикальной загрузкой Midea MFE05W70/W-RU'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-s-vertikalnoi-zagruzkoi-midea-mfe05w70-w-ru_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина с вертикальной загрузкой Midea MFE05W70/W-RU'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-s-vertikalnoi-zagruzkoi-midea-mfe05w70-w-ru_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина с вертикальной загрузкой Midea MFE05W70/W-RU'));

@@ -1,0 +1,28 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-toshiba-mw3-mm21pewh_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло Toshiba MW3-MM21PE(WH)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-toshiba-mw3-mm21pewh_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло Toshiba MW3-MM21PE(WH)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-toshiba-mw3-mm21pewh_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло Toshiba MW3-MM21PE(WH)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-toshiba-mw3-mm21pewh_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло Toshiba MW3-MM21PE(WH)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-toshiba-mw3-mm21pewh_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло Toshiba MW3-MM21PE(WH)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-toshiba-mw3-mm21pewh_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло Toshiba MW3-MM21PE(WH)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-toshiba-mw3-mm21pewh_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло Toshiba MW3-MM21PE(WH)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-toshiba-mw3-mm21pewh_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло Toshiba MW3-MM21PE(WH)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-toshiba-mw3-mm21pewh_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло Toshiba MW3-MM21PE(WH)'));

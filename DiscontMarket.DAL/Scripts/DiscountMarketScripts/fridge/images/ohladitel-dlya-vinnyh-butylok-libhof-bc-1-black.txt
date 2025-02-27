@@ -1,0 +1,28 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/ohladitel-dlya-vinnyh-butylok-libhof-bc-1-black_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Охладитель для винных бутылок Libhof BC-1 black'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/ohladitel-dlya-vinnyh-butylok-libhof-bc-1-black_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Охладитель для винных бутылок Libhof BC-1 black'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/ohladitel-dlya-vinnyh-butylok-libhof-bc-1-black_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Охладитель для винных бутылок Libhof BC-1 black'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/ohladitel-dlya-vinnyh-butylok-libhof-bc-1-black_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Охладитель для винных бутылок Libhof BC-1 black'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/ohladitel-dlya-vinnyh-butylok-libhof-bc-1-black_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Охладитель для винных бутылок Libhof BC-1 black'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/ohladitel-dlya-vinnyh-butylok-libhof-bc-1-black_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Охладитель для винных бутылок Libhof BC-1 black'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/ohladitel-dlya-vinnyh-butylok-libhof-bc-1-black_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Охладитель для винных бутылок Libhof BC-1 black'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/ohladitel-dlya-vinnyh-butylok-libhof-bc-1-black_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Охладитель для винных бутылок Libhof BC-1 black'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/ohladitel-dlya-vinnyh-butylok-libhof-bc-1-black_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Охладитель для винных бутылок Libhof BC-1 black'));

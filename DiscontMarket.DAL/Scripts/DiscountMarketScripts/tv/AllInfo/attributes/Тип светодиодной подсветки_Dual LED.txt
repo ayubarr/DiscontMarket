@@ -1,0 +1,4 @@
+﻿INSERT INTO "Attributes" ("NameTranslate", "Name", "Type") VALUES
+('Dual LED', 'Dual LED', 'Тип светодиодной подсветки');
+INSERT INTO "AttributeCategory" ("AttributeID", "CategoryID") VALUES
+((SELECT "ID" FROM "Attributes" WHERE "Name" = 'Dual LED' AND "Type" = 'Тип светодиодной подсветки'), (SELECT "ID" FROM "Categories" WHERE "Name" = 'tv'));

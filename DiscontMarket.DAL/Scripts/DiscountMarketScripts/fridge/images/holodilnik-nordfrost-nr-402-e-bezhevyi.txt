@@ -1,0 +1,16 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-nordfrost-nr-402-e-bezhevyi_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Nordfrost NR 402 E бежевый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-nordfrost-nr-402-e-bezhevyi_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Nordfrost NR 402 E бежевый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-nordfrost-nr-402-e-bezhevyi_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Nordfrost NR 402 E бежевый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-nordfrost-nr-402-e-bezhevyi_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Nordfrost NR 402 E бежевый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-nordfrost-nr-402-e-bezhevyi_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Nordfrost NR 402 E бежевый'));

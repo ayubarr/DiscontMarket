@@ -1,0 +1,45 @@
+﻿INSERT INTO "Products" 
+("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription",
+"Availability", "Status", "CategoryID", "BrandID", "UserID") 
+VALUES
+ ('Телевизор Samsung QE50QN90CAUXCE', 75184, 17, '/items/productimages/televizor-samsung-qe50qn90cauxce_0.png', 4.44, '', 'Телевизор Samsung QE50QN90CAUXCE оснащен процессором Neo Quantum 4K с ОС Tizen, благодаря которому достигается удобная эксплуатация. Устройство со встроенным тюнером T/T2/C/S2 отличается поддержкой Smart TV, записи с ТВ на USB и воспроизведения с внешнего носителя, функциями Sleep-таймера и TimeShift, голосовым управлением и защитой от детей.
+
+Экран диагональю 50" с технологиями OLED, QLED и HDR обеспечивает изображение формата 16:9 с разрешением Ultra HD. Дисплей с частотой обновления 144 Гц и цифровым шумоподавлением гарантирует плавность динамичных сцен и высококачественную трансляцию. За звуковое сопровождение отвечают два фронтальных АС по 20 Вт.
+
+Прибор с потребляемой мощностью 175 Вт оборудован модулями Wi-Fi и Bluetooth, интерфейсом LAN, разъемом для DVB CAM, двумя портами USB 2.0 типа А и четырьмя входами HDMI. Модель габаритами 64,4х111,4х2,7 см и весом 13,5 кг устанавливается настенным или настольным способами, для чего используется крепление VESA 200х200 или подставка. В комплектацию входит опора шириной 46,5 см, с учетом которой параметры изделия равны 22,3х111,4х22 см и 17,6 кг.', 'InStock', 'Discount', 1, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Samsung'), 1);
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung QE50QN90CAUXCE'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '4K Ultra HD (3840x2160 Пикс)' AND "Type" = 'Экран));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung QE50QN90CAUXCE'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '50' AND "Type" = 'Диагональ));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung QE50QN90CAUXCE'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '144' AND "Type" = 'Частота обновления));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung QE50QN90CAUXCE'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'QLED' AND "Type" = 'Технология экрана));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung QE50QN90CAUXCE'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'OLED' AND "Type" = 'Тип светодиодной подсветки));
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-samsung-qe50qn90cauxce_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung QE50QN90CAUXCE'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-samsung-qe50qn90cauxce_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung QE50QN90CAUXCE'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-samsung-qe50qn90cauxce_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung QE50QN90CAUXCE'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-samsung-qe50qn90cauxce_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung QE50QN90CAUXCE'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-samsung-qe50qn90cauxce_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung QE50QN90CAUXCE'));

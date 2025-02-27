@@ -1,0 +1,72 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Настольная индукционная плита Galaxy LINE GL3053', 2125, 10, '/items/productimages/nastolnaya-indukcionnaya-plita-galaxy-line-gl3053_0.png', 4.8, '', 'Настольная индукционная плита Galaxy GL3053 оборудована варочной поверхностью их стеклокерамики, на которой расположена одна конфорка диаметром 20 см. Потребляемая мощность устройства составляет 1000 Вт. На корпусе расположена сенсорная панель управления, индикаторы включения и выбранной мощности. Длина сетевого шнура составляет 1 м. Модель оснащена функциями автоматического отключения и отключения при возникновении перегрева. Габаритные размеры устройства — 40х34х8,5 см, вес — 1,7 кг. Модель выполнена в черном цвете.', 'InStock', 'Discount', 4, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Galaxy LINE'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Настольная индукционная плита Galaxy LINE GL3053'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Настольная индукционная плита Galaxy LINE GL3053' 
+        AND a."Name" = '1' 
+        AND a."Type" = 'Количество конфорок'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Настольная индукционная плита Galaxy LINE GL3053' 
+        AND a."Name" = 'индукционные' 
+        AND a."Type" = 'Тип конфорок'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Настольная индукционная плита Galaxy LINE GL3053' 
+        AND a."Name" = '2000' 
+        AND a."Type" = 'Потребляемая мощность'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Настольная индукционная плита Galaxy LINE GL3053' 
+        AND a."Name" = 'стеклокерамика' 
+        AND a."Type" = 'Материал варочной поверхности'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Настольная индукционная плита Galaxy LINE GL3053' 
+        AND a."Name" = 'Да' 
+        AND a."Type" = 'Таймер'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/nastolnaya-indukcionnaya-plita-galaxy-line-gl3053_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Настольная индукционная плита Galaxy LINE GL3053'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/nastolnaya-indukcionnaya-plita-galaxy-line-gl3053_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Настольная индукционная плита Galaxy LINE GL3053'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/nastolnaya-indukcionnaya-plita-galaxy-line-gl3053_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Настольная индукционная плита Galaxy LINE GL3053'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/nastolnaya-indukcionnaya-plita-galaxy-line-gl3053_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Настольная индукционная плита Galaxy LINE GL3053'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/nastolnaya-indukcionnaya-plita-galaxy-line-gl3053_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Настольная индукционная плита Galaxy LINE GL3053'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/nastolnaya-indukcionnaya-plita-galaxy-line-gl3053_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Настольная индукционная плита Galaxy LINE GL3053'));

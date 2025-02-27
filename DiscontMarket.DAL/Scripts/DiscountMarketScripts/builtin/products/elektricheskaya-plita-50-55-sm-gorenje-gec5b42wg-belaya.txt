@@ -1,0 +1,69 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Электрическая плита (50-55 см) Gorenje GEC5B42WG белая', 26499, 19, '/items/productimages/elektricheskaya-plita-50-55-sm-gorenje-gec5b42wg-belaya_0.png', 4.97, '', 'Электрическая плита Gorenje GEC5B42WG обладает корпусом белого цвета, дверца духовки и варочная стеклокерамическая панель — черные. Модель оснащена четырьмя конфорками диаметром от 14,5 см до 18 см и мощностью от 1,2 кВт до 1,7 кВт. Встроенные индикаторы остаточного тепла дают возможность определять состояние конфорки после завершения процесса готовки. <br>Управление — механическое, при помощи поворотных регуляторов и кнопок. Предусмотрен таймер выключения духовки. Благодаря габаритным размерам 85х50х59,4 см плита хорошо впишется в небольшую кухню.<br>Вместительный духовой шкаф объемом 68 л оборудован дверцей из двухслойного стекла. Внутреннее покрытие выполнено из эмали SilverMatte. Реализована функция AquaClean: очистка паром. У устройства девять режимов работы, включая конвекцию. Максимальная температура — 275°С. Потребляемая мощность равна 8600 Вт.', 'InStock', 'Discount', 4, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Gorenje'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Электрическая плита (50-55 см) Gorenje GEC5B42WG белая'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Электрическая плита (50-55 см) Gorenje GEC5B42WG белая' 
+        AND a."Name" = '68' 
+        AND a."Type" = 'Объем духовки'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Электрическая плита (50-55 см) Gorenje GEC5B42WG белая' 
+        AND a."Name" = '9' 
+        AND a."Type" = 'Режимы работы духовки'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Электрическая плита (50-55 см) Gorenje GEC5B42WG белая' 
+        AND a."Name" = 'Да' 
+        AND a."Type" = 'Конвекция'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Электрическая плита (50-55 см) Gorenje GEC5B42WG белая' 
+        AND a."Name" = 'Hi-Light' 
+        AND a."Type" = 'Тип конфорок'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Электрическая плита (50-55 см) Gorenje GEC5B42WG белая' 
+        AND a."Name" = 'инфракрасный' 
+        AND a."Type" = 'Тип гриля'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/elektricheskaya-plita-50-55-sm-gorenje-gec5b42wg-belaya_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Электрическая плита (50-55 см) Gorenje GEC5B42WG белая'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/elektricheskaya-plita-50-55-sm-gorenje-gec5b42wg-belaya_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Электрическая плита (50-55 см) Gorenje GEC5B42WG белая'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/elektricheskaya-plita-50-55-sm-gorenje-gec5b42wg-belaya_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Электрическая плита (50-55 см) Gorenje GEC5B42WG белая'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/elektricheskaya-plita-50-55-sm-gorenje-gec5b42wg-belaya_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Электрическая плита (50-55 см) Gorenje GEC5B42WG белая'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/elektricheskaya-plita-50-55-sm-gorenje-gec5b42wg-belaya_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Электрическая плита (50-55 см) Gorenje GEC5B42WG белая'));

@@ -1,0 +1,80 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Стиральная машина Hisense WF5S1043BW', 47499, 13, '/items/productimages/stiralnaya-mashina-hisense-wf5s1043bw_0.png', 4.54, '', 'Стиральная машина Hisense WF5S1043BW оснащена инверторным двигателем, обеспечивающим низкий уровень шума (при стирке не превышает 57 дБ, при отжиме — 72 дБ) и длительный срок службы. Модель рассчитана на 10,5 кг белья, снабжена 15 программами: для стирки хлопка, шерсти, синтетики, шелка, обработки паром, очистки барабана и другими. Отложенный запуск автоматически запустит машину в нужное время. Добавлять белье можно после начала стирки. 
+Скорость отжима регулируется (максимальная составляет 1400 об/мин). Управлять стиральной машиной можно как при помощи панели управления, так и со смартфона: благодаря встроенному модулю Wi-Fi машина синхронизируется с приложением. Панель управления блокируется от случайного нажатия. 
+Модель оснащена встроенной защитой от протечек и датчиком пенообразования. Расход воды за цикл составляет 41 л, электричества — 0,52 кВт*ч. Мощность стиральной машины — 1750 Вт, диаметр люка составляет 52 см. Вес прибора — 69 кг.', 'InStock', 'Discount', 5, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Hisense'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Стиральная машина Hisense WF5S1043BW'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина Hisense WF5S1043BW' 
+        AND a."Name" = '10.5' 
+        AND a."Type" = 'Максимальная загрузка'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина Hisense WF5S1043BW' 
+        AND a."Name" = '1400' 
+        AND a."Type" = 'Максимальная скорость отжима'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина Hisense WF5S1043BW' 
+        AND a."Name" = 'инверторный' 
+        AND a."Type" = 'Мотор'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина Hisense WF5S1043BW' 
+        AND a."Name" = 'Да' 
+        AND a."Type" = 'Обработка паром'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина Hisense WF5S1043BW' 
+        AND a."Name" = '84.5*58.5*59 см' 
+        AND a."Type" = 'Габаритные размеры (В*Ш*Г)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-hisense-wf5s1043bw_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Hisense WF5S1043BW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-hisense-wf5s1043bw_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Hisense WF5S1043BW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-hisense-wf5s1043bw_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Hisense WF5S1043BW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-hisense-wf5s1043bw_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Hisense WF5S1043BW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-hisense-wf5s1043bw_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Hisense WF5S1043BW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-hisense-wf5s1043bw_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Hisense WF5S1043BW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-hisense-wf5s1043bw_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Hisense WF5S1043BW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-hisense-wf5s1043bw_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Hisense WF5S1043BW'));

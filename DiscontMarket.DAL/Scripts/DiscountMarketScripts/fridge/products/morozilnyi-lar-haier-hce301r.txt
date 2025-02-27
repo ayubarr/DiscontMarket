@@ -1,0 +1,71 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Морозильный ларь Haier HCE301R', 21999, 17, '/items/productimages/morozilnyi-lar-haier-hce301r_0.png', 4.37, '', 'Морозильный ларь Haier HCE301R — компактная, но вместительная модель белого цвета с морозильной камерой объемом 301 л. Габаритные размеры составляют 84,5х61,5х111 см. Модель отличается низким уровнем шума при работе (38 дБ) и низким энергопотреблением. Класс энергоэффективности А+. При отключении питания прибор способен продолжать заморозку на протяжении 25 ч. Мощность замораживания — 21 кг/сутки. 
+
+Технология FrostProtect позволяет установить оборудование в неотапливаемых помещениях, например на балконе, закрытой веранде, в подвале или гараже. В морозильной камере сделано одно отделение, дополнительно установлено две подвесных съёмных корзины. Дверца открывается вверх. Тип управления прибором электронный, размораживание камеры ручное. В устройство встроен дисплей с белой подсветкой, где выводятся данные о температуре и режиме. Функция «Суперзамораживание» позволяет заморозить большое количество разнообразных продуктов за короткий период времени. Вес оборудования равен 40 кг. Потребляемая мощность — 120 Вт. Страна производства — Россия. Гарантия — 1 год.', 'InStock', 'Discount', 3, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Haier'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Морозильный ларь Haier HCE301R'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Морозильный ларь Haier HCE301R' 
+        AND a."Name" = 'стандартный' 
+        AND a."Type" = 'Тип компрессора'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Морозильный ларь Haier HCE301R' 
+        AND a."Name" = '84.5*111*61.5 см' 
+        AND a."Type" = 'Габаритные размеры (В*Ш*Г)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Морозильный ларь Haier HCE301R' 
+        AND a."Name" = 'A+' 
+        AND a."Type" = 'Класс энергоэффективности'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Морозильный ларь Haier HCE301R' 
+        AND a."Name" = 'Да' 
+        AND a."Type" = 'Режим суперзамораживания'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Морозильный ларь Haier HCE301R' 
+        AND a."Name" = 'электронный' 
+        AND a."Type" = 'Тип управления'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnyi-lar-haier-hce301r_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильный ларь Haier HCE301R'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnyi-lar-haier-hce301r_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильный ларь Haier HCE301R'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnyi-lar-haier-hce301r_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильный ларь Haier HCE301R'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnyi-lar-haier-hce301r_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильный ларь Haier HCE301R'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnyi-lar-haier-hce301r_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильный ларь Haier HCE301R'));

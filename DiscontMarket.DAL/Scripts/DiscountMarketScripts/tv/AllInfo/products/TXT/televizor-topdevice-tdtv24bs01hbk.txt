@@ -1,0 +1,82 @@
+﻿INSERT INTO "Products" 
+("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription",
+"Availability", "Status", "CategoryID", "BrandID", "UserID") 
+VALUES
+ ('Телевизор TopDevice TDTV24BS01H_BK', 6280, 19, '/items/productimages/televizor-topdevice-tdtv24bs01hbk_0.png', 4.32, '', 'Телевизор Topdevice TDTV24BS01H_BK оснащен разъемом USB, что позволяет воспроизводить фильмы и музыку с накопителей. 
+
+• <b>Поддержка Wi-Fi</b>
+Обеспечивает быстрое и удобное подключение к интернету.
+
+• <b>Защита от детей</b>
+Предотвращает несанкционированный доступ к настройкам и включению.
+
+• <b>Поддержка Smart TV</b>
+Позволяет легко скачивать приложения и игры.
+
+• <b>Оптимальная яркость 200 кд/м²</b>
+Создает качественное изображение с оптимальной контрастностью, благодаря чему обеспечиваются комфортные условия для просмотра. 
+
+• <b>Dolby AudioC</b>
+Обеспечивает объемный чистый звук, создавая реалистичный эффект. 
+
+• <b>Цифровое шумоподавление</b>
+Создает высокую детализацию. 
+
+Модель с ОС Android 11 оснащена голосовым помощником Google.', 'InStock', 'Discount', 1, (SELECT "ID" FROM "Brands" WHERE "Name" = 'TopDevice'), 1);
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор TopDevice TDTV24BS01H_BK'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'HD (1366x768 Пикс)' AND "Type" = 'Экран));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор TopDevice TDTV24BS01H_BK'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '24' AND "Type" = 'Диагональ));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор TopDevice TDTV24BS01H_BK'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '60' AND "Type" = 'Частота обновления));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор TopDevice TDTV24BS01H_BK'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'LED' AND "Type" = 'Технология экрана));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор TopDevice TDTV24BS01H_BK'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'Direct LED' AND "Type" = 'Тип светодиодной подсветки));
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-topdevice-tdtv24bs01hbk_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор TopDevice TDTV24BS01H_BK'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-topdevice-tdtv24bs01hbk_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор TopDevice TDTV24BS01H_BK'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-topdevice-tdtv24bs01hbk_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор TopDevice TDTV24BS01H_BK'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-topdevice-tdtv24bs01hbk_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор TopDevice TDTV24BS01H_BK'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-topdevice-tdtv24bs01hbk_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор TopDevice TDTV24BS01H_BK'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-topdevice-tdtv24bs01hbk_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор TopDevice TDTV24BS01H_BK'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-topdevice-tdtv24bs01hbk_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор TopDevice TDTV24BS01H_BK'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-topdevice-tdtv24bs01hbk_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор TopDevice TDTV24BS01H_BK'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-topdevice-tdtv24bs01hbk_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор TopDevice TDTV24BS01H_BK'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-topdevice-tdtv24bs01hbk_9.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор TopDevice TDTV24BS01H_BK'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-topdevice-tdtv24bs01hbk_10.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор TopDevice TDTV24BS01H_BK'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-topdevice-tdtv24bs01hbk_11.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор TopDevice TDTV24BS01H_BK'));

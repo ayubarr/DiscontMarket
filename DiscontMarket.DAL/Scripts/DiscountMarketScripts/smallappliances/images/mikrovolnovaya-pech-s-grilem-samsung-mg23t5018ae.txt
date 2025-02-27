@@ -1,0 +1,22 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-s-grilem-samsung-mg23t5018ae_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь с грилем Samsung MG23T5018AE'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-s-grilem-samsung-mg23t5018ae_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь с грилем Samsung MG23T5018AE'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-s-grilem-samsung-mg23t5018ae_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь с грилем Samsung MG23T5018AE'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-s-grilem-samsung-mg23t5018ae_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь с грилем Samsung MG23T5018AE'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-s-grilem-samsung-mg23t5018ae_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь с грилем Samsung MG23T5018AE'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-s-grilem-samsung-mg23t5018ae_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь с грилем Samsung MG23T5018AE'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-s-grilem-samsung-mg23t5018ae_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь с грилем Samsung MG23T5018AE'));

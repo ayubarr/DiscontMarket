@@ -1,0 +1,79 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Комбинированная плита (50-55 см) Gefest ПГЭ 5102-01 0194 черный/нержавеющая сталь', 15649, 7, '/items/productimages/kombinirovannaya-plita-50-55-sm-gefest-pge-5102-01-0194-chernyi-nerzhaveushhaya-stal_0.png', 4.89, '', 'Комбинированная плита Gefest ПГЭ 5102-01 0194, черная, — модель с габаритными размерами 85х50х58,5 см, весом — 35 кг, которая относится к А-классу энергоэффективности. Присоединительная мощность составляет 2,05 кВт. Доступна работа от газового баллона. В нижней части корпуса предусмотрен ящик для посуды. Устройство обладает четырьмя газовыми конфорками диаметрами 4,9 см, 6,7 см (х2), 8,7 см и мощностью 1 кВт, 1,8 кВт (х2), 2,8 кВт. Чугунные решетки дают возможность удобно размещать сковороды или кастрюли. Эмалированная поверхность гарантирует легкое очищение от загрязнений. Наличие электроподжига позволяет создавать искры для получения огня. 
+
+Духовой шкаф электрического типа отличается объемом 55 л. Рабочая температура достигает 240°С. Встроенный гриль мощностью 1200 Вт рассчитан на получение мясных, рыбных блюд, выпечки с хрустящей корочкой. Предусмотрена поддержка четырех режимов, в том числе конвекции. Термостат поддерживает оптимальную температуру. За освещение отвечает лампа накаливания, которая обеспечивает хорошую видимость. Дверца с двойным стеклом откидывается вниз с помощью длинной ручки. 
+
+Управлять настройками необходимо с помощью механических регуляторов. Световая индикация показывает состояние работы. Функция «Газ-контроль» предотвращает подачу газа в случае возникновения утечки. В комплекте поставляются плоский и глубокий противень, решетка для духовки, жиклеры для функционирования газового баллона. Регулируемые ножки обеспечивают устойчивость на полу.', 'InStock', 'Discount', 4, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Gefest'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Комбинированная плита (50-55 см) Gefest ПГЭ 5102-01 0194 черный/нержавеющая сталь'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Комбинированная плита (50-55 см) Gefest ПГЭ 5102-01 0194 черный/нержавеющая сталь' 
+        AND a."Name" = '4' 
+        AND a."Type" = 'Количество конфорок'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Комбинированная плита (50-55 см) Gefest ПГЭ 5102-01 0194 черный/нержавеющая сталь' 
+        AND a."Name" = 'чугунная' 
+        AND a."Type" = 'Решетка'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Комбинированная плита (50-55 см) Gefest ПГЭ 5102-01 0194 черный/нержавеющая сталь' 
+        AND a."Name" = '55' 
+        AND a."Type" = 'Объем духовки'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Комбинированная плита (50-55 см) Gefest ПГЭ 5102-01 0194 черный/нержавеющая сталь' 
+        AND a."Name" = 'электрический' 
+        AND a."Type" = 'Тип духовки'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Комбинированная плита (50-55 см) Gefest ПГЭ 5102-01 0194 черный/нержавеющая сталь' 
+        AND a."Name" = '85*50*58.5 см' 
+        AND a."Type" = 'Габаритные размеры (В*Ш*Г)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/kombinirovannaya-plita-50-55-sm-gefest-pge-5102-01-0194-chernyi-nerzhaveushhaya-stal_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Комбинированная плита (50-55 см) Gefest ПГЭ 5102-01 0194 черный/нержавеющая сталь'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/kombinirovannaya-plita-50-55-sm-gefest-pge-5102-01-0194-chernyi-nerzhaveushhaya-stal_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Комбинированная плита (50-55 см) Gefest ПГЭ 5102-01 0194 черный/нержавеющая сталь'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/kombinirovannaya-plita-50-55-sm-gefest-pge-5102-01-0194-chernyi-nerzhaveushhaya-stal_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Комбинированная плита (50-55 см) Gefest ПГЭ 5102-01 0194 черный/нержавеющая сталь'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/kombinirovannaya-plita-50-55-sm-gefest-pge-5102-01-0194-chernyi-nerzhaveushhaya-stal_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Комбинированная плита (50-55 см) Gefest ПГЭ 5102-01 0194 черный/нержавеющая сталь'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/kombinirovannaya-plita-50-55-sm-gefest-pge-5102-01-0194-chernyi-nerzhaveushhaya-stal_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Комбинированная плита (50-55 см) Gefest ПГЭ 5102-01 0194 черный/нержавеющая сталь'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/kombinirovannaya-plita-50-55-sm-gefest-pge-5102-01-0194-chernyi-nerzhaveushhaya-stal_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Комбинированная плита (50-55 см) Gefest ПГЭ 5102-01 0194 черный/нержавеющая сталь'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/kombinirovannaya-plita-50-55-sm-gefest-pge-5102-01-0194-chernyi-nerzhaveushhaya-stal_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Комбинированная плита (50-55 см) Gefest ПГЭ 5102-01 0194 черный/нержавеющая сталь'));

@@ -1,0 +1,19 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/nastolnaya-elektricheskaya-plita-zigmund--shtain-zip-558_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Настольная электрическая плита Zigmund & Shtain ZIP-558'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/nastolnaya-elektricheskaya-plita-zigmund--shtain-zip-558_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Настольная электрическая плита Zigmund & Shtain ZIP-558'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/nastolnaya-elektricheskaya-plita-zigmund--shtain-zip-558_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Настольная электрическая плита Zigmund & Shtain ZIP-558'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/nastolnaya-elektricheskaya-plita-zigmund--shtain-zip-558_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Настольная электрическая плита Zigmund & Shtain ZIP-558'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/nastolnaya-elektricheskaya-plita-zigmund--shtain-zip-558_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Настольная электрическая плита Zigmund & Shtain ZIP-558'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/nastolnaya-elektricheskaya-plita-zigmund--shtain-zip-558_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Настольная электрическая плита Zigmund & Shtain ZIP-558'));

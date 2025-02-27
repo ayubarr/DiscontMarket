@@ -1,0 +1,16 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnyi-lar-hi-hnch084201rw_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильный ларь Hi HNCH084201RW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnyi-lar-hi-hnch084201rw_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильный ларь Hi HNCH084201RW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnyi-lar-hi-hnch084201rw_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильный ларь Hi HNCH084201RW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnyi-lar-hi-hnch084201rw_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильный ларь Hi HNCH084201RW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnyi-lar-hi-hnch084201rw_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильный ларь Hi HNCH084201RW'));

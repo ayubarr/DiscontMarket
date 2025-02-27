@@ -1,0 +1,93 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Холодильник Gorenje NRK418FEW4', 24499, 11, '/items/productimages/holodilnik-gorenje-nrk418few4_0.png', 4.77, '', 'Холодильник Gorenje NRK418FEW4 — двухкамерная модель в корпусе белого цвета с нижним расположением морозильного отделения. 
+
+• <b>Система охлаждения No Frost Plus</b> 
+Предотвращает от образования инея и наледи, обеспечивает равномерную циркуляцию холодных потоков, обеспечивает более длительному сохранению полезных веществ в овощах и фруктах. 
+
+• <b>Светодиодные лампы</b> 
+Не нагреваются, обеспечивают хорошую видимость по всему пространству камеры, служат дольше ламп накаливания и расходуют меньше энергии. 
+
+• <b>Энергоэффективность А+</b> 
+Прибор за год потребляет не более 251 кВт*ч электричества. 
+
+В верхнем отделении объемом 202 л расположены четыре стеклянные полки, три дверных кармана и один ящик для фруктов и овощей. В комплект входят подставка для яиц и полка для бутылок. Морозилка емкостью 79 л способна за сутки обработать до 3 кг продуктов. Для их размещения используются три прозрачных контейнера. 
+
+В эту модель заложены режимы «Суперохлаждение» и «Суперзамораживание», которые используются для быстрой стабилизации температуры продуктов при пополнении запасов. Функция «Отпуск» позволит сократить расход энергии при длительном отсутствии и защитить холодильник от размножения бактерий. 
+
+Дверь сделана из металла, ее можно вешать на обе стороны. Для открытия используются горизонтальная скрытая ручка. При аварийном обесточивании продукты можно не вынимать в течение 10 часов. Gorenje NRK418FEW4 работает очень тихо: уровень шума не превышает 40 дБ, что соответствует разговору средней громкости. Работающий холодильник не доставит беспокойства даже ночью.', 'InStock', 'Discount', 3, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Gorenje'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Холодильник Gorenje NRK418FEW4'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Gorenje NRK418FEW4' 
+        AND a."Name" = 'стандартный' 
+        AND a."Type" = 'Тип компрессора'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Gorenje NRK418FEW4' 
+        AND a."Name" = '179.5' 
+        AND a."Type" = 'Высота'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Gorenje NRK418FEW4' 
+        AND a."Name" = '55' 
+        AND a."Type" = 'Ширина'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Gorenje NRK418FEW4' 
+        AND a."Name" = '55.7' 
+        AND a."Type" = 'Глубина'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Gorenje NRK418FEW4' 
+        AND a."Name" = '281' 
+        AND a."Type" = 'Общий объем'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-gorenje-nrk418few4_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Gorenje NRK418FEW4'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-gorenje-nrk418few4_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Gorenje NRK418FEW4'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-gorenje-nrk418few4_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Gorenje NRK418FEW4'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-gorenje-nrk418few4_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Gorenje NRK418FEW4'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-gorenje-nrk418few4_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Gorenje NRK418FEW4'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-gorenje-nrk418few4_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Gorenje NRK418FEW4'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-gorenje-nrk418few4_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Gorenje NRK418FEW4'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-gorenje-nrk418few4_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Gorenje NRK418FEW4'));

@@ -1,0 +1,22 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-s-dvumya-barabanami-haier-hwd120-b1558u_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина с двумя барабанами Haier HWD120-B1558U'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-s-dvumya-barabanami-haier-hwd120-b1558u_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина с двумя барабанами Haier HWD120-B1558U'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-s-dvumya-barabanami-haier-hwd120-b1558u_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина с двумя барабанами Haier HWD120-B1558U'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-s-dvumya-barabanami-haier-hwd120-b1558u_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина с двумя барабанами Haier HWD120-B1558U'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-s-dvumya-barabanami-haier-hwd120-b1558u_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина с двумя барабанами Haier HWD120-B1558U'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-s-dvumya-barabanami-haier-hwd120-b1558u_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина с двумя барабанами Haier HWD120-B1558U'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-s-dvumya-barabanami-haier-hwd120-b1558u_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина с двумя барабанами Haier HWD120-B1558U'));

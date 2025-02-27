@@ -1,0 +1,89 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Микроволновая печь с грилем LG MH63M38GISW с грилем', 7999, 14, '/items/productimages/mikrovolnovaya-pech-s-grilem-lg-mh63m38gisw-s-grilem_0.png', 4.64, '', 'Микроволновая печь с грилем LG MH63M38GISW выполнена в бело-черном цвете и оборудована кнопкой для открытия дверцы. Габаритные размеры модели составляют 272х476х387 мм.
+
+• <b>Технология Smart Inverter</b>
+Гарантирует быстрое и равномерное приготовление, подогрев и размораживание при максимальной мощности микроволн 1000 Вт, сохраняет вкусовые качества продуктов.
+
+• <b>Кварцевый гриль мощностью 900 Вт</b>
+Позволит получить блюдо с аппетитной румяной корочкой.
+
+• <b>Конвекция</b>
+Обеспечивает равномерное распределение тепла по камере для однородного прогрева и пропекания блюда.
+
+Модель с сенсорной панелью управления оснащена 32 автоматическими программами для приготовления и размораживания пищи. Предусмотрены функции поддержания температуры и поэтапное приготовление Для ограничения нежелательного управления есть возможность блокировки панели управления. Камера объемом 23 л оборудована поворотным столом диаметром 29,2 см. Антибактериальное покрытие EasyClean легко поддается очистке.', 'InStock', 'Discount', 6, (SELECT "ID" FROM "Brands" WHERE "Name" = 'LG'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Микроволновая печь с грилем LG MH63M38GISW с грилем'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Микроволновая печь с грилем LG MH63M38GISW с грилем' 
+        AND a."Name" = '23' 
+        AND a."Type" = 'Полезный объем'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Микроволновая печь с грилем LG MH63M38GISW с грилем' 
+        AND a."Name" = '29.2' 
+        AND a."Type" = 'Диаметр поворотного стола'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Микроволновая печь с грилем LG MH63M38GISW с грилем' 
+        AND a."Name" = 'Easy Clean' 
+        AND a."Type" = 'Внутреннее покрытие'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Микроволновая печь с грилем LG MH63M38GISW с грилем' 
+        AND a."Name" = 'электронное/ сенсорное' 
+        AND a."Type" = 'Тип управления'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Микроволновая печь с грилем LG MH63M38GISW с грилем' 
+        AND a."Name" = 'белый/ черный' 
+        AND a."Type" = 'Цвет'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-s-grilem-lg-mh63m38gisw-s-grilem_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь с грилем LG MH63M38GISW с грилем'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-s-grilem-lg-mh63m38gisw-s-grilem_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь с грилем LG MH63M38GISW с грилем'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-s-grilem-lg-mh63m38gisw-s-grilem_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь с грилем LG MH63M38GISW с грилем'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-s-grilem-lg-mh63m38gisw-s-grilem_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь с грилем LG MH63M38GISW с грилем'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-s-grilem-lg-mh63m38gisw-s-grilem_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь с грилем LG MH63M38GISW с грилем'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-s-grilem-lg-mh63m38gisw-s-grilem_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь с грилем LG MH63M38GISW с грилем'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-s-grilem-lg-mh63m38gisw-s-grilem_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь с грилем LG MH63M38GISW с грилем'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-s-grilem-lg-mh63m38gisw-s-grilem_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь с грилем LG MH63M38GISW с грилем'));

@@ -1,0 +1,79 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Стиральная машина с сушкой Miele WTR870WPM', 249999, 15, '/items/productimages/stiralnaya-mashina-s-sushkoi-miele-wtr870wpm_0.png', 4.35, '', 'Стиральная машина с сушкой Miele WTR870WPM мощностью 2400 Вт оснащена инверторным двигателем с прямым приводом, благодаря которому достигается низкий расход электроэнергии и воды. За цикл стирки уходит 2,1 кВт*ч и 50 л. На сушку требуется 2,4 кВт*ч. 
+
+• <b>Чистая и сухая вещь меньше чем за час</b>
+Благодаря функции SingleWash и конденсационной сушки.
+
+• <b>TwinDos и CapDosing</b>
+Технологии автоматического дозирования моющих средств.
+
+• <b>Опция «Пятна»</b>
+Выберите один из 23 типов загрязнений — получите подсказки по подбору оптимальной программы для их устранения.
+
+• <b>Дисплей M Touch и поддержка Wi-Fi</b>
+Сенсорное управление на цифровом экране или смартфон в качестве пульта ДУ. Интуитивно понятная индикация на русском языке.
+
+• <b>Система Miele@home</b>
+Объединяйте все умные приборы Miele в единую сеть.
+
+Режимы под каждый тип одежды, пропитки, замачивания и дополнительного полоскания, обработка паром, регулировка температуры воды и скорости отжима до 1600 об/мин, наличие таймера для отсрочки старта до 24 часов, дозагрузка белья в любое время и разрыхление после отжима делают эксплуатацию удобной.
+
+За безопасность отвечают полная защита от протечек, блокировка панели управления, автоотключение при скачках напряжения, контроль дисбаланса и пенообразования, самодиагностика неисправностей. Уровень шума не превышает 39 дБ при стирке и 76 дБ при отжиме. Сотовый барабан объемом 59 л рассчитан на 8 кг текстильных изделий для стирки и до 5 кг для сушки.', 'InStock', 'Discount', 5, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Miele'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Стиральная машина с сушкой Miele WTR870WPM'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина с сушкой Miele WTR870WPM' 
+        AND a."Name" = '8' 
+        AND a."Type" = 'Максимальная загрузка'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина с сушкой Miele WTR870WPM' 
+        AND a."Name" = '5' 
+        AND a."Type" = 'Загрузка при сушке(хлопок)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина с сушкой Miele WTR870WPM' 
+        AND a."Name" = '1600' 
+        AND a."Type" = 'Максимальная скорость отжима'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина с сушкой Miele WTR870WPM' 
+        AND a."Name" = 'инверторный' 
+        AND a."Type" = 'Мотор'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина с сушкой Miele WTR870WPM' 
+        AND a."Name" = 'Да' 
+        AND a."Type" = 'Смартфон в качестве пульта ДУ'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-s-sushkoi-miele-wtr870wpm_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина с сушкой Miele WTR870WPM'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-s-sushkoi-miele-wtr870wpm_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина с сушкой Miele WTR870WPM'));

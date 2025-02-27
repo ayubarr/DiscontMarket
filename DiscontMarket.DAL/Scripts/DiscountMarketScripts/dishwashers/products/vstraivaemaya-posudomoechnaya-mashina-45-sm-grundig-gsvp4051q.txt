@@ -1,0 +1,86 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Встраиваемая посудомоечная машина 45 см Grundig GSVP4051Q', 44999, 11, '/items/productimages/vstraivaemaya-posudomoechnaya-mashina-45-sm-grundig-gsvp4051q_0.png', 4.96, '', 'Встраиваемая посудомоечная машина Grundig GSVP4051Q предназначена для монтажа в нишу размером 82х45х56 см. Модель выполнена в белом цвете и снабжена серебристой панелью управления с сенсорными кнопками. Присутствует индикация выбранной программы, наличия соли и ополаскивателя. Встроена функция отсрочки старта до 24 часов.
+
+Машинка рассчитана на загрузку до 10 комплектов посуды. Для этого предусмотрено три уровня загрузки с возможностью регулирования высоты короба. Корзины снабжены держателями бокалов и тарелок, которые можно складывать. Присутствует функция половинной загрузки. Тщательное удаление грязи обеспечивают нижний и верхний разбрызгиватели.
+
+У модели восемь автопрограмм. Для мойки стеклянной посуды предусмотрена специальная программа по технологии защиты GlassCare: деликатная чистка с уменьшенным напором воды температурой 40°С. Минимальное время программы занимает 30 минут. Минимальная температура автопрограммы составляет 35°С, максимальная — 70°С. Присутствуют режимы усиленной гигиены и предварительного полоскания. 
+
+Безопасность использования обеспечивается системой полной защиты от протечек AquaStop. Встроена система смягчения воды (ионообменник). Внутренняя подсветка предусматривает легкость загрузки даже при слабом освещении помещения. Доступно использование универсальных моющих средств типа 3 в 1. Световой луч на полу LedSpot загорается при старте программы и при затухании извещает о завершении работы. Также автоматически открывается дверца. Сушка у модели конденсационная.
+
+Параметры прибора: вес — 33,1 кг, габаритные размеры — 81,8х44,8х55 см. Инверторный мотор работает с уровнем шума, не превышающим 45 дБ. Потребляемая мощность посудомойки составляет 2100 Вт, предусмотрен энергосберегающий режим. Прибор относится к А-классу энергоэффективности. За один цикл расход электроэнергии составляет 0,65 кВт*ч, воды — 8,9 л. Воронка для засыпания соли поставляется.', 'InStock', 'Discount', 28, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Grundig'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 45 см Grundig GSVP4051Q'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Встраиваемая посудомоечная машина 45 см Grundig GSVP4051Q' 
+        AND a."Name" = '8.9' 
+        AND a."Type" = 'Расход воды за цикл'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Встраиваемая посудомоечная машина 45 см Grundig GSVP4051Q' 
+        AND a."Name" = '10 комплектов' 
+        AND a."Type" = 'Максимальная вместимость'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Встраиваемая посудомоечная машина 45 см Grundig GSVP4051Q' 
+        AND a."Name" = '8' 
+        AND a."Type" = 'Количество программ мойки'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Встраиваемая посудомоечная машина 45 см Grundig GSVP4051Q' 
+        AND a."Name" = 'инверторный' 
+        AND a."Type" = 'Мотор'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Встраиваемая посудомоечная машина 45 см Grundig GSVP4051Q' 
+        AND a."Name" = '818*448*550' 
+        AND a."Type" = 'Размер ниши, мм (В*Ш*Г)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-45-sm-grundig-gsvp4051q_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 45 см Grundig GSVP4051Q'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-45-sm-grundig-gsvp4051q_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 45 см Grundig GSVP4051Q'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-45-sm-grundig-gsvp4051q_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 45 см Grundig GSVP4051Q'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-45-sm-grundig-gsvp4051q_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 45 см Grundig GSVP4051Q'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-45-sm-grundig-gsvp4051q_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 45 см Grundig GSVP4051Q'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-45-sm-grundig-gsvp4051q_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 45 см Grundig GSVP4051Q'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-45-sm-grundig-gsvp4051q_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 45 см Grundig GSVP4051Q'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-45-sm-grundig-gsvp4051q_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 45 см Grundig GSVP4051Q'));

@@ -1,0 +1,49 @@
+﻿INSERT INTO "Products" 
+("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription",
+"Availability", "Status", "CategoryID", "BrandID", "UserID") 
+VALUES
+ ('Телевизор TCL 98C745', 199999, 16, '/items/productimages/televizor-tcl-98c745_0.png', 4.75, '', 'Телевизор TCL 98C745 характеризуется большим экраном диагональю 98 дюймов, что способствует глубокому погружению в контент. Разрешение — 3840х2160 пикселей. Технология экрана — VA. Частота обновления доходит до 120 Гц, за счет чего смена картинки в динамичных сценах происходит максимально плавно, без резких и заметных разрывов. Поддерживается технология HDR. Система цифрового шумоподавления очищает картинку при недостаточно хорошем уровне ТВ-сигнала, делая ее более четкой. 
+Smart TV позволяет смотреть видеоконтент на онлайн-платформах, слушать музыку, читать новости и многое другое. В качестве операционной системы используется Google TV с интуитивно понятным интерфейсом и удобными настройками. 
+Мощность фронтальных АС составляет 2х15 Вт. Технология звука — Dolby Atmos. Телевизор оснащен встроенными модулями Bluetooth и Wi-Fi. Поддерживается управление при помощи пульта ДУ и голосового помощника Google Assistant. Цифровой тюнер DVB T/T2/C/S/S2 служит для приема и декодирования ТВ-сигнала. Предусмотрен широкий набор интерфейсов: HDMI (четыре), порт USB 2.0 тип A, LAN-разъем (RJ45), слот для модуля DVB CAM и 3,5 мм для наушников. Возможна установка на подставку и крепление к подвесу VESA 400x850. Размеры без подставки — 126х217х10 см, вес — 59,6 кг. Потребляемая мощность модели составляет 540 Вт.', 'InStock', 'Discount', 1, (SELECT "ID" FROM "Brands" WHERE "Name" = 'TCL'), 1);
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор TCL 98C745'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '4K Ultra HD (3840x2160 Пикс)' AND "Type" = 'Экран));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор TCL 98C745'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '98' AND "Type" = 'Диагональ));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор TCL 98C745'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '120' AND "Type" = 'Частота обновления));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор TCL 98C745'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'QLED' AND "Type" = 'Технология экрана));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор TCL 98C745'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'Direct LED' AND "Type" = 'Тип светодиодной подсветки));
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-tcl-98c745_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор TCL 98C745'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-tcl-98c745_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор TCL 98C745'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-tcl-98c745_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор TCL 98C745'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-tcl-98c745_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор TCL 98C745'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-tcl-98c745_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор TCL 98C745'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-tcl-98c745_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор TCL 98C745'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-tcl-98c745_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор TCL 98C745'));

@@ -1,0 +1,13 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-olto-32t20h_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Olto 32T20H'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-olto-32t20h_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Olto 32T20H'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-olto-32t20h_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Olto 32T20H'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-olto-32t20h_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Olto 32T20H'));

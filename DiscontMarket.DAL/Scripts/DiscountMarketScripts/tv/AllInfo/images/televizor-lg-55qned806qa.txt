@@ -1,0 +1,16 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-lg-55qned806qa_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор LG 55QNED806QA'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-lg-55qned806qa_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор LG 55QNED806QA'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-lg-55qned806qa_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор LG 55QNED806QA'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-lg-55qned806qa_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор LG 55QNED806QA'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-lg-55qned806qa_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор LG 55QNED806QA'));

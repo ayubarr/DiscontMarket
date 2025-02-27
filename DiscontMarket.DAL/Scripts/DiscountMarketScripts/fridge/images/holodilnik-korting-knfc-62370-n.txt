@@ -1,0 +1,25 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-korting-knfc-62370-n_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Korting KNFC 62370 N'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-korting-knfc-62370-n_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Korting KNFC 62370 N'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-korting-knfc-62370-n_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Korting KNFC 62370 N'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-korting-knfc-62370-n_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Korting KNFC 62370 N'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-korting-knfc-62370-n_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Korting KNFC 62370 N'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-korting-knfc-62370-n_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Korting KNFC 62370 N'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-korting-knfc-62370-n_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Korting KNFC 62370 N'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-korting-knfc-62370-n_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Korting KNFC 62370 N'));

@@ -1,0 +1,40 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-uzkaya-indesit-iwub-4085_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая Indesit IWUB 4085'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-uzkaya-indesit-iwub-4085_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая Indesit IWUB 4085'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-uzkaya-indesit-iwub-4085_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая Indesit IWUB 4085'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-uzkaya-indesit-iwub-4085_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая Indesit IWUB 4085'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-uzkaya-indesit-iwub-4085_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая Indesit IWUB 4085'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-uzkaya-indesit-iwub-4085_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая Indesit IWUB 4085'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-uzkaya-indesit-iwub-4085_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая Indesit IWUB 4085'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-uzkaya-indesit-iwub-4085_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая Indesit IWUB 4085'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-uzkaya-indesit-iwub-4085_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая Indesit IWUB 4085'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-uzkaya-indesit-iwub-4085_9.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая Indesit IWUB 4085'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-uzkaya-indesit-iwub-4085_10.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая Indesit IWUB 4085'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-uzkaya-indesit-iwub-4085_11.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая Indesit IWUB 4085'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-uzkaya-indesit-iwub-4085_12.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая Indesit IWUB 4085'));

@@ -1,0 +1,19 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/gazovaya-plita-50-55-sm-gefest-cg-50m04-k19_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Газовая плита (50-55 см) Gefest CG 50M04 K19'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/gazovaya-plita-50-55-sm-gefest-cg-50m04-k19_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Газовая плита (50-55 см) Gefest CG 50M04 K19'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/gazovaya-plita-50-55-sm-gefest-cg-50m04-k19_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Газовая плита (50-55 см) Gefest CG 50M04 K19'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/gazovaya-plita-50-55-sm-gefest-cg-50m04-k19_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Газовая плита (50-55 см) Gefest CG 50M04 K19'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/gazovaya-plita-50-55-sm-gefest-cg-50m04-k19_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Газовая плита (50-55 см) Gefest CG 50M04 K19'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/gazovaya-plita-50-55-sm-gefest-cg-50m04-k19_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Газовая плита (50-55 см) Gefest CG 50M04 K19'));

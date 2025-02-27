@@ -1,0 +1,50 @@
+﻿INSERT INTO "Products" 
+("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription",
+"Availability", "Status", "CategoryID", "BrandID", "UserID") 
+VALUES
+ ('Телевизор Starwind SW-LED50UG400', 14099, 5, '/items/productimages/televizor-starwind-sw-led50ug400_0.png', 4.24, '', 'Телевизор Starwind SW-LED50UG400 — устройство с 50-дюймовым экраном разрешением Ultra HD (3840х2160 пикселей), за счет чего обеспечивается хорошая детализация. Частота обновления достигает 60 Гц. В основе работы экрана лежит технология LED. Для просмотра фильмов и сериалов прошлых лет предусмотрена возможность масштабирования до 4K Ultra HD. 
+Поддержка Smart TV открывает широкие возможности для интернет-серфинга и пользования онлайн-платформами с различным контентом. Тип операционной системы — «Яндекс.ТВ» с интуитивно понятным интерфейсом и настройками. Для звукового сопровождения модель снабжена акустической системой мощностью 16 Вт. 
+Встроенный модуль Bluetooth служит для сопряжения со сторонними устройствами для обмена данными. Для управления используется пульт ДУ или голосовой помощник «Алиса». Подключение к Сети осуществляется через Wi-Fi беспроводным способом. Потребляемая мощность устройства достигает 130 Вт. 
+Из тюнеров для приема телевизионного сигнала предусмотрены цифровой DVB и аналоговый PAL/SECAM. Список интерфейсов состоит из HDMI (три), порта USB 2.0 тип A, разъема 3.5 мм. Размеры модели составляют 65,01х112,65х9,35 см, вес — 19 кг.', 'InStock', 'Discount', 1, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Starwind'), 1);
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Starwind SW-LED50UG400'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '4K Ultra HD (3840x2160 Пикс)' AND "Type" = 'Экран));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Starwind SW-LED50UG400'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '50' AND "Type" = 'Диагональ));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Starwind SW-LED50UG400'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '60' AND "Type" = 'Частота обновления));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Starwind SW-LED50UG400'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'LED' AND "Type" = 'Технология экрана));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Starwind SW-LED50UG400'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'Да' AND "Type" = 'Поддержка Smart TV));
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-starwind-sw-led50ug400_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Starwind SW-LED50UG400'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-starwind-sw-led50ug400_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Starwind SW-LED50UG400'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-starwind-sw-led50ug400_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Starwind SW-LED50UG400'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-starwind-sw-led50ug400_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Starwind SW-LED50UG400'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-starwind-sw-led50ug400_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Starwind SW-LED50UG400'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-starwind-sw-led50ug400_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Starwind SW-LED50UG400'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-starwind-sw-led50ug400_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Starwind SW-LED50UG400'));

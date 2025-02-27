@@ -1,0 +1,75 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Электрическая плита (60 см) Gorenje GEC6C60WA', 32999, 17, '/items/productimages/elektricheskaya-plita-60-sm-gorenje-gec6c60wa_0.png', 4.14, '', 'Электрическая плита Gorenje GEC6C60WA обладает мощностью 10300 Вт. Класс энергоэффективности — А. Корпус сделан из металла, окрашен в белый цвет. Размеры конструкции — 85х60х60 см, вес — 45,9 кг.
+Варочная панель выполнена из стеклокерамики — она без усилий очищается от загрязнений. Четыре конфорки обладают разной мощностью. Одна из них — овальная типа FishZone (увеличенная зона нагрева).
+Сводчатый духовой шкаф объемом 71 л работает в 11 режимах, есть функции конвекции и быстрого нагрева. Максимальная температура — 275°С. Стенки покрыты эмалью легкой очистки SilverMatte. На одном уровне расположены телескопические металлические направляющие. В комплекте — глубокий и плоский противни, решетка.
+Управление обеспечивают цифровая панель с дисплеем и механические регуляторы, есть электронный программатор. Эта модель обладает классом энергоэффективности А.', 'InStock', 'Discount', 4, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Gorenje'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Электрическая плита (60 см) Gorenje GEC6C60WA'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Электрическая плита (60 см) Gorenje GEC6C60WA' 
+        AND a."Name" = '71' 
+        AND a."Type" = 'Объем духовки'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Электрическая плита (60 см) Gorenje GEC6C60WA' 
+        AND a."Name" = '11' 
+        AND a."Type" = 'Режимы работы духовки'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Электрическая плита (60 см) Gorenje GEC6C60WA' 
+        AND a."Name" = 'Да' 
+        AND a."Type" = 'Конвекция'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Электрическая плита (60 см) Gorenje GEC6C60WA' 
+        AND a."Name" = 'спиральные' 
+        AND a."Type" = 'Тип конфорок'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Электрическая плита (60 см) Gorenje GEC6C60WA' 
+        AND a."Name" = 'инфракрасный' 
+        AND a."Type" = 'Тип гриля'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/elektricheskaya-plita-60-sm-gorenje-gec6c60wa_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Электрическая плита (60 см) Gorenje GEC6C60WA'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/elektricheskaya-plita-60-sm-gorenje-gec6c60wa_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Электрическая плита (60 см) Gorenje GEC6C60WA'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/elektricheskaya-plita-60-sm-gorenje-gec6c60wa_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Электрическая плита (60 см) Gorenje GEC6C60WA'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/elektricheskaya-plita-60-sm-gorenje-gec6c60wa_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Электрическая плита (60 см) Gorenje GEC6C60WA'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/elektricheskaya-plita-60-sm-gorenje-gec6c60wa_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Электрическая плита (60 см) Gorenje GEC6C60WA'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/elektricheskaya-plita-60-sm-gorenje-gec6c60wa_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Электрическая плита (60 см) Gorenje GEC6C60WA'));

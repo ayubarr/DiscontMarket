@@ -1,0 +1,74 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Настольная индукционная плита Maunfeld EFI271TWH', 3045, 12, '/items/productimages/nastolnaya-indukcionnaya-plita-maunfeld-efi271twh_0.png', 4.45, '', 'Настольная индукционная плита Maunfeld EFI271TWH оснащена сенсорной панелью управления с интуитивно понятным интерфейсом, которая позволяет регулировать мощность в пределах 2 кВт, запускать режим поддержания температуры и таймер. Время отображается на встроенном цифровом дисплее с красной подсветкой символов. Автоматическое отключение при перегреве и защита от детей делают эксплуатацию безопасной.
+
+Устройство питается от стандартной сети с напряжением 220 В, потребляя 2000 Вт. Для подсоединения к розетке задействуется кабель длиной 1,2 м. Модель с конфоркой диаметром 15,5 см отличается компактной конструкцией габаритами 4,6х33х27 см и весом 1,94 кг. Корпус изготовлен из металла, рабочая поверхность — из жаропрочной стеклокерамики. Основание дополнено прорезиненными ножками для оптимальной устойчивости.', 'InStock', 'Discount', 4, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Maunfeld'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Настольная индукционная плита Maunfeld EFI271TWH'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Настольная индукционная плита Maunfeld EFI271TWH' 
+        AND a."Name" = '1' 
+        AND a."Type" = 'Количество конфорок'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Настольная индукционная плита Maunfeld EFI271TWH' 
+        AND a."Name" = 'индукционные' 
+        AND a."Type" = 'Тип конфорок'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Настольная индукционная плита Maunfeld EFI271TWH' 
+        AND a."Name" = '2000' 
+        AND a."Type" = 'Потребляемая мощность'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Настольная индукционная плита Maunfeld EFI271TWH' 
+        AND a."Name" = 'стеклокерамика' 
+        AND a."Type" = 'Материал варочной поверхности'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Настольная индукционная плита Maunfeld EFI271TWH' 
+        AND a."Name" = 'Да' 
+        AND a."Type" = 'Таймер'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/nastolnaya-indukcionnaya-plita-maunfeld-efi271twh_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Настольная индукционная плита Maunfeld EFI271TWH'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/nastolnaya-indukcionnaya-plita-maunfeld-efi271twh_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Настольная индукционная плита Maunfeld EFI271TWH'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/nastolnaya-indukcionnaya-plita-maunfeld-efi271twh_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Настольная индукционная плита Maunfeld EFI271TWH'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/nastolnaya-indukcionnaya-plita-maunfeld-efi271twh_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Настольная индукционная плита Maunfeld EFI271TWH'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/nastolnaya-indukcionnaya-plita-maunfeld-efi271twh_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Настольная индукционная плита Maunfeld EFI271TWH'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/nastolnaya-indukcionnaya-plita-maunfeld-efi271twh_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Настольная индукционная плита Maunfeld EFI271TWH'));

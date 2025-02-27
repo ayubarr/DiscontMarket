@@ -1,0 +1,13 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-haier-hb18fgwaaaru_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Haier HB18FGWAAARU'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-haier-hb18fgwaaaru_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Haier HB18FGWAAARU'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-haier-hb18fgwaaaru_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Haier HB18FGWAAARU'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-haier-hb18fgwaaaru_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Haier HB18FGWAAARU'));

@@ -1,0 +1,46 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/gazovaya-plita-60-sm-vesta-bergamo-vgg-10-g-brown_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Газовая плита (60 см) Vesta Bergamo VGG 10-G Brown'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/gazovaya-plita-60-sm-vesta-bergamo-vgg-10-g-brown_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Газовая плита (60 см) Vesta Bergamo VGG 10-G Brown'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/gazovaya-plita-60-sm-vesta-bergamo-vgg-10-g-brown_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Газовая плита (60 см) Vesta Bergamo VGG 10-G Brown'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/gazovaya-plita-60-sm-vesta-bergamo-vgg-10-g-brown_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Газовая плита (60 см) Vesta Bergamo VGG 10-G Brown'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/gazovaya-plita-60-sm-vesta-bergamo-vgg-10-g-brown_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Газовая плита (60 см) Vesta Bergamo VGG 10-G Brown'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/gazovaya-plita-60-sm-vesta-bergamo-vgg-10-g-brown_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Газовая плита (60 см) Vesta Bergamo VGG 10-G Brown'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/gazovaya-plita-60-sm-vesta-bergamo-vgg-10-g-brown_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Газовая плита (60 см) Vesta Bergamo VGG 10-G Brown'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/gazovaya-plita-60-sm-vesta-bergamo-vgg-10-g-brown_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Газовая плита (60 см) Vesta Bergamo VGG 10-G Brown'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/gazovaya-plita-60-sm-vesta-bergamo-vgg-10-g-brown_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Газовая плита (60 см) Vesta Bergamo VGG 10-G Brown'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/gazovaya-plita-60-sm-vesta-bergamo-vgg-10-g-brown_9.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Газовая плита (60 см) Vesta Bergamo VGG 10-G Brown'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/gazovaya-plita-60-sm-vesta-bergamo-vgg-10-g-brown_10.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Газовая плита (60 см) Vesta Bergamo VGG 10-G Brown'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/gazovaya-plita-60-sm-vesta-bergamo-vgg-10-g-brown_11.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Газовая плита (60 см) Vesta Bergamo VGG 10-G Brown'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/gazovaya-plita-60-sm-vesta-bergamo-vgg-10-g-brown_12.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Газовая плита (60 см) Vesta Bergamo VGG 10-G Brown'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/gazovaya-plita-60-sm-vesta-bergamo-vgg-10-g-brown_13.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Газовая плита (60 см) Vesta Bergamo VGG 10-G Brown'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/gazovaya-plita-60-sm-vesta-bergamo-vgg-10-g-brown_14.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Газовая плита (60 см) Vesta Bergamo VGG 10-G Brown'));

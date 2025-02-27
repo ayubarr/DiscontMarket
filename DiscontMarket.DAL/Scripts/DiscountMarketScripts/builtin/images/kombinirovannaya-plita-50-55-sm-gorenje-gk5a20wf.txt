@@ -1,0 +1,19 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/kombinirovannaya-plita-50-55-sm-gorenje-gk5a20wf_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Комбинированная плита (50-55 см) Gorenje GK5A20WF'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/kombinirovannaya-plita-50-55-sm-gorenje-gk5a20wf_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Комбинированная плита (50-55 см) Gorenje GK5A20WF'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/kombinirovannaya-plita-50-55-sm-gorenje-gk5a20wf_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Комбинированная плита (50-55 см) Gorenje GK5A20WF'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/kombinirovannaya-plita-50-55-sm-gorenje-gk5a20wf_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Комбинированная плита (50-55 см) Gorenje GK5A20WF'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/kombinirovannaya-plita-50-55-sm-gorenje-gk5a20wf_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Комбинированная плита (50-55 см) Gorenje GK5A20WF'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/kombinirovannaya-plita-50-55-sm-gorenje-gk5a20wf_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Комбинированная плита (50-55 см) Gorenje GK5A20WF'));

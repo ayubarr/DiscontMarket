@@ -1,0 +1,72 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Морозильная камера Бирюса C6047SN', 24295, 5, '/items/productimages/morozilnaya-kamera-birusa-c6047sn_0.png', 4.61, '', 'Морозильная камера «Бирюса» C6047SN серого цвета — современный универсальный прибор объемом 280 л, который может работать и в качестве холодильника. Поддерживаемая температура — от +10°С до -20°С, управление производится при помощи электронной панели, расположенной в верхней части корпуса. Доступен режим «Быстрая заморозка», который пригодится при крупной загрузке продуктов. О непредусмотренном повышении температуры оповестит звуковой сигнал. 
+
+Энергопотребление модели соответствует классу А и составляет 379 кВт*ч в год. Размораживание производится автоматически по технологии No Frost — инея и наледи в камере не образуется. Климатический класс — N. В основе системы охлаждения — один стандартный компрессор, уровень шума при работе не превышает 41 дБ. 
+
+Внутреннее оснащение состоит из восьми прозрачных пластиковых ящиков, что позволит рассортировать продукты по типам в соответствии с правилами товарного соседства. В сутки можно заморозить до 21 кг припасов, при отключении электроэнергии низкая температура будет сохраняться до 12 часов. Предусмотрена яркая и экономичная светодиодная подсветка. 
+
+Габариты морозильной камеры: 180х60х62,5 см, вес — 60 кг. Дверь снабжены перенавешиваемым механизмом петель для изменения направления открывания. Дверь металлическая, ручка встроенная.', 'InStock', 'Discount', 3, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Бирюса'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Морозильная камера Бирюса C6047SN'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Морозильная камера Бирюса C6047SN' 
+        AND a."Name" = 'стандартный' 
+        AND a."Type" = 'Тип компрессора'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Морозильная камера Бирюса C6047SN' 
+        AND a."Name" = '180*60*62.5 см' 
+        AND a."Type" = 'Габаритные размеры (В*Ш*Г)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Морозильная камера Бирюса C6047SN' 
+        AND a."Name" = 'A' 
+        AND a."Type" = 'Класс энергоэффективности'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Морозильная камера Бирюса C6047SN' 
+        AND a."Name" = 'Да' 
+        AND a."Type" = 'Режим суперзамораживания'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Морозильная камера Бирюса C6047SN' 
+        AND a."Name" = 'электронный' 
+        AND a."Type" = 'Тип управления'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-birusa-c6047sn_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Бирюса C6047SN'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-birusa-c6047sn_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Бирюса C6047SN'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-birusa-c6047sn_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Бирюса C6047SN'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-birusa-c6047sn_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Бирюса C6047SN'));

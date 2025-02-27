@@ -1,0 +1,22 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-tcl-98c745_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор TCL 98C745'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-tcl-98c745_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор TCL 98C745'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-tcl-98c745_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор TCL 98C745'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-tcl-98c745_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор TCL 98C745'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-tcl-98c745_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор TCL 98C745'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-tcl-98c745_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор TCL 98C745'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-tcl-98c745_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор TCL 98C745'));

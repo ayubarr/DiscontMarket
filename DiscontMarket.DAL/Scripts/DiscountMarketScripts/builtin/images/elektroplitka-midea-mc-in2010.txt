@@ -1,0 +1,4 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/elektroplitka-midea-mc-in2010_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Электроплитка Midea MC-IN2010'));

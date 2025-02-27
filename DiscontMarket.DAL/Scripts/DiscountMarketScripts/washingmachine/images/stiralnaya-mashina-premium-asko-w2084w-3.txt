@@ -1,0 +1,22 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-premium-asko-w2084w-3_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Премиум Asko W2084.W/3'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-premium-asko-w2084w-3_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Премиум Asko W2084.W/3'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-premium-asko-w2084w-3_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Премиум Asko W2084.W/3'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-premium-asko-w2084w-3_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Премиум Asko W2084.W/3'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-premium-asko-w2084w-3_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Премиум Asko W2084.W/3'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-premium-asko-w2084w-3_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Премиум Asko W2084.W/3'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-premium-asko-w2084w-3_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Премиум Asko W2084.W/3'));

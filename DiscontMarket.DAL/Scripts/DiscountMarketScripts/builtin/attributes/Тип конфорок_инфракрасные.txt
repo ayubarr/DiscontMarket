@@ -1,0 +1,14 @@
+﻿
+        INSERT INTO "Attributes" ("NameTranslate", "Name", "Type") 
+        SELECT 'инфракрасные', 'инфракрасные', 'Тип конфорок'
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Attributes" WHERE "Name" = 'инфракрасные' AND "Type" = 'Тип конфорок'
+        );
+
+        INSERT INTO "AttributeCategory" ("AttributeID", "CategoryID") 
+        SELECT a."ID", c."ID" FROM "Attributes" a, "Categories" c 
+        WHERE a."Name" = 'инфракрасные' AND a."Type" = 'Тип конфорок' 
+        AND c."Name" = 'builtin'
+        AND NOT EXISTS (
+            SELECT 1 FROM "AttributeCategory" WHERE "AttributeID" = a."ID" AND "CategoryID" = c."ID"
+        );

@@ -1,0 +1,59 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Электроплитка Goodhelper ES-20P10', 799, 6, '/items/productimages/elektroplitka-goodhelper-es-20p10_0.png', 4.54, '', 'Goodhelper ES-20P10 — электроплитка с двумя конфорками диаметром 15,5 см и мощностью 1 кВт. Система управления — механическая, для каждой зоны нагрева — свой поворотный регулятор. Есть функция отключения при перегреве.
+
+Корпус делан из нержавеющей стали, на варочной поверхности — покрытие из эмали. Есть прорезиненные нескользящие ножки. Для подключения к розетке предусмотрен сетевой шнур 0,8 м. Размеры устройства — 7 х 43 х 21 см, вес — 2,25 кг.', 'InStock', 'Discount', 4, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Goodhelper'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Электроплитка Goodhelper ES-20P10'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Электроплитка Goodhelper ES-20P10' 
+        AND a."Name" = '2' 
+        AND a."Type" = 'Количество конфорок'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Электроплитка Goodhelper ES-20P10' 
+        AND a."Name" = 'чугунные' 
+        AND a."Type" = 'Тип конфорок'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Электроплитка Goodhelper ES-20P10' 
+        AND a."Name" = '2000' 
+        AND a."Type" = 'Потребляемая мощность'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Электроплитка Goodhelper ES-20P10' 
+        AND a."Name" = 'эмалированная сталь' 
+        AND a."Type" = 'Материал варочной поверхности'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Электроплитка Goodhelper ES-20P10' 
+        AND a."Name" = '0.8' 
+        AND a."Type" = 'Длина сетевого шнура'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/elektroplitka-goodhelper-es-20p10_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Электроплитка Goodhelper ES-20P10'));

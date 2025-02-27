@@ -1,0 +1,25 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/gazovaya-plita-50-55-sm-maunfeld-mgc50gew01_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Газовая плита (50-55 см) Maunfeld MGC50GEW01'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/gazovaya-plita-50-55-sm-maunfeld-mgc50gew01_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Газовая плита (50-55 см) Maunfeld MGC50GEW01'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/gazovaya-plita-50-55-sm-maunfeld-mgc50gew01_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Газовая плита (50-55 см) Maunfeld MGC50GEW01'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/gazovaya-plita-50-55-sm-maunfeld-mgc50gew01_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Газовая плита (50-55 см) Maunfeld MGC50GEW01'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/gazovaya-plita-50-55-sm-maunfeld-mgc50gew01_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Газовая плита (50-55 см) Maunfeld MGC50GEW01'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/gazovaya-plita-50-55-sm-maunfeld-mgc50gew01_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Газовая плита (50-55 см) Maunfeld MGC50GEW01'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/gazovaya-plita-50-55-sm-maunfeld-mgc50gew01_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Газовая плита (50-55 см) Maunfeld MGC50GEW01'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/gazovaya-plita-50-55-sm-maunfeld-mgc50gew01_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Газовая плита (50-55 см) Maunfeld MGC50GEW01'));

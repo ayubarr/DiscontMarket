@@ -1,0 +1,75 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Холодильник Maunfeld MFF186NFRR', 49695, 13, '/items/productimages/holodilnik-maunfeld-mff186nfrr_0.png', 4.14, '', 'Холодильник Maunfeld MFF186NFRR — двухкамерная модель красного цвета, выполненная в винтажном дизайне. Скругленные углы и характерные внешние ручки отсылают к стилистике 50-х годов прошлого века. Общий объем прибора составляет 252 л. Климатический класс этой модели — ST. 
+Холодильное отделение оборудовано четырьмя полками, тремя дверными карманами и двумя контейнерами (зона свежести). В условиях повышенной влажности фрукты, овощи, зелень дольше останутся сочными и сохранят свои полезные свойства. В морозилке — три выдвижных ящика. Мощность замораживания составляет 3,5 кг в сутки. В комплект входят подставка для яиц и форма для приготовления льда. 
+Внутренние стенки снабжены антибактериальным покрытием, которое препятствует образованию плесени и появлению неприятного запаха. Уровень шума при работе прибора не поднимается выше 45 дБ. Класс энергопотребления — А+, в год расходуется 255 кВт*ч. В системе охлаждения применяется хладагент R600A, не оказывающий негативного влияния на окружающую среду. 
+Управление электронное, обе камеры размораживаются автоматически по технологии No Frost. О слишком долго открытой двери (более 3 минут) оповещает звуковой сигнал. Габариты холодильника: 186,5х60х54 см, вес — 59 кг.', 'InStock', 'Discount', 3, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Maunfeld'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Холодильник Maunfeld MFF186NFRR'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Maunfeld MFF186NFRR' 
+        AND a."Name" = 'стандартный' 
+        AND a."Type" = 'Тип компрессора'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Maunfeld MFF186NFRR' 
+        AND a."Name" = '186.5*54*60 см' 
+        AND a."Type" = 'Габаритные размеры (В*Ш*Г)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Maunfeld MFF186NFRR' 
+        AND a."Name" = 'влажная' 
+        AND a."Type" = 'Тип зоны сохранения свежести'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Maunfeld MFF186NFRR' 
+        AND a."Name" = 'электронный' 
+        AND a."Type" = 'Тип управления'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Maunfeld MFF186NFRR' 
+        AND a."Name" = 'металл' 
+        AND a."Type" = 'Материал двери'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-maunfeld-mff186nfrr_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Maunfeld MFF186NFRR'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-maunfeld-mff186nfrr_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Maunfeld MFF186NFRR'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-maunfeld-mff186nfrr_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Maunfeld MFF186NFRR'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-maunfeld-mff186nfrr_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Maunfeld MFF186NFRR'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-maunfeld-mff186nfrr_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Maunfeld MFF186NFRR'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-maunfeld-mff186nfrr_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Maunfeld MFF186NFRR'));

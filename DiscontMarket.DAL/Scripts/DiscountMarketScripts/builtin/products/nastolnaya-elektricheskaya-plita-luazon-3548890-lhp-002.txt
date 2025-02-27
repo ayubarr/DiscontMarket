@@ -1,0 +1,68 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Настольная электрическая плита Luazon 3548890 LHP-002', 638, 14, '/items/productimages/nastolnaya-elektricheskaya-plita-luazon-3548890-lhp-002_0.png', 4.84, '', 'Настольная электрическая плита Luazon LHP-002 совместима с посудой из любого материала. Интенсивность нагрева регулируется с помощью поворотных механических переключателей, расположенных на фронтальной панели устройства. При включении чугунной конфорки загорается световой индикатор. Плита работает от стандартной электросети 220 В.
+
+Модель оснащена противоскользящими ножками, которые обеспечивают устойчивость на горизонтальной поверхности. Корпус плитки покрыт стеклоэмалью. Покрытие устойчиво к появлению коррозии, сколам, трещинам и деформациям. Оно неприхотливо в уходе и сохраняет опрятный внешний вид в течение всего срока службы.', 'InStock', 'Discount', 4, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Luazon'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Настольная электрическая плита Luazon 3548890 LHP-002'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Настольная электрическая плита Luazon 3548890 LHP-002' 
+        AND a."Name" = '1' 
+        AND a."Type" = 'Количество конфорок'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Настольная электрическая плита Luazon 3548890 LHP-002' 
+        AND a."Name" = 'чугунные' 
+        AND a."Type" = 'Тип конфорок'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Настольная электрическая плита Luazon 3548890 LHP-002' 
+        AND a."Name" = '1000' 
+        AND a."Type" = 'Потребляемая мощность'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Настольная электрическая плита Luazon 3548890 LHP-002' 
+        AND a."Name" = 'эмалированный металл' 
+        AND a."Type" = 'Материал варочной поверхности'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Настольная электрическая плита Luazon 3548890 LHP-002' 
+        AND a."Name" = '0.65' 
+        AND a."Type" = 'Длина сетевого шнура'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/nastolnaya-elektricheskaya-plita-luazon-3548890-lhp-002_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Настольная электрическая плита Luazon 3548890 LHP-002'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/nastolnaya-elektricheskaya-plita-luazon-3548890-lhp-002_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Настольная электрическая плита Luazon 3548890 LHP-002'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/nastolnaya-elektricheskaya-plita-luazon-3548890-lhp-002_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Настольная электрическая плита Luazon 3548890 LHP-002'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/nastolnaya-elektricheskaya-plita-luazon-3548890-lhp-002_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Настольная электрическая плита Luazon 3548890 LHP-002'));

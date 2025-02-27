@@ -1,0 +1,93 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Морозильная камера Hotpoint HFZ 5151 W', 26499, 7, '/items/productimages/morozilnaya-kamera-hotpoint-hfz-5151-w_0.png', 4.56, '', 'Морозильная камера Hotpoint HFZ 5151 W, белая, обладает общим объемом 227 л (полезный — 204 л) и способна заморозить до 10 кг продуктов в сутки. 
+
+• <b>Технология No Frost</b> 
+Предотвращает образование инея и наледи и избавляет от хлопот, связанных с ручным размораживанием. 
+
+• <b>Внутреннее оснащение</b> 
+Представлено четырьмя выдвижными ящиками и двумя стеклянными полками, закрытыми щитками. 
+
+• <b>Климатический класс SN-T</b> 
+Означает, что морозильная камера будет эффективно справляться со своей задачей при температуре до +43°C. 
+
+Энергопотребление прибора соответствует классу А+ и составляет 255,5 кВт*ч в год. Уровень шума при работе достигает 44 дБ. В случае отключения питания низкая внутренняя температура будет поддерживаться в течение 15 часов. 
+
+Электронная панель управления находится внутри, в верхней части корпуса и отображает актуальную температуру. Доступен режим суперзамораживания, который пригодится при крупной загрузке продуктов. 
+
+Дверца выполнена из эмалированного металла, открывается направо. При необходимости ее можно перенавесить, чтобы изменить направление открывания для наиболее удобного использования. Регулируемые ножки помогут нейтрализовать неровности пола.', 'InStock', 'Discount', 3, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Hotpoint'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Морозильная камера Hotpoint HFZ 5151 W'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Морозильная камера Hotpoint HFZ 5151 W' 
+        AND a."Name" = 'стандартный' 
+        AND a."Type" = 'Тип компрессора'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Морозильная камера Hotpoint HFZ 5151 W' 
+        AND a."Name" = '150*60*64 см' 
+        AND a."Type" = 'Габаритные размеры (В*Ш*Г)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Морозильная камера Hotpoint HFZ 5151 W' 
+        AND a."Name" = 'A+' 
+        AND a."Type" = 'Класс энергоэффективности'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Морозильная камера Hotpoint HFZ 5151 W' 
+        AND a."Name" = 'Да' 
+        AND a."Type" = 'Режим суперзамораживания'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Морозильная камера Hotpoint HFZ 5151 W' 
+        AND a."Name" = 'электронный' 
+        AND a."Type" = 'Тип управления'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-hotpoint-hfz-5151-w_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Hotpoint HFZ 5151 W'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-hotpoint-hfz-5151-w_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Hotpoint HFZ 5151 W'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-hotpoint-hfz-5151-w_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Hotpoint HFZ 5151 W'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-hotpoint-hfz-5151-w_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Hotpoint HFZ 5151 W'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-hotpoint-hfz-5151-w_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Hotpoint HFZ 5151 W'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-hotpoint-hfz-5151-w_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Hotpoint HFZ 5151 W'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-hotpoint-hfz-5151-w_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Hotpoint HFZ 5151 W'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-hotpoint-hfz-5151-w_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Hotpoint HFZ 5151 W'));

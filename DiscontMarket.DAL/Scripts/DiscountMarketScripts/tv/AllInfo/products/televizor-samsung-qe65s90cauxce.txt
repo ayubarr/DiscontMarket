@@ -1,0 +1,54 @@
+﻿INSERT INTO "Products" 
+("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription",
+"Availability", "Status", "CategoryID", "BrandID", "UserID") 
+VALUES
+ ('Телевизор Samsung QE65S90CAUXCE', 111644, 10, '/items/productimages/televizor-samsung-qe65s90cauxce_0.png', 4.19, '', 'Телевизор Samsung QE65S90CAUXCE с ОС Tizen управляется с помощью стандартного пульта, смартфона или голосом, что делает эксплуатацию удобной. Для беспроводного соединения задействуются модули Wi-Fi и Bluetooth. Устройство с цифровым тюнером DVB T2/C/S2 оснащено четырьмя входами HDMI 4, двумя портами USB 2.0 типа А и двумя — версии 3.0, интерфейсом интерфейс LAN и разъемом для DVB CAM.
+
+Модель отличается поддержкой HDMI ARC, Smart TV, записи с ТВ на USB, функциями Sleep-таймера и TimeShift. Защита от детей предотвращает доступ несовершеннолетних к взрослому контенту. Прибор с потреблением 370 Вт оборудован низкочастотными рассеивателями мощностью 40 Вт, благодаря которым достигается глубокое и чистое звучание.
+
+Дисплей диагональю 65" с технологиями OLED, QLED и HDR обеспечивает детализированное и насыщенное изображение с частотой обновления 120 Гц. Изделие габаритами 83,2х144,4х4 см и весом 21,1 кг монтируется настенным способом при помощи крепления VESA 300х200. В комплектацию входит подставка шириной 36,6 см для настольного размещения, с учетом которой параметры равны 89,6х144,4х26,6 см и 23,1 кг.', 'InStock', 'Discount', 1, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Samsung'), 1);
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung QE65S90CAUXCE'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '4K Ultra HD (3840x2160 Пикс)' AND "Type" = 'Экран));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung QE65S90CAUXCE'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '65' AND "Type" = 'Диагональ));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung QE65S90CAUXCE'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '120' AND "Type" = 'Частота обновления));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung QE65S90CAUXCE'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'QLED' AND "Type" = 'Технология экрана));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung QE65S90CAUXCE'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'OLED' AND "Type" = 'Тип светодиодной подсветки));
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-samsung-qe65s90cauxce_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung QE65S90CAUXCE'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-samsung-qe65s90cauxce_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung QE65S90CAUXCE'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-samsung-qe65s90cauxce_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung QE65S90CAUXCE'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-samsung-qe65s90cauxce_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung QE65S90CAUXCE'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-samsung-qe65s90cauxce_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung QE65S90CAUXCE'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-samsung-qe65s90cauxce_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung QE65S90CAUXCE'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-samsung-qe65s90cauxce_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung QE65S90CAUXCE'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-samsung-qe65s90cauxce_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung QE65S90CAUXCE'));

@@ -1,0 +1,77 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Микроволновая печь соло JVC JK-MW146M', 3399, 6, '/items/productimages/mikrovolnovaya-pech-solo-jvc-jk-mw146m_0.png', 4.32, '', 'Объем камеры микроволновой печи JVC JK-MW146M — 20 л. Управление механическое, производится при помощи поворотных регуляторов. Один отвечает за регулировку мощности микроволн (максимальная — 700 Вт), второй — за установку таймера (до 35 минут). 
+
+В печи можно готовить, разогревать, а также размораживать (по времени) продукты. Светодиодная подсветка позволяет контролировать процесс. Диаметр поворотного стола — 25,5 см. Внутренние стенки покрыты эмалью, легко поддающейся очистке. После окончания приготовления звучит сигнал. Дверца этой модели открывается при помощи ручки.', 'InStock', 'Discount', 6, (SELECT "ID" FROM "Brands" WHERE "Name" = 'JVC'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло JVC JK-MW146M'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Микроволновая печь соло JVC JK-MW146M' 
+        AND a."Name" = '20' 
+        AND a."Type" = 'Полезный объем'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Микроволновая печь соло JVC JK-MW146M' 
+        AND a."Name" = '25.5' 
+        AND a."Type" = 'Диаметр поворотного стола'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Микроволновая печь соло JVC JK-MW146M' 
+        AND a."Name" = 'эмалированный металл' 
+        AND a."Type" = 'Внутреннее покрытие'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Микроволновая печь соло JVC JK-MW146M' 
+        AND a."Name" = 'механический' 
+        AND a."Type" = 'Тип управления'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Микроволновая печь соло JVC JK-MW146M' 
+        AND a."Name" = 'черный' 
+        AND a."Type" = 'Цвет'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-jvc-jk-mw146m_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло JVC JK-MW146M'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-jvc-jk-mw146m_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло JVC JK-MW146M'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-jvc-jk-mw146m_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло JVC JK-MW146M'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-jvc-jk-mw146m_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло JVC JK-MW146M'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-jvc-jk-mw146m_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло JVC JK-MW146M'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-jvc-jk-mw146m_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло JVC JK-MW146M'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-jvc-jk-mw146m_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло JVC JK-MW146M'));

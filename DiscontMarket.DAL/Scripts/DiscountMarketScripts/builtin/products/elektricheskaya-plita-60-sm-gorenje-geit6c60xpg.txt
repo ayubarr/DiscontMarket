@@ -1,0 +1,95 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Электрическая плита (60 см) Gorenje GEIT6C60XPG', 56249, 7, '/items/productimages/elektricheskaya-plita-60-sm-gorenje-geit6c60xpg_0.png', 4.35, '', 'Электрическая плита Gorenje GEIT6C60XPG шириной 60 см выполнена в корпусе из нержавеющей стали. Высота модели — 85 см, глубина — 60 см. Потребляемая мощность — 10500 Вт, класс энергоэффективности — А. Вес устройства — 46 кг. 
+Варочная панель выполнена из стеклокерамики, оснащена четырьмя индукционными конфорками разной мощности. Сводчатый духовой шкаф объемом 71 л работает в 11 режимах, есть функции конвекции, быстрого нагрева и приготовления на пару. Максимальная температура нагрева — 275°С. Стенки снабжены эмалью SilverMatte. На первом уровне размещены металлические телескопические направляющие. 
+Дверца состоит из двухслойного стекла, открывается вниз, снабжена механизмом плавного закрытия. Конструкция оборудована выдвижным ящиком для посуды. В комплекте — глубокий и плоский противни, железная решетка.', 'InStock', 'Discount', 4, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Gorenje'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Электрическая плита (60 см) Gorenje GEIT6C60XPG'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Электрическая плита (60 см) Gorenje GEIT6C60XPG' 
+        AND a."Name" = '71' 
+        AND a."Type" = 'Объем духовки'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Электрическая плита (60 см) Gorenje GEIT6C60XPG' 
+        AND a."Name" = '11' 
+        AND a."Type" = 'Режимы работы духовки'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Электрическая плита (60 см) Gorenje GEIT6C60XPG' 
+        AND a."Name" = 'Да' 
+        AND a."Type" = 'Конвекция'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Электрическая плита (60 см) Gorenje GEIT6C60XPG' 
+        AND a."Name" = 'индукционные' 
+        AND a."Type" = 'Тип конфорок'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Электрическая плита (60 см) Gorenje GEIT6C60XPG' 
+        AND a."Name" = 'Да' 
+        AND a."Type" = 'Индикация текущей температуры'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/elektricheskaya-plita-60-sm-gorenje-geit6c60xpg_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Электрическая плита (60 см) Gorenje GEIT6C60XPG'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/elektricheskaya-plita-60-sm-gorenje-geit6c60xpg_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Электрическая плита (60 см) Gorenje GEIT6C60XPG'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/elektricheskaya-plita-60-sm-gorenje-geit6c60xpg_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Электрическая плита (60 см) Gorenje GEIT6C60XPG'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/elektricheskaya-plita-60-sm-gorenje-geit6c60xpg_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Электрическая плита (60 см) Gorenje GEIT6C60XPG'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/elektricheskaya-plita-60-sm-gorenje-geit6c60xpg_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Электрическая плита (60 см) Gorenje GEIT6C60XPG'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/elektricheskaya-plita-60-sm-gorenje-geit6c60xpg_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Электрическая плита (60 см) Gorenje GEIT6C60XPG'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/elektricheskaya-plita-60-sm-gorenje-geit6c60xpg_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Электрическая плита (60 см) Gorenje GEIT6C60XPG'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/elektricheskaya-plita-60-sm-gorenje-geit6c60xpg_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Электрическая плита (60 см) Gorenje GEIT6C60XPG'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/elektricheskaya-plita-60-sm-gorenje-geit6c60xpg_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Электрическая плита (60 см) Gorenje GEIT6C60XPG'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/elektricheskaya-plita-60-sm-gorenje-geit6c60xpg_9.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Электрическая плита (60 см) Gorenje GEIT6C60XPG'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/elektricheskaya-plita-60-sm-gorenje-geit6c60xpg_10.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Электрическая плита (60 см) Gorenje GEIT6C60XPG'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/elektricheskaya-plita-60-sm-gorenje-geit6c60xpg_11.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Электрическая плита (60 см) Gorenje GEIT6C60XPG'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/elektricheskaya-plita-60-sm-gorenje-geit6c60xpg_12.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Электрическая плита (60 см) Gorenje GEIT6C60XPG'));

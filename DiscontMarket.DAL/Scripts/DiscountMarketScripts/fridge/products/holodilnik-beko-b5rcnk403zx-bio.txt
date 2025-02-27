@@ -1,0 +1,93 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Холодильник Beko B5RCNK403ZX BIO', 30499, 11, '/items/productimages/holodilnik-beko-b5rcnk403zx-bio_0.png', 4.48, '', 'Холодильник Beko B5RCNK403ZX BIO оснащен сухой и влажной зоной сохранения свежести.
+
+• <b>Система No Frost</b>
+Препятствует появлению наледи, не требуется размораживать холодильник вручную.
+
+• <b>Регулировка влажности в отделении для овощей и фруктов</b>
+Создает оптимальные условия для хранения.
+
+• <b>Режим суперзамораживания</b>
+Позволяет сохранить свежесть и полезные свойства продуктов.
+
+Общий объем составляет 403 л, полезный — 257/100 л. Предусмотрен один ящик в зоне свежести. В холодильной камере насчитывается четыре полки, три из которых регулируются по высоте. Материалом послужило закаленное стекло. Добавлены освещение, подставка для яиц и полка для бутылок. Мощность замораживания в морозильной камере достигает 6 кг/сут. Предусмотрено три отделения с ящиками из стекла. Прилагаются формочки для льда.
+
+Холодильник относится к климатическому классу SN-T. Дополнен режимом отпуска. Используется хладагент R600a. Перенавешиваемые двери изготовлены из металла. Открываются в правую сторону. Внешние ручки расположены горизонтально. Минимально возможное расстояние от боковых стенок составляет 20 мм. Добавлены колесики для перемещения. Корпус сделан из металла. 
+
+Индикаторы показывают режим работы. Присутствует LED-освещение. Для электронного управления используется сенсорная панель. Уровень шума не превышает 37 дБ. Устройство выполнено в цвете нержавеющей стали. Вес составляет 72,4 кг. Габариты — 201х59,5х65 см.', 'InStock', 'Discount', 3, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Beko'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Холодильник Beko B5RCNK403ZX BIO'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Beko B5RCNK403ZX BIO' 
+        AND a."Name" = 'инверторный' 
+        AND a."Type" = 'Тип компрессора'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Beko B5RCNK403ZX BIO' 
+        AND a."Name" = '201' 
+        AND a."Type" = 'Высота'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Beko B5RCNK403ZX BIO' 
+        AND a."Name" = '59.5' 
+        AND a."Type" = 'Ширина'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Beko B5RCNK403ZX BIO' 
+        AND a."Name" = '65' 
+        AND a."Type" = 'Глубина'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Beko B5RCNK403ZX BIO' 
+        AND a."Name" = '403' 
+        AND a."Type" = 'Общий объем'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-beko-b5rcnk403zx-bio_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Beko B5RCNK403ZX BIO'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-beko-b5rcnk403zx-bio_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Beko B5RCNK403ZX BIO'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-beko-b5rcnk403zx-bio_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Beko B5RCNK403ZX BIO'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-beko-b5rcnk403zx-bio_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Beko B5RCNK403ZX BIO'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-beko-b5rcnk403zx-bio_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Beko B5RCNK403ZX BIO'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-beko-b5rcnk403zx-bio_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Beko B5RCNK403ZX BIO'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-beko-b5rcnk403zx-bio_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Beko B5RCNK403ZX BIO'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-beko-b5rcnk403zx-bio_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Beko B5RCNK403ZX BIO'));

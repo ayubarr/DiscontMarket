@@ -1,0 +1,25 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-s-grilem-toshiba-mm-eg24pbm_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь с грилем Toshiba MM-EG24P(BM)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-s-grilem-toshiba-mm-eg24pbm_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь с грилем Toshiba MM-EG24P(BM)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-s-grilem-toshiba-mm-eg24pbm_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь с грилем Toshiba MM-EG24P(BM)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-s-grilem-toshiba-mm-eg24pbm_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь с грилем Toshiba MM-EG24P(BM)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-s-grilem-toshiba-mm-eg24pbm_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь с грилем Toshiba MM-EG24P(BM)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-s-grilem-toshiba-mm-eg24pbm_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь с грилем Toshiba MM-EG24P(BM)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-s-grilem-toshiba-mm-eg24pbm_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь с грилем Toshiba MM-EG24P(BM)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-s-grilem-toshiba-mm-eg24pbm_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь с грилем Toshiba MM-EG24P(BM)'));

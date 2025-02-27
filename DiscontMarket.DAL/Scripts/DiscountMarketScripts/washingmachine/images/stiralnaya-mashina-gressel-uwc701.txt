@@ -1,0 +1,22 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-gressel-uwc701_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Gressel UWC701'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-gressel-uwc701_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Gressel UWC701'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-gressel-uwc701_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Gressel UWC701'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-gressel-uwc701_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Gressel UWC701'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-gressel-uwc701_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Gressel UWC701'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-gressel-uwc701_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Gressel UWC701'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-gressel-uwc701_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Gressel UWC701'));

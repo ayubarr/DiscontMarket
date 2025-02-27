@@ -1,0 +1,81 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Газовая плита (50-55 см) Gefest 3200-06 К2', 13245, 14, '/items/productimages/gazovaya-plita-50-55-sm-gefest-3200-06-k2_0.png', 4.51, '', '', 'InStock', 'Discount', 4, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Gefest'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Газовая плита (50-55 см) Gefest 3200-06 К2'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Газовая плита (50-55 см) Gefest 3200-06 К2' 
+        AND a."Name" = '4' 
+        AND a."Type" = 'Количество конфорок'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Газовая плита (50-55 см) Gefest 3200-06 К2' 
+        AND a."Name" = 'эмалированная' 
+        AND a."Type" = 'Решетка'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Газовая плита (50-55 см) Gefest 3200-06 К2' 
+        AND a."Name" = '42' 
+        AND a."Type" = 'Объем духовки'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Газовая плита (50-55 см) Gefest 3200-06 К2' 
+        AND a."Name" = '85*50*57 см' 
+        AND a."Type" = 'Габаритные размеры (В*Ш*Г)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Газовая плита (50-55 см) Gefest 3200-06 К2' 
+        AND a."Name" = 'механический' 
+        AND a."Type" = 'Электроподжиг конфорок'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/gazovaya-plita-50-55-sm-gefest-3200-06-k2_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Газовая плита (50-55 см) Gefest 3200-06 К2'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/gazovaya-plita-50-55-sm-gefest-3200-06-k2_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Газовая плита (50-55 см) Gefest 3200-06 К2'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/gazovaya-plita-50-55-sm-gefest-3200-06-k2_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Газовая плита (50-55 см) Gefest 3200-06 К2'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/gazovaya-plita-50-55-sm-gefest-3200-06-k2_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Газовая плита (50-55 см) Gefest 3200-06 К2'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/gazovaya-plita-50-55-sm-gefest-3200-06-k2_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Газовая плита (50-55 см) Gefest 3200-06 К2'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/gazovaya-plita-50-55-sm-gefest-3200-06-k2_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Газовая плита (50-55 см) Gefest 3200-06 К2'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/gazovaya-plita-50-55-sm-gefest-3200-06-k2_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Газовая плита (50-55 см) Gefest 3200-06 К2'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/gazovaya-plita-50-55-sm-gefest-3200-06-k2_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Газовая плита (50-55 см) Gefest 3200-06 К2'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/gazovaya-plita-50-55-sm-gefest-3200-06-k2_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Газовая плита (50-55 см) Gefest 3200-06 К2'));

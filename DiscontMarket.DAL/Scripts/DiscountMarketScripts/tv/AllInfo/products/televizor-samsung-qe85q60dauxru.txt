@@ -1,0 +1,52 @@
+﻿INSERT INTO "Products" 
+("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription",
+"Availability", "Status", "CategoryID", "BrandID", "UserID") 
+VALUES
+ ('Телевизор Samsung QE85Q60DAUXRU', 153999, 17, '/items/productimages/televizor-samsung-qe85q60dauxru_0.png', 4.2, '', 'Телевизор Samsung QE85Q60DAUXRU произведен в Египте. Диагональ Ultra HD экрана форматом 16:9 составляет 85" (214 см). Встроена технология QLED, HDR, HDMI ARC. Изображение подвергается цифровому шумоподавлению. Операционная система — Tizen. Мощность акустики — 20 Вт. Управление осуществляется через подключение к Wi-Fi-сети через смартфон.
+
+Телевизор поддерживает Smart TV, Bluetooth, оборудован таймером, функцией TimeShift, возможностью записи и воспроизведения файлов на устройства USB. На сером корпусе присутствуют разъемы LAN, для модуля DVB CAM, вход HDMI, USB. В комплектацию включена настольная подставка. Вес модели — 41,5 кг. Габаритные размеры — 108,57х190,09х2,69 см.', 'InStock', 'Discount', 1, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Samsung'), 1);
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung QE85Q60DAUXRU'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '4K Ultra HD (3840x2160 Пикс)' AND "Type" = 'Экран));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung QE85Q60DAUXRU'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '85' AND "Type" = 'Диагональ));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung QE85Q60DAUXRU'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '60' AND "Type" = 'Частота обновления));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung QE85Q60DAUXRU'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'QLED' AND "Type" = 'Технология экрана));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung QE85Q60DAUXRU'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'Edge LED' AND "Type" = 'Тип светодиодной подсветки));
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-samsung-qe85q60dauxru_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung QE85Q60DAUXRU'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-samsung-qe85q60dauxru_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung QE85Q60DAUXRU'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-samsung-qe85q60dauxru_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung QE85Q60DAUXRU'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-samsung-qe85q60dauxru_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung QE85Q60DAUXRU'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-samsung-qe85q60dauxru_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung QE85Q60DAUXRU'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-samsung-qe85q60dauxru_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung QE85Q60DAUXRU'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-samsung-qe85q60dauxru_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung QE85Q60DAUXRU'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-samsung-qe85q60dauxru_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung QE85Q60DAUXRU'));

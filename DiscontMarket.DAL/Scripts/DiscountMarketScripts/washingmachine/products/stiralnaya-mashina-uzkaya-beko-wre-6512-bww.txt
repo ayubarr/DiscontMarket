@@ -1,0 +1,84 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Стиральная машина узкая Beko WRE 6512 BWW', 13499, 15, '/items/productimages/stiralnaya-mashina-uzkaya-beko-wre-6512-bww_0.png', 4.48, '', 'Beko WRE 6512 BWW – узкая стиральная машина с фронтальной загрузкой, в которую помещается до 6 кг белья. Эта бытовая техника пригодится тем, кто хочет сэкономить место в квартире. В ней используется барабан с поверхностью в виде пузырьков, которая обеспечивает эффективное удаление загрязнений и не повреждает вещи, изготовленные из деликатных материалов.
+
+ВЫБЕРИТЕ ПОДХОДЯЩИЙ РЕЖИМ
+Установить настройки и запустить нужную программу можно с помощью кнопок и поворотного переключателя, размещённых на фронтальной панели, а контролировать процесс поможет цифровой дисплей. Вы обязательно найдёте оптимальный вариант для изделий из шерсти, шёлка, пуха или синтетики, джинсов либо рубашек.
+
+ЗАЩИТА ОТ ДЕТЕЙ
+Панель управления можно заблокировать, чтобы балующийся ребёнок не включил машину без присмотра взрослых или не вмешался в работу уже начавшегося цикла.
+
+ОТЛОЖЕННЫЙ СТАРТ
+Нужно перенести начало стирки на другое время? Загрузите грязную одежду и установите таймер отсрочки на срок до 19 часов.', 'InStock', 'Discount', 5, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Beko'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая Beko WRE 6512 BWW'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина узкая Beko WRE 6512 BWW' 
+        AND a."Name" = '6' 
+        AND a."Type" = 'Максимальная загрузка'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина узкая Beko WRE 6512 BWW' 
+        AND a."Name" = '1000' 
+        AND a."Type" = 'Максимальная скорость отжима'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина узкая Beko WRE 6512 BWW' 
+        AND a."Name" = 'стандартный' 
+        AND a."Type" = 'Мотор'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина узкая Beko WRE 6512 BWW' 
+        AND a."Name" = '84*60*41.5 см' 
+        AND a."Type" = 'Габаритные размеры (В*Ш*Г)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина узкая Beko WRE 6512 BWW' 
+        AND a."Name" = '45' 
+        AND a."Type" = 'Расход воды за цикл'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-uzkaya-beko-wre-6512-bww_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая Beko WRE 6512 BWW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-uzkaya-beko-wre-6512-bww_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая Beko WRE 6512 BWW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-uzkaya-beko-wre-6512-bww_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая Beko WRE 6512 BWW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-uzkaya-beko-wre-6512-bww_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая Beko WRE 6512 BWW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-uzkaya-beko-wre-6512-bww_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая Beko WRE 6512 BWW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-uzkaya-beko-wre-6512-bww_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая Beko WRE 6512 BWW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-uzkaya-beko-wre-6512-bww_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая Beko WRE 6512 BWW'));

@@ -1,0 +1,16 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-kivi-40f550nb_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Kivi 40F550NB'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-kivi-40f550nb_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Kivi 40F550NB'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-kivi-40f550nb_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Kivi 40F550NB'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-kivi-40f550nb_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Kivi 40F550NB'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-kivi-40f550nb_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Kivi 40F550NB'));

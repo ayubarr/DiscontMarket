@@ -1,0 +1,89 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Холодильник (Side-by-Side) Kuppersberg NFFD 183 BEG бежевый', 113799, 18, '/items/productimages/holodilnik-side-by-side-kuppersberg-nffd-183-beg-bezhevyi_0.png', 4.99, '', 'Отдельностоящий холодильник (Side-by-Side) Kuppersberg NFFD 183 BEG относится к классу энергоэффективности А++ и работает под контролем инверторного компрессора, который поддерживает равномерное охлаждение камер. Электроприбор из коллекции Classic габаритами 1830х911х706 мм оснащен четырьмя распашными дверцами с горизонтальными скрытыми ручками, стеклянным фасадом, и нескользящими ножками-опорами. Внешний сенсорный модуль управления со световой индикацией на верхней дверце позволяет управлять температурой, задавать рабочие режимы («Суперзаморозка», «Суперохлаждение», «Отпуск»). 
+Внутреннее пространство агрегата покрыто антибактериальным материалом, разделено на верхнее холодильное (полезный объем 367 л) и морозильное (175 л) отделения. В холодильном отсеке поддерживается температура от 2°С до 8°С, установлены три широкие стеклянные полки и два лотка для скоропортящихся продуктов в зоне свежести, где температура приближается к 0°С. На дверцах расположено шесть навесных пластиковых полок с бортиками. 
+В разделенном на два отсека морозильном отделении мощностью замораживания до 14 кг в сутки находятся четыре пластиковых выдвижных лотка, две полки и механический ледогенератор. Здесь можно настроить температуру от -15°С до -23°С. В случае отключения от электросети камеры поддерживают холод в течение 8 часов. Система Full No Frost обеспечивает принудительную циркуляцию воздуха в камерах, предупреждает появление наледи на продуктах и стенках, не требует ручного размораживания прибора. LED-подсветка в камерах способствует хорошему обзору всех уровней.', 'InStock', 'Discount', 3, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Kuppersberg'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Холодильник (Side-by-Side) Kuppersberg NFFD 183 BEG бежевый'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник (Side-by-Side) Kuppersberg NFFD 183 BEG бежевый' 
+        AND a."Name" = 'инверторный' 
+        AND a."Type" = 'Тип компрессора'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник (Side-by-Side) Kuppersberg NFFD 183 BEG бежевый' 
+        AND a."Name" = '183*91.1*70.6 см' 
+        AND a."Type" = 'Габаритные размеры (В*Ш*Г)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник (Side-by-Side) Kuppersberg NFFD 183 BEG бежевый' 
+        AND a."Name" = '542' 
+        AND a."Type" = 'Общий объем'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник (Side-by-Side) Kuppersberg NFFD 183 BEG бежевый' 
+        AND a."Name" = 'влажная/сухая' 
+        AND a."Type" = 'Тип зоны сохранения свежести'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник (Side-by-Side) Kuppersberg NFFD 183 BEG бежевый' 
+        AND a."Name" = 'электронный' 
+        AND a."Type" = 'Тип управления'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-side-by-side-kuppersberg-nffd-183-beg-bezhevyi_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник (Side-by-Side) Kuppersberg NFFD 183 BEG бежевый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-side-by-side-kuppersberg-nffd-183-beg-bezhevyi_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник (Side-by-Side) Kuppersberg NFFD 183 BEG бежевый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-side-by-side-kuppersberg-nffd-183-beg-bezhevyi_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник (Side-by-Side) Kuppersberg NFFD 183 BEG бежевый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-side-by-side-kuppersberg-nffd-183-beg-bezhevyi_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник (Side-by-Side) Kuppersberg NFFD 183 BEG бежевый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-side-by-side-kuppersberg-nffd-183-beg-bezhevyi_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник (Side-by-Side) Kuppersberg NFFD 183 BEG бежевый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-side-by-side-kuppersberg-nffd-183-beg-bezhevyi_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник (Side-by-Side) Kuppersberg NFFD 183 BEG бежевый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-side-by-side-kuppersberg-nffd-183-beg-bezhevyi_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник (Side-by-Side) Kuppersberg NFFD 183 BEG бежевый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-side-by-side-kuppersberg-nffd-183-beg-bezhevyi_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник (Side-by-Side) Kuppersberg NFFD 183 BEG бежевый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-side-by-side-kuppersberg-nffd-183-beg-bezhevyi_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник (Side-by-Side) Kuppersberg NFFD 183 BEG бежевый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-side-by-side-kuppersberg-nffd-183-beg-bezhevyi_9.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник (Side-by-Side) Kuppersberg NFFD 183 BEG бежевый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-side-by-side-kuppersberg-nffd-183-beg-bezhevyi_10.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник (Side-by-Side) Kuppersberg NFFD 183 BEG бежевый'));

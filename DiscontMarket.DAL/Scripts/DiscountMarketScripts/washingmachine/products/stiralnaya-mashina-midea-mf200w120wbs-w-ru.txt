@@ -1,0 +1,77 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Стиральная машина Midea MF200W120WBS/W-RU', 36499, 7, '/items/productimages/stiralnaya-mashina-midea-mf200w120wbs-w-ru_0.png', 4.21, '', 'Стиральная машина Midea MF200W120WBS/W-RU отличается большой вместимостью — за один раз в устройство можно загрузить до 12 кг вещей. Объем барабана модели равен 76 л. Доступна функция обработки паром Steam Care, которая способствует уменьшению складок на одежде после стирки. Панель управления оборудована сенсорными и механическими переключателями, встроен цифровой дисплей.
+
+Максимальная скорость отжима достигает 1400 об/мин. Расход воды за один цикл не превышает 64 л. Стиральной машиной можно управлять удаленно со смартфона благодаря встроенному модулю беспроводной связи Wi-Fi. Можно включить режим самоочистки барабана. Предельный уровень шума модели составляет не более 76 дБ. Применена система защиты от детей. Диаметр люка равен 33 см.', 'InStock', 'Discount', 5, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Midea'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Стиральная машина Midea MF200W120WBS/W-RU'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина Midea MF200W120WBS/W-RU' 
+        AND a."Name" = '12' 
+        AND a."Type" = 'Максимальная загрузка'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина Midea MF200W120WBS/W-RU' 
+        AND a."Name" = '1400' 
+        AND a."Type" = 'Максимальная скорость отжима'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина Midea MF200W120WBS/W-RU' 
+        AND a."Name" = 'инверторный' 
+        AND a."Type" = 'Мотор'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина Midea MF200W120WBS/W-RU' 
+        AND a."Name" = 'Да' 
+        AND a."Type" = 'Обработка паром'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина Midea MF200W120WBS/W-RU' 
+        AND a."Name" = '85*59.5*59.5 см' 
+        AND a."Type" = 'Габаритные размеры (В*Ш*Г)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-midea-mf200w120wbs-w-ru_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Midea MF200W120WBS/W-RU'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-midea-mf200w120wbs-w-ru_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Midea MF200W120WBS/W-RU'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-midea-mf200w120wbs-w-ru_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Midea MF200W120WBS/W-RU'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-midea-mf200w120wbs-w-ru_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Midea MF200W120WBS/W-RU'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-midea-mf200w120wbs-w-ru_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Midea MF200W120WBS/W-RU'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-midea-mf200w120wbs-w-ru_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Midea MF200W120WBS/W-RU'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-midea-mf200w120wbs-w-ru_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Midea MF200W120WBS/W-RU'));

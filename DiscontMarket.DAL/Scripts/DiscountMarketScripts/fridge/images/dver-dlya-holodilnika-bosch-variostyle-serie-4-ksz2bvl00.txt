@@ -1,0 +1,4 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/dver-dlya-holodilnika-bosch-variostyle-serie-4-ksz2bvl00_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Дверь для холодильника Bosch VarioStyle Serie 4 KSZ2BVL00'));

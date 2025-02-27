@@ -1,0 +1,80 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Электрическая плита (60 см) Kraft KF-FSK60603СEGBL', 27499, 10, '/items/productimages/elektricheskaya-plita-60-sm-kraft-kf-fsk60603segbl_0.png', 4.91, '', 'Электрическая плита Kraft KF-FSK60603СEGBL, черная — полноразмерная модель габаритами 86х59,8х63,5 см и весом 30,5 кг. 
+
+• <b>Варочная поверхность</b>
+Установлены четыре конфорки спирального типа. Ближняя левая и дальняя правая обладают диаметром 20 см, ближняя правая и дальняя левая — по 16,5 см. 
+
+• <b>Механическое управление</b>
+Простое и надежное, представлено поворотными регуляторами. 
+
+• <b>Духовой шкаф объемом 70 л</b>
+Работает в трех режимах (верхний и нижний жар и их комбинация).
+
+• <b>Таймер</b>
+Позволяет установить продолжительность приготовления в духовке, автоматически отключает прибор по истечении установленного времени. 
+
+Очистка духового шкафа производится методом гидролиза. Двойное стекло дверцы предотвращает сильный нагрев устройства снаружи и эффективно сохраняет тепло. Энергопотребление соответствует классу А, мощность подключения составляет 8225 Вт. Установку упрощают регулируемые ножки: с их помощью можно нейтрализовать небольшие неровности пола. В комплекте поставляются противень и решетка.', 'InStock', 'Discount', 4, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Kraft'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Электрическая плита (60 см) Kraft KF-FSK60603СEGBL'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Электрическая плита (60 см) Kraft KF-FSK60603СEGBL' 
+        AND a."Name" = '70' 
+        AND a."Type" = 'Объем духовки'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Электрическая плита (60 см) Kraft KF-FSK60603СEGBL' 
+        AND a."Name" = '3' 
+        AND a."Type" = 'Режимы работы духовки'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Электрическая плита (60 см) Kraft KF-FSK60603СEGBL' 
+        AND a."Name" = 'спиральные' 
+        AND a."Type" = 'Тип конфорок'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Электрическая плита (60 см) Kraft KF-FSK60603СEGBL' 
+        AND a."Name" = 'отсутствует' 
+        AND a."Type" = 'Тип гриля'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Электрическая плита (60 см) Kraft KF-FSK60603СEGBL' 
+        AND a."Name" = 'эмалированная сталь' 
+        AND a."Type" = 'Внутреннее покрытие'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/elektricheskaya-plita-60-sm-kraft-kf-fsk60603segbl_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Электрическая плита (60 см) Kraft KF-FSK60603СEGBL'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/elektricheskaya-plita-60-sm-kraft-kf-fsk60603segbl_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Электрическая плита (60 см) Kraft KF-FSK60603СEGBL'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/elektricheskaya-plita-60-sm-kraft-kf-fsk60603segbl_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Электрическая плита (60 см) Kraft KF-FSK60603СEGBL'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/elektricheskaya-plita-60-sm-kraft-kf-fsk60603segbl_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Электрическая плита (60 см) Kraft KF-FSK60603СEGBL'));

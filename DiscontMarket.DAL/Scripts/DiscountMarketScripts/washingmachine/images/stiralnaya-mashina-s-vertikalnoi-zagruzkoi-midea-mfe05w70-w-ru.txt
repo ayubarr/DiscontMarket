@@ -1,0 +1,19 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-s-vertikalnoi-zagruzkoi-midea-mfe05w70-w-ru_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина с вертикальной загрузкой Midea MFE05W70/W-RU'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-s-vertikalnoi-zagruzkoi-midea-mfe05w70-w-ru_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина с вертикальной загрузкой Midea MFE05W70/W-RU'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-s-vertikalnoi-zagruzkoi-midea-mfe05w70-w-ru_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина с вертикальной загрузкой Midea MFE05W70/W-RU'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-s-vertikalnoi-zagruzkoi-midea-mfe05w70-w-ru_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина с вертикальной загрузкой Midea MFE05W70/W-RU'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-s-vertikalnoi-zagruzkoi-midea-mfe05w70-w-ru_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина с вертикальной загрузкой Midea MFE05W70/W-RU'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-s-vertikalnoi-zagruzkoi-midea-mfe05w70-w-ru_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина с вертикальной загрузкой Midea MFE05W70/W-RU'));

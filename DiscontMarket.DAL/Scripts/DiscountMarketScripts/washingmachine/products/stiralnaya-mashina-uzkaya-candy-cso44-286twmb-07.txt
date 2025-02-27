@@ -1,0 +1,91 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Стиральная машина узкая Candy CSO44 286TWMB-07', 19999, 6, '/items/productimages/stiralnaya-mashina-uzkaya-candy-cso44-286twmb-07_0.png', 4.28, '', 'Узкая стиральная машина Candy CSO44 286TWMB-07 фронтального типа рассчитана на загрузку до 8 кг белья. Прибор относится к классу энергоэффективности А+++ и работает под управлением инверторного электродвигателя, расходуя за цикл до 55 л воды. 
+
+Дверца загрузочного люка с углом открывания 180° обеспечивает доступ в камеру объемом 64 л. Рельефный барабан из нержавеющей стали способствует бережной обработке тканей. Функция подачи пара смягчает материалы, предупреждает образование заломов, освежает одежду. Блок управления Candy CSO44 состоит из поворотного регулятора выбора режимов и сенсорного LED-экрана с возможностью выбора температуры (20°С-60°С), скорости отжима (400-1200 об/мин), отложенного старта (до 24 часов), дополнительного полоскания, парообработки и других функций. Модель поддерживает 15 программ, среди которых — «Умная стирка», «Цветные ткани», «Легкая глажка», «Детская одежда», «Шерсть», «Быстрая 14 минут», «Белый хлопок».
+
+Предусмотрены функции автоопределения загрузки, блокировка дверцы, контроль пенообразования и дисбаланса, защита от перелива. За безопасность эксплуатации машины отвечает блокировка панели от случайного включения.', 'InStock', 'Discount', 5, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Candy'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая Candy CSO44 286TWMB-07'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина узкая Candy CSO44 286TWMB-07' 
+        AND a."Name" = '8' 
+        AND a."Type" = 'Максимальная загрузка'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина узкая Candy CSO44 286TWMB-07' 
+        AND a."Name" = '1200' 
+        AND a."Type" = 'Максимальная скорость отжима'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина узкая Candy CSO44 286TWMB-07' 
+        AND a."Name" = 'инверторный' 
+        AND a."Type" = 'Мотор'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина узкая Candy CSO44 286TWMB-07' 
+        AND a."Name" = 'Да' 
+        AND a."Type" = 'Обработка паром'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина узкая Candy CSO44 286TWMB-07' 
+        AND a."Name" = '85*60*44 см' 
+        AND a."Type" = 'Габаритные размеры (В*Ш*Г)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-uzkaya-candy-cso44-286twmb-07_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая Candy CSO44 286TWMB-07'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-uzkaya-candy-cso44-286twmb-07_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая Candy CSO44 286TWMB-07'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-uzkaya-candy-cso44-286twmb-07_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая Candy CSO44 286TWMB-07'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-uzkaya-candy-cso44-286twmb-07_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая Candy CSO44 286TWMB-07'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-uzkaya-candy-cso44-286twmb-07_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая Candy CSO44 286TWMB-07'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-uzkaya-candy-cso44-286twmb-07_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая Candy CSO44 286TWMB-07'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-uzkaya-candy-cso44-286twmb-07_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая Candy CSO44 286TWMB-07'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-uzkaya-candy-cso44-286twmb-07_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая Candy CSO44 286TWMB-07'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-uzkaya-candy-cso44-286twmb-07_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая Candy CSO44 286TWMB-07'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-uzkaya-candy-cso44-286twmb-07_9.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая Candy CSO44 286TWMB-07'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-uzkaya-candy-cso44-286twmb-07_10.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая Candy CSO44 286TWMB-07'));

@@ -1,0 +1,4 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-premium-v-zug-adorawash-aw6twhcr_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Премиум V-Zug AdoraWash AW6TWHCR'));

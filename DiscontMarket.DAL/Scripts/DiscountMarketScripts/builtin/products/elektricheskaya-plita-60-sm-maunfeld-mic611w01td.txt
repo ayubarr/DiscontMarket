@@ -1,0 +1,80 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Электрическая плита (60 см) Maunfeld MIC611W01TD', 38495, 18, '/items/productimages/elektricheskaya-plita-60-sm-maunfeld-mic611w01td_0.png', 4.61, '', 'Электрическая плита Maunfeld MIC611W01TD в корпусе белого цвета — отдельностоящий кухонный прибор, оснащенный электрическим духовым шкафом и индукционной рабочей панелью. Она обеспечивает быстрый и точный нагрев, что позволяет экономить время и энергию. На варочной поверхности предусмотрено четыре конфорки разной мощности (две — 1500 Вт и две — 2000 Вт) и разного диаметра (140 мм и 180 мм). Индукция полностью безопасна, ведь конфорки нагреваются только при контакте с посудой. 
+Духовка объемом 59 л оборудована 11 режимами работы, включая классический нагрев, конвекцию, гриль, ферментацию и сушку горячим воздухом. Максимальная температура нагрева — 250°C, что позволяет выпекать хлеб, пиццу и массу других блюд. Внутреннее покрытие духовки выполнено из эмали легкой очистки, что облегчает уход за ней. Плавное закрытие дверцы и блокировка панели управления обеспечивают безопасность использования.
+Плита оснащена таймером, функцией автоматического отключения нагрева, индикаторами остаточного тепла для каждой конфорки, дисплеем и индикацией включения. Мощность варочной поверхности составляет 7000 Вт, энергопотребление духовки — 3100 Вт.', 'InStock', 'Discount', 4, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Maunfeld'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Электрическая плита (60 см) Maunfeld MIC611W01TD'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Электрическая плита (60 см) Maunfeld MIC611W01TD' 
+        AND a."Name" = '59' 
+        AND a."Type" = 'Объем духовки'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Электрическая плита (60 см) Maunfeld MIC611W01TD' 
+        AND a."Name" = '11' 
+        AND a."Type" = 'Режимы работы духовки'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Электрическая плита (60 см) Maunfeld MIC611W01TD' 
+        AND a."Name" = 'Да' 
+        AND a."Type" = 'Конвекция'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Электрическая плита (60 см) Maunfeld MIC611W01TD' 
+        AND a."Name" = 'Hi-Light/ индукционные' 
+        AND a."Type" = 'Тип конфорок'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Электрическая плита (60 см) Maunfeld MIC611W01TD' 
+        AND a."Name" = 'Да' 
+        AND a."Type" = 'Индикация текущей температуры'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/elektricheskaya-plita-60-sm-maunfeld-mic611w01td_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Электрическая плита (60 см) Maunfeld MIC611W01TD'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/elektricheskaya-plita-60-sm-maunfeld-mic611w01td_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Электрическая плита (60 см) Maunfeld MIC611W01TD'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/elektricheskaya-plita-60-sm-maunfeld-mic611w01td_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Электрическая плита (60 см) Maunfeld MIC611W01TD'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/elektricheskaya-plita-60-sm-maunfeld-mic611w01td_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Электрическая плита (60 см) Maunfeld MIC611W01TD'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/elektricheskaya-plita-60-sm-maunfeld-mic611w01td_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Электрическая плита (60 см) Maunfeld MIC611W01TD'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/elektricheskaya-plita-60-sm-maunfeld-mic611w01td_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Электрическая плита (60 см) Maunfeld MIC611W01TD'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/elektricheskaya-plita-60-sm-maunfeld-mic611w01td_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Электрическая плита (60 см) Maunfeld MIC611W01TD'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/elektricheskaya-plita-60-sm-maunfeld-mic611w01td_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Электрическая плита (60 см) Maunfeld MIC611W01TD'));

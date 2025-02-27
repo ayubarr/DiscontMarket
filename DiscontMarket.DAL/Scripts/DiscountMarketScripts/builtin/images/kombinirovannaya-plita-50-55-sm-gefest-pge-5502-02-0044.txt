@@ -1,0 +1,22 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/kombinirovannaya-plita-50-55-sm-gefest-pge-5502-02-0044_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Комбинированная плита (50-55 см) Gefest ПГЭ 5502-02 0044'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/kombinirovannaya-plita-50-55-sm-gefest-pge-5502-02-0044_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Комбинированная плита (50-55 см) Gefest ПГЭ 5502-02 0044'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/kombinirovannaya-plita-50-55-sm-gefest-pge-5502-02-0044_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Комбинированная плита (50-55 см) Gefest ПГЭ 5502-02 0044'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/kombinirovannaya-plita-50-55-sm-gefest-pge-5502-02-0044_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Комбинированная плита (50-55 см) Gefest ПГЭ 5502-02 0044'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/kombinirovannaya-plita-50-55-sm-gefest-pge-5502-02-0044_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Комбинированная плита (50-55 см) Gefest ПГЭ 5502-02 0044'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/kombinirovannaya-plita-50-55-sm-gefest-pge-5502-02-0044_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Комбинированная плита (50-55 см) Gefest ПГЭ 5502-02 0044'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/kombinirovannaya-plita-50-55-sm-gefest-pge-5502-02-0044_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Комбинированная плита (50-55 см) Gefest ПГЭ 5502-02 0044'));

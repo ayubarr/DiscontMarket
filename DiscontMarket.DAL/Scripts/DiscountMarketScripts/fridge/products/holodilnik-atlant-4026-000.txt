@@ -1,0 +1,68 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Холодильник ATLANT 4026-000', 19945, 8, '/items/productimages/holodilnik-atlant-4026-000_0.png', 4.74, '', 'Белый холодильник с нижней морозильной камерой ATLANT 4026-000 с электромеханическим управлением представлен в габаритных размерах 205х60х63 см. Морозилка вместимостью 101 л оборудована тремя ящиками. Объем холодильной камеры равен 275 л. Внутри находятся пять полок из ударопрочного стекла, четыре из которых регулируются по высоте, и два прозрачных ящика для овощей. Предусмотрены фиксаторы против выдвижения. В комплекте идут подставка для яиц. Встроено LED-освещение. Благодаря стандартному компрессору и хладагенту R 600a можно замораживать до 4,6 кг/сут. Климатический класс — N. 
+
+На перенавешиваемой металлической двери, которая открывается направо, встроено шесть полок. Внешние ручки расположены вертикально. Устройство серии 40+ (Soft Line) потребляет 375 кВт*ч и относится к А классу энергоэффективности. Размораживание происходит по капельному (холодильная камера) и ручному (морозильник) типу. При отключении питания, продукты могут храниться до 17 ч. Уровень шума не превышает 39 дБ. При включении загорается световая индикация. Вес — 70 кг. Страна производства — Беларусь.', 'InStock', 'Discount', 3, (SELECT "ID" FROM "Brands" WHERE "Name" = 'ATLANT'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Холодильник ATLANT 4026-000'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник ATLANT 4026-000' 
+        AND a."Name" = 'стандартный' 
+        AND a."Type" = 'Тип компрессора'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник ATLANT 4026-000' 
+        AND a."Name" = '205' 
+        AND a."Type" = 'Высота'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник ATLANT 4026-000' 
+        AND a."Name" = '60' 
+        AND a."Type" = 'Ширина'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник ATLANT 4026-000' 
+        AND a."Name" = '63' 
+        AND a."Type" = 'Глубина'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник ATLANT 4026-000' 
+        AND a."Name" = '393' 
+        AND a."Type" = 'Общий объем'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-atlant-4026-000_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник ATLANT 4026-000'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-atlant-4026-000_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник ATLANT 4026-000'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-atlant-4026-000_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник ATLANT 4026-000'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-atlant-4026-000_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник ATLANT 4026-000'));

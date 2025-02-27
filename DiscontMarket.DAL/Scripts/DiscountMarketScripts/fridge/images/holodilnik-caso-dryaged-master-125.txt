@@ -1,0 +1,13 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-caso-dryaged-master-125_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Caso DryAged Master 125'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-caso-dryaged-master-125_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Caso DryAged Master 125'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-caso-dryaged-master-125_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Caso DryAged Master 125'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-caso-dryaged-master-125_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Caso DryAged Master 125'));

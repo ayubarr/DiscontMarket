@@ -1,0 +1,80 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Микроволновая печь с грилем Maunfeld JFSMO.20.5.ERIB', 9245, 17, '/items/productimages/mikrovolnovaya-pech-s-grilem-maunfeld-jfsmo205erib_0.png', 4.8, '', 'Микроволновая печь с грилем Maunfeld JFSMO.20.5.Erib — модель, оформленная в классическом стиле, мощностью 1080 Вт. Внутренняя часть камеры, выполненная из нержавеющей стали, обладает объемом 20 л. Дверца открывается налево с помощью ручки. Встроенная подсветка обеспечивает хорошую видимость рабочего пространства. Интегрированный кварцевый гриль (1000 Вт) дает возможность получать блюда с румяной корочкой. 
+
+Устройство поддерживает три автоматические программы размораживания, которые можно изменять посредством механических регуляторов. Микроволновая печь работает по технологии «без поворотного стола». Таймер позволяет программировать время работы, по окончании срабатывает автоматическое отключение. В комплекте поставляется решетка для гриля. Габаритные размеры модели — 28,5х45,5х36,6 см, вес — 11,7 кг.', 'InStock', 'Discount', 6, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Maunfeld'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Микроволновая печь с грилем Maunfeld JFSMO.20.5.ERIB'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Микроволновая печь с грилем Maunfeld JFSMO.20.5.ERIB' 
+        AND a."Name" = '20' 
+        AND a."Type" = 'Полезный объем'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Микроволновая печь с грилем Maunfeld JFSMO.20.5.ERIB' 
+        AND a."Name" = 'Да' 
+        AND a."Type" = 'Технология "Без поворотного стола"'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Микроволновая печь с грилем Maunfeld JFSMO.20.5.ERIB' 
+        AND a."Name" = '35' 
+        AND a."Type" = 'Диаметр поворотного стола'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Микроволновая печь с грилем Maunfeld JFSMO.20.5.ERIB' 
+        AND a."Name" = 'нержавеющая сталь' 
+        AND a."Type" = 'Внутреннее покрытие'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Микроволновая печь с грилем Maunfeld JFSMO.20.5.ERIB' 
+        AND a."Name" = 'механический' 
+        AND a."Type" = 'Тип управления'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-s-grilem-maunfeld-jfsmo205erib_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь с грилем Maunfeld JFSMO.20.5.ERIB'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-s-grilem-maunfeld-jfsmo205erib_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь с грилем Maunfeld JFSMO.20.5.ERIB'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-s-grilem-maunfeld-jfsmo205erib_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь с грилем Maunfeld JFSMO.20.5.ERIB'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-s-grilem-maunfeld-jfsmo205erib_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь с грилем Maunfeld JFSMO.20.5.ERIB'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-s-grilem-maunfeld-jfsmo205erib_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь с грилем Maunfeld JFSMO.20.5.ERIB'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-s-grilem-maunfeld-jfsmo205erib_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь с грилем Maunfeld JFSMO.20.5.ERIB'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-s-grilem-maunfeld-jfsmo205erib_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь с грилем Maunfeld JFSMO.20.5.ERIB'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-s-grilem-maunfeld-jfsmo205erib_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь с грилем Maunfeld JFSMO.20.5.ERIB'));

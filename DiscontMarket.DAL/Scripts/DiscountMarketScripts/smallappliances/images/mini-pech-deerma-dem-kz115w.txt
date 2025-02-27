@@ -1,0 +1,25 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-deerma-dem-kz115w_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Deerma DEM-KZ115W'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-deerma-dem-kz115w_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Deerma DEM-KZ115W'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-deerma-dem-kz115w_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Deerma DEM-KZ115W'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-deerma-dem-kz115w_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Deerma DEM-KZ115W'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-deerma-dem-kz115w_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Deerma DEM-KZ115W'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-deerma-dem-kz115w_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Deerma DEM-KZ115W'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-deerma-dem-kz115w_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Deerma DEM-KZ115W'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-deerma-dem-kz115w_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Deerma DEM-KZ115W'));

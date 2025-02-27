@@ -1,0 +1,7 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-atlant-mh-5810-62_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник ATLANT МХ 5810-62'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-atlant-mh-5810-62_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник ATLANT МХ 5810-62'));

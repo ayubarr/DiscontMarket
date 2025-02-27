@@ -1,0 +1,22 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-samsung-qa65q60cauxzn-2023_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung QA65Q60CAUXZN (2023)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-samsung-qa65q60cauxzn-2023_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung QA65Q60CAUXZN (2023)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-samsung-qa65q60cauxzn-2023_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung QA65Q60CAUXZN (2023)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-samsung-qa65q60cauxzn-2023_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung QA65Q60CAUXZN (2023)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-samsung-qa65q60cauxzn-2023_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung QA65Q60CAUXZN (2023)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-samsung-qa65q60cauxzn-2023_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung QA65Q60CAUXZN (2023)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-samsung-qa65q60cauxzn-2023_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung QA65Q60CAUXZN (2023)'));

@@ -1,0 +1,86 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Мультипечь. Микроволновая печь с конвекцией и грилем Samsung MC32DG7646KKBW', 19999, 9, '/items/productimages/multipech-mikrovolnovaya-pech-s-konvekciei-i-grilem-samsung-mc32dg7646kkbw_0.png', 4.53, '', 'Микроволновая печь с грилем Samsung MC32DG7646KKBW черного цвета оформлена в лаконичном стиле, гармонично впишется в любой современный интерьер. 
+
+• <b>Мультипечь</b> 
+В память устройства занесено множество различных рецептов, в том числе приготовления на пару, 3D-размораживание. Гриль и микроволны можно комбинировать. 
+
+• <b>Современное управление</b> 
+Настройки можно выбирать с помощью сенсорных кнопок и поворотного регулятора. Информация отображается на дисплее. При синхронизации со смартфоном через модуль Wi-Fi в приложении можно регулировать настройки, получать персональные рекомендации, составлять план питания. 
+
+• <b>Воздушный фритюр Air Fry</b> 
+Позволит получить поджаристую корочку на блюдах при использовании минимального количества масла. 
+
+Стенки камеры с покрытием Ceramic Inside, за счет которого загрязнения удаляются без применения химических средств. На поворотной тарелке диаметром 34,5 см можно разместить крупные продукты и большую посуду. Дверь откидывается вниз с помощью ручки. В комплект входит металлическая решетка для гриля.', 'InStock', 'Discount', 6, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Samsung'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Мультипечь. Микроволновая печь с конвекцией и грилем Samsung MC32DG7646KKBW'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Мультипечь. Микроволновая печь с конвекцией и грилем Samsung MC32DG7646KKBW' 
+        AND a."Name" = '32' 
+        AND a."Type" = 'Полезный объем'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Мультипечь. Микроволновая печь с конвекцией и грилем Samsung MC32DG7646KKBW' 
+        AND a."Name" = '34.5' 
+        AND a."Type" = 'Диаметр поворотного стола'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Мультипечь. Микроволновая печь с конвекцией и грилем Samsung MC32DG7646KKBW' 
+        AND a."Name" = 'Bio керамика' 
+        AND a."Type" = 'Внутреннее покрытие'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Мультипечь. Микроволновая печь с конвекцией и грилем Samsung MC32DG7646KKBW' 
+        AND a."Name" = 'гибридный' 
+        AND a."Type" = 'Тип управления'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Мультипечь. Микроволновая печь с конвекцией и грилем Samsung MC32DG7646KKBW' 
+        AND a."Name" = 'черный' 
+        AND a."Type" = 'Цвет'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/multipech-mikrovolnovaya-pech-s-konvekciei-i-grilem-samsung-mc32dg7646kkbw_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мультипечь. Микроволновая печь с конвекцией и грилем Samsung MC32DG7646KKBW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/multipech-mikrovolnovaya-pech-s-konvekciei-i-grilem-samsung-mc32dg7646kkbw_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мультипечь. Микроволновая печь с конвекцией и грилем Samsung MC32DG7646KKBW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/multipech-mikrovolnovaya-pech-s-konvekciei-i-grilem-samsung-mc32dg7646kkbw_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мультипечь. Микроволновая печь с конвекцией и грилем Samsung MC32DG7646KKBW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/multipech-mikrovolnovaya-pech-s-konvekciei-i-grilem-samsung-mc32dg7646kkbw_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мультипечь. Микроволновая печь с конвекцией и грилем Samsung MC32DG7646KKBW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/multipech-mikrovolnovaya-pech-s-konvekciei-i-grilem-samsung-mc32dg7646kkbw_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мультипечь. Микроволновая печь с конвекцией и грилем Samsung MC32DG7646KKBW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/multipech-mikrovolnovaya-pech-s-konvekciei-i-grilem-samsung-mc32dg7646kkbw_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мультипечь. Микроволновая печь с конвекцией и грилем Samsung MC32DG7646KKBW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/multipech-mikrovolnovaya-pech-s-konvekciei-i-grilem-samsung-mc32dg7646kkbw_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мультипечь. Микроволновая печь с конвекцией и грилем Samsung MC32DG7646KKBW'));

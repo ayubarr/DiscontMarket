@@ -1,0 +1,85 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Стиральная машина с сушкой Centek CT-1954', 22995, 8, '/items/productimages/stiralnaya-mashina-s-sushkoi-centek-ct-1954_0.png', 4.26, '', 'Стиральная машина с сушкой Centek CT-1954 оборудована сотовым барабаном объемом 54 л с перфорированной поверхностью, которая способствует эффективному очищению от загрязнений. Интегрированная подсветка обеспечивает хорошую видимость рабочего пространства. Устройство позволяет осуществлять фронтальную загрузку вещей весом 8 кг. Дверца люка (48 см) открывается налево. В зависимости от предпочтений скорость отжима можно настраивать — 400/600/800/1000/1200/1400 об/мин. Модель относится к А классу стирки и отжима. В работе участвует инверторный мотор, который выдает уровень шума не выше 76 дБ. Автоматическая сушка быстро и равномерно обрабатывает белье потоком теплого воздуха.
+
+Класс энергоэффективности устройства — А+++. За цикл расходуется до 1,05 кВт*ч энергии и 48 л воды. Доступно 11 программ, среди которых «Джинсы», «Одеяла», «Верхняя одежда». Выбор необходимого режима производится посредством механического регулятора. На цифровой дисплей выводятся все основные данные.
+
+В стиральной машине предусмотрена поддержка антисминания вещей после сушки и дозагрузка белья во время программы. По завершении работы срабатывает звуковой сигнал. Световая индикация показывает этапы программы и время до конца работы. Опция «Защита от детей» блокирует доступ к управлению. Функция «Защита от перелива» приостанавливает подачу воды. Показатель потребляемой мощности — 2000 Вт. Габаритные размеры стиральной машины — 52х84х60 см, вес — 60 кг.', 'InStock', 'Discount', 5, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Centek'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Стиральная машина с сушкой Centek CT-1954'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина с сушкой Centek CT-1954' 
+        AND a."Name" = '8' 
+        AND a."Type" = 'Максимальная загрузка'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина с сушкой Centek CT-1954' 
+        AND a."Name" = '69' 
+        AND a."Type" = 'Загрузка при сушке(хлопок)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина с сушкой Centek CT-1954' 
+        AND a."Name" = '1400' 
+        AND a."Type" = 'Максимальная скорость отжима'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина с сушкой Centek CT-1954' 
+        AND a."Name" = 'инверторный' 
+        AND a."Type" = 'Мотор'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина с сушкой Centek CT-1954' 
+        AND a."Name" = 'Да' 
+        AND a."Type" = 'Обработка паром'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-s-sushkoi-centek-ct-1954_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина с сушкой Centek CT-1954'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-s-sushkoi-centek-ct-1954_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина с сушкой Centek CT-1954'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-s-sushkoi-centek-ct-1954_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина с сушкой Centek CT-1954'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-s-sushkoi-centek-ct-1954_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина с сушкой Centek CT-1954'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-s-sushkoi-centek-ct-1954_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина с сушкой Centek CT-1954'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-s-sushkoi-centek-ct-1954_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина с сушкой Centek CT-1954'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-s-sushkoi-centek-ct-1954_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина с сушкой Centek CT-1954'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-s-sushkoi-centek-ct-1954_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина с сушкой Centek CT-1954'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-s-sushkoi-centek-ct-1954_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина с сушкой Centek CT-1954'));

@@ -1,0 +1,47 @@
+﻿INSERT INTO "Products" 
+("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription",
+"Availability", "Status", "CategoryID", "BrandID", "UserID") 
+VALUES
+ ('Телевизор Samsung QE65QN800C', 157495, 12, '/items/productimages/televizor-samsung-qe65qn800c_0.png', 4.59, '', 'Телевизор Samsung QE65QN800C оснащен 65-дюймовой панелью, выполненной по технологии QLED. Разрешение экрана составляет 4320х7680 точек, частота обновления — 120 Гц. Предусмотрена поддержка HDR-технологии и цифровое шумоподавление. Устройство оснащено модулем Bluetooth, акустической системой мощностью 70 Вт, голосовым управлением и поддержкой Smart TV. В основе модели находится ОС Tizen. Интерфейс представлен HDMI-портами, разъемами LAN, USB и DVB CAM. Телевизор оборудован защитой от детей. Корпус дополнен настольной подставкой и креплением VESA 400х300 для настенного размещения.', 'InStock', 'Discount', 1, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Samsung'), 1);
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung QE65QN800C'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '8K Ultra HD (7680x4320 Пикс)' AND "Type" = 'Экран));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung QE65QN800C'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '65' AND "Type" = 'Диагональ));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung QE65QN800C'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '120' AND "Type" = 'Частота обновления));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung QE65QN800C'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'QLED' AND "Type" = 'Технология экрана));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung QE65QN800C'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'Direct LED' AND "Type" = 'Тип светодиодной подсветки));
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-samsung-qe65qn800c_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung QE65QN800C'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-samsung-qe65qn800c_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung QE65QN800C'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-samsung-qe65qn800c_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung QE65QN800C'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-samsung-qe65qn800c_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung QE65QN800C'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-samsung-qe65qn800c_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung QE65QN800C'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-samsung-qe65qn800c_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung QE65QN800C'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-samsung-qe65qn800c_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung QE65QN800C'));

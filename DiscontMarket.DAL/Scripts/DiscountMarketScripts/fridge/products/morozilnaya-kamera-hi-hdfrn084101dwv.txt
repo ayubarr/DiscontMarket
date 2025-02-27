@@ -1,0 +1,86 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Морозильная камера Hi HDFRN084101DWV', 8449, 15, '/items/productimages/morozilnaya-kamera-hi-hdfrn084101dwv_0.png', 4.28, '', 'Морозильная камера Hi HDFRN084101DWV — компактный прибор в корпусе белого цвета с полезным объемом 100 л. Высота модели — 85 см, поэтому она не займет много места даже в малогабаритной квартире. 
+
+• <b>Три ящика</b> 
+Прозрачные контейнеры сделаны из пластика, безопасного для здоровья человека. Материал не влияет на вкус и запах содержимого. 
+
+• <b>Высокая производительность</b> 
+Прибор позволяет за сутки заморозить до 7 кг продуктов. 
+
+• <b>Энергоэффективность — А+</b> 
+За год камера расходует электричества всего 184 кВт*ч. 
+
+Дверь сделана из эмалированного металла, снабжена скрытой ручкой. Специальный механизм позволяет размещать ее на левую и правую стороны. При внезапном отключении питания продукты можно не вынимать в течение 10 часов. Морозилка Hi HDFRN084101DWV работает с максимальным уровнем шума 38 дБ, поэтому не побеспокоит во время отдыха или сна.', 'InStock', 'Discount', 3, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Hi'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Морозильная камера Hi HDFRN084101DWV'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Морозильная камера Hi HDFRN084101DWV' 
+        AND a."Name" = 'стандартный' 
+        AND a."Type" = 'Тип компрессора'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Морозильная камера Hi HDFRN084101DWV' 
+        AND a."Name" = '85*57.4*62.5 см' 
+        AND a."Type" = 'Габаритные размеры (В*Ш*Г)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Морозильная камера Hi HDFRN084101DWV' 
+        AND a."Name" = 'A+' 
+        AND a."Type" = 'Класс энергоэффективности'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Морозильная камера Hi HDFRN084101DWV' 
+        AND a."Name" = 'Да' 
+        AND a."Type" = 'Режим суперзамораживания'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Морозильная камера Hi HDFRN084101DWV' 
+        AND a."Name" = 'механический' 
+        AND a."Type" = 'Тип управления'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-hi-hdfrn084101dwv_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Hi HDFRN084101DWV'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-hi-hdfrn084101dwv_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Hi HDFRN084101DWV'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-hi-hdfrn084101dwv_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Hi HDFRN084101DWV'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-hi-hdfrn084101dwv_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Hi HDFRN084101DWV'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-hi-hdfrn084101dwv_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Hi HDFRN084101DWV'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-hi-hdfrn084101dwv_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Hi HDFRN084101DWV'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-hi-hdfrn084101dwv_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Hi HDFRN084101DWV'));

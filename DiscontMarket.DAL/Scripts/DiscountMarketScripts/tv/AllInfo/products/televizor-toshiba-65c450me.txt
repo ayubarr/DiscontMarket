@@ -1,0 +1,81 @@
+﻿INSERT INTO "Products" 
+("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription",
+"Availability", "Status", "CategoryID", "BrandID", "UserID") 
+VALUES
+ ('Телевизор Toshiba 65C450ME', 42499, 15, '/items/productimages/televizor-toshiba-65c450me_0.png', 4.26, '', 'Телевизор Toshiba 65C450ME обладает экраном диагональю 65 дюймов разрешением 4K Ultra HD (3840x2160 пикселей). 
+
+• <b>Технология квантовых точек Quantum Dot</b>
+Обеспечивает естественную расширенную цветопередачу и высокую контрастность, каждый оттенок чистый и выразительный. 
+
+• <b>Масштабирование до 4К</b>
+Исходное изображение качества Full HD улучшается до 4К, при этом учитывается вся структура кадра для наилучшего результата.
+
+• <b>Технология HDR10</b>
+Улучшает детализацию в темных сценах, способствует корректному отображению черного.
+
+• <b>Технология Ultimate</b>
+Отвечает за плавность отображения динамичных сцен в играх и фильмах. 
+
+• <b>Поддержка Smart TV</b>
+Предоставляет доступ к стриминговым сервисам, онлайн-кинотеатрам и всему разнообразию развлекательного, развивающего и обучающего интернет-контента. Поиск информации упрощает возможность голосового управления. 
+
+Акустическая система — два динамика мощностью по 10 Вт. Поддерживается Dolby Atmos — звук объемный, богатый, хорошо сбалансированный и сопоставим с кинотеатральным эффектом. 
+
+Интерфейсный ряд представлен тремя входами HDMI для подключения, например, звукового ресивера, игровой консоли, двумя портами USB 2.0 Type-A, LAN для проводного интернета, слотом для CI и 3,5-миллиметровым разъемом для наушников. Поддержка Wi-Fi позволяет выходить в Сеть и «по воздуху», обмениваться данными с совместимыми устройствами можно по Bluetooth.', 'InStock', 'Discount', 1, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Toshiba'), 1);
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Toshiba 65C450ME'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '4K Ultra HD (3840x2160 Пикс)' AND "Type" = 'Экран));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Toshiba 65C450ME'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '65' AND "Type" = 'Диагональ));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Toshiba 65C450ME'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '60' AND "Type" = 'Частота обновления));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Toshiba 65C450ME'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '4K UHD' AND "Type" = 'Технология экрана));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Toshiba 65C450ME'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'Direct LED' AND "Type" = 'Тип светодиодной подсветки));
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-toshiba-65c450me_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Toshiba 65C450ME'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-toshiba-65c450me_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Toshiba 65C450ME'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-toshiba-65c450me_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Toshiba 65C450ME'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-toshiba-65c450me_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Toshiba 65C450ME'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-toshiba-65c450me_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Toshiba 65C450ME'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-toshiba-65c450me_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Toshiba 65C450ME'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-toshiba-65c450me_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Toshiba 65C450ME'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-toshiba-65c450me_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Toshiba 65C450ME'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-toshiba-65c450me_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Toshiba 65C450ME'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-toshiba-65c450me_9.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Toshiba 65C450ME'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-toshiba-65c450me_10.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Toshiba 65C450ME'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-toshiba-65c450me_11.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Toshiba 65C450ME'));

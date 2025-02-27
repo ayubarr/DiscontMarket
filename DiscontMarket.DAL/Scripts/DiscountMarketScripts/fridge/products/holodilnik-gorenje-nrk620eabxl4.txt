@@ -1,0 +1,96 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Холодильник Gorenje NRK620EABXL4', 47249, 9, '/items/productimages/holodilnik-gorenje-nrk620eabxl4_0.png', 4.3, '', 'Gorenje NRK620EABXL4 – стильный двухкамерный холодильник общим объёмом 331 л. В нём достаточно места для хранения всех купленных в супермаркете и на рынке продуктов. <br><br>ЧТО ВНУТРИ?<br>Кроме стандартных полок и дверных балкончиков, модель снабжена ещё двумя контейнерами зоны свежести. В морозильном отсеке предусмотрено три вместительных ящика. <br><br>ДЛЯ ВАШЕГО УДОБСТВА<br>Устройство оснащено интуитивно понятной электронной панелью управления. Она позволяет парой лёгких нажатий установить предпочтительный режим работы для первого и второго отделения – температура в них задаётся обособленно. <br><br>БЕЗ ЛИШНИХ ЗАБОТ И ТРАТ<br>Кухонный помощник создан с использованием технологии Total No Frost. Благодаря ей вам не придётся заниматься ручным удалением наледи и инея. А принадлежность к классу A+ по степени энергоэффективности делает прибор максимально экономичным в эксплуатации.', 'InStock', 'Discount', 3, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Gorenje'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Холодильник Gorenje NRK620EABXL4'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Gorenje NRK620EABXL4' 
+        AND a."Name" = 'стандартный' 
+        AND a."Type" = 'Тип компрессора'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Gorenje NRK620EABXL4' 
+        AND a."Name" = '200' 
+        AND a."Type" = 'Высота'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Gorenje NRK620EABXL4' 
+        AND a."Name" = '60' 
+        AND a."Type" = 'Ширина'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Gorenje NRK620EABXL4' 
+        AND a."Name" = '59.2' 
+        AND a."Type" = 'Глубина'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Gorenje NRK620EABXL4' 
+        AND a."Name" = '353' 
+        AND a."Type" = 'Общий объем'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-gorenje-nrk620eabxl4_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Gorenje NRK620EABXL4'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-gorenje-nrk620eabxl4_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Gorenje NRK620EABXL4'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-gorenje-nrk620eabxl4_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Gorenje NRK620EABXL4'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-gorenje-nrk620eabxl4_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Gorenje NRK620EABXL4'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-gorenje-nrk620eabxl4_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Gorenje NRK620EABXL4'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-gorenje-nrk620eabxl4_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Gorenje NRK620EABXL4'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-gorenje-nrk620eabxl4_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Gorenje NRK620EABXL4'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-gorenje-nrk620eabxl4_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Gorenje NRK620EABXL4'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-gorenje-nrk620eabxl4_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Gorenje NRK620EABXL4'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-gorenje-nrk620eabxl4_9.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Gorenje NRK620EABXL4'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-gorenje-nrk620eabxl4_10.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Gorenje NRK620EABXL4'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-gorenje-nrk620eabxl4_11.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Gorenje NRK620EABXL4'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-gorenje-nrk620eabxl4_12.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Gorenje NRK620EABXL4'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-gorenje-nrk620eabxl4_13.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Gorenje NRK620EABXL4'));

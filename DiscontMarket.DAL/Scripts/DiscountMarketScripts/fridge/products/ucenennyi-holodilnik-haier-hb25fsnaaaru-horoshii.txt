@@ -1,0 +1,63 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Уцененный холодильник Haier HB25FSNAAARU, хороший', 89999, 15, '/items/productimages/ucenennyi-holodilnik-haier-hb25fsnaaaru-horoshii_0.png', 4.99, '', 'Внешний вид: «Хороший».<br>Витринный или демонстрационный товар. Устройство может иметь потертости, царапины и вмятины. С состоянием товара можете ознакомится в магазине. Комплектация может быть неполной.', 'InStock', 'Discount', 3, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Haier'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Уцененный холодильник Haier HB25FSNAAARU, хороший'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Уцененный холодильник Haier HB25FSNAAARU, хороший' 
+        AND a."Name" = 'инверторный' 
+        AND a."Type" = 'Тип компрессора'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Уцененный холодильник Haier HB25FSNAAARU, хороший' 
+        AND a."Name" = '190*100*76 см' 
+        AND a."Type" = 'Габаритные размеры (В*Ш*Г)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Уцененный холодильник Haier HB25FSNAAARU, хороший' 
+        AND a."Name" = '685' 
+        AND a."Type" = 'Общий объем'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Уцененный холодильник Haier HB25FSNAAARU, хороший' 
+        AND a."Name" = 'настраиваемая' 
+        AND a."Type" = 'Тип зоны сохранения свежести'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Уцененный холодильник Haier HB25FSNAAARU, хороший' 
+        AND a."Name" = 'электронный' 
+        AND a."Type" = 'Тип управления'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/ucenennyi-holodilnik-haier-hb25fsnaaaru-horoshii_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Уцененный холодильник Haier HB25FSNAAARU, хороший'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/ucenennyi-holodilnik-haier-hb25fsnaaaru-horoshii_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Уцененный холодильник Haier HB25FSNAAARU, хороший'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/ucenennyi-holodilnik-haier-hb25fsnaaaru-horoshii_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Уцененный холодильник Haier HB25FSNAAARU, хороший'));

@@ -1,0 +1,13 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-maunfeld-semoa456s1_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Maunfeld СEMOA.456.S1'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-maunfeld-semoa456s1_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Maunfeld СEMOA.456.S1'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-maunfeld-semoa456s1_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Maunfeld СEMOA.456.S1'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-maunfeld-semoa456s1_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Maunfeld СEMOA.456.S1'));

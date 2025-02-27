@@ -1,0 +1,25 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-gorenje-mo20a3bh-chernaya_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло Gorenje MO20A3BH черная'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-gorenje-mo20a3bh-chernaya_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло Gorenje MO20A3BH черная'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-gorenje-mo20a3bh-chernaya_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло Gorenje MO20A3BH черная'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-gorenje-mo20a3bh-chernaya_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло Gorenje MO20A3BH черная'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-gorenje-mo20a3bh-chernaya_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло Gorenje MO20A3BH черная'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-gorenje-mo20a3bh-chernaya_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло Gorenje MO20A3BH черная'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-gorenje-mo20a3bh-chernaya_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло Gorenje MO20A3BH черная'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-gorenje-mo20a3bh-chernaya_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло Gorenje MO20A3BH черная'));

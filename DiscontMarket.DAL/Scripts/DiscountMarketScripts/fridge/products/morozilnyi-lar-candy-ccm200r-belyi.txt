@@ -1,0 +1,92 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Морозильный ларь Candy CCM200R белый', 12999, 12, '/items/productimages/morozilnyi-lar-candy-ccm200r-belyi_0.png', 4.12, '', 'Морозильный ларь Candy CCM200R белого цвета отличается общим объемом 199 л.
+
+• <b>Хладагент R600a</b>
+Безопасен для окружающей среды, обеспечивает эффективное охлаждение.
+
+• <b>Металлическая откидная дверца</b>
+Не боится механических воздействий, отличается износостойкостью, плотно прилегает к поверхности.
+
+• <b>Хранение при отключении питания до 30 часов</b>
+Продукты не испортятся, даже если электроэнергии не было больше суток.
+
+• <b>Внутренняя ручка</b>
+Легко открывается.
+
+Устройство действует с производительностью при замораживании до 9 кг/сут и потребляет 85 Вт электроэнергии. Уровень шума при работе не превышает 39 дБ. Электроприбор управляется механическим поворотным переключателем. Световые индикаторы показывают, что модель подключена к сети и функционирует. Размер — 84,5х55,5х82 см, вес — 33 кг.', 'InStock', 'Discount', 3, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Candy'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Морозильный ларь Candy CCM200R белый'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Морозильный ларь Candy CCM200R белый' 
+        AND a."Name" = 'стандартный' 
+        AND a."Type" = 'Тип компрессора'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Морозильный ларь Candy CCM200R белый' 
+        AND a."Name" = '84.5*82*55.5 см' 
+        AND a."Type" = 'Габаритные размеры (В*Ш*Г)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Морозильный ларь Candy CCM200R белый' 
+        AND a."Name" = 'A' 
+        AND a."Type" = 'Класс энергоэффективности'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Морозильный ларь Candy CCM200R белый' 
+        AND a."Name" = 'механический' 
+        AND a."Type" = 'Тип управления'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Морозильный ларь Candy CCM200R белый' 
+        AND a."Name" = '290' 
+        AND a."Type" = 'Энергопотребление в год'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnyi-lar-candy-ccm200r-belyi_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильный ларь Candy CCM200R белый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnyi-lar-candy-ccm200r-belyi_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильный ларь Candy CCM200R белый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnyi-lar-candy-ccm200r-belyi_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильный ларь Candy CCM200R белый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnyi-lar-candy-ccm200r-belyi_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильный ларь Candy CCM200R белый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnyi-lar-candy-ccm200r-belyi_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильный ларь Candy CCM200R белый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnyi-lar-candy-ccm200r-belyi_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильный ларь Candy CCM200R белый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnyi-lar-candy-ccm200r-belyi_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильный ларь Candy CCM200R белый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnyi-lar-candy-ccm200r-belyi_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильный ларь Candy CCM200R белый'));

@@ -1,0 +1,46 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-lg-f1296nds0_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина LG F1296NDS0'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-lg-f1296nds0_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина LG F1296NDS0'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-lg-f1296nds0_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина LG F1296NDS0'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-lg-f1296nds0_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина LG F1296NDS0'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-lg-f1296nds0_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина LG F1296NDS0'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-lg-f1296nds0_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина LG F1296NDS0'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-lg-f1296nds0_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина LG F1296NDS0'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-lg-f1296nds0_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина LG F1296NDS0'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-lg-f1296nds0_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина LG F1296NDS0'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-lg-f1296nds0_9.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина LG F1296NDS0'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-lg-f1296nds0_10.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина LG F1296NDS0'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-lg-f1296nds0_11.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина LG F1296NDS0'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-lg-f1296nds0_12.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина LG F1296NDS0'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-lg-f1296nds0_13.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина LG F1296NDS0'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-lg-f1296nds0_14.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина LG F1296NDS0'));

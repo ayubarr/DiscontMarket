@@ -1,0 +1,46 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-akai-ta65bq900_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Akai TA65BQ900'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-akai-ta65bq900_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Akai TA65BQ900'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-akai-ta65bq900_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Akai TA65BQ900'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-akai-ta65bq900_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Akai TA65BQ900'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-akai-ta65bq900_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Akai TA65BQ900'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-akai-ta65bq900_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Akai TA65BQ900'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-akai-ta65bq900_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Akai TA65BQ900'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-akai-ta65bq900_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Akai TA65BQ900'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-akai-ta65bq900_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Akai TA65BQ900'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-akai-ta65bq900_9.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Akai TA65BQ900'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-akai-ta65bq900_10.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Akai TA65BQ900'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-akai-ta65bq900_11.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Akai TA65BQ900'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-akai-ta65bq900_12.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Akai TA65BQ900'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-akai-ta65bq900_13.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Akai TA65BQ900'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-akai-ta65bq900_14.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Akai TA65BQ900'));

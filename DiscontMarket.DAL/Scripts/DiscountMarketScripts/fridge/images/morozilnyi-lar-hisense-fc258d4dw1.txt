@@ -1,0 +1,19 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnyi-lar-hisense-fc258d4dw1_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильный ларь Hisense FC258D4DW1'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnyi-lar-hisense-fc258d4dw1_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильный ларь Hisense FC258D4DW1'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnyi-lar-hisense-fc258d4dw1_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильный ларь Hisense FC258D4DW1'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnyi-lar-hisense-fc258d4dw1_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильный ларь Hisense FC258D4DW1'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnyi-lar-hisense-fc258d4dw1_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильный ларь Hisense FC258D4DW1'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnyi-lar-hisense-fc258d4dw1_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильный ларь Hisense FC258D4DW1'));

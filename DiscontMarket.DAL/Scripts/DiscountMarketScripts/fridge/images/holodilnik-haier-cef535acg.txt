@@ -1,0 +1,13 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-haier-cef535acg_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Haier CEF535ACG'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-haier-cef535acg_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Haier CEF535ACG'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-haier-cef535acg_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Haier CEF535ACG'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-haier-cef535acg_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Haier CEF535ACG'));

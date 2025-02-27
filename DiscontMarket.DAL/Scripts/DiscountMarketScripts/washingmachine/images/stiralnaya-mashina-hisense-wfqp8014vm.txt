@@ -1,0 +1,19 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-hisense-wfqp8014vm_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Hisense WFQP8014VM'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-hisense-wfqp8014vm_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Hisense WFQP8014VM'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-hisense-wfqp8014vm_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Hisense WFQP8014VM'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-hisense-wfqp8014vm_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Hisense WFQP8014VM'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-hisense-wfqp8014vm_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Hisense WFQP8014VM'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-hisense-wfqp8014vm_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Hisense WFQP8014VM'));

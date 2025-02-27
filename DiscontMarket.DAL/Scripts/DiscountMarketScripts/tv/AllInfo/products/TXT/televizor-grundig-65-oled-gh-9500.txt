@@ -1,0 +1,57 @@
+﻿INSERT INTO "Products" 
+("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription",
+"Availability", "Status", "CategoryID", "BrandID", "UserID") 
+VALUES
+ ('Телевизор Grundig 65 OLED GH 9500', 94999, 12, '/items/productimages/televizor-grundig-65-oled-gh-9500_0.png', 4.77, '', 'Телевизор Grundig 65 OLED GH 9500 с экраном диагональю 164 см обеспечивает передачу максимально четкого и детализированного изображения разрешением 3840х2160 Пикс в формате 16:9 с частотой обновления 120 Гц. Система цифрового шумоподавления отсекает помехи при передаче видеосигнала. 
+
+Модель с предустановленной OS Google TV и встроенным модулем Bluetooth поддерживает Wi-Fi, Smart TV, голосовое управление. Можно использовать смартфон как пульт ДУ, настраивать воспроизведение в интернете по своему усмотрению, ставя программы или фильмы на паузу, отматывая их до нужного момента. 
+
+Можно воспроизводить или записывать видео с USB-носителей, подключая их к портам USB 2.0. Видеоустройства подсоединяются к HDMI-входам. Предусмотрен разъем для наушников 3.5 мм и LAN-разъем для подключения к проводной сети. Размер — 83,6х146х6,1 см, вес — 31 кг. Изделие можно крепить к стене на кронштейн типа VESA 400x400 (докупается отдельно).', 'InStock', 'Discount', 1, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Grundig'), 1);
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Grundig 65 OLED GH 9500'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '4K Ultra HD (3840x2160 Пикс)' AND "Type" = 'Экран));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Grundig 65 OLED GH 9500'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '65' AND "Type" = 'Диагональ));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Grundig 65 OLED GH 9500'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '120' AND "Type" = 'Частота обновления));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Grundig 65 OLED GH 9500'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'OLED' AND "Type" = 'Технология экрана));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Grundig 65 OLED GH 9500'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'OLED' AND "Type" = 'Тип светодиодной подсветки));
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-grundig-65-oled-gh-9500_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Grundig 65 OLED GH 9500'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-grundig-65-oled-gh-9500_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Grundig 65 OLED GH 9500'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-grundig-65-oled-gh-9500_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Grundig 65 OLED GH 9500'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-grundig-65-oled-gh-9500_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Grundig 65 OLED GH 9500'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-grundig-65-oled-gh-9500_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Grundig 65 OLED GH 9500'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-grundig-65-oled-gh-9500_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Grundig 65 OLED GH 9500'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-grundig-65-oled-gh-9500_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Grundig 65 OLED GH 9500'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-grundig-65-oled-gh-9500_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Grundig 65 OLED GH 9500'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-grundig-65-oled-gh-9500_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Grundig 65 OLED GH 9500'));

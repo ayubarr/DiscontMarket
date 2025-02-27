@@ -1,0 +1,25 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-toshiba-gr-rt559we-pmj06-seryi_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Toshiba GR-RT559WE-PMJ(06) серый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-toshiba-gr-rt559we-pmj06-seryi_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Toshiba GR-RT559WE-PMJ(06) серый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-toshiba-gr-rt559we-pmj06-seryi_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Toshiba GR-RT559WE-PMJ(06) серый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-toshiba-gr-rt559we-pmj06-seryi_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Toshiba GR-RT559WE-PMJ(06) серый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-toshiba-gr-rt559we-pmj06-seryi_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Toshiba GR-RT559WE-PMJ(06) серый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-toshiba-gr-rt559we-pmj06-seryi_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Toshiba GR-RT559WE-PMJ(06) серый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-toshiba-gr-rt559we-pmj06-seryi_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Toshiba GR-RT559WE-PMJ(06) серый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-toshiba-gr-rt559we-pmj06-seryi_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Toshiba GR-RT559WE-PMJ(06) серый'));

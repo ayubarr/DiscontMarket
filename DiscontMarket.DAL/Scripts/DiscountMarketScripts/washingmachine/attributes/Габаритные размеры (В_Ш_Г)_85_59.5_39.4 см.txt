@@ -1,0 +1,14 @@
+﻿
+        INSERT INTO "Attributes" ("NameTranslate", "Name", "Type") 
+        SELECT '85*59.5*39.4 см', '85*59.5*39.4 см', 'Габаритные размеры (В*Ш*Г)'
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Attributes" WHERE "Name" = '85*59.5*39.4 см' AND "Type" = 'Габаритные размеры (В*Ш*Г)'
+        );
+
+        INSERT INTO "AttributeCategory" ("AttributeID", "CategoryID") 
+        SELECT a."ID", c."ID" FROM "Attributes" a, "Categories" c 
+        WHERE a."Name" = '85*59.5*39.4 см' AND a."Type" = 'Габаритные размеры (В*Ш*Г)' 
+        AND c."Name" = 'washingmachine'
+        AND NOT EXISTS (
+            SELECT 1 FROM "AttributeCategory" WHERE "AttributeID" = a."ID" AND "CategoryID" = c."ID"
+        );

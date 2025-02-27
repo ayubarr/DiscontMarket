@@ -1,0 +1,83 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Встраиваемая посудомоечная машина 60 см Krona ROSSA 60 BI', 20695, 11, '/items/productimages/vstraivaemaya-posudomoechnaya-mashina-60-sm-krona-rossa-60-bi_0.png', 4.17, '', 'Встраиваемая посудомоечная машина Krona Rossa 60 BI с регулируемыми по высоте ножками предназначена для монтажа под столешницу или установки в нишу кухонного гарнитура габаритами 820-870х600х560 мм. Прибор относится к классу энергоэффективности А++. За один цикл он обрабатывает до 12 комплектов посуды, расход воды не превышает 11 л. Уровень шума во время работы может достигать 49 дБ. Сенсор чистоты воды анализирует, насколько хорошо промыта посуда и исключает лишние полоскания. 
+Внутренняя камера прибора выполнена из нержавеющей стали и оснащена подсветкой Inner Light, состоящей из ярких и экономичных LED-ламп. Предусмотрены нижняя и регулируемая по высоте верхняя корзины для посуды, отдельный выдвижной лоток для столовых приборов. Для управления функциями устройства установлен электронный блок с цифровым дисплеем. Прибор поддерживает загрузку средств «3 в 1». Индикаторы информируют о недостатке моющего средства и соли. 
+Машина функционирует в четырех режимах мойки: «Авто» (45°C-55°C, 120-180 минут); «Быстрый» (45°С, 30 минут), «Стекло» (40°С, 125 минут), «Экономичный» (45°С, 195 минут). Предусмотрена работа при половинной загрузке и отсрочка запуска на 1-24 часа. Режимы сушки — конденсационный и ExtraDry, в котором посуда высыхает быстрее. За безопасность использования отвечают заземление и полная защита от протечек AquaStop.', 'InStock', 'Discount', 28, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Krona'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 60 см Krona ROSSA 60 BI'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Встраиваемая посудомоечная машина 60 см Krona ROSSA 60 BI' 
+        AND a."Name" = '11' 
+        AND a."Type" = 'Расход воды за цикл'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Встраиваемая посудомоечная машина 60 см Krona ROSSA 60 BI' 
+        AND a."Name" = '12 комплектов' 
+        AND a."Type" = 'Максимальная вместимость'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Встраиваемая посудомоечная машина 60 см Krona ROSSA 60 BI' 
+        AND a."Name" = '4' 
+        AND a."Type" = 'Количество программ мойки'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Встраиваемая посудомоечная машина 60 см Krona ROSSA 60 BI' 
+        AND a."Name" = 'стандартный' 
+        AND a."Type" = 'Мотор'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Встраиваемая посудомоечная машина 60 см Krona ROSSA 60 BI' 
+        AND a."Name" = '87*60*56' 
+        AND a."Type" = 'Размер ниши, мм (В*Ш*Г)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-60-sm-krona-rossa-60-bi_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 60 см Krona ROSSA 60 BI'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-60-sm-krona-rossa-60-bi_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 60 см Krona ROSSA 60 BI'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-60-sm-krona-rossa-60-bi_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 60 см Krona ROSSA 60 BI'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-60-sm-krona-rossa-60-bi_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 60 см Krona ROSSA 60 BI'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-60-sm-krona-rossa-60-bi_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 60 см Krona ROSSA 60 BI'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-60-sm-krona-rossa-60-bi_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 60 см Krona ROSSA 60 BI'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-60-sm-krona-rossa-60-bi_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 60 см Krona ROSSA 60 BI'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-60-sm-krona-rossa-60-bi_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 60 см Krona ROSSA 60 BI'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-60-sm-krona-rossa-60-bi_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 60 см Krona ROSSA 60 BI'));

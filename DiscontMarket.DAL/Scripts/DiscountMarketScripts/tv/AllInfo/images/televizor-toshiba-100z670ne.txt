@@ -1,0 +1,28 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-toshiba-100z670ne_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Toshiba 100Z670NE'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-toshiba-100z670ne_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Toshiba 100Z670NE'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-toshiba-100z670ne_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Toshiba 100Z670NE'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-toshiba-100z670ne_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Toshiba 100Z670NE'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-toshiba-100z670ne_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Toshiba 100Z670NE'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-toshiba-100z670ne_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Toshiba 100Z670NE'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-toshiba-100z670ne_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Toshiba 100Z670NE'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-toshiba-100z670ne_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Toshiba 100Z670NE'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-toshiba-100z670ne_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Toshiba 100Z670NE'));

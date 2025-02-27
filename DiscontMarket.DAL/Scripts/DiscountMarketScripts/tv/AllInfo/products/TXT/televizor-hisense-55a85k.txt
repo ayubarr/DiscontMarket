@@ -1,0 +1,61 @@
+﻿INSERT INTO "Products" 
+("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription",
+"Availability", "Status", "CategoryID", "BrandID", "UserID") 
+VALUES
+ ('Телевизор Hisense 55A85K', 87499, 18, '/items/productimages/televizor-hisense-55a85k_0.png', 4.5, '', 'Телевизор Hisense 55A85K с операционной системой Vidaa оснащен экраном, созданным на основе матрицы OLED: его диагональ — 55", разрешение — 3840х2160 пикселей. Модель поддерживает технологию HDR, предусмотрено цифровое шумоподавление. В корпус встроена акустическая система 60 Вт с поддержкой Dolby Atmos и Dolby Digital Plus. 
+
+Доступен голосовой помощник Алиса. Подключение к интернету — по Wi-Fi или через разъем LAN для кабельного соединения. Взаимодействие с периферийными устройствами обеспечивают порты USB и входы HDMI. Настольная подставка входит в комплект, подвес для крепления на стене нужно покупать отдельно.', 'InStock', 'Discount', 1, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Hisense'), 1);
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hisense 55A85K'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '4K Ultra HD (3840x2160 Пикс)' AND "Type" = 'Экран));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hisense 55A85K'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '55' AND "Type" = 'Диагональ));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hisense 55A85K'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '120' AND "Type" = 'Частота обновления));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hisense 55A85K'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'OLED' AND "Type" = 'Технология экрана));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hisense 55A85K'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'OLED' AND "Type" = 'Тип светодиодной подсветки));
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-hisense-55a85k_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hisense 55A85K'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-hisense-55a85k_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hisense 55A85K'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-hisense-55a85k_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hisense 55A85K'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-hisense-55a85k_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hisense 55A85K'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-hisense-55a85k_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hisense 55A85K'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-hisense-55a85k_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hisense 55A85K'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-hisense-55a85k_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hisense 55A85K'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-hisense-55a85k_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hisense 55A85K'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-hisense-55a85k_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hisense 55A85K'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-hisense-55a85k_9.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hisense 55A85K'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-hisense-55a85k_10.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hisense 55A85K'));

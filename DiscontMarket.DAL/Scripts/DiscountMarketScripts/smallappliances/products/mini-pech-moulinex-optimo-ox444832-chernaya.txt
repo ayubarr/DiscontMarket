@@ -1,0 +1,84 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Мини-печь Moulinex Optimo OX444832 черная', 12499, 18, '/items/productimages/mini-pech-moulinex-optimo-ox444832-chernaya_0.png', 4.33, '', 'Мини-печь Moulinex OX444832 – компактная духовка, в которой можно быстро приготовить или разогреть пищу.
+
+6 РЕЖИМОВ РАБОТЫ
+Несмотря на компактные размеры, мини-печь способна работать в 6 различных режимах. Функция конвекции обеспечивает равномерное распределение горячего воздуха внутри камеры, поэтому продукты пропекаются особенно качественно. Также владелец может воспользоваться грилем, который позволяет готовить тосты, делать блюда из жареного мяса и рыбы.
+
+ЗВУКОВОЙ ТАЙМЕР
+Наличие таймера существенно упрощает приготовление пищи. Владелец может задать необходимое время и спокойно заниматься другими делами. Когда время истечёт, таймер отключит духовку и оповестит владельца об этом посредством звукового сигнала.
+
+ПРОЧНОСТЬ И НАДЁЖНОСТЬ
+Корпус мини-печи изготовлен из нержавеющей стали, внутреннее покрытие камеры выполнено из алюминия. Это делает устройство особенно прочным, надёжным и долговечным.', 'InStock', 'Discount', 6, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Moulinex'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Мини-печь Moulinex Optimo OX444832 черная'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Мини-печь Moulinex Optimo OX444832 черная' 
+        AND a."Name" = '19' 
+        AND a."Type" = 'Объем'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Мини-печь Moulinex Optimo OX444832 черная' 
+        AND a."Name" = '1380' 
+        AND a."Type" = 'Потребляемая мощность'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Мини-печь Moulinex Optimo OX444832 черная' 
+        AND a."Name" = 'ТЭН' 
+        AND a."Type" = 'Тип гриля'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Мини-печь Moulinex Optimo OX444832 черная' 
+        AND a."Name" = 'черный' 
+        AND a."Type" = 'Цвет'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Мини-печь Moulinex Optimo OX444832 черная' 
+        AND a."Name" = 'алюминий' 
+        AND a."Type" = 'Внутреннее покрытие'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-moulinex-optimo-ox444832-chernaya_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Moulinex Optimo OX444832 черная'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-moulinex-optimo-ox444832-chernaya_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Moulinex Optimo OX444832 черная'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-moulinex-optimo-ox444832-chernaya_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Moulinex Optimo OX444832 черная'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-moulinex-optimo-ox444832-chernaya_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Moulinex Optimo OX444832 черная'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-moulinex-optimo-ox444832-chernaya_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Moulinex Optimo OX444832 черная'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-moulinex-optimo-ox444832-chernaya_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Moulinex Optimo OX444832 черная'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-moulinex-optimo-ox444832-chernaya_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Moulinex Optimo OX444832 черная'));

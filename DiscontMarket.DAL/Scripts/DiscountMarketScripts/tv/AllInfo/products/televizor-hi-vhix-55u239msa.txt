@@ -1,0 +1,49 @@
+﻿INSERT INTO "Products" 
+("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription",
+"Availability", "Status", "CategoryID", "BrandID", "UserID") 
+VALUES
+ ('Телевизор Hi VHIX-55U239MSA', 21499, 8, '/items/productimages/televizor-hi-vhix-55u239msa_0.png', 4.47, '', 'Телевизор Hi VHIX-55U239MSA работает под управлением операционной системы Android. 
+
+• <b>Поддержка 4K Ultra HD</b>
+Разрешение 55-дюймового экрана — 3840х2160 пикселей, что обеспечивает высокий уровень детализации изображения.
+
+• <b>Аудиотехнология Dolby Digital 2.0</b>
+Динамики 2х8 Вт воспроизводят реалистичный звук в формате стерео.
+
+• <b>Smart TV</b>
+Для беспроводного доступа в интернет предусмотрен модуль Wi-Fi, для кабельного соединения — разъем LAN. Можно использовать голосовой помощник Google.
+
+• <b>Взаимодействие с внешними устройствами</b>
+Порты USB и входы HDMI позволяют подключить флешку или внешний жесткий диск, игровую приставку, проигрыватель дисков Blu-ray, другое оборудование.
+
+В комплект поставки входят пульт дистанционного управления и подставка для настольного размещения.', 'InStock', 'Discount', 1, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Hi'), 1);
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hi VHIX-55U239MSA'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '4K Ultra HD (3840x2160 Пикс)' AND "Type" = 'Экран));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hi VHIX-55U239MSA'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '55' AND "Type" = 'Диагональ));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hi VHIX-55U239MSA'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '60' AND "Type" = 'Частота обновления));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hi VHIX-55U239MSA'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'LED' AND "Type" = 'Технология экрана));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hi VHIX-55U239MSA'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'LED' AND "Type" = 'Тип светодиодной подсветки));
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-hi-vhix-55u239msa_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hi VHIX-55U239MSA'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-hi-vhix-55u239msa_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hi VHIX-55U239MSA'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-hi-vhix-55u239msa_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hi VHIX-55U239MSA'));

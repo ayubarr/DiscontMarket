@@ -1,0 +1,22 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-birusa-c920nf_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Бирюса C920NF'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-birusa-c920nf_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Бирюса C920NF'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-birusa-c920nf_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Бирюса C920NF'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-birusa-c920nf_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Бирюса C920NF'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-birusa-c920nf_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Бирюса C920NF'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-birusa-c920nf_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Бирюса C920NF'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-birusa-c920nf_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Бирюса C920NF'));

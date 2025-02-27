@@ -1,0 +1,77 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Встраиваемая посудомоечная машина 45 см Beko BDIS 25961', 18999, 6, '/items/productimages/vstraivaemaya-posudomoechnaya-mashina-45-sm-beko-bdis-25961_0.png', 4.95, '', 'Встраиваемая посудомоечная машина Beko BDIS 25961 — узкая модель шириной 44,8 см, которая вмещает девять комплектов посуды и станет удачным решением для небольшой кухни. За цикл потребляется 0,88 кВт*ч, что соответствует высокому классу А, и 10,5 л воды. 
+
+• <b>Три уровня загрузки</b> 
+Для столовых приборов и прочей мелкой кухонной утвари предусмотрен отдельный лоток. Складные держатели для тарелок и полоски для чашек позволят аккуратно разместить посуду и избежать ее повреждения. 
+
+• <b>Пять программ</b> 
+«Автоматическая» ориентируется на уровень загрязнения воды и регулирует параметры мойки для достижения оптимального результата, «Интенсивная» предназначена для самых сильных загрязнений, Quick&Shine — для повседневного использования, «Ускоренная» — для слабозагрязненной посуды, Eco — для экономии ресурсов без потери качества мойки. Сушка выполняется методом конденсации. 
+
+• <b>Половинная загрузка</b> 
+Дает возможность использовать только одну корзину и не расходовать лишнюю воду и электроэнергию при небольшом количестве грязной посуды. 
+
+Управление электронное, встроенный дисплей отображает параметры работы. Отложить начало мойки можно при помощи таймера на срок до 24 часов. Безопасность обеспечивается системой защиты от протечек. Уровень шума при работе не превышает 55 дБ.', 'InStock', 'Discount', 28, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Beko'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 45 см Beko BDIS 25961'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Встраиваемая посудомоечная машина 45 см Beko BDIS 25961' 
+        AND a."Name" = '10.5' 
+        AND a."Type" = 'Расход воды за цикл'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Встраиваемая посудомоечная машина 45 см Beko BDIS 25961' 
+        AND a."Name" = '9 комплектов' 
+        AND a."Type" = 'Максимальная вместимость'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Встраиваемая посудомоечная машина 45 см Beko BDIS 25961' 
+        AND a."Name" = '5' 
+        AND a."Type" = 'Количество программ мойки'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Встраиваемая посудомоечная машина 45 см Beko BDIS 25961' 
+        AND a."Name" = 'стандартный' 
+        AND a."Type" = 'Мотор'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Встраиваемая посудомоечная машина 45 см Beko BDIS 25961' 
+        AND a."Name" = '818*448*550' 
+        AND a."Type" = 'Размер ниши, мм (В*Ш*Г)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-45-sm-beko-bdis-25961_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 45 см Beko BDIS 25961'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-45-sm-beko-bdis-25961_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 45 см Beko BDIS 25961'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-45-sm-beko-bdis-25961_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 45 см Beko BDIS 25961'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-45-sm-beko-bdis-25961_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 45 см Beko BDIS 25961'));

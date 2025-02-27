@@ -1,0 +1,59 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Активаторная стиральная машина Белоснежка XR800B', 5349, 8, '/items/productimages/aktivatornaya-stiralnaya-mashina-belosnezhka-xr800b_0.png', 4.77, '', '«Белоснежка» XR800B — мини-стиральная машина активаторного типа. Ее размеры составляют 52,4 х 84,5 х 44,5 см. Благодаря этому, а также за счет вертикальной загрузки она подходит для установки в небольших помещениях.
+
+Эта модель рассчитана на одновременную стирку до 8 кг белья. Она оснащена механической системой управления. Поворотные регуляторы позволяют выбрать одну из двух программ: для обычных вещей и для тех, которые требуют деликатного обращения. Уровень шума во время работы не превышает 74 дБ. Энергопотребление соответствует классу A.', 'InStock', 'Discount', 5, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Белоснежка'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Активаторная стиральная машина Белоснежка XR800B'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Активаторная стиральная машина Белоснежка XR800B' 
+        AND a."Name" = '8' 
+        AND a."Type" = 'Максимальная загрузка'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Активаторная стиральная машина Белоснежка XR800B' 
+        AND a."Name" = 'Да' 
+        AND a."Type" = 'Подключение к горячей воде (60*С)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Активаторная стиральная машина Белоснежка XR800B' 
+        AND a."Name" = 'до 15 минут' 
+        AND a."Type" = 'Таймер продолжительности работы'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Активаторная стиральная машина Белоснежка XR800B' 
+        AND a."Name" = 'вертикальная' 
+        AND a."Type" = 'Тип загрузки'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Активаторная стиральная машина Белоснежка XR800B' 
+        AND a."Name" = 'Да' 
+        AND a."Type" = 'Подключение к холодной воде'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/aktivatornaya-stiralnaya-mashina-belosnezhka-xr800b_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Активаторная стиральная машина Белоснежка XR800B'));

@@ -1,0 +1,13 @@
+﻿
+        INSERT INTO "Brands" ("NameTranslate", "Name", "Type") 
+        SELECT 'Libhof', 'Libhof', 'Бренды'
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Brands" WHERE "Name" = 'Libhof'
+        );
+
+        INSERT INTO "BrandCategory" ("BrandID", "CategoryID") 
+        SELECT b."ID", c."ID" FROM "Brands" b, "Categories" c 
+        WHERE b."Name" = 'Libhof' AND c."Name" = 'builtin'
+        AND NOT EXISTS (
+            SELECT 1 FROM "BrandCategory" WHERE "BrandID" = b."ID" AND "CategoryID" = c."ID"
+        );

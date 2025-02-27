@@ -1,0 +1,72 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Газовая плита (50-55 см) Gefest CG 50M06', 12499, 7, '/items/productimages/gazovaya-plita-50-55-sm-gefest-cg-50m06_0.png', 4.16, '', 'Газовая плита Gefest CG 50M06 удобна в использовании благодаря звуковому таймеру на 60 минут. Он сигнализирует об окончании очередного этапа, значительно облегчая приготовление сложных блюд.<br><br>БЫСТРЫЙ СТАРТ<br>Система электрического розжига позволяет включить любую конфорку за считанные секунды.<br><br>УДОБСТВО ПРИГОТОВЛЕНИЯ<br>Встроенная духовка оснащена индикатором температуры, который даёт возможность контролировать процесс готовки, меняя при необходимости уровень нагрева.<br><br>ВЫСОКИЙ УРОВЕНЬ БЕЗОПАСНОСТИ<br>Система -Газ-контроль- исключает утечку топлива - она автоматически перекрывает его подачу при случайном погасании пламени. Двухслойное стекло предотвращает получение людьми ожогов при случайном касании дверцы духовки в процессе приготовления.<br><br>МАКСИМАЛЬНОЕ УДОБСТВО <br>Выдвижной ящик, расположенный в нижней части, имеет большой объём. Он предназначается для хранения крупной кухонной посуды - например, сковород, кастрюль или противней.<br>', 'InStock', 'Discount', 4, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Gefest'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Газовая плита (50-55 см) Gefest CG 50M06'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Газовая плита (50-55 см) Gefest CG 50M06' 
+        AND a."Name" = '4' 
+        AND a."Type" = 'Количество конфорок'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Газовая плита (50-55 см) Gefest CG 50M06' 
+        AND a."Name" = 'чугунная' 
+        AND a."Type" = 'Решетка'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Газовая плита (50-55 см) Gefest CG 50M06' 
+        AND a."Name" = '44' 
+        AND a."Type" = 'Объем духовки'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Газовая плита (50-55 см) Gefest CG 50M06' 
+        AND a."Name" = '85*50*57 см' 
+        AND a."Type" = 'Габаритные размеры (В*Ш*Г)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Газовая плита (50-55 см) Gefest CG 50M06' 
+        AND a."Name" = 'механический' 
+        AND a."Type" = 'Электроподжиг конфорок'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/gazovaya-plita-50-55-sm-gefest-cg-50m06_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Газовая плита (50-55 см) Gefest CG 50M06'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/gazovaya-plita-50-55-sm-gefest-cg-50m06_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Газовая плита (50-55 см) Gefest CG 50M06'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/gazovaya-plita-50-55-sm-gefest-cg-50m06_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Газовая плита (50-55 см) Gefest CG 50M06'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/gazovaya-plita-50-55-sm-gefest-cg-50m06_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Газовая плита (50-55 см) Gefest CG 50M06'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/gazovaya-plita-50-55-sm-gefest-cg-50m06_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Газовая плита (50-55 см) Gefest CG 50M06'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/gazovaya-plita-50-55-sm-gefest-cg-50m06_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Газовая плита (50-55 см) Gefest CG 50M06'));

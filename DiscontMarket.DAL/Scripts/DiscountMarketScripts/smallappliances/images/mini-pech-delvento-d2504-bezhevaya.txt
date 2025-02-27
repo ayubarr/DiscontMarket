@@ -1,0 +1,28 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-delvento-d2504-bezhevaya_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Delvento D2504 бежевая'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-delvento-d2504-bezhevaya_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Delvento D2504 бежевая'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-delvento-d2504-bezhevaya_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Delvento D2504 бежевая'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-delvento-d2504-bezhevaya_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Delvento D2504 бежевая'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-delvento-d2504-bezhevaya_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Delvento D2504 бежевая'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-delvento-d2504-bezhevaya_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Delvento D2504 бежевая'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-delvento-d2504-bezhevaya_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Delvento D2504 бежевая'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-delvento-d2504-bezhevaya_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Delvento D2504 бежевая'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-delvento-d2504-bezhevaya_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Delvento D2504 бежевая'));

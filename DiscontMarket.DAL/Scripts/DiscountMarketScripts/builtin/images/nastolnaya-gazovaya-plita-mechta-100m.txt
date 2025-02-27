@@ -1,0 +1,22 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/nastolnaya-gazovaya-plita-mechta-100m_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Настольная газовая плита Мечта 100М'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/nastolnaya-gazovaya-plita-mechta-100m_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Настольная газовая плита Мечта 100М'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/nastolnaya-gazovaya-plita-mechta-100m_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Настольная газовая плита Мечта 100М'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/nastolnaya-gazovaya-plita-mechta-100m_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Настольная газовая плита Мечта 100М'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/nastolnaya-gazovaya-plita-mechta-100m_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Настольная газовая плита Мечта 100М'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/nastolnaya-gazovaya-plita-mechta-100m_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Настольная газовая плита Мечта 100М'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/nastolnaya-gazovaya-plita-mechta-100m_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Настольная газовая плита Мечта 100М'));

@@ -1,0 +1,13 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-kraft-kf-hs100w_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Kraft KF-HS100W'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-kraft-kf-hs100w_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Kraft KF-HS100W'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-kraft-kf-hs100w_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Kraft KF-HS100W'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-kraft-kf-hs100w_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Kraft KF-HS100W'));

@@ -1,0 +1,25 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-sony-xr-65x90l_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Sony XR-65X90L'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-sony-xr-65x90l_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Sony XR-65X90L'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-sony-xr-65x90l_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Sony XR-65X90L'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-sony-xr-65x90l_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Sony XR-65X90L'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-sony-xr-65x90l_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Sony XR-65X90L'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-sony-xr-65x90l_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Sony XR-65X90L'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-sony-xr-65x90l_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Sony XR-65X90L'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-sony-xr-65x90l_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Sony XR-65X90L'));

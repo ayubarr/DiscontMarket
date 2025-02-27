@@ -1,0 +1,80 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Стиральная машина Samsung WW90T554CAX', 45999, 19, '/items/productimages/stiralnaya-mashina-samsung-ww90t554cax_0.png', 4.9, '', 'Стиральная машина Samsung WW10T654CLX с инверторным двигателем выполнена в стальном оттенке. Габаритные размеры модели — 85х60х55 см, вес — 67 кг. В барабан объемом 54 л можно погрузить до 9 кг белья. Уровень шума работы устройства при стирке не превышает 53 дБ, при режиме отжима — 74 дБ. 
+Конфигурацией модели стиральной машины предусмотрена возможность дозагрузки белья во время цикла стирки. Все действия выводятся на цифровой дисплей. 
+Помимо основных в устройстве предусмотрен режим обработки паром, стирка смешанных тканей, а также стирка за 15 минут. Стиральная машина оснащена функцией быстрой сушки конденсационного типа и последующей защиты белья от сминания. Встроена функция управления через Wi-Fi и джойстик, существует защита от перелива и от детей.', 'InStock', 'Discount', 5, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Samsung'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Стиральная машина Samsung WW90T554CAX'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина Samsung WW90T554CAX' 
+        AND a."Name" = '9' 
+        AND a."Type" = 'Максимальная загрузка'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина Samsung WW90T554CAX' 
+        AND a."Name" = '1400' 
+        AND a."Type" = 'Максимальная скорость отжима'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина Samsung WW90T554CAX' 
+        AND a."Name" = 'инверторный' 
+        AND a."Type" = 'Мотор'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина Samsung WW90T554CAX' 
+        AND a."Name" = '85*60*55 см' 
+        AND a."Type" = 'Габаритные размеры (В*Ш*Г)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина Samsung WW90T554CAX' 
+        AND a."Name" = 'частичная' 
+        AND a."Type" = 'Тип защиты от протечек'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-samsung-ww90t554cax_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Samsung WW90T554CAX'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-samsung-ww90t554cax_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Samsung WW90T554CAX'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-samsung-ww90t554cax_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Samsung WW90T554CAX'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-samsung-ww90t554cax_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Samsung WW90T554CAX'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-samsung-ww90t554cax_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Samsung WW90T554CAX'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-samsung-ww90t554cax_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Samsung WW90T554CAX'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-samsung-ww90t554cax_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Samsung WW90T554CAX'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-samsung-ww90t554cax_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Samsung WW90T554CAX'));

@@ -1,0 +1,22 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-lg-neochef-mw23w35gib_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло LG NeoChef MW23W35GIB'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-lg-neochef-mw23w35gib_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло LG NeoChef MW23W35GIB'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-lg-neochef-mw23w35gib_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло LG NeoChef MW23W35GIB'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-lg-neochef-mw23w35gib_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло LG NeoChef MW23W35GIB'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-lg-neochef-mw23w35gib_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло LG NeoChef MW23W35GIB'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-lg-neochef-mw23w35gib_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло LG NeoChef MW23W35GIB'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-lg-neochef-mw23w35gib_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло LG NeoChef MW23W35GIB'));

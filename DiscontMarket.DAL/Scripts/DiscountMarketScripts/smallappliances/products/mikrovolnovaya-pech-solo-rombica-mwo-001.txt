@@ -1,0 +1,101 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Микроволновая печь соло Rombica MWO-001', 5499, 5, '/items/productimages/mikrovolnovaya-pech-solo-rombica-mwo-001_0.png', 4.47, '', 'Черная микроволновая печь соло Rombica MWO-001 с восемью программами сделана из прочного металла, пластика и стекла. 
+
+• <b>Светодиодное встроенное освещение</b>
+Яркие LED-лампы позволяют в любой момент проверить стадию готовности или прогрева блюда.
+
+• <b>Полезный объем 20 л</b>
+Печь вмещает стандартные тарелки, миски, контейнеры, небольшие формы для запекания.
+
+• <b>Таймер</b>
+Присутствует функция выставления времени и отложенного старта.
+
+• <b>Эмалевое внутреннее покрытие</b>
+Гладкая поверхность не требует особого ухода, легко очищается от загрязнений.
+
+Способ управления прибором — механический. Диаметр поворотного стола составляет 24,5 см. На цифровом дисплее отображается время до окончания программы. Мощность устройства — 1,1 кВт. Панель управления блокируется, что позволяет избежать случайного нажатия.', 'InStock', 'Discount', 6, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Rombica'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло Rombica MWO-001'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Микроволновая печь соло Rombica MWO-001' 
+        AND a."Name" = '20' 
+        AND a."Type" = 'Полезный объем'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Микроволновая печь соло Rombica MWO-001' 
+        AND a."Name" = '24.5' 
+        AND a."Type" = 'Диаметр поворотного стола'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Микроволновая печь соло Rombica MWO-001' 
+        AND a."Name" = 'эмаль' 
+        AND a."Type" = 'Внутреннее покрытие'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Микроволновая печь соло Rombica MWO-001' 
+        AND a."Name" = 'механический' 
+        AND a."Type" = 'Тип управления'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Микроволновая печь соло Rombica MWO-001' 
+        AND a."Name" = 'черный' 
+        AND a."Type" = 'Цвет'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-rombica-mwo-001_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло Rombica MWO-001'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-rombica-mwo-001_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло Rombica MWO-001'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-rombica-mwo-001_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло Rombica MWO-001'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-rombica-mwo-001_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло Rombica MWO-001'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-rombica-mwo-001_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло Rombica MWO-001'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-rombica-mwo-001_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло Rombica MWO-001'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-rombica-mwo-001_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло Rombica MWO-001'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-rombica-mwo-001_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло Rombica MWO-001'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-rombica-mwo-001_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло Rombica MWO-001'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-rombica-mwo-001_9.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло Rombica MWO-001'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-rombica-mwo-001_10.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло Rombica MWO-001'));

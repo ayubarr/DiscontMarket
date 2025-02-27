@@ -1,0 +1,19 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-hisense-rb390n4bwe-belyi_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Hisense RB390N4BWE белый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-hisense-rb390n4bwe-belyi_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Hisense RB390N4BWE белый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-hisense-rb390n4bwe-belyi_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Hisense RB390N4BWE белый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-hisense-rb390n4bwe-belyi_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Hisense RB390N4BWE белый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-hisense-rb390n4bwe-belyi_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Hisense RB390N4BWE белый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-hisense-rb390n4bwe-belyi_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Hisense RB390N4BWE белый'));

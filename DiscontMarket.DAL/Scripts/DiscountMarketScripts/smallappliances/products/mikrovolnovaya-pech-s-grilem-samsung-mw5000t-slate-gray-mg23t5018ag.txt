@@ -1,0 +1,77 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Микроволновая печь с грилем Samsung MW5000T Slate Gray (MG23T5018AG)', 9999, 10, '/items/productimages/mikrovolnovaya-pech-s-grilem-samsung-mw5000t-slate-gray-mg23t5018ag_0.png', 4.18, '', 'Микроволновая печь Samsung MW5000T Slate Gray (MG23T5018AG) отдельностоящего типа питается от сети 220-240 В, оснащена грилем типа ТЭН мощностью 1100 Вт. Интенсивность микроволн регулируется на шести уровнях (максимум — 800 Вт). 
+Передняя панель у модели зеркальная, управление — сенсорное. Для удобства присутствует опция блокировки от нежелательного изменения настроек. На цифровом дисплее отображаются текущее время, время таймера и выбранная программа. О завершении приготовления извещает звуковой сигнал, который можно отключить. Присутствуют режим «Разморозка» и автоматические программы приготовления блюд.
+Объем камеры составляет 23 л, внутри установлены стеклянный поворотный стол диаметром 28,8 см. Внутреннее покрытие выполнено из легко моющейся керамики. Дверца открывается налево с помощью внешней ручки. Потребляемая мощность печи — 2300 Вт, предусмотрен энергосберегающий режим. Габариты модели — 275х489х381 мм, вес — 12,7 кг.', 'InStock', 'Discount', 6, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Samsung'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Микроволновая печь с грилем Samsung MW5000T Slate Gray (MG23T5018AG)'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Микроволновая печь с грилем Samsung MW5000T Slate Gray (MG23T5018AG)' 
+        AND a."Name" = '23' 
+        AND a."Type" = 'Полезный объем'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Микроволновая печь с грилем Samsung MW5000T Slate Gray (MG23T5018AG)' 
+        AND a."Name" = '28.8' 
+        AND a."Type" = 'Диаметр поворотного стола'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Микроволновая печь с грилем Samsung MW5000T Slate Gray (MG23T5018AG)' 
+        AND a."Name" = 'Bio керамика' 
+        AND a."Type" = 'Внутреннее покрытие'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Микроволновая печь с грилем Samsung MW5000T Slate Gray (MG23T5018AG)' 
+        AND a."Name" = 'электронный' 
+        AND a."Type" = 'Тип управления'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Микроволновая печь с грилем Samsung MW5000T Slate Gray (MG23T5018AG)' 
+        AND a."Name" = 'серый/ черный' 
+        AND a."Type" = 'Цвет'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-s-grilem-samsung-mw5000t-slate-gray-mg23t5018ag_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь с грилем Samsung MW5000T Slate Gray (MG23T5018AG)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-s-grilem-samsung-mw5000t-slate-gray-mg23t5018ag_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь с грилем Samsung MW5000T Slate Gray (MG23T5018AG)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-s-grilem-samsung-mw5000t-slate-gray-mg23t5018ag_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь с грилем Samsung MW5000T Slate Gray (MG23T5018AG)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-s-grilem-samsung-mw5000t-slate-gray-mg23t5018ag_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь с грилем Samsung MW5000T Slate Gray (MG23T5018AG)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-s-grilem-samsung-mw5000t-slate-gray-mg23t5018ag_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь с грилем Samsung MW5000T Slate Gray (MG23T5018AG)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-s-grilem-samsung-mw5000t-slate-gray-mg23t5018ag_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь с грилем Samsung MW5000T Slate Gray (MG23T5018AG)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-s-grilem-samsung-mw5000t-slate-gray-mg23t5018ag_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь с грилем Samsung MW5000T Slate Gray (MG23T5018AG)'));

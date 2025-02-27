@@ -1,0 +1,71 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Холодильник Maunfeld MFF83W', 9945, 15, '/items/productimages/holodilnik-maunfeld-mff83w_0.png', 4.26, '', 'Однодверный холодильник Maunfeld MFF83W объемом 92 л (полезный — 85 л) снабжен двумя полками из закаленного стекла (каждая способна выдержать нагрузку до 20 кг), тремя полочками на дверце, отсеком с низкой температурой и нижним ящиком для хранения овощей и фруктов. Антибактериальное покрытие предотвращает распространение бактерий и неприятного запаха.
+Хладагент R600A безопасен для окружающей среды, в том числе озонового слоя. Скрытая конденсаторная решетка не накапливает пыль и экономит место, позволяя поставить прибор вплотную к стене. В случае отключения электричества холодильник сохраняет низкую температуру на срок до 12 часов. Годовое потребление электроэнергии не превышает 113 кВт*ч.
+Прибор снабжен семью температурными режимами, переключение осуществляется при помощи механического регулятора. Холодильник способен работать при температуре от +16°C до +38°С. Дверцу можно перенавешивать в нужную сторону. Уровень шума не превышает 40 дБ. В комплекте есть лоток для яиц.', 'InStock', 'Discount', 3, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Maunfeld'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Холодильник Maunfeld MFF83W'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Maunfeld MFF83W' 
+        AND a."Name" = 'стандартный' 
+        AND a."Type" = 'Тип компрессора'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Maunfeld MFF83W' 
+        AND a."Name" = '83.1*47.4*44.7 см' 
+        AND a."Type" = 'Габаритные размеры (В*Ш*Г)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Maunfeld MFF83W' 
+        AND a."Name" = '85' 
+        AND a."Type" = 'Общий объем'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Maunfeld MFF83W' 
+        AND a."Name" = 'A+' 
+        AND a."Type" = 'Класс энергоэффективности'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Maunfeld MFF83W' 
+        AND a."Name" = '9' 
+        AND a."Type" = 'Хранение при отключении питания'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-maunfeld-mff83w_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Maunfeld MFF83W'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-maunfeld-mff83w_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Maunfeld MFF83W'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-maunfeld-mff83w_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Maunfeld MFF83W'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-maunfeld-mff83w_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Maunfeld MFF83W'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-maunfeld-mff83w_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Maunfeld MFF83W'));

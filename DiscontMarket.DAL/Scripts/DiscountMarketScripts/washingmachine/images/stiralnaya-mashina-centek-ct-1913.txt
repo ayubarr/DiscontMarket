@@ -1,0 +1,28 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-centek-ct-1913_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Centek CT-1913'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-centek-ct-1913_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Centek CT-1913'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-centek-ct-1913_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Centek CT-1913'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-centek-ct-1913_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Centek CT-1913'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-centek-ct-1913_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Centek CT-1913'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-centek-ct-1913_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Centek CT-1913'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-centek-ct-1913_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Centek CT-1913'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-centek-ct-1913_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Centek CT-1913'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-centek-ct-1913_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Centek CT-1913'));

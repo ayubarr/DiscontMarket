@@ -1,0 +1,84 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Холодильник многодверный Haier HB18FGWAAARU', 112499, 13, '/items/productimages/holodilnik-mnogodvernyi-haier-hb18fgwaaaru_0.png', 4.18, '', 'Многодверный холодильник Haier HB18FGWAAARU, белый — вместительная модель общим объемом 508 л. Прибор подойдет для большой семьи и тех, кто предпочитает закупать продукты впрок и делать сезонные заготовки. 
+
+• <b>Компрессор инверторного типа</b> 
+Отличается экономичным энергопотреблением класса А++ (298 кВт*ч), высокой надежностью и низким уровнем шума: он не превышает 38 дБ. 
+
+• <b>Ящики Humidity и Dry zone</b> 
+Представляют собой две зоны свежести: влажную и сухую. Первая предназначена для фруктов, овощей, зелени, вторая — для скоропортящихся продуктов, например, охлажденного мяса, рыбы, полуфабрикатов. 
+
+• <b>Технология Active Fresh Sensors</b> 
+Обеспечивает равномерное распределение прохлады по всем полкам. 
+
+• <b>Total NoFrost</b> 
+Избавляет от хлопот, связанных с ручным размораживанием — инея на стенках и продуктах не образуется. 
+
+Холодильная камера оснащена двумя распашными дверями и оборудована тремя полками полной ширины, шестью дверными карманами (по три на двери) и тремя боксами (два — зона свежести). Яркое светодиодное освещение расположено сверху и гарантирует равномерный охват всего пространства. 
+
+Морозильное отделение представлено двумя выдвижными ящиками и способна заморозить до 14 кг продуктов в сутки. Для быстрого замораживания предусмотрен специальный алюминиевый поднос Fresher PAD. Один из ящиков конвертируемый. 
+
+У Haier HB18FGWAAARU электронное управление, панель удобно расположена на фасадной стороне двери. Поддерживаются функции «Суперохлаждение», «Суперзаморазивание» и «Отпуск». Первые две будут полезны при большой загрузке, последняя даст возможность не отключать прибор полностью на период отсутствия.', 'InStock', 'Discount', 3, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Haier'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Haier HB18FGWAAARU'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник многодверный Haier HB18FGWAAARU' 
+        AND a."Name" = 'инверторный' 
+        AND a."Type" = 'Тип компрессора'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник многодверный Haier HB18FGWAAARU' 
+        AND a."Name" = '190*83.5*67.5 см' 
+        AND a."Type" = 'Габаритные размеры (В*Ш*Г)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник многодверный Haier HB18FGWAAARU' 
+        AND a."Name" = '508' 
+        AND a."Type" = 'Общий объем'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник многодверный Haier HB18FGWAAARU' 
+        AND a."Name" = 'влажная/сухая' 
+        AND a."Type" = 'Тип зоны сохранения свежести'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник многодверный Haier HB18FGWAAARU' 
+        AND a."Name" = 'электронный' 
+        AND a."Type" = 'Тип управления'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-haier-hb18fgwaaaru_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Haier HB18FGWAAARU'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-haier-hb18fgwaaaru_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Haier HB18FGWAAARU'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-haier-hb18fgwaaaru_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Haier HB18FGWAAARU'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-haier-hb18fgwaaaru_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Haier HB18FGWAAARU'));

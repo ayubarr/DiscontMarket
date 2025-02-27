@@ -1,0 +1,16 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-midea-mdrm691mie28_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Midea MDRM691MIE28'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-midea-mdrm691mie28_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Midea MDRM691MIE28'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-midea-mdrm691mie28_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Midea MDRM691MIE28'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-midea-mdrm691mie28_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Midea MDRM691MIE28'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-midea-mdrm691mie28_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Midea MDRM691MIE28'));

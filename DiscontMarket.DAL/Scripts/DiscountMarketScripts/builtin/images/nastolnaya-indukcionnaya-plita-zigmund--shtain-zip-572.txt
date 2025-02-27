@@ -1,0 +1,28 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/nastolnaya-indukcionnaya-plita-zigmund--shtain-zip-572_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Настольная индукционная плита Zigmund & Shtain ZIP-572'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/nastolnaya-indukcionnaya-plita-zigmund--shtain-zip-572_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Настольная индукционная плита Zigmund & Shtain ZIP-572'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/nastolnaya-indukcionnaya-plita-zigmund--shtain-zip-572_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Настольная индукционная плита Zigmund & Shtain ZIP-572'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/nastolnaya-indukcionnaya-plita-zigmund--shtain-zip-572_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Настольная индукционная плита Zigmund & Shtain ZIP-572'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/nastolnaya-indukcionnaya-plita-zigmund--shtain-zip-572_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Настольная индукционная плита Zigmund & Shtain ZIP-572'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/nastolnaya-indukcionnaya-plita-zigmund--shtain-zip-572_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Настольная индукционная плита Zigmund & Shtain ZIP-572'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/nastolnaya-indukcionnaya-plita-zigmund--shtain-zip-572_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Настольная индукционная плита Zigmund & Shtain ZIP-572'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/nastolnaya-indukcionnaya-plita-zigmund--shtain-zip-572_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Настольная индукционная плита Zigmund & Shtain ZIP-572'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/nastolnaya-indukcionnaya-plita-zigmund--shtain-zip-572_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Настольная индукционная плита Zigmund & Shtain ZIP-572'));

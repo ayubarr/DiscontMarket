@@ -1,0 +1,19 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-goldstar-lt-32r800_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор GoldStar LT-32R800'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-goldstar-lt-32r800_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор GoldStar LT-32R800'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-goldstar-lt-32r800_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор GoldStar LT-32R800'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-goldstar-lt-32r800_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор GoldStar LT-32R800'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-goldstar-lt-32r800_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор GoldStar LT-32R800'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-goldstar-lt-32r800_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор GoldStar LT-32R800'));

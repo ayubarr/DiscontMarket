@@ -1,0 +1,28 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/nastolnaya-gazovaya-plita-gefest-900-k17_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Настольная газовая плита Gefest 900 К17'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/nastolnaya-gazovaya-plita-gefest-900-k17_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Настольная газовая плита Gefest 900 К17'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/nastolnaya-gazovaya-plita-gefest-900-k17_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Настольная газовая плита Gefest 900 К17'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/nastolnaya-gazovaya-plita-gefest-900-k17_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Настольная газовая плита Gefest 900 К17'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/nastolnaya-gazovaya-plita-gefest-900-k17_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Настольная газовая плита Gefest 900 К17'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/nastolnaya-gazovaya-plita-gefest-900-k17_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Настольная газовая плита Gefest 900 К17'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/nastolnaya-gazovaya-plita-gefest-900-k17_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Настольная газовая плита Gefest 900 К17'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/nastolnaya-gazovaya-plita-gefest-900-k17_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Настольная газовая плита Gefest 900 К17'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/nastolnaya-gazovaya-plita-gefest-900-k17_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Настольная газовая плита Gefest 900 К17'));

@@ -1,0 +1,22 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/gazovaya-plita-50-55-sm-de-luxe-504040gkrchr-017-terrakotovyi_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Газовая плита (50-55 см) De luxe 5040.40г(кр)чр 017 терракотовый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/gazovaya-plita-50-55-sm-de-luxe-504040gkrchr-017-terrakotovyi_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Газовая плита (50-55 см) De luxe 5040.40г(кр)чр 017 терракотовый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/gazovaya-plita-50-55-sm-de-luxe-504040gkrchr-017-terrakotovyi_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Газовая плита (50-55 см) De luxe 5040.40г(кр)чр 017 терракотовый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/gazovaya-plita-50-55-sm-de-luxe-504040gkrchr-017-terrakotovyi_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Газовая плита (50-55 см) De luxe 5040.40г(кр)чр 017 терракотовый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/gazovaya-plita-50-55-sm-de-luxe-504040gkrchr-017-terrakotovyi_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Газовая плита (50-55 см) De luxe 5040.40г(кр)чр 017 терракотовый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/gazovaya-plita-50-55-sm-de-luxe-504040gkrchr-017-terrakotovyi_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Газовая плита (50-55 см) De luxe 5040.40г(кр)чр 017 терракотовый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/gazovaya-plita-50-55-sm-de-luxe-504040gkrchr-017-terrakotovyi_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Газовая плита (50-55 см) De luxe 5040.40г(кр)чр 017 терракотовый'));

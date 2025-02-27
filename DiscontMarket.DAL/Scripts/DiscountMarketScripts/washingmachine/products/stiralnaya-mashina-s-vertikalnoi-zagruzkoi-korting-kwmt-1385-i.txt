@@ -1,0 +1,68 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Стиральная машина с вертикальной загрузкой Korting KWMT 1385 I', 32495, 7, '/items/productimages/stiralnaya-mashina-s-vertikalnoi-zagruzkoi-korting-kwmt-1385-i_0.png', 4.61, '', 'Стиральная машина с вертикальной загрузкой Korting KWMT 1385 I выполнена в корпусе белого цвета. В барабан объемом 51 л помещается до 8 кг белья. В модель заложены режимы для обработки разных типов тканей: «Спорт», «Хлопок», «Джинсы», «Шерсть», «Синтетика», «Детские вещи». Ускоренная программа рассчитана всего на 15 минут. 
+Максимальная скорость отжима составляет 1300 об/мин. Благодаря классу энергоэффективности А устройство за цикл расходуется всего 0,66 кВт*ч электричества. В этой модели установлены контроллер пенообразования и блокиратор случайного запуска. 
+Управление обеспечивает электронная панель с поворотным регулятором. Этапы стирки отображаются на дисплее. Таймер отложенного старта можно запрограммировать сроком до 24 часов. По окончании процесса раздается звуковой сигнал.', 'InStock', 'Discount', 5, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Korting'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Стиральная машина с вертикальной загрузкой Korting KWMT 1385 I'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина с вертикальной загрузкой Korting KWMT 1385 I' 
+        AND a."Name" = '8' 
+        AND a."Type" = 'Максимальная загрузка'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина с вертикальной загрузкой Korting KWMT 1385 I' 
+        AND a."Name" = 'инверторный' 
+        AND a."Type" = 'Мотор'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина с вертикальной загрузкой Korting KWMT 1385 I' 
+        AND a."Name" = '1300' 
+        AND a."Type" = 'Максимальная скорость отжима'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина с вертикальной загрузкой Korting KWMT 1385 I' 
+        AND a."Name" = 'Да' 
+        AND a."Type" = 'Автоматическая парковка барабана'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина с вертикальной загрузкой Korting KWMT 1385 I' 
+        AND a."Name" = 'Да' 
+        AND a."Type" = 'Индикация времени до конца программы'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-s-vertikalnoi-zagruzkoi-korting-kwmt-1385-i_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина с вертикальной загрузкой Korting KWMT 1385 I'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-s-vertikalnoi-zagruzkoi-korting-kwmt-1385-i_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина с вертикальной загрузкой Korting KWMT 1385 I'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-s-vertikalnoi-zagruzkoi-korting-kwmt-1385-i_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина с вертикальной загрузкой Korting KWMT 1385 I'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-s-vertikalnoi-zagruzkoi-korting-kwmt-1385-i_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина с вертикальной загрузкой Korting KWMT 1385 I'));

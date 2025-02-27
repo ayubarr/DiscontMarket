@@ -1,0 +1,34 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-red-solution-rm-2302d_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло RED SOLUTION RM-2302D'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-red-solution-rm-2302d_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло RED SOLUTION RM-2302D'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-red-solution-rm-2302d_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло RED SOLUTION RM-2302D'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-red-solution-rm-2302d_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло RED SOLUTION RM-2302D'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-red-solution-rm-2302d_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло RED SOLUTION RM-2302D'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-red-solution-rm-2302d_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло RED SOLUTION RM-2302D'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-red-solution-rm-2302d_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло RED SOLUTION RM-2302D'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-red-solution-rm-2302d_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло RED SOLUTION RM-2302D'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-red-solution-rm-2302d_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло RED SOLUTION RM-2302D'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-red-solution-rm-2302d_9.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло RED SOLUTION RM-2302D'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-red-solution-rm-2302d_10.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло RED SOLUTION RM-2302D'));

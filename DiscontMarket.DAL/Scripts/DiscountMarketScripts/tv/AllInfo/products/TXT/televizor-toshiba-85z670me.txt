@@ -1,0 +1,60 @@
+﻿INSERT INTO "Products" 
+("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription",
+"Availability", "Status", "CategoryID", "BrandID", "UserID") 
+VALUES
+ ('Телевизор Toshiba 85Z670ME', 124999, 17, '/items/productimages/televizor-toshiba-85z670me_0.png', 4.8, '', 'Телевизор Toshiba 85Z670ME работает на базе операционной системы Vidaa с интуитивно понятным управлением, гибкой настройкой, доступом к функциям Smart TV. Корпус размерами 189,9х109,4х8,7 см и весом около 43 кг можно разместить на стойке Two Way Stand с регулируемыми по ширине боковыми опорами или зафиксировать вертикально, использовав кронштейн VESA 600х400 мм (не входит в комплект). Управление функциями возможно с помощью смартфона или пульта (кнопками или голосом). 
+
+За работу телевизора отвечают процессор Quad Core MT9618 и аппаратный ускоритель Regza Engine ZRi со встроенным искусственным интеллектом. Размер оперативной памяти составляет 3 Гб, встроенной — 8 Гб. Предусмотрена поддержка бесконтактного соединения по Wi-Fi (2,4 ГГц, 5 ГГц) и Bluetooth. Окруженный тонкой металлической рамкой Direct LED-экран диагональю 85 дюймов (215 см) транслирует видеоконтент с разрешением 4K UHD и яркостью до 500 нит. Технология защиты от бликов снижает засветку и предупреждает зрительную усталость. 
+
+Предусмотрены автоматический переход устройства в игровой режим при подключении консоли и поддержка переменной частоты обновления до 144 Гц. Технология AMD FreeSync Premium устраняет разрывы и искажения в играх. Dynamic Tone Mapping автоматически повышает яркость кадров, улучшает детализацию. Двухканальная акустическая система формирует объемный звук мощностью до 50 Вт. Для подключения периферийных устройств предусмотрены разъемы HDMI (четыре), USB (два), LAN, вход для наушников 3,5 мм, DVB Cam. Тюнеры обеспечивают доступ к телевидению без подключения антенны.', 'InStock', 'Discount', 1, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Toshiba'), 1);
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Toshiba 85Z670ME'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '4K Ultra HD (3840x2160 Пикс)' AND "Type" = 'Экран));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Toshiba 85Z670ME'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '85' AND "Type" = 'Диагональ));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Toshiba 85Z670ME'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '144' AND "Type" = 'Частота обновления));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Toshiba 85Z670ME'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'QLED' AND "Type" = 'Технология экрана));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Toshiba 85Z670ME'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'Direct LED' AND "Type" = 'Тип светодиодной подсветки));
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-toshiba-85z670me_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Toshiba 85Z670ME'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-toshiba-85z670me_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Toshiba 85Z670ME'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-toshiba-85z670me_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Toshiba 85Z670ME'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-toshiba-85z670me_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Toshiba 85Z670ME'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-toshiba-85z670me_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Toshiba 85Z670ME'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-toshiba-85z670me_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Toshiba 85Z670ME'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-toshiba-85z670me_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Toshiba 85Z670ME'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-toshiba-85z670me_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Toshiba 85Z670ME'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-toshiba-85z670me_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Toshiba 85Z670ME'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-toshiba-85z670me_9.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Toshiba 85Z670ME'));

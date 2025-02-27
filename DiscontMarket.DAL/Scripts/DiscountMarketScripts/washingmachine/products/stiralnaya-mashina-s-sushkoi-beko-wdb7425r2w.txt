@@ -1,0 +1,78 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Стиральная машина с сушкой Beko WDB7425R2W', 25499, 10, '/items/productimages/stiralnaya-mashina-s-sushkoi-beko-wdb7425r2w_0.png', 4.79, '', 'Beko WDB7425R2W – автоматическая стиральная машина с функцией сушки. Это очень удобный вариант для тех, у кого нет места для размещения бельевых верёвок или раскладных сушилок.
+
+ДЛЯ ЛЮБЫХ ЗАДАЧ
+За один раз в барабан можно загрузить до 7 кг белья. Как правило, этого достаточно для семьи из трёх-четырёх человек. Выбор программ настолько широк, что стирать вы сможете практически всё: от неприхотливого и устойчивого к высоким температурам хлопка до тонкой шерсти. Есть и циклы, предназначенные специально для конкретных изделий: пуховиков, рубашек, верхней одежды и др. Режим «Замачивание» поможет справиться с серьёзными загрязнениями, «Антиаллергия» устраняет остатки моющих средств, «Обработка паром» освежит вещи и избавит от неприятных запахов.
+
+ДЕЙСТВУЕТ ПО СИТУАЦИИ
+Для сушки в барабан можно поместить до 4 кг белья. Выбирайте уровень остаточной влажности в зависимости от того, собираетесь ли вы утюжить вещи или сразу же уберёте их в шкаф. Функция «Антисминание» снизит количество складок, так что глажение не отнимет у вас много времени и сил. 
+
+ПОЛНАЯ НАГЛЯДНОСТЬ 
+У этой модели удобное электронное управление: поворотный регулятор, отвечающий за выбор программ, и большой дисплей, который предоставит вам всю информацию о работе прибора, включая время, оставшееся до конца стирки. Кроме того, вы сможете задавать нужные параметры и проводить диагностику с вашего смартфона. Совместимы мобильные устройства на ОС Android, поддерживающие технологию NFC.', 'InStock', 'Discount', 5, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Beko'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Стиральная машина с сушкой Beko WDB7425R2W'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина с сушкой Beko WDB7425R2W' 
+        AND a."Name" = '7' 
+        AND a."Type" = 'Максимальная загрузка'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина с сушкой Beko WDB7425R2W' 
+        AND a."Name" = '4' 
+        AND a."Type" = 'Загрузка при сушке(хлопок)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина с сушкой Beko WDB7425R2W' 
+        AND a."Name" = '1200' 
+        AND a."Type" = 'Максимальная скорость отжима'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина с сушкой Beko WDB7425R2W' 
+        AND a."Name" = 'инверторный' 
+        AND a."Type" = 'Мотор'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина с сушкой Beko WDB7425R2W' 
+        AND a."Name" = 'Да' 
+        AND a."Type" = 'Смартфон в качестве пульта ДУ'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-s-sushkoi-beko-wdb7425r2w_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина с сушкой Beko WDB7425R2W'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-s-sushkoi-beko-wdb7425r2w_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина с сушкой Beko WDB7425R2W'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-s-sushkoi-beko-wdb7425r2w_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина с сушкой Beko WDB7425R2W'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-s-sushkoi-beko-wdb7425r2w_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина с сушкой Beko WDB7425R2W'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-s-sushkoi-beko-wdb7425r2w_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина с сушкой Beko WDB7425R2W'));

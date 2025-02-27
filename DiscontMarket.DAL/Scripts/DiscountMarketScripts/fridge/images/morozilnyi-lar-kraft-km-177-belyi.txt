@@ -1,0 +1,16 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnyi-lar-kraft-km-177-belyi_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильный ларь Kraft KM-177 белый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnyi-lar-kraft-km-177-belyi_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильный ларь Kraft KM-177 белый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnyi-lar-kraft-km-177-belyi_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильный ларь Kraft KM-177 белый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnyi-lar-kraft-km-177-belyi_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильный ларь Kraft KM-177 белый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnyi-lar-kraft-km-177-belyi_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильный ларь Kraft KM-177 белый'));

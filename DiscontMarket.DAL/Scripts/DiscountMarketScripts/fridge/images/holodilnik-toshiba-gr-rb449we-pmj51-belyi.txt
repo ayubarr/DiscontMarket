@@ -1,0 +1,28 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-toshiba-gr-rb449we-pmj51-belyi_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Toshiba GR-RB449WE-PMJ(51) белый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-toshiba-gr-rb449we-pmj51-belyi_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Toshiba GR-RB449WE-PMJ(51) белый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-toshiba-gr-rb449we-pmj51-belyi_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Toshiba GR-RB449WE-PMJ(51) белый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-toshiba-gr-rb449we-pmj51-belyi_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Toshiba GR-RB449WE-PMJ(51) белый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-toshiba-gr-rb449we-pmj51-belyi_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Toshiba GR-RB449WE-PMJ(51) белый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-toshiba-gr-rb449we-pmj51-belyi_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Toshiba GR-RB449WE-PMJ(51) белый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-toshiba-gr-rb449we-pmj51-belyi_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Toshiba GR-RB449WE-PMJ(51) белый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-toshiba-gr-rb449we-pmj51-belyi_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Toshiba GR-RB449WE-PMJ(51) белый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-toshiba-gr-rb449we-pmj51-belyi_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Toshiba GR-RB449WE-PMJ(51) белый'));

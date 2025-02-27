@@ -1,0 +1,22 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-s-grilem-samsung-mw5000t-slate-gray-mg23t5018ag_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь с грилем Samsung MW5000T Slate Gray (MG23T5018AG)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-s-grilem-samsung-mw5000t-slate-gray-mg23t5018ag_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь с грилем Samsung MW5000T Slate Gray (MG23T5018AG)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-s-grilem-samsung-mw5000t-slate-gray-mg23t5018ag_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь с грилем Samsung MW5000T Slate Gray (MG23T5018AG)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-s-grilem-samsung-mw5000t-slate-gray-mg23t5018ag_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь с грилем Samsung MW5000T Slate Gray (MG23T5018AG)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-s-grilem-samsung-mw5000t-slate-gray-mg23t5018ag_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь с грилем Samsung MW5000T Slate Gray (MG23T5018AG)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-s-grilem-samsung-mw5000t-slate-gray-mg23t5018ag_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь с грилем Samsung MW5000T Slate Gray (MG23T5018AG)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-s-grilem-samsung-mw5000t-slate-gray-mg23t5018ag_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь с грилем Samsung MW5000T Slate Gray (MG23T5018AG)'));

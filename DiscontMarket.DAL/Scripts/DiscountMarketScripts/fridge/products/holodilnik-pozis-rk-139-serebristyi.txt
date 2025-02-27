@@ -1,0 +1,65 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Холодильник Pozis RK-139 серебристый', 18445, 12, '/items/productimages/holodilnik-pozis-rk-139-serebristyi_0.png', 4.71, '', 'Холодильник с нижней морозильной камерой «Позис» RK-139 двухкамерного типа оборудован холодильной камерой объемом 205 л. Здесь расположены четыре основные полки из стекла, три из которых регулируются по высоте, четыре полки на дверце и два ящика для хранения овощей и фруктов. Холодильная камера дополнена светодиодным освещением. Морозильная камера объемом 130 л оборудована двумя ящиками из голубого пластика. Мощность замораживания — 11 кг/сутки. Холодильная камера размораживается капельным способом, морозильная — ручным. Управление осуществляется посредством механической панели, индикаторов включения и режима работы.
+
+Конфигурацией устройства предусмотрено наличие перенавешиваемых дверей с покрытием из металла, на которых расположены внутренние горизонтальные ручки. За безопасность эксплуатации отвечает функция сохранения холода в течение 21 ч при отсутствии электроэнергии. Уровень шума во время работы не превышает показателя 40 дБ. В комплект входит подставка для яиц. Габаритные размеры устройства — 185х60х63 см. Цвет модели — серебристый.', 'InStock', 'Discount', 3, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Pozis'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Холодильник Pozis RK-139 серебристый'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Pozis RK-139 серебристый' 
+        AND a."Name" = 'стандартный' 
+        AND a."Type" = 'Тип компрессора'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Pozis RK-139 серебристый' 
+        AND a."Name" = '185' 
+        AND a."Type" = 'Высота'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Pozis RK-139 серебристый' 
+        AND a."Name" = '60' 
+        AND a."Type" = 'Ширина'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Pozis RK-139 серебристый' 
+        AND a."Name" = '63' 
+        AND a."Type" = 'Глубина'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Pozis RK-139 серебристый' 
+        AND a."Name" = '285' 
+        AND a."Type" = 'Общий объем'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-pozis-rk-139-serebristyi_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Pozis RK-139 серебристый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-pozis-rk-139-serebristyi_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Pozis RK-139 серебристый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-pozis-rk-139-serebristyi_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Pozis RK-139 серебристый'));

@@ -1,0 +1,44 @@
+﻿INSERT INTO "Products" 
+("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription",
+"Availability", "Status", "CategoryID", "BrandID", "UserID") 
+VALUES
+ ('Телевизор Harper 55Q850TS', 21699, 13, '/items/productimages/televizor-harper-55q850ts_0.png', 4.51, '', 'Телевизор Harper 55Q850TS с поддержкой Smart TV работает под управлением операционной системы Android 11 версии. Объем ОЗУ — 1,5 Гб, объем памяти для установки приложений — 8 Гб. За быстроту интерфейса отвечает процессор ARM Cortex-A53.
+Телевизор с безрамочным дизайном снабжен QLED-матрицей диагональю 55 дюймов. Поддерживается технология HDR с высоким динамическим диапазоном, разрешение изображения — 3840х2160 пикселей, можно выбрать из нескольких форматов экрана (16:9, 4:3 или автоматическая подстройка). 
+Акустическая система представлена двумя стереодинамиками общей мощностью 16 Вт, которые поддерживают режим объемного звучания и изменение частот с помощью эквалайзера.
+Интегрированы интерфейсы: вход для телевизионной антенны, три порта HDMI (1.4 и 2.0), два порта USB 2.0, порт для подключения кабеля интернета, CI-слот. Доступны беспроводные технологии подключения — Wi-Fi (2,4 ГГц и 5 ГГц) и Bluetooth. Телевизор поддерживает настенную установку с помощью разъема VESA (200х200 мм).', 'InStock', 'Discount', 1, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Harper'), 1);
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Harper 55Q850TS'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '4K Ultra HD (3840x2160 Пикс)' AND "Type" = 'Экран));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Harper 55Q850TS'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '55' AND "Type" = 'Диагональ));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Harper 55Q850TS'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '60' AND "Type" = 'Частота обновления));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Harper 55Q850TS'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'QLED' AND "Type" = 'Технология экрана));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Harper 55Q850TS'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'Да' AND "Type" = 'Поддержка Smart TV));
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-harper-55q850ts_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Harper 55Q850TS'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-harper-55q850ts_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Harper 55Q850TS'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-harper-55q850ts_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Harper 55Q850TS'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-harper-55q850ts_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Harper 55Q850TS'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-harper-55q850ts_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Harper 55Q850TS'));

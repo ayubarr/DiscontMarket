@@ -1,0 +1,19 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-hi-ry-65u01fb_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hi RY-65U01FB'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-hi-ry-65u01fb_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hi RY-65U01FB'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-hi-ry-65u01fb_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hi RY-65U01FB'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-hi-ry-65u01fb_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hi RY-65U01FB'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-hi-ry-65u01fb_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hi RY-65U01FB'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-hi-ry-65u01fb_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hi RY-65U01FB'));

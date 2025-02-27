@@ -1,0 +1,14 @@
+﻿
+        INSERT INTO "Attributes" ("NameTranslate", "Name", "Type") 
+        SELECT '78', '78', 'Объем нижнего барабана'
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Attributes" WHERE "Name" = '78' AND "Type" = 'Объем нижнего барабана'
+        );
+
+        INSERT INTO "AttributeCategory" ("AttributeID", "CategoryID") 
+        SELECT a."ID", c."ID" FROM "Attributes" a, "Categories" c 
+        WHERE a."Name" = '78' AND a."Type" = 'Объем нижнего барабана' 
+        AND c."Name" = 'washingmachine'
+        AND NOT EXISTS (
+            SELECT 1 FROM "AttributeCategory" WHERE "AttributeID" = a."ID" AND "CategoryID" = c."ID"
+        );

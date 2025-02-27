@@ -1,0 +1,79 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Мини-печь Deerma DEM-KZ115W', 8299, 7, '/items/productimages/mini-pech-deerma-dem-kz115w_0.png', 4.51, '', 'Мини-печь Deerma DEM-KZ115W в корпусе черного цвета обладает мощностью 1700 Вт. В прибор заложены 15 режимов, включая конвекцию, гриль и аэрогриль. Управление обеспечивают механические поворотные регуляторы и электронный программатор. Можно запрограммировать таймер со звуковым сигналом. Индикатор показывают заданную температуру, время до конца программы и выбранный режим. 
+Корпус сделан из пластика и металла, дверца из термостойкого стекла. Термостат позволит контролировать температуру. Объем камеры — 24 л. Устройство оснащено поддоном для крошек, в комплекте — плоский противень, ручка для его снятия и металлическая решетка. В приборе реализована функция напоминания о встряхивании. Размеры печи — 39,4х42,9х40,3 см, вес — 10,6 кг.', 'InStock', 'Discount', 6, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Deerma'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Мини-печь Deerma DEM-KZ115W'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Мини-печь Deerma DEM-KZ115W' 
+        AND a."Name" = '24' 
+        AND a."Type" = 'Объем'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Мини-печь Deerma DEM-KZ115W' 
+        AND a."Name" = '1700' 
+        AND a."Type" = 'Потребляемая мощность'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Мини-печь Deerma DEM-KZ115W' 
+        AND a."Name" = 'электрический' 
+        AND a."Type" = 'Тип гриля'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Мини-печь Deerma DEM-KZ115W' 
+        AND a."Name" = 'черный' 
+        AND a."Type" = 'Цвет'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Мини-печь Deerma DEM-KZ115W' 
+        AND a."Name" = 'антипригарное' 
+        AND a."Type" = 'Внутреннее покрытие'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-deerma-dem-kz115w_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Deerma DEM-KZ115W'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-deerma-dem-kz115w_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Deerma DEM-KZ115W'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-deerma-dem-kz115w_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Deerma DEM-KZ115W'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-deerma-dem-kz115w_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Deerma DEM-KZ115W'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-deerma-dem-kz115w_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Deerma DEM-KZ115W'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-deerma-dem-kz115w_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Deerma DEM-KZ115W'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-deerma-dem-kz115w_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Deerma DEM-KZ115W'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-deerma-dem-kz115w_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Deerma DEM-KZ115W'));

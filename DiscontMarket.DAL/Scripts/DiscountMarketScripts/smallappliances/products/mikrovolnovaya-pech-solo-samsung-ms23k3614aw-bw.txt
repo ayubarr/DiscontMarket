@@ -1,0 +1,86 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Микроволновая печь соло Samsung MS23K3614AW/BW', 7499, 18, '/items/productimages/mikrovolnovaya-pech-solo-samsung-ms23k3614aw-bw_0.png', 4.83, '', 'Микроволновая печь соло Samsung MS23K3614AW/BW — модель в корпусе белого цвета с черной фронтальной панелью из пластика и стекла. Дверца открывает с помощью ручки. 
+
+• <b>Понятное управление</b> 
+Для выбора параметров приготовления используются два поворотных регулятора. 
+
+• <b>Распределение волн в трех направлениях</b> 
+Обеспечивает равномерный нагрев и пропекание блюда со всех сторон. 
+
+• <b>Биокерамическое покрытие</b> 
+Поверхность не боится механических повреждений, со временем не выцветает. Загрязнения без усилий удаляются без применения агрессивной химии. 
+
+Камера печи Samsung MS23K3614AW/BW обладает объемом 23 л. Диаметр поворотного блюда, на котором располагаются продукты, — 28,8 см, сделанный из закаленного стекла. Освещение обеспечивают LED-лампы синего цвета. Мощность микроволн регулируется на шести уровнях, максимальная — 800 Вт. В прибор заложены режимы разморозки по времени и весу.', 'InStock', 'Discount', 6, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Samsung'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло Samsung MS23K3614AW/BW'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Микроволновая печь соло Samsung MS23K3614AW/BW' 
+        AND a."Name" = '23' 
+        AND a."Type" = 'Полезный объем'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Микроволновая печь соло Samsung MS23K3614AW/BW' 
+        AND a."Name" = '28.8' 
+        AND a."Type" = 'Диаметр поворотного стола'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Микроволновая печь соло Samsung MS23K3614AW/BW' 
+        AND a."Name" = 'поворотный' 
+        AND a."Type" = 'Тип управления'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Микроволновая печь соло Samsung MS23K3614AW/BW' 
+        AND a."Name" = 'белый' 
+        AND a."Type" = 'Цвет'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Микроволновая печь соло Samsung MS23K3614AW/BW' 
+        AND a."Name" = 'Да' 
+        AND a."Type" = 'Защита от детей'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-samsung-ms23k3614aw-bw_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло Samsung MS23K3614AW/BW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-samsung-ms23k3614aw-bw_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло Samsung MS23K3614AW/BW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-samsung-ms23k3614aw-bw_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло Samsung MS23K3614AW/BW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-samsung-ms23k3614aw-bw_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло Samsung MS23K3614AW/BW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-samsung-ms23k3614aw-bw_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло Samsung MS23K3614AW/BW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-samsung-ms23k3614aw-bw_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло Samsung MS23K3614AW/BW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-samsung-ms23k3614aw-bw_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло Samsung MS23K3614AW/BW'));

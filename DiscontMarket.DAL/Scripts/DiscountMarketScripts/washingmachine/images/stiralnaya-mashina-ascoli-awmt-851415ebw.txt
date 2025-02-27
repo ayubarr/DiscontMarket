@@ -1,0 +1,28 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-ascoli-awmt-851415ebw_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Ascoli AWMT-851415EBW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-ascoli-awmt-851415ebw_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Ascoli AWMT-851415EBW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-ascoli-awmt-851415ebw_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Ascoli AWMT-851415EBW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-ascoli-awmt-851415ebw_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Ascoli AWMT-851415EBW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-ascoli-awmt-851415ebw_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Ascoli AWMT-851415EBW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-ascoli-awmt-851415ebw_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Ascoli AWMT-851415EBW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-ascoli-awmt-851415ebw_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Ascoli AWMT-851415EBW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-ascoli-awmt-851415ebw_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Ascoli AWMT-851415EBW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-ascoli-awmt-851415ebw_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Ascoli AWMT-851415EBW'));

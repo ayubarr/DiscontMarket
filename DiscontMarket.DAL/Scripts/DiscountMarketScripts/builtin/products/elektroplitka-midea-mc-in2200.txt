@@ -1,0 +1,72 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Электроплитка Midea MC-IN2200', 1449, 6, '/items/productimages/elektroplitka-midea-mc-in2200_0.png', 4.74, '', 'Несмотря на свою компактность, настольная индукционная плита Midea MC-IN2200 обладает всеми преимуществами устройств такого типа. Шесть программ («Суп», «Жарка», «Фритюр», «На пару», «Каша», «Рагу») позволяют готовить популярные блюда одним нажатием на кнопку – параметры работы будут заданы автоматически.
+
+ЛЕГЧЕ ЛЁГКОГО
+Освоить управление просто. Сенсорная панель снабжена надписями на русском языке и наглядными рисунками-подсказками, которые помогут быстро во всём разобраться. Световые индикаторы отображают выбранный температурный режим и уровень мощности. Максимальные составляют, соответственно, 240 градусов и 2500 Вт. Если вы точно знаете, сколько времени требуется для приготовления блюда, устанавливайте таймер.
+
+МИНИМУМ ХЛОПОТ
+Уход за плитой прост. Стеклокерамическая рабочая поверхность гладкая, её легко очистить от брызг жира и частичек пищи мягкой губкой с небольшим количеством неабразивного моющего средства, а потом отполировать до блеска. Пластиковый корпус достаточно протереть сухой салфеткой.', 'InStock', 'Discount', 4, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Midea'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Электроплитка Midea MC-IN2200'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Электроплитка Midea MC-IN2200' 
+        AND a."Name" = '1' 
+        AND a."Type" = 'Количество конфорок'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Электроплитка Midea MC-IN2200' 
+        AND a."Name" = 'индукционные' 
+        AND a."Type" = 'Тип конфорок'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Электроплитка Midea MC-IN2200' 
+        AND a."Name" = '2000' 
+        AND a."Type" = 'Потребляемая мощность'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Электроплитка Midea MC-IN2200' 
+        AND a."Name" = 'стеклокерамика' 
+        AND a."Type" = 'Материал варочной поверхности'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Электроплитка Midea MC-IN2200' 
+        AND a."Name" = 'Да' 
+        AND a."Type" = 'Таймер'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/elektroplitka-midea-mc-in2200_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Электроплитка Midea MC-IN2200'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/elektroplitka-midea-mc-in2200_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Электроплитка Midea MC-IN2200'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/elektroplitka-midea-mc-in2200_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Электроплитка Midea MC-IN2200'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/elektroplitka-midea-mc-in2200_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Электроплитка Midea MC-IN2200'));

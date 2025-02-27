@@ -1,0 +1,16 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/varochnyi-centr-bertazzoni-pro105i2enet-chernyi_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Варочный центр Bertazzoni PRO105I2ENET черный'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/varochnyi-centr-bertazzoni-pro105i2enet-chernyi_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Варочный центр Bertazzoni PRO105I2ENET черный'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/varochnyi-centr-bertazzoni-pro105i2enet-chernyi_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Варочный центр Bertazzoni PRO105I2ENET черный'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/varochnyi-centr-bertazzoni-pro105i2enet-chernyi_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Варочный центр Bertazzoni PRO105I2ENET черный'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/varochnyi-centr-bertazzoni-pro105i2enet-chernyi_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Варочный центр Bertazzoni PRO105I2ENET черный'));

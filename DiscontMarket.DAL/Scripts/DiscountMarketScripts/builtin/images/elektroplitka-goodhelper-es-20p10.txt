@@ -1,0 +1,4 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/elektroplitka-goodhelper-es-20p10_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Электроплитка Goodhelper ES-20P10'));

@@ -1,0 +1,22 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-hi-vhix-65u169msy_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hi VHIX-65U169MSY'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-hi-vhix-65u169msy_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hi VHIX-65U169MSY'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-hi-vhix-65u169msy_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hi VHIX-65U169MSY'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-hi-vhix-65u169msy_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hi VHIX-65U169MSY'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-hi-vhix-65u169msy_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hi VHIX-65U169MSY'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-hi-vhix-65u169msy_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hi VHIX-65U169MSY'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-hi-vhix-65u169msy_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hi VHIX-65U169MSY'));

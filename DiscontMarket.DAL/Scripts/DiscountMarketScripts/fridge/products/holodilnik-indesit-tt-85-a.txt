@@ -1,0 +1,95 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Холодильник Indesit TT 85 A', 12499, 6, '/items/productimages/holodilnik-indesit-tt-85-a_0.png', 4.46, '', 'Холодильник Indesit TT 85 A — однокамерная модель полезным объемом 120 л, внутри которой расположена стеклянная полка, два кармана на двери и отделение для овощей, фруктов. Двери, выполненные из металла и пластика, открываются направо. Класс энергопотребления — А. За год расходуется до 168 кВт*ч.
+
+• <b>Тихая работа</b>
+В основе работы лежит стандартный компрессор, который выдает уровень шума не выше 41 дБ.
+
+• <b>Климатический класс N</b>
+Устройство подходит для эксплуатации при температуре внешней среды в диапазоне от +16°C до +32°С.
+
+• <b>Капельная система размораживания в основном отделении</b>
+За счет современной технологии таяние льда на задней стенке камеры осуществляется в автоматическом режиме при отключении компрессора. Вода плавно стекает в специальный контейнер и испаряется.
+
+• <b>Морозильная камера</b>
+Отделение объемом 14 л позволяет хранить мясные и рыбные изделия.
+
+• <b>Механическое управление</b>
+Настройка параметров производится с помощью поворотного регулятора, находящегося внутри основного отделения. Световая индикация отображает включение.
+
+• <b>Светодиодное освещение</b>
+Встроенная LED-лампа гарантирует яркое освещение внутреннего пространства, что упрощает поиск продуктов питания.
+
+Сохранение холода холодильника в автономном режиме производится в течение 1 часа. В комплект входит лоток для льда.', 'InStock', 'Discount', 3, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Indesit'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Холодильник Indesit TT 85 A'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Indesit TT 85 A' 
+        AND a."Name" = 'стандартный' 
+        AND a."Type" = 'Тип компрессора'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Indesit TT 85 A' 
+        AND a."Name" = '85*60*61.5 см' 
+        AND a."Type" = 'Габаритные размеры (В*Ш*Г)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Indesit TT 85 A' 
+        AND a."Name" = '122' 
+        AND a."Type" = 'Общий объем'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Indesit TT 85 A' 
+        AND a."Name" = 'A' 
+        AND a."Type" = 'Класс энергоэффективности'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Indesit TT 85 A' 
+        AND a."Name" = '1' 
+        AND a."Type" = 'Хранение при отключении питания'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-indesit-tt-85-a_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Indesit TT 85 A'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-indesit-tt-85-a_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Indesit TT 85 A'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-indesit-tt-85-a_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Indesit TT 85 A'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-indesit-tt-85-a_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Indesit TT 85 A'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-indesit-tt-85-a_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Indesit TT 85 A'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-indesit-tt-85-a_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Indesit TT 85 A'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-indesit-tt-85-a_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Indesit TT 85 A'));

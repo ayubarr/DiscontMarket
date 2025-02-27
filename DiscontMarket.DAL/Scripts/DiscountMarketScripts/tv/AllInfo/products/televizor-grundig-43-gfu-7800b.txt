@@ -1,0 +1,46 @@
+﻿INSERT INTO "Products" 
+("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription",
+"Availability", "Status", "CategoryID", "BrandID", "UserID") 
+VALUES
+ ('Телевизор Grundig 43 GFU 7800B', 22999, 18, '/items/productimages/televizor-grundig-43-gfu-7800b_0.png', 4.45, '', 'Телевизор Grundig 43 GFU 7800B, черный — модель диагональю 43 дюйма разрешением Ultra HD (3840х2160 пикселей). В сочетании с поддержкой HDR10 это обеспечивает четкое изображение с реалистичной цветопередачей и проработкой мельчайших деталей. По трем сторонам экрана рамка практически отсутствует, что помогает полнее погрузиться в происходящее при просмотре фильмов или во время игры. Контент низкого качества прибор может масштабировать до 4К. Акустическая система представлена двумя динамиками мощностью по 8 Вт, поддерживается Dolby Digital. 
+Smart TV и встроенный модуль Wi-Fi предоставят доступ к онлайн-кинотеатрам, стриминговым сервисам, различным приложениям, для установки которых есть 8 Гб встроенной памяти. Операционная система Android обладает простым и удобным интерфейсом — разобраться в настройках и найти то, что нужно не составит труда. В комплекте — дистанционный пульт, кроме того, для управления можно использовать смартфон. 
+Для подключения игровой консоли, дополнительной акустики и других устройств телевизор оснащен тремя входами HDMI, двумя портами USB 2.0 тип A, разъемом LAN (RJ45) для проводного интернета, 3,5-миллиметровым выходом на наушники. Тюнер стандартов DVB-T2/C/S2 уже установлен — для приема цифровых, кабельных и спутниковых каналов приставка не потребуется.', 'InStock', 'Discount', 1, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Grundig'), 1);
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Grundig 43 GFU 7800B'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '4K Ultra HD (3840x2160 Пикс)' AND "Type" = 'Экран));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Grundig 43 GFU 7800B'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '43' AND "Type" = 'Диагональ));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Grundig 43 GFU 7800B'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '60' AND "Type" = 'Частота обновления));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Grundig 43 GFU 7800B'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'LED' AND "Type" = 'Технология экрана));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Grundig 43 GFU 7800B'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'Direct LED' AND "Type" = 'Тип светодиодной подсветки));
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-grundig-43-gfu-7800b_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Grundig 43 GFU 7800B'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-grundig-43-gfu-7800b_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Grundig 43 GFU 7800B'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-grundig-43-gfu-7800b_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Grundig 43 GFU 7800B'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-grundig-43-gfu-7800b_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Grundig 43 GFU 7800B'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-grundig-43-gfu-7800b_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Grundig 43 GFU 7800B'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-grundig-43-gfu-7800b_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Grundig 43 GFU 7800B'));

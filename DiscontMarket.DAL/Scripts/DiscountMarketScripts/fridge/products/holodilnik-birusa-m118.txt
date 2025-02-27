@@ -1,0 +1,71 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Холодильник Бирюса M118', 13845, 12, '/items/productimages/holodilnik-birusa-m118_0.png', 4.74, '', 'Холодильник с нижней морозильной камерой «Бирюса» М118 отличается низким уровнем шума в процессе работы, который не превышает 41 дБ. В холодильном отсеке объемом 125 л установлено LED-освещение. Для хранения продуктов используются прочные стеклянные полки и пластиковый ящик для овощей. Двери перенавешиваемого типа оснащены эмалированным покрытием, которое легко поддается чистке. Максимальное время сохранения холода при отключенном питании достигает 10 ч.
+
+Доступна регулировка температуры в рабочей зоне при помощи механической панели управления. Объем морозильной камеры составляет 55 л. Производительность по замораживанию равна 4 кг/сутки. Класс энергоэффективности — A. Габариты холодильника — 145x48x60,5 см. Показатель потребляемой мощности устройства не превышает 245 кВт*ч.', 'InStock', 'Discount', 3, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Бирюса'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Холодильник Бирюса M118'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Бирюса M118' 
+        AND a."Name" = 'стандартный' 
+        AND a."Type" = 'Тип компрессора'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Бирюса M118' 
+        AND a."Name" = '145' 
+        AND a."Type" = 'Высота'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Бирюса M118' 
+        AND a."Name" = '48' 
+        AND a."Type" = 'Ширина'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Бирюса M118' 
+        AND a."Name" = '60.5' 
+        AND a."Type" = 'Глубина'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Бирюса M118' 
+        AND a."Name" = '180' 
+        AND a."Type" = 'Общий объем'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-birusa-m118_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Бирюса M118'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-birusa-m118_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Бирюса M118'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-birusa-m118_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Бирюса M118'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-birusa-m118_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Бирюса M118'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-birusa-m118_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Бирюса M118'));

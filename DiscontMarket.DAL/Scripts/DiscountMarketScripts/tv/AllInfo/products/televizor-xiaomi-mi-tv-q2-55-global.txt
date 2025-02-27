@@ -1,0 +1,55 @@
+﻿INSERT INTO "Products" 
+("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription",
+"Availability", "Status", "CategoryID", "BrandID", "UserID") 
+VALUES
+ ('Телевизор Xiaomi Mi TV Q2 55 GLOBAL', 32495, 9, '/items/productimages/televizor-xiaomi-mi-tv-q2-55-global_0.png', 4.82, '', 'Телевизор Xiaomi Mi TV Q2 55 Global оснащен экраном с подсветкой Direct LED, который обеспечивает контрастную цветопередачу. Благодаря этому можно с комфортом просматривать фильмы и играть. Суммарная мощность звуковой системы — 2x15 Вт. Доступ в интернет возможен через кабельный разъем LAN. Для подключения периферийных устройств предусмотрены вход HDMI, порт USB. 
+
+С помощью функции Smart TV удобно пользоваться онлайн-платформам и различными развлекательными приложениями. Посредством голосового помощника Google Assistant можно вводить информацию в поисковой строке. Модель функционирует на базе операционной системы Android, которая характеризуется простотой управления и функциональностью. Телевизор крепится к стене или устанавливается на тумбу.', 'InStock', 'Discount', 1, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Xiaomi'), 1);
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Xiaomi Mi TV Q2 55 GLOBAL'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '4K Ultra HD (3840x2160 Пикс)' AND "Type" = 'Экран));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Xiaomi Mi TV Q2 55 GLOBAL'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '55' AND "Type" = 'Диагональ));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Xiaomi Mi TV Q2 55 GLOBAL'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '60' AND "Type" = 'Частота обновления));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Xiaomi Mi TV Q2 55 GLOBAL'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'LED' AND "Type" = 'Технология экрана));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Xiaomi Mi TV Q2 55 GLOBAL'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'Direct LED' AND "Type" = 'Тип светодиодной подсветки));
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-xiaomi-mi-tv-q2-55-global_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Xiaomi Mi TV Q2 55 GLOBAL'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-xiaomi-mi-tv-q2-55-global_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Xiaomi Mi TV Q2 55 GLOBAL'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-xiaomi-mi-tv-q2-55-global_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Xiaomi Mi TV Q2 55 GLOBAL'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-xiaomi-mi-tv-q2-55-global_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Xiaomi Mi TV Q2 55 GLOBAL'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-xiaomi-mi-tv-q2-55-global_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Xiaomi Mi TV Q2 55 GLOBAL'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-xiaomi-mi-tv-q2-55-global_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Xiaomi Mi TV Q2 55 GLOBAL'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-xiaomi-mi-tv-q2-55-global_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Xiaomi Mi TV Q2 55 GLOBAL'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-xiaomi-mi-tv-q2-55-global_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Xiaomi Mi TV Q2 55 GLOBAL'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-xiaomi-mi-tv-q2-55-global_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Xiaomi Mi TV Q2 55 GLOBAL'));

@@ -1,0 +1,86 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Микроволновая печь с грилем Samsung MG23DG4524ATBW', 9999, 9, '/items/productimages/mikrovolnovaya-pech-s-grilem-samsung-mg23dg4524atbw_0.png', 4.72, '', 'Микроволновая печь с грилем Samsung MG23DG4524ATBW за счет минималистичного дизайна станет ультрасовременным акцентом на кухне. Дверца открывается с помощью скрытых ручек, расположенных снизу и сверху. 
+
+• <b>Гриль</b> 
+Позволяет поджаривать, разогревать и готовить различные блюда, в том числе в сочетании с микроволнами. ТЭН легко очищается от брызг жира и других загрязнений. 
+
+• <b>Быстрое размораживание 3D</b> 
+Время воздействия выбирается в зависимости от продукта, функция позволяет сохранить максимум питательных свойств. 
+
+• <b>Биокерамическое покрытие</b> 
+Для очистки не требуется больших усилий, со временем цвет поверхности не меняется. Покрытие обладает антибактериальными свойствами. 
+
+• <b>Управлять быстро и просто</b> 
+Настройки выбираются с помощью панели Simple UX с кнопками и поворотным регулятором. Среди шести предустановленных программ — «Домашние десерты» и «Пицца». Предусмотрены функции сохранения тепла готового блюда и очистки камеры от запахов. 
+
+В этой модели реализована трехконтурная технология распределения тепла, что значительно улучшает процесс приготовления. Стеклянная поворотная тарелка диаметром 28,8 см устойчива к механическим повреждениям, загрязнения и остатки еды легко удаляются под струей воды.', 'InStock', 'Discount', 6, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Samsung'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Микроволновая печь с грилем Samsung MG23DG4524ATBW'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Микроволновая печь с грилем Samsung MG23DG4524ATBW' 
+        AND a."Name" = '23' 
+        AND a."Type" = 'Полезный объем'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Микроволновая печь с грилем Samsung MG23DG4524ATBW' 
+        AND a."Name" = '28.8' 
+        AND a."Type" = 'Диаметр поворотного стола'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Микроволновая печь с грилем Samsung MG23DG4524ATBW' 
+        AND a."Name" = 'Bio керамика' 
+        AND a."Type" = 'Внутреннее покрытие'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Микроволновая печь с грилем Samsung MG23DG4524ATBW' 
+        AND a."Name" = 'кнопочный/ поворотный' 
+        AND a."Type" = 'Тип управления'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Микроволновая печь с грилем Samsung MG23DG4524ATBW' 
+        AND a."Name" = 'черный' 
+        AND a."Type" = 'Цвет'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-s-grilem-samsung-mg23dg4524atbw_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь с грилем Samsung MG23DG4524ATBW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-s-grilem-samsung-mg23dg4524atbw_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь с грилем Samsung MG23DG4524ATBW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-s-grilem-samsung-mg23dg4524atbw_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь с грилем Samsung MG23DG4524ATBW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-s-grilem-samsung-mg23dg4524atbw_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь с грилем Samsung MG23DG4524ATBW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-s-grilem-samsung-mg23dg4524atbw_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь с грилем Samsung MG23DG4524ATBW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-s-grilem-samsung-mg23dg4524atbw_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь с грилем Samsung MG23DG4524ATBW'));

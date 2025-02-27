@@ -1,0 +1,47 @@
+﻿INSERT INTO "Products" 
+("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription",
+"Availability", "Status", "CategoryID", "BrandID", "UserID") 
+VALUES
+ ('Телевизор Vekta LD-24TR4350BT', 5395, 12, '/items/productimages/televizor-vekta-ld-24tr4350bt_0.png', 4.8, '', 'Черный телевизор Vekta LD-24TR4350BT с диагональю 60 см оснащен системой защиты от детей, тюнерами для просмотра кабельных и цифровых каналов. Устройство позволяет воспроизводить видео о формате HD Ready, фото, видео и аудио с USB-носителей. Габариты модели с подставкой — 35,7х16,8х55,6 см. Вес изделия — 2,56 кг. С помощью функции PVR можно записывать любимые передачи и фильмы. Присутствует таймер, позволяющий выставлять время включения и выключения телевизора. Формат экрана — 16:9. Модель оснащена функцией цифрового шумоподавления. Мощность прибора — 35 Вт.', 'InStock', 'Discount', 1, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Vekta'), 1);
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Vekta LD-24TR4350BT'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'HD (1366x768 Пикс)' AND "Type" = 'Экран));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Vekta LD-24TR4350BT'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '24' AND "Type" = 'Диагональ));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Vekta LD-24TR4350BT'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '60' AND "Type" = 'Частота обновления));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Vekta LD-24TR4350BT'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'LED' AND "Type" = 'Технология экрана));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Vekta LD-24TR4350BT'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'Direct LED' AND "Type" = 'Тип светодиодной подсветки));
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-vekta-ld-24tr4350bt_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Vekta LD-24TR4350BT'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-vekta-ld-24tr4350bt_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Vekta LD-24TR4350BT'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-vekta-ld-24tr4350bt_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Vekta LD-24TR4350BT'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-vekta-ld-24tr4350bt_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Vekta LD-24TR4350BT'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-vekta-ld-24tr4350bt_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Vekta LD-24TR4350BT'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-vekta-ld-24tr4350bt_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Vekta LD-24TR4350BT'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-vekta-ld-24tr4350bt_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Vekta LD-24TR4350BT'));

@@ -1,0 +1,22 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-gorenje-nrk6202ac4_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Gorenje NRK6202AC4'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-gorenje-nrk6202ac4_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Gorenje NRK6202AC4'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-gorenje-nrk6202ac4_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Gorenje NRK6202AC4'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-gorenje-nrk6202ac4_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Gorenje NRK6202AC4'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-gorenje-nrk6202ac4_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Gorenje NRK6202AC4'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-gorenje-nrk6202ac4_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Gorenje NRK6202AC4'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-gorenje-nrk6202ac4_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Gorenje NRK6202AC4'));

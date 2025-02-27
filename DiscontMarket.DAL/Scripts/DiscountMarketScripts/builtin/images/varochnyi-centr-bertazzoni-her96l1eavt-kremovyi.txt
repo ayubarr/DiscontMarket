@@ -1,0 +1,25 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/varochnyi-centr-bertazzoni-her96l1eavt-kremovyi_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Варочный центр Bertazzoni HER96L1EAVT кремовый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/varochnyi-centr-bertazzoni-her96l1eavt-kremovyi_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Варочный центр Bertazzoni HER96L1EAVT кремовый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/varochnyi-centr-bertazzoni-her96l1eavt-kremovyi_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Варочный центр Bertazzoni HER96L1EAVT кремовый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/varochnyi-centr-bertazzoni-her96l1eavt-kremovyi_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Варочный центр Bertazzoni HER96L1EAVT кремовый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/varochnyi-centr-bertazzoni-her96l1eavt-kremovyi_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Варочный центр Bertazzoni HER96L1EAVT кремовый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/varochnyi-centr-bertazzoni-her96l1eavt-kremovyi_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Варочный центр Bertazzoni HER96L1EAVT кремовый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/varochnyi-centr-bertazzoni-her96l1eavt-kremovyi_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Варочный центр Bertazzoni HER96L1EAVT кремовый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/varochnyi-centr-bertazzoni-her96l1eavt-kremovyi_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Варочный центр Bertazzoni HER96L1EAVT кремовый'));

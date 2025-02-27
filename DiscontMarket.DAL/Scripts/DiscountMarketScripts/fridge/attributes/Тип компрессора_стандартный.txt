@@ -1,0 +1,14 @@
+﻿
+        INSERT INTO "Attributes" ("NameTranslate", "Name", "Type") 
+        SELECT 'стандартный', 'стандартный', 'Тип компрессора'
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Attributes" WHERE "Name" = 'стандартный' AND "Type" = 'Тип компрессора'
+        );
+
+        INSERT INTO "AttributeCategory" ("AttributeID", "CategoryID") 
+        SELECT a."ID", c."ID" FROM "Attributes" a, "Categories" c 
+        WHERE a."Name" = 'стандартный' AND a."Type" = 'Тип компрессора' 
+        AND c."Name" = 'fridge'
+        AND NOT EXISTS (
+            SELECT 1 FROM "AttributeCategory" WHERE "AttributeID" = a."ID" AND "CategoryID" = c."ID"
+        );

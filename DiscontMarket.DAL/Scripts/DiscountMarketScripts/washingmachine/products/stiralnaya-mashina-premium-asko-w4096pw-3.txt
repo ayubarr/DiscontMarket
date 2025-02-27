@@ -1,0 +1,65 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Стиральная машина Премиум Asko W4096P.W/3', 96450, 12, '/items/productimages/stiralnaya-mashina-premium-asko-w4096pw-3_0.png', 4.79, '', 'Стиральная машина «Премиум» Asko W4096P.W/3 за один цикл стирки использует до 49 л воды и способна очистить до 9 кг белья. Объем барабана — 60 л. Среди режимов работы присутствуют стирка шерстяных и хлопковых изделий, стирка постельного белья, обработка паром и очистка барабана, стирка вещей из темных и цветных тканей, стирка рубашек и вещей из джинсовой ткани, режим антиаллергии и экономичная стирка. Для белья с незначительной степенью загрязнения предусмотрен режим мини-стирки продолжительностью 30 мин. Количество оборотов во время отжима можно регулировать в пределах 1600 об/мин.
+
+На передней части устройства располагается электронная панель управления с поворотным переключением, ЖК-дисплеем и датчиками режима работы и времени до конца стирки. Данная модель оснащена таймером отложенного старта, звуковым сигналом, опциями добавления белья во время стирки и разрыхления после отжима. Потребляемая мощность — 2200 Вт. За безопасную эксплуатацию отвечают функции зашиты от детей и защиты от протечек. Габаритные размеры устройства — 85х59,5х58,5 см, цвет — белый.', 'InStock', 'Discount', 5, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Asko'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Стиральная машина Премиум Asko W4096P.W/3'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина Премиум Asko W4096P.W/3' 
+        AND a."Name" = '9' 
+        AND a."Type" = 'Максимальная загрузка'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина Премиум Asko W4096P.W/3' 
+        AND a."Name" = '1600' 
+        AND a."Type" = 'Максимальная скорость отжима'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина Премиум Asko W4096P.W/3' 
+        AND a."Name" = 'инверторный' 
+        AND a."Type" = 'Мотор'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина Премиум Asko W4096P.W/3' 
+        AND a."Name" = 'Да' 
+        AND a."Type" = 'Обработка паром'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина Премиум Asko W4096P.W/3' 
+        AND a."Name" = '85*59.5*58.5 см' 
+        AND a."Type" = 'Габаритные размеры (В*Ш*Г)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-premium-asko-w4096pw-3_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Премиум Asko W4096P.W/3'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-premium-asko-w4096pw-3_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Премиум Asko W4096P.W/3'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-premium-asko-w4096pw-3_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Премиум Asko W4096P.W/3'));

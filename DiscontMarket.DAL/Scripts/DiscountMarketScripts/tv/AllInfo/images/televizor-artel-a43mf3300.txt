@@ -1,0 +1,28 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-artel-a43mf3300_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Artel A43MF3300'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-artel-a43mf3300_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Artel A43MF3300'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-artel-a43mf3300_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Artel A43MF3300'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-artel-a43mf3300_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Artel A43MF3300'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-artel-a43mf3300_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Artel A43MF3300'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-artel-a43mf3300_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Artel A43MF3300'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-artel-a43mf3300_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Artel A43MF3300'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-artel-a43mf3300_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Artel A43MF3300'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-artel-a43mf3300_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Artel A43MF3300'));

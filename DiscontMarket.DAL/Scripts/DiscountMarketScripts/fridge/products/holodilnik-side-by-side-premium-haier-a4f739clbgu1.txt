@@ -1,0 +1,101 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Холодильник (Side-by-Side) Премиум Haier A4F739CLBGU1', 56499, 11, '/items/productimages/holodilnik-side-by-side-premium-haier-a4f739clbgu1_0.png', 4.21, '', 'Холодильник Haier A4F739CLBGU1 полезным объемом 389 л позволит разместить внушительные продуктовые запасы. Стильный внешний вид, необычный цвет гармонично впишутся в современные интерьеры. 
+
+• <b>Обработка ультрафиолетом</b> 
+Ультрафиолетовое воздействие помогает продуктам дольше оставаться свежими, предотвращает появление плесени и неприятного запаха. 
+
+• <b>Зона длительной свежести</b> 
+Специальный отсек с температурой 0° и регулируемой влажностью позволяет хранить охлажденное мясо, рыбу, сыры и молочные продукты без потери качества. 
+
+• <b> Поддержание влажности HCS</b> 
+Специальная мембрана отводит лишнюю влагу, сохраняя овощи и фрукты дольше. 
+
+• <b>Складная полка</b> 
+Нижняя полка легко складывается, что позволяет поставить в холодильник высокие кастрюли. 
+
+• <b>Управление через приложение</b> 
+Холодильник снабжен встроенным модулем Wi-Fi, поэтому все необходимые параметры можно настроить через приложение. 
+
+Удобная светодиодная подсветка (в холодильной и морозильной камере) позволяет видеть продукты даже в глубине холодильника. Дверцу при необходимости можно перенавесить.', 'InStock', 'Discount', 3, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Haier'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Холодильник (Side-by-Side) Премиум Haier A4F739CLBGU1'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник (Side-by-Side) Премиум Haier A4F739CLBGU1' 
+        AND a."Name" = 'инверторный' 
+        AND a."Type" = 'Тип компрессора'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник (Side-by-Side) Премиум Haier A4F739CLBGU1' 
+        AND a."Name" = '389' 
+        AND a."Type" = 'Общий объем'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник (Side-by-Side) Премиум Haier A4F739CLBGU1' 
+        AND a."Name" = 'настраиваемая' 
+        AND a."Type" = 'Тип зоны сохранения свежести'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник (Side-by-Side) Премиум Haier A4F739CLBGU1' 
+        AND a."Name" = 'сенсорный дисплей' 
+        AND a."Type" = 'Тип управления'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник (Side-by-Side) Премиум Haier A4F739CLBGU1' 
+        AND a."Name" = 'металл' 
+        AND a."Type" = 'Материал двери'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-side-by-side-premium-haier-a4f739clbgu1_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник (Side-by-Side) Премиум Haier A4F739CLBGU1'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-side-by-side-premium-haier-a4f739clbgu1_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник (Side-by-Side) Премиум Haier A4F739CLBGU1'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-side-by-side-premium-haier-a4f739clbgu1_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник (Side-by-Side) Премиум Haier A4F739CLBGU1'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-side-by-side-premium-haier-a4f739clbgu1_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник (Side-by-Side) Премиум Haier A4F739CLBGU1'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-side-by-side-premium-haier-a4f739clbgu1_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник (Side-by-Side) Премиум Haier A4F739CLBGU1'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-side-by-side-premium-haier-a4f739clbgu1_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник (Side-by-Side) Премиум Haier A4F739CLBGU1'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-side-by-side-premium-haier-a4f739clbgu1_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник (Side-by-Side) Премиум Haier A4F739CLBGU1'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-side-by-side-premium-haier-a4f739clbgu1_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник (Side-by-Side) Премиум Haier A4F739CLBGU1'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-side-by-side-premium-haier-a4f739clbgu1_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник (Side-by-Side) Премиум Haier A4F739CLBGU1'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-side-by-side-premium-haier-a4f739clbgu1_9.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник (Side-by-Side) Премиум Haier A4F739CLBGU1'));

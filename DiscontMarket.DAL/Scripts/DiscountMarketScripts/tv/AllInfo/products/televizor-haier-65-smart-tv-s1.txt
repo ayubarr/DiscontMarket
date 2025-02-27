@@ -1,0 +1,76 @@
+﻿INSERT INTO "Products" 
+("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription",
+"Availability", "Status", "CategoryID", "BrandID", "UserID") 
+VALUES
+ ('Телевизор Haier 65 Smart TV S1', 32499, 15, '/items/productimages/televizor-haier-65-smart-tv-s1_0.png', 4.49, '', 'Телевизор Haier 65 Smart TV S1 обладает 65-дюймовым экраном (165,1 см) формата 16:9, на который выводится изображение с высоким уровнем детализации разрешением 3840x2160 пикселей. Благодаря технологии HDR10 оптимизируется контрастность для создания картинок с естественной цветопередачей. Частота обновления составляет 60 Гц, за счет чего гарантируется выдача качественного контента даже в динамичных сценах. Предусмотрена возможность масштабирования до 4K Ultra HD. Функция «Цифровое шумоподавление» позволяет с комфортом смотреть телепередачи с некачественным приемом антенного сигнала.
+Модель работает на базе ОС Android 11. Устройство поддерживает платформу Smart TV, которая дает возможность пользоваться магазином приложений Google Play и производить поиск контента на разных сервисах. Пульт ДУ обеспечивает удобное управление телевизором. Для беспроводного подключения к устройствам предусмотрен модуль Bluetooth. Акустическая система мощностью 2х10 Вт выдает громкий звук.
+Модуль Wi-Fi гарантирует быстрое подключение к Сети с оптимальной скоростью передачи данных. Телевизор может записывать эфирные программы с ТВ на USB-устройство для отложенного просмотра в любое время. Потребляемая мощность модели — 170 Вт. За безопасность отвечает опция «Защита от детей», которая предотвращает несанкционированный доступ к управлению. Предусмотрены интерфейсы: вход HDMI, порт USB 2.0 тип А, RJ45, разъем для наушников 3,5 мм. В комплект входит настольная подставка. Габаритные размеры телевизора — 90,5х144,9х8,4 см, вес — 16,3 кг.', 'InStock', 'Discount', 1, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Haier'), 1);
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Haier 65 Smart TV S1'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '4K Ultra HD (3840x2160 Пикс)' AND "Type" = 'Экран));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Haier 65 Smart TV S1'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '65' AND "Type" = 'Диагональ));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Haier 65 Smart TV S1'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '60' AND "Type" = 'Частота обновления));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Haier 65 Smart TV S1'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'LED' AND "Type" = 'Технология экрана));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Haier 65 Smart TV S1'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'Direct LED' AND "Type" = 'Тип светодиодной подсветки));
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-haier-65-smart-tv-s1_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Haier 65 Smart TV S1'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-haier-65-smart-tv-s1_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Haier 65 Smart TV S1'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-haier-65-smart-tv-s1_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Haier 65 Smart TV S1'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-haier-65-smart-tv-s1_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Haier 65 Smart TV S1'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-haier-65-smart-tv-s1_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Haier 65 Smart TV S1'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-haier-65-smart-tv-s1_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Haier 65 Smart TV S1'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-haier-65-smart-tv-s1_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Haier 65 Smart TV S1'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-haier-65-smart-tv-s1_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Haier 65 Smart TV S1'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-haier-65-smart-tv-s1_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Haier 65 Smart TV S1'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-haier-65-smart-tv-s1_9.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Haier 65 Smart TV S1'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-haier-65-smart-tv-s1_10.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Haier 65 Smart TV S1'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-haier-65-smart-tv-s1_11.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Haier 65 Smart TV S1'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-haier-65-smart-tv-s1_12.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Haier 65 Smart TV S1'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-haier-65-smart-tv-s1_13.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Haier 65 Smart TV S1'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-haier-65-smart-tv-s1_14.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Haier 65 Smart TV S1'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-haier-65-smart-tv-s1_15.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Haier 65 Smart TV S1'));

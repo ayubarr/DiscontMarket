@@ -1,0 +1,52 @@
+﻿INSERT INTO "Products" 
+("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription",
+"Availability", "Status", "CategoryID", "BrandID", "UserID") 
+VALUES
+ ('Телевизор LG 65UQ91009LD', 47495, 14, '/items/productimages/televizor-lg-65uq91009ld_0.png', 4.86, '', 'Телевизор LG 65UQ91009LD с 65-дюймовым экраном поддерживает технологию Active HDR, которая делает картинку более яркой и улучшает цветопередачу.
+
+• <b>В формате 4K</b>
+Разрешение экрана соответствует стандарту Ultra HD — 3840х2160 Пикс. Это обеспечивает превосходную детализацию, повышает реалистичность изображения.
+
+• <b>Доступ в интернет</b>
+Предусмотрены операционная система WebOS, функция Smart TV, разъем для кабельного соединения LAN. За счет этого можно использовать онлайн-кинотеатры и другие сетевые ресурсы, чтобы искать на них интересный медиаконтент.
+
+• <b>AI Sound Pro</b>
+Акустическая система состоит из двух динамиков 10 Вт. Ее работой управляет искусственный интеллект, который обрабатывает аудиосигнал в режиме реального времени и улучшает звучание.
+
+На корпусе размещены порты USB и интерфейсы HDMI для подключения внешних устройств и накопителей.', 'InStock', 'Discount', 1, (SELECT "ID" FROM "Brands" WHERE "Name" = 'LG'), 1);
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор LG 65UQ91009LD'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '4K Ultra HD (3840x2160 Пикс)' AND "Type" = 'Экран));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор LG 65UQ91009LD'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '65' AND "Type" = 'Диагональ));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор LG 65UQ91009LD'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '60' AND "Type" = 'Частота обновления));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор LG 65UQ91009LD'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'LED' AND "Type" = 'Технология экрана));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор LG 65UQ91009LD'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'Direct LED' AND "Type" = 'Тип светодиодной подсветки));
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-lg-65uq91009ld_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор LG 65UQ91009LD'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-lg-65uq91009ld_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор LG 65UQ91009LD'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-lg-65uq91009ld_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор LG 65UQ91009LD'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-lg-65uq91009ld_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор LG 65UQ91009LD'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-lg-65uq91009ld_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор LG 65UQ91009LD'));

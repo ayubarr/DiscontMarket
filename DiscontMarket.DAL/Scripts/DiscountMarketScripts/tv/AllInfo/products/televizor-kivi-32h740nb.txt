@@ -1,0 +1,52 @@
+﻿INSERT INTO "Products" 
+("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription",
+"Availability", "Status", "CategoryID", "BrandID", "UserID") 
+VALUES
+ ('Телевизор Kivi 32H740NB', 8995, 10, '/items/productimages/televizor-kivi-32h740nb_0.png', 4.49, '', 'Телевизор Kivi 32H740NB — модель в черном корпусе с диагональю экрана 32" и разрешением 1366x768 пикс. Отличительная особенность — безрамочная технология экрана с шириной боковых рамок 2,6 мм. Передача изображения происходит с максимальной детализацией. Технология Ultra Clear обрабатывает каждый фрагмент кадра, повышает резкость объектов и контраст. Частота обновления составляет 60 Гц. Система цифрового шумоподавления исключает вероятность возникновения помех при просмотре даже при слабом сигнале антенны. Встроена подсветка экрана Direct LED.
+
+Телевизор работает на операционной системе Android Google TV. Установлена система звука с технологией Dolby Audio. Мощность низкочастотной акустической системы составляет 16 Вт. Беспроводное подключение к другим устройства обеспечивает встроенный модуль Bluetooth. Телевизор поддерживает Wi-Fi и Smart TV. Встроен цифровой тюнер DVB T/T2/C. Для управления устройством используется смартфон в качестве пульта ДУ. Модель отличается высоким качеством и надежностью, обеспечена трехлетней гарантий на дисплей. Потребляемая мощность составляет 33 Вт. В комплект входит настольная подставка. Страна производства — Беларусь.', 'InStock', 'Discount', 1, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Kivi'), 1);
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Kivi 32H740NB'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'HD (1366x768 Пикс)' AND "Type" = 'Экран));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Kivi 32H740NB'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '32' AND "Type" = 'Диагональ));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Kivi 32H740NB'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '60' AND "Type" = 'Частота обновления));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Kivi 32H740NB'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'LED' AND "Type" = 'Технология экрана));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Kivi 32H740NB'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'Direct LED' AND "Type" = 'Тип светодиодной подсветки));
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-kivi-32h740nb_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Kivi 32H740NB'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-kivi-32h740nb_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Kivi 32H740NB'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-kivi-32h740nb_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Kivi 32H740NB'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-kivi-32h740nb_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Kivi 32H740NB'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-kivi-32h740nb_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Kivi 32H740NB'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-kivi-32h740nb_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Kivi 32H740NB'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-kivi-32h740nb_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Kivi 32H740NB'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-kivi-32h740nb_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Kivi 32H740NB'));

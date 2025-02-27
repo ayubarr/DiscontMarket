@@ -1,0 +1,55 @@
+﻿INSERT INTO "Products" 
+("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription",
+"Availability", "Status", "CategoryID", "BrandID", "UserID") 
+VALUES
+ ('Телевизор Kivi 32H750NB', 8495, 12, '/items/productimages/televizor-kivi-32h750nb_0.png', 4.19, '', 'Телевизор Kivi 32H750NB — это модель на базе операционной системы Google Android TV, открывающей доступ к персонализации контента, голосовому помощнику и интеграции с другими устройствами. Встроенное Smart TV позволяет просматривать фильмы и видео, слушать музыку в режиме онлайн. Безрамочный экран диагональю 32" воспроизводит изображение в разрешении 1366x768 пикс. Функция Low Blue Light устраняет синее излучение вредное для глаз. Цифровое шумоподавление очищает картинку от помех и искажений, делая его более четким и детализированным.
+
+Акустическая система представлена двумя встроенными колонками общей мощностью 16 Вт, которые воспроизводят чистый, качественный, яркий и объемный звук. Телевизор может подключаться к другим устройствам через интерфейсы Wi-Fi, Bluetooth, USB, LAN, HDMI и разъем для наушников. Кадры сменяются плавно благодаря частоте обновления 60 Гц, не утомляя глаза. Модель может управляться голосом, с помощью смартфона или пульта ДУ. За счет тонкого корпуса в современном дизайне прибор сочетается со всеми типами интерьера. В комплекте настольная подставка.', 'InStock', 'Discount', 1, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Kivi'), 1);
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Kivi 32H750NB'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'HD (1366x768 Пикс)' AND "Type" = 'Экран));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Kivi 32H750NB'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '32' AND "Type" = 'Диагональ));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Kivi 32H750NB'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '60' AND "Type" = 'Частота обновления));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Kivi 32H750NB'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'LED' AND "Type" = 'Технология экрана));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Kivi 32H750NB'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'Direct LED' AND "Type" = 'Тип светодиодной подсветки));
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-kivi-32h750nb_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Kivi 32H750NB'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-kivi-32h750nb_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Kivi 32H750NB'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-kivi-32h750nb_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Kivi 32H750NB'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-kivi-32h750nb_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Kivi 32H750NB'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-kivi-32h750nb_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Kivi 32H750NB'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-kivi-32h750nb_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Kivi 32H750NB'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-kivi-32h750nb_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Kivi 32H750NB'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-kivi-32h750nb_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Kivi 32H750NB'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-kivi-32h750nb_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Kivi 32H750NB'));

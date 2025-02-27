@@ -1,0 +1,87 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Стиральная машина Centek CT-1902', 12995, 6, '/items/productimages/stiralnaya-mashina-centek-ct-1902_0.png', 4.71, '', 'Белая стиральная машина Centek CT-1902 позволяет дозагружать белье в процессе выполнения программы. Модель оснащена системой защиты от детей, от протекания, контролем пенообразования. Мощность прибора — 2 кВт. Габариты — 85х59,5х46,3см. Вес изделия — 52 кг. Способ управления устройством — кнопочный/сенсорный. Дверь сделана из прочного пластика и стекла. Диаметр люка составляет 48 см. Скорость отжима регулируется до 1000 оборотов в минуту. Объем барабана составляет 39,5 л. Машина вмещает до 6 кг белья. За один цикл расходуется до 43 л воды.', 'InStock', 'Discount', 5, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Centek'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Стиральная машина Centek CT-1902'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина Centek CT-1902' 
+        AND a."Name" = '6' 
+        AND a."Type" = 'Максимальная загрузка'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина Centek CT-1902' 
+        AND a."Name" = '1000' 
+        AND a."Type" = 'Максимальная скорость отжима'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина Centek CT-1902' 
+        AND a."Name" = 'стандартный' 
+        AND a."Type" = 'Мотор'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина Centek CT-1902' 
+        AND a."Name" = 'Да' 
+        AND a."Type" = 'Обработка паром'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина Centek CT-1902' 
+        AND a."Name" = '85*59.5*46.3 см' 
+        AND a."Type" = 'Габаритные размеры (В*Ш*Г)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-centek-ct-1902_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Centek CT-1902'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-centek-ct-1902_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Centek CT-1902'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-centek-ct-1902_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Centek CT-1902'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-centek-ct-1902_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Centek CT-1902'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-centek-ct-1902_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Centek CT-1902'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-centek-ct-1902_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Centek CT-1902'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-centek-ct-1902_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Centek CT-1902'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-centek-ct-1902_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Centek CT-1902'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-centek-ct-1902_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Centek CT-1902'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-centek-ct-1902_9.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Centek CT-1902'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-centek-ct-1902_10.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Centek CT-1902'));

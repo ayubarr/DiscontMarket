@@ -1,0 +1,77 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Газовая плита (50-55 см) Gorenje GGI5BCLI', 40499, 16, '/items/productimages/gazovaya-plita-50-55-sm-gorenje-ggi5bcli_0.png', 4.63, '', 'Газовая плита (50-55 см) Gorenje GGI5BCLI узкого типа оснащена четырьмя конфорками разного диаметра. Решетка изготовлена из высокопрочного чугуна, который устойчив к перепадам температуры и выдерживает значительные нагрузки. С помощью механических переключателей можно регулировать уровень пламени или установить минимальный огонь при повороте ручкой до упора. Для безопасности предусмотрено автоматическое угасание огня. За счет компактного размера модель оптимальна для помещений небольшой площади. 
+
+Устройство имеет духовку объемом 67 л с максимальной температурой 275°C, что оптимально для приготовления блюд из овощей, мяса или хлебобулочных изделий. Для удобного хранения кастрюль или сковороды рекомендуется использовать выдвижной ящик для посуды. Чтобы подключить модель в домах, где нет центрального трубопровода, то следует воспользоваться жиклерами для газового баллона. Поверхность плиты очищается специальным средством и губкой без абразивных частиц.', 'InStock', 'Discount', 4, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Gorenje'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Газовая плита (50-55 см) Gorenje GGI5BCLI'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Газовая плита (50-55 см) Gorenje GGI5BCLI' 
+        AND a."Name" = '4' 
+        AND a."Type" = 'Количество конфорок'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Газовая плита (50-55 см) Gorenje GGI5BCLI' 
+        AND a."Name" = 'чугунная' 
+        AND a."Type" = 'Решетка'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Газовая плита (50-55 см) Gorenje GGI5BCLI' 
+        AND a."Name" = '67' 
+        AND a."Type" = 'Объем духовки'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Газовая плита (50-55 см) Gorenje GGI5BCLI' 
+        AND a."Name" = '85*50*59.4 см' 
+        AND a."Type" = 'Габаритные размеры (В*Ш*Г)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Газовая плита (50-55 см) Gorenje GGI5BCLI' 
+        AND a."Name" = 'автоматический' 
+        AND a."Type" = 'Электроподжиг конфорок'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/gazovaya-plita-50-55-sm-gorenje-ggi5bcli_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Газовая плита (50-55 см) Gorenje GGI5BCLI'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/gazovaya-plita-50-55-sm-gorenje-ggi5bcli_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Газовая плита (50-55 см) Gorenje GGI5BCLI'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/gazovaya-plita-50-55-sm-gorenje-ggi5bcli_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Газовая плита (50-55 см) Gorenje GGI5BCLI'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/gazovaya-plita-50-55-sm-gorenje-ggi5bcli_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Газовая плита (50-55 см) Gorenje GGI5BCLI'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/gazovaya-plita-50-55-sm-gorenje-ggi5bcli_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Газовая плита (50-55 см) Gorenje GGI5BCLI'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/gazovaya-plita-50-55-sm-gorenje-ggi5bcli_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Газовая плита (50-55 см) Gorenje GGI5BCLI'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/gazovaya-plita-50-55-sm-gorenje-ggi5bcli_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Газовая плита (50-55 см) Gorenje GGI5BCLI'));

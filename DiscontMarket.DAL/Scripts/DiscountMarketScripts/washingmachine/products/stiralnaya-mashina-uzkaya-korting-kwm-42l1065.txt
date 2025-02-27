@@ -1,0 +1,63 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Стиральная машина узкая Korting KWM 42L1065', 24995, 9, '/items/productimages/stiralnaya-mashina-uzkaya-korting-kwm-42l1065_0.png', 4.7, '', 'Узкая стиральная машина Korting KWM 42L1065 — модель, оснащенная большим количеством программ, что позволяет очищать от загрязнений вещи из хлопка, шерсти, синтетики. В основе работы лежит стандартный мотор, характеризующийся сравнительно невысоким уровнем шума в процессе отжима (до 76 дБ). Барабан, выполненный из полимера, обладает объемом 41 л.
+Устройство с фронтальной загрузкой вмещает до 6 кг белья. Люк диаметром 33 см, произведенный из пластика, распахивается в левую сторону на 135°, что гарантирует удобную загрузку белья. Максимальная скорость отжима достигает 1000 об/мин (класс С). В прибор установлены режимы «Антиаллергия», «Спорт», «Цветные ткани». Предусмотрена минипрограмма длительностью 15 минут.
+Модель относится к классу энергоэффективности А+++. За один цикл при стирке потребляется до 0,65 кВт*ч. Класс стирки — А. Стиральная машина оборудована панелью управления с сенсорными кнопками и поворотными переключателями, которые позволяют выбирать режим, температуру и другие параметры. Вся информация отображается на цифровом дисплее. Функция «Отложенный старт» дает возможность включать стирку в заданное время. 
+Защита от протечек уменьшает вероятность затопления помещения в случае поломки устройства. Защита от детей закрывает доступ к изменению настроек во время работы. Потребляемая мощность техники составляет 1850 Вт.', 'InStock', 'Discount', 5, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Korting'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая Korting KWM 42L1065'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина узкая Korting KWM 42L1065' 
+        AND a."Name" = '6' 
+        AND a."Type" = 'Максимальная загрузка'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина узкая Korting KWM 42L1065' 
+        AND a."Name" = '1000' 
+        AND a."Type" = 'Максимальная скорость отжима'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина узкая Korting KWM 42L1065' 
+        AND a."Name" = 'стандартный' 
+        AND a."Type" = 'Мотор'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина узкая Korting KWM 42L1065' 
+        AND a."Name" = '84.5*59.7*41.6 см' 
+        AND a."Type" = 'Габаритные размеры (В*Ш*Г)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина узкая Korting KWM 42L1065' 
+        AND a."Name" = 'отсутствует' 
+        AND a."Type" = 'Тип защиты от протечек'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-uzkaya-korting-kwm-42l1065_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая Korting KWM 42L1065'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-uzkaya-korting-kwm-42l1065_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая Korting KWM 42L1065'));

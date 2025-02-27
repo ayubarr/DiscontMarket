@@ -1,0 +1,86 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Холодильник Carrera №825', 36499, 7, '/items/productimages/holodilnik-carrera--825_0.png', 4.62, '', 'Холодильник Carrera CRRF825, матовый черный — классическая двухкамерная модель общим объемом 344 л, из них 109 л приходится на расположенную снизу морозильную камеру.
+
+• <b>Инверторный компрессор</b>
+Характеризуется долговечностью, экономичным энергопотреблением и низким уровнем шума 42 дБ. В год расходуется 343 кВт*ч, что соответствует классу А+.
+
+• <b>Электронное управление</b>
+На двери расположен дисплей, отображающий актуальную температуру и предоставляющий доступ ко всем возможностям устройства.
+
+• <b>Дополнительные режимы</b>
+«Суперохлаждение» и «Суперзамораживание» пригодятся при большой загрузке продуктов. «Отпуск» позволит не отключать холодильник полностью на время отсутствия.
+
+• <b>Звуковой сигнал</b>
+Предупреждает, если дверь долго остается открытой.
+
+• <b>Система Total No Frost</b>
+Предотвращает появление инея, избавляет от необходимости тратить время на ручную разморозку.
+
+Оборудование холодильного отделения состоит из четырех стеклянных полок, одна из которых служит крышкой бокса для овощей и фруктов. На двери — пять карманов. Также предусмотрен металлический подвес для бутылок. Морозилка оснащена тремя ящиками и может заморозить до 9 кг продуктов в сутки. Двери открываются налево, при необходимости их можно перенавесить.', 'InStock', 'Discount', 3, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Carrera'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Холодильник Carrera №825'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Carrera №825' 
+        AND a."Name" = 'инверторный' 
+        AND a."Type" = 'Тип компрессора'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Carrera №825' 
+        AND a."Name" = '195' 
+        AND a."Type" = 'Высота'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Carrera №825' 
+        AND a."Name" = '60' 
+        AND a."Type" = 'Ширина'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Carrera №825' 
+        AND a."Name" = '65.8' 
+        AND a."Type" = 'Глубина'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Carrera №825' 
+        AND a."Name" = 'электронный' 
+        AND a."Type" = 'Тип управления'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-carrera--825_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Carrera №825'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-carrera--825_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Carrera №825'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-carrera--825_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Carrera №825'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-carrera--825_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Carrera №825'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-carrera--825_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Carrera №825'));

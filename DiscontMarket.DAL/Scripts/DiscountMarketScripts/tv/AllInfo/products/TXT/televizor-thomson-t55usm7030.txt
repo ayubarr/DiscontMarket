@@ -1,0 +1,47 @@
+﻿INSERT INTO "Products" 
+("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription",
+"Availability", "Status", "CategoryID", "BrandID", "UserID") 
+VALUES
+ ('Телевизор Thomson T55USM7030', 22645, 15, '/items/productimages/televizor-thomson-t55usm7030_0.png', 4.16, '', 'Телевизор Thomson T55USM7030 — 55-дюймовая модель в корпусе черного цвета, отображающая яркую и детализированную картинку с реалистичной цветопередачей. Разрешение составляет 3840х2160 пикселей, что позволяет в мельчайших подробностях рассмотреть отдельные элементы. Частота обновления достигает 50 Гц. Технология LED обеспечивает равномерную и яркую подсветку. Формат экрана — 16:9. Углы обзора — 178° по горизонтали и вертикали. <br>Устройство оснащено Smart TV, что позволяет устанавливать популярные приложения, воспроизводить контент с онлайн-платформ, заниматься интернет-серфингом. Тип предустановленной ОС — Android TV, которая обладает интуитивно понятным интерфейсом и простыми настройками. Доступно управление голосом, что упрощает поиск необходимого контента или настроек.<br>Прием ТВ-сигнала осуществляется тюнером DVB, который поддерживает широкий набор стандартов: T/T2/C/S/S2. Встроенный модуль Bluetooth обеспечивает сопряжение с другими устройствами для обмена файлами. Возможна запись с ТВ на USB-устройство. Объемное и чистое звуковое сопровождение обеспечивается аудиосистемой мощностью 20 Вт. Потребляемая мощность равна 75 Вт. Из интерфейсов предусмотрены HDMI (три), USB 3.0 тип A (два), USB 2.0 тип A (два), LAN (RJ45), разъем для DVB CAM, разъем 3,5 мм для наушников. Возможен монтаж на стену при помощи крепления типа VESA 300x300. Размеры без подставки (входит в комплект) составляют 123,6х71,5х9, вес — 11,8 кг.', 'InStock', 'Discount', 1, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Thomson'), 1);
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Thomson T55USM7030'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '4K Ultra HD (3840x2160 Пикс)' AND "Type" = 'Экран));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Thomson T55USM7030'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '55' AND "Type" = 'Диагональ));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Thomson T55USM7030'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '60' AND "Type" = 'Частота обновления));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Thomson T55USM7030'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'LED' AND "Type" = 'Технология экрана));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Thomson T55USM7030'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'Direct LED' AND "Type" = 'Тип светодиодной подсветки));
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-thomson-t55usm7030_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Thomson T55USM7030'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-thomson-t55usm7030_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Thomson T55USM7030'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-thomson-t55usm7030_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Thomson T55USM7030'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-thomson-t55usm7030_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Thomson T55USM7030'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-thomson-t55usm7030_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Thomson T55USM7030'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-thomson-t55usm7030_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Thomson T55USM7030'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-thomson-t55usm7030_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Thomson T55USM7030'));

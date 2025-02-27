@@ -1,0 +1,78 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Встраиваемая посудомоечная машина 45 см Hiberg I46 1030', 27145, 11, '/items/productimages/vstraivaemaya-posudomoechnaya-mashina-45-sm-hiberg-i46-1030_0.png', 4.9, '', 'Узкая встраиваемая посудомоечная машина шириной 45 см Hiberg I46 1030 оборудована тремя корзинами для загрузки до 10 комплектов посуды. Корзины регулируются по высоте, это позволяет загружать даже крупногабаритную кухонную утварь. Они оснащены держателями для тарелок и бокалов, которые при необходимости можно сложить. Отдельно присутствует корзина-лоток для столовых приборов.
+
+Модель обладает габаритами 5х44,8х55 см и весит 33 кг. Ниша для встраивания должна соответствовать размерам: 86,5х45х58 см. Цвет модели — нержавеющая сталь. Внутренняя поверхность модели выполнена из нержавеющей стали. У машины электронная панель управления, предусмотрена индикация наличия соли и ополаскивателя. 
+
+Предустановлены шесть автоматических программ для мойки, в том числе «Эко», «Стекло». Максимальная температура нагрева воды достигает 70°С. Время работы «Быстрой программы» занимает 30 минут. Предусмотрены: половинная загрузка, интенсивный режим. Присутствует таймер отложенного старта до 12 часов. Доступно использование универсальных моющих средств 3 в 1. Сушка конденсационная. О завершении работы оповещает звуковой сигнал.
+
+Потребляемая мощность стандартного мотора составляет 2100 Вт. Модель работает с годовым энергопотреблением в 237 кВт*ч, за один цикл — 0,83 кВт*ч. Посудомоечная машина относится к А-классу энергоэффективности, А-классу сушки и мойки. Уровень шума не превышает 47 дБ. Расход воды за мойку достигает 9 л. В целях безопасности машина оснащена системой полной защиты от протечек.', 'InStock', 'Discount', 28, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Hiberg'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 45 см Hiberg I46 1030'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Встраиваемая посудомоечная машина 45 см Hiberg I46 1030' 
+        AND a."Name" = '9' 
+        AND a."Type" = 'Расход воды за цикл'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Встраиваемая посудомоечная машина 45 см Hiberg I46 1030' 
+        AND a."Name" = '10 комплектов' 
+        AND a."Type" = 'Максимальная вместимость'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Встраиваемая посудомоечная машина 45 см Hiberg I46 1030' 
+        AND a."Name" = '6' 
+        AND a."Type" = 'Количество программ мойки'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Встраиваемая посудомоечная машина 45 см Hiberg I46 1030' 
+        AND a."Name" = 'стандартный' 
+        AND a."Type" = 'Мотор'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Встраиваемая посудомоечная машина 45 см Hiberg I46 1030' 
+        AND a."Name" = '86.5*45*58' 
+        AND a."Type" = 'Размер ниши, мм (В*Ш*Г)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-45-sm-hiberg-i46-1030_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 45 см Hiberg I46 1030'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-45-sm-hiberg-i46-1030_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 45 см Hiberg I46 1030'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-45-sm-hiberg-i46-1030_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 45 см Hiberg I46 1030'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-45-sm-hiberg-i46-1030_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 45 см Hiberg I46 1030'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-45-sm-hiberg-i46-1030_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 45 см Hiberg I46 1030'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-45-sm-hiberg-i46-1030_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 45 см Hiberg I46 1030'));

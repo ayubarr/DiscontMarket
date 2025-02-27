@@ -1,0 +1,16 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/elektroplitka-goodhelper-es-10p15_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Электроплитка Goodhelper ES-10P15'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/elektroplitka-goodhelper-es-10p15_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Электроплитка Goodhelper ES-10P15'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/elektroplitka-goodhelper-es-10p15_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Электроплитка Goodhelper ES-10P15'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/elektroplitka-goodhelper-es-10p15_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Электроплитка Goodhelper ES-10P15'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/elektroplitka-goodhelper-es-10p15_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Электроплитка Goodhelper ES-10P15'));

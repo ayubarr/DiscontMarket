@@ -1,0 +1,16 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/elektroplitka-kitfort-kt-114_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Электроплитка Kitfort КТ-114'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/elektroplitka-kitfort-kt-114_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Электроплитка Kitfort КТ-114'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/elektroplitka-kitfort-kt-114_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Электроплитка Kitfort КТ-114'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/elektroplitka-kitfort-kt-114_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Электроплитка Kitfort КТ-114'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/elektroplitka-kitfort-kt-114_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Электроплитка Kitfort КТ-114'));

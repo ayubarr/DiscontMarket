@@ -1,0 +1,28 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-candy-ccrn-6200c-bezhevyi_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Candy CCRN 6200C бежевый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-candy-ccrn-6200c-bezhevyi_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Candy CCRN 6200C бежевый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-candy-ccrn-6200c-bezhevyi_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Candy CCRN 6200C бежевый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-candy-ccrn-6200c-bezhevyi_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Candy CCRN 6200C бежевый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-candy-ccrn-6200c-bezhevyi_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Candy CCRN 6200C бежевый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-candy-ccrn-6200c-bezhevyi_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Candy CCRN 6200C бежевый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-candy-ccrn-6200c-bezhevyi_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Candy CCRN 6200C бежевый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-candy-ccrn-6200c-bezhevyi_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Candy CCRN 6200C бежевый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-candy-ccrn-6200c-bezhevyi_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Candy CCRN 6200C бежевый'));

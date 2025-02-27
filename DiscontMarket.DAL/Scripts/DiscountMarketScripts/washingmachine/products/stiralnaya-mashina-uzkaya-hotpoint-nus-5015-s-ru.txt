@@ -1,0 +1,75 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Стиральная машина узкая Hotpoint NUS 5015 S RU', 18249, 10, '/items/productimages/stiralnaya-mashina-uzkaya-hotpoint-nus-5015-s-ru_0.png', 4.54, '', 'Узкая стиральная машина Hotpoint NUS 5015 S RU потребляемой мощностью 1850 Вт обладает необходимыми функциями для обработки натуральных и синтетических тканей, защитой от случайного включения и перегрузок. Модель относится к А-классу энергоэффективности и обрабатывает за цикл до 5 кг белья, расходуя до 47 л воды. Дверца люка с левым расположением петель открывает доступ в камеру барабана объемом 34 л. Коллекторный двигатель поддерживает скорость отжима до 1000 об/мин. Автоматическая балансировка барабана способствует равномерному распределению вещей по его стенкам во время отжима.<br>Панель управления Hotpoint NUS 5015 S состоит из поворотного регулятора выбора режимов и сенсорного экрана Small DGT с электронным программатором, клавишами настройки температуры (20°С-90°С), интенсивности отжима, времени запуска (отложенный старт в течение ближайших 24 часов). Модель поддерживает 16 автоматических программ, среди которых «Хлопок», «Антиаллергенная», «Микс тканей», «Быстро при 30°С», «Полная загрузка при 45°С», «Пух/перо», «Эко хлопок», «Белое». Среди добавочных функций — «Интенсивная стирка», «Деликатная стирка», «Дополнительное полоскание».<br>Предусмотрены звуковая индикация окончания цикла работы, индикация времени до конца программы, функция дозагрузки белья. Для безопасной эксплуатации техники установлены контроль пенообразования и частичная защита от протечек. Показатели шума во время работы машины не превышают 79 дБ.', 'InStock', 'Discount', 5, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Hotpoint'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая Hotpoint NUS 5015 S RU'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина узкая Hotpoint NUS 5015 S RU' 
+        AND a."Name" = '5' 
+        AND a."Type" = 'Максимальная загрузка'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина узкая Hotpoint NUS 5015 S RU' 
+        AND a."Name" = '1000' 
+        AND a."Type" = 'Максимальная скорость отжима'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина узкая Hotpoint NUS 5015 S RU' 
+        AND a."Name" = 'стандартный' 
+        AND a."Type" = 'Мотор'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина узкая Hotpoint NUS 5015 S RU' 
+        AND a."Name" = '85*59.5*34.8 см' 
+        AND a."Type" = 'Габаритные размеры (В*Ш*Г)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина узкая Hotpoint NUS 5015 S RU' 
+        AND a."Name" = 'отсутствует' 
+        AND a."Type" = 'Тип защиты от протечек'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-uzkaya-hotpoint-nus-5015-s-ru_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая Hotpoint NUS 5015 S RU'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-uzkaya-hotpoint-nus-5015-s-ru_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая Hotpoint NUS 5015 S RU'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-uzkaya-hotpoint-nus-5015-s-ru_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая Hotpoint NUS 5015 S RU'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-uzkaya-hotpoint-nus-5015-s-ru_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая Hotpoint NUS 5015 S RU'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-uzkaya-hotpoint-nus-5015-s-ru_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая Hotpoint NUS 5015 S RU'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-uzkaya-hotpoint-nus-5015-s-ru_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая Hotpoint NUS 5015 S RU'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-uzkaya-hotpoint-nus-5015-s-ru_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая Hotpoint NUS 5015 S RU'));

@@ -1,0 +1,19 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-birusa-m6032-metallik_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Бирюса М6032 металлик'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-birusa-m6032-metallik_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Бирюса М6032 металлик'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-birusa-m6032-metallik_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Бирюса М6032 металлик'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-birusa-m6032-metallik_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Бирюса М6032 металлик'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-birusa-m6032-metallik_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Бирюса М6032 металлик'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-birusa-m6032-metallik_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Бирюса М6032 металлик'));

@@ -1,0 +1,28 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/nastolnaya-elektricheskaya-plita-zigmund--shtain-zip571_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Настольная электрическая плита Zigmund & Shtain ZIP#571'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/nastolnaya-elektricheskaya-plita-zigmund--shtain-zip571_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Настольная электрическая плита Zigmund & Shtain ZIP#571'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/nastolnaya-elektricheskaya-plita-zigmund--shtain-zip571_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Настольная электрическая плита Zigmund & Shtain ZIP#571'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/nastolnaya-elektricheskaya-plita-zigmund--shtain-zip571_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Настольная электрическая плита Zigmund & Shtain ZIP#571'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/nastolnaya-elektricheskaya-plita-zigmund--shtain-zip571_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Настольная электрическая плита Zigmund & Shtain ZIP#571'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/nastolnaya-elektricheskaya-plita-zigmund--shtain-zip571_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Настольная электрическая плита Zigmund & Shtain ZIP#571'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/nastolnaya-elektricheskaya-plita-zigmund--shtain-zip571_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Настольная электрическая плита Zigmund & Shtain ZIP#571'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/nastolnaya-elektricheskaya-plita-zigmund--shtain-zip571_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Настольная электрическая плита Zigmund & Shtain ZIP#571'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/nastolnaya-elektricheskaya-plita-zigmund--shtain-zip571_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Настольная электрическая плита Zigmund & Shtain ZIP#571'));

@@ -1,0 +1,66 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Микроволновая печь соло Samsung MS23DG4504ATBW', 9499, 9, '/items/productimages/mikrovolnovaya-pech-solo-samsung-ms23dg4504atbw_0.png', 4.25, '', 'Микроволновая печь соло Samsung MS23DG4504ATBW обладает объемом 23 л и поворотным столиком диаметром 28,8 см. Модель выполнена в строгом лаконичном дизайне со скрытыми ручками и гармонично впишется практически в любой современный интерьер.<br><br>• <b>Биокерамическое покрытие</b><br>Обладает антибактериальными свойствами, не боится царапин, легко поддается очистке. <br><br>• <b>Интерфейс Simple UX</b><br>Управление простое в освоении: основные, наиболее востребованные функции вынесены на кнопки, их дополняет плавный поворотный элемент.<br><br>• <b>Трехконтурная система распределения тепла (TDS)</b><br>Гарантирует равномерность приготовления или подогрева пищи. <br><br>• <b>Функция поддержания тепла</b><br>Сохранит готовое блюдо горячим столько, сколько потребуется.<br><br>• <b>Функция удаления запахов</b><br>Освежает камеру печи, что особенно актуально между последовательным приготовлением разных блюд. <br><br>Параметры работы можно вводить самостоятельно или использовать предустановленные автоматические программы, среди которых первые, вторые блюда и даже десерты, в числе которых бисквит, брауни, банановый хлеб и другие. Доступен и режим размораживания, в том числе быстрого. Уровней мощность микроволн шесть, максимальная — 800 Вт. Об окончании работы оповещает звуковой сигнал, который при желании можно отключить.', 'InStock', 'Discount', 6, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Samsung'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло Samsung MS23DG4504ATBW'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Микроволновая печь соло Samsung MS23DG4504ATBW' 
+        AND a."Name" = '23' 
+        AND a."Type" = 'Полезный объем'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Микроволновая печь соло Samsung MS23DG4504ATBW' 
+        AND a."Name" = '28.8' 
+        AND a."Type" = 'Диаметр поворотного стола'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Микроволновая печь соло Samsung MS23DG4504ATBW' 
+        AND a."Name" = 'кнопочный/ поворотный' 
+        AND a."Type" = 'Тип управления'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Микроволновая печь соло Samsung MS23DG4504ATBW' 
+        AND a."Name" = 'черный/ серебристый' 
+        AND a."Type" = 'Цвет'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Микроволновая печь соло Samsung MS23DG4504ATBW' 
+        AND a."Name" = 'Да' 
+        AND a."Type" = 'Защита от детей'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-samsung-ms23dg4504atbw_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло Samsung MS23DG4504ATBW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-samsung-ms23dg4504atbw_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло Samsung MS23DG4504ATBW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-samsung-ms23dg4504atbw_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло Samsung MS23DG4504ATBW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-samsung-ms23dg4504atbw_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло Samsung MS23DG4504ATBW'));

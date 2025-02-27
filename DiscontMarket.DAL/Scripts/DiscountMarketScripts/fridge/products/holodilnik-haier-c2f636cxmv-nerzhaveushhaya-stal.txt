@@ -1,0 +1,75 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Холодильник Haier C2F636CXMV нержавеющая сталь', 34499, 7, '/items/productimages/holodilnik-haier-c2f636cxmv-nerzhaveushhaya-stal_0.png', 4.46, '', 'Холодильник с нижней морозильной камерой Haier C2F636CXMV элегантно выглядит, хорошо вписывается в интерьер современной кухни. В нём созданы оптимальные условия для хранения продуктов.
+
+СИСТЕМА NO FROST В ОБОИХ ОТДЕЛЕНИЯХ
+В холодильном и морозильном отделениях холодильника используется система No Frost. Охлаждённый воздух циркулирует по камерам, препятствуя образованию наледи на внутренних стенках и обеспечивая равномерное охлаждение продуктов вне зависимости от того, где они размещены.
+
+СЕНСОРНЫЙ ДИСПЛЕЙ
+Внешний дисплей позволяет одним касанием изменять температуру в холодильнике. не открывая дверь и экономя электроэнергию.
+
+СВЕТОДИОДНОЕ ОСВЕЩЕНИЕ
+Яркие светодиоды позволяют быстро найти нужные продукты. Они потребляют меньше электричества, чем традиционная лампа накаливания, а работают дольше.
+
+СУПЕРЗАМОРАЖИВАНИЕ И СУПЕРОХЛАЖДЕНИЕ
+Разработчики предусмотрели режимы суперзамораживания и суперохлаждения, позволяющие быстро подготовить продукты к длительному хранению или охладить их без потери вкусовых свойств, полезности и привлекательного внешнего вида.
+
+ЗОНА СВЕЖЕСТИ
+В холодильнике предусмотрена зона свежести, в которой мясо и рыба долго сохранят свежесть, а также полезные свойства.', 'InStock', 'Discount', 3, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Haier'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Холодильник Haier C2F636CXMV нержавеющая сталь'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Haier C2F636CXMV нержавеющая сталь' 
+        AND a."Name" = 'стандартный' 
+        AND a."Type" = 'Тип компрессора'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Haier C2F636CXMV нержавеющая сталь' 
+        AND a."Name" = '190.5' 
+        AND a."Type" = 'Высота'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Haier C2F636CXMV нержавеющая сталь' 
+        AND a."Name" = '59.5' 
+        AND a."Type" = 'Ширина'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Haier C2F636CXMV нержавеющая сталь' 
+        AND a."Name" = '67.2' 
+        AND a."Type" = 'Глубина'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Haier C2F636CXMV нержавеющая сталь' 
+        AND a."Name" = '364' 
+        AND a."Type" = 'Общий объем'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-haier-c2f636cxmv-nerzhaveushhaya-stal_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Haier C2F636CXMV нержавеющая сталь'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-haier-c2f636cxmv-nerzhaveushhaya-stal_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Haier C2F636CXMV нержавеющая сталь'));

@@ -1,0 +1,80 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Холодильник многодверный Midea MDRF692MIE46', 62999, 10, '/items/productimages/holodilnik-mnogodvernyi-midea-mdrf692mie46_0.png', 4.84, '', 'Многодверный холодильник Midea MDRF692MIE46 цвета нержавеющей стали оборудован четырьмя дверями с покрытием от отпечатков пальцев. Прибор оснащен электронной панелью управления черного цвета с сенсорными кнопками. Дисплей отображает информацию о включении, режиме работы морозильной и холодильной камер и зоны свежести. В приборе реализована защита от детей. 
+Доступно удаленное управление через мобильное приложение MSmartHome на смартфоне. В устройство заложены автоматические режимы, среди которых «Отпуск», «Легкая заморозка», «Суперзаморозка», «Суперохлаждение».
+Общий объем модели составляет 634 л. Внутренние стенки снабжены антибактериальным покрытием. Холодильник размораживается автоматически с помощью системы No Frost. В приборе реализована функция очистки воздуха, равномерное распределение воздуха обеспечивает встроенный вентилятор.
+Холодильная камера с полезным объемом 357 л снабжена сухой зоной свежести на 25 л. Отсек оборудован держателем для бутылок и дверными карманами. Лампа обеспечивает освещение внутреннего пространства.
+Морозильная камера объемом 174 л снабжена двумя независимыми ящиками. Мощность замораживания достигает 10 кг/сутки. Инверторный компрессор работает с использованием хладагента R 600А. 
+Эта модель обладает классом энергоэффективности А+: годовое потребление электроэнергии не превышает 442 кВт. При отключении энергии прибор сохранит содержимое камер в течении 15 часов. Модель весит 100 кг, обладает размерами 189,8х83,3х65,3 см. Устройство тихое в работе, уровень шума — 35 дБ. В комплект входят лоток для льда и два держателя для яиц.', 'InStock', 'Discount', 3, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Midea'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Midea MDRF692MIE46'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник многодверный Midea MDRF692MIE46' 
+        AND a."Name" = 'инверторный' 
+        AND a."Type" = 'Тип компрессора'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник многодверный Midea MDRF692MIE46' 
+        AND a."Name" = '189.8*83.3*65.3 см' 
+        AND a."Type" = 'Габаритные размеры (В*Ш*Г)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник многодверный Midea MDRF692MIE46' 
+        AND a."Name" = '569' 
+        AND a."Type" = 'Общий объем'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник многодверный Midea MDRF692MIE46' 
+        AND a."Name" = 'сухая' 
+        AND a."Type" = 'Тип зоны сохранения свежести'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник многодверный Midea MDRF692MIE46' 
+        AND a."Name" = 'дистанционный/ сенсорное/ кнопочное' 
+        AND a."Type" = 'Тип управления'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-midea-mdrf692mie46_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Midea MDRF692MIE46'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-midea-mdrf692mie46_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Midea MDRF692MIE46'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-midea-mdrf692mie46_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Midea MDRF692MIE46'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-midea-mdrf692mie46_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Midea MDRF692MIE46'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-midea-mdrf692mie46_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Midea MDRF692MIE46'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-midea-mdrf692mie46_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Midea MDRF692MIE46'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-midea-mdrf692mie46_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Midea MDRF692MIE46'));

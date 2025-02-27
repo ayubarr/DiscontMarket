@@ -1,0 +1,87 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Холодильник Hi HCDN018857DW белый', 14499, 18, '/items/productimages/holodilnik-hi-hcdn018857dw-belyi_0.png', 4.14, '', 'Полезный объем холодильной камеры 204 л
+Полезный объем морозильной камеры 94 л
+производительность морозильной камеры 4,5 кг в сутки
+Ручная система разморозки
+Хранение при отключении питания 10 часов
+Одна полка с регулировкой по высоте
+Полки из закаленного стекла<br><br>Холодильник Hi HCDN018857DW обладает холодильной камерой объемом 204 л (полезный) и морозильным отсеком 94 л. Холодильное отделение оснащено четырьмя полками, тремя боковыми полочками и ящиком для хранения овощей и фруктов. Полки выполнены из закаленного стекла, боковые — из пластика. Система разморозки капельная, эмалированное покрытие легко очищается от загрязнений. <br>Морозильная камера снабжена тремя прозрачными пластиковыми ящиками, производительность составляет 4,5 кг в сутки. Система разморозки ручная. В холодильной камере присутствует подсветка. Температура внутри сохраняется до 10 часов в случае отключения электроэнергии. Прибор потребляет за год около 302 кВт*ч. Дверцу можно вешать на удобную сторону. Уплотнительные резинки снимаются, что позволяет заменять их в случае необходимости. <br>Уровень шума при работе не превышает 40 дБ. Тип используемого хладагента — R600a. В комплекте с холодильником поставляются лоток для яиц и форма для заморозки льда. Вес модели составляет 63 кг.', 'InStock', 'Discount', 3, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Hi'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Холодильник Hi HCDN018857DW белый'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Hi HCDN018857DW белый' 
+        AND a."Name" = 'стандартный' 
+        AND a."Type" = 'Тип компрессора'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Hi HCDN018857DW белый' 
+        AND a."Name" = '188.4' 
+        AND a."Type" = 'Высота'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Hi HCDN018857DW белый' 
+        AND a."Name" = '57.4' 
+        AND a."Type" = 'Ширина'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Hi HCDN018857DW белый' 
+        AND a."Name" = '62.5' 
+        AND a."Type" = 'Глубина'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Hi HCDN018857DW белый' 
+        AND a."Name" = '329' 
+        AND a."Type" = 'Общий объем'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-hi-hcdn018857dw-belyi_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Hi HCDN018857DW белый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-hi-hcdn018857dw-belyi_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Hi HCDN018857DW белый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-hi-hcdn018857dw-belyi_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Hi HCDN018857DW белый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-hi-hcdn018857dw-belyi_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Hi HCDN018857DW белый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-hi-hcdn018857dw-belyi_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Hi HCDN018857DW белый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-hi-hcdn018857dw-belyi_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Hi HCDN018857DW белый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-hi-hcdn018857dw-belyi_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Hi HCDN018857DW белый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-hi-hcdn018857dw-belyi_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Hi HCDN018857DW белый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-hi-hcdn018857dw-belyi_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Hi HCDN018857DW белый'));

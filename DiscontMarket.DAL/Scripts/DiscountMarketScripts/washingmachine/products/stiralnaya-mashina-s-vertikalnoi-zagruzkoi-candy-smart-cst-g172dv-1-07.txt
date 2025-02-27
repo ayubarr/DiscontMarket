@@ -1,0 +1,66 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Стиральная машина с вертикальной загрузкой Candy Smart CST G172DV/1-07', 25999, 10, '/items/productimages/stiralnaya-mashina-s-vertikalnoi-zagruzkoi-candy-smart-cst-g172dv-1-07_0.png', 4.42, '', 'Стиральная машина с вертикальной загрузкой Candy Smart CST G172DV/1-07, белая, оснащена барабаном объемом 46 л, который вмещает до 7 кг белья. <br><br>• <b>15 программ</b> <br>Предустановлены режимы для стирки хлопковых, шерстяных, синтетических тканей, детской одежды, джинсов, деликатных вещей и другие. С особенно сложными загрязнениями поможет справиться «Интенсивная стирка». <br><br>• <b>Отсрочка старта</b> <br>Начало выполнения программы можно отложить на 3, 6 или 9 часов. Это особенно удобно, если у вас действуют раздельные тарифы на электроэнергию: можно запустить прибор ночью и сэкономить. <br><br>• <b>Дополнительное полоскание</b> <br>Позволяет устранить из волокон тканей все остатки моющих средств, особенно пригодится аллергикам и людям с чувствительной кожей. <br><br>У модели стандартный мотор, уровень шума при стирке достигает 61 дБ, при отжиме — 78 дБ. Энергопотребление соответствует классу А и составляет 0,91 кВт*ч за цикл, расход воды — 52 л. <br><br>На панели управления — поворотный переключатель для выбора программ и дисплей, отображающий параметры работы. Скорость отжима регулируется, максимальная — 1100 об/мин. Дверца открывается плавно. <br><br>Стиральная машина контролирует уровень образования пены и баланс барабана, при скачках напряжение в электросети срабатывает защитная система отключения. Габариты Candy Smart CST G172DV/1-07: 86х40,5х60 см, вес — 55,5 кг.', 'InStock', 'Discount', 5, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Candy'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Стиральная машина с вертикальной загрузкой Candy Smart CST G172DV/1-07'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина с вертикальной загрузкой Candy Smart CST G172DV/1-07' 
+        AND a."Name" = '7' 
+        AND a."Type" = 'Максимальная загрузка'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина с вертикальной загрузкой Candy Smart CST G172DV/1-07' 
+        AND a."Name" = 'стандартный' 
+        AND a."Type" = 'Мотор'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина с вертикальной загрузкой Candy Smart CST G172DV/1-07' 
+        AND a."Name" = '1100' 
+        AND a."Type" = 'Максимальная скорость отжима'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина с вертикальной загрузкой Candy Smart CST G172DV/1-07' 
+        AND a."Name" = 'отсутствует' 
+        AND a."Type" = 'Тип защиты от протечек'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина с вертикальной загрузкой Candy Smart CST G172DV/1-07' 
+        AND a."Name" = 'Да' 
+        AND a."Type" = 'Механизм мягкого открытия дверцы'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-s-vertikalnoi-zagruzkoi-candy-smart-cst-g172dv-1-07_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина с вертикальной загрузкой Candy Smart CST G172DV/1-07'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-s-vertikalnoi-zagruzkoi-candy-smart-cst-g172dv-1-07_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина с вертикальной загрузкой Candy Smart CST G172DV/1-07'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-s-vertikalnoi-zagruzkoi-candy-smart-cst-g172dv-1-07_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина с вертикальной загрузкой Candy Smart CST G172DV/1-07'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-s-vertikalnoi-zagruzkoi-candy-smart-cst-g172dv-1-07_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина с вертикальной загрузкой Candy Smart CST G172DV/1-07'));

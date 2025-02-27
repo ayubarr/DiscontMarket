@@ -1,0 +1,16 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-vityaz-32lh0221_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Витязь 32LH0221'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-vityaz-32lh0221_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Витязь 32LH0221'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-vityaz-32lh0221_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Витязь 32LH0221'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-vityaz-32lh0221_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Витязь 32LH0221'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-vityaz-32lh0221_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Витязь 32LH0221'));

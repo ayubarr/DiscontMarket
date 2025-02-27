@@ -1,0 +1,69 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Холодильник Kraft KR-75W', 7499, 6, '/items/productimages/holodilnik-kraft-kr-75w_0.png', 4.42, '', 'Kraft KR-75W – компактный холодильник с полезным объёмом 68 литров, 4 из которых занимает морозилка. Модель отлично подходит для небольшой семьи и для использования на даче. Дверь можно навесить на выбор справа или слева, так что проблем с размещением точно не возникнет.
+
+ЭНЕРГОЭФФЕКТИВНОСТЬ
+Устройство оснащено одним компрессором, максимально экономично потребляющим электроэнергию. Благодаря этому ваши коммунальные платежи существенно не увеличатся.
+
+УПРАВЛЕНИЕ
+Контрольная панель представлена удобным и надёжным поворотным регулятором. С помощью него можно установить оптимальный микроклимат в камере: чем больше выбранная цифра, тем ниже будет показатель температуры.
+
+ОБСЛУЖИВАНИЕ
+Перед размораживанием Kraft KR-75W нужно полностью освободить от продуктов. Полки можно снять и промыть под проточной водой. Для очищения внутренних поверхностей подходит тёплый мыльный раствор и мягкая тканевая салфетка.', 'InStock', 'Discount', 3, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Kraft'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Холодильник Kraft KR-75W'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Kraft KR-75W' 
+        AND a."Name" = 'стандартный' 
+        AND a."Type" = 'Тип компрессора'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Kraft KR-75W' 
+        AND a."Name" = '64*44*51 см' 
+        AND a."Type" = 'Габаритные размеры (В*Ш*Г)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Kraft KR-75W' 
+        AND a."Name" = '75' 
+        AND a."Type" = 'Общий объем'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Kraft KR-75W' 
+        AND a."Name" = 'A+' 
+        AND a."Type" = 'Класс энергоэффективности'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Kraft KR-75W' 
+        AND a."Name" = 'электронный/ механический' 
+        AND a."Type" = 'Тип управления'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-kraft-kr-75w_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Kraft KR-75W'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-kraft-kr-75w_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Kraft KR-75W'));

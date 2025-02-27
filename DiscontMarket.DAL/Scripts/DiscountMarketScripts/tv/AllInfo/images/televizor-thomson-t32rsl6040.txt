@@ -1,0 +1,16 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-thomson-t32rsl6040_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Thomson T32RSL6040'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-thomson-t32rsl6040_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Thomson T32RSL6040'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-thomson-t32rsl6040_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Thomson T32RSL6040'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-thomson-t32rsl6040_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Thomson T32RSL6040'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-thomson-t32rsl6040_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Thomson T32RSL6040'));

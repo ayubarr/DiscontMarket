@@ -1,0 +1,16 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-samsung-qe50qn90cauxce_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung QE50QN90CAUXCE'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-samsung-qe50qn90cauxce_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung QE50QN90CAUXCE'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-samsung-qe50qn90cauxce_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung QE50QN90CAUXCE'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-samsung-qe50qn90cauxce_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung QE50QN90CAUXCE'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-samsung-qe50qn90cauxce_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung QE50QN90CAUXCE'));

@@ -1,0 +1,62 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Настольная электрическая плита Матрена МА-061', 720, 9, '/items/productimages/nastolnaya-elektricheskaya-plita-matrena-ma-061_0.png', 4.36, '', 'Настольная электрическая плита «Матрена» МА-061 — удобная в эксплуатации, легкая (вес — 1,285 кг), компактная (габариты — 6,5х21х23 см) модель, которую можно брать с собой в поездки, походы и путешествия. Стальной корпус устойчив к коррозии, деформации от ударных и других нагрузок. Эмалированная варочная поверхность очищается от загрязнений обычными средствами. 
+
+Выбрать нужный уровень мощности можно поворотным переключателем, расположенным спереди. Для подогрева продуктов можно использовать опцию поддержания температуры. Световой индикатор показывает, что устройство включено в сеть. При перегреве предусмотрено автоотключение, что увеличивает безопасность применения. Ножки с прорезиненным покрытием не скользят по столу.', 'InStock', 'Discount', 4, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Матрена'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Настольная электрическая плита Матрена МА-061'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Настольная электрическая плита Матрена МА-061' 
+        AND a."Name" = '1' 
+        AND a."Type" = 'Количество конфорок'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Настольная электрическая плита Матрена МА-061' 
+        AND a."Name" = 'спиральные' 
+        AND a."Type" = 'Тип конфорок'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Настольная электрическая плита Матрена МА-061' 
+        AND a."Name" = '1000' 
+        AND a."Type" = 'Потребляемая мощность'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Настольная электрическая плита Матрена МА-061' 
+        AND a."Name" = 'эмалированная сталь' 
+        AND a."Type" = 'Материал варочной поверхности'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Настольная электрическая плита Матрена МА-061' 
+        AND a."Name" = 'Да' 
+        AND a."Type" = 'Поддержание температуры'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/nastolnaya-elektricheskaya-plita-matrena-ma-061_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Настольная электрическая плита Матрена МА-061'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/nastolnaya-elektricheskaya-plita-matrena-ma-061_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Настольная электрическая плита Матрена МА-061'));

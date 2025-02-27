@@ -1,0 +1,4 @@
+﻿INSERT INTO "Attributes" ("NameTranslate", "Name", "Type") VALUES
+('4K UHD', '4K UHD', 'Технология экрана');
+INSERT INTO "AttributeCategory" ("AttributeID", "CategoryID") VALUES
+((SELECT "ID" FROM "Attributes" WHERE "Name" = '4K UHD' AND "Type" = 'Технология экрана'), (SELECT "ID" FROM "Categories" WHERE "Name" = 'tv'));

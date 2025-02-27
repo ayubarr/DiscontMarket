@@ -1,0 +1,31 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-birusa-wm-sm814-03_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Бирюса WM-SM814/03'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-birusa-wm-sm814-03_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Бирюса WM-SM814/03'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-birusa-wm-sm814-03_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Бирюса WM-SM814/03'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-birusa-wm-sm814-03_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Бирюса WM-SM814/03'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-birusa-wm-sm814-03_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Бирюса WM-SM814/03'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-birusa-wm-sm814-03_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Бирюса WM-SM814/03'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-birusa-wm-sm814-03_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Бирюса WM-SM814/03'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-birusa-wm-sm814-03_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Бирюса WM-SM814/03'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-birusa-wm-sm814-03_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Бирюса WM-SM814/03'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-birusa-wm-sm814-03_9.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Бирюса WM-SM814/03'));

@@ -1,0 +1,76 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Настольная индукционная плита GFGRIL GF-INP20', 8856, 10, '/items/productimages/nastolnaya-indukcionnaya-plita-gfgril-gf-inp20_0.png', 4.34, '', 'Настольная индукционная плита GFGRIL GF-INP20 черного цвета оснащена двумя конфорками мощностью 2000 Вт каждая. Они начинают нагревать посуду сразу после включения, что позволяет минимизировать расходы на электричество и избежать теплопотерь. 
+У модели две автоматические программы работы («Варка» и «Кипячение») и восемь ступеней регулировки температуры нагрева (от 80°C до 240°C). Рабочая поверхность плиты изготовлена из термостойкого стекла. Установленные настройки отображаются на цифровом дисплее. Присутствует встроенный таймер — от 1 минуты до 4 часов. Конфорки автоматически отключаются при отсутствии посуды. Также предусмотрена защита от перегрева.', 'InStock', 'Discount', 4, (SELECT "ID" FROM "Brands" WHERE "Name" = 'GFGRIL'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Настольная индукционная плита GFGRIL GF-INP20'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Настольная индукционная плита GFGRIL GF-INP20' 
+        AND a."Name" = '2' 
+        AND a."Type" = 'Количество конфорок'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Настольная индукционная плита GFGRIL GF-INP20' 
+        AND a."Name" = 'индукционные' 
+        AND a."Type" = 'Тип конфорок'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Настольная индукционная плита GFGRIL GF-INP20' 
+        AND a."Name" = '2000' 
+        AND a."Type" = 'Потребляемая мощность'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Настольная индукционная плита GFGRIL GF-INP20' 
+        AND a."Name" = 'стеклокерамика' 
+        AND a."Type" = 'Материал варочной поверхности'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Настольная индукционная плита GFGRIL GF-INP20' 
+        AND a."Name" = 'Да' 
+        AND a."Type" = 'Таймер'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/nastolnaya-indukcionnaya-plita-gfgril-gf-inp20_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Настольная индукционная плита GFGRIL GF-INP20'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/nastolnaya-indukcionnaya-plita-gfgril-gf-inp20_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Настольная индукционная плита GFGRIL GF-INP20'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/nastolnaya-indukcionnaya-plita-gfgril-gf-inp20_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Настольная индукционная плита GFGRIL GF-INP20'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/nastolnaya-indukcionnaya-plita-gfgril-gf-inp20_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Настольная индукционная плита GFGRIL GF-INP20'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/nastolnaya-indukcionnaya-plita-gfgril-gf-inp20_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Настольная индукционная плита GFGRIL GF-INP20'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/nastolnaya-indukcionnaya-plita-gfgril-gf-inp20_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Настольная индукционная плита GFGRIL GF-INP20'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/nastolnaya-indukcionnaya-plita-gfgril-gf-inp20_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Настольная индукционная плита GFGRIL GF-INP20'));

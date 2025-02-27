@@ -1,0 +1,76 @@
+﻿INSERT INTO "Products" 
+("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription",
+"Availability", "Status", "CategoryID", "BrandID", "UserID") 
+VALUES
+ ('Телевизор Hisense 40A5KQ', 13499, 6, '/items/productimages/televizor-hisense-40a5kq_0.png', 4.19, '', 'Телевизор Hisense 40A5KQ, черный — модель с QLED-экраном диагональю 40 дюймов разрешением Full HD (1920х1080 пикселей), демонстрирующим качественное изображение с высокой степенью детализации. За плавность смены кадров отвечает частота обновления 60 Гц. Пиковая яркость — 200 нит, контрастность — 5000:1. Соотношение сторон — 16:9. Картинка обрабатывается системой цифрового шумоподавления. Технология Quantum Dot калибрует изображение, позволяя увидеть фильм именно таким каким его задумали создатели. Акустическая система представлена двумя динамиками мощностью по 8 Вт, громкость регулируется автоматически. Поддерживаются Dolby Audio (MS12), DTS.
+Телевизор работает со Smart TV, соединение с Сетью производится по Wi-Fi или проводным способом — через разъем LAN. Доступ в интернет расширит возможности прибора и позволит самостоятельно выбирать что смотреть из огромного репертуара онлайн-кинотеатров и стриминговых сервисов. Операционная система Vidaa обладает удобным интерфейсом, дает возможность устанавливать необходимые приложения, предлагает универсальный поиск контента и персональные рекомендации. Цифровой тюнер DVB T2/C/S2 обеспечивает прием цифровых, кабельных и спутниковых каналов. Поддерживается воспроизведение с USB-накопителей через соответствующий порт — интегрированы два USB 2.0 тип A.
+Кроме того, эта модель оснащена двумя разъемами HDMI, слотом для модуля DVB CAM, 3,5-миллиметровым разъемом для подключения наушников. Телевизор оснащается подставкой, размеры с ней составляют 900х179х542 мм, вес — 5,5 кг. При желании его можно зафиксировать на стене при помощи кронштейна VESA 200х200 мм.', 'InStock', 'Discount', 1, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Hisense'), 1);
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hisense 40A5KQ'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'Full HD (1920x1080 Пикс)' AND "Type" = 'Экран));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hisense 40A5KQ'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '40' AND "Type" = 'Диагональ));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hisense 40A5KQ'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '60' AND "Type" = 'Частота обновления));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hisense 40A5KQ'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'QLED' AND "Type" = 'Технология экрана));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hisense 40A5KQ'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'Direct LED' AND "Type" = 'Тип светодиодной подсветки));
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-hisense-40a5kq_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hisense 40A5KQ'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-hisense-40a5kq_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hisense 40A5KQ'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-hisense-40a5kq_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hisense 40A5KQ'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-hisense-40a5kq_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hisense 40A5KQ'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-hisense-40a5kq_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hisense 40A5KQ'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-hisense-40a5kq_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hisense 40A5KQ'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-hisense-40a5kq_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hisense 40A5KQ'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-hisense-40a5kq_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hisense 40A5KQ'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-hisense-40a5kq_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hisense 40A5KQ'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-hisense-40a5kq_9.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hisense 40A5KQ'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-hisense-40a5kq_10.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hisense 40A5KQ'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-hisense-40a5kq_11.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hisense 40A5KQ'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-hisense-40a5kq_12.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hisense 40A5KQ'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-hisense-40a5kq_13.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hisense 40A5KQ'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-hisense-40a5kq_14.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hisense 40A5KQ'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-hisense-40a5kq_15.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hisense 40A5KQ'));

@@ -1,0 +1,25 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-samsung-ue75bu8000u_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung UE75BU8000U'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-samsung-ue75bu8000u_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung UE75BU8000U'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-samsung-ue75bu8000u_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung UE75BU8000U'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-samsung-ue75bu8000u_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung UE75BU8000U'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-samsung-ue75bu8000u_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung UE75BU8000U'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-samsung-ue75bu8000u_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung UE75BU8000U'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-samsung-ue75bu8000u_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung UE75BU8000U'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-samsung-ue75bu8000u_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung UE75BU8000U'));

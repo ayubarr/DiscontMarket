@@ -1,0 +1,19 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-maunfeld-mbf193nffw_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Maunfeld MBF193NFFW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-maunfeld-mbf193nffw_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Maunfeld MBF193NFFW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-maunfeld-mbf193nffw_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Maunfeld MBF193NFFW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-maunfeld-mbf193nffw_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Maunfeld MBF193NFFW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-maunfeld-mbf193nffw_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Maunfeld MBF193NFFW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-maunfeld-mbf193nffw_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Maunfeld MBF193NFFW'));

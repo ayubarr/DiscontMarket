@@ -1,0 +1,70 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Мини-печь Artel AMD 3216 E White/Black', 4499, 16, '/items/productimages/mini-pech-artel-amd-3216-e-white-black_0.png', 4.21, '', 'Мини-печь Artel AMD 3216 E с камерой 32 л работает в трех режимах. Тип управления — механический, настройки регулируются с помощью поворотных ручек на фронтальной панели. Максимальная температура нагрева — 300°C. 
+
+Есть индикация включения и выбранного режима. Корпус сделан из алюминия и поликарбоната, передняя панель — из стекла и пластика. Есть нескользящие прорезиненные ножки. В комплект поставки входит глубокий противень.
+
+Потребляемая мощность — 2000 Вт, для подключения к розетке предусмотрен сетевой шнур 1 м. Размеры устройства — 30,5 х 52 х 43 см, вес — 10,6 кг.', 'InStock', 'Discount', 6, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Artel'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Мини-печь Artel AMD 3216 E White/Black'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Мини-печь Artel AMD 3216 E White/Black' 
+        AND a."Name" = '32' 
+        AND a."Type" = 'Объем'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Мини-печь Artel AMD 3216 E White/Black' 
+        AND a."Name" = '2000' 
+        AND a."Type" = 'Потребляемая мощность'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Мини-печь Artel AMD 3216 E White/Black' 
+        AND a."Name" = 'ТЭН' 
+        AND a."Type" = 'Тип гриля'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Мини-печь Artel AMD 3216 E White/Black' 
+        AND a."Name" = 'белый/ черный' 
+        AND a."Type" = 'Цвет'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Мини-печь Artel AMD 3216 E White/Black' 
+        AND a."Name" = 'Bio керамика' 
+        AND a."Type" = 'Внутреннее покрытие'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-artel-amd-3216-e-white-black_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Artel AMD 3216 E White/Black'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-artel-amd-3216-e-white-black_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Artel AMD 3216 E White/Black'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-artel-amd-3216-e-white-black_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Artel AMD 3216 E White/Black'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-artel-amd-3216-e-white-black_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Artel AMD 3216 E White/Black'));

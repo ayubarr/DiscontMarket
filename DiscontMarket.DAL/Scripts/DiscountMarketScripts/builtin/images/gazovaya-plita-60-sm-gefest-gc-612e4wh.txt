@@ -1,0 +1,16 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/gazovaya-plita-60-sm-gefest-gc-612e4wh_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Газовая плита (60 см) Gefest GC 612E4WH'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/gazovaya-plita-60-sm-gefest-gc-612e4wh_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Газовая плита (60 см) Gefest GC 612E4WH'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/gazovaya-plita-60-sm-gefest-gc-612e4wh_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Газовая плита (60 см) Gefest GC 612E4WH'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/gazovaya-plita-60-sm-gefest-gc-612e4wh_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Газовая плита (60 см) Gefest GC 612E4WH'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/gazovaya-plita-60-sm-gefest-gc-612e4wh_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Газовая плита (60 см) Gefest GC 612E4WH'));

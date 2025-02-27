@@ -1,0 +1,57 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Стиральная машина Miele WWV980WPS', 299999, 14, '/items/productimages/stiralnaya-mashina-miele-wwv980wps_0.png', 4.95, '', 'Стиральная машина Miele WWV980WPS отличается специальными программами для разного типа одежды и видов тканей, режимами пятновыведения и разрыхления белья после отжима. Возможность выбора температуры, скорости отжима в пределах 1600 об/мин и запуска таймера для отсроченного старта продолжительностью до 24 часов гарантируют удобство.<br><br>• <b>Управление M Touch, как на смартфоне</b><br>Для настроек используется TFT-дисплей, поддерживающим касания, смахивания и прокрутки. На экране отображаются выбранные опции, этапы и время.<br><br>• <b>Функция Miele@home</b><br>Объединение всех умных приборов Miele в единую сеть.<br><br>• <b>Технологии TwinDos и PowerWash</b><br>Автоматическая дозировка моющих средств и оптимальные параметры работы для больших и маленьких загрузок, благодаря чему достигается устранение до 99,9% бактерий. <br><br>• <b>Система подачи пара SteamCare</b><br>Освежение и предварительное разглаживание вещей.<br><br>• <b>Сотовый барабан с загрузкой до 9 кг</b><br>Особая рельефная поверхность позволяет белью скользить по водяной глади, благодаря чему достигается максимально бережное воздействие.<br><br>Устройство оснащено полной защитой от протечек Waterproof, защитой от детей, контролем дисбаланса и пенообразовании. Для безопасности в случае скачков напряжение происходит автоматическое отключение. Стандартный мотор мощностью 2600 Вт обеспечивает уровень шума при стирке не больше 46 дБ и при отжиме до 72 дБ. Модель с классами энергоэффективности, стирки и отжима А за цикл расходует 0,6 кВт*ч и 54 л воды.<br>', 'InStock', 'Discount', 5, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Miele'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Стиральная машина Miele WWV980WPS'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина Miele WWV980WPS' 
+        AND a."Name" = '9' 
+        AND a."Type" = 'Максимальная загрузка'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина Miele WWV980WPS' 
+        AND a."Name" = '1600' 
+        AND a."Type" = 'Максимальная скорость отжима'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина Miele WWV980WPS' 
+        AND a."Name" = 'стандартный' 
+        AND a."Type" = 'Мотор'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина Miele WWV980WPS' 
+        AND a."Name" = 'Да' 
+        AND a."Type" = 'Обработка паром'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина Miele WWV980WPS' 
+        AND a."Name" = '85*59.6*64.3 см' 
+        AND a."Type" = 'Габаритные размеры (В*Ш*Г)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-miele-wwv980wps_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Miele WWV980WPS'));

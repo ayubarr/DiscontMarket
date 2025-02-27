@@ -1,0 +1,50 @@
+﻿INSERT INTO "Products" 
+("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription",
+"Availability", "Status", "CategoryID", "BrandID", "UserID") 
+VALUES
+ ('Телевизор Toshiba 65C350ME', 38999, 11, '/items/productimages/televizor-toshiba-65c350me_0.png', 5, '', 'Телевизор Toshiba 65C350ME оснащен экраном диагональю 65 дюймов. Модель передает изображение в разрешении 4К, что позволяет получить высококачественный визуальный контент.<br><br>• <b>Равномерная яркость и высокое качество картинки</b><br>DLED-подсветка телевизора обеспечивает более равномерную яркость экрана по сравнению с обычной. Это обеспечивает более естественное и детализированное изображение.<br><br>• <b> Революционная технология Regza Engine ZR</b><br>Максимально раскрывает потенциал контента, повышая его до уровня 4K. Это обеспечивает реалистичность картинки, позволяет сохранить четкость и детализацию даже в максимально динамичных сценах.<br><br>• <b>Оптимизация с помощью AI Picture Optimizer</b><br>Технология работает в режиме реального времени, мгновенно анализируя каждый кадр и автоматически подстраивая настройки под один из 11 предустановленных сценариев: распознавание лиц, зданий, внутреннего освещения.<br><br>• <b>HDR и Dolby Atmos</b><br>Поддержка HDR-видео в формате Dolby Vision и звука Dolby Atmos позволяет погрузиться в невероятное аудиовизуальное путешествие прямо у себя дома. Сочетание детализированного изображения и мощного звука создает ощущение полного погружения в контент. <br><br>Телевизор оснащен портом для подключения наушников, модулем Bluetooth, двумя USB и тремя разъемами HDMI для подключения дополнительных устройств.', 'InStock', 'Discount', 1, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Toshiba'), 1);
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Toshiba 65C350ME'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '4K Ultra HD (3840x2160 Пикс)' AND "Type" = 'Экран));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Toshiba 65C350ME'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '65' AND "Type" = 'Диагональ));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Toshiba 65C350ME'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '60' AND "Type" = 'Частота обновления));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Toshiba 65C350ME'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'LED' AND "Type" = 'Технология экрана));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Toshiba 65C350ME'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'Direct LED' AND "Type" = 'Тип светодиодной подсветки));
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-toshiba-65c350me_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Toshiba 65C350ME'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-toshiba-65c350me_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Toshiba 65C350ME'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-toshiba-65c350me_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Toshiba 65C350ME'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-toshiba-65c350me_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Toshiba 65C350ME'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-toshiba-65c350me_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Toshiba 65C350ME'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-toshiba-65c350me_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Toshiba 65C350ME'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-toshiba-65c350me_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Toshiba 65C350ME'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-toshiba-65c350me_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Toshiba 65C350ME'));

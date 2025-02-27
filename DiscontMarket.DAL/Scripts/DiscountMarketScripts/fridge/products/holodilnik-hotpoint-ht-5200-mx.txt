@@ -1,0 +1,81 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Холодильник Hotpoint HT 5200 MX', 23695, 18, '/items/productimages/holodilnik-hotpoint-ht-5200-mx_0.png', 4.69, '', '', 'InStock', 'Discount', 3, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Hotpoint'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Холодильник Hotpoint HT 5200 MX'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Hotpoint HT 5200 MX' 
+        AND a."Name" = 'стандартный' 
+        AND a."Type" = 'Тип компрессора'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Hotpoint HT 5200 MX' 
+        AND a."Name" = '196' 
+        AND a."Type" = 'Высота'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Hotpoint HT 5200 MX' 
+        AND a."Name" = '60' 
+        AND a."Type" = 'Ширина'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Hotpoint HT 5200 MX' 
+        AND a."Name" = '64' 
+        AND a."Type" = 'Глубина'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Hotpoint HT 5200 MX' 
+        AND a."Name" = '353' 
+        AND a."Type" = 'Общий объем'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-hotpoint-ht-5200-mx_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Hotpoint HT 5200 MX'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-hotpoint-ht-5200-mx_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Hotpoint HT 5200 MX'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-hotpoint-ht-5200-mx_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Hotpoint HT 5200 MX'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-hotpoint-ht-5200-mx_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Hotpoint HT 5200 MX'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-hotpoint-ht-5200-mx_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Hotpoint HT 5200 MX'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-hotpoint-ht-5200-mx_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Hotpoint HT 5200 MX'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-hotpoint-ht-5200-mx_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Hotpoint HT 5200 MX'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-hotpoint-ht-5200-mx_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Hotpoint HT 5200 MX'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-hotpoint-ht-5200-mx_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Hotpoint HT 5200 MX'));

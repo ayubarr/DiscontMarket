@@ -1,0 +1,4 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-lg-mw25r35gis_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь LG MW25R35GIS'));

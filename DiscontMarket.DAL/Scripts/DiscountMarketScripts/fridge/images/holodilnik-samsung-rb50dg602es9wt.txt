@@ -1,0 +1,19 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-samsung-rb50dg602es9wt_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Samsung RB50DG602ES9WT'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-samsung-rb50dg602es9wt_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Samsung RB50DG602ES9WT'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-samsung-rb50dg602es9wt_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Samsung RB50DG602ES9WT'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-samsung-rb50dg602es9wt_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Samsung RB50DG602ES9WT'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-samsung-rb50dg602es9wt_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Samsung RB50DG602ES9WT'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-samsung-rb50dg602es9wt_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Samsung RB50DG602ES9WT'));

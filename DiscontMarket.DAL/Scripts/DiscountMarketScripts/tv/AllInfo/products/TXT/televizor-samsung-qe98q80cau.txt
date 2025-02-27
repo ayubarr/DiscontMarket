@@ -1,0 +1,47 @@
+﻿INSERT INTO "Products" 
+("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription",
+"Availability", "Status", "CategoryID", "BrandID", "UserID") 
+VALUES
+ ('Телевизор Samsung QE98Q80CAU', 349999, 7, '/items/productimages/televizor-samsung-qe98q80cau_0.png', 4.78, '', 'Телевизор Samsung QE98Q80CAU — устройство, работающее под управлением высокопроизводительного процессора Quantum 4K. Разрешение при диагонали 98 дюймов составляет 3840х2160 пикселей, за счет чего формируется высокая детализация. Частота обновления доходит до 120 Гц, что делает телевизор идеальным для динамичных и быстрых сцен. Можно наслаждаться их плавностью и отсутствием задержек и размытий. Технология HDR делает картинку более четкой — в том числе в наиболее темных и светлых сценах. Система цифрового шумоподавления вступает в действие, когда ТВ-сигнал слабый. Поддерживается технология Dolby Atmos. Режим EyeComfort служит для интеллектуального управления яркостью экрана, что уменьшает нагрузку на зрение.
+Устройство оснащено Smart TV. Благодаря этому можно использовать все возможности интернета: искать и воспроизводить интересующие фильмы и сериалы на онлайн-платформах, смотреть познавательные видеоролики, читать новости и многое другое. В качестве ОС установлена Tizen с интуитивно понятным настройками и доступом к магазину с сотнями бесплатных приложений. Установить подключение к интернету можно беспроводным способом — телевизор поддерживает Wi-Fi. Сопряжение с другими устройствами возможно через Bluetooth. Smart Hub позволяет оптимизировать подбор контента, за счет чего можно потратить меньше времени на поиск интересующих фильмов или телепрограмм. 
+Фронтальные АС мощностью 40 Вт формируют объемный звук для погружения в происходящее на экране. Уникальная технология Q-Symphony отвечает за то, чтобы динамики устройства и саундбара (при наличии) работали синхронно без отключения динамиков телевизора. Управление осуществляется при помощи пульта ДУ.
+Для декодирование сигнала используется цифровой тюнер DVB — поддерживает стандарты T2/C/S2. Возможно воспроизведение медиафайлов c USB-накопителей — для этого устройство оснащено соответствующими портами. Предусмотрено четыре HDMI, LAN-разъем и слот для установки DVB CAM. Защита от детей служит для того, чтобы закрыть доступ к определенным функциям. Мощность потребления — 289 Вт. Для крепления на стену используется подвес типа VESA 600х400. Настольная подставка входит в комплект. Размеры модели составляют 124,4х218,1х48,4 см.', 'InStock', 'Discount', 1, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Samsung'), 1);
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung QE98Q80CAU'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '4K Ultra HD (3840x2160 Пикс)' AND "Type" = 'Экран));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung QE98Q80CAU'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '98' AND "Type" = 'Диагональ));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung QE98Q80CAU'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '120' AND "Type" = 'Частота обновления));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung QE98Q80CAU'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'QLED' AND "Type" = 'Технология экрана));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung QE98Q80CAU'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'Direct LED' AND "Type" = 'Тип светодиодной подсветки));
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-samsung-qe98q80cau_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung QE98Q80CAU'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-samsung-qe98q80cau_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung QE98Q80CAU'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-samsung-qe98q80cau_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung QE98Q80CAU'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-samsung-qe98q80cau_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung QE98Q80CAU'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-samsung-qe98q80cau_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung QE98Q80CAU'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-samsung-qe98q80cau_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung QE98Q80CAU'));

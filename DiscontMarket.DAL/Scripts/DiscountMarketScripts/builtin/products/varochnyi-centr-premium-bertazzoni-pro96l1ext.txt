@@ -1,0 +1,75 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Варочный центр Премиум Bertazzoni PRO96L1EXT', 224995, 7, '/items/productimages/varochnyi-centr-premium-bertazzoni-pro96l1ext_0.png', 4.85, '', '', 'InStock', 'Discount', 4, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Bertazzoni'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Варочный центр Премиум Bertazzoni PRO96L1EXT'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Варочный центр Премиум Bertazzoni PRO96L1EXT' 
+        AND a."Name" = '80' 
+        AND a."Type" = 'Объем первой духовки'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Варочный центр Премиум Bertazzoni PRO96L1EXT' 
+        AND a."Name" = '80' 
+        AND a."Type" = 'Объем духовки'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Варочный центр Премиум Bertazzoni PRO96L1EXT' 
+        AND a."Name" = 'газовые' 
+        AND a."Type" = 'Тип конфорок'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Варочный центр Премиум Bertazzoni PRO96L1EXT' 
+        AND a."Name" = '6' 
+        AND a."Type" = 'Количество конфорок'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Варочный центр Премиум Bertazzoni PRO96L1EXT' 
+        AND a."Name" = 'каталитич. эмаль' 
+        AND a."Type" = 'Внутреннее покрытие'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/varochnyi-centr-premium-bertazzoni-pro96l1ext_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Варочный центр Премиум Bertazzoni PRO96L1EXT'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/varochnyi-centr-premium-bertazzoni-pro96l1ext_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Варочный центр Премиум Bertazzoni PRO96L1EXT'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/varochnyi-centr-premium-bertazzoni-pro96l1ext_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Варочный центр Премиум Bertazzoni PRO96L1EXT'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/varochnyi-centr-premium-bertazzoni-pro96l1ext_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Варочный центр Премиум Bertazzoni PRO96L1EXT'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/varochnyi-centr-premium-bertazzoni-pro96l1ext_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Варочный центр Премиум Bertazzoni PRO96L1EXT'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/varochnyi-centr-premium-bertazzoni-pro96l1ext_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Варочный центр Премиум Bertazzoni PRO96L1EXT'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/varochnyi-centr-premium-bertazzoni-pro96l1ext_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Варочный центр Премиум Bertazzoni PRO96L1EXT'));

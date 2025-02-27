@@ -1,0 +1,16 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-pozis-rk-fnf-173_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Pozis RK-FNF-173'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-pozis-rk-fnf-173_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Pozis RK-FNF-173'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-pozis-rk-fnf-173_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Pozis RK-FNF-173'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-pozis-rk-fnf-173_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Pozis RK-FNF-173'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-pozis-rk-fnf-173_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Pozis RK-FNF-173'));

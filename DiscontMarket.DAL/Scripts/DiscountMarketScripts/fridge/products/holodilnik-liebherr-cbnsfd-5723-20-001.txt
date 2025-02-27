@@ -1,0 +1,90 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Холодильник Liebherr CBNsfd 5723-20 001', 60999, 8, '/items/productimages/holodilnik-liebherr-cbnsfd-5723-20-001_0.png', 4.53, '', 'Холодильник Liebherr CBNsfd 5723-20 001 с нижним расположением морозильной камеры работает на базе стандартного компрессора. Прибор оснащен двумя перенавешиваемыми металлическими дверцами, регулируемыми по высоте ножками и роликами для транспортировки. За верхней створкой расположен сенсорный дисплей, который позволяет настраивать работу системы одним касанием. Механизм закрытия дверей исключает образование зазоров и проникновение теплого воздуха. Уровень шума во время работы агрегата не превышает 37 дБ.
+Объем холодильной камеры c LED-подсветкой составляет 255 л. Здесь поддерживается температура от 3°С до 9°С. Верхняя полка складывается, позволяя размещать высокую посуду. Контейнер EasyFresh с системой контроля влажности и температуры предназначен для хранения фруктов, овощей, зелени, деликатных продуктов. Вентилятор с угольным фильтром FreshAir обеспечивает активную циркуляцию воздуха в камере и предупреждает образование запахов. 
+В морозильном отделении объемом 94 л поддерживается температура от -15°С до -26°С. Мощность замораживания составляет 16 кг в сутки. Раздельные контуры охлаждения исключают воздухообмен между холодильным и морозильным отсеком.
+Прибор поддерживает технологию No Frost, которая способствует постоянной циркуляции воздуха, предупреждает образование наледи на внутренних стенках, не требует ручной разморозки камер. При отключении от электросети морозильный отсек сохраняет холод в течение 24 часов.', 'InStock', 'Discount', 3, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Liebherr'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Холодильник Liebherr CBNsfd 5723-20 001'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Liebherr CBNsfd 5723-20 001' 
+        AND a."Name" = 'инверторный' 
+        AND a."Type" = 'Тип компрессора'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Liebherr CBNsfd 5723-20 001' 
+        AND a."Name" = '201.5' 
+        AND a."Type" = 'Высота'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Liebherr CBNsfd 5723-20 001' 
+        AND a."Name" = '59.7' 
+        AND a."Type" = 'Ширина'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Liebherr CBNsfd 5723-20 001' 
+        AND a."Name" = '67.5' 
+        AND a."Type" = 'Глубина'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Liebherr CBNsfd 5723-20 001' 
+        AND a."Name" = '381' 
+        AND a."Type" = 'Общий объем'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-liebherr-cbnsfd-5723-20-001_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Liebherr CBNsfd 5723-20 001'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-liebherr-cbnsfd-5723-20-001_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Liebherr CBNsfd 5723-20 001'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-liebherr-cbnsfd-5723-20-001_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Liebherr CBNsfd 5723-20 001'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-liebherr-cbnsfd-5723-20-001_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Liebherr CBNsfd 5723-20 001'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-liebherr-cbnsfd-5723-20-001_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Liebherr CBNsfd 5723-20 001'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-liebherr-cbnsfd-5723-20-001_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Liebherr CBNsfd 5723-20 001'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-liebherr-cbnsfd-5723-20-001_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Liebherr CBNsfd 5723-20 001'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-liebherr-cbnsfd-5723-20-001_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Liebherr CBNsfd 5723-20 001'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-liebherr-cbnsfd-5723-20-001_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Liebherr CBNsfd 5723-20 001'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-liebherr-cbnsfd-5723-20-001_9.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Liebherr CBNsfd 5723-20 001'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-liebherr-cbnsfd-5723-20-001_10.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Liebherr CBNsfd 5723-20 001'));

@@ -1,0 +1,55 @@
+﻿INSERT INTO "Products" 
+("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription",
+"Availability", "Status", "CategoryID", "BrandID", "UserID") 
+VALUES
+ ('Телевизор Hisense 100U7KQ', 249999, 15, '/items/productimages/televizor-hisense-100u7kq_0.png', 4.6, '', 'Телевизор Hisense 100U7KQ оснащен экраном, диагональ которого 100", или 254 см. Разрешение — 3840х2160 пикселей, что соответствует формату 4K (Ultra HD). Предусмотрены цифровое шумоподавление и поддержка технологии HDR. В корпус встроена акустическая система 60 Вт. Доступен голосовой помощник Алиса. 
+
+Модель работает под управлением операционной системы Vidaa. Беспроводное и кабельное подключение к интернету и локальными сетям обеспечивают модуль Wi-Fi и разъем LAN. Интерфейсы USB и HDMI отвечают за взаимодействие с периферийными устройствами и внешними накопителями. Корпус дополнен фоновой подсветкой. Настольная подставка входит в комплект.', 'InStock', 'Discount', 1, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Hisense'), 1);
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hisense 100U7KQ'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '4K Ultra HD (3840x2160 Пикс)' AND "Type" = 'Экран));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hisense 100U7KQ'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '100' AND "Type" = 'Диагональ));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hisense 100U7KQ'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '144' AND "Type" = 'Частота обновления));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hisense 100U7KQ'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'VA' AND "Type" = 'Технология экрана));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hisense 100U7KQ'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'Mini LED' AND "Type" = 'Тип светодиодной подсветки));
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-hisense-100u7kq_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hisense 100U7KQ'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-hisense-100u7kq_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hisense 100U7KQ'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-hisense-100u7kq_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hisense 100U7KQ'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-hisense-100u7kq_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hisense 100U7KQ'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-hisense-100u7kq_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hisense 100U7KQ'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-hisense-100u7kq_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hisense 100U7KQ'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-hisense-100u7kq_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hisense 100U7KQ'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-hisense-100u7kq_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hisense 100U7KQ'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-hisense-100u7kq_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hisense 100U7KQ'));

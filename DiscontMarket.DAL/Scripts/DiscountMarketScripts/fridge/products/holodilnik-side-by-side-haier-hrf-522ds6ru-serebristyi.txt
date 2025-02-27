@@ -1,0 +1,81 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Холодильник (Side-by-Side) Haier HRF-522DS6RU серебристый', 55499, 8, '/items/productimages/holodilnik-side-by-side-haier-hrf-522ds6ru-serebristyi_0.png', 4.18, '', 'Холодильник Side-by-Side Haier HRF-522DS6RU, серебристый — вместительная модель общим объемом 522 л. Прибор работает по технологии No Frost — в нем не образуется инея и наледи, поэтому ручное размораживание не требуется. 
+
+Установлен современный инверторный компрессор, который гарантирует точное поддержание температуры и экономичное потребление электроэнергии класса А+, в год расходуется 400 кВт*ч. Система заправлена озонобезопасным хладагентом R600A. Уровень шума при работе не превышает 38 дБ. Климатический класс — SN/N/ST. Технология Multi Air Flow обеспечивает циркуляцию воздуха, он не застаивается и гарантирует одинаковые условия хранения во всем пространстве камер.
+
+Внутреннее оснащение холодильного отделения (334 л) состоит из пяти полок, нижняя из которых служит крышкой верхнего контейнера для фруктов и овощей (их два). На двери — три кармана, прилагается подставка для яиц. Светодиодное освещение яркое и экономичное, помогает без труда найти нужный продукт. Оборудование морозильной камеры (173 л) аналогичное, но на двери расположено четыре кармана. В сутки можно заморозить до 10 кг свежих припасов, при отключении питания содержимое будет сохраняться от таяния в течение 21 часа.
+
+Управление электронное, дисплей вынесен на фасадную сторону. С его помощью выбирается температура охлаждения и активируются дополнительные режимы «Суперохлаждение» и «Суперзамораживание». Габариты холодильника: 179х90,8х65,5 см, вес — 98 кг.', 'InStock', 'Discount', 3, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Haier'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Холодильник (Side-by-Side) Haier HRF-522DS6RU серебристый'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник (Side-by-Side) Haier HRF-522DS6RU серебристый' 
+        AND a."Name" = 'инверторный' 
+        AND a."Type" = 'Тип компрессора'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник (Side-by-Side) Haier HRF-522DS6RU серебристый' 
+        AND a."Name" = '179*90.8*65.5 см' 
+        AND a."Type" = 'Габаритные размеры (В*Ш*Г)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник (Side-by-Side) Haier HRF-522DS6RU серебристый' 
+        AND a."Name" = '522' 
+        AND a."Type" = 'Общий объем'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник (Side-by-Side) Haier HRF-522DS6RU серебристый' 
+        AND a."Name" = 'электронный' 
+        AND a."Type" = 'Тип управления'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник (Side-by-Side) Haier HRF-522DS6RU серебристый' 
+        AND a."Name" = 'металл' 
+        AND a."Type" = 'Материал двери'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-side-by-side-haier-hrf-522ds6ru-serebristyi_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник (Side-by-Side) Haier HRF-522DS6RU серебристый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-side-by-side-haier-hrf-522ds6ru-serebristyi_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник (Side-by-Side) Haier HRF-522DS6RU серебристый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-side-by-side-haier-hrf-522ds6ru-serebristyi_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник (Side-by-Side) Haier HRF-522DS6RU серебристый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-side-by-side-haier-hrf-522ds6ru-serebristyi_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник (Side-by-Side) Haier HRF-522DS6RU серебристый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-side-by-side-haier-hrf-522ds6ru-serebristyi_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник (Side-by-Side) Haier HRF-522DS6RU серебристый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-side-by-side-haier-hrf-522ds6ru-serebristyi_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник (Side-by-Side) Haier HRF-522DS6RU серебристый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-side-by-side-haier-hrf-522ds6ru-serebristyi_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник (Side-by-Side) Haier HRF-522DS6RU серебристый'));

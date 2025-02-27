@@ -1,0 +1,50 @@
+﻿INSERT INTO "Products" 
+("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription",
+"Availability", "Status", "CategoryID", "BrandID", "UserID") 
+VALUES
+ ('Телевизор Sber SDX-65UQ5232T', 29995, 6, '/items/productimages/televizor-sber-sdx-65uq5232t_0.png', 4.54, '', 'Телевизор Sber SDX-65UQ5232T в темно-сером корпусе поставляется с настольной подставкой и поддерживает подвес VESA 300x200. Модель потребляет 100 Вт мощности и оснащается 65-дюймовой Direct LED-панелью. В основе прибора находится ОС «Салют ТВ». Устройство оборудовано фронтальной аудиосистемой мощностью 20 Вт. Управление осуществляется дистанционно, при помощи пульта. Интерфейсная панель включает три разъема HDMI, четыре USB, LAN и Toshlink.', 'InStock', 'Discount', 1, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Sber'), 1);
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Sber SDX-65UQ5232T'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '4K Ultra HD (3840x2160 Пикс)' AND "Type" = 'Экран));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Sber SDX-65UQ5232T'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '65' AND "Type" = 'Диагональ));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Sber SDX-65UQ5232T'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'QLED' AND "Type" = 'Технология экрана));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Sber SDX-65UQ5232T'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'Direct LED' AND "Type" = 'Тип светодиодной подсветки));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Sber SDX-65UQ5232T'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'Да' AND "Type" = 'Поддержка Smart TV));
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-sber-sdx-65uq5232t_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Sber SDX-65UQ5232T'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-sber-sdx-65uq5232t_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Sber SDX-65UQ5232T'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-sber-sdx-65uq5232t_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Sber SDX-65UQ5232T'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-sber-sdx-65uq5232t_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Sber SDX-65UQ5232T'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-sber-sdx-65uq5232t_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Sber SDX-65UQ5232T'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-sber-sdx-65uq5232t_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Sber SDX-65UQ5232T'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-sber-sdx-65uq5232t_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Sber SDX-65UQ5232T'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-sber-sdx-65uq5232t_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Sber SDX-65UQ5232T'));

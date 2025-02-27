@@ -1,0 +1,28 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-grundig-gkpn66930lww_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Grundig GKPN66930LWW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-grundig-gkpn66930lww_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Grundig GKPN66930LWW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-grundig-gkpn66930lww_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Grundig GKPN66930LWW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-grundig-gkpn66930lww_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Grundig GKPN66930LWW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-grundig-gkpn66930lww_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Grundig GKPN66930LWW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-grundig-gkpn66930lww_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Grundig GKPN66930LWW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-grundig-gkpn66930lww_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Grundig GKPN66930LWW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-grundig-gkpn66930lww_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Grundig GKPN66930LWW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-grundig-gkpn66930lww_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Grundig GKPN66930LWW'));

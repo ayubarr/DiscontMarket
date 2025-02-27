@@ -1,0 +1,19 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-maunfeld-mffr185sb_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Maunfeld MFFR185SB'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-maunfeld-mffr185sb_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Maunfeld MFFR185SB'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-maunfeld-mffr185sb_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Maunfeld MFFR185SB'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-maunfeld-mffr185sb_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Maunfeld MFFR185SB'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-maunfeld-mffr185sb_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Maunfeld MFFR185SB'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-maunfeld-mffr185sb_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Maunfeld MFFR185SB'));

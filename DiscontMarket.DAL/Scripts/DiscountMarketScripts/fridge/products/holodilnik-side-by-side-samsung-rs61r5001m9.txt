@@ -1,0 +1,75 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Холодильник (Side-by-Side) Samsung RS61R5001M9', 99999, 8, '/items/productimages/holodilnik-side-by-side-samsung-rs61r5001m9_0.png', 4.87, '', 'Холодильник Side-by-Side Samsung RS61R5001M9, матовый серебристый выполнен по технологии Space Max: за счет особой теплоизоляции толщина стенок уменьшена, общий полезный объем — увеличен. Он составляет 647 л при габаритах прибора 178х91х71 см. Ручки утоплены и не скрадывают пространство. 
+Оснащение холодильной камеры состоит из четырех полок, пяти дверных карманов и двух контейнеров для овощей и фруктов. Светодиодное освещение обеспечивает хороший обзор всего пространства. Морозильная камера оснащена четырьмя полками, пятью карманами на двери и двумя выдвижными ящиками. Мощность замораживания составляет 14 кг в сутки. При отключении питания продукты смогут храниться в холодильнике в течение 10 часов. 
+Управление электронное, сенсорный дисплей размещен на фасадной стороне дверцы. Активация режимов «Быстрое охлаждение» и «Быстрое замораживание» будет полезно при крупной загрузке и не позволит свежим припасам поднять внутреннюю температуру. «Отпуск» даст возможность сократить потребление энергии на время отсутствия владельца. Если забыть закрыть дверцу, устройство предупредит звуковым сигналом. 
+Инверторный компрессор отличается экономичным потреблением электроэнергии (420 кВт*ч в год, класс А+) и низким уровнем шума (41 дБ). Современный хладагент R600A (изобутан) безопасен для окружающей среды. Климатический класс этой модели — SN-T. Размораживание автоматическое, производится по технологии No Frost. Вес холодильника — 101 кг.', 'InStock', 'Discount', 3, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Samsung'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Холодильник (Side-by-Side) Samsung RS61R5001M9'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник (Side-by-Side) Samsung RS61R5001M9' 
+        AND a."Name" = 'инверторный' 
+        AND a."Type" = 'Тип компрессора'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник (Side-by-Side) Samsung RS61R5001M9' 
+        AND a."Name" = '178*91*71 см' 
+        AND a."Type" = 'Габаритные размеры (В*Ш*Г)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник (Side-by-Side) Samsung RS61R5001M9' 
+        AND a."Name" = '647' 
+        AND a."Type" = 'Общий объем'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник (Side-by-Side) Samsung RS61R5001M9' 
+        AND a."Name" = 'электронный' 
+        AND a."Type" = 'Тип управления'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник (Side-by-Side) Samsung RS61R5001M9' 
+        AND a."Name" = 'металл' 
+        AND a."Type" = 'Материал двери'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-side-by-side-samsung-rs61r5001m9_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник (Side-by-Side) Samsung RS61R5001M9'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-side-by-side-samsung-rs61r5001m9_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник (Side-by-Side) Samsung RS61R5001M9'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-side-by-side-samsung-rs61r5001m9_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник (Side-by-Side) Samsung RS61R5001M9'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-side-by-side-samsung-rs61r5001m9_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник (Side-by-Side) Samsung RS61R5001M9'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-side-by-side-samsung-rs61r5001m9_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник (Side-by-Side) Samsung RS61R5001M9'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-side-by-side-samsung-rs61r5001m9_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник (Side-by-Side) Samsung RS61R5001M9'));

@@ -1,0 +1,66 @@
+﻿INSERT INTO "Products" 
+("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription",
+"Availability", "Status", "CategoryID", "BrandID", "UserID") 
+VALUES
+ ('Телевизор Hisense 85A6BG', 62245, 8, '/items/productimages/televizor-hisense-85a6bg_0.png', 4.21, '', 'Телевизор Hisense 85A6BG оснащен сертифицированным разрешением 4К. Технология экрана 4K UHD обеспечивает широкий спектр цветов и оттенков с 10-битной глубиной цвета. Диагональ экрана равна 85", разрешение — 3840x2160 пикс. Широкий угол обзора сохраняет качество изображения при любом местоположении во время просмотра. Частота обновления 60 Гц обеспечивает плавное воспроизведение движения на экране. Установлена система цифрового шумоподавления. Модель поддерживает технологию Dolby Vision, которая придает изображению еще больший контраст и яркость и позволяет не упустить при просмотре ни одной детали.
+
+Установлена Vidaa — интеллектуальная операционная система простого типа, которая быстро запускает процессы. Она обеспечивает доступ к большому количеству приложений напрямую с телевизора. Встроена функция поддержки Smart TV, Sleep-таймер, защиты от детей. Систему звука составляют встроенные динамики DTS Virtual X с мощностью фронтальных АС 2х15 Вт и низкочастотных — АС 30 Вт.
+
+Для управления используется пульт ДУ. Интерфейс телевизора представлен тремя портами HDMI, двумя портами USB 3.0 типа A, LAN-разъемом (RJ45), разъемом для модуля DVB CAM, разъемом для наушников 3,5 мм. Мощность модели составляет 160 Вт. Корпус сделан в черном цвете, оснащен встроенной подсветкой. Подставка для установки телевизора на поверхности входит в комплект. Вес модели составляет 45 кг. Габаритные размеры (без подставки) — 109,04х190,3х8,5 см.', 'InStock', 'Discount', 1, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Hisense'), 1);
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hisense 85A6BG'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '4K Ultra HD (3840x2160 Пикс)' AND "Type" = 'Экран));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hisense 85A6BG'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '85' AND "Type" = 'Диагональ));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hisense 85A6BG'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '60' AND "Type" = 'Частота обновления));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hisense 85A6BG'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'LED' AND "Type" = 'Технология экрана));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hisense 85A6BG'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'Direct LED' AND "Type" = 'Тип светодиодной подсветки));
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-hisense-85a6bg_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hisense 85A6BG'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-hisense-85a6bg_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hisense 85A6BG'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-hisense-85a6bg_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hisense 85A6BG'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-hisense-85a6bg_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hisense 85A6BG'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-hisense-85a6bg_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hisense 85A6BG'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-hisense-85a6bg_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hisense 85A6BG'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-hisense-85a6bg_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hisense 85A6BG'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-hisense-85a6bg_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hisense 85A6BG'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-hisense-85a6bg_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hisense 85A6BG'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-hisense-85a6bg_9.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hisense 85A6BG'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-hisense-85a6bg_10.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hisense 85A6BG'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-hisense-85a6bg_11.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hisense 85A6BG'));

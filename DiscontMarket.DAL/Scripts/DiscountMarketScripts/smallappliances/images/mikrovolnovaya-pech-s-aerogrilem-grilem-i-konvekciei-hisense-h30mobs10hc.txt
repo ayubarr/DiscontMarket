@@ -1,0 +1,25 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-s-aerogrilem-grilem-i-konvekciei-hisense-h30mobs10hc_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь с аэрогрилем, грилем и конвекцией Hisense H30MOBS10HC'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-s-aerogrilem-grilem-i-konvekciei-hisense-h30mobs10hc_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь с аэрогрилем, грилем и конвекцией Hisense H30MOBS10HC'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-s-aerogrilem-grilem-i-konvekciei-hisense-h30mobs10hc_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь с аэрогрилем, грилем и конвекцией Hisense H30MOBS10HC'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-s-aerogrilem-grilem-i-konvekciei-hisense-h30mobs10hc_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь с аэрогрилем, грилем и конвекцией Hisense H30MOBS10HC'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-s-aerogrilem-grilem-i-konvekciei-hisense-h30mobs10hc_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь с аэрогрилем, грилем и конвекцией Hisense H30MOBS10HC'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-s-aerogrilem-grilem-i-konvekciei-hisense-h30mobs10hc_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь с аэрогрилем, грилем и конвекцией Hisense H30MOBS10HC'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-s-aerogrilem-grilem-i-konvekciei-hisense-h30mobs10hc_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь с аэрогрилем, грилем и конвекцией Hisense H30MOBS10HC'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-s-aerogrilem-grilem-i-konvekciei-hisense-h30mobs10hc_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь с аэрогрилем, грилем и конвекцией Hisense H30MOBS10HC'));

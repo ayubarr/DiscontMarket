@@ -1,0 +1,53 @@
+﻿INSERT INTO "Products" 
+("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription",
+"Availability", "Status", "CategoryID", "BrandID", "UserID") 
+VALUES
+ ('Телевизор Thomson T43USM7050', 15595, 8, '/items/productimages/televizor-thomson-t43usm7050_0.png', 4.83, '', 'Телевизор Thomson T43USM7050, черный, — современная модель с качественным изображением разрешением 4К (3840х2160 пикселей), тюнером стандартов DVB-T/T2/C/S/S2 для приема цифровых, кабельных и спутниковых каналов и поддержкой Smart TV. Доступ в интернет открывает огромное разнообразие контента, начиная от богатого репертуара онлайн-кинотеатров, заканчивая YouTube. Для поиска можно использовать Google Assistant. 
+
+Яркость составляет 310 кд/м², контрастность — 5000:1, отображается 1,07 млрд цветов. Технология подсветки D-LED исключает засветы, широкие углы обзора по 178° гарантируют отличное качество картинки даже при просмотре сбоку. Акустическая система представлена двумя динамиками мощностью по 10 Вт. Эквалайзер позволяет настроить звучание в соответствии с собственными вкусами и типом контента. 
+
+Выход в Сеть производится по Wi-Fi или проводным способом через LAN. Встроенный модуль Bluetooth дает возможность подсоединить к телевизору смартфон, дополнительную беспроводную акустику и периферию. Интегрированы три разъема HDMI, два порта USB (можно воспроизводить контент с внешних хранилищ), оптический выход, слот CI+. 
+
+Максимальная потребляемая мощность — 85 Вт. Размеры телевизора с подставкой — 966x614x220 мм, без нее — 968х565х80 мм. Вес составляет 7,1 кг. Модель можно повесить на стену при помощи кронштейна VESA 300х300.', 'InStock', 'Discount', 1, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Thomson'), 1);
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Thomson T43USM7050'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '4K Ultra HD (3840x2160 Пикс)' AND "Type" = 'Экран));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Thomson T43USM7050'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '43' AND "Type" = 'Диагональ));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Thomson T43USM7050'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '60' AND "Type" = 'Частота обновления));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Thomson T43USM7050'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'LED' AND "Type" = 'Технология экрана));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Thomson T43USM7050'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'Direct LED' AND "Type" = 'Тип светодиодной подсветки));
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-thomson-t43usm7050_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Thomson T43USM7050'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-thomson-t43usm7050_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Thomson T43USM7050'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-thomson-t43usm7050_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Thomson T43USM7050'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-thomson-t43usm7050_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Thomson T43USM7050'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-thomson-t43usm7050_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Thomson T43USM7050'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-thomson-t43usm7050_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Thomson T43USM7050'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-thomson-t43usm7050_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Thomson T43USM7050'));

@@ -1,0 +1,28 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-vekta-ld-32sf4850bs_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Vekta LD-32SF4850BS'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-vekta-ld-32sf4850bs_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Vekta LD-32SF4850BS'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-vekta-ld-32sf4850bs_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Vekta LD-32SF4850BS'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-vekta-ld-32sf4850bs_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Vekta LD-32SF4850BS'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-vekta-ld-32sf4850bs_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Vekta LD-32SF4850BS'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-vekta-ld-32sf4850bs_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Vekta LD-32SF4850BS'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-vekta-ld-32sf4850bs_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Vekta LD-32SF4850BS'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-vekta-ld-32sf4850bs_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Vekta LD-32SF4850BS'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-vekta-ld-32sf4850bs_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Vekta LD-32SF4850BS'));

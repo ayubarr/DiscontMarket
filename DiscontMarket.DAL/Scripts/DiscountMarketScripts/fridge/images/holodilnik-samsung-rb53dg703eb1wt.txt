@@ -1,0 +1,22 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-samsung-rb53dg703eb1wt_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Samsung RB53DG703EB1WT'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-samsung-rb53dg703eb1wt_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Samsung RB53DG703EB1WT'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-samsung-rb53dg703eb1wt_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Samsung RB53DG703EB1WT'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-samsung-rb53dg703eb1wt_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Samsung RB53DG703EB1WT'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-samsung-rb53dg703eb1wt_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Samsung RB53DG703EB1WT'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-samsung-rb53dg703eb1wt_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Samsung RB53DG703EB1WT'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-samsung-rb53dg703eb1wt_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Samsung RB53DG703EB1WT'));

@@ -1,0 +1,19 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-premium-smeg-wm3t84ru4_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Премиум Smeg WM3T84RU4'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-premium-smeg-wm3t84ru4_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Премиум Smeg WM3T84RU4'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-premium-smeg-wm3t84ru4_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Премиум Smeg WM3T84RU4'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-premium-smeg-wm3t84ru4_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Премиум Smeg WM3T84RU4'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-premium-smeg-wm3t84ru4_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Премиум Smeg WM3T84RU4'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-premium-smeg-wm3t84ru4_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Премиум Smeg WM3T84RU4'));

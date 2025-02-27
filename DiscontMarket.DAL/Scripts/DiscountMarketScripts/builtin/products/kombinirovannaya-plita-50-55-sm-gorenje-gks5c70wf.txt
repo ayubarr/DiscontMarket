@@ -1,0 +1,76 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Комбинированная плита (50-55 см) Gorenje GKS5C70WF', 32499, 8, '/items/productimages/kombinirovannaya-plita-50-55-sm-gorenje-gks5c70wf_0.png', 4.96, '', 'Комбинированная плита Gorenje GKS5C70WF белого цвета обладает потребляемой мощностью до 800 Вт. Габариты устройства составляют 85х50х59,4 см, масса — 44,3 кг. В комплекте поставляются глубокий и плоский противни, жиклеры для подключения газового баллона и металлическая решетка. Есть телескопическая направляющая и электромеханический вертел. Внутреннее пространство покрывается эмалью SilverMatte. Предусмотрена решетка, выполненная из чугуна, и стеклянная крышка варочной поверхности. Есть выдвижной ящик для посуды. 
+У модели комбинированный электромеханический тип управления с электронным программатором. На лицевой стороне размещается индикатор времени до конца программы. Устройство обладает газ-контролем конфорок. В плите предусмотрена функция минимального огня. Прибор оснащается четырьмя газовыми конфорками диаметром от 5,4 до 9,9 см и мощностью от 1 до 3 кВт. Есть автоматический электроподжиг.', 'InStock', 'Discount', 4, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Gorenje'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Комбинированная плита (50-55 см) Gorenje GKS5C70WF'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Комбинированная плита (50-55 см) Gorenje GKS5C70WF' 
+        AND a."Name" = '4' 
+        AND a."Type" = 'Количество конфорок'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Комбинированная плита (50-55 см) Gorenje GKS5C70WF' 
+        AND a."Name" = 'чугунная' 
+        AND a."Type" = 'Решетка'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Комбинированная плита (50-55 см) Gorenje GKS5C70WF' 
+        AND a."Name" = '70' 
+        AND a."Type" = 'Объем духовки'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Комбинированная плита (50-55 см) Gorenje GKS5C70WF' 
+        AND a."Name" = 'электрический' 
+        AND a."Type" = 'Тип духовки'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Комбинированная плита (50-55 см) Gorenje GKS5C70WF' 
+        AND a."Name" = '85*50*59.4 см' 
+        AND a."Type" = 'Габаритные размеры (В*Ш*Г)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/kombinirovannaya-plita-50-55-sm-gorenje-gks5c70wf_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Комбинированная плита (50-55 см) Gorenje GKS5C70WF'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/kombinirovannaya-plita-50-55-sm-gorenje-gks5c70wf_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Комбинированная плита (50-55 см) Gorenje GKS5C70WF'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/kombinirovannaya-plita-50-55-sm-gorenje-gks5c70wf_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Комбинированная плита (50-55 см) Gorenje GKS5C70WF'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/kombinirovannaya-plita-50-55-sm-gorenje-gks5c70wf_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Комбинированная плита (50-55 см) Gorenje GKS5C70WF'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/kombinirovannaya-plita-50-55-sm-gorenje-gks5c70wf_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Комбинированная плита (50-55 см) Gorenje GKS5C70WF'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/kombinirovannaya-plita-50-55-sm-gorenje-gks5c70wf_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Комбинированная плита (50-55 см) Gorenje GKS5C70WF'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/kombinirovannaya-plita-50-55-sm-gorenje-gks5c70wf_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Комбинированная плита (50-55 см) Gorenje GKS5C70WF'));

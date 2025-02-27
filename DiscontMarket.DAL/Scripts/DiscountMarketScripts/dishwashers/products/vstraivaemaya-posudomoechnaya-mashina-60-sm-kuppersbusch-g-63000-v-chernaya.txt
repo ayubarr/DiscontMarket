@@ -1,0 +1,64 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Встраиваемая посудомоечная машина 60 см Kuppersbusch G 6300.0 V черная', 69495, 6, '/items/productimages/vstraivaemaya-posudomoechnaya-mashina-60-sm-kuppersbusch-g-63000-v-chernaya_0.png', 4.13, '', 'Встраиваемая посудомоечная машина Kuppersbusch G 6300.0 V, черная — полноразмерная модель шириной 60 см. Внутренняя камера рассчитана на 15 комплектов посуды. Доступно семь программ работы, включая предварительное ополаскивание, интенсивную, деликатную и быструю мойку. Третий уровень загрузки позволяет загружать дополнительные предметы.
+
+Машина оборудована функцией отсрочки запуска, возможностью половинной загрузки и использования средств 3 в 1. Специальный сенсор обеспечивает контроль качества воды. Встроенный теплообменник эффективно использует тепло от пара для ее нагрева.
+
+Освещение рабочей камеры упрощает загрузку и выгрузку посуды. Высота корзины регулируется. Управление посудомоечной машиной осуществляется с помощью электронной панели. На встроенном цифровом дисплее отображается информация о ходе программы и оставшемся времени до ее окончания. Машина потребляет 9,5 л воды за цикл. В комплект входит воронка для засыпания соли.', 'InStock', 'Discount', 28, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Kuppersbusch'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 60 см Kuppersbusch G 6300.0 V черная'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Встраиваемая посудомоечная машина 60 см Kuppersbusch G 6300.0 V черная' 
+        AND a."Name" = '9.5' 
+        AND a."Type" = 'Расход воды за цикл'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Встраиваемая посудомоечная машина 60 см Kuppersbusch G 6300.0 V черная' 
+        AND a."Name" = '15 комплектов' 
+        AND a."Type" = 'Максимальная вместимость'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Встраиваемая посудомоечная машина 60 см Kuppersbusch G 6300.0 V черная' 
+        AND a."Name" = '7' 
+        AND a."Type" = 'Количество программ мойки'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Встраиваемая посудомоечная машина 60 см Kuppersbusch G 6300.0 V черная' 
+        AND a."Name" = 'стандартный' 
+        AND a."Type" = 'Мотор'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Встраиваемая посудомоечная машина 60 см Kuppersbusch G 6300.0 V черная' 
+        AND a."Name" = '820-870*600*590 мм' 
+        AND a."Type" = 'Размер ниши, мм (В*Ш*Г)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-60-sm-kuppersbusch-g-63000-v-chernaya_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 60 см Kuppersbusch G 6300.0 V черная'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-60-sm-kuppersbusch-g-63000-v-chernaya_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 60 см Kuppersbusch G 6300.0 V черная'));

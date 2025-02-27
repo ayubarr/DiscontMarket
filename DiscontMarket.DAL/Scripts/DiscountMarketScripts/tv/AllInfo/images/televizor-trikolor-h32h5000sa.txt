@@ -1,0 +1,31 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-trikolor-h32h5000sa_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Триколор H32H5000SA'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-trikolor-h32h5000sa_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Триколор H32H5000SA'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-trikolor-h32h5000sa_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Триколор H32H5000SA'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-trikolor-h32h5000sa_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Триколор H32H5000SA'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-trikolor-h32h5000sa_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Триколор H32H5000SA'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-trikolor-h32h5000sa_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Триколор H32H5000SA'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-trikolor-h32h5000sa_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Триколор H32H5000SA'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-trikolor-h32h5000sa_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Триколор H32H5000SA'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-trikolor-h32h5000sa_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Триколор H32H5000SA'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-trikolor-h32h5000sa_9.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Триколор H32H5000SA'));

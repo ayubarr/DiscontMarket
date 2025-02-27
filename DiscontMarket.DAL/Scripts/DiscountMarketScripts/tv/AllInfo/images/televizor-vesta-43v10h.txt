@@ -1,0 +1,19 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-vesta-43v10h_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Vesta 43V10H'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-vesta-43v10h_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Vesta 43V10H'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-vesta-43v10h_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Vesta 43V10H'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-vesta-43v10h_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Vesta 43V10H'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-vesta-43v10h_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Vesta 43V10H'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-vesta-43v10h_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Vesta 43V10H'));

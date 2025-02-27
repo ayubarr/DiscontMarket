@@ -1,0 +1,22 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/gazovaya-plita-60-sm-gefest-1200-s7-k89-brown_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Газовая плита (60 см) Gefest 1200-С7 К89 Brown'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/gazovaya-plita-60-sm-gefest-1200-s7-k89-brown_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Газовая плита (60 см) Gefest 1200-С7 К89 Brown'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/gazovaya-plita-60-sm-gefest-1200-s7-k89-brown_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Газовая плита (60 см) Gefest 1200-С7 К89 Brown'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/gazovaya-plita-60-sm-gefest-1200-s7-k89-brown_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Газовая плита (60 см) Gefest 1200-С7 К89 Brown'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/gazovaya-plita-60-sm-gefest-1200-s7-k89-brown_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Газовая плита (60 см) Gefest 1200-С7 К89 Brown'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/gazovaya-plita-60-sm-gefest-1200-s7-k89-brown_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Газовая плита (60 см) Gefest 1200-С7 К89 Brown'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/gazovaya-plita-60-sm-gefest-1200-s7-k89-brown_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Газовая плита (60 см) Gefest 1200-С7 К89 Brown'));

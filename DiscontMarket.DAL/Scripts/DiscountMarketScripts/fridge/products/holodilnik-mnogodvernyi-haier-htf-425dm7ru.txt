@@ -1,0 +1,89 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Холодильник многодверный Haier HTF-425DM7RU', 79999, 12, '/items/productimages/holodilnik-mnogodvernyi-haier-htf-425dm7ru_0.png', 4.5, '', 'Отдельностоящий многодверный холодильник Haier HTF-425DM7RU с нижним расположением морозильной камеры работает под контролем тихого (до 38 дБ) и энергоэффективного (класс А++) инверторного компрессора. Внешний сенсорный LED-дисплей обеспечивает удобное управление настройками. 
+
+• <b>Холодильное отделение объемом 308 л</b>
+Включает три широкие стеклянные полки, два контейнера Humidity и Dry Zone c автоматической регулировкой влажности, шесть боковых полок с бортиками. Яркая светодиодная подсветка обеспечивает удобный обзор всех уровней.
+
+• <b>Морозильное отделение объемом 117 л</b>
+Включает две верхние полки и четыре выдвижных ящика. Мощность замораживания составляет 10 кг в сутки.
+
+• <b>Технология AirSurround</b>
+Обеспечивает эффективную циркуляцию холодного воздуха, продлевая свежесть продуктов и сохраняя их сочность, структуру. 
+
+• <b>Total No Frost</b>
+Технология предотвращает образование инея и наледи, упрощает уход за прибором, обеспечивает равномерное распределение температуры в камерах.
+
+• <b>Антибактериальный модуль</b>
+Ионизирует и обеззараживает воздух, предупреждая появление запахов, размножение вредных микроорганизмов и способствуя гигиеничному хранению продуктов. 
+
+Холодильник сигнализирует звуком об открытой дверце и поддерживает функцию «Суперохлаждение», которая ускоряет обработку загруженных продуктов. Используемый в системе хладагент фреон R600A безопасен для окружающей среды.', 'InStock', 'Discount', 3, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Haier'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Haier HTF-425DM7RU'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник многодверный Haier HTF-425DM7RU' 
+        AND a."Name" = 'инверторный' 
+        AND a."Type" = 'Тип компрессора'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник многодверный Haier HTF-425DM7RU' 
+        AND a."Name" = '181.5*83.3*65 см' 
+        AND a."Type" = 'Габаритные размеры (В*Ш*Г)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник многодверный Haier HTF-425DM7RU' 
+        AND a."Name" = '433' 
+        AND a."Type" = 'Общий объем'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник многодверный Haier HTF-425DM7RU' 
+        AND a."Name" = 'электронный' 
+        AND a."Type" = 'Тип управления'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник многодверный Haier HTF-425DM7RU' 
+        AND a."Name" = 'металл' 
+        AND a."Type" = 'Материал двери'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-haier-htf-425dm7ru_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Haier HTF-425DM7RU'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-haier-htf-425dm7ru_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Haier HTF-425DM7RU'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-haier-htf-425dm7ru_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Haier HTF-425DM7RU'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-haier-htf-425dm7ru_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Haier HTF-425DM7RU'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-haier-htf-425dm7ru_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Haier HTF-425DM7RU'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-haier-htf-425dm7ru_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Haier HTF-425DM7RU'));

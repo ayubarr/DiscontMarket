@@ -1,0 +1,75 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Встраиваемая посудомоечная машина 60 см Haier XS 6B0M4PB-08', 55999, 11, '/items/productimages/vstraivaemaya-posudomoechnaya-mashina-60-sm-haier-xs-6b0m4pb-08_0.png', 4.13, '', 'Встраиваемая посудомоечная машина Haier XS 6B0M4PB-08 — практичная и удобная модель для большой семьи. Вместимость устройства — 16 комплектов. <br><br>• <b>Инверторный мотор</b> <br>Делает работу тихой, обеспечивает долговечность прибора. <br><br>• <b>Информативное управление</b> <br>Сенсорная панель позволяет легко выбирать нужный режим. Для каждого на дисплее отображается информация о расходе воды и электричества. <br><br>• <b>Высокое качество сушки</b> <br>В конце программы дверь автоматически приоткрывается — в течение нескольких минут посуда высыхает и остывает. <br><br>• <b>Десять программ</b> <br>Позволяют подобрать оптимальные настройки для мытья разной посуды. Предусмотрены полностью автоматическая и ночная программы. <br><br>Для размещения предметов используются три корзины, высоту верхней для столовых приборов можно менять. Тарелки удобно фиксируются с помощью складных держателей, кружки устанавливаются на специальную полку. Дверь закрывается плавно за счет доводчика. <br><br>В машину заложены функция «Гигиена+», режимы «Мытье тонкого стекла», «Предварительное ополаскивание». Таймер отложенного старта программируется сроком до 23 часов. Время до окончания программы дублируется лучом на полу. Безопасное применение машины обеспечивают блокиратор от детей, частичная защита от протечек, самодиагностика неисправностей.', 'InStock', 'Discount', 28, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Haier'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 60 см Haier XS 6B0M4PB-08'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Встраиваемая посудомоечная машина 60 см Haier XS 6B0M4PB-08' 
+        AND a."Name" = '9.5' 
+        AND a."Type" = 'Расход воды за цикл'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Встраиваемая посудомоечная машина 60 см Haier XS 6B0M4PB-08' 
+        AND a."Name" = '16 комплектов' 
+        AND a."Type" = 'Максимальная вместимость'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Встраиваемая посудомоечная машина 60 см Haier XS 6B0M4PB-08' 
+        AND a."Name" = '10' 
+        AND a."Type" = 'Количество программ мойки'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Встраиваемая посудомоечная машина 60 см Haier XS 6B0M4PB-08' 
+        AND a."Name" = 'инверторный' 
+        AND a."Type" = 'Мотор'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Встраиваемая посудомоечная машина 60 см Haier XS 6B0M4PB-08' 
+        AND a."Name" = '82,0-90,0*60,0*55,5' 
+        AND a."Type" = 'Размер ниши, мм (В*Ш*Г)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-60-sm-haier-xs-6b0m4pb-08_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 60 см Haier XS 6B0M4PB-08'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-60-sm-haier-xs-6b0m4pb-08_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 60 см Haier XS 6B0M4PB-08'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-60-sm-haier-xs-6b0m4pb-08_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 60 см Haier XS 6B0M4PB-08'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-60-sm-haier-xs-6b0m4pb-08_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 60 см Haier XS 6B0M4PB-08'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-60-sm-haier-xs-6b0m4pb-08_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 60 см Haier XS 6B0M4PB-08'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-60-sm-haier-xs-6b0m4pb-08_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 60 см Haier XS 6B0M4PB-08'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-60-sm-haier-xs-6b0m4pb-08_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 60 см Haier XS 6B0M4PB-08'));

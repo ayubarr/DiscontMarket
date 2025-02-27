@@ -1,0 +1,78 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Газовая плита (50-55 см) Darina GM 4M41 001', 9499, 7, '/items/productimages/gazovaya-plita-50-55-sm-darina-gm-4m41-001_0.png', 4.83, '', 'Газовая плита Darina GM 4M41 001 оснащена вместительной духовкой, которая позволяет готовить самые разные блюда, включая выпечку. Удобный поворотный регулятор снабжён обозначениями температуры, которые позволяют выбрать необходимый режим работы устройства без лишних затруднений.
+
+ВЫСОКИЙ УРОВЕНЬ БЕЗОПАСНОСТИ
+Двухслойная дверца духовки позволяет избежать ожогов при случайном касании стекла в процессе приготовления определённого блюда. Система -Газ-контроль- автоматически останавливает подачу топлива при затухании горелки, предотвращая его утечку. Благодаря функции защиты от случайного включения плита полностью безопасна для детей младшего возраста.
+
+АВТОНОМНОЕ ИСПОЛЬЗОВАНИЕ
+В комплект поставки входит набор жиклёров для работы на сжиженной пропаново-бутановой смеси. Он позволяет подключать устройство не только к централизованному трубопроводу, но и к газовому баллону.', 'InStock', 'Discount', 4, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Darina'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Газовая плита (50-55 см) Darina GM 4M41 001'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Газовая плита (50-55 см) Darina GM 4M41 001' 
+        AND a."Name" = '4' 
+        AND a."Type" = 'Количество конфорок'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Газовая плита (50-55 см) Darina GM 4M41 001' 
+        AND a."Name" = 'эмалированная' 
+        AND a."Type" = 'Решетка'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Газовая плита (50-55 см) Darina GM 4M41 001' 
+        AND a."Name" = '50' 
+        AND a."Type" = 'Объем духовки'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Газовая плита (50-55 см) Darina GM 4M41 001' 
+        AND a."Name" = '85*50*51 см' 
+        AND a."Type" = 'Габаритные размеры (В*Ш*Г)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Газовая плита (50-55 см) Darina GM 4M41 001' 
+        AND a."Name" = 'отсутствует' 
+        AND a."Type" = 'Электроподжиг конфорок'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/gazovaya-plita-50-55-sm-darina-gm-4m41-001_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Газовая плита (50-55 см) Darina GM 4M41 001'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/gazovaya-plita-50-55-sm-darina-gm-4m41-001_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Газовая плита (50-55 см) Darina GM 4M41 001'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/gazovaya-plita-50-55-sm-darina-gm-4m41-001_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Газовая плита (50-55 см) Darina GM 4M41 001'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/gazovaya-plita-50-55-sm-darina-gm-4m41-001_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Газовая плита (50-55 см) Darina GM 4M41 001'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/gazovaya-plita-50-55-sm-darina-gm-4m41-001_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Газовая плита (50-55 см) Darina GM 4M41 001'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/gazovaya-plita-50-55-sm-darina-gm-4m41-001_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Газовая плита (50-55 см) Darina GM 4M41 001'));

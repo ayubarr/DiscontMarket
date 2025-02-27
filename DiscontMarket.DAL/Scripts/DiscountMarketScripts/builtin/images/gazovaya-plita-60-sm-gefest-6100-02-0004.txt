@@ -1,0 +1,46 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/gazovaya-plita-60-sm-gefest-6100-02-0004_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Газовая плита (60 см) Gefest 6100-02 0004'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/gazovaya-plita-60-sm-gefest-6100-02-0004_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Газовая плита (60 см) Gefest 6100-02 0004'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/gazovaya-plita-60-sm-gefest-6100-02-0004_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Газовая плита (60 см) Gefest 6100-02 0004'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/gazovaya-plita-60-sm-gefest-6100-02-0004_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Газовая плита (60 см) Gefest 6100-02 0004'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/gazovaya-plita-60-sm-gefest-6100-02-0004_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Газовая плита (60 см) Gefest 6100-02 0004'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/gazovaya-plita-60-sm-gefest-6100-02-0004_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Газовая плита (60 см) Gefest 6100-02 0004'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/gazovaya-plita-60-sm-gefest-6100-02-0004_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Газовая плита (60 см) Gefest 6100-02 0004'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/gazovaya-plita-60-sm-gefest-6100-02-0004_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Газовая плита (60 см) Gefest 6100-02 0004'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/gazovaya-plita-60-sm-gefest-6100-02-0004_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Газовая плита (60 см) Gefest 6100-02 0004'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/gazovaya-plita-60-sm-gefest-6100-02-0004_9.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Газовая плита (60 см) Gefest 6100-02 0004'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/gazovaya-plita-60-sm-gefest-6100-02-0004_10.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Газовая плита (60 см) Gefest 6100-02 0004'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/gazovaya-plita-60-sm-gefest-6100-02-0004_11.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Газовая плита (60 см) Gefest 6100-02 0004'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/gazovaya-plita-60-sm-gefest-6100-02-0004_12.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Газовая плита (60 см) Gefest 6100-02 0004'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/gazovaya-plita-60-sm-gefest-6100-02-0004_13.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Газовая плита (60 см) Gefest 6100-02 0004'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/gazovaya-plita-60-sm-gefest-6100-02-0004_14.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Газовая плита (60 см) Gefest 6100-02 0004'));

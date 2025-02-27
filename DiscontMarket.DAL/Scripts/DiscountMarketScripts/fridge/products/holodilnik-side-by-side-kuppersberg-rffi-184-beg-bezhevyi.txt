@@ -1,0 +1,85 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Холодильник (Side-by-Side) Kuppersberg RFFI 184 BEG бежевый', 93299, 12, '/items/productimages/holodilnik-side-by-side-kuppersberg-rffi-184-beg-bezhevyi_0.png', 4.81, '', 'Холодильник (Side-by-Side) Kuppersberg RFFI 184 BEG бежевого цвета отличается технологией No Frost и встроенным ледогенератором. Модель с климатическим классом N-SN-ST-T работает на базе безопасного и экологичного хладагента R 600a. Инверторный компрессор обеспечивает производительность 12 кг/сутки при максимальном уровне шума 42 дБ.
+
+Устройство с энергоэффективностью А++ потребляет 329 кВт*ч. В случае отключения питания оптимальные условия для хранения продуктов поддерживаются на протяжении 11 часов. Сенсорный экран с интуитивно понятным интерфейсом позволяет устанавливать необходимый режим и контролировать текущие показатели температуры. Звуковой сигнал открытой двери и защита от детей гарантируют безопасную эксплуатацию.
+
+Холодильная камера объемом 333 л со встроенной LED-подсветкой закрывается двумя дверьми. В отсеке расположены зона свежести, три основные и шесть боковых полок из стекла и пластика. Два морозильных отделения с выдвижными ящиками рассчитаны на 333 л. В комплектацию входят формочка для льда, две подставки для 12 яиц. Прибор с внутренним антибактериальным покрытием выполнен в прочном металлическом корпусе со стеклянным фасадом. Габариты равны 182х83,5х70,3 см, вес — 94 кг.', 'InStock', 'Discount', 3, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Kuppersberg'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Холодильник (Side-by-Side) Kuppersberg RFFI 184 BEG бежевый'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник (Side-by-Side) Kuppersberg RFFI 184 BEG бежевый' 
+        AND a."Name" = 'инверторный' 
+        AND a."Type" = 'Тип компрессора'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник (Side-by-Side) Kuppersberg RFFI 184 BEG бежевый' 
+        AND a."Name" = '182*83.5*70.3 см' 
+        AND a."Type" = 'Габаритные размеры (В*Ш*Г)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник (Side-by-Side) Kuppersberg RFFI 184 BEG бежевый' 
+        AND a."Name" = '489' 
+        AND a."Type" = 'Общий объем'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник (Side-by-Side) Kuppersberg RFFI 184 BEG бежевый' 
+        AND a."Name" = 'сенсорный' 
+        AND a."Type" = 'Тип управления'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник (Side-by-Side) Kuppersberg RFFI 184 BEG бежевый' 
+        AND a."Name" = 'стекло' 
+        AND a."Type" = 'Материал двери'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-side-by-side-kuppersberg-rffi-184-beg-bezhevyi_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник (Side-by-Side) Kuppersberg RFFI 184 BEG бежевый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-side-by-side-kuppersberg-rffi-184-beg-bezhevyi_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник (Side-by-Side) Kuppersberg RFFI 184 BEG бежевый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-side-by-side-kuppersberg-rffi-184-beg-bezhevyi_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник (Side-by-Side) Kuppersberg RFFI 184 BEG бежевый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-side-by-side-kuppersberg-rffi-184-beg-bezhevyi_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник (Side-by-Side) Kuppersberg RFFI 184 BEG бежевый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-side-by-side-kuppersberg-rffi-184-beg-bezhevyi_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник (Side-by-Side) Kuppersberg RFFI 184 BEG бежевый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-side-by-side-kuppersberg-rffi-184-beg-bezhevyi_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник (Side-by-Side) Kuppersberg RFFI 184 BEG бежевый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-side-by-side-kuppersberg-rffi-184-beg-bezhevyi_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник (Side-by-Side) Kuppersberg RFFI 184 BEG бежевый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-side-by-side-kuppersberg-rffi-184-beg-bezhevyi_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник (Side-by-Side) Kuppersberg RFFI 184 BEG бежевый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-side-by-side-kuppersberg-rffi-184-beg-bezhevyi_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник (Side-by-Side) Kuppersberg RFFI 184 BEG бежевый'));

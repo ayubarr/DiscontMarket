@@ -1,0 +1,28 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/ultrazvukovoe-ustroistvo-dlya-stirki-nevoton-ultraton-ms-2000m_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Ультразвуковое устройство для стирки Невотон УЛЬТРАТОН МС-2000М'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/ultrazvukovoe-ustroistvo-dlya-stirki-nevoton-ultraton-ms-2000m_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Ультразвуковое устройство для стирки Невотон УЛЬТРАТОН МС-2000М'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/ultrazvukovoe-ustroistvo-dlya-stirki-nevoton-ultraton-ms-2000m_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Ультразвуковое устройство для стирки Невотон УЛЬТРАТОН МС-2000М'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/ultrazvukovoe-ustroistvo-dlya-stirki-nevoton-ultraton-ms-2000m_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Ультразвуковое устройство для стирки Невотон УЛЬТРАТОН МС-2000М'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/ultrazvukovoe-ustroistvo-dlya-stirki-nevoton-ultraton-ms-2000m_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Ультразвуковое устройство для стирки Невотон УЛЬТРАТОН МС-2000М'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/ultrazvukovoe-ustroistvo-dlya-stirki-nevoton-ultraton-ms-2000m_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Ультразвуковое устройство для стирки Невотон УЛЬТРАТОН МС-2000М'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/ultrazvukovoe-ustroistvo-dlya-stirki-nevoton-ultraton-ms-2000m_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Ультразвуковое устройство для стирки Невотон УЛЬТРАТОН МС-2000М'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/ultrazvukovoe-ustroistvo-dlya-stirki-nevoton-ultraton-ms-2000m_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Ультразвуковое устройство для стирки Невотон УЛЬТРАТОН МС-2000М'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/ultrazvukovoe-ustroistvo-dlya-stirki-nevoton-ultraton-ms-2000m_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Ультразвуковое устройство для стирки Невотон УЛЬТРАТОН МС-2000М'));

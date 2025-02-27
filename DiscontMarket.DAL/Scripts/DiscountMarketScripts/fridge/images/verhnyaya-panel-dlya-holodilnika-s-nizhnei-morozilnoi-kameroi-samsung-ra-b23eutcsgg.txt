@@ -1,0 +1,4 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/verhnyaya-panel-dlya-holodilnika-s-nizhnei-morozilnoi-kameroi-samsung-ra-b23eutcsgg_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Верхняя панель для холодильника с нижней морозильной камерой Samsung RA-B23EUTCSGG'));

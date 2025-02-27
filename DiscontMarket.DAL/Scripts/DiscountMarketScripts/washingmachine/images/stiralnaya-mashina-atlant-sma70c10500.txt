@@ -1,0 +1,25 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-atlant-sma70c10500_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина ATLANT СМА70C10500'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-atlant-sma70c10500_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина ATLANT СМА70C10500'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-atlant-sma70c10500_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина ATLANT СМА70C10500'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-atlant-sma70c10500_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина ATLANT СМА70C10500'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-atlant-sma70c10500_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина ATLANT СМА70C10500'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-atlant-sma70c10500_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина ATLANT СМА70C10500'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-atlant-sma70c10500_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина ATLANT СМА70C10500'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-atlant-sma70c10500_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина ATLANT СМА70C10500'));

@@ -1,0 +1,82 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Холодильник Бирюса 118', 13245, 15, '/items/productimages/holodilnik-birusa-118_0.png', 4.57, '', 'Холодильник с нижней морозильной камерой «Бирюса» 118 относится к А классу энергопотребления. За год расходуется до 245 кВт*ч. Двухкамерная модель обладает общим объемом 180 л. Холодильное отделение (110 л) оборудовано тремя полками из закаленного стекла и пластиковыми карманами на двери, что дает возможность хранить продукты питания с соблюдением правил товарного соседства. Конструкцией предусмотрено отделение для овощей и фруктов. Для удобства эксплуатации применятся LED-освещение. Система размораживания — капельная. Для охлаждения пищи используется экологически чистый и безопасный хладагент R600a. Уровень шума в процессе работы не превышает 41 дБ. Климатический класс — ST, N.
+
+В нижней части модели находится морозильная камера с полезным объемом 35 л. Для хранения заготовок и полуфабрикатов предусмотрено два прозрачных ящика из пластика, за счет чего можно быстро найти нужный продукт. Мощность замораживания составляет 4 кг/сутки.
+
+При возникновении аварийной ситуации модель может поддерживать оптимальную температуру до 10 часов, что предотвращает возникновение порчи продуктов. В случае необходимости направление открывания дверцы из нержавеющей стали можно изменить, что дает возможность устанавливать в местах с ограниченным пространством. Габаритные размеры холодильника — 145х48х60,5 см, вес — 38 кг.', 'InStock', 'Discount', 3, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Бирюса'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Холодильник Бирюса 118'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Бирюса 118' 
+        AND a."Name" = 'стандартный' 
+        AND a."Type" = 'Тип компрессора'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Бирюса 118' 
+        AND a."Name" = '145' 
+        AND a."Type" = 'Высота'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Бирюса 118' 
+        AND a."Name" = '48' 
+        AND a."Type" = 'Ширина'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Бирюса 118' 
+        AND a."Name" = '60.5' 
+        AND a."Type" = 'Глубина'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Бирюса 118' 
+        AND a."Name" = '180' 
+        AND a."Type" = 'Общий объем'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-birusa-118_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Бирюса 118'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-birusa-118_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Бирюса 118'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-birusa-118_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Бирюса 118'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-birusa-118_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Бирюса 118'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-birusa-118_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Бирюса 118'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-birusa-118_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Бирюса 118'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-birusa-118_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Бирюса 118'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-birusa-118_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Бирюса 118'));

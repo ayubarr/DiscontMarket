@@ -1,0 +1,28 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/kombinirovannaya-plita-60-sm-maunfeld-mgc60ecw04_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Комбинированная плита (60 см) Maunfeld MGC60ECW04'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/kombinirovannaya-plita-60-sm-maunfeld-mgc60ecw04_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Комбинированная плита (60 см) Maunfeld MGC60ECW04'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/kombinirovannaya-plita-60-sm-maunfeld-mgc60ecw04_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Комбинированная плита (60 см) Maunfeld MGC60ECW04'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/kombinirovannaya-plita-60-sm-maunfeld-mgc60ecw04_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Комбинированная плита (60 см) Maunfeld MGC60ECW04'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/kombinirovannaya-plita-60-sm-maunfeld-mgc60ecw04_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Комбинированная плита (60 см) Maunfeld MGC60ECW04'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/kombinirovannaya-plita-60-sm-maunfeld-mgc60ecw04_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Комбинированная плита (60 см) Maunfeld MGC60ECW04'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/kombinirovannaya-plita-60-sm-maunfeld-mgc60ecw04_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Комбинированная плита (60 см) Maunfeld MGC60ECW04'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/kombinirovannaya-plita-60-sm-maunfeld-mgc60ecw04_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Комбинированная плита (60 см) Maunfeld MGC60ECW04'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/kombinirovannaya-plita-60-sm-maunfeld-mgc60ecw04_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Комбинированная плита (60 см) Maunfeld MGC60ECW04'));

@@ -1,0 +1,82 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Газовая плита (60 см) Maunfeld MGC60GEW03', 14195, 16, '/items/productimages/gazovaya-plita-60-sm-maunfeld-mgc60gew03_0.png', 4.97, '', 'Газовая плита (60 см) Maunfeld MGC60GEW03 оборудована четырьмя конфорками с механическим электроподжигом и стеклянной крышкой. Мощность каждой — 2,4 кВт, 2 кВт, 2 кВт, 1 кВт. Габаритные размеры модели — 87,5х65х60 см. Плита оснащена духовкой объемом 65 литров. Максимальная температура — 300°С. Дверца выполнена из двухслойного стекла. Духовка оборудована галогеновым освещением.
+Для безопасной эксплуатации устройство дополнено функцией газоконтроля конфорок и духовки, а также аварийным отключением. Конфигурацией модели предусмотрено наличие таймера, звукового сигнала, а также индикатора режима работы. В комплекте к плите прилагаются глубокий и плоский противни, металлическая решетка, а также жиклеры для подключения газового баллона. Модель выполнена в белом цвете.', 'InStock', 'Discount', 4, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Maunfeld'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Газовая плита (60 см) Maunfeld MGC60GEW03'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Газовая плита (60 см) Maunfeld MGC60GEW03' 
+        AND a."Name" = '4' 
+        AND a."Type" = 'Количество конфорок'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Газовая плита (60 см) Maunfeld MGC60GEW03' 
+        AND a."Name" = 'эмалированная' 
+        AND a."Type" = 'Решетка'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Газовая плита (60 см) Maunfeld MGC60GEW03' 
+        AND a."Name" = '65' 
+        AND a."Type" = 'Объем духовки'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Газовая плита (60 см) Maunfeld MGC60GEW03' 
+        AND a."Name" = '87.5*60*65 см' 
+        AND a."Type" = 'Габаритные размеры (В*Ш*Г)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Газовая плита (60 см) Maunfeld MGC60GEW03' 
+        AND a."Name" = 'автоматический' 
+        AND a."Type" = 'Электроподжиг конфорок'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/gazovaya-plita-60-sm-maunfeld-mgc60gew03_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Газовая плита (60 см) Maunfeld MGC60GEW03'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/gazovaya-plita-60-sm-maunfeld-mgc60gew03_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Газовая плита (60 см) Maunfeld MGC60GEW03'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/gazovaya-plita-60-sm-maunfeld-mgc60gew03_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Газовая плита (60 см) Maunfeld MGC60GEW03'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/gazovaya-plita-60-sm-maunfeld-mgc60gew03_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Газовая плита (60 см) Maunfeld MGC60GEW03'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/gazovaya-plita-60-sm-maunfeld-mgc60gew03_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Газовая плита (60 см) Maunfeld MGC60GEW03'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/gazovaya-plita-60-sm-maunfeld-mgc60gew03_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Газовая плита (60 см) Maunfeld MGC60GEW03'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/gazovaya-plita-60-sm-maunfeld-mgc60gew03_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Газовая плита (60 см) Maunfeld MGC60GEW03'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/gazovaya-plita-60-sm-maunfeld-mgc60gew03_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Газовая плита (60 см) Maunfeld MGC60GEW03'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/gazovaya-plita-60-sm-maunfeld-mgc60gew03_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Газовая плита (60 см) Maunfeld MGC60GEW03'));

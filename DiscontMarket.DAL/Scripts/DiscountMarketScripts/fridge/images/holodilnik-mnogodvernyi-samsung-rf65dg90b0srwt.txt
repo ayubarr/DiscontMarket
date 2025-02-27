@@ -1,0 +1,28 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-samsung-rf65dg90b0srwt_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Samsung RF65DG90B0SRWT'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-samsung-rf65dg90b0srwt_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Samsung RF65DG90B0SRWT'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-samsung-rf65dg90b0srwt_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Samsung RF65DG90B0SRWT'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-samsung-rf65dg90b0srwt_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Samsung RF65DG90B0SRWT'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-samsung-rf65dg90b0srwt_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Samsung RF65DG90B0SRWT'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-samsung-rf65dg90b0srwt_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Samsung RF65DG90B0SRWT'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-samsung-rf65dg90b0srwt_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Samsung RF65DG90B0SRWT'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-samsung-rf65dg90b0srwt_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Samsung RF65DG90B0SRWT'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-samsung-rf65dg90b0srwt_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Samsung RF65DG90B0SRWT'));

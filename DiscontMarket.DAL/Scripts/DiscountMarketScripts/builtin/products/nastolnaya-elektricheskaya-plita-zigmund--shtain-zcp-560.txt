@@ -1,0 +1,65 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Настольная электрическая плита Zigmund & Shtain ZCP-560', 7849, 11, '/items/productimages/nastolnaya-elektricheskaya-plita-zigmund--shtain-zcp-560_0.png', 4.6, '', 'Настольная электрическая плита Zigmund & Shtain ZCP-560 выполнена в пластиковом корпусе габаритами 595х355х7,5 мм и предназначена для установки в местах с доступом к сети 220 В. Длина сетевого шнура — 1,5 м. Варочная поверхность прибора покрыта гладкой стеклокерамикой «Черный кристалл» класса А, удобной для очистки благодаря отсутствию выступающих поверхностей. Зона приготовления включает одну индукционную (диаметром 20 см) и одну инфракрасную (диаметром 16 см) конфорку, общая мощность которых в пиковом режиме достигает 3,1 кВт. Максимальная весовая нагрузка одну конфорку — 15 кг, общая на варочную поверхность — 31 кг. 
+Каждая из зон нагрева оснащена сенсорными регуляторами мощности, температуры и времени термообработки. Информацию о выбранном рабочем режиме отображают цифровые индикаторы с подсветкой. Индукционная зона совместима с посудой с ферромагнитным дном. Она позволяет выбирать рабочую температуру в диапазоне 60°С-240°С и мощность от 200 до 1800 Вт. Инфракрасная конфорка поддерживает температуру от 50°С до 500°С и мощность 200-1300 Вт. Для приготовления с ее помощью можно использовать любую посуду (в том числе из керамики) с гладким дном. Совместимый диаметр кастрюль — 12-24 см
+Плита оснащена таймером для установки времени приготовления блюд в диапазоне от 1 минуты до 3 часов с последующим автоотключением. Безопасность эксплуатации обеспечивают блокировка сенсорных клавиш от случайной активации, защита от скачков напряжения в сети, отключение при перегреве или использовании неподходящей посуды в зоне индукции.', 'InStock', 'Discount', 4, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Zigmund & Shtain'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Настольная электрическая плита Zigmund & Shtain ZCP-560'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Настольная электрическая плита Zigmund & Shtain ZCP-560' 
+        AND a."Name" = '2' 
+        AND a."Type" = 'Количество конфорок'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Настольная электрическая плита Zigmund & Shtain ZCP-560' 
+        AND a."Name" = 'индукционные' 
+        AND a."Type" = 'Тип конфорок'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Настольная электрическая плита Zigmund & Shtain ZCP-560' 
+        AND a."Name" = '3100' 
+        AND a."Type" = 'Потребляемая мощность'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Настольная электрическая плита Zigmund & Shtain ZCP-560' 
+        AND a."Name" = 'стеклокерамика' 
+        AND a."Type" = 'Материал варочной поверхности'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Настольная электрическая плита Zigmund & Shtain ZCP-560' 
+        AND a."Name" = 'Да' 
+        AND a."Type" = 'Защита от детей'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/nastolnaya-elektricheskaya-plita-zigmund--shtain-zcp-560_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Настольная электрическая плита Zigmund & Shtain ZCP-560'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/nastolnaya-elektricheskaya-plita-zigmund--shtain-zcp-560_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Настольная электрическая плита Zigmund & Shtain ZCP-560'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/nastolnaya-elektricheskaya-plita-zigmund--shtain-zcp-560_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Настольная электрическая плита Zigmund & Shtain ZCP-560'));

@@ -1,0 +1,19 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/aktivatornaya-stiralnaya-mashina-renova-ws-60-pet_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Активаторная стиральная машина Renova WS-60 PET'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/aktivatornaya-stiralnaya-mashina-renova-ws-60-pet_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Активаторная стиральная машина Renova WS-60 PET'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/aktivatornaya-stiralnaya-mashina-renova-ws-60-pet_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Активаторная стиральная машина Renova WS-60 PET'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/aktivatornaya-stiralnaya-mashina-renova-ws-60-pet_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Активаторная стиральная машина Renova WS-60 PET'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/aktivatornaya-stiralnaya-mashina-renova-ws-60-pet_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Активаторная стиральная машина Renova WS-60 PET'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/aktivatornaya-stiralnaya-mashina-renova-ws-60-pet_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Активаторная стиральная машина Renova WS-60 PET'));

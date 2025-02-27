@@ -1,0 +1,4 @@
+﻿INSERT INTO "Attributes" ("NameTranslate", "Name", "Type") VALUES
+('Full HD (3840x2160 Пикс)', 'Full HD (3840x2160 Пикс)', 'Экран');
+INSERT INTO "AttributeCategory" ("AttributeID", "CategoryID") VALUES
+((SELECT "ID" FROM "Attributes" WHERE "Name" = 'Full HD (3840x2160 Пикс)' AND "Type" = 'Экран'), (SELECT "ID" FROM "Categories" WHERE "Name" = 'tv'));

@@ -1,0 +1,87 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Холодильник Midea MDRB470MGF33OM', 28499, 14, '/items/productimages/holodilnik-midea-mdrb470mgf33om_0.png', 4.47, '', 'Отдельностоящий холодильник Midea MDRB470MGF33OM с нижним расположением морозильной камеры выполнен в металлическом корпусе и оснащен двумя перенавешиваемыми плоскими дверцами. Нулевой зазор позволяет устанавливать агрегат вплотную к стене. Нескользящие, регулируемые по высоте ножки обеспечивают его устойчивость на любом виде горизонтального покрытия. Максимальный уровень шума во время работы прибора не превышает 42 дБ. 
+Холодильная камера объемом 216 л оснащена LED-подсветкой, тремя выдвижными стеклянными полками и двумя пластиковыми контейнерами. Сухая зона свежести Fresh Box предназначена для овощей, фруктов, деликатных продуктов. Объем морозильного отсека с суточной мощностью замораживания 8,5 кг составляет 104 л. Здесь расположены одна полка и два выдвижных лотка. 
+Вентиляторы в камерах поддерживают принудительную циркуляцию воздуха, что способствует равномерному охлаждению всех уровней. Электронный блок управления позволяет контролировать работу устройства, активировать полезные опции. Функции «Суперзаморозка» и «Суперохлаждение» ускоряют процесс обработки продуктов. Режим «Отпуск» снижает энергопотребление. 
+Прибор работает по системе No Frost, которая предупреждает образование инея на внутренних стенках и не требует ручного размораживания. При отключении от электросети камеры поддерживают холод в течение 12 часов. Применяемый хладагент изобутан полностью безопасен для людей, животных и окружающей среды.', 'InStock', 'Discount', 3, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Midea'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Холодильник Midea MDRB470MGF33OM'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Midea MDRB470MGF33OM' 
+        AND a."Name" = 'стандартный' 
+        AND a."Type" = 'Тип компрессора'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Midea MDRB470MGF33OM' 
+        AND a."Name" = '185' 
+        AND a."Type" = 'Высота'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Midea MDRB470MGF33OM' 
+        AND a."Name" = '59.5' 
+        AND a."Type" = 'Ширина'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Midea MDRB470MGF33OM' 
+        AND a."Name" = '66' 
+        AND a."Type" = 'Глубина'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Midea MDRB470MGF33OM' 
+        AND a."Name" = '360' 
+        AND a."Type" = 'Общий объем'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-midea-mdrb470mgf33om_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Midea MDRB470MGF33OM'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-midea-mdrb470mgf33om_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Midea MDRB470MGF33OM'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-midea-mdrb470mgf33om_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Midea MDRB470MGF33OM'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-midea-mdrb470mgf33om_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Midea MDRB470MGF33OM'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-midea-mdrb470mgf33om_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Midea MDRB470MGF33OM'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-midea-mdrb470mgf33om_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Midea MDRB470MGF33OM'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-midea-mdrb470mgf33om_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Midea MDRB470MGF33OM'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-midea-mdrb470mgf33om_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Midea MDRB470MGF33OM'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-midea-mdrb470mgf33om_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Midea MDRB470MGF33OM'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-midea-mdrb470mgf33om_9.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Midea MDRB470MGF33OM'));

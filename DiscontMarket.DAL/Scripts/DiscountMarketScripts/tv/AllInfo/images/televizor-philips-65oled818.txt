@@ -1,0 +1,37 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-philips-65oled818_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Philips 65OLED818'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-philips-65oled818_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Philips 65OLED818'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-philips-65oled818_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Philips 65OLED818'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-philips-65oled818_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Philips 65OLED818'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-philips-65oled818_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Philips 65OLED818'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-philips-65oled818_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Philips 65OLED818'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-philips-65oled818_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Philips 65OLED818'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-philips-65oled818_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Philips 65OLED818'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-philips-65oled818_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Philips 65OLED818'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-philips-65oled818_9.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Philips 65OLED818'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-philips-65oled818_10.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Philips 65OLED818'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-philips-65oled818_11.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Philips 65OLED818'));

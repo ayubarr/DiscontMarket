@@ -1,0 +1,44 @@
+﻿INSERT INTO "Products" 
+("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription",
+"Availability", "Status", "CategoryID", "BrandID", "UserID") 
+VALUES
+ ('Телевизор Hi RY-65U01FB', 22999, 14, '/items/productimages/televizor-hi-ry-65u01fb_0.png', 4.51, '', 'Телевизор Hi RY-65U01FB оборудован акустической системой Dolby Audio общей мощность 20 Вт. Тип дистанционного управления — инфракрасный, пульт и батарейки идут в комплекте. Доступно воспроизведение видео с USB-носителей. Применена защита от детей. Устройство поставляется в наборе с настольной подставкой, возможна настенная установка к подвесу VESA 400x200.<br><br>Модель оборудована безрамочным экраном диагональю 65", частота обновления которого достигает 60 Гц. Максимальное разрешение выводимого на дисплей изображения составляет 3840х2160 Пикс. Предельный показатель потребляемой мощности равен 123 Вт. Применена технология цифрового шумоподавления для улучшения качества картинки.<br>', 'InStock', 'Discount', 1, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Hi'), 1);
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hi RY-65U01FB'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '4K Ultra HD (3840x2160 Пикс)' AND "Type" = 'Экран));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hi RY-65U01FB'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '65' AND "Type" = 'Диагональ));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hi RY-65U01FB'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '60' AND "Type" = 'Частота обновления));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hi RY-65U01FB'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'LED' AND "Type" = 'Технология экрана));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hi RY-65U01FB'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'Direct LED' AND "Type" = 'Тип светодиодной подсветки));
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-hi-ry-65u01fb_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hi RY-65U01FB'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-hi-ry-65u01fb_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hi RY-65U01FB'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-hi-ry-65u01fb_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hi RY-65U01FB'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-hi-ry-65u01fb_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hi RY-65U01FB'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-hi-ry-65u01fb_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hi RY-65U01FB'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-hi-ry-65u01fb_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hi RY-65U01FB'));

@@ -1,0 +1,13 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnyi-lar-pozis-fh-255_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильный ларь Pozis FH-255'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnyi-lar-pozis-fh-255_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильный ларь Pozis FH-255'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnyi-lar-pozis-fh-255_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильный ларь Pozis FH-255'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnyi-lar-pozis-fh-255_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильный ларь Pozis FH-255'));

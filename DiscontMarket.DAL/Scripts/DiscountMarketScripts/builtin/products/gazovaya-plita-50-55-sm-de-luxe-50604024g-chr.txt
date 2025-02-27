@@ -1,0 +1,78 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Газовая плита (50-55 см) De luxe 506040.24г ЧР', 15999, 11, '/items/productimages/gazovaya-plita-50-55-sm-de-luxe-50604024g-chr_0.png', 4.71, '', 'Газовая плита De Luxe 506040.24г ЧР снабжена четырьмя конфорками разной мощности, подходящими как для быстрого обжаривания продуктов, так и для деликатного разогрева блюд. Они установлены на рабочем столе, покрытом легко моющейся мелкопористой эмалью. Все горелки оснащены системой автоматического розжига. <br><br>ДЛЯ ЛЮБЫХ ЗАДАЧ<br>Нужно запечь курицу или приготовить рагу для семейного ужина? С этой работой справится вместительная газовая духовка. Она снабжена системой безопасности, которая автоматически останавливает подачу топлива при угасании пламени. <br><br>УДОБНО И БЕЗОПАСНО<br>Двухслойное стекло дверцы защищает вас от ожогов при случайных прикосновениях. Яркое LED-освещение помогает следить за процессом приготовления. <br><br>АКСЕССУАРЫ В КОМПЛЕКТЕ<br>Вместе с плитой вы получаете решётку и глубокий противень. Их можно хранить во вместительном ящике с откидной крышкой, расположенном под духовкой. <br><br><br><br>', 'InStock', 'Discount', 4, (SELECT "ID" FROM "Brands" WHERE "Name" = 'De luxe'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Газовая плита (50-55 см) De luxe 506040.24г ЧР'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Газовая плита (50-55 см) De luxe 506040.24г ЧР' 
+        AND a."Name" = '4' 
+        AND a."Type" = 'Количество конфорок'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Газовая плита (50-55 см) De luxe 506040.24г ЧР' 
+        AND a."Name" = 'чугунная' 
+        AND a."Type" = 'Решетка'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Газовая плита (50-55 см) De luxe 506040.24г ЧР' 
+        AND a."Name" = '54' 
+        AND a."Type" = 'Объем духовки'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Газовая плита (50-55 см) De luxe 506040.24г ЧР' 
+        AND a."Name" = '85*50*60 см' 
+        AND a."Type" = 'Габаритные размеры (В*Ш*Г)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Газовая плита (50-55 см) De luxe 506040.24г ЧР' 
+        AND a."Name" = 'механический' 
+        AND a."Type" = 'Электроподжиг конфорок'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/gazovaya-plita-50-55-sm-de-luxe-50604024g-chr_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Газовая плита (50-55 см) De luxe 506040.24г ЧР'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/gazovaya-plita-50-55-sm-de-luxe-50604024g-chr_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Газовая плита (50-55 см) De luxe 506040.24г ЧР'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/gazovaya-plita-50-55-sm-de-luxe-50604024g-chr_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Газовая плита (50-55 см) De luxe 506040.24г ЧР'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/gazovaya-plita-50-55-sm-de-luxe-50604024g-chr_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Газовая плита (50-55 см) De luxe 506040.24г ЧР'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/gazovaya-plita-50-55-sm-de-luxe-50604024g-chr_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Газовая плита (50-55 см) De luxe 506040.24г ЧР'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/gazovaya-plita-50-55-sm-de-luxe-50604024g-chr_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Газовая плита (50-55 см) De luxe 506040.24г ЧР'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/gazovaya-plita-50-55-sm-de-luxe-50604024g-chr_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Газовая плита (50-55 см) De luxe 506040.24г ЧР'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/gazovaya-plita-50-55-sm-de-luxe-50604024g-chr_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Газовая плита (50-55 см) De luxe 506040.24г ЧР'));

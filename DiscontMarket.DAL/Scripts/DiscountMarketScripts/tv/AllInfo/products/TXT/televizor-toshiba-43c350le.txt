@@ -1,0 +1,50 @@
+﻿INSERT INTO "Products" 
+("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription",
+"Availability", "Status", "CategoryID", "BrandID", "UserID") 
+VALUES
+ ('Телевизор Toshiba 43C350LE', 14499, 14, '/items/productimages/televizor-toshiba-43c350le_0.png', 4.5, '', 'Телевизор Toshiba 43C350LE — устройство с безрамочным экраном диагональю 43 дюйма разрешением 3840х2160 пикселей. Высокая детализация и реалистичная цветопередача обеспечивают глубокое погружение в контент. Частота обновления доходит до 60 Гц. Технология Ultra Essential PQ способствует получению четкого изображения. Поддерживается масштабирование до 4K Ultra HD для просмотра кинолент прошлых лет в высоком качестве. <br>Технология Smart TV позволяет смотреть фильмы, сериалы и прочий контент на различных онлайн-платформах, читать новости, слушать музыку и многое другое. Продвинутая ОС Vidaa OS5.0 упрощает взаимодействие с телевизором. Операционная система обеспечивает поддержку современных технологий, включая универсальный поиск контента по всем приложениям и голосовое управление.<br>Яркость экрана достигает 300 нит. Угол обзора по вертикали и горизонтали — 178°. Для управления предусмотрен пульт ДУ (Bluetooth/ИК) — питание осуществляется от двух батареек типа АА (LR6). Подключение к Сети осуществляется через Wi-Fi. Sleep-таймер служит для настройки автоматического отключения телевизора через некоторое время. Чтобы остановить эфир любимой телепередачи и снова вернуться к ней через некоторое время, можно воспользоваться функцией TimeShift.<br>Телевизор поддерживает воспроизведение с цифровых носителей и запись с ТВ на USB-накопитель. Акустическая система мощностью 2х7 Вт обеспечивает иммерсивный чистый звук — независимо от того, включена трансляция фильма или запущен игровой процесс. Для приема ТВ-сигнала используются цифровой DVB стандартов T/T2/C/S/S2 и аналоговый PAL/SECAM тюнеры. Модель снабжена широким набором интерфейсов, в том числе HDMI, USB 2.0 тип A, LAN, разъемом 3,5 мм для наушников и слотом для модуля DVB CAM. Потребляемая мощность модели — 80 Вт. Для блокировки управления используется защита от детей. Размеры без настольной подставки, которая входит в комплект, составляют 62,6х96,3х22,3 см, вес — 7,4 кг.', 'InStock', 'Discount', 1, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Toshiba'), 1);
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Toshiba 43C350LE'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '4K Ultra HD (3840x2160 Пикс)' AND "Type" = 'Экран));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Toshiba 43C350LE'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '43' AND "Type" = 'Диагональ));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Toshiba 43C350LE'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '60' AND "Type" = 'Частота обновления));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Toshiba 43C350LE'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'LED' AND "Type" = 'Технология экрана));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Toshiba 43C350LE'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'Direct LED' AND "Type" = 'Тип светодиодной подсветки));
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-toshiba-43c350le_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Toshiba 43C350LE'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-toshiba-43c350le_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Toshiba 43C350LE'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-toshiba-43c350le_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Toshiba 43C350LE'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-toshiba-43c350le_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Toshiba 43C350LE'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-toshiba-43c350le_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Toshiba 43C350LE'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-toshiba-43c350le_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Toshiba 43C350LE'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-toshiba-43c350le_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Toshiba 43C350LE'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-toshiba-43c350le_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Toshiba 43C350LE'));

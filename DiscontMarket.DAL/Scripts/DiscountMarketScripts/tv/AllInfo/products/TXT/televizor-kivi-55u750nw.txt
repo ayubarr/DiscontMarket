@@ -1,0 +1,50 @@
+﻿INSERT INTO "Products" 
+("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription",
+"Availability", "Status", "CategoryID", "BrandID", "UserID") 
+VALUES
+ ('Телевизор Kivi 55U750NW', 24995, 5, '/items/productimages/televizor-kivi-55u750nw_0.png', 4.76, '', 'Телевизор Kivi 55U750NW поддерживает голосовое управление. Оснащен USB-разъемом чтобы можно было воспроизводить фильмы с накопителя. Моделью можно управлять дистанционно с помощью смартфона. Для быстрого подключения к внешним устройствам встроены модули Wi-Fi и Bluetooth. Технологии экрана LED, HDR создают высокий коэффициент контрастности и безопасны для глаз. Объемный звук Dolby Digital обеспечивает комфортные условия просмотра. Телевизор можно подвесить или установить на подставку, которая идет в комплекте.', 'InStock', 'Discount', 1, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Kivi'), 1);
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Kivi 55U750NW'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '4K Ultra HD (3840x2160 Пикс)' AND "Type" = 'Экран));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Kivi 55U750NW'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '55' AND "Type" = 'Диагональ));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Kivi 55U750NW'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '60' AND "Type" = 'Частота обновления));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Kivi 55U750NW'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'LED' AND "Type" = 'Технология экрана));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Kivi 55U750NW'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'Direct LED' AND "Type" = 'Тип светодиодной подсветки));
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-kivi-55u750nw_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Kivi 55U750NW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-kivi-55u750nw_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Kivi 55U750NW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-kivi-55u750nw_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Kivi 55U750NW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-kivi-55u750nw_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Kivi 55U750NW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-kivi-55u750nw_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Kivi 55U750NW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-kivi-55u750nw_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Kivi 55U750NW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-kivi-55u750nw_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Kivi 55U750NW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-kivi-55u750nw_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Kivi 55U750NW'));

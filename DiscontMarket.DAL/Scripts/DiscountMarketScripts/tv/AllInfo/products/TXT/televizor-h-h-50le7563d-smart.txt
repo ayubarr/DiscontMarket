@@ -1,0 +1,45 @@
+﻿INSERT INTO "Products" 
+("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription",
+"Availability", "Status", "CategoryID", "BrandID", "UserID") 
+VALUES
+ ('Телевизор H H 50LE7563D SMART', 18995, 9, '/items/productimages/televizor-h-h-50le7563d-smart_0.png', 4.13, '', 'Телевизор H H 50LE7563D Smart размером 64,9х111,9х7,7 см весит 10,9 кг и устанавливается на горизонтальную поверхность на настольную подставку (идет в наборе вместе с пультом ДУ). Изделие можно монтировать на стену на крепления типа VESA 200x200. Модель с цифровым тюнером и модулем Bluetooth функционирует на OS WebOS, поддерживает Wi-Fi, Smart TV, что обеспечивает удобство применения и управления. 
+
+Sleep-таймер позволяет отключать технику в заданное время. За объемный чистый звук отвечает аудиосистема Dolby Digital. Экран диагональю 127 см, созданный с использованием технологии LED, передает изображение разрешением 3840х2160 Пикс с частотой обновления 60 Гц, поэтому картинка отображается в натуральных цветах и высокой детализации. 
+
+Внешние носители подключаются через порты USB 2.0, HDMI-выход, RCA-вход, Tоslink, коаксиальный цифровой выход. Для наушников предусмотрен разъем 3.5 мм. Функция защиты от детей исключает непреднамеренное изменение настроек.', 'InStock', 'Discount', 1, (SELECT "ID" FROM "Brands" WHERE "Name" = 'H'), 1);
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор H H 50LE7563D SMART'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '4K Ultra HD (3840x2160 Пикс)' AND "Type" = 'Экран));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор H H 50LE7563D SMART'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '50' AND "Type" = 'Диагональ));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор H H 50LE7563D SMART'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '60' AND "Type" = 'Частота обновления));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор H H 50LE7563D SMART'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'LED' AND "Type" = 'Технология экрана));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор H H 50LE7563D SMART'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'Direct LED' AND "Type" = 'Тип светодиодной подсветки));
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-h-h-50le7563d-smart_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор H H 50LE7563D SMART'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-h-h-50le7563d-smart_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор H H 50LE7563D SMART'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-h-h-50le7563d-smart_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор H H 50LE7563D SMART'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-h-h-50le7563d-smart_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор H H 50LE7563D SMART'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-h-h-50le7563d-smart_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор H H 50LE7563D SMART'));

@@ -1,0 +1,79 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Комбинированная плита (50-55 см) Darina S KM521 300 W', 9495, 12, '/items/productimages/kombinirovannaya-plita-50-55-sm-darina-s-km521-300-w_0.png', 4.73, '', 'Комбинированная плита (50-55 см) «Дарина» S KM521 300 W — это компактная модель, которая поместится даже на небольшой кухне. За счет современного дизайна устройство гармонично сочетается с интерьером любого типа. Прибор оснащен двумя газовыми конфорками с функцией поддержания малого огня. Стол дополнен профильной решеткой из эмалированной стали, которая устойчива к деформации, коррозии, механическим воздействиям, износу и температурным перепадам. Металлический щиток защищает кухонный фартук от капель жира.
+
+Плита оборудована встроенной электрической духовкой объемом 45 л. Тепло надежно удерживается в камере за счет дверцы с двойным стеклом. Доступно четыре режима работы. Температура плавно регулируется, предельный показатель — 250°C. Модель управляется с помощью механических поворотных переключателей. Для простой установки противня предусмотрены металлические направляющие.
+
+Плита отличается высокой энергоэффективностью, так как потребляет не более 4200 Вт. Модель дополнена откидным ящиком, в котором можно хранить посуду. Стальной корпус снаружи и внутри покрыт эмалью для защиты от коррозии. Ножки прибора регулируются по высоте. Устройство комплектуется глубоким противнем и решеткой.', 'InStock', 'Discount', 4, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Darina'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Комбинированная плита (50-55 см) Darina S KM521 300 W'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Комбинированная плита (50-55 см) Darina S KM521 300 W' 
+        AND a."Name" = '2' 
+        AND a."Type" = 'Количество конфорок'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Комбинированная плита (50-55 см) Darina S KM521 300 W' 
+        AND a."Name" = 'металлическая' 
+        AND a."Type" = 'Решетка'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Комбинированная плита (50-55 см) Darina S KM521 300 W' 
+        AND a."Name" = '45' 
+        AND a."Type" = 'Объем духовки'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Комбинированная плита (50-55 см) Darina S KM521 300 W' 
+        AND a."Name" = 'электрический' 
+        AND a."Type" = 'Тип духовки'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Комбинированная плита (50-55 см) Darina S KM521 300 W' 
+        AND a."Name" = '85*50*45 см' 
+        AND a."Type" = 'Габаритные размеры (В*Ш*Г)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/kombinirovannaya-plita-50-55-sm-darina-s-km521-300-w_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Комбинированная плита (50-55 см) Darina S KM521 300 W'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/kombinirovannaya-plita-50-55-sm-darina-s-km521-300-w_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Комбинированная плита (50-55 см) Darina S KM521 300 W'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/kombinirovannaya-plita-50-55-sm-darina-s-km521-300-w_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Комбинированная плита (50-55 см) Darina S KM521 300 W'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/kombinirovannaya-plita-50-55-sm-darina-s-km521-300-w_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Комбинированная плита (50-55 см) Darina S KM521 300 W'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/kombinirovannaya-plita-50-55-sm-darina-s-km521-300-w_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Комбинированная плита (50-55 см) Darina S KM521 300 W'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/kombinirovannaya-plita-50-55-sm-darina-s-km521-300-w_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Комбинированная плита (50-55 см) Darina S KM521 300 W'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/kombinirovannaya-plita-50-55-sm-darina-s-km521-300-w_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Комбинированная плита (50-55 см) Darina S KM521 300 W'));

@@ -1,0 +1,4 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/aktivatornaya-stiralnaya-mashina-belosnezhka-xr800b_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Активаторная стиральная машина Белоснежка XR800B'));

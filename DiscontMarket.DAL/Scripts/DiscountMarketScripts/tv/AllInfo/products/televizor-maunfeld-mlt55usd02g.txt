@@ -1,0 +1,55 @@
+﻿INSERT INTO "Products" 
+("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription",
+"Availability", "Status", "CategoryID", "BrandID", "UserID") 
+VALUES
+ ('Телевизор Maunfeld MLT55USD02G', 25495, 13, '/items/productimages/televizor-maunfeld-mlt55usd02g_0.png', 4.13, '', 'Телевизор Maunfeld MLT55USD02G энергопотреблением до 112 Вт можно установить на настольную подставку с боковыми нескользящими опорами или закрепить на стене с помощью кронштейна GBG34. Модель работает под управлением операционной системы Android с доступом к возможностям Smart TV, онлайн-кинотеатрам, мультимедийному и стримингового контенту. Размер оперативной памяти составляет 1,5 Гб, встроенной — 8 Гб. Для управления функциями предусмотрен пульт дальностью 0,5-5 м. Встроенные приемники Wi-Fi 802.11b/g/n (двухдиапазонный) и Bluetooth 5.0 поддерживают дистанционную связь с совместимыми устройствами. 
+Широкоформатный Direct LED-экран диагональю 55 дюймов с углами обзора 170° транслирует видеоконтент разрешением 4K UHD. Частота обновления кадров составляет 60 Гц, пиковая яркость 280 нит. VA-матрица обеспечивает вывод контрастных и сочных изображений. Технология HDR обеспечивает высокую детализацию темных и светлых сцен. Цифровое шумоподавление повышает качество изображений. 
+Прибор оснащен цифровыми тюнерами DVB. Он хранит в памяти до 5000 каналов, позволяет принимать сигналы аналогового, спутникового, цифрового ТВ в широком частотном диапазоне без обязательного подключения антенны. Динамики (два по 10 Вт) поддерживают вывод объемного звука Dolby Digital. Возможна запись и чтение информации с флеш-накопителей. Для подключения приставок, ПК, флеш-памяти и других внешних устройств в корпусе предусмотрены разъемы USB 2.0 (два), HDMI (три), LAN, AV, Antenna RF (два), Coax, слот для карты Cl.', 'InStock', 'Discount', 1, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Maunfeld'), 1);
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Maunfeld MLT55USD02G'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '4K Ultra HD (3840x2160 Пикс)' AND "Type" = 'Экран));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Maunfeld MLT55USD02G'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '55' AND "Type" = 'Диагональ));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Maunfeld MLT55USD02G'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '60' AND "Type" = 'Частота обновления));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Maunfeld MLT55USD02G'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'LED' AND "Type" = 'Технология экрана));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Maunfeld MLT55USD02G'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'Direct LED' AND "Type" = 'Тип светодиодной подсветки));
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-maunfeld-mlt55usd02g_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Maunfeld MLT55USD02G'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-maunfeld-mlt55usd02g_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Maunfeld MLT55USD02G'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-maunfeld-mlt55usd02g_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Maunfeld MLT55USD02G'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-maunfeld-mlt55usd02g_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Maunfeld MLT55USD02G'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-maunfeld-mlt55usd02g_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Maunfeld MLT55USD02G'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-maunfeld-mlt55usd02g_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Maunfeld MLT55USD02G'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-maunfeld-mlt55usd02g_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Maunfeld MLT55USD02G'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-maunfeld-mlt55usd02g_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Maunfeld MLT55USD02G'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-maunfeld-mlt55usd02g_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Maunfeld MLT55USD02G'));

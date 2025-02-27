@@ -1,0 +1,78 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Газовая плита (50-55 см) Darina 1B GM441 005 W', 10245, 17, '/items/productimages/gazovaya-plita-50-55-sm-darina-1b-gm441-005-w_0.png', 4.95, '', 'Газовая плита «Дарина» 1B GM441 005 W белого цвета — компактная модель шириной 50 см, глубиной 51 см, что делает ее удачным выбором для небольшой кухни. Высота стандартная и составляет 85 см, вес — 35,4 кг. <br><br>Варочная панель оснащена четырьмя конфорками: две диаметром 6 см и мощностью по 1900 Вт и две — по 8 см и 2300 Вт. Поддерживается функция «Малое пламя» — можно тушить или томить блюда, не опасаясь, что огонь погаснет. Встроен механический электроподжиг, что позволит обойтись без зажигалок и спичек. Он работает от бытовой розетки, длина кабеля — 1,5 м. Стеклянная крышка защитит кухонный фартук от брызг, в закрытом положении будет служить дополнительной рабочей поверхностью. Поверхность панели выполнена из эмалированной стали и легко поддается очистке. <br><br>Духовой шкаф обладает объемом 50 л, разогревается до температуры 250°C и работает в режиме нижнего нагрева. Контролировать приготовление помогает внутренняя подсветка. За безопасность отвечает система «Газ-контроль»: при угасании пламени предохранители предотвращают утечку. Дверца откидная, оснащена двойным стеклом, за счет чего снаружи не становится горячей. <br><br>Управление механическое: традиционные поворотные переключатели. В нижней части корпуса предусмотрен отсек для хранения кухонной утвари. Регулируемые опоры упрощают установку и дают возможность компенсировать небольшие неровности пола. В комплекте поставляются эмалированный противень и решетка.', 'InStock', 'Discount', 4, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Darina'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Газовая плита (50-55 см) Darina 1B GM441 005 W'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Газовая плита (50-55 см) Darina 1B GM441 005 W' 
+        AND a."Name" = '4' 
+        AND a."Type" = 'Количество конфорок'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Газовая плита (50-55 см) Darina 1B GM441 005 W' 
+        AND a."Name" = 'стальная' 
+        AND a."Type" = 'Решетка'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Газовая плита (50-55 см) Darina 1B GM441 005 W' 
+        AND a."Name" = '50' 
+        AND a."Type" = 'Объем духовки'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Газовая плита (50-55 см) Darina 1B GM441 005 W' 
+        AND a."Name" = '85*50*51 см' 
+        AND a."Type" = 'Габаритные размеры (В*Ш*Г)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Газовая плита (50-55 см) Darina 1B GM441 005 W' 
+        AND a."Name" = 'механический' 
+        AND a."Type" = 'Электроподжиг конфорок'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/gazovaya-plita-50-55-sm-darina-1b-gm441-005-w_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Газовая плита (50-55 см) Darina 1B GM441 005 W'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/gazovaya-plita-50-55-sm-darina-1b-gm441-005-w_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Газовая плита (50-55 см) Darina 1B GM441 005 W'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/gazovaya-plita-50-55-sm-darina-1b-gm441-005-w_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Газовая плита (50-55 см) Darina 1B GM441 005 W'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/gazovaya-plita-50-55-sm-darina-1b-gm441-005-w_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Газовая плита (50-55 см) Darina 1B GM441 005 W'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/gazovaya-plita-50-55-sm-darina-1b-gm441-005-w_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Газовая плита (50-55 см) Darina 1B GM441 005 W'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/gazovaya-plita-50-55-sm-darina-1b-gm441-005-w_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Газовая плита (50-55 см) Darina 1B GM441 005 W'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/gazovaya-plita-50-55-sm-darina-1b-gm441-005-w_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Газовая плита (50-55 см) Darina 1B GM441 005 W'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/gazovaya-plita-50-55-sm-darina-1b-gm441-005-w_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Газовая плита (50-55 см) Darina 1B GM441 005 W'));

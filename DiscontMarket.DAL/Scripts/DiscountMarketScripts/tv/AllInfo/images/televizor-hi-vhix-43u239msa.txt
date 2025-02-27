@@ -1,0 +1,16 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-hi-vhix-43u239msa_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hi VHIX-43U239MSA'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-hi-vhix-43u239msa_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hi VHIX-43U239MSA'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-hi-vhix-43u239msa_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hi VHIX-43U239MSA'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-hi-vhix-43u239msa_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hi VHIX-43U239MSA'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-hi-vhix-43u239msa_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hi VHIX-43U239MSA'));

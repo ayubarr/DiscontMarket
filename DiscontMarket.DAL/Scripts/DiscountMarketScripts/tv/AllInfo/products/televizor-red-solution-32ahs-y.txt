@@ -1,0 +1,73 @@
+﻿INSERT INTO "Products" 
+("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription",
+"Availability", "Status", "CategoryID", "BrandID", "UserID") 
+VALUES
+ ('Телевизор RED SOLUTION 32AHS/Y', 8999, 18, '/items/productimages/televizor-red-solution-32ahs-y_0.png', 4.14, '', 'Телевизор RED Solution 32AHS/Y оснащен экраном диагональю 32" разрешением 1366x768 Пикс выполненным по технологии LED. Устройство поддерживает операционную систему Яндекс.ТВ и регулируется при помощи голосового помощника Алисы. Дополнительно предусмотрено наличие пульта ДУ. Данная модель поддерживает технологии Smart TV и Wi-Fi, оборудована встроенным модулем Bluetooth, обладает активным цифровым шумоподавлением. 
+
+На корпусе расположены разъемы HDMI, USB 2.0 тип A, коаксиальные цифровые входы, разъем для наушников 3,5 мм, LAN разъем (RJ45). Предусмотрена возможность воспроизведения файлов с внешнего носителя USB. Для установки устройства на горизонтальную поверхность в комплект входит настольная подставка, для монтажа на стене используется крепление VESA 100x100.', 'InStock', 'Discount', 1, (SELECT "ID" FROM "Brands" WHERE "Name" = 'RED SOLUTION'), 1);
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор RED SOLUTION 32AHS/Y'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'HD (1366x768 Пикс)' AND "Type" = 'Экран));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор RED SOLUTION 32AHS/Y'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '32' AND "Type" = 'Диагональ));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор RED SOLUTION 32AHS/Y'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '60' AND "Type" = 'Частота обновления));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор RED SOLUTION 32AHS/Y'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'LED' AND "Type" = 'Технология экрана));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор RED SOLUTION 32AHS/Y'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'Direct LED' AND "Type" = 'Тип светодиодной подсветки));
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-red-solution-32ahs-y_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор RED SOLUTION 32AHS/Y'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-red-solution-32ahs-y_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор RED SOLUTION 32AHS/Y'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-red-solution-32ahs-y_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор RED SOLUTION 32AHS/Y'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-red-solution-32ahs-y_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор RED SOLUTION 32AHS/Y'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-red-solution-32ahs-y_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор RED SOLUTION 32AHS/Y'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-red-solution-32ahs-y_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор RED SOLUTION 32AHS/Y'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-red-solution-32ahs-y_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор RED SOLUTION 32AHS/Y'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-red-solution-32ahs-y_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор RED SOLUTION 32AHS/Y'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-red-solution-32ahs-y_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор RED SOLUTION 32AHS/Y'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-red-solution-32ahs-y_9.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор RED SOLUTION 32AHS/Y'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-red-solution-32ahs-y_10.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор RED SOLUTION 32AHS/Y'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-red-solution-32ahs-y_11.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор RED SOLUTION 32AHS/Y'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-red-solution-32ahs-y_12.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор RED SOLUTION 32AHS/Y'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-red-solution-32ahs-y_13.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор RED SOLUTION 32AHS/Y'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-red-solution-32ahs-y_14.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор RED SOLUTION 32AHS/Y'));

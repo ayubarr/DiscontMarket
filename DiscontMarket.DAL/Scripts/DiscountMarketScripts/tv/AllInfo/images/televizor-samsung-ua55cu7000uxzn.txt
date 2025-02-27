@@ -1,0 +1,19 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-samsung-ua55cu7000uxzn_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung UA55CU7000UXZN'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-samsung-ua55cu7000uxzn_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung UA55CU7000UXZN'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-samsung-ua55cu7000uxzn_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung UA55CU7000UXZN'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-samsung-ua55cu7000uxzn_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung UA55CU7000UXZN'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-samsung-ua55cu7000uxzn_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung UA55CU7000UXZN'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-samsung-ua55cu7000uxzn_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung UA55CU7000UXZN'));

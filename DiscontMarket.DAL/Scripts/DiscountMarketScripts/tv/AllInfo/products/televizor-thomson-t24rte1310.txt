@@ -1,0 +1,62 @@
+﻿INSERT INTO "Products" 
+("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription",
+"Availability", "Status", "CategoryID", "BrandID", "UserID") 
+VALUES
+ ('Телевизор Thomson T24RTE1310', 6745, 19, '/items/productimages/televizor-thomson-t24rte1310_0.png', 4.59, '', '', 'InStock', 'Discount', 1, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Thomson'), 1);
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Thomson T24RTE1310'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'HD (1366x768 Пикс)' AND "Type" = 'Экран));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Thomson T24RTE1310'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '24' AND "Type" = 'Диагональ));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Thomson T24RTE1310'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '60' AND "Type" = 'Частота обновления));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Thomson T24RTE1310'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'LED' AND "Type" = 'Технология экрана));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Thomson T24RTE1310'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'Direct LED' AND "Type" = 'Тип светодиодной подсветки));
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-thomson-t24rte1310_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Thomson T24RTE1310'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-thomson-t24rte1310_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Thomson T24RTE1310'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-thomson-t24rte1310_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Thomson T24RTE1310'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-thomson-t24rte1310_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Thomson T24RTE1310'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-thomson-t24rte1310_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Thomson T24RTE1310'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-thomson-t24rte1310_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Thomson T24RTE1310'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-thomson-t24rte1310_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Thomson T24RTE1310'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-thomson-t24rte1310_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Thomson T24RTE1310'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-thomson-t24rte1310_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Thomson T24RTE1310'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-thomson-t24rte1310_9.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Thomson T24RTE1310'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-thomson-t24rte1310_10.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Thomson T24RTE1310'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-thomson-t24rte1310_11.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Thomson T24RTE1310'));

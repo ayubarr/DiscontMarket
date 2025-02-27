@@ -1,0 +1,87 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Холодильник Sharp SJXG60PMBE', 102499, 11, '/items/productimages/holodilnik-sharp-sjxg60pmbe_0.png', 4.19, '', 'Холодильник Sharp SJXG60PM – широкая модель, оснащённая современным инверторным компрессором J-Tech. Он вмещает множество продуктов, работает практически бесшумно и обходится минимальным энергопотреблением (класс А++). Плавная регулировка мощности замедляет износ привода, делая его очень надёжным. 
+
+ГИБРИДНАЯ СИСТЕМА ОХЛАЖДЕНИЯ
+В основном отделении находятся алюминиевая пластина и вентилятор, сообщающиеся с компрессором. Они помогают поддерживать одинаковый микроклимат на всех полках и долго сохраняют низкую температуру после отключения питания. 
+
+СТОПРОЦЕНТНАЯ СВЕЖЕСТЬ
+Плазменный ионизатор и дезодоратор с частицами серебра уничтожают большинство бактерий и разрушают летучие химические соединения. Они устраняют неприятные запахи и увеличивают срок хранения многих скоропортящихся продуктов. 
+
+ТОЧНАЯ НАСТРОЙКА
+При включении функции Extra Cool устройство охлаждает продукты до минимальной отрицательной температуры. Благодаря этому пища сохраняет свои полезные свойства и легко режется на кусочки, а напитки получаются прохладными, но не ледяными. 
+
+ВСТРОЕННЫЙ ЛЁДОГЕНЕРАТОР
+Специальный отсек в морозилке позволяет получить красивые ровные кубики льда, которые можно добавлять в коктейли и другие напитки. 
+
+СОВРЕМЕННЫЕ ТЕХНОЛОГИИ В ДЕЙСТВИИ
+Холодильник снабжён удобной сенсорной панелью управления и экономичной LED-подсветкой. Он автоматически переходит в режим размораживания при обнаружении льда и инея, поэтому обслуживание ему требуется не чаще одного раза в год.', 'InStock', 'Discount', 3, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Sharp'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Холодильник Sharp SJXG60PMBE'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Sharp SJXG60PMBE' 
+        AND a."Name" = 'инверторный' 
+        AND a."Type" = 'Тип компрессора'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Sharp SJXG60PMBE' 
+        AND a."Name" = '86' 
+        AND a."Type" = 'Ширина'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Sharp SJXG60PMBE' 
+        AND a."Name" = '74' 
+        AND a."Type" = 'Глубина'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Sharp SJXG60PMBE' 
+        AND a."Name" = '187' 
+        AND a."Type" = 'Высота'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Sharp SJXG60PMBE' 
+        AND a."Name" = '600' 
+        AND a."Type" = 'Общий объем'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-sharp-sjxg60pmbe_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Sharp SJXG60PMBE'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-sharp-sjxg60pmbe_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Sharp SJXG60PMBE'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-sharp-sjxg60pmbe_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Sharp SJXG60PMBE'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-sharp-sjxg60pmbe_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Sharp SJXG60PMBE'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-sharp-sjxg60pmbe_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Sharp SJXG60PMBE'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-sharp-sjxg60pmbe_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Sharp SJXG60PMBE'));

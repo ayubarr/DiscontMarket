@@ -1,0 +1,22 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-atlant-hm-4621-149-nd_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник ATLANT ХМ-4621-149 ND'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-atlant-hm-4621-149-nd_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник ATLANT ХМ-4621-149 ND'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-atlant-hm-4621-149-nd_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник ATLANT ХМ-4621-149 ND'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-atlant-hm-4621-149-nd_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник ATLANT ХМ-4621-149 ND'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-atlant-hm-4621-149-nd_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник ATLANT ХМ-4621-149 ND'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-atlant-hm-4621-149-nd_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник ATLANT ХМ-4621-149 ND'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-atlant-hm-4621-149-nd_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник ATLANT ХМ-4621-149 ND'));

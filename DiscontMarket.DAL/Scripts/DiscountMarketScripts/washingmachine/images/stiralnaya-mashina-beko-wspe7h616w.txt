@@ -1,0 +1,10 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-beko-wspe7h616w_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Beko WSPE7H616W'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-beko-wspe7h616w_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Beko WSPE7H616W'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-beko-wspe7h616w_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Beko WSPE7H616W'));

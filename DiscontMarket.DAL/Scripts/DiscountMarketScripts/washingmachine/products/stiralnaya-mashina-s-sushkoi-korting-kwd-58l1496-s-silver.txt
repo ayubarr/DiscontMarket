@@ -1,0 +1,64 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Стиральная машина с сушкой Korting KWD 58L1496 S Silver', 47495, 10, '/items/productimages/stiralnaya-mashina-s-sushkoi-korting-kwd-58l1496-s-silver_0.png', 4.3, '', 'Стиральная машина с сушкой Korting KWD 58L1496 S Silver обладает барабаном объемом 61 л и вмещает до 9 кг белья для стирки и до 6 кг — для сушки. Диаметр загрузочного люка 33 см, он открывается под углом 135°, что позволяет свободно загружать и вынимать постельные принадлежности, пледы, покрывала. 
+Программ для стирки 15. Это традиционные режимы для хлопка, шерсти и синтетики, специальный цикл «Одеяло», ускоренные программы «Экспресс» (12 минут) и «Быстрая» (60 минут и 60°C), «Эко», «Антиаллергенная» и другие. Кроме того, предусмотрены «Деликатная сушка», «Сушка хлопка» и возможность комбинировать быструю и обычную стирку и сушку на 6 кг белья. 
+За выбор программ отвечает поворотный элемент, прочие параметры работы вводятся при помощи сенсорного дисплея. Регулируются температура и скорость отжима (от 400 об/мин до 1400 об/мин), можно отложить выполнение цикла при помощи таймера (до 24 часов). Доступ к настройкам можно заблокировать, что может быть полезно семьям с маленькими детьми. 
+Дверца люка автоматически блокируется, производится контроль баланса барабана, что снижает вибрацию и уровень шума: при стирке он достигает 58 дБ, при отжиме — 77 дБ, при сушке — 64 дБ. Предусмотрена защита от образования пены, перелива и протечек. 
+Энергопотребление прибора соответствует классу А и составляет 6,12 кВт*ч при стирке и 1,05 кВт*ч при сушке. Мощность подключения — 2200 Вт. Габариты стиральной машины: 845x597x582, вес — 79 кг.', 'InStock', 'Discount', 5, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Korting'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Стиральная машина с сушкой Korting KWD 58L1496 S Silver'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина с сушкой Korting KWD 58L1496 S Silver' 
+        AND a."Name" = '9' 
+        AND a."Type" = 'Максимальная загрузка'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина с сушкой Korting KWD 58L1496 S Silver' 
+        AND a."Name" = '6' 
+        AND a."Type" = 'Загрузка при сушке(хлопок)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина с сушкой Korting KWD 58L1496 S Silver' 
+        AND a."Name" = '1400' 
+        AND a."Type" = 'Максимальная скорость отжима'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина с сушкой Korting KWD 58L1496 S Silver' 
+        AND a."Name" = 'стандартный' 
+        AND a."Type" = 'Мотор'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина с сушкой Korting KWD 58L1496 S Silver' 
+        AND a."Name" = 'полная' 
+        AND a."Type" = 'Тип защиты от протечек'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-s-sushkoi-korting-kwd-58l1496-s-silver_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина с сушкой Korting KWD 58L1496 S Silver'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-s-sushkoi-korting-kwd-58l1496-s-silver_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина с сушкой Korting KWD 58L1496 S Silver'));

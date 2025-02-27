@@ -1,0 +1,95 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Холодильник Indesit ES 15 A', 14249, 13, '/items/productimages/holodilnik-indesit-es-15-a_0.png', 4.12, '', 'Холодильник Indesit ES 15 A — модель с общим полезным объемом 243 л, из которых 189 л приходится на основное отделение и 54 л на морозилку. Дверца выполнена из эмалированного металла. Внутри камер предусмотрены полки из закаленного стекла, пластиковые балконы на двери для хранения бутылок и прозрачные ящики для размещения фруктов, овощей. Встроенная лампа накаливания обеспечивает хорошую видимость пространства в любое время суток.
+
+• <b>Тихая работа</b>
+В основе работы лежит стандартный компрессор с использованием хладагента R600a, который выдает уровень шума не выше 39 дБ.
+
+• <b>Интуитивно понятное управление</b>
+Изменение настроек производится с помощью механических переключателей. Световая индикация показывает состояние работы.
+
+• <b>Низкое энергопотребление</b>
+Модель относится к А-классу энергоэффективности. За год расходуется до 296 кВт*ч энергии.
+
+• <b>Длительная автономная работа</b>
+При неожиданном отключении питания холодильник сохраняет холод в течение 15 часов.
+
+Размораживание холодильной камеры модели — капельное, что не требует вмешательства человека. В случае необходимости дверь можно перенавешивать с одной стороны на другую.', 'InStock', 'Discount', 3, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Indesit'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Холодильник Indesit ES 15 A'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Indesit ES 15 A' 
+        AND a."Name" = 'стандартный' 
+        AND a."Type" = 'Тип компрессора'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Indesit ES 15 A' 
+        AND a."Name" = '150' 
+        AND a."Type" = 'Высота'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Indesit ES 15 A' 
+        AND a."Name" = '60' 
+        AND a."Type" = 'Ширина'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Indesit ES 15 A' 
+        AND a."Name" = '61.5' 
+        AND a."Type" = 'Глубина'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Indesit ES 15 A' 
+        AND a."Name" = '263' 
+        AND a."Type" = 'Общий объем'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-indesit-es-15-a_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Indesit ES 15 A'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-indesit-es-15-a_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Indesit ES 15 A'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-indesit-es-15-a_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Indesit ES 15 A'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-indesit-es-15-a_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Indesit ES 15 A'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-indesit-es-15-a_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Indesit ES 15 A'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-indesit-es-15-a_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Indesit ES 15 A'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-indesit-es-15-a_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Indesit ES 15 A'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-indesit-es-15-a_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Indesit ES 15 A'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-indesit-es-15-a_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Indesit ES 15 A'));

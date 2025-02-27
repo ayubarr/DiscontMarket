@@ -1,0 +1,73 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Морозильная камера Maunfeld MFFR170W', 35695, 9, '/items/productimages/morozilnaya-kamera-maunfeld-mffr170w_0.png', 4.62, '', 'Морозильная камера Maunfeld MFFR170W, белый — модель общим объемом 228 л. Прибор размораживается автоматически по технологии No Frost. В год эта модель потребляет 310 кВт*ч, что соответствует классу А+. При отключении электроэнергии холод будет сохраняться до 24 часов. Уровень шума при работе — 43 дБ. 
+Внутреннее оснащение состоит из двух стеклянных полок, четырех ящиков и двух дверных карманов. В сутки морозильная камера может обработать до 9,5 кг. Управление электронное, уровень охлаждения регулируется в диапазоне от -16°С до -24°С. Температуру отображает встроенный дисплей. Дверцу, выполненную из нержавеющей стали, можно перенавесить. Если забыть ее закрыть, оповестит звуковой сигнал.', 'InStock', 'Discount', 3, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Maunfeld'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Морозильная камера Maunfeld MFFR170W'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Морозильная камера Maunfeld MFFR170W' 
+        AND a."Name" = 'стандартный' 
+        AND a."Type" = 'Тип компрессора'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Морозильная камера Maunfeld MFFR170W' 
+        AND a."Name" = '170*54*59 см' 
+        AND a."Type" = 'Габаритные размеры (В*Ш*Г)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Морозильная камера Maunfeld MFFR170W' 
+        AND a."Name" = 'A+' 
+        AND a."Type" = 'Класс энергоэффективности'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Морозильная камера Maunfeld MFFR170W' 
+        AND a."Name" = 'Да' 
+        AND a."Type" = 'Режим суперзамораживания'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Морозильная камера Maunfeld MFFR170W' 
+        AND a."Name" = 'электронный' 
+        AND a."Type" = 'Тип управления'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-maunfeld-mffr170w_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Maunfeld MFFR170W'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-maunfeld-mffr170w_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Maunfeld MFFR170W'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-maunfeld-mffr170w_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Maunfeld MFFR170W'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-maunfeld-mffr170w_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Maunfeld MFFR170W'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-maunfeld-mffr170w_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Maunfeld MFFR170W'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-maunfeld-mffr170w_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Maunfeld MFFR170W'));

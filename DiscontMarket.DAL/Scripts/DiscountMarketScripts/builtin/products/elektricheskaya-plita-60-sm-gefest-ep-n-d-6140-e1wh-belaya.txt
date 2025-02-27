@@ -1,0 +1,71 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Электрическая плита (60 см) Gefest ЭП Н Д 6140 E1WH белая', 16499, 6, '/items/productimages/elektricheskaya-plita-60-sm-gefest-ep-n-d-6140-e1wh-belaya_0.png', 4.83, '', 'Электрическая плита Gefest ЭП Н Д 6140-E1WH шириной 60 см оборудована варочной панелью из эмалированной стали. Четыре чугунные конфорки обладают разным диаметром и мощностью. Для хранения посуды в нижней части размещен выдвижной ящик. Прибор снабжен регулируемыми ножками. 
+Духовой шкаф объемом 57 л работает в четырех режимах, включая гриль. Максимальная температура нагрева — 270°С. Стенки камеры покрыты эмалью, очищаются от загрязнений традиционным способом. За освещение отвечает лампа накаливания, противни располагаются на металлических направляющих. 
+Плита обладает классом энергоэффективности А. Для подключения к сети используется кабель с вилкой. Устройство укомплектовано металлической решеткой и двумя противнями.', 'InStock', 'Discount', 4, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Gefest'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Электрическая плита (60 см) Gefest ЭП Н Д 6140 E1WH белая'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Электрическая плита (60 см) Gefest ЭП Н Д 6140 E1WH белая' 
+        AND a."Name" = '57' 
+        AND a."Type" = 'Объем духовки'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Электрическая плита (60 см) Gefest ЭП Н Д 6140 E1WH белая' 
+        AND a."Name" = '4' 
+        AND a."Type" = 'Режимы работы духовки'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Электрическая плита (60 см) Gefest ЭП Н Д 6140 E1WH белая' 
+        AND a."Name" = 'чугунные' 
+        AND a."Type" = 'Тип конфорок'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Электрическая плита (60 см) Gefest ЭП Н Д 6140 E1WH белая' 
+        AND a."Name" = 'Да' 
+        AND a."Type" = 'Индикация текущей температуры'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Электрическая плита (60 см) Gefest ЭП Н Д 6140 E1WH белая' 
+        AND a."Name" = 'электрический' 
+        AND a."Type" = 'Тип гриля'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/elektricheskaya-plita-60-sm-gefest-ep-n-d-6140-e1wh-belaya_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Электрическая плита (60 см) Gefest ЭП Н Д 6140 E1WH белая'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/elektricheskaya-plita-60-sm-gefest-ep-n-d-6140-e1wh-belaya_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Электрическая плита (60 см) Gefest ЭП Н Д 6140 E1WH белая'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/elektricheskaya-plita-60-sm-gefest-ep-n-d-6140-e1wh-belaya_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Электрическая плита (60 см) Gefest ЭП Н Д 6140 E1WH белая'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/elektricheskaya-plita-60-sm-gefest-ep-n-d-6140-e1wh-belaya_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Электрическая плита (60 см) Gefest ЭП Н Д 6140 E1WH белая'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/elektricheskaya-plita-60-sm-gefest-ep-n-d-6140-e1wh-belaya_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Электрическая плита (60 см) Gefest ЭП Н Д 6140 E1WH белая'));

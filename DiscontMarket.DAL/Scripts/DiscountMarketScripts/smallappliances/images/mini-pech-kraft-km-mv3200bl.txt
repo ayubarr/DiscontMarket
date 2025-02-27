@@ -1,0 +1,28 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-kraft-km-mv3200bl_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Kraft KM-MV3200BL'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-kraft-km-mv3200bl_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Kraft KM-MV3200BL'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-kraft-km-mv3200bl_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Kraft KM-MV3200BL'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-kraft-km-mv3200bl_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Kraft KM-MV3200BL'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-kraft-km-mv3200bl_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Kraft KM-MV3200BL'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-kraft-km-mv3200bl_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Kraft KM-MV3200BL'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-kraft-km-mv3200bl_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Kraft KM-MV3200BL'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-kraft-km-mv3200bl_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Kraft KM-MV3200BL'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-kraft-km-mv3200bl_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Kraft KM-MV3200BL'));

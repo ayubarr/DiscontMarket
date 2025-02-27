@@ -1,0 +1,110 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Холодильник многодверный Midea MDRF705BIE70 Perfect in', 99999, 9, '/items/productimages/holodilnik-mnogodvernyi-midea-mdrf705bie70-perfect-in_0.png', 4.86, '', 'Холодильник Midea MDRF705BIE70 с нижним расположением морозильной камеры работает под управлением тихого (до 38 дБ) инверторного компрессора и относится к классу энергоэффективности А+. Прибор оснащен двумя распашными и двумя выдвижными дверцами с утопленными ручками, внешний сенсорный блок управления обеспечивает простое управление настройками. 
+
+• <b>Холодильное отделение полезным объемом 359 л</b> 
+Поддерживает температуру от 2°С до 8°С и включает три стеклянные полки, шесть дверных полок с бортиками, подставку для яиц, три ящика в сухой зоне свежести. Светодиодная лампа мощностью 11 Вт обеспечивает хороший обзор всех уровней. 
+
+• <b>Морозильное отделение полезным объемом 175 л</b> 
+Состоит из двух выдвижных полок, в которых поддерживается температура от -16°С до -24°С. Мощность замораживания составляет 8 кг в сутки. 
+
+• <b>Система No Frost</b> 
+Распределяет холодный воздух по всему объему камер, предупреждая образование инея и наледи на внутренних стенках, что исключает ручное размораживание. 
+
+• <b>Управление со смартфона</b> 
+Приложение MSmartHome позволяет контролировать работу прибора дистанционно. 
+
+• <b>Антибактериальная защита Plasma Pure</b> 
+Создает отрицательные и положительные ионы, которые снижают активность бактерий и поглощают запахи, сохраняя свежесть продуктов. 
+
+Прибор поддерживает режимы «Суперзаморозка» и «Суперохлаждение», что ускоряет процесс обработки загруженных продуктов. Энергоэффективный режим «Отпуск» полезен, когда в камере отсутствует скоропортящаяся еда. При отключении от электросети морозильное отделение поддерживает холод в течение 7 часов.', 'InStock', 'Discount', 3, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Midea'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Midea MDRF705BIE70 Perfect in'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник многодверный Midea MDRF705BIE70 Perfect in' 
+        AND a."Name" = 'инверторный' 
+        AND a."Type" = 'Тип компрессора'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник многодверный Midea MDRF705BIE70 Perfect in' 
+        AND a."Name" = '191*83.3*60 см' 
+        AND a."Type" = 'Габаритные размеры (В*Ш*Г)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник многодверный Midea MDRF705BIE70 Perfect in' 
+        AND a."Name" = '568' 
+        AND a."Type" = 'Общий объем'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник многодверный Midea MDRF705BIE70 Perfect in' 
+        AND a."Name" = 'сухая' 
+        AND a."Type" = 'Тип зоны сохранения свежести'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник многодверный Midea MDRF705BIE70 Perfect in' 
+        AND a."Name" = 'сенсорный/ дистанционный' 
+        AND a."Type" = 'Тип управления'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-midea-mdrf705bie70-perfect-in_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Midea MDRF705BIE70 Perfect in'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-midea-mdrf705bie70-perfect-in_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Midea MDRF705BIE70 Perfect in'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-midea-mdrf705bie70-perfect-in_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Midea MDRF705BIE70 Perfect in'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-midea-mdrf705bie70-perfect-in_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Midea MDRF705BIE70 Perfect in'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-midea-mdrf705bie70-perfect-in_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Midea MDRF705BIE70 Perfect in'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-midea-mdrf705bie70-perfect-in_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Midea MDRF705BIE70 Perfect in'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-midea-mdrf705bie70-perfect-in_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Midea MDRF705BIE70 Perfect in'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-midea-mdrf705bie70-perfect-in_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Midea MDRF705BIE70 Perfect in'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-midea-mdrf705bie70-perfect-in_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Midea MDRF705BIE70 Perfect in'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-midea-mdrf705bie70-perfect-in_9.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Midea MDRF705BIE70 Perfect in'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-midea-mdrf705bie70-perfect-in_10.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Midea MDRF705BIE70 Perfect in'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-midea-mdrf705bie70-perfect-in_11.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Midea MDRF705BIE70 Perfect in'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-midea-mdrf705bie70-perfect-in_12.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Midea MDRF705BIE70 Perfect in'));

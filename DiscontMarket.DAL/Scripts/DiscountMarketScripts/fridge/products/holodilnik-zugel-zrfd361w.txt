@@ -1,0 +1,100 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Холодильник ZUGEL ZRFD361W', 54995, 15, '/items/productimages/holodilnik-zugel-zrfd361w_0.png', 4.42, '', 'Многодверный холодильник Zugel ZRFD361W габаритами 180,2х65,4х71,5 см весит 87 кг и потребляет 256 кВт*ч электроэнергии. Морозильная камера рассчитана на 113 л, холодильная — на 224 л. Модель с двумя распашными дверями и двумя полками в морозильнике управляется сенсорными клавишами, расположенными с правой стороны. Можно выбрать нужный температурный режим, воспользоваться опциями суперзамораживания, суперохлаждения. 
+
+Функция «Отпуск» позволяет долгое время хранить стойкие к порче продукты. Система No Frost обеспечивает автоматическую разморозку, что упрощает уход за изделием. Внутреннее антибактериальное покрытие препятствует возникновению и развитию болезнетворных бактерий. Об открытой дверце оповещает звуковой сигнал. 
+
+При отключении питания температура внутри сохраняется в течение 17 часов. Самодиагностика неисправностей дает возможность быстро устранить поломку. Защита от детей исключает нечаянное изменение выбранных настроек. Параметры работы зоны свежести можно изменять по своему усмотрению. Подогрев контура дверец предотвращает образование наледи. Предусмотрена светодиодная подсветка.', 'InStock', 'Discount', 3, (SELECT "ID" FROM "Brands" WHERE "Name" = 'ZUGEL'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Холодильник ZUGEL ZRFD361W'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник ZUGEL ZRFD361W' 
+        AND a."Name" = 'инверторный' 
+        AND a."Type" = 'Тип компрессора'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник ZUGEL ZRFD361W' 
+        AND a."Name" = '180.2*65.4*71.5 см' 
+        AND a."Type" = 'Габаритные размеры (В*Ш*Г)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник ZUGEL ZRFD361W' 
+        AND a."Name" = '366' 
+        AND a."Type" = 'Общий объем'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник ZUGEL ZRFD361W' 
+        AND a."Name" = 'настраиваемая' 
+        AND a."Type" = 'Тип зоны сохранения свежести'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник ZUGEL ZRFD361W' 
+        AND a."Name" = 'сенсорное' 
+        AND a."Type" = 'Тип управления'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-zugel-zrfd361w_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник ZUGEL ZRFD361W'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-zugel-zrfd361w_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник ZUGEL ZRFD361W'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-zugel-zrfd361w_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник ZUGEL ZRFD361W'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-zugel-zrfd361w_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник ZUGEL ZRFD361W'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-zugel-zrfd361w_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник ZUGEL ZRFD361W'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-zugel-zrfd361w_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник ZUGEL ZRFD361W'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-zugel-zrfd361w_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник ZUGEL ZRFD361W'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-zugel-zrfd361w_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник ZUGEL ZRFD361W'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-zugel-zrfd361w_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник ZUGEL ZRFD361W'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-zugel-zrfd361w_9.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник ZUGEL ZRFD361W'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-zugel-zrfd361w_10.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник ZUGEL ZRFD361W'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-zugel-zrfd361w_11.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник ZUGEL ZRFD361W'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-zugel-zrfd361w_12.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник ZUGEL ZRFD361W'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-zugel-zrfd361w_13.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник ZUGEL ZRFD361W'));

@@ -1,0 +1,101 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Холодильник Tesler RCD-482I черный', 49295, 13, '/items/productimages/holodilnik-tesler-rcd-482i-chernyi_0.png', 4.22, '', 'Черный многодверный холодильник Tesler RCD-482I оснащен инверторным компрессором и хладагентом R 600a, обеспечивающим мощность замораживания до 12 кг/сутки. Холодильная камера вмещает 288 л, морозильная — 129 л. Внутри находится LED-освещение, три полки из стекла, на двери разместилось четыре пластиковых полки и подставка для яиц, в отделении для овощей установлено два ящика. Морозильная камера делится на шесть отделений и дополняется шестью прозрачными ящиками.
+
+Устройство подразумевает размораживание No Frost, поддерживает режим «Отпуск» и «Суперохлаждение». Двери выполнены из стекла, оборудованы внутренней ручкой и дополнены индикацией, сообщающей о температуре внутри и выбранном режиме работы. Прибор относится к классу энергоэффективности А+ и потребляет в год 365 кВт*ч. Уровень шума во время работы не превышает 42 дБ.', 'InStock', 'Discount', 3, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Tesler'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Холодильник Tesler RCD-482I черный'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Tesler RCD-482I черный' 
+        AND a."Name" = 'инверторный' 
+        AND a."Type" = 'Тип компрессора'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Tesler RCD-482I черный' 
+        AND a."Name" = '183*83.6*63.6 см' 
+        AND a."Type" = 'Габаритные размеры (В*Ш*Г)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Tesler RCD-482I черный' 
+        AND a."Name" = '482' 
+        AND a."Type" = 'Общий объем'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Tesler RCD-482I черный' 
+        AND a."Name" = 'сухая' 
+        AND a."Type" = 'Тип зоны сохранения свежести'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Tesler RCD-482I черный' 
+        AND a."Name" = 'электронный' 
+        AND a."Type" = 'Тип управления'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-tesler-rcd-482i-chernyi_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Tesler RCD-482I черный'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-tesler-rcd-482i-chernyi_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Tesler RCD-482I черный'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-tesler-rcd-482i-chernyi_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Tesler RCD-482I черный'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-tesler-rcd-482i-chernyi_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Tesler RCD-482I черный'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-tesler-rcd-482i-chernyi_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Tesler RCD-482I черный'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-tesler-rcd-482i-chernyi_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Tesler RCD-482I черный'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-tesler-rcd-482i-chernyi_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Tesler RCD-482I черный'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-tesler-rcd-482i-chernyi_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Tesler RCD-482I черный'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-tesler-rcd-482i-chernyi_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Tesler RCD-482I черный'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-tesler-rcd-482i-chernyi_9.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Tesler RCD-482I черный'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-tesler-rcd-482i-chernyi_10.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Tesler RCD-482I черный'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-tesler-rcd-482i-chernyi_11.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Tesler RCD-482I черный'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-tesler-rcd-482i-chernyi_12.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Tesler RCD-482I черный'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-tesler-rcd-482i-chernyi_13.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Tesler RCD-482I черный'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-tesler-rcd-482i-chernyi_14.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Tesler RCD-482I черный'));

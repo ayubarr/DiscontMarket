@@ -1,0 +1,58 @@
+﻿INSERT INTO "Products" 
+("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription",
+"Availability", "Status", "CategoryID", "BrandID", "UserID") 
+VALUES
+ ('Телевизор Hisense 75U7KQ', 79999, 14, '/items/productimages/televizor-hisense-75u7kq_0.png', 4.12, '', 'Телевизор Hisense 75U7KQ с диагональю экрана 75" (189 см) оснащен технологиями MiniLED, QLED, HDR. Воспроизводимая картинка подвергается цифровой обработке через шумоподавление и поддержание 3D-формата. Функционирует электроприбор на операционной системе Vidaa. Встроена акустическая система мощностью 50 Вт. Управление на расстоянии возможно осуществлять через смартфон, поддерживает голосовое управление. 
+
+Устройство оснащено встроенным модулем Bluetooth, поддерживает Wi-Fi, Smart TV, TimeShift, способно осуществлять запись ТВ на USB-устройство. Встроено четыре входа HDMI, два порта USB 3.0 и USB 2.0, разъемы LAN, DVB CAM, 3,5 мм. Мощность потребления составляет 300 Вт. Корпус прикрепляется к подвесу по типу VESA 400x400. В комплектацию включена настольная подставка. Цвет — черный. Общая масса составляет 28 кг. Габариты — 102,7х167,3х38,8 см.', 'InStock', 'Discount', 1, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Hisense'), 1);
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hisense 75U7KQ'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '4K Ultra HD (3840x2160 Пикс)' AND "Type" = 'Экран));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hisense 75U7KQ'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '75' AND "Type" = 'Диагональ));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hisense 75U7KQ'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '120' AND "Type" = 'Частота обновления));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hisense 75U7KQ'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'QLED' AND "Type" = 'Технология экрана));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hisense 75U7KQ'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'Mini LED' AND "Type" = 'Тип светодиодной подсветки));
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-hisense-75u7kq_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hisense 75U7KQ'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-hisense-75u7kq_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hisense 75U7KQ'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-hisense-75u7kq_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hisense 75U7KQ'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-hisense-75u7kq_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hisense 75U7KQ'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-hisense-75u7kq_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hisense 75U7KQ'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-hisense-75u7kq_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hisense 75U7KQ'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-hisense-75u7kq_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hisense 75U7KQ'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-hisense-75u7kq_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hisense 75U7KQ'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-hisense-75u7kq_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hisense 75U7KQ'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-hisense-75u7kq_9.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hisense 75U7KQ'));

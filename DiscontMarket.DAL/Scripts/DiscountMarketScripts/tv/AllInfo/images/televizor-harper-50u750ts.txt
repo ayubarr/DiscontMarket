@@ -1,0 +1,13 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-harper-50u750ts_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Harper 50U750TS'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-harper-50u750ts_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Harper 50U750TS'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-harper-50u750ts_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Harper 50U750TS'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-harper-50u750ts_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Harper 50U750TS'));

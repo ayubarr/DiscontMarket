@@ -1,0 +1,65 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Стиральная машина узкая Indesit IWSB 5105 (CIS)', 11449, 12, '/items/productimages/stiralnaya-mashina-uzkaya-indesit-iwsb-5105-cis_0.png', 5, '', 'Узкая стиральная машина Indesit IWSB 5105 с максимальной загрузкой 5 кг изготовлена из полиплекса белого цвета. У модели фронтальная загрузка. Мощность мотора — 760 Вт. Максимальная скорость отжима достигает 1000 об/мин, доступно ручное регулирование скорости. Тип — отдельностоящая.
+У модели механическое управление: кнопочное и крутящаяся ручка. Цифровой дисплей отображает режим работы, этап стирки и время до конца цикла. Доступны такие автоматические программы, как «Синтетика», «Хлопок», «Спорт» и другие. Есть режимы дополнительного полоскания и полоскания с отжимом. Минимальное время стирки составляет 15 минут. Доступна функция отложенного старта работы.
+Класс электроэффективности — А. Энергопотребление за цикл стирки — 0,19 кВт*ч. Расход воды за цикл — 52 л. Дверца люка открывается налево. Габариты составляют 85х59,5х40 см. Вес — 70 кг.', 'InStock', 'Discount', 5, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Indesit'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая Indesit IWSB 5105 (CIS)'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина узкая Indesit IWSB 5105 (CIS)' 
+        AND a."Name" = '5' 
+        AND a."Type" = 'Максимальная загрузка'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина узкая Indesit IWSB 5105 (CIS)' 
+        AND a."Name" = '1000' 
+        AND a."Type" = 'Максимальная скорость отжима'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина узкая Indesit IWSB 5105 (CIS)' 
+        AND a."Name" = 'коллекторный' 
+        AND a."Type" = 'Мотор'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина узкая Indesit IWSB 5105 (CIS)' 
+        AND a."Name" = '85*59.5*42 см' 
+        AND a."Type" = 'Габаритные размеры (В*Ш*Г)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина узкая Indesit IWSB 5105 (CIS)' 
+        AND a."Name" = 'отсутствует' 
+        AND a."Type" = 'Тип защиты от протечек'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-uzkaya-indesit-iwsb-5105-cis_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая Indesit IWSB 5105 (CIS)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-uzkaya-indesit-iwsb-5105-cis_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая Indesit IWSB 5105 (CIS)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-uzkaya-indesit-iwsb-5105-cis_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая Indesit IWSB 5105 (CIS)'));

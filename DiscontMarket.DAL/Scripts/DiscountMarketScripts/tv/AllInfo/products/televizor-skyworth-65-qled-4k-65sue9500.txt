@@ -1,0 +1,47 @@
+﻿INSERT INTO "Products" 
+("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription",
+"Availability", "Status", "CategoryID", "BrandID", "UserID") 
+VALUES
+ ('Телевизор SKYWORTH 65 QLED 4K 65SUE9500', 26799, 10, '/items/productimages/televizor-skyworth-65-qled-4k-65sue9500_0.png', 4.96, '', 'Телевизор Skyworth 65 QLED 4K 65SUE9500 в черном корпусе работает от электрической сети и потребляет 200 Вт. Модель функционирует на базе операционной системы Google TV. На корпусе предусмотрен USB разъем — можно воспроизводить данные со сторонних носителей. 
+Диагональ экрана телевизора — 65 дюймов. Он широкоформатный, с соотношением сторон 16:9. Монитор произведен на основе технологии QLED, обладает разрешением 3840x2160 пикселей (4K Ultra HD). Частота обновления кадров — 60 Гц, угол обзора по горизонтали и вертикали — 178°. Присутствует поддержка HDR.
+Телевизор оснащен модулями Wi-Fi и Bluetooth. Предусмотрена поддержка Smart TV, голосовой помощник Google Assistant, гид по программам, функция записи телепередач, функция Time Shift, таймер автоматического отключения. Вместо пульта управления можно использовать смартфон. 
+В телевизор установлен четырехъядерный процессор с частотой обновления 1,5 ГГц. Объем встроенной памяти устройства составляет 16 Гб, оперативной памяти — 2 Гб. Суммарная мощность динамиков телевизора — 20 Вт, звучание объемное. На корпусе устройства располагается слот HDMI версии 2.0, разъемы для подключения проводных наушников и подключения проводного интернета, разъем для модуля DVB CAM (слот CI). Подставка и пульт дистанционного управления с батарейками — в комплекте.', 'InStock', 'Discount', 1, (SELECT "ID" FROM "Brands" WHERE "Name" = 'SKYWORTH'), 1);
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор SKYWORTH 65 QLED 4K 65SUE9500'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '4K Ultra HD (3840x2160 Пикс)' AND "Type" = 'Экран));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор SKYWORTH 65 QLED 4K 65SUE9500'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '65' AND "Type" = 'Диагональ));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор SKYWORTH 65 QLED 4K 65SUE9500'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '60' AND "Type" = 'Частота обновления));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор SKYWORTH 65 QLED 4K 65SUE9500'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'QLED' AND "Type" = 'Технология экрана));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор SKYWORTH 65 QLED 4K 65SUE9500'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'Direct LED' AND "Type" = 'Тип светодиодной подсветки));
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-skyworth-65-qled-4k-65sue9500_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор SKYWORTH 65 QLED 4K 65SUE9500'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-skyworth-65-qled-4k-65sue9500_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор SKYWORTH 65 QLED 4K 65SUE9500'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-skyworth-65-qled-4k-65sue9500_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор SKYWORTH 65 QLED 4K 65SUE9500'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-skyworth-65-qled-4k-65sue9500_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор SKYWORTH 65 QLED 4K 65SUE9500'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-skyworth-65-qled-4k-65sue9500_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор SKYWORTH 65 QLED 4K 65SUE9500'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-skyworth-65-qled-4k-65sue9500_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор SKYWORTH 65 QLED 4K 65SUE9500'));

@@ -1,0 +1,113 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Микроволновая печь с грилем Toshiba MW3-SAC24SE(WH)', 12499, 7, '/items/productimages/mikrovolnovaya-pech-s-grilem-toshiba-mw3-sac24sewh_0.png', 4.31, '', 'Микроволновая печь с грилем Toshiba MW3-SAC24SE(WH) объемом 24 л — идеальное сочетание стильного дизайна и высокой функциональности. Модель станет надежным кухонным помощником и эстетически приятным дополнением к интерьеру.
+
+• <b>Мощность — 900 Вт </b>
+Позволяет быстро и равномерно разогревать пищу. 
+
+• <b>Тэновый гриль </b>
+Обеспечивает возможность приготовления блюд с аппетитной корочкой. 
+
+• <b> Таймер </b>
+Таймер до 99 минут делает использование печи максимально комфортным. 
+
+• <b>Удобство</b>
+Микроволновая печь оснащена электронным управлением и ярким дисплеем, наглядно отображающим параметры работы. Внутренняя подсветка позволяет видеть процесс приготовления без необходимости открывать дверцу.
+
+• <b>Блокировка от детей</b>
+Предотвращает случайное включение изменение настроек текущей программы. 
+
+• <b>Пять уровней мощности</b>
+Можно выбрать уровень в зависимости от типа блюда, что позволяет подстроиться под каждый рецепт. 
+
+• <b>Функции размораживания и поэтапного приготовления</b>
+Делают микроволновую печь универсальным решением для любых кулинарных нужд.
+
+Функция быстрого старта позволяет мгновенно начать приготовление. Десять встроенных автоматических программ делают процесс простым и эффективным.', 'InStock', 'Discount', 6, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Toshiba'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Микроволновая печь с грилем Toshiba MW3-SAC24SE(WH)'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Микроволновая печь с грилем Toshiba MW3-SAC24SE(WH)' 
+        AND a."Name" = '24' 
+        AND a."Type" = 'Полезный объем'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Микроволновая печь с грилем Toshiba MW3-SAC24SE(WH)' 
+        AND a."Name" = '28.8' 
+        AND a."Type" = 'Диаметр поворотного стола'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Микроволновая печь с грилем Toshiba MW3-SAC24SE(WH)' 
+        AND a."Name" = 'нержавеющая сталь' 
+        AND a."Type" = 'Внутреннее покрытие'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Микроволновая печь с грилем Toshiba MW3-SAC24SE(WH)' 
+        AND a."Name" = 'электронный' 
+        AND a."Type" = 'Тип управления'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Микроволновая печь с грилем Toshiba MW3-SAC24SE(WH)' 
+        AND a."Name" = 'белый/ черный' 
+        AND a."Type" = 'Цвет'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-s-grilem-toshiba-mw3-sac24sewh_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь с грилем Toshiba MW3-SAC24SE(WH)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-s-grilem-toshiba-mw3-sac24sewh_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь с грилем Toshiba MW3-SAC24SE(WH)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-s-grilem-toshiba-mw3-sac24sewh_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь с грилем Toshiba MW3-SAC24SE(WH)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-s-grilem-toshiba-mw3-sac24sewh_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь с грилем Toshiba MW3-SAC24SE(WH)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-s-grilem-toshiba-mw3-sac24sewh_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь с грилем Toshiba MW3-SAC24SE(WH)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-s-grilem-toshiba-mw3-sac24sewh_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь с грилем Toshiba MW3-SAC24SE(WH)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-s-grilem-toshiba-mw3-sac24sewh_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь с грилем Toshiba MW3-SAC24SE(WH)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-s-grilem-toshiba-mw3-sac24sewh_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь с грилем Toshiba MW3-SAC24SE(WH)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-s-grilem-toshiba-mw3-sac24sewh_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь с грилем Toshiba MW3-SAC24SE(WH)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-s-grilem-toshiba-mw3-sac24sewh_9.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь с грилем Toshiba MW3-SAC24SE(WH)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-s-grilem-toshiba-mw3-sac24sewh_10.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь с грилем Toshiba MW3-SAC24SE(WH)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-s-grilem-toshiba-mw3-sac24sewh_11.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь с грилем Toshiba MW3-SAC24SE(WH)'));

@@ -1,0 +1,38 @@
+﻿INSERT INTO "Products" 
+("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription",
+"Availability", "Status", "CategoryID", "BrandID", "UserID") 
+VALUES
+ ('Телевизор Thomson T24RTE1290', 6895, 16, '/items/productimages/televizor-thomson-t24rte1290_0.png', 4.93, '', 'Телевизор Thomson T24RTE1290 обладает экраном диагональю 24", разрешением 1366x768 пикселей. Технология LED отличается высоким качеством изображения и низким показателем энергопотребления. Предусмотрено наличие светодиодной подсветки Direct LED. Устройство поддерживает технологию HDMI ARC и использует цифровое шумоподавление в качестве системы обработки картинки. Суммарная мощность фронтальных акустических систем составляет 16 Вт. За управление отвечает пульт ДУ. Устройство оснащено интерфейсами подключения HDMI, USB, DVB CAM и коаксиальным цифровым выходом.<br><br>К дополнительным функциям данной модели относятся опция TimeShift, Sleep-таймер, возможность записи с ТВ на USB и воспроизведение медиафайлов с цифровых носителей. Встроенный цифровой тюнер DVB T/T2/C обеспечивает стабильное телевизионное вещание. Общая потребляемая мощность устройства не превышает показателя 29 Вт. За безопасность работы отвечает функция защиты от детей. Устройство можно фиксировать на стене при помощи крепления VESA 100x100, предусмотрено наличие настольной подставки. Габаритные размеры данной модели — 36,5х13,1х55 см.<br>', 'InStock', 'Discount', 1, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Thomson'), 1);
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Thomson T24RTE1290'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'HD (1366x768 Пикс)' AND "Type" = 'Экран));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Thomson T24RTE1290'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '24' AND "Type" = 'Диагональ));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Thomson T24RTE1290'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'LED' AND "Type" = 'Технология экрана));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Thomson T24RTE1290'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'Direct LED' AND "Type" = 'Тип светодиодной подсветки));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Thomson T24RTE1290'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '1' AND "Type" = 'Порт USB 2.0 тип A));
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-thomson-t24rte1290_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Thomson T24RTE1290'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-thomson-t24rte1290_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Thomson T24RTE1290'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-thomson-t24rte1290_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Thomson T24RTE1290'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-thomson-t24rte1290_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Thomson T24RTE1290'));

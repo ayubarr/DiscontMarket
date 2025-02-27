@@ -1,0 +1,46 @@
+﻿INSERT INTO "Products" 
+("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription",
+"Availability", "Status", "CategoryID", "BrandID", "UserID") 
+VALUES
+ ('Телевизор Samsung QE75QN900DUXRU', 467499, 5, '/items/productimages/televizor-samsung-qe75qn900duxru_0.png', 4.71, '', 'Телевизор Samsung QE75QN900DUXRU работает на операционной системе Tizen. Акустика представлена мощностью от 90 Вт до 20 Вт. Экран форматом 16:9 и диагональю 75" (189 см) оснащен технологией QLED, HDR, HDMI ARC. Изображение подвергается цифровым шумоподавлением. Дистанционное управление осуществляется посредством Wi-Fi-сети с использованием смартфона. 
+
+Модель оснащена модулем Bluetooth, Smart TV, Sleep-таймером, функцией TimeShift, способна записывать ТВ передачи на USB- устройство. Предусмотрены интерфейсы HDMI, USB 2.0, DVB CAM, LAN. В набор включена настольная подставка шириной 28,38 см. Габариты комплекта — 101,85х165,52х28,38 см. Цвет — черный. Вес — 39,8 кг.', 'InStock', 'Discount', 1, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Samsung'), 1);
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung QE75QN900DUXRU'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '8K Ultra HD (7680x4320 Пикс)' AND "Type" = 'Экран));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung QE75QN900DUXRU'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '75' AND "Type" = 'Диагональ));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung QE75QN900DUXRU'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '120' AND "Type" = 'Частота обновления));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung QE75QN900DUXRU'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'QLED' AND "Type" = 'Технология экрана));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung QE75QN900DUXRU'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'Mini LED' AND "Type" = 'Тип светодиодной подсветки));
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-samsung-qe75qn900duxru_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung QE75QN900DUXRU'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-samsung-qe75qn900duxru_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung QE75QN900DUXRU'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-samsung-qe75qn900duxru_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung QE75QN900DUXRU'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-samsung-qe75qn900duxru_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung QE75QN900DUXRU'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-samsung-qe75qn900duxru_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung QE75QN900DUXRU'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-samsung-qe75qn900duxru_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung QE75QN900DUXRU'));

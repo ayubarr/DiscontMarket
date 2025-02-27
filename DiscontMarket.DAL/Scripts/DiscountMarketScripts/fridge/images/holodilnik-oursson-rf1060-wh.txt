@@ -1,0 +1,28 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-oursson-rf1060-wh_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Oursson RF1060/WH'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-oursson-rf1060-wh_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Oursson RF1060/WH'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-oursson-rf1060-wh_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Oursson RF1060/WH'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-oursson-rf1060-wh_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Oursson RF1060/WH'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-oursson-rf1060-wh_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Oursson RF1060/WH'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-oursson-rf1060-wh_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Oursson RF1060/WH'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-oursson-rf1060-wh_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Oursson RF1060/WH'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-oursson-rf1060-wh_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Oursson RF1060/WH'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-oursson-rf1060-wh_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Oursson RF1060/WH'));

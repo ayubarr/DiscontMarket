@@ -1,0 +1,22 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-lg-65ut91006laarub_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор LG 65UT91006LA.ARUB'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-lg-65ut91006laarub_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор LG 65UT91006LA.ARUB'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-lg-65ut91006laarub_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор LG 65UT91006LA.ARUB'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-lg-65ut91006laarub_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор LG 65UT91006LA.ARUB'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-lg-65ut91006laarub_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор LG 65UT91006LA.ARUB'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-lg-65ut91006laarub_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор LG 65UT91006LA.ARUB'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-lg-65ut91006laarub_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор LG 65UT91006LA.ARUB'));

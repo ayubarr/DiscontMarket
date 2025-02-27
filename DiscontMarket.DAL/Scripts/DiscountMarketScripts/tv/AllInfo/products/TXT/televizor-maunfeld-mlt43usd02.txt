@@ -1,0 +1,52 @@
+﻿INSERT INTO "Products" 
+("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription",
+"Availability", "Status", "CategoryID", "BrandID", "UserID") 
+VALUES
+ ('Телевизор Maunfeld MLT43USD02', 19995, 13, '/items/productimages/televizor-maunfeld-mlt43usd02_0.png', 4.53, '', 'Телевизор Maunfeld MLT43USD02 — модель с 43-дюймовым экраном, поддерживающая высокое разрешение 3840х2160 пикселей. Технология LED, которая лежит в основе работы экрана, обеспечивает яркую и насыщенную картинку. В устройстве используется широкоэкранный формат — 16:9. Поддержка технологии HDR делает изображение более отчетливым в самых темных и наиболее светлых местах. Дополнительно предусмотрена система цифрового шумоподавления — она минимизирует количество отображаемых при просмотре помех. За звуковое сопровождение отвечает система Dolby Digital Plus. Мощность фронтальных динамиков равна 2х10 Вт. Для управления есть пульт ДУ (также можно использовать смартфон), работающий от двух батареек типа ААА. Корпус устройства дополнен фоновой подсветкой.
+Поддержка Smart TV позволяет воспроизводить контент из Сети (например, фильмы и сериалы) непосредственно на телевизоре. Также с помощью этой технологии можно заниматься интернет-серфингом. Тип операционной системы — Android. Для передачи данных используется NFC и встроенный модуль Bluetooth. Последний дает возможность синхронизировать обмен данными с девайсами. Из дополнительных функций есть TimeShift, запись с ТВ на USB-накопители, Sleep-таймер и встроенные часы. Модель оснащена двумя тюнерами для приема телевизионного сигнала — цифровым и аналоговым.
+Список интерфейсов состоит из HDMI версии 2.0, портов USB 3.0 тип A, USB 2.0 тип A различных входов и выходов RCA, 3,5 мм, разъема для DVB CAM и слота для карт памяти SD/SDHC/SDXC. Подключение к интернету возможно через LAN (RJ45) и Wi-Fi. Потребляемая мощность модели — не более 70 Вт. В комплекте есть настольная подставка. Монтаж на стену осуществляется при помощи VESA 200x200. Габаритные размеры без подставки — 60,9х96,3х18 см, вес — 8,4 кг.', 'InStock', 'Discount', 1, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Maunfeld'), 1);
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Maunfeld MLT43USD02'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '4K Ultra HD (3840x2160 Пикс)' AND "Type" = 'Экран));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Maunfeld MLT43USD02'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '43' AND "Type" = 'Диагональ));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Maunfeld MLT43USD02'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '60' AND "Type" = 'Частота обновления));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Maunfeld MLT43USD02'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'LED' AND "Type" = 'Технология экрана));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Maunfeld MLT43USD02'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'Direct LED' AND "Type" = 'Тип светодиодной подсветки));
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-maunfeld-mlt43usd02_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Maunfeld MLT43USD02'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-maunfeld-mlt43usd02_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Maunfeld MLT43USD02'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-maunfeld-mlt43usd02_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Maunfeld MLT43USD02'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-maunfeld-mlt43usd02_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Maunfeld MLT43USD02'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-maunfeld-mlt43usd02_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Maunfeld MLT43USD02'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-maunfeld-mlt43usd02_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Maunfeld MLT43USD02'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-maunfeld-mlt43usd02_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Maunfeld MLT43USD02'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-maunfeld-mlt43usd02_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Maunfeld MLT43USD02'));

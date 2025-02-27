@@ -1,0 +1,91 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Встраиваемая посудомоечная машина 60 см Премиум Smeg STL262D ', 40649, 7, '/items/productimages/vstraivaemaya-posudomoechnaya-mashina-60-sm-premium-smeg-stl262d_0.png', 4.28, '', 'Встраиваемая посудомоечная машина «Премиум» Smeg STL262D вмещает до 13 комплектов посуды и расходует 0,84 кВт*ч электроэнергии и 9,9 л воды за цикл. В основе модели — инверторный мотор. 
+
+• <b>Восемь программ</b> 
+«Замачивание» и «Интенсивная» справятся с самыми сложными, в том числе присохшими загрязнениями, «Эко» позволит сэкономить электроэнергию. Кроме того, доступны две программы «Экспресс», «Смешанная» и «Автоматическая» — в последнем случае машина самостоятельно определяет параметры цикла, ориентируясь на показания датчика чистоты воды. «Самоочистка» поможет держать внутреннюю камеры в чистоте и предотвратит появление неприятного запаха. 
+
+• <b>Дополнительные возможности</b> 
+Поддерживаются опции «Стекло», «Стерилизация» и Extreme. Доступен также таймер отложенного старта (до 24 часов), который даст возможность начать мойку в удобное время. 
+
+• <b>Полный AquaStop</b> 
+Надежно защищает от протечек, останавливая подачу воды при возникновении каких-то неполадок. 
+
+Внутреннее оснащение состоит из двух коробов, верхний из которых регулируется по высоте на 4 см в двух уровнях. В верхнем коробе можно разместить посуду высотой до 20 см, в нижнем — до 31 см. В комплект входит корзина для мытья столовых приборов. 
+
+Управление электронное, встроен LED-дисплей, который отображает время, оставшееся до конца программы. О завершении мойки оповещает также звуковой сигнал. Сушка выполняется конденсационным методом, для повышения ее эффективности дверца перед окончанием цикла приоткрывается.', 'InStock', 'Discount', 28, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Smeg'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 60 см Премиум Smeg STL262D '
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Встраиваемая посудомоечная машина 60 см Премиум Smeg STL262D ' 
+        AND a."Name" = '9.9' 
+        AND a."Type" = 'Расход воды за цикл'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Встраиваемая посудомоечная машина 60 см Премиум Smeg STL262D ' 
+        AND a."Name" = '13 комплектов' 
+        AND a."Type" = 'Максимальная вместимость'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Встраиваемая посудомоечная машина 60 см Премиум Smeg STL262D ' 
+        AND a."Name" = '8' 
+        AND a."Type" = 'Количество программ мойки'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Встраиваемая посудомоечная машина 60 см Премиум Smeg STL262D ' 
+        AND a."Name" = 'инверторный' 
+        AND a."Type" = 'Мотор'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Встраиваемая посудомоечная машина 60 см Премиум Smeg STL262D ' 
+        AND a."Name" = '90*60*55' 
+        AND a."Type" = 'Размер ниши, мм (В*Ш*Г)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-60-sm-premium-smeg-stl262d_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 60 см Премиум Smeg STL262D '));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-60-sm-premium-smeg-stl262d_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 60 см Премиум Smeg STL262D '));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-60-sm-premium-smeg-stl262d_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 60 см Премиум Smeg STL262D '));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-60-sm-premium-smeg-stl262d_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 60 см Премиум Smeg STL262D '));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-60-sm-premium-smeg-stl262d_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 60 см Премиум Smeg STL262D '));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-60-sm-premium-smeg-stl262d_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 60 см Премиум Smeg STL262D '));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-60-sm-premium-smeg-stl262d_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 60 см Премиум Smeg STL262D '));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-60-sm-premium-smeg-stl262d_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 60 см Премиум Smeg STL262D '));

@@ -1,0 +1,13 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/aksessuar-dlya-holodilnika-samsung-ra-c00k3baa_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Аксессуар для холодильника Samsung RA-C00K3BAA'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/aksessuar-dlya-holodilnika-samsung-ra-c00k3baa_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Аксессуар для холодильника Samsung RA-C00K3BAA'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/aksessuar-dlya-holodilnika-samsung-ra-c00k3baa_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Аксессуар для холодильника Samsung RA-C00K3BAA'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/aksessuar-dlya-holodilnika-samsung-ra-c00k3baa_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Аксессуар для холодильника Samsung RA-C00K3BAA'));

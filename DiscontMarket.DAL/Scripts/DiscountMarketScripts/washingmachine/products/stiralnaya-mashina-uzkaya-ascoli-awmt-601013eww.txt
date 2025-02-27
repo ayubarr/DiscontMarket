@@ -1,0 +1,89 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Стиральная машина узкая Ascoli AWMT-601013EWW', 12495, 15, '/items/productimages/stiralnaya-mashina-uzkaya-ascoli-awmt-601013eww_0.png', 4.93, '', 'Стиральная машина узкая Ascoli AWMT-601013EWW в белом цвете оснащена функцией обработки паром. Материал бака — нержавеющая сталь, дверца выполнена из закаленного стекла. При весе 53 кг габаритные размеры составляют 85х59,5х42 см, глубина — 45 см. Энергоэффективность класса А при стандартном типе двигателя. При расходе воды 42 л энергопотребление за цикл — 0,42 кВт*ч. Потребляемая мощность — 0,5 Вт. Максимальная скорость отжима — 1000 об/мин при шуме 75 дБ. Уровень шума при стирке — до 62 дБ. Максимальная загрузка белья составляет 6 кг (шерсть — 3 кг).
+
+В модель встроены 22 стандартные программы. Отдельно предусмотрена мини-программа стирки на 30 минут. Возможна дозагрузка белья во время работы. Доступен режим самодиагностики. Устройство оснащено LED-дисплеем, типы управления — кнопочный и поворотный. Встроенный таймер обеспечивает запуск отложенного старта, о завершении стирки предупреждает звуковой сигнал. Предусмотрена полная защита от протечек AquaStop и защита от детей. Страна производства — Китай. Гарантия — 2 года.', 'InStock', 'Discount', 5, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Ascoli'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая Ascoli AWMT-601013EWW'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина узкая Ascoli AWMT-601013EWW' 
+        AND a."Name" = '6' 
+        AND a."Type" = 'Максимальная загрузка'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина узкая Ascoli AWMT-601013EWW' 
+        AND a."Name" = '1000' 
+        AND a."Type" = 'Максимальная скорость отжима'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина узкая Ascoli AWMT-601013EWW' 
+        AND a."Name" = 'стандартный' 
+        AND a."Type" = 'Мотор'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина узкая Ascoli AWMT-601013EWW' 
+        AND a."Name" = '85*59.5*42 см' 
+        AND a."Type" = 'Габаритные размеры (В*Ш*Г)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина узкая Ascoli AWMT-601013EWW' 
+        AND a."Name" = 'полная' 
+        AND a."Type" = 'Тип защиты от протечек'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-uzkaya-ascoli-awmt-601013eww_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая Ascoli AWMT-601013EWW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-uzkaya-ascoli-awmt-601013eww_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая Ascoli AWMT-601013EWW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-uzkaya-ascoli-awmt-601013eww_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая Ascoli AWMT-601013EWW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-uzkaya-ascoli-awmt-601013eww_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая Ascoli AWMT-601013EWW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-uzkaya-ascoli-awmt-601013eww_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая Ascoli AWMT-601013EWW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-uzkaya-ascoli-awmt-601013eww_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая Ascoli AWMT-601013EWW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-uzkaya-ascoli-awmt-601013eww_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая Ascoli AWMT-601013EWW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-uzkaya-ascoli-awmt-601013eww_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая Ascoli AWMT-601013EWW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-uzkaya-ascoli-awmt-601013eww_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая Ascoli AWMT-601013EWW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-uzkaya-ascoli-awmt-601013eww_9.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая Ascoli AWMT-601013EWW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-uzkaya-ascoli-awmt-601013eww_10.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая Ascoli AWMT-601013EWW'));

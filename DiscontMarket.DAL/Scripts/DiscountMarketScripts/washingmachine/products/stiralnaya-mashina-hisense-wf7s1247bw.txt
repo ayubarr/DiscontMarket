@@ -1,0 +1,93 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Стиральная машина Hisense WF7S1247BW', 71999, 18, '/items/productimages/stiralnaya-mashina-hisense-wf7s1247bw_0.png', 4.71, '', 'Стиральная машина Hisense WF7S1247BW, белый — полноразмерная модель габаритами 84,5х59,5х64 см, которая вмещает до 12 кг белья. <br><br>• <b>Управление по Wi-Fi</b><br>Контролировать работу стиральной машины можно со смартфона через приложение ConnectLife. <br><br>• <b>Автодозирование</b><br>Машина автоматически подбирает необходимое количество моющего средства и кондиционера в зависимости от загрузки. <br><br>• <b>Обработка паром SteamTech</b><br>Уничтожает бактерии, убирает запахи и освежает, уменьшает количество складок и облегчает глажение. <br><br>• <b>Инверторный мотор</b><br>Обладает высокой надежностью, экономичным энергопотреблением класса А и сниженным уровнем шума: при стирке он достигает 56 дБ, при отжиме — 70 дБ. <br><br>В эту модель заложены программы для стирки хлопка, шерсти, шелка, синтетики, смешанных тканей, детской и спортивной одежды, рубашек, темных вещей и другие. Для слабозагрязненного белья предусмотрена быстрая стирка. Режим «Антиаллергия» особенно тщательно обрабатывает вещи, устраняя бактерии и остатки моющих средств. <br><br>Учитывая объем загрузки, стиральная машина самостоятельно подбирает оптимальное количество моющего средства — емкость для него рассчитана на 24 стирки, так что пополнять ее каждый день не придется. <br>Все возможности прибора и этапы цикла наглядно отображает большой сенсорный дисплей диагональю 6,86 дюйма. Максимальная скорость отжима — 1400 об/мин. При необходимости белье в барабан можно добавить уже после начала стирки. Безопасность обеспечивается системой защиты от перелива и протечек.', 'InStock', 'Discount', 5, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Hisense'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Стиральная машина Hisense WF7S1247BW'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина Hisense WF7S1247BW' 
+        AND a."Name" = '12' 
+        AND a."Type" = 'Максимальная загрузка'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина Hisense WF7S1247BW' 
+        AND a."Name" = '1400' 
+        AND a."Type" = 'Максимальная скорость отжима'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина Hisense WF7S1247BW' 
+        AND a."Name" = 'инверторный' 
+        AND a."Type" = 'Мотор'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина Hisense WF7S1247BW' 
+        AND a."Name" = 'Да' 
+        AND a."Type" = 'Обработка паром'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина Hisense WF7S1247BW' 
+        AND a."Name" = '84.5*59.5*64 см' 
+        AND a."Type" = 'Габаритные размеры (В*Ш*Г)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-hisense-wf7s1247bw_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Hisense WF7S1247BW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-hisense-wf7s1247bw_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Hisense WF7S1247BW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-hisense-wf7s1247bw_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Hisense WF7S1247BW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-hisense-wf7s1247bw_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Hisense WF7S1247BW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-hisense-wf7s1247bw_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Hisense WF7S1247BW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-hisense-wf7s1247bw_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Hisense WF7S1247BW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-hisense-wf7s1247bw_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Hisense WF7S1247BW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-hisense-wf7s1247bw_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Hisense WF7S1247BW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-hisense-wf7s1247bw_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Hisense WF7S1247BW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-hisense-wf7s1247bw_9.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Hisense WF7S1247BW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-hisense-wf7s1247bw_10.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Hisense WF7S1247BW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-hisense-wf7s1247bw_11.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Hisense WF7S1247BW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-hisense-wf7s1247bw_12.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Hisense WF7S1247BW'));

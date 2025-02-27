@@ -1,0 +1,75 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Холодильник (Side-by-Side) Midea MDRS791MIE46', 56999, 8, '/items/productimages/holodilnik-side-by-side-midea-mdrs791mie46_0.png', 4.52, '', 'Холодильник Side-by-Side Midea MDRS791MIE46 представлен в корпусе темно-серого цвета. Полезный объем составляет 604 л. У прибора два отсека и две дверцы, изготовленные из металла. Максимальный уровень шума — 39 дБ. 
+Объем холодильной камеры — 384 л. Она выполнена с использованием технологии No Frost и не требует разморозки. Внутри располагаются три выдвижные полки, отделение для хранения фруктов и овощей. Четыре полки из пластика находятся на дверце. Предусмотрена зона свежести объемом 100 л. При открывании дверцы загорается встроенная подсветка. 
+Вместимость морозильной камеры — 220 л. Она также не требует разморозки. Внутри находятся два ящика из прозрачного пластика и четыре полки. Предусмотрена встроенная подсветка. Мощность замораживания — 12 кг в сутки. 
+У холодильника один инверторный компрессор. Модель заправлена хладагентом R600A. Управление электронное, на корпусе располагается цифровой дисплей с индикацией режима работы и температуры в обеих камерах. Энергопотребление холодильника в год составляет 260 кВт*ч. Прибор оснащен фильтром от запахов, функциями суперохлаждения и суперзамораживания. Встроенный модуль Wi-Fi позволяет управлять холодильником дистанционно. Холодильник сохраняет низкую температуру в течение 15 часов с момента отключения от электросети.', 'InStock', 'Discount', 3, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Midea'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Холодильник (Side-by-Side) Midea MDRS791MIE46'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник (Side-by-Side) Midea MDRS791MIE46' 
+        AND a."Name" = 'инверторный' 
+        AND a."Type" = 'Тип компрессора'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник (Side-by-Side) Midea MDRS791MIE46' 
+        AND a."Name" = '177.5*91*69.8 см' 
+        AND a."Type" = 'Габаритные размеры (В*Ш*Г)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник (Side-by-Side) Midea MDRS791MIE46' 
+        AND a."Name" = '634' 
+        AND a."Type" = 'Общий объем'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник (Side-by-Side) Midea MDRS791MIE46' 
+        AND a."Name" = 'сухая' 
+        AND a."Type" = 'Тип зоны сохранения свежести'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник (Side-by-Side) Midea MDRS791MIE46' 
+        AND a."Name" = 'со смартфона/ электронное' 
+        AND a."Type" = 'Тип управления'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-side-by-side-midea-mdrs791mie46_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник (Side-by-Side) Midea MDRS791MIE46'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-side-by-side-midea-mdrs791mie46_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник (Side-by-Side) Midea MDRS791MIE46'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-side-by-side-midea-mdrs791mie46_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник (Side-by-Side) Midea MDRS791MIE46'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-side-by-side-midea-mdrs791mie46_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник (Side-by-Side) Midea MDRS791MIE46'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-side-by-side-midea-mdrs791mie46_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник (Side-by-Side) Midea MDRS791MIE46'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-side-by-side-midea-mdrs791mie46_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник (Side-by-Side) Midea MDRS791MIE46'));

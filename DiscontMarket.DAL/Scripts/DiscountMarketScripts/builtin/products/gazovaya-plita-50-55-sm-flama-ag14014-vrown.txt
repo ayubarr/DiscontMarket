@@ -1,0 +1,81 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Газовая плита (50-55 см) Flama AG14014 Вrown', 9499, 10, '/items/productimages/gazovaya-plita-50-55-sm-flama-ag14014-vrown_0.png', 4.66, '', 'Газовая плита Flama AG14014 оснащена встроенной духовкой, позволяющей готовить самые разные блюда. Применение амортизаторов обеспечивает плавное закрывание дверцы, предотвращая падение посуды при резких ударах. Удобный регулятор, управляющий подачей газа, имеет температурную шкалу, с помощью которой можно задавать нужный режим работы устройства.
+
+МАКСИМАЛЬНАЯ БЕЗОПАСНОСТЬ
+Система -Газ-контроль- предотвращает утечку топлива, автоматически перекрывая его поступление при потухании пламени в духовке. Функция аварийного отключения помогает избежать неприятных последствий перегрева внутреннего пространства. 
+
+ДОПОЛНИТЕЛЬНАЯ ЗАЩИТА
+Двухслойное стекло позволяет прикасаться к дверце духовке в процессе приготовления, не опасаясь получения ожогов. Благодаря этому плита безопасна для детей младшего возраста.
+
+УДОБСТВО ИСПОЛЬЗОВАНИЯ
+Откидная крышка, расположенная в нижней части, открывает доступ к вместительному хозяйственному отсеку, предназначенному для хранения крупной кухонной утвари - например, кастрюль, сковород и противней.', 'InStock', 'Discount', 4, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Flama'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Газовая плита (50-55 см) Flama AG14014 Вrown'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Газовая плита (50-55 см) Flama AG14014 Вrown' 
+        AND a."Name" = '4' 
+        AND a."Type" = 'Количество конфорок'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Газовая плита (50-55 см) Flama AG14014 Вrown' 
+        AND a."Name" = 'эмалированная' 
+        AND a."Type" = 'Решетка'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Газовая плита (50-55 см) Flama AG14014 Вrown' 
+        AND a."Name" = '50' 
+        AND a."Type" = 'Объем духовки'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Газовая плита (50-55 см) Flama AG14014 Вrown' 
+        AND a."Name" = '85.5*50.5*58.5 см' 
+        AND a."Type" = 'Габаритные размеры (В*Ш*Г)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Газовая плита (50-55 см) Flama AG14014 Вrown' 
+        AND a."Name" = 'традиционный' 
+        AND a."Type" = 'Тип очистки'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/gazovaya-plita-50-55-sm-flama-ag14014-vrown_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Газовая плита (50-55 см) Flama AG14014 Вrown'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/gazovaya-plita-50-55-sm-flama-ag14014-vrown_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Газовая плита (50-55 см) Flama AG14014 Вrown'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/gazovaya-plita-50-55-sm-flama-ag14014-vrown_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Газовая плита (50-55 см) Flama AG14014 Вrown'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/gazovaya-plita-50-55-sm-flama-ag14014-vrown_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Газовая плита (50-55 см) Flama AG14014 Вrown'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/gazovaya-plita-50-55-sm-flama-ag14014-vrown_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Газовая плита (50-55 см) Flama AG14014 Вrown'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/gazovaya-plita-50-55-sm-flama-ag14014-vrown_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Газовая плита (50-55 см) Flama AG14014 Вrown'));

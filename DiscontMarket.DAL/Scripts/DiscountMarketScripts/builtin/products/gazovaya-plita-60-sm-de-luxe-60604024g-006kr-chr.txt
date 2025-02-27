@@ -1,0 +1,74 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Газовая плита (60 см) De luxe 606040.24г 006(кр) ЧР', 18349, 11, '/items/productimages/gazovaya-plita-60-sm-de-luxe-60604024g-006kr-chr_0.png', 4.86, '', 'Газовая плита De Luxe 606040.24г 006 ЧР в корпусе бежевого цвета оснащена встроенным ящиком для хранения посуды. Автоматический электроподжиг позволяет зажечь пламя без использования спичек или зажигалки. Рабочая поверхность плиты изготовлена из нержавеющей стали. На ней располагаются четыре конфорки: одна мощностью 0,9 кВт, две мощностью 1,7 кВт, одна мощностью 2,5 кВт. Материал решетки — чугун. Предусмотрена крышка. 
+Плита оснащена газовой духовкой объемом 64 л. Изнутри она покрыта эмалью. Предусмотрен электроподжиг. У духовки один режим работы. Максимальная температура нагрева — 270° C. Встроенный термостат позволяет поддерживать равномерный нагрев. Внутри духового шкафа присутствует подсветка — галогенная лампочка. Дверца откидная, со вставкой из двойного стекла. 
+Управление газовой плитой механическое. Присутствует встроенный таймер со звуковым сигналом, индикация выбранного режима работы и температуры. Безопасную эксплуатацию плиты обеспечивает система «Газ-контроль». В комплект входит глубокий противень и решетка для духовки.', 'InStock', 'Discount', 4, (SELECT "ID" FROM "Brands" WHERE "Name" = 'De luxe'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Газовая плита (60 см) De luxe 606040.24г 006(кр) ЧР'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Газовая плита (60 см) De luxe 606040.24г 006(кр) ЧР' 
+        AND a."Name" = '4' 
+        AND a."Type" = 'Количество конфорок'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Газовая плита (60 см) De luxe 606040.24г 006(кр) ЧР' 
+        AND a."Name" = 'чугунная' 
+        AND a."Type" = 'Решетка'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Газовая плита (60 см) De luxe 606040.24г 006(кр) ЧР' 
+        AND a."Name" = '64' 
+        AND a."Type" = 'Объем духовки'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Газовая плита (60 см) De luxe 606040.24г 006(кр) ЧР' 
+        AND a."Name" = '85*60*66 см' 
+        AND a."Type" = 'Габаритные размеры (В*Ш*Г)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Газовая плита (60 см) De luxe 606040.24г 006(кр) ЧР' 
+        AND a."Name" = 'автоматический' 
+        AND a."Type" = 'Электроподжиг конфорок'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/gazovaya-plita-60-sm-de-luxe-60604024g-006kr-chr_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Газовая плита (60 см) De luxe 606040.24г 006(кр) ЧР'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/gazovaya-plita-60-sm-de-luxe-60604024g-006kr-chr_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Газовая плита (60 см) De luxe 606040.24г 006(кр) ЧР'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/gazovaya-plita-60-sm-de-luxe-60604024g-006kr-chr_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Газовая плита (60 см) De luxe 606040.24г 006(кр) ЧР'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/gazovaya-plita-60-sm-de-luxe-60604024g-006kr-chr_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Газовая плита (60 см) De luxe 606040.24г 006(кр) ЧР'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/gazovaya-plita-60-sm-de-luxe-60604024g-006kr-chr_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Газовая плита (60 см) De luxe 606040.24г 006(кр) ЧР'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/gazovaya-plita-60-sm-de-luxe-60604024g-006kr-chr_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Газовая плита (60 см) De luxe 606040.24г 006(кр) ЧР'));

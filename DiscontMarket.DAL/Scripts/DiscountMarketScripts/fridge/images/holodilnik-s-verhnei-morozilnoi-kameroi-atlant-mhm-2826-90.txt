@@ -1,0 +1,16 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-s-verhnei-morozilnoi-kameroi-atlant-mhm-2826-90_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник с верхней морозильной камерой ATLANT МХМ 2826-90'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-s-verhnei-morozilnoi-kameroi-atlant-mhm-2826-90_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник с верхней морозильной камерой ATLANT МХМ 2826-90'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-s-verhnei-morozilnoi-kameroi-atlant-mhm-2826-90_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник с верхней морозильной камерой ATLANT МХМ 2826-90'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-s-verhnei-morozilnoi-kameroi-atlant-mhm-2826-90_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник с верхней морозильной камерой ATLANT МХМ 2826-90'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-s-verhnei-morozilnoi-kameroi-atlant-mhm-2826-90_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник с верхней морозильной камерой ATLANT МХМ 2826-90'));

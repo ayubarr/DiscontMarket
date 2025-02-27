@@ -1,0 +1,22 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-moulinex-optimo-ox444832-chernaya_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Moulinex Optimo OX444832 черная'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-moulinex-optimo-ox444832-chernaya_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Moulinex Optimo OX444832 черная'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-moulinex-optimo-ox444832-chernaya_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Moulinex Optimo OX444832 черная'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-moulinex-optimo-ox444832-chernaya_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Moulinex Optimo OX444832 черная'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-moulinex-optimo-ox444832-chernaya_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Moulinex Optimo OX444832 черная'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-moulinex-optimo-ox444832-chernaya_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Moulinex Optimo OX444832 черная'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-moulinex-optimo-ox444832-chernaya_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Moulinex Optimo OX444832 черная'));

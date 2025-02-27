@@ -1,0 +1,62 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Стиральная машина с сушкой Korting KWD 58IL14106', 52495, 13, '/items/productimages/stiralnaya-mashina-s-sushkoi-korting-kwd-58il14106_0.png', 4.8, '', 'Фронтальная стиральная машина с сушкой Korting KWD 58IL14106 мощностью 2200 Вт работает по технологии Active Jet, которая обеспечивает смачивание вещей с первых секунд работы, способствуя улучшению качества стирки. экономии электричества Инверторный электродвигатель с плавным запуском обеспечивает точность настроек режимов стирки, предупреждает вибрацию корпуса. Модель поддерживает одновременную загрузку до 9 кг белья (для стирки), 6 кг вещей (для сушки) и расходует за цикл до 90 л воды. Таймер отложенного старта позволяет запустить работу в удобное время.
+Для управления Korting KWD 58IL14106 предусмотрен вращающийся поворотный регулятор с LED-индикацией выбора программы. Сенсорное табло позволяет настроить режим и время (30-120 минут) сушки, температуру (20°С-90°С), отжим (до 1200 об/мин), выбрать дополнительные опции. Система адаптивного залива определяет нужный объем воды, подбирает оптимальное время стирки и энергопотребление. Модель поддерживает 15 режимов, среди которых «Хлопок 6 кг стирка и сушка», «Синтетика», «Шерсть/шелк», «Одеяла», «Полоскание», «Отжим/слив», «Эко 40°С-60°С». 
+Прибор наделен функциями контроля пенообразования, баланса барабана, перелива воды. Блокировка электронной панели предупреждает случайное включение техники. Защитная крышка люка оберегает от прикосновений к горячему стеклу при работе в высокотемпературных программах.', 'InStock', 'Discount', 5, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Korting'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Стиральная машина с сушкой Korting KWD 58IL14106'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина с сушкой Korting KWD 58IL14106' 
+        AND a."Name" = '9' 
+        AND a."Type" = 'Максимальная загрузка'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина с сушкой Korting KWD 58IL14106' 
+        AND a."Name" = '6' 
+        AND a."Type" = 'Загрузка при сушке(хлопок)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина с сушкой Korting KWD 58IL14106' 
+        AND a."Name" = '1400' 
+        AND a."Type" = 'Максимальная скорость отжима'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина с сушкой Korting KWD 58IL14106' 
+        AND a."Name" = 'инверторный' 
+        AND a."Type" = 'Мотор'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина с сушкой Korting KWD 58IL14106' 
+        AND a."Name" = 'полная' 
+        AND a."Type" = 'Тип защиты от протечек'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-s-sushkoi-korting-kwd-58il14106_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина с сушкой Korting KWD 58IL14106'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-s-sushkoi-korting-kwd-58il14106_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина с сушкой Korting KWD 58IL14106'));

@@ -1,0 +1,13 @@
+﻿
+        INSERT INTO "Brands" ("NameTranslate", "Name", "Type") 
+        SELECT 'Panasonic', 'Panasonic', 'Бренды'
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Brands" WHERE "Name" = 'Panasonic'
+        );
+
+        INSERT INTO "BrandCategory" ("BrandID", "CategoryID") 
+        SELECT b."ID", c."ID" FROM "Brands" b, "Categories" c 
+        WHERE b."Name" = 'Panasonic' AND c."Name" = 'smallappliances'
+        AND NOT EXISTS (
+            SELECT 1 FROM "BrandCategory" WHERE "BrandID" = b."ID" AND "CategoryID" = c."ID"
+        );

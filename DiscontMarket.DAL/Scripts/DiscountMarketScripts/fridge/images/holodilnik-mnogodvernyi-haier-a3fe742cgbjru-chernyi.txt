@@ -1,0 +1,16 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-haier-a3fe742cgbjru-chernyi_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Haier A3FE742CGBJRU черный'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-haier-a3fe742cgbjru-chernyi_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Haier A3FE742CGBJRU черный'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-haier-a3fe742cgbjru-chernyi_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Haier A3FE742CGBJRU черный'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-haier-a3fe742cgbjru-chernyi_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Haier A3FE742CGBJRU черный'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-haier-a3fe742cgbjru-chernyi_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Haier A3FE742CGBJRU черный'));

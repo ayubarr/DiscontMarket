@@ -1,0 +1,16 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-s-nizhnei-morozilnoi-kameroi-haier-c2f637cgg_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник с нижней морозильной камерой Haier C2F637CGG'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-s-nizhnei-morozilnoi-kameroi-haier-c2f637cgg_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник с нижней морозильной камерой Haier C2F637CGG'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-s-nizhnei-morozilnoi-kameroi-haier-c2f637cgg_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник с нижней морозильной камерой Haier C2F637CGG'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-s-nizhnei-morozilnoi-kameroi-haier-c2f637cgg_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник с нижней морозильной камерой Haier C2F637CGG'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-s-nizhnei-morozilnoi-kameroi-haier-c2f637cgg_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник с нижней морозильной камерой Haier C2F637CGG'));

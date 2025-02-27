@@ -1,0 +1,79 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Мини-печь Hisense HOM30M', 8599, 11, '/items/productimages/mini-pech-hisense-hom30m_0.png', 4.2, '', 'Мини-печь Hisense HOM30M, выполненная в черном цвете, обладает внутренним объемом 30 л. Благодаря трем механическим переключателем осуществляется выбор температуры в пределах от 90°С до 220°С, устанавливаются режим работы и таймер. Функция «Конвекция» поможет добиться равномерного прогрева мяса, выпечки и других блюд. У модели — три уровня приготовления, что удобно и экономит время, когда нужно получить сразу несколько разных блюд. 
+Корпус выполнен из металла и пластика, на внутреннюю камеру нанесено антипригарное покрытие. Модель снабжена поддоном для сбора крошек и ручкой, которая не нагревается. Устройство снабжено индикацией включения и режимов, есть звуковое оповещение. Противоскользящие прорезиненные ножки обеспечивают устойчивость. Мини-печь комплектуется противнем и вертелом.', 'InStock', 'Discount', 6, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Hisense'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Мини-печь Hisense HOM30M'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Мини-печь Hisense HOM30M' 
+        AND a."Name" = '30' 
+        AND a."Type" = 'Объем'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Мини-печь Hisense HOM30M' 
+        AND a."Name" = '1600' 
+        AND a."Type" = 'Потребляемая мощность'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Мини-печь Hisense HOM30M' 
+        AND a."Name" = 'ТЭН' 
+        AND a."Type" = 'Тип гриля'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Мини-печь Hisense HOM30M' 
+        AND a."Name" = 'Черный' 
+        AND a."Type" = 'Цвет'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Мини-печь Hisense HOM30M' 
+        AND a."Name" = 'антипригарное' 
+        AND a."Type" = 'Внутреннее покрытие'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-hisense-hom30m_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Hisense HOM30M'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-hisense-hom30m_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Hisense HOM30M'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-hisense-hom30m_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Hisense HOM30M'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-hisense-hom30m_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Hisense HOM30M'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-hisense-hom30m_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Hisense HOM30M'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-hisense-hom30m_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Hisense HOM30M'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-hisense-hom30m_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Hisense HOM30M'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-hisense-hom30m_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Hisense HOM30M'));

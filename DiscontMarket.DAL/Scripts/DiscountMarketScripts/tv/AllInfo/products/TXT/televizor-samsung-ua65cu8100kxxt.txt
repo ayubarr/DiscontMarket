@@ -1,0 +1,46 @@
+﻿INSERT INTO "Products" 
+("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription",
+"Availability", "Status", "CategoryID", "BrandID", "UserID") 
+VALUES
+ ('Телевизор Samsung UA65CU8100KXXT', 42395, 6, '/items/productimages/televizor-samsung-ua65cu8100kxxt_0.png', 4.81, '', 'Телевизор Samsung UA65CU8100KXXT функционирует на базе операционной системы Tizen. Конструкция включает в себя экран диагональю 65", выполненный по технологии 4K UHD. Частота обновления достигает 60 Гц, формат экрана — 16:9. В качестве системы обработки картинки используется цифровое шумоподавление. Мощность наружной акустической системы составляет 20 Вт. Функционал модели включает в себя поддержку Bluetooth, Wi-Fi и Smart TV, опцию TimeShift, Sleep-таймер, возможность записи на USB-носитель и воспроизведение файлов с него. В качестве инструментов управления используется пульт ДУ и голосовые команды.
+
+Модель оснащена встроенным цифровым тюнером T2. Конфигурацией устройства предусмотрено наличие интерфейсов подключения HDMI, USB 2.0, аудио/видеовход и выход 3,5 мм, LAN-разъем (RJ45), разъем для модуля DVB CAM. Мощность потребления — 20 Вт. Тип крепления к подвесу — VESA 400x300, предусмотрено наличие настольной подставки. Габаритные размеры устройства — 87,4х145,1х27,9 см, вес — 21,4 кг. Модель выполнена в черном цвете.', 'InStock', 'Discount', 1, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Samsung'), 1);
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung UA65CU8100KXXT'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '4K Ultra HD (3840x2160 Пикс)' AND "Type" = 'Экран));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung UA65CU8100KXXT'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '65' AND "Type" = 'Диагональ));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung UA65CU8100KXXT'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '60' AND "Type" = 'Частота обновления));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung UA65CU8100KXXT'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'LED' AND "Type" = 'Технология экрана));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung UA65CU8100KXXT'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'Direct LED' AND "Type" = 'Тип светодиодной подсветки));
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-samsung-ua65cu8100kxxt_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung UA65CU8100KXXT'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-samsung-ua65cu8100kxxt_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung UA65CU8100KXXT'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-samsung-ua65cu8100kxxt_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung UA65CU8100KXXT'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-samsung-ua65cu8100kxxt_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung UA65CU8100KXXT'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-samsung-ua65cu8100kxxt_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung UA65CU8100KXXT'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-samsung-ua65cu8100kxxt_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung UA65CU8100KXXT'));

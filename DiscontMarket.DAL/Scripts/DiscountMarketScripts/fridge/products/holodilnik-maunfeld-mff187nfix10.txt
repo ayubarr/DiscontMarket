@@ -1,0 +1,90 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Холодильник Maunfeld MFF187NFIX10', 40995, 8, '/items/productimages/holodilnik-maunfeld-mff187nfix10_0.png', 4.17, '', 'Холодильник с нижней морозильной камерой Maunfeld MFF187NFIX10 оснащен режимом «Отпуск», что сохраняет продукты свежими с минимальными затратами электроэнергии. Режим можно включать при пустом холодильнике, чтобы исключить размножение бактерий и появление неприятного запаха. Модель с системой разморозки No Frost не образует наледи и не требует сложного ухода.
+
+Холодильная камера объемом 232 л предусматривает четыре полки для размещения продуктов. Фиксация против выдвижения обеспечивает надежность. Морозильная камера вмещает до 98 л и может работать в режиме суперзаморозки. Металлическая дверь со специальным защитным покрытием с внешней стороны легко отмывается от загрязнений и не оставляет следы от пальцев. Внутренняя часть с антибактериальным покрытием создает безопасные условия эксплуатации.
+Модель защищена от детей, что предотвращает непредвиденный сброс настроек. При отключении электричества прибор сохраняет температуру до 24 ч, не допуская порчу продуктов.', 'InStock', 'Discount', 3, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Maunfeld'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Холодильник Maunfeld MFF187NFIX10'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Maunfeld MFF187NFIX10' 
+        AND a."Name" = 'инверторный' 
+        AND a."Type" = 'Тип компрессора'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Maunfeld MFF187NFIX10' 
+        AND a."Name" = '186' 
+        AND a."Type" = 'Высота'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Maunfeld MFF187NFIX10' 
+        AND a."Name" = '59.5' 
+        AND a."Type" = 'Ширина'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Maunfeld MFF187NFIX10' 
+        AND a."Name" = '67.6' 
+        AND a."Type" = 'Глубина'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Maunfeld MFF187NFIX10' 
+        AND a."Name" = 'электронный' 
+        AND a."Type" = 'Тип управления'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-maunfeld-mff187nfix10_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Maunfeld MFF187NFIX10'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-maunfeld-mff187nfix10_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Maunfeld MFF187NFIX10'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-maunfeld-mff187nfix10_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Maunfeld MFF187NFIX10'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-maunfeld-mff187nfix10_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Maunfeld MFF187NFIX10'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-maunfeld-mff187nfix10_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Maunfeld MFF187NFIX10'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-maunfeld-mff187nfix10_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Maunfeld MFF187NFIX10'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-maunfeld-mff187nfix10_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Maunfeld MFF187NFIX10'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-maunfeld-mff187nfix10_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Maunfeld MFF187NFIX10'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-maunfeld-mff187nfix10_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Maunfeld MFF187NFIX10'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-maunfeld-mff187nfix10_9.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Maunfeld MFF187NFIX10'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-maunfeld-mff187nfix10_10.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Maunfeld MFF187NFIX10'));

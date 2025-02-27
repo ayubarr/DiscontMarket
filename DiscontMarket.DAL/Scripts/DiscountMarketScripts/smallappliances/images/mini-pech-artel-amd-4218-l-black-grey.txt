@@ -1,0 +1,22 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-artel-amd-4218-l-black-grey_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Artel AMD 4218 L Black/Grey'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-artel-amd-4218-l-black-grey_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Artel AMD 4218 L Black/Grey'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-artel-amd-4218-l-black-grey_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Artel AMD 4218 L Black/Grey'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-artel-amd-4218-l-black-grey_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Artel AMD 4218 L Black/Grey'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-artel-amd-4218-l-black-grey_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Artel AMD 4218 L Black/Grey'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-artel-amd-4218-l-black-grey_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Artel AMD 4218 L Black/Grey'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-artel-amd-4218-l-black-grey_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Artel AMD 4218 L Black/Grey'));

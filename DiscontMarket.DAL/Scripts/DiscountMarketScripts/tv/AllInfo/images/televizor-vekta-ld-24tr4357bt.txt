@@ -1,0 +1,4 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-vekta-ld-24tr4357bt_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Vekta LD-24TR4357BT'));

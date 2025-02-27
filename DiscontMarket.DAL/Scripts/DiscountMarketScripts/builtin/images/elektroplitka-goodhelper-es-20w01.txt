@@ -1,0 +1,7 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/elektroplitka-goodhelper-es-20w01_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Электроплитка Goodhelper ES-20W01'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/elektroplitka-goodhelper-es-20w01_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Электроплитка Goodhelper ES-20W01'));

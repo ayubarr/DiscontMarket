@@ -1,0 +1,89 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Холодильник Midea MDRB521MIE46ODM', 33499, 9, '/items/productimages/holodilnik-midea-mdrb521mie46odm_0.png', 4.81, '', 'Холодильник Midea MDRB521MIE46ODM с нижним расположением морозильного отсека работает на базе тихого и энергоэффективного инверторного компрессора. Агрегат оснащен двумя перенавешиваемыми дверцами с горизонтальными внутренними ручками, задней металлической стенкой и регулируемыми по высоте ножками. Электронный блок управления в верхней части корпуса позволяет настраивать работу каждой из камер, менять режимы температуры, влажности, устанавливать дополнительные функции. Максимальный уровень шума во время работы прибора не превышает 38 дБ. 
+Холодильный отсек полезным объемом 256 л оснащен светодиодной 3D-подсветкой, тремя стеклянными выдвижными полками и зоной свежести, в которой находятся два прозрачных лотка. Две пластиковые полки на дверце предназначены для размещения бутылок и негабаритных продуктов. Объем морозильного отсека составляет 104 л. Здесь расположена одна полка и две выдвижные корзины. Мощность замораживания достигает 14 кг в сутки.
+Прибор поддерживает функцию No Frost, которая предотвращает образование инея на продуктах и внутренних стенках, не требует ручного размораживания. При отключении от электросети камеры поддерживают холод в течение 15 часов. Активация режимов «Суперзаморозка» и «Суперохлаждение» ускоряет процесс обработки продуктов. Функция «Отпуск» способствует экономии электроэнергии при длительном отсутствии владельцев. Встроенный модуль беспроводной связи обеспечивает сопряжение холодильника со смартфоном, поддерживает дистанционное управление функциями через приложение MSmartHome.', 'InStock', 'Discount', 3, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Midea'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Холодильник Midea MDRB521MIE46ODM'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Midea MDRB521MIE46ODM' 
+        AND a."Name" = 'инверторный' 
+        AND a."Type" = 'Тип компрессора'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Midea MDRB521MIE46ODM' 
+        AND a."Name" = '201.8' 
+        AND a."Type" = 'Высота'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Midea MDRB521MIE46ODM' 
+        AND a."Name" = '59.5' 
+        AND a."Type" = 'Ширина'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Midea MDRB521MIE46ODM' 
+        AND a."Name" = '66' 
+        AND a."Type" = 'Глубина'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Midea MDRB521MIE46ODM' 
+        AND a."Name" = '402' 
+        AND a."Type" = 'Общий объем'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-midea-mdrb521mie46odm_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Midea MDRB521MIE46ODM'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-midea-mdrb521mie46odm_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Midea MDRB521MIE46ODM'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-midea-mdrb521mie46odm_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Midea MDRB521MIE46ODM'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-midea-mdrb521mie46odm_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Midea MDRB521MIE46ODM'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-midea-mdrb521mie46odm_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Midea MDRB521MIE46ODM'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-midea-mdrb521mie46odm_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Midea MDRB521MIE46ODM'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-midea-mdrb521mie46odm_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Midea MDRB521MIE46ODM'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-midea-mdrb521mie46odm_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Midea MDRB521MIE46ODM'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-midea-mdrb521mie46odm_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Midea MDRB521MIE46ODM'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-midea-mdrb521mie46odm_9.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Midea MDRB521MIE46ODM'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-midea-mdrb521mie46odm_10.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Midea MDRB521MIE46ODM'));

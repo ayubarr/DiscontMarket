@@ -1,0 +1,4 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-bbk-20mws-717m-b-chernyi_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло BBK 20MWS-717M/B черный'));

@@ -1,0 +1,62 @@
+﻿INSERT INTO "Products" 
+("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription",
+"Availability", "Status", "CategoryID", "BrandID", "UserID") 
+VALUES
+ ('OLED Телевизор Samsung QE65S90CAU (2023)', 164999, 19, '/items/productimages/oled-televizor-samsung-qe65s90cau-2023_0.png', 4.21, '', 'Телевизор Samsung QE65S90CAU черного цвета с диагональю 163 см оснащен нейронным процессором Quantum 4K, позволяющим просматривать любое видео в качестве 4 К. OLED-дисплей с подсвечивающимися пикселями обеспечивает яркое и четкое изображение. Габариты модели — 89,7х144,4х26,6 см. Вес изделия — 21,1 кг. В комплекте идет настольная подставка шириной 36,6 см. Присутствуют система защиты от детей и Sleep-таймер. Функция TimeShift позволяет ставить на паузу любую передачу в режиме реального времени. Тип операционной системы — Tizen. Управление осуществляется с помощью пульта или смартфона.', 'InStock', 'Discount', 1, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Samsung'), 1);
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'OLED Телевизор Samsung QE65S90CAU (2023)'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '4K Ultra HD (3840x2160 Пикс)' AND "Type" = 'Экран));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'OLED Телевизор Samsung QE65S90CAU (2023)'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '65' AND "Type" = 'Диагональ));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'OLED Телевизор Samsung QE65S90CAU (2023)'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '144' AND "Type" = 'Частота обновления));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'OLED Телевизор Samsung QE65S90CAU (2023)'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'OLED' AND "Type" = 'Технология экрана));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'OLED Телевизор Samsung QE65S90CAU (2023)'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'OLED' AND "Type" = 'Тип светодиодной подсветки));
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/oled-televizor-samsung-qe65s90cau-2023_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'OLED Телевизор Samsung QE65S90CAU (2023)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/oled-televizor-samsung-qe65s90cau-2023_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'OLED Телевизор Samsung QE65S90CAU (2023)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/oled-televizor-samsung-qe65s90cau-2023_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'OLED Телевизор Samsung QE65S90CAU (2023)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/oled-televizor-samsung-qe65s90cau-2023_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'OLED Телевизор Samsung QE65S90CAU (2023)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/oled-televizor-samsung-qe65s90cau-2023_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'OLED Телевизор Samsung QE65S90CAU (2023)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/oled-televizor-samsung-qe65s90cau-2023_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'OLED Телевизор Samsung QE65S90CAU (2023)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/oled-televizor-samsung-qe65s90cau-2023_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'OLED Телевизор Samsung QE65S90CAU (2023)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/oled-televizor-samsung-qe65s90cau-2023_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'OLED Телевизор Samsung QE65S90CAU (2023)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/oled-televizor-samsung-qe65s90cau-2023_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'OLED Телевизор Samsung QE65S90CAU (2023)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/oled-televizor-samsung-qe65s90cau-2023_9.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'OLED Телевизор Samsung QE65S90CAU (2023)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/oled-televizor-samsung-qe65s90cau-2023_10.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'OLED Телевизор Samsung QE65S90CAU (2023)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/oled-televizor-samsung-qe65s90cau-2023_11.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'OLED Телевизор Samsung QE65S90CAU (2023)'));

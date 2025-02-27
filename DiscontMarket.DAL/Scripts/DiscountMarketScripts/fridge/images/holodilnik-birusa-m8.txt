@@ -1,0 +1,19 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-birusa-m8_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Бирюса М8'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-birusa-m8_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Бирюса М8'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-birusa-m8_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Бирюса М8'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-birusa-m8_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Бирюса М8'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-birusa-m8_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Бирюса М8'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-birusa-m8_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Бирюса М8'));

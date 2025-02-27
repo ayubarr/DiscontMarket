@@ -1,0 +1,28 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-hisense-rm469n4ace_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Hisense RM469N4ACE'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-hisense-rm469n4ace_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Hisense RM469N4ACE'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-hisense-rm469n4ace_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Hisense RM469N4ACE'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-hisense-rm469n4ace_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Hisense RM469N4ACE'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-hisense-rm469n4ace_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Hisense RM469N4ACE'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-hisense-rm469n4ace_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Hisense RM469N4ACE'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-hisense-rm469n4ace_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Hisense RM469N4ACE'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-hisense-rm469n4ace_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Hisense RM469N4ACE'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-hisense-rm469n4ace_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Hisense RM469N4ACE'));

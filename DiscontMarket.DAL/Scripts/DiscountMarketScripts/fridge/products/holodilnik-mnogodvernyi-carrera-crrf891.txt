@@ -1,0 +1,73 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Холодильник многодверный Carrera CRRF891', 74999, 15, '/items/productimages/holodilnik-mnogodvernyi-carrera-crrf891_0.png', 4.51, '', 'Холодильник Carrera CRRF891 — четырехдверная модель общим объемом 502 л. Глубина составляет 60 см — прибор встанет в ряд со стандартными кухонными модулями. Сенсорный LED-дисплей с яркими кнопками позволяет быстро разобраться с настройками. 
+
+• <b>Специальные режимы работы</b>
+ECO позволит экономить электроэнергию — в холодильном отделении поддерживается температура 5°С, в морозильном — -18°С.  «Быстрая заморозка» поможет быстро заморозить продукты, сохранив их текстуру, вкусовые качества и питательные свойства. 
+
+• <b>Режим M-FRESH</b>
+Активируются молекулы воды — фрукты и овощи дольше остаются сочными, замороженные продукты размораживаются более деликатно. 
+
+• <b>Четыре съемных ящика зоны свежести</b>
+Позволяют хранить продукты разных типов в оптимальных условиях. В левой зоне реализована технология обработки ультрафиолетом, устраняющая вредоносные бактерии. Доступны режимы «Детское питание» для каш, смесей, пюре и прочего,  «Готовая еда» и «Стерилизация» для уничтожения 99,99 % бактерий. Правая зона свежести позволяет выбрать режим «Охлаждение напитков», при котором температура поддерживается на уровне от -1°С до 0°С, «Мясо и морепродукты» — температура на уровне 1°С и «Фрукты и овощи» — 8°С. 
+Холодильник поддерживает технологию Total No Frost — ручное размораживание не требуется. В основе прибора — инверторный компрессор, который отличается экономичным энергопотреблением класса А+, что соответствует 382 кВт*ч в год, и низким уровнем шума 38 дБ.', 'InStock', 'Discount', 3, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Carrera'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Carrera CRRF891'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник многодверный Carrera CRRF891' 
+        AND a."Name" = 'инверторный' 
+        AND a."Type" = 'Тип компрессора'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник многодверный Carrera CRRF891' 
+        AND a."Name" = '502' 
+        AND a."Type" = 'Общий объем'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник многодверный Carrera CRRF891' 
+        AND a."Name" = 'влажная' 
+        AND a."Type" = 'Тип зоны сохранения свежести'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник многодверный Carrera CRRF891' 
+        AND a."Name" = 'электронный' 
+        AND a."Type" = 'Тип управления'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник многодверный Carrera CRRF891' 
+        AND a."Name" = 'пластик/ металл' 
+        AND a."Type" = 'Материал двери'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-carrera-crrf891_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Carrera CRRF891'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-carrera-crrf891_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Carrera CRRF891'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-carrera-crrf891_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Carrera CRRF891'));

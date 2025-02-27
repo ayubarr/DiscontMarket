@@ -1,0 +1,49 @@
+﻿INSERT INTO "Products" 
+("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription",
+"Availability", "Status", "CategoryID", "BrandID", "UserID") 
+VALUES
+ ('Телевизор Samsung UE85DU8000UXRU', 124999, 9, '/items/productimages/televizor-samsung-ue85du8000uxru_0.png', 4.41, '', 'Телевизор Samsung UE85DU8000UXRU в комплекте с настольной подставкой (шириной 39,66 см) весит 42,5 кг при габаритных размерах 112,91х190,09х39,66см. Цвет корпуса — черный. Диагональ экрана составляет 85" (214 см), изображение качеством Ultra HD подвергается цифровому шумоподавлению. Формат экрана — 16:9. Встроены технологии Crystal UHD, HDR, HDMI ARC.
+
+Операционная система — Tizen. Присутствует фронтальная звуковая система мощностью 20 Вт. Дистанционное управление осуществляется при подключении к сети Wi-Fi с использованием смартфона. Встроены модуль Bluetooth, Smart TV, Sleep-таймер. Предусмотрены интерфейсы: HDMI (3 шт.), USB 2.0 (2 шт.), разъемы LAN и DVB CAM.', 'InStock', 'Discount', 1, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Samsung'), 1);
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung UE85DU8000UXRU'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '4K Ultra HD (3840x2160 Пикс)' AND "Type" = 'Экран));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung UE85DU8000UXRU'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '85' AND "Type" = 'Диагональ));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung UE85DU8000UXRU'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '120' AND "Type" = 'Частота обновления));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung UE85DU8000UXRU'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'LED' AND "Type" = 'Технология экрана));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung UE85DU8000UXRU'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'Edge LED' AND "Type" = 'Тип светодиодной подсветки));
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-samsung-ue85du8000uxru_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung UE85DU8000UXRU'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-samsung-ue85du8000uxru_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung UE85DU8000UXRU'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-samsung-ue85du8000uxru_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung UE85DU8000UXRU'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-samsung-ue85du8000uxru_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung UE85DU8000UXRU'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-samsung-ue85du8000uxru_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung UE85DU8000UXRU'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-samsung-ue85du8000uxru_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung UE85DU8000UXRU'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-samsung-ue85du8000uxru_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung UE85DU8000UXRU'));

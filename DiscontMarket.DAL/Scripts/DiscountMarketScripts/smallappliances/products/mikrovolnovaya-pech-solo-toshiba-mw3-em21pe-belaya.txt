@@ -1,0 +1,98 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Микроволновая печь соло Toshiba MW3-EM21PE белая', 6749, 10, '/items/productimages/mikrovolnovaya-pech-solo-toshiba-mw3-em21pe-belaya_0.png', 4.5, '', 'Микроволновая печь соло Toshiba MW3-EM21PE, белая, обладает 11 уровнями мощности, что позволяет выбирать наиболее оптимальный вариант. Функция «Защита от детей» закрывает доступ к изменению настроек.
+
+• <b>Несколько вариантов использования</b>
+Устройство поддерживает шесть автоматических программ для приготовления пищи. Функция размораживания дает возможность мгновенно подготовить продукты питания к последующей термической обработке.
+
+• <b>Вместительная камера объемом 21 л</b>
+Внутри отделения находится поворотный стол диаметром 25,5 см, на который удобно ставить посуду.
+
+• <b>Эмаль легкой очистки EasyClean</b>
+Упрощает процесс ухода за устройством. Для очистки поверхностей от сложных загрязнений можно использовать влажную ткань и неабразивные моющие средства.
+
+• <b>Яркая подсветка</b>
+Обеспечивает визуальный контроль приготовления блюд.
+
+• <b>Панель управления</b>
+Выбор мощности, программ, времени производится посредством сенсорных кнопок и интуитивно-понятных обозначений. Основные параметры выводятся на небольшой цифровой дисплей в виде светящихся символов белого цвета.
+
+• <b>Кнопка «30 секунд» и функция «Быстрый старт»</b>
+Дают возможность быстро разогреть порцию еды без возможности выбора дополнительных параметров.
+
+Устройство оснащено таймером, который помогает контролировать время приготовления. По завершении срабатывает сигнал.', 'InStock', 'Discount', 6, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Toshiba'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло Toshiba MW3-EM21PE белая'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Микроволновая печь соло Toshiba MW3-EM21PE белая' 
+        AND a."Name" = '21' 
+        AND a."Type" = 'Полезный объем'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Микроволновая печь соло Toshiba MW3-EM21PE белая' 
+        AND a."Name" = '25.5' 
+        AND a."Type" = 'Диаметр поворотного стола'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Микроволновая печь соло Toshiba MW3-EM21PE белая' 
+        AND a."Name" = 'эмаль легкой очистки' 
+        AND a."Type" = 'Внутреннее покрытие'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Микроволновая печь соло Toshiba MW3-EM21PE белая' 
+        AND a."Name" = 'электронный' 
+        AND a."Type" = 'Тип управления'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Микроволновая печь соло Toshiba MW3-EM21PE белая' 
+        AND a."Name" = 'белый' 
+        AND a."Type" = 'Цвет'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-toshiba-mw3-em21pe-belaya_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло Toshiba MW3-EM21PE белая'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-toshiba-mw3-em21pe-belaya_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло Toshiba MW3-EM21PE белая'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-toshiba-mw3-em21pe-belaya_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло Toshiba MW3-EM21PE белая'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-toshiba-mw3-em21pe-belaya_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло Toshiba MW3-EM21PE белая'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-toshiba-mw3-em21pe-belaya_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло Toshiba MW3-EM21PE белая'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-toshiba-mw3-em21pe-belaya_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло Toshiba MW3-EM21PE белая'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-toshiba-mw3-em21pe-belaya_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло Toshiba MW3-EM21PE белая'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-toshiba-mw3-em21pe-belaya_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло Toshiba MW3-EM21PE белая'));

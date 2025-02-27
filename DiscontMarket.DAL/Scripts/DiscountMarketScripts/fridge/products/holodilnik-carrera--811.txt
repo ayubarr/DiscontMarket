@@ -1,0 +1,100 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Холодильник Carrera №811', 41499, 5, '/items/productimages/holodilnik-carrera--811_0.png', 4.91, '', 'Холодильник Carrera CRRF811 — двухкамерная модель с нижним расположением морозильной камеры, общий объем составляет 405 л. Модель оснащена режимом энергосбережения ECO; в каждом отдлении температура регулируется.  
+
+• <b>Инверторный компрессор</b> 
+Не содержит быстро изнашивающихся деталей, поэтому отличается высокой надежностью и экономичным энергопотреблением класса А++ (282 кВт*ч в год). Уровень шума при работе низкий: не превышает 37 дБ. Система охлаждения заправлена современным озонобезопасным хладагентом R600A. 
+
+• <b>Режим быстрой заморозки</b> 
+Предназначен для сохранения питательных свойств замороженных продуктов, при этом продукты полностью замораживаются в кратчайшие сроки.
+
+• <b>Total No Frost</b> 
+Технология, препятствующая образованию внутри прибора инея и наледи. Избавляет от трат времени и сил на ручное размораживание. 
+
+• <b>Две зоны свежести</b> 
+Предназначены для сохранения свежести фруктов, овощей, ягод и зелени, а также мяса и рыбы в атмосфере оптимальной влажности — ее уровень регулируется. Также доступны три специальных режима для хранения овощей, фруктов и мяса. 
+
+Панель управления холодильником интуитивно понятная, для наглядности снабжена LED-дисплеем, вынесенным на фасадную сторону двери. Он отображает внутреннюю температуру и все возможности прибора. 
+
+Внутреннее оснащение холодильной камеры, помимо зоны свежести, состоит из четырех полок и четырех дверных карманов. В морозилке — три выдвижных пластиковых ящика, в сутки она может заморозить до 5,5 кг продуктов. При отключении питания низкая внутренняя температура будет поддерживаться в течение 16 часов. О непредусмотренном повышении температуры и слишком долго открытой двери оповещает звуковой сигнал. Климатический класс N-SN-ST-T означает, что прибор будет эффективно работать практически в любом климате: при температуре до +43°С.', 'InStock', 'Discount', 3, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Carrera'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Холодильник Carrera №811'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Carrera №811' 
+        AND a."Name" = 'инверторный' 
+        AND a."Type" = 'Тип компрессора'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Carrera №811' 
+        AND a."Name" = '200' 
+        AND a."Type" = 'Высота'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Carrera №811' 
+        AND a."Name" = '59.5' 
+        AND a."Type" = 'Ширина'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Carrera №811' 
+        AND a."Name" = '66' 
+        AND a."Type" = 'Глубина'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Carrera №811' 
+        AND a."Name" = 'электронный' 
+        AND a."Type" = 'Тип управления'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-carrera--811_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Carrera №811'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-carrera--811_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Carrera №811'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-carrera--811_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Carrera №811'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-carrera--811_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Carrera №811'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-carrera--811_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Carrera №811'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-carrera--811_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Carrera №811'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-carrera--811_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Carrera №811'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-carrera--811_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Carrera №811'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-carrera--811_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Carrera №811'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-carrera--811_9.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Carrera №811'));

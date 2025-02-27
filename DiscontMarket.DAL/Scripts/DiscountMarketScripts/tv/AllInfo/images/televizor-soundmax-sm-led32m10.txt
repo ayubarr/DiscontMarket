@@ -1,0 +1,22 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-soundmax-sm-led32m10_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Soundmax SM-LED32M10'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-soundmax-sm-led32m10_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Soundmax SM-LED32M10'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-soundmax-sm-led32m10_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Soundmax SM-LED32M10'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-soundmax-sm-led32m10_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Soundmax SM-LED32M10'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-soundmax-sm-led32m10_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Soundmax SM-LED32M10'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-soundmax-sm-led32m10_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Soundmax SM-LED32M10'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-soundmax-sm-led32m10_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Soundmax SM-LED32M10'));

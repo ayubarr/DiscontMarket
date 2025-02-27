@@ -1,0 +1,7 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-brandt-wfb386qwe_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Brandt WFB386QWE'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-brandt-wfb386qwe_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Brandt WFB386QWE'));

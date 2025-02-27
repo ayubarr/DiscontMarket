@@ -1,0 +1,57 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Настольная индукционная плита Brayer BR2800', 2095, 15, '/items/productimages/nastolnaya-indukcionnaya-plita-brayer-br2800_0.png', 4.46, '', 'Настольная индукционная плита Brayer BR2800 оборудована одной конфоркой диаметром 21 см и мощностью 2,2 кВт. Выбор интенсивности нагрева от 80°С до 270°С позволяет готовить блюда различными способами — жарить, варить, парить, тушить. Температура поддерживается автоматически. Таймер продолжительностью до трех часов гарантирует удобство эксплуатации.<br><br>Спереди размещена сенсорная панель управления с интуитивно понятным интерфейсом. Цифровой дисплей с красной световой индикацией информирует о запуске прибора и заданных параметрах. При отсутствии посуды устройство автоматически отключается. В случае перегрева происходит блокировка, что предотвращает возможные поломки.<br><br>Модель с потребляемой мощностью 2200 Вт работает от стандартной электросети. Для подсоединения задействуется кабель длиной 1,1 м. Корпус изготовлен из высокопрочного пластика, варочная поверхность — из износостойкой стеклокерамики. Прорезиненные ножки на основании обеспечивают устойчивость конструкции. Габариты равны 4,5х26х29 см, вес — 2 кг.<br>', 'InStock', 'Discount', 4, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Brayer'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Настольная индукционная плита Brayer BR2800'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Настольная индукционная плита Brayer BR2800' 
+        AND a."Name" = '1' 
+        AND a."Type" = 'Количество конфорок'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Настольная индукционная плита Brayer BR2800' 
+        AND a."Name" = '2200' 
+        AND a."Type" = 'Потребляемая мощность'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Настольная индукционная плита Brayer BR2800' 
+        AND a."Name" = 'стеклокерамика' 
+        AND a."Type" = 'Материал варочной поверхности'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Настольная индукционная плита Brayer BR2800' 
+        AND a."Name" = 'Да' 
+        AND a."Type" = 'Таймер'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Настольная индукционная плита Brayer BR2800' 
+        AND a."Name" = 'Да' 
+        AND a."Type" = 'Автоматическое выключение'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/nastolnaya-indukcionnaya-plita-brayer-br2800_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Настольная индукционная плита Brayer BR2800'));

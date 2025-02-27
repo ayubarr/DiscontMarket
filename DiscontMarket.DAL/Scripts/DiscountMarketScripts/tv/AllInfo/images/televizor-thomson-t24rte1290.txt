@@ -1,0 +1,13 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-thomson-t24rte1290_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Thomson T24RTE1290'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-thomson-t24rte1290_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Thomson T24RTE1290'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-thomson-t24rte1290_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Thomson T24RTE1290'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-thomson-t24rte1290_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Thomson T24RTE1290'));

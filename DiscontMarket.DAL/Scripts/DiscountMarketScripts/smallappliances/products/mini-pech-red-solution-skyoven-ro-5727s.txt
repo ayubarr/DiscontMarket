@@ -1,0 +1,68 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Мини-печь RED SOLUTION SkyOven RO-5727S', 7499, 17, '/items/productimages/mini-pech-red-solution-skyoven-ro-5727s_0.png', 4.27, '', 'Red solution SkyOven RO-5727S — компактный и мощный духовой шкаф с интеллектуальными функциями. 20 автоматических программ упрощают приготовление мяса, рыбы, пиццы и других блюд.
+
+• <b> Возможность нагрева от 40°C до 230°C</b>
+Позволяет готовить разнообразные блюда — от легких запеканок до сложных десертов.
+
+• <b> Разнообразие режимов нагрева</b>
+Печь оснащена верхним и нижним нагревательными элементами мощностью по 750 Вт. Они могут работать одновременно или по отдельности. Также предусмотрен гриль, позволяющий готовить блюда с корочкой.
+
+• <b>Режим «Мультиповар»</b>
+Позволяет вручную задавать температуру и время приготовления, что подходит для кулинарных экспериментов и авторских рецептов.
+
+Red solution SkyOven RO-5727S — функциональная мини-печь, которая значительно упростит процесс приготовления любимых блюд, обеспечивая при этом высокое качество и вкус. Благодаря совместимости с приложением «Sky. Умный дом и сервисы» можно управлять настройками модели прямо со смартфона.', 'InStock', 'Discount', 6, (SELECT "ID" FROM "Brands" WHERE "Name" = 'RED SOLUTION'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Мини-печь RED SOLUTION SkyOven RO-5727S'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Мини-печь RED SOLUTION SkyOven RO-5727S' 
+        AND a."Name" = '20' 
+        AND a."Type" = 'Объем'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Мини-печь RED SOLUTION SkyOven RO-5727S' 
+        AND a."Name" = '1500' 
+        AND a."Type" = 'Потребляемая мощность'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Мини-печь RED SOLUTION SkyOven RO-5727S' 
+        AND a."Name" = 'серый' 
+        AND a."Type" = 'Цвет'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Мини-печь RED SOLUTION SkyOven RO-5727S' 
+        AND a."Name" = 'Bio керамика' 
+        AND a."Type" = 'Внутреннее покрытие'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Мини-печь RED SOLUTION SkyOven RO-5727S' 
+        AND a."Name" = '230' 
+        AND a."Type" = 'Максимальная температура'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-red-solution-skyoven-ro-5727s_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь RED SOLUTION SkyOven RO-5727S'));

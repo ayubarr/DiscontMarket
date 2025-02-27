@@ -1,0 +1,49 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-uzkaya-gorenje-w3nhei74sas_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая Gorenje W3NHEI74SAS'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-uzkaya-gorenje-w3nhei74sas_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая Gorenje W3NHEI74SAS'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-uzkaya-gorenje-w3nhei74sas_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая Gorenje W3NHEI74SAS'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-uzkaya-gorenje-w3nhei74sas_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая Gorenje W3NHEI74SAS'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-uzkaya-gorenje-w3nhei74sas_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая Gorenje W3NHEI74SAS'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-uzkaya-gorenje-w3nhei74sas_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая Gorenje W3NHEI74SAS'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-uzkaya-gorenje-w3nhei74sas_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая Gorenje W3NHEI74SAS'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-uzkaya-gorenje-w3nhei74sas_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая Gorenje W3NHEI74SAS'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-uzkaya-gorenje-w3nhei74sas_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая Gorenje W3NHEI74SAS'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-uzkaya-gorenje-w3nhei74sas_9.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая Gorenje W3NHEI74SAS'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-uzkaya-gorenje-w3nhei74sas_10.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая Gorenje W3NHEI74SAS'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-uzkaya-gorenje-w3nhei74sas_11.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая Gorenje W3NHEI74SAS'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-uzkaya-gorenje-w3nhei74sas_12.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая Gorenje W3NHEI74SAS'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-uzkaya-gorenje-w3nhei74sas_13.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая Gorenje W3NHEI74SAS'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-uzkaya-gorenje-w3nhei74sas_14.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая Gorenje W3NHEI74SAS'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-uzkaya-gorenje-w3nhei74sas_15.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая Gorenje W3NHEI74SAS'));

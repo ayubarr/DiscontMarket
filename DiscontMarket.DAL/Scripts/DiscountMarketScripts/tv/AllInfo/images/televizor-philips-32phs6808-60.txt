@@ -1,0 +1,25 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-philips-32phs6808-60_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Philips 32PHS6808/60'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-philips-32phs6808-60_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Philips 32PHS6808/60'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-philips-32phs6808-60_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Philips 32PHS6808/60'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-philips-32phs6808-60_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Philips 32PHS6808/60'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-philips-32phs6808-60_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Philips 32PHS6808/60'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-philips-32phs6808-60_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Philips 32PHS6808/60'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-philips-32phs6808-60_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Philips 32PHS6808/60'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-philips-32phs6808-60_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Philips 32PHS6808/60'));

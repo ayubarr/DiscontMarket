@@ -1,0 +1,58 @@
+﻿INSERT INTO "Products" 
+("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription",
+"Availability", "Status", "CategoryID", "BrandID", "UserID") 
+VALUES
+ ('Телевизор Sony KD-75X85L', 132395, 14, '/items/productimages/televizor-sony-kd-75x85l_0.png', 4.43, '', 'Телевизор Sony KD-75X85L функционирует на базе операционной системы Google TV, благодаря чему есть возможность использования смартфона в качестве пульта ДУ через Bluetooth.
+
+• <b>Smart TV</b>
+Предоставляет возможность пользоваться интернетом, осуществлять поиск медиафайлов, устанавливать приложения и воспроизводить видео с цифровых носителей. 
+
+• <b>Технология экрана 4K UHD</b>
+Отличается четким и ярким изображением, высоким уровнем цветопередачи и детализации. Предусмотрено наличие встроенной светодиодной подсветки. 
+
+• <b>Интерфейсы подключения</b>
+На корпусе расположены слоты HDMI, USB, RJ45, слот для CI / PCMCIA. Для приема телевизионного сигнала используется цифровой тюнер DVB T/T2/C/S/S2. 
+
+Потребляемая мощность не превышает показателя 173 Вт. Крепление устройства на поверхности стены осуществляется посредством модуля VESA 300x300. В комплекте прилагаются настольная подставка и пульт ДУ. Габаритные размеры — 96х167,1х5,9 см, вес — 34,3 кг.', 'InStock', 'Discount', 1, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Sony'), 1);
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Sony KD-75X85L'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '4K Ultra HD (3840x2160 Пикс)' AND "Type" = 'Экран));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Sony KD-75X85L'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '75' AND "Type" = 'Диагональ));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Sony KD-75X85L'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '120' AND "Type" = 'Частота обновления));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Sony KD-75X85L'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'LED' AND "Type" = 'Технология экрана));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Sony KD-75X85L'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'Direct LED' AND "Type" = 'Тип светодиодной подсветки));
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-sony-kd-75x85l_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Sony KD-75X85L'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-sony-kd-75x85l_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Sony KD-75X85L'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-sony-kd-75x85l_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Sony KD-75X85L'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-sony-kd-75x85l_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Sony KD-75X85L'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-sony-kd-75x85l_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Sony KD-75X85L'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-sony-kd-75x85l_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Sony KD-75X85L'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-sony-kd-75x85l_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Sony KD-75X85L'));

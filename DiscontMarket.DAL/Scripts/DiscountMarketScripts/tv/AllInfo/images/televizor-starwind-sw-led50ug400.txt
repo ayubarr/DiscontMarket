@@ -1,0 +1,22 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-starwind-sw-led50ug400_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Starwind SW-LED50UG400'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-starwind-sw-led50ug400_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Starwind SW-LED50UG400'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-starwind-sw-led50ug400_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Starwind SW-LED50UG400'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-starwind-sw-led50ug400_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Starwind SW-LED50UG400'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-starwind-sw-led50ug400_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Starwind SW-LED50UG400'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-starwind-sw-led50ug400_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Starwind SW-LED50UG400'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-starwind-sw-led50ug400_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Starwind SW-LED50UG400'));

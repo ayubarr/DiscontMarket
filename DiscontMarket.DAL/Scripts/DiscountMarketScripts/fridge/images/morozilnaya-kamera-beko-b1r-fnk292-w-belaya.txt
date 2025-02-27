@@ -1,0 +1,16 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-beko-b1r-fnk292-w-belaya_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Beko B1R FNK292 W белая'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-beko-b1r-fnk292-w-belaya_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Beko B1R FNK292 W белая'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-beko-b1r-fnk292-w-belaya_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Beko B1R FNK292 W белая'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-beko-b1r-fnk292-w-belaya_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Beko B1R FNK292 W белая'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-beko-b1r-fnk292-w-belaya_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Beko B1R FNK292 W белая'));

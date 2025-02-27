@@ -1,0 +1,40 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-kuppersberg-wm-590-gr_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Kuppersberg WM 590 GR'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-kuppersberg-wm-590-gr_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Kuppersberg WM 590 GR'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-kuppersberg-wm-590-gr_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Kuppersberg WM 590 GR'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-kuppersberg-wm-590-gr_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Kuppersberg WM 590 GR'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-kuppersberg-wm-590-gr_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Kuppersberg WM 590 GR'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-kuppersberg-wm-590-gr_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Kuppersberg WM 590 GR'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-kuppersberg-wm-590-gr_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Kuppersberg WM 590 GR'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-kuppersberg-wm-590-gr_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Kuppersberg WM 590 GR'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-kuppersberg-wm-590-gr_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Kuppersberg WM 590 GR'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-kuppersberg-wm-590-gr_9.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Kuppersberg WM 590 GR'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-kuppersberg-wm-590-gr_10.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Kuppersberg WM 590 GR'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-kuppersberg-wm-590-gr_11.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Kuppersberg WM 590 GR'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-kuppersberg-wm-590-gr_12.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Kuppersberg WM 590 GR'));

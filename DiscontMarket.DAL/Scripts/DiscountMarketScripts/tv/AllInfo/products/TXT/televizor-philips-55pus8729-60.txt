@@ -1,0 +1,56 @@
+﻿INSERT INTO "Products" 
+("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription",
+"Availability", "Status", "CategoryID", "BrandID", "UserID") 
+VALUES
+ ('Телевизор Philips 55PUS8729/60', 49999, 7, '/items/productimages/televizor-philips-55pus8729-60_0.png', 4.83, '', 'Телевизор Philips 55PUS8729/60 оснащен экраном 4K UHD диагональю 55" со светодиодной подсветкой Direct LED. Устройство поддерживает технологии HDR и HDMI ARC. В качестве системы обработки изображения используется цифровое шумоподавление. Данная модель функционирует на базе операционной системы Google TV и идеально подходит для просмотра фильмов или видеоигр через игровые консоли. Управление осуществляется посредством пульта ДУ или смартфона и голосовых команд.<br><br>Модель поддерживает беспроводные технологии Bluetooth и Wi-Fi, Smart TV и TimeShift, запись с ТВ на USB-носитель и воспроизведение с него. Конфигурация устройства включает в себя цифровой тюнер DVB T/T2/C/S/S2. Корпус оснащен интерфейсами подключения HDMI, LAN-разъемом (RJ45), Toslink, DVB CAM и аудио-входом 3,5 мм. Для фиксации на стене используется крепление VESA 200x300, для настольного размещения предусмотрена специальная подставка. Габаритные размеры модели — 74х123х26 см, цвет — темно-серый.<br><br><br>ВПЕЧАТЛЕНИЯ БЕЗ ГРАНИЦ<br> В этой модели используется фоновая подсветка Ambilight. Интеллектуальная LED-система переносит цвета с экрана на стены в режиме реального времени, за счёт чего он кажется больше, чем есть на самом деле.', 'InStock', 'Discount', 1, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Philips'), 1);
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Philips 55PUS8729/60'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '4K Ultra HD (3840x2160 Пикс)' AND "Type" = 'Экран));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Philips 55PUS8729/60'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '55' AND "Type" = 'Диагональ));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Philips 55PUS8729/60'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '120' AND "Type" = 'Частота обновления));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Philips 55PUS8729/60'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'LED' AND "Type" = 'Технология экрана));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Philips 55PUS8729/60'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'Direct LED' AND "Type" = 'Тип светодиодной подсветки));
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-philips-55pus8729-60_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Philips 55PUS8729/60'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-philips-55pus8729-60_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Philips 55PUS8729/60'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-philips-55pus8729-60_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Philips 55PUS8729/60'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-philips-55pus8729-60_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Philips 55PUS8729/60'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-philips-55pus8729-60_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Philips 55PUS8729/60'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-philips-55pus8729-60_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Philips 55PUS8729/60'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-philips-55pus8729-60_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Philips 55PUS8729/60'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-philips-55pus8729-60_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Philips 55PUS8729/60'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-philips-55pus8729-60_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Philips 55PUS8729/60'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-philips-55pus8729-60_9.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Philips 55PUS8729/60'));

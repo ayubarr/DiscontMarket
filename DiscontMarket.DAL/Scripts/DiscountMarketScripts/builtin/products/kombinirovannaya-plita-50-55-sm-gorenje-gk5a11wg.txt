@@ -1,0 +1,79 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Комбинированная плита (50-55 см) Gorenje GK5A11WG', 18795, 6, '/items/productimages/kombinirovannaya-plita-50-55-sm-gorenje-gk5a11wg_0.png', 4.79, '', 'Комбинированная плита Gorenje GK5A11WG в покрытом эмалью металлическом корпусе габаритами 850х500х594 мм совмещает электрический духовой шкаф объемом 68 л и варочную поверхность, работающую от электричества и газа. Прибор относится к А-классу энергопотребления. Выдвижной ящик в нижней части корпуса обеспечивает хранение противней, форм для выпечки. Стеклянная крышка поддерживает гигиеническую чистоту варочной поверхности. 
+
+Духовой шкаф Gorenje GK5A11WG оборудован откидной дверцей compact door с двойным остеклением и технологией плавного закрывания. Камера покрыта пиролитической эмалью SilverMatte, оснащена лампой подсветки, термостатом, направляющими для противней. Верхний и нижний ТЭНы поддерживают три режима нагрева: «Верхний», «Нижний», «Классический» (верхний + нижний) при температуре до 250°С. Сводчатая форма потолка и динамическая циркуляция воздуха обеспечивают качественный прогрев блюд, позволяют одновременно готовить на нескольких уровнях без смешивания запахов. Контроль работы духового шкафа осуществляется с помощью механических переключателей. 
+
+Варочная поверхность покрыта термостойкой эмалью и разделена на две зоны нагрева: газовую и электрическую. В газовой половине предусмотрены две конфорки с системой электроподжига (99 мм мощностью 3 кВт, 74 мм мощностью 1,9 кВт) и металлическая решетка. В электрической части расположены две чугунные конфорки диаметром 145 мм (1 кВт) и 180 мм (2 кВт). Механические переключатели на фронтальной части корпуса позволяют контролировать интенсивность нагрева. Технология газ-контроля предупреждает утечку газа.', 'InStock', 'Discount', 4, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Gorenje'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Комбинированная плита (50-55 см) Gorenje GK5A11WG'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Комбинированная плита (50-55 см) Gorenje GK5A11WG' 
+        AND a."Name" = '4' 
+        AND a."Type" = 'Количество конфорок'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Комбинированная плита (50-55 см) Gorenje GK5A11WG' 
+        AND a."Name" = 'металлическая' 
+        AND a."Type" = 'Решетка'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Комбинированная плита (50-55 см) Gorenje GK5A11WG' 
+        AND a."Name" = '71' 
+        AND a."Type" = 'Объем духовки'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Комбинированная плита (50-55 см) Gorenje GK5A11WG' 
+        AND a."Name" = 'электрический' 
+        AND a."Type" = 'Тип духовки'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Комбинированная плита (50-55 см) Gorenje GK5A11WG' 
+        AND a."Name" = '85*50*59.4 см' 
+        AND a."Type" = 'Габаритные размеры (В*Ш*Г)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/kombinirovannaya-plita-50-55-sm-gorenje-gk5a11wg_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Комбинированная плита (50-55 см) Gorenje GK5A11WG'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/kombinirovannaya-plita-50-55-sm-gorenje-gk5a11wg_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Комбинированная плита (50-55 см) Gorenje GK5A11WG'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/kombinirovannaya-plita-50-55-sm-gorenje-gk5a11wg_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Комбинированная плита (50-55 см) Gorenje GK5A11WG'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/kombinirovannaya-plita-50-55-sm-gorenje-gk5a11wg_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Комбинированная плита (50-55 см) Gorenje GK5A11WG'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/kombinirovannaya-plita-50-55-sm-gorenje-gk5a11wg_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Комбинированная плита (50-55 см) Gorenje GK5A11WG'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/kombinirovannaya-plita-50-55-sm-gorenje-gk5a11wg_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Комбинированная плита (50-55 см) Gorenje GK5A11WG'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/kombinirovannaya-plita-50-55-sm-gorenje-gk5a11wg_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Комбинированная плита (50-55 см) Gorenje GK5A11WG'));

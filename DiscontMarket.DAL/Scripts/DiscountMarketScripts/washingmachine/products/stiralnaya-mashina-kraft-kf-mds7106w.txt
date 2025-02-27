@@ -1,0 +1,80 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Стиральная машина Kraft KF-MDS7106W', 14695, 11, '/items/productimages/stiralnaya-mashina-kraft-kf-mds7106w_0.png', 4.71, '', 'Стиральная машина Kraft KF-MDS7106W белого цвета оснащена инверторным мотором, системой защиты от детей. Возможна дозагрузка белья после запуска программы. Габариты модели — 84х60х45 см. Вес изделия — 53 кг. Барабан вмещает до 7 кг белья. Скорость отжима регулируется (максимально — 1000 об/мин). 
+
+За цикл расходуется до 52,5 л воды. Присутствует защита от протекания. Способ загрузки — фронтальный. Таймер позволяет отложить начало стирки. Об окончании процесса оповещает звуковой сигнал. Режимы переключаются с помощью поворотной ручки. Индикация показывает режим, этап и оставшееся время.', 'InStock', 'Discount', 5, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Kraft'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Стиральная машина Kraft KF-MDS7106W'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина Kraft KF-MDS7106W' 
+        AND a."Name" = '6' 
+        AND a."Type" = 'Максимальная загрузка'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина Kraft KF-MDS7106W' 
+        AND a."Name" = '1000' 
+        AND a."Type" = 'Максимальная скорость отжима'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина Kraft KF-MDS7106W' 
+        AND a."Name" = 'стандартный' 
+        AND a."Type" = 'Мотор'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина Kraft KF-MDS7106W' 
+        AND a."Name" = 'Да' 
+        AND a."Type" = 'Обработка паром'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина Kraft KF-MDS7106W' 
+        AND a."Name" = '84*60*45 см' 
+        AND a."Type" = 'Габаритные размеры (В*Ш*Г)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-kraft-kf-mds7106w_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Kraft KF-MDS7106W'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-kraft-kf-mds7106w_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Kraft KF-MDS7106W'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-kraft-kf-mds7106w_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Kraft KF-MDS7106W'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-kraft-kf-mds7106w_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Kraft KF-MDS7106W'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-kraft-kf-mds7106w_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Kraft KF-MDS7106W'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-kraft-kf-mds7106w_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Kraft KF-MDS7106W'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-kraft-kf-mds7106w_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Kraft KF-MDS7106W'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-kraft-kf-mds7106w_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Kraft KF-MDS7106W'));

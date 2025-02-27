@@ -1,0 +1,76 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Холодильник Бирюса М6', 13645, 10, '/items/productimages/holodilnik-birusa-m6_0.png', 4.36, '', 'Однодверный холодильник «Бирюса» М6 оборудован компактной верхней морозилкой объемом 42 л. Производительность отсека — до 2 кг/сутки. В приборе используется экологически безопасный хладагент R600A. Нижняя часть емкостью 233 л расположены четыре полки (три можно переставлять), четыре дверных кармана и два фруктово-овощных ящика.
+
+Перенавешиваемая дверь сделана из металла, покрыта эмалью, снабжена скрытой ручкой. О длительном открытии сообщает световой сигнал. При внезапном отключении питания продукты можно хранить в течение 17 часов. За счет класса энергоэффективности А устройство за год расходует всего 200,75 кВт*ч электричества.
+
+Освещение холодильной камеры обеспечивают LED-лампы. Во время работы холодильника максимальный уровень шума составляет всего 42 дБ. Управление обеспечивает механический поворотный регулятор. В комплект входит подставка для яиц. Габариты прибора — 145х58х62 см, вес — 46 кг.', 'InStock', 'Discount', 3, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Бирюса'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Холодильник Бирюса М6'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Бирюса М6' 
+        AND a."Name" = 'стандартный' 
+        AND a."Type" = 'Тип компрессора'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Бирюса М6' 
+        AND a."Name" = '145*58*62 см' 
+        AND a."Type" = 'Габаритные размеры (В*Ш*Г)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Бирюса М6' 
+        AND a."Name" = '280' 
+        AND a."Type" = 'Общий объем'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Бирюса М6' 
+        AND a."Name" = 'A' 
+        AND a."Type" = 'Класс энергоэффективности'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Бирюса М6' 
+        AND a."Name" = '8' 
+        AND a."Type" = 'Хранение при отключении питания'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-birusa-m6_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Бирюса М6'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-birusa-m6_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Бирюса М6'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-birusa-m6_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Бирюса М6'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-birusa-m6_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Бирюса М6'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-birusa-m6_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Бирюса М6'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-birusa-m6_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Бирюса М6'));

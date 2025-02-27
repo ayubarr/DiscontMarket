@@ -1,0 +1,83 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Микроволновая печь соло LEFF 20MM729B', 4599, 15, '/items/productimages/mikrovolnovaya-pech-solo-leff-20mm729b_0.png', 4.25, '', 'Микроволновая печь соло Leff 20MM729B оборудована камерой объемом 20 л, внутри которой расположен поворотный стол диаметром 25,5 см, что дает возможность готовить и разогревать большие порции блюд. Внутренние стенки покрыты эмалью, что обеспечивает защиту от загрязнений.
+
+• <b>Встроенная подсветка</b>
+Позволяет осуществлять контроль за процессом готовки.
+
+• <b>Удобная эксплуатация</b>
+Дверца открывается в левую сторону посредством специальной ручки. Управление устройством производится с помощью механических переключателей.
+
+• <b>Пять программ автоматического разогрева</b>
+Дает возможность выбирать наиболее оптимальный вариант.
+
+• <b>Интегрированный таймер</b>
+Предназначен для установки времени работы, по окончании которого сработает звуковой сигнал.
+
+• <b>Функции «Автоматический разогрев и размораживание»</b>
+Не требуют длительных расчетов времени и мощности для осуществления процессов.
+
+Световые индикации показывают рабочее состояние — активный режим работы, время до конца программы. Потребляемая мощность микроволновой печи составляет 700 Вт.', 'InStock', 'Discount', 6, (SELECT "ID" FROM "Brands" WHERE "Name" = 'LEFF'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло LEFF 20MM729B'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Микроволновая печь соло LEFF 20MM729B' 
+        AND a."Name" = '20' 
+        AND a."Type" = 'Полезный объем'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Микроволновая печь соло LEFF 20MM729B' 
+        AND a."Name" = '25.5' 
+        AND a."Type" = 'Диаметр поворотного стола'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Микроволновая печь соло LEFF 20MM729B' 
+        AND a."Name" = 'эмаль' 
+        AND a."Type" = 'Внутреннее покрытие'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Микроволновая печь соло LEFF 20MM729B' 
+        AND a."Name" = 'механический/ поворотный' 
+        AND a."Type" = 'Тип управления'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Микроволновая печь соло LEFF 20MM729B' 
+        AND a."Name" = 'черный' 
+        AND a."Type" = 'Цвет'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-leff-20mm729b_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло LEFF 20MM729B'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-leff-20mm729b_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло LEFF 20MM729B'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-leff-20mm729b_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло LEFF 20MM729B'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-leff-20mm729b_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло LEFF 20MM729B'));

@@ -1,0 +1,28 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-maunfeld-mfwm128wh053_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Maunfeld MFWM128WH053'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-maunfeld-mfwm128wh053_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Maunfeld MFWM128WH053'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-maunfeld-mfwm128wh053_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Maunfeld MFWM128WH053'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-maunfeld-mfwm128wh053_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Maunfeld MFWM128WH053'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-maunfeld-mfwm128wh053_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Maunfeld MFWM128WH053'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-maunfeld-mfwm128wh053_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Maunfeld MFWM128WH053'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-maunfeld-mfwm128wh053_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Maunfeld MFWM128WH053'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-maunfeld-mfwm128wh053_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Maunfeld MFWM128WH053'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-maunfeld-mfwm128wh053_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Maunfeld MFWM128WH053'));

@@ -1,0 +1,86 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Холодильник многодверный Hotpoint HFP4 625I X', 74999, 8, '/items/productimages/holodilnik-mnogodvernyi-hotpoint-hfp4-625i-x_0.png', 4.56, '', 'Многодверный холодильник Hotpoint HFP4 625I X — трехкамерная модель, оснащенная инверторным компрессором, выдающим уровень шума не выше 39 дБ. Общий полезный объем устройства — 541 л. Двери из металла и пластика открываются налево и направо. 
+
+• <b>Технология размораживания No Frost</b> 
+Исключает появление наледи на стенках отделений. 
+
+• <b>Светодиодное освещение</b> 
+Обеспечивает хорошую видимость пространства. 
+
+• <b>Зона свежести 30 л</b> 
+Подходит для хранения различных групп продуктов (влажные и сухие). В ящике предусмотрена возможность регулировки уровня влажности. 
+
+• <b>Три выдвижных ящика и три полки морозильного отделения</b> 
+Дают возможность организовать отдельное хранение продуктов: мяса, рыбы, замороженных овощей, фруктов. 
+
+• <b>Цифровой дисплей</b> 
+Находится с наружной части и поддерживает сенсорное управление, с помощью которого можно настраивать температуру. 
+
+• <b>Режимы «Суперохлаждение» и «Суперзамораживание»</b> 
+Гарантируют быстрое поступление охлажденного воздуха, что ускоряет достижение продуктами необходимой температуры. 
+
+В случае неожиданного отключения электроэнергии холодильник способен сохранять оптимальную температуру в течение десяти часов. Функция «Защита от детей» предназначена для блокировки панели управления. Модель относится к классу энергопотребления А+. За год расходуется до 464 кВт*ч. В комплекте поставляются подставка для яиц, лоток для льда.', 'InStock', 'Discount', 3, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Hotpoint'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Hotpoint HFP4 625I X'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник многодверный Hotpoint HFP4 625I X' 
+        AND a."Name" = 'инверторный' 
+        AND a."Type" = 'Тип компрессора'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник многодверный Hotpoint HFP4 625I X' 
+        AND a."Name" = '182*90.8*70.5 см' 
+        AND a."Type" = 'Габаритные размеры (В*Ш*Г)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник многодверный Hotpoint HFP4 625I X' 
+        AND a."Name" = '625' 
+        AND a."Type" = 'Общий объем'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник многодверный Hotpoint HFP4 625I X' 
+        AND a."Name" = 'влажная/сухая' 
+        AND a."Type" = 'Тип зоны сохранения свежести'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник многодверный Hotpoint HFP4 625I X' 
+        AND a."Name" = 'электронный' 
+        AND a."Type" = 'Тип управления'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-hotpoint-hfp4-625i-x_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Hotpoint HFP4 625I X'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-hotpoint-hfp4-625i-x_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Hotpoint HFP4 625I X'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-hotpoint-hfp4-625i-x_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Hotpoint HFP4 625I X'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-hotpoint-hfp4-625i-x_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Hotpoint HFP4 625I X'));

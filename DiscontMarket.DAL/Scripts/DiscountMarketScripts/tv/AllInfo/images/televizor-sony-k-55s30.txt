@@ -1,0 +1,28 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-sony-k-55s30_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Sony K-55S30'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-sony-k-55s30_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Sony K-55S30'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-sony-k-55s30_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Sony K-55S30'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-sony-k-55s30_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Sony K-55S30'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-sony-k-55s30_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Sony K-55S30'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-sony-k-55s30_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Sony K-55S30'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-sony-k-55s30_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Sony K-55S30'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-sony-k-55s30_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Sony K-55S30'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-sony-k-55s30_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Sony K-55S30'));

@@ -1,0 +1,60 @@
+﻿INSERT INTO "Products" 
+("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription",
+"Availability", "Status", "CategoryID", "BrandID", "UserID") 
+VALUES
+ ('Телевизор Vekta LD-65SU8850BS', 26645, 12, '/items/productimages/televizor-vekta-ld-65su8850bs_0.png', 4.51, '', 'Телевизор Vekta LD-65SU8850BS с безрамочным дизайном гармонично впишется в любой интерьер и позволит погрузиться в просмотр. Экран диагональю 65" воспроизводит реалистичное, яркое, глубокое и насыщенное изображение в разрешении 3840x2160 Пикс. Технология HDR повышает контрастность темных и светлых сцен. Функция цифрового шумоподавления делает картинку более четкой и чистой. Дисплей формата 16:9 оптимизирован под современный стандарт видеоконтента. Частота обновления составляет 60 Гц, благодаря чему кадры сменяются плавно, без рывков и искажений.
+
+Технология HDMI ARC позволяет по одному каналу передавать аудио- и видеосигнал. Благодаря установленной операционной системе WebOS телевизор работает быстро, мгновенно откликаясь на команды. Стереосистема NICAM мощностью 20 Вт обеспечивает воспроизведение объемного, качественного и реалистичного звука. Модель может управляться с помощью смартфона, пульта ДУ или голосового помощника. Встроенные модули Bluetooth и WI-Fi позволяют подключать сторонние устройства беспроводным способом.
+
+Телевизор поддерживает Smart TV и цифровой тюнер DVB со стандартами T/T2/C/S/S2. Устройство может воспроизводить файлы с USB-накопителя. Модель оснащена интерфейсами HDMI, USB 2.0 тип A, USB 2.0 тип A, Toslink, разъемом для наушников 3,5 мм и портом для модуля DVB CAM. Прибор потребляет 150 Вт. Неподходящий контент можно заблокировать, чтобы защитить детей. В комплекте настольная подставка для безопасной установки.', 'InStock', 'Discount', 1, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Vekta'), 1);
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Vekta LD-65SU8850BS'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '4K Ultra HD (3840x2160 Пикс)' AND "Type" = 'Экран));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Vekta LD-65SU8850BS'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '65' AND "Type" = 'Диагональ));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Vekta LD-65SU8850BS'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '60' AND "Type" = 'Частота обновления));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Vekta LD-65SU8850BS'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'LED' AND "Type" = 'Технология экрана));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Vekta LD-65SU8850BS'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'Direct LED' AND "Type" = 'Тип светодиодной подсветки));
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-vekta-ld-65su8850bs_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Vekta LD-65SU8850BS'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-vekta-ld-65su8850bs_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Vekta LD-65SU8850BS'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-vekta-ld-65su8850bs_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Vekta LD-65SU8850BS'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-vekta-ld-65su8850bs_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Vekta LD-65SU8850BS'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-vekta-ld-65su8850bs_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Vekta LD-65SU8850BS'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-vekta-ld-65su8850bs_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Vekta LD-65SU8850BS'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-vekta-ld-65su8850bs_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Vekta LD-65SU8850BS'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-vekta-ld-65su8850bs_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Vekta LD-65SU8850BS'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-vekta-ld-65su8850bs_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Vekta LD-65SU8850BS'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-vekta-ld-65su8850bs_9.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Vekta LD-65SU8850BS'));

@@ -1,0 +1,7 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-de-dietrich-dwf394qwe_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина De Dietrich DWF394QWE'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-de-dietrich-dwf394qwe_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина De Dietrich DWF394QWE'));

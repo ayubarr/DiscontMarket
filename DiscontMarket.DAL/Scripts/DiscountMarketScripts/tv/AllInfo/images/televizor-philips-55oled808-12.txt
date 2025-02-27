@@ -1,0 +1,28 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-philips-55oled808-12_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Philips 55OLED808/12'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-philips-55oled808-12_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Philips 55OLED808/12'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-philips-55oled808-12_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Philips 55OLED808/12'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-philips-55oled808-12_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Philips 55OLED808/12'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-philips-55oled808-12_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Philips 55OLED808/12'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-philips-55oled808-12_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Philips 55OLED808/12'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-philips-55oled808-12_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Philips 55OLED808/12'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-philips-55oled808-12_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Philips 55OLED808/12'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-philips-55oled808-12_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Philips 55OLED808/12'));

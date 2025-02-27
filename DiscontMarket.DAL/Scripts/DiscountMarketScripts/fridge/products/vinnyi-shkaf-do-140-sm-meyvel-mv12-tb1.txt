@@ -1,0 +1,81 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Винный шкаф до 140 см Meyvel MV12-TB1', 8199, 18, '/items/productimages/vinnyi-shkaf-do-140-sm-meyvel-mv12-tb1_0.png', 4.67, '', 'Винный шкаф до 140 см Meyvel MV12-TB1 оснащен дверцей из двойного стекла с надежной защитой от УФ-лучей. Бутылки размещаются на трех полках из хромированной стали. В шкафу можно разместить до 12 бутылок вина. Для изменения настроек предназначена сенсорная панель. Установленная температура поддерживается при помощи электронного термостата. В системе предусмотрен деморежим, при использовании которого не выключается подсветка. Ключевые настройки сохраняются в памяти устройства. Благодаря термоэлектрическому охлаждению модель работает достаточно тихо.', 'InStock', 'Discount', 3, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Meyvel'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Винный шкаф до 140 см Meyvel MV12-TB1'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Винный шкаф до 140 см Meyvel MV12-TB1' 
+        AND a."Name" = 'инверторный' 
+        AND a."Type" = 'Тип компрессора'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Винный шкаф до 140 см Meyvel MV12-TB1' 
+        AND a."Name" = '12' 
+        AND a."Type" = 'Максимальное количество бутылок'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Винный шкаф до 140 см Meyvel MV12-TB1' 
+        AND a."Name" = '33' 
+        AND a."Type" = 'Общий объем'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Винный шкаф до 140 см Meyvel MV12-TB1' 
+        AND a."Name" = '3' 
+        AND a."Type" = 'Количество полок'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Винный шкаф до 140 см Meyvel MV12-TB1' 
+        AND a."Name" = 'термоэлектрический' 
+        AND a."Type" = 'Тип охлаждения'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vinnyi-shkaf-do-140-sm-meyvel-mv12-tb1_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Винный шкаф до 140 см Meyvel MV12-TB1'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vinnyi-shkaf-do-140-sm-meyvel-mv12-tb1_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Винный шкаф до 140 см Meyvel MV12-TB1'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vinnyi-shkaf-do-140-sm-meyvel-mv12-tb1_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Винный шкаф до 140 см Meyvel MV12-TB1'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vinnyi-shkaf-do-140-sm-meyvel-mv12-tb1_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Винный шкаф до 140 см Meyvel MV12-TB1'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vinnyi-shkaf-do-140-sm-meyvel-mv12-tb1_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Винный шкаф до 140 см Meyvel MV12-TB1'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vinnyi-shkaf-do-140-sm-meyvel-mv12-tb1_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Винный шкаф до 140 см Meyvel MV12-TB1'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vinnyi-shkaf-do-140-sm-meyvel-mv12-tb1_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Винный шкаф до 140 см Meyvel MV12-TB1'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vinnyi-shkaf-do-140-sm-meyvel-mv12-tb1_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Винный шкаф до 140 см Meyvel MV12-TB1'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vinnyi-shkaf-do-140-sm-meyvel-mv12-tb1_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Винный шкаф до 140 см Meyvel MV12-TB1'));

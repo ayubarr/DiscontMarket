@@ -1,0 +1,46 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vinnyi-shkaf-do-140-sm-meyvel-mv46-kbt2_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Винный шкаф до 140 см Meyvel MV46-KBT2'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vinnyi-shkaf-do-140-sm-meyvel-mv46-kbt2_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Винный шкаф до 140 см Meyvel MV46-KBT2'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vinnyi-shkaf-do-140-sm-meyvel-mv46-kbt2_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Винный шкаф до 140 см Meyvel MV46-KBT2'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vinnyi-shkaf-do-140-sm-meyvel-mv46-kbt2_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Винный шкаф до 140 см Meyvel MV46-KBT2'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vinnyi-shkaf-do-140-sm-meyvel-mv46-kbt2_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Винный шкаф до 140 см Meyvel MV46-KBT2'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vinnyi-shkaf-do-140-sm-meyvel-mv46-kbt2_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Винный шкаф до 140 см Meyvel MV46-KBT2'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vinnyi-shkaf-do-140-sm-meyvel-mv46-kbt2_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Винный шкаф до 140 см Meyvel MV46-KBT2'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vinnyi-shkaf-do-140-sm-meyvel-mv46-kbt2_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Винный шкаф до 140 см Meyvel MV46-KBT2'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vinnyi-shkaf-do-140-sm-meyvel-mv46-kbt2_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Винный шкаф до 140 см Meyvel MV46-KBT2'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vinnyi-shkaf-do-140-sm-meyvel-mv46-kbt2_9.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Винный шкаф до 140 см Meyvel MV46-KBT2'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vinnyi-shkaf-do-140-sm-meyvel-mv46-kbt2_10.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Винный шкаф до 140 см Meyvel MV46-KBT2'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vinnyi-shkaf-do-140-sm-meyvel-mv46-kbt2_11.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Винный шкаф до 140 см Meyvel MV46-KBT2'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vinnyi-shkaf-do-140-sm-meyvel-mv46-kbt2_12.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Винный шкаф до 140 см Meyvel MV46-KBT2'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vinnyi-shkaf-do-140-sm-meyvel-mv46-kbt2_13.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Винный шкаф до 140 см Meyvel MV46-KBT2'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vinnyi-shkaf-do-140-sm-meyvel-mv46-kbt2_14.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Винный шкаф до 140 см Meyvel MV46-KBT2'));

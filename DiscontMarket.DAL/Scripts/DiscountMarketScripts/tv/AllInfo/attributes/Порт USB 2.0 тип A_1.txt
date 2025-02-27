@@ -1,0 +1,4 @@
+﻿INSERT INTO "Attributes" ("NameTranslate", "Name", "Type") VALUES
+('1', '1', 'Порт USB 2.0 тип A');
+INSERT INTO "AttributeCategory" ("AttributeID", "CategoryID") VALUES
+((SELECT "ID" FROM "Attributes" WHERE "Name" = '1' AND "Type" = 'Порт USB 2.0 тип A'), (SELECT "ID" FROM "Categories" WHERE "Name" = 'tv'));

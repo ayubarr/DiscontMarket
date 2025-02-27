@@ -1,0 +1,72 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Холодильник Maunfeld MFF144SFW', 17245, 7, '/items/productimages/holodilnik-maunfeld-mff144sfw_0.png', 4.57, '', 'Холодильник Maunfeld MFF144SFW, белый — двухкамерная модель полезным объемом 205 л. В год прибор потребляет 219 кВт*ч, что соответствует классу энергоэффективности А+. Климатический класс — SN, N, ST, T. В системе охлаждения используются озонобезопасный хладагент R600A и инверторный компрессор. Уровень шума не превышает 39 дБ. 
+Холодильное отделение (153 л) оснащено тремя полкам, из них две переставляются по высоте, одна фиксированная — она служит крышкой контейнера для хранения овощей и фруктов. На двери — два кармана, нижний удобен для размещения бутылок и высоких пакетов с напитками, кроме того, для бутылок есть металлический горизонтальный подвес. Полки изготовлены из закаленного стекла. Для подсветки используются светодиоды — экономичные и долговечные элементы. В морозильном отделении (52 л) — два пластиковых ящика. Мощность замораживания составляет 2,5 кг в сутки. 
+Управление производится при помощи сенсорной панели, есть индикация температуры. Система SmartFrost исключает образование инея на внутренних поверхностях, избавляя от ручного размораживания. Антибактериальное покрытие предотвращает развитие плесени и появление неприятного запаха. 
+Двери перенавешиваются, чтобы с удобством использовать прибор при любой планировке помещения. Особая конструкция конденсационной решетки дает возможность установить устройство вплотную к стене. Фасады выполнены из эмалированного металла, ручки встроенные. Размеры холодильника: 144х55х54 см, вес — 43 кг.', 'InStock', 'Discount', 3, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Maunfeld'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Холодильник Maunfeld MFF144SFW'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Maunfeld MFF144SFW' 
+        AND a."Name" = 'стандартный' 
+        AND a."Type" = 'Тип компрессора'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Maunfeld MFF144SFW' 
+        AND a."Name" = '144' 
+        AND a."Type" = 'Высота'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Maunfeld MFF144SFW' 
+        AND a."Name" = '54' 
+        AND a."Type" = 'Ширина'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Maunfeld MFF144SFW' 
+        AND a."Name" = '55' 
+        AND a."Type" = 'Глубина'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Maunfeld MFF144SFW' 
+        AND a."Name" = '205' 
+        AND a."Type" = 'Общий объем'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-maunfeld-mff144sfw_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Maunfeld MFF144SFW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-maunfeld-mff144sfw_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Maunfeld MFF144SFW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-maunfeld-mff144sfw_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Maunfeld MFF144SFW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-maunfeld-mff144sfw_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Maunfeld MFF144SFW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-maunfeld-mff144sfw_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Maunfeld MFF144SFW'));

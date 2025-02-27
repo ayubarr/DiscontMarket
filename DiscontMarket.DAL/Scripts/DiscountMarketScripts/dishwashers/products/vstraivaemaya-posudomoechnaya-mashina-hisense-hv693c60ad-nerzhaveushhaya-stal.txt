@@ -1,0 +1,84 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Встраиваемая посудомоечная машина Hisense HV693C60AD нержавеющая сталь', 42999, 10, '/items/productimages/vstraivaemaya-posudomoechnaya-mashina-hisense-hv693c60ad-nerzhaveushhaya-stal_0.png', 4.87, '', 'Встраиваемая посудомоечная машина Hisense HV693C60AD сконструирована для установки в нишу 820х600х555 мм. Прибор относится к классу энергопотребления А+++ и способен обработать до 16 комплектов посуды за цикл. За тихую и безотказную работу отвечает инверторный мотор Power Drive, показатель шума которого не превышает 42 дБ. Расход воды за цикл составляет 9,6 л. Технология AquaBoost обеспечивает подачу мощного потока воды и способствует распределению тепла для качественной мойки. 
+Откидная дверца с расположенным в верхней торцевой части сенсорным блоком управления открывает доступ в камеру из нержавеющей стали с подсветкой и тремя пластиковыми разбрызгивателями. Максимальная температура воды на заливе — 70°C. Для размещения посуды предусмотрены верхняя, нижняя корзины, выдвижной лоток для столовых приборов, съемная подставка для бокалов. 
+Машина поддерживает следующие программы мойки: «Интенсив», «Эко», «1 час», «Гигиена», «Ночная», «Авто», «Хрупкое стекло». Автоматическое дозирование обеспечивает поступление в камеру объема моющего средства, необходимого для выполнения программы. В конце цикла дверца приоткрывается автоматически, способствуя полному высыханию посуды. Функция отложенного старта позволяет запустить работу устройства в заданное время (в течение ближайших 24 часов). 
+За безопасность эксплуатации электроприбора отвечает защита от перелива Aquastop. Встроенный адаптер Wi-Fi обеспечивает дистанционное управление функциями машины со смартфона.', 'InStock', 'Discount', 28, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Hisense'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина Hisense HV693C60AD нержавеющая сталь'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Встраиваемая посудомоечная машина Hisense HV693C60AD нержавеющая сталь' 
+        AND a."Name" = '9.6' 
+        AND a."Type" = 'Расход воды за цикл'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Встраиваемая посудомоечная машина Hisense HV693C60AD нержавеющая сталь' 
+        AND a."Name" = '16 комплектов' 
+        AND a."Type" = 'Максимальная вместимость'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Встраиваемая посудомоечная машина Hisense HV693C60AD нержавеющая сталь' 
+        AND a."Name" = '7' 
+        AND a."Type" = 'Количество программ мойки'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Встраиваемая посудомоечная машина Hisense HV693C60AD нержавеющая сталь' 
+        AND a."Name" = 'инверторный' 
+        AND a."Type" = 'Мотор'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Встраиваемая посудомоечная машина Hisense HV693C60AD нержавеющая сталь' 
+        AND a."Name" = '82*60*55,5' 
+        AND a."Type" = 'Размер ниши, мм (В*Ш*Г)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-hisense-hv693c60ad-nerzhaveushhaya-stal_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина Hisense HV693C60AD нержавеющая сталь'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-hisense-hv693c60ad-nerzhaveushhaya-stal_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина Hisense HV693C60AD нержавеющая сталь'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-hisense-hv693c60ad-nerzhaveushhaya-stal_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина Hisense HV693C60AD нержавеющая сталь'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-hisense-hv693c60ad-nerzhaveushhaya-stal_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина Hisense HV693C60AD нержавеющая сталь'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-hisense-hv693c60ad-nerzhaveushhaya-stal_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина Hisense HV693C60AD нержавеющая сталь'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-hisense-hv693c60ad-nerzhaveushhaya-stal_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина Hisense HV693C60AD нержавеющая сталь'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-hisense-hv693c60ad-nerzhaveushhaya-stal_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина Hisense HV693C60AD нержавеющая сталь'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-hisense-hv693c60ad-nerzhaveushhaya-stal_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина Hisense HV693C60AD нержавеющая сталь'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-hisense-hv693c60ad-nerzhaveushhaya-stal_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина Hisense HV693C60AD нержавеющая сталь'));

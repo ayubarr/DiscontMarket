@@ -1,0 +1,55 @@
+﻿INSERT INTO "Products" 
+("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription",
+"Availability", "Status", "CategoryID", "BrandID", "UserID") 
+VALUES
+ ('Телевизор Hi VHIX-43U239MSA', 12499, 16, '/items/productimages/televizor-hi-vhix-43u239msa_0.png', 4.79, '', 'Телевизор Hi VHIX-43U239MSA — модель с 43-дюймовым экраном с соотношением сторон 16:9, на котором воспроизводится детализированное, четкое изображение с высокой яркостью (220 кд/м²) и естественной цветопередачей. Устройство дает возможность смотреть контент в разрешении 3840x2160 пикселей. Частота обновления 60 Гц гарантирует плавную подачу кадров.
+
+• <b>Цифровое шумоподавление</b>
+Уменьшает вероятность искажений при слабом уровне сигнала.
+
+• <b>Предустановленная ОС Android 11</b>
+Отличается простым, интуитивно-понятным интерфейсом.
+
+• <b>Технология Smart TV</b>
+Дает возможность смотреть фильмы, сериалы и другой контент онлайн.
+
+• <b>Функция TimeShift</b>
+Ставит на паузу эфир и возобновляет просмотр в любое удобное время.
+
+Для беспроводного доступа в интернет предусмотрен модуль Wi-Fi. Предусмотрены интерфейсы USB и HDMI, разъем для подключения гарнитуры. Телевизор обладает подставкой, которая гарантирует высокую устойчивость на любой горизонтальной поверхности. При желании устройство можно монтировать на стене посредством кронштейна стандарта VESA 300х300.', 'InStock', 'Discount', 1, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Hi'), 1);
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hi VHIX-43U239MSA'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '4K Ultra HD (3840x2160 Пикс)' AND "Type" = 'Экран));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hi VHIX-43U239MSA'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '44' AND "Type" = 'Диагональ));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hi VHIX-43U239MSA'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '60' AND "Type" = 'Частота обновления));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hi VHIX-43U239MSA'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'LED' AND "Type" = 'Технология экрана));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hi VHIX-43U239MSA'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'LED' AND "Type" = 'Тип светодиодной подсветки));
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-hi-vhix-43u239msa_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hi VHIX-43U239MSA'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-hi-vhix-43u239msa_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hi VHIX-43U239MSA'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-hi-vhix-43u239msa_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hi VHIX-43U239MSA'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-hi-vhix-43u239msa_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hi VHIX-43U239MSA'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-hi-vhix-43u239msa_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hi VHIX-43U239MSA'));

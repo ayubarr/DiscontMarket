@@ -1,0 +1,16 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/aktivatornaya-stiralnaya-mashina-renova-ws-85pe_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Активаторная стиральная машина Renova WS-85PE'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/aktivatornaya-stiralnaya-mashina-renova-ws-85pe_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Активаторная стиральная машина Renova WS-85PE'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/aktivatornaya-stiralnaya-mashina-renova-ws-85pe_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Активаторная стиральная машина Renova WS-85PE'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/aktivatornaya-stiralnaya-mashina-renova-ws-85pe_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Активаторная стиральная машина Renova WS-85PE'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/aktivatornaya-stiralnaya-mashina-renova-ws-85pe_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Активаторная стиральная машина Renova WS-85PE'));

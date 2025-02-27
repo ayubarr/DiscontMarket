@@ -1,0 +1,40 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/neoqled-8k-televizor-samsung-qe65qn900cu-2023_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'NeoQLED 8K Телевизор Samsung QE65QN900CU (2023)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/neoqled-8k-televizor-samsung-qe65qn900cu-2023_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'NeoQLED 8K Телевизор Samsung QE65QN900CU (2023)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/neoqled-8k-televizor-samsung-qe65qn900cu-2023_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'NeoQLED 8K Телевизор Samsung QE65QN900CU (2023)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/neoqled-8k-televizor-samsung-qe65qn900cu-2023_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'NeoQLED 8K Телевизор Samsung QE65QN900CU (2023)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/neoqled-8k-televizor-samsung-qe65qn900cu-2023_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'NeoQLED 8K Телевизор Samsung QE65QN900CU (2023)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/neoqled-8k-televizor-samsung-qe65qn900cu-2023_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'NeoQLED 8K Телевизор Samsung QE65QN900CU (2023)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/neoqled-8k-televizor-samsung-qe65qn900cu-2023_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'NeoQLED 8K Телевизор Samsung QE65QN900CU (2023)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/neoqled-8k-televizor-samsung-qe65qn900cu-2023_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'NeoQLED 8K Телевизор Samsung QE65QN900CU (2023)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/neoqled-8k-televizor-samsung-qe65qn900cu-2023_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'NeoQLED 8K Телевизор Samsung QE65QN900CU (2023)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/neoqled-8k-televizor-samsung-qe65qn900cu-2023_9.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'NeoQLED 8K Телевизор Samsung QE65QN900CU (2023)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/neoqled-8k-televizor-samsung-qe65qn900cu-2023_10.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'NeoQLED 8K Телевизор Samsung QE65QN900CU (2023)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/neoqled-8k-televizor-samsung-qe65qn900cu-2023_11.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'NeoQLED 8K Телевизор Samsung QE65QN900CU (2023)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/neoqled-8k-televizor-samsung-qe65qn900cu-2023_12.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'NeoQLED 8K Телевизор Samsung QE65QN900CU (2023)'));

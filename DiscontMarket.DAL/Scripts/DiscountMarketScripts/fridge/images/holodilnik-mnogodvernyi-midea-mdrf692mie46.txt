@@ -1,0 +1,22 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-midea-mdrf692mie46_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Midea MDRF692MIE46'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-midea-mdrf692mie46_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Midea MDRF692MIE46'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-midea-mdrf692mie46_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Midea MDRF692MIE46'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-midea-mdrf692mie46_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Midea MDRF692MIE46'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-midea-mdrf692mie46_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Midea MDRF692MIE46'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-midea-mdrf692mie46_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Midea MDRF692MIE46'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-midea-mdrf692mie46_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Midea MDRF692MIE46'));

@@ -1,0 +1,78 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Электрическая плита (50-55 см) De luxe 506004.14эс', 18499, 17, '/items/productimages/elektricheskaya-plita-50-55-sm-de-luxe-50600414es_0.png', 4.54, '', 'Ширина электрической плиты De Luxe 506004.14эс всего 50 см, поэтому она может стать подходящим решением для маленькой кухни. Эта модель обращает на себя внимание необычным исполнением: спокойный белый цвет и фасад, отделанный стеклом, не останутся незамеченными в любом современном интерьере.
+
+ПРОДУМАННОЕ РАСПОЛОЖЕНИЕ
+Стеклокерамическая варочная панель оснащена четырьмя конфорками: две мощностью 1200 Вт и две – 1700 Вт. Малые и большие зоны нагрева соседствуют, что позволит задействовать их хоть все одновременно – посуда не будет сталкивать бортами. Готовьте в «семейных» сковородах и маленьких кастрюльках – вам будет удобно.
+
+ДУХОВОЙ ШКАФ
+К вашим услугам классический нагрев, который позволит запекать мясо и рыбу, делать выпечку – всё приготовится равномерно, без пересушенных и сыроватых участков. При объёме шкафа 54 литра вы легко загрузите даже крупные порции, например, целую птицу или большой окорок. В комплект поставки входят вертел, решётка и два противня (мелкий и глубокий), так что вы сразу же после установки плиты сможете приступить к кулинарному творчеству. 
+
+ПОЛЕЗНЫЕ ВОЗМОЖНОСТИ
+У прибора простое и надёжное механическое управление. Если вы захотите проверить, как зарумяниваются пирожки, вам не придётся открывать дверцу и выпускать горячий воздух: духовка снабжена яркой галогеновой подсветкой.', 'InStock', 'Discount', 4, (SELECT "ID" FROM "Brands" WHERE "Name" = 'De luxe'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Электрическая плита (50-55 см) De luxe 506004.14эс'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Электрическая плита (50-55 см) De luxe 506004.14эс' 
+        AND a."Name" = '54' 
+        AND a."Type" = 'Объем духовки'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Электрическая плита (50-55 см) De luxe 506004.14эс' 
+        AND a."Name" = '1' 
+        AND a."Type" = 'Режимы работы духовки'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Электрическая плита (50-55 см) De luxe 506004.14эс' 
+        AND a."Name" = 'Radiant' 
+        AND a."Type" = 'Тип конфорок'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Электрическая плита (50-55 см) De luxe 506004.14эс' 
+        AND a."Name" = 'электрический' 
+        AND a."Type" = 'Тип гриля'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Электрическая плита (50-55 см) De luxe 506004.14эс' 
+        AND a."Name" = 'эмалированный металл' 
+        AND a."Type" = 'Внутреннее покрытие'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/elektricheskaya-plita-50-55-sm-de-luxe-50600414es_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Электрическая плита (50-55 см) De luxe 506004.14эс'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/elektricheskaya-plita-50-55-sm-de-luxe-50600414es_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Электрическая плита (50-55 см) De luxe 506004.14эс'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/elektricheskaya-plita-50-55-sm-de-luxe-50600414es_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Электрическая плита (50-55 см) De luxe 506004.14эс'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/elektricheskaya-plita-50-55-sm-de-luxe-50600414es_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Электрическая плита (50-55 см) De luxe 506004.14эс'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/elektricheskaya-plita-50-55-sm-de-luxe-50600414es_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Электрическая плита (50-55 см) De luxe 506004.14эс'));

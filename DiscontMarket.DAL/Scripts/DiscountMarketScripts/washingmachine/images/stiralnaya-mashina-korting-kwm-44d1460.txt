@@ -1,0 +1,4 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-korting-kwm-44d1460_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Korting KWM 44D1460'));

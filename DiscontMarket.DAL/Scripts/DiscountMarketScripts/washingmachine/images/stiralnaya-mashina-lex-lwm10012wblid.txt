@@ -1,0 +1,7 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-lex-lwm10012wblid_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина LEX LWM10012WBlID'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-lex-lwm10012wblid_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина LEX LWM10012WBlID'));

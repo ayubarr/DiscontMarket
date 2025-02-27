@@ -1,0 +1,81 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Стиральная машина Gorenje W1NHPI60SCSIRV', 24795, 8, '/items/productimages/stiralnaya-mashina-gorenje-w1nhpi60scsirv_0.png', 4.12, '', '', 'InStock', 'Discount', 5, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Gorenje'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Стиральная машина Gorenje W1NHPI60SCSIRV'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина Gorenje W1NHPI60SCSIRV' 
+        AND a."Name" = '6' 
+        AND a."Type" = 'Максимальная загрузка'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина Gorenje W1NHPI60SCSIRV' 
+        AND a."Name" = '1000' 
+        AND a."Type" = 'Максимальная скорость отжима'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина Gorenje W1NHPI60SCSIRV' 
+        AND a."Name" = 'инверторный' 
+        AND a."Type" = 'Мотор'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина Gorenje W1NHPI60SCSIRV' 
+        AND a."Name" = 'Да' 
+        AND a."Type" = 'Обработка паром'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина Gorenje W1NHPI60SCSIRV' 
+        AND a."Name" = '85*60*43.5 см' 
+        AND a."Type" = 'Габаритные размеры (В*Ш*Г)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-gorenje-w1nhpi60scsirv_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Gorenje W1NHPI60SCSIRV'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-gorenje-w1nhpi60scsirv_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Gorenje W1NHPI60SCSIRV'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-gorenje-w1nhpi60scsirv_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Gorenje W1NHPI60SCSIRV'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-gorenje-w1nhpi60scsirv_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Gorenje W1NHPI60SCSIRV'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-gorenje-w1nhpi60scsirv_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Gorenje W1NHPI60SCSIRV'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-gorenje-w1nhpi60scsirv_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Gorenje W1NHPI60SCSIRV'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-gorenje-w1nhpi60scsirv_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Gorenje W1NHPI60SCSIRV'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-gorenje-w1nhpi60scsirv_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Gorenje W1NHPI60SCSIRV'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-gorenje-w1nhpi60scsirv_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Gorenje W1NHPI60SCSIRV'));

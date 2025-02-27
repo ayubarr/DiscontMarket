@@ -1,0 +1,70 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Холодильник многодверный Grundig GQN20130LXBR', 103999, 7, '/items/productimages/holodilnik-mnogodvernyi-grundig-gqn20130lxbr_0.png', 4.17, '', 'Холодильник Grundig GQN20130LXBR темно-серого цвета оснащен тремя камерами и четырьмя дверцами. Общий объем составляет 541 л. Дверцы произведены из металла. 
+Внутри холодильного отделения предусмотрены четыре полки из стекла с фиксаторами против случайного выдвижения. Присутствует отделение для хранения фруктов и овощей. Объем зоны свежести — 30 л, в ней можно регулировать температуру и уровень влажности. На дверце холодильной камеры располагаются шесть полок из пластика. При открывании дверцы загорается светодиодная подсветка.
+Морозильная камера объемом 165 л располагается снизу. Внутри расположены три пластиковых ящика и три полки. Производительность морозильного отделения составляет 8 кг в сутки. При необходимости можно воспользоваться функцией суперзаморозки. 
+У холодильника один инверторный компрессор. Максимальный уровень шума — 38 дБ. Система No Frost позволяет избежать необходимости ручной разморозки. Прибор заправлен хладагентом R600A. Модель оснащена генератором льда и угольным фильтром. 
+Управление электронное. На корпусе присутствует индикация включения, выбранного режима работы и температуры в обеих камерах. В год холодильник потребляет 364 кВт*ч. Равномерное распределение температуры обеспечивает встроенный вентилятор. Предусмотрены световая и звуковая сигнализация открытой двери, повышения температуры, защита от детей. В комплект входят лоток для льда и две подставки для хранения яиц.', 'InStock', 'Discount', 3, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Grundig'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Grundig GQN20130LXBR'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник многодверный Grundig GQN20130LXBR' 
+        AND a."Name" = 'инверторный' 
+        AND a."Type" = 'Тип компрессора'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник многодверный Grundig GQN20130LXBR' 
+        AND a."Name" = '182*90.8*75 см' 
+        AND a."Type" = 'Габаритные размеры (В*Ш*Г)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник многодверный Grundig GQN20130LXBR' 
+        AND a."Name" = '541' 
+        AND a."Type" = 'Общий объем'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник многодверный Grundig GQN20130LXBR' 
+        AND a."Name" = 'сухая' 
+        AND a."Type" = 'Тип зоны сохранения свежести'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник многодверный Grundig GQN20130LXBR' 
+        AND a."Name" = 'электронный' 
+        AND a."Type" = 'Тип управления'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-grundig-gqn20130lxbr_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Grundig GQN20130LXBR'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-grundig-gqn20130lxbr_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Grundig GQN20130LXBR'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-grundig-gqn20130lxbr_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Grundig GQN20130LXBR'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-grundig-gqn20130lxbr_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Grundig GQN20130LXBR'));

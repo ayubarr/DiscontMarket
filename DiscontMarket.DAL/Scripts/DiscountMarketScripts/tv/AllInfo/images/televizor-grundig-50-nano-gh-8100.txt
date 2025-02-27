@@ -1,0 +1,28 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-grundig-50-nano-gh-8100_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Grundig 50 NANO GH 8100'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-grundig-50-nano-gh-8100_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Grundig 50 NANO GH 8100'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-grundig-50-nano-gh-8100_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Grundig 50 NANO GH 8100'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-grundig-50-nano-gh-8100_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Grundig 50 NANO GH 8100'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-grundig-50-nano-gh-8100_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Grundig 50 NANO GH 8100'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-grundig-50-nano-gh-8100_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Grundig 50 NANO GH 8100'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-grundig-50-nano-gh-8100_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Grundig 50 NANO GH 8100'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-grundig-50-nano-gh-8100_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Grundig 50 NANO GH 8100'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-grundig-50-nano-gh-8100_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Grundig 50 NANO GH 8100'));

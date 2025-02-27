@@ -1,0 +1,25 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vinnyi-shkaf-ot-140-sm-maunfeld-mfwc-201d77_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Винный шкаф от 140 см Maunfeld MFWC-201D77'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vinnyi-shkaf-ot-140-sm-maunfeld-mfwc-201d77_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Винный шкаф от 140 см Maunfeld MFWC-201D77'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vinnyi-shkaf-ot-140-sm-maunfeld-mfwc-201d77_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Винный шкаф от 140 см Maunfeld MFWC-201D77'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vinnyi-shkaf-ot-140-sm-maunfeld-mfwc-201d77_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Винный шкаф от 140 см Maunfeld MFWC-201D77'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vinnyi-shkaf-ot-140-sm-maunfeld-mfwc-201d77_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Винный шкаф от 140 см Maunfeld MFWC-201D77'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vinnyi-shkaf-ot-140-sm-maunfeld-mfwc-201d77_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Винный шкаф от 140 см Maunfeld MFWC-201D77'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vinnyi-shkaf-ot-140-sm-maunfeld-mfwc-201d77_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Винный шкаф от 140 см Maunfeld MFWC-201D77'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vinnyi-shkaf-ot-140-sm-maunfeld-mfwc-201d77_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Винный шкаф от 140 см Maunfeld MFWC-201D77'));

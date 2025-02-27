@@ -1,0 +1,71 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Морозильный ларь Hi HNCH084201RW', 10499, 19, '/items/productimages/morozilnyi-lar-hi-hnch084201rw_0.png', 4.15, '', 'Морозильный ларь Hi HNCH084201RW горизонтальный однокамерный замораживающей способностью до 13 кг продуктов в сутки предназначен для эксплуатации в быту. Агрегат габаритами 845х563х845 мм в стальном корпусе, покрытом эмалью, оснащен откидной глухой дверцей с ручкой-замком, транспортировочными колесиками, вентиляционными отверстиями. Полезный объем рабочей камеры составляет 201 л. 
+Морозильный ларь стабильно функционирует при температуре от 10°С до 43°С и высокой влажности. Энергопотребление морозильника составляет 283 кВт*ч/год (класс А+). Панель управления в нижней фронтальной части корпуса состоит из поворотной ручки термостата, кнопки включения быстрой заморозки Fast Freezing и световых индикаторов: зеленый сигнализирует о подключении в сеть, оранжевый оповещает о нештатном потеплении внутри. Поддерживаемый терморежим в камере выбирается вручную, в зависимости от климатического класса. 
+При отключении от электросети камера поддерживает холод в течение 30 часов. Показатель шума во время ее работы не превышает 41 дБ. При накоплении инея толщиной более 0,5 см требуется ручная разморозка.', 'InStock', 'Discount', 3, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Hi'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Морозильный ларь Hi HNCH084201RW'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Морозильный ларь Hi HNCH084201RW' 
+        AND a."Name" = 'стандартный' 
+        AND a."Type" = 'Тип компрессора'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Морозильный ларь Hi HNCH084201RW' 
+        AND a."Name" = '84.5*84.5*56.3 см' 
+        AND a."Type" = 'Габаритные размеры (В*Ш*Г)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Морозильный ларь Hi HNCH084201RW' 
+        AND a."Name" = 'A+' 
+        AND a."Type" = 'Класс энергоэффективности'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Морозильный ларь Hi HNCH084201RW' 
+        AND a."Name" = 'Да' 
+        AND a."Type" = 'Режим суперзамораживания'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Морозильный ларь Hi HNCH084201RW' 
+        AND a."Name" = 'механический' 
+        AND a."Type" = 'Тип управления'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnyi-lar-hi-hnch084201rw_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильный ларь Hi HNCH084201RW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnyi-lar-hi-hnch084201rw_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильный ларь Hi HNCH084201RW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnyi-lar-hi-hnch084201rw_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильный ларь Hi HNCH084201RW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnyi-lar-hi-hnch084201rw_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильный ларь Hi HNCH084201RW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnyi-lar-hi-hnch084201rw_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильный ларь Hi HNCH084201RW'));

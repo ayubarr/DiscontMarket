@@ -1,0 +1,16 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-bbk-24lem-1049-t2c_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор BBK 24LEM-1049/T2C'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-bbk-24lem-1049-t2c_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор BBK 24LEM-1049/T2C'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-bbk-24lem-1049-t2c_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор BBK 24LEM-1049/T2C'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-bbk-24lem-1049-t2c_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор BBK 24LEM-1049/T2C'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-bbk-24lem-1049-t2c_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор BBK 24LEM-1049/T2C'));

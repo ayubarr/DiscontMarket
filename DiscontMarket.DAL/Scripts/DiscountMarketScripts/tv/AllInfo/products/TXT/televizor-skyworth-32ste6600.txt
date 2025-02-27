@@ -1,0 +1,50 @@
+﻿INSERT INTO "Products" 
+("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription",
+"Availability", "Status", "CategoryID", "BrandID", "UserID") 
+VALUES
+ ('Телевизор SKYWORTH 32STE6600', 7499, 17, '/items/productimages/televizor-skyworth-32ste6600_0.png', 4.63, '', 'Разрешение HD Ready
+Операционная система Android TV
+Режим голосового управления
+Звук Dolby Digital Plus 
+
+Телевизор Skyworth 32STE6600 в корпусе серебристой расцветки потребляет 60 Вт электроэнергии. В модель установлена операционная система Android TV. LED-экран диагональю 32 дюйма оснащен светодиодной подсветкой Direct LED. Монитор широкоформатный (16:9), разрешение составляет 1366x768 пикселей (HD-Ready). Частота обновления 60 Гц обеспечивает плавную смену кадров без разрывов.
+
+Телевизор поддерживает НDR. Угол обзора по горизонтали и вертикали 178° позволяет видеть изображение без искажений из любой точки помещения. Благодаря Smart TV можно выходить в интернет без использования дополнительных устройств. Предусмотрены голосовой помощник, защита от детей, функция TimeShift.
+
+Телевизор оснащен встроенной и оперативной памятью емкостью 8 Гб и 1,5 Гб соответственно. Цифровой тюнер поддерживает большинство современных стандартов телевещания. У телевизора два динамика общей мощностью 16 Вт. На корпусе располагаются два HDMI-разъема, выход для подключения наушников, разъем для проводного интернета. Модель способна воспроизводить файлы через USB. Для беспроводной передачи данных поддерживаются Bluetooth и Wi-Fi. В комплект входит подставка для настольной установки телевизора.', 'InStock', 'Discount', 1, (SELECT "ID" FROM "Brands" WHERE "Name" = 'SKYWORTH'), 1);
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор SKYWORTH 32STE6600'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'HD (1366x768 Пикс)' AND "Type" = 'Экран));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор SKYWORTH 32STE6600'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '32' AND "Type" = 'Диагональ));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор SKYWORTH 32STE6600'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '60' AND "Type" = 'Частота обновления));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор SKYWORTH 32STE6600'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'LED' AND "Type" = 'Технология экрана));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор SKYWORTH 32STE6600'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'Direct LED' AND "Type" = 'Тип светодиодной подсветки));
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-skyworth-32ste6600_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор SKYWORTH 32STE6600'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-skyworth-32ste6600_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор SKYWORTH 32STE6600'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-skyworth-32ste6600_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор SKYWORTH 32STE6600'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-skyworth-32ste6600_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор SKYWORTH 32STE6600'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-skyworth-32ste6600_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор SKYWORTH 32STE6600'));

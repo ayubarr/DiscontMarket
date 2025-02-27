@@ -1,0 +1,28 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-schaub-lorenz-slw-fw0444-isa_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Schaub Lorenz SLW FW0444 ISA'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-schaub-lorenz-slw-fw0444-isa_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Schaub Lorenz SLW FW0444 ISA'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-schaub-lorenz-slw-fw0444-isa_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Schaub Lorenz SLW FW0444 ISA'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-schaub-lorenz-slw-fw0444-isa_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Schaub Lorenz SLW FW0444 ISA'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-schaub-lorenz-slw-fw0444-isa_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Schaub Lorenz SLW FW0444 ISA'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-schaub-lorenz-slw-fw0444-isa_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Schaub Lorenz SLW FW0444 ISA'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-schaub-lorenz-slw-fw0444-isa_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Schaub Lorenz SLW FW0444 ISA'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-schaub-lorenz-slw-fw0444-isa_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Schaub Lorenz SLW FW0444 ISA'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-schaub-lorenz-slw-fw0444-isa_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Schaub Lorenz SLW FW0444 ISA'));

@@ -1,0 +1,67 @@
+﻿INSERT INTO "Products" 
+("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription",
+"Availability", "Status", "CategoryID", "BrandID", "UserID") 
+VALUES
+ ('Телевизор QD-Mini LED TCL 75C855', 119999, 7, '/items/productimages/televizorqd-mini-led-tcl-75c855_0.png', 4.16, '', 'Телевизор TCL 75C855 работает на основе технологии QD-Mini LED: квантовые точки сочетаются с мини-светодиодами, что позволяет добиться высокой яркости, великолепной контрастности и естественной цветопередачи. Частота обновления 144 Гц отвечает за плавность отображения динамичных сцен. 
+
+• <b>Размер экрана — 75 дюймов</b>
+Большой экран разрешением 4К (3840x2160 пикселей) демонстрирует отличную детализацию и позволяет создать дома атмосферу настоящего кинотеатра. 
+
+• <b>2304 зоны локального затемнения и яркость до 3500 нит</b>
+Управление светом производится на уровне элементов изображения, что позволяет сделать его более насыщенным, цветопередачу — правильной. Черный цвет отображается корректно и выглядит по-настоящему глубоким. 
+
+• <b>Интеллектуальный процессор AiPQ Pro</b>
+Оптимизирует и улучшает изображение, ориентируясь на свою огромную базу данных и особенности человеческого восприятия. 
+
+• <b>Hi-Fi-система Onkyo 2.1</b>
+Система объемного звука с сабвуфером 20 Вт поможет полностью погрузить в происходящее на экране. 
+
+Телевизор поддерживает Smart TV, выход в интернет производится беспроводным способом по Wi-Fi 5 или по кабелю через разъем LAN. Bluetooth 5.0 позволит управлять прибором со смартфона или подключить периферийное оборудование. Четыре входа HDMI дадут возможность подсоединить игровую консоль, Blu-ray-плеер, порты USB, включая современный 3.0, — подключить внешние накопители.', 'InStock', 'Discount', 1, (SELECT "ID" FROM "Brands" WHERE "Name" = 'TCL'), 1);
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор QD-Mini LED TCL 75C855'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '4K Ultra HD (3840x2160 Пикс)' AND "Type" = 'Экран));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор QD-Mini LED TCL 75C855'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '75' AND "Type" = 'Диагональ));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор QD-Mini LED TCL 75C855'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '144' AND "Type" = 'Частота обновления));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор QD-Mini LED TCL 75C855'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'QLED' AND "Type" = 'Технология экрана));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор QD-Mini LED TCL 75C855'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'Mini LED' AND "Type" = 'Тип светодиодной подсветки));
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizorqd-mini-led-tcl-75c855_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор QD-Mini LED TCL 75C855'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizorqd-mini-led-tcl-75c855_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор QD-Mini LED TCL 75C855'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizorqd-mini-led-tcl-75c855_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор QD-Mini LED TCL 75C855'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizorqd-mini-led-tcl-75c855_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор QD-Mini LED TCL 75C855'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizorqd-mini-led-tcl-75c855_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор QD-Mini LED TCL 75C855'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizorqd-mini-led-tcl-75c855_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор QD-Mini LED TCL 75C855'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizorqd-mini-led-tcl-75c855_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор QD-Mini LED TCL 75C855'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizorqd-mini-led-tcl-75c855_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор QD-Mini LED TCL 75C855'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizorqd-mini-led-tcl-75c855_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор QD-Mini LED TCL 75C855'));

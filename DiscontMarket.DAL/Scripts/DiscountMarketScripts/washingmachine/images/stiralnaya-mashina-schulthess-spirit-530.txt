@@ -1,0 +1,13 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-schulthess-spirit-530_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Schulthess Spirit 530'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-schulthess-spirit-530_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Schulthess Spirit 530'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-schulthess-spirit-530_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Schulthess Spirit 530'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-schulthess-spirit-530_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Schulthess Spirit 530'));

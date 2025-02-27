@@ -1,0 +1,81 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Мини-печь Kraft KM-MV3200BL', 3249, 10, '/items/productimages/mini-pech-kraft-km-mv3200bl_0.png', 4.2, '', 'Мини-печь Kraft KM-MV3200BL черного цвета с тремя режимами оснащена звуковым таймером на 90 минут и термостатом. Корпус сделан из металла, пластика и стекла. Дверца открывается вниз. Устройство разогревается до 320°C. Объем печи составляет 32 л. Габариты модели — 30,5х50х37 см. Вес изделия — 9 кг. Способ управления — механический. Индикация показывает выбранную программу и температуру. Внутренняя часть покрыта сталью, устойчивой к образованию коррозии. В комплектацию входят противни разной глубины и решетка. Мощность прибора — 1,5 кВт. Длина шнура — 1,2 м.', 'InStock', 'Discount', 6, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Kraft'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Мини-печь Kraft KM-MV3200BL'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Мини-печь Kraft KM-MV3200BL' 
+        AND a."Name" = '32' 
+        AND a."Type" = 'Объем'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Мини-печь Kraft KM-MV3200BL' 
+        AND a."Name" = '1500' 
+        AND a."Type" = 'Потребляемая мощность'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Мини-печь Kraft KM-MV3200BL' 
+        AND a."Name" = 'отсутствует' 
+        AND a."Type" = 'Тип гриля'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Мини-печь Kraft KM-MV3200BL' 
+        AND a."Name" = 'черный' 
+        AND a."Type" = 'Цвет'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Мини-печь Kraft KM-MV3200BL' 
+        AND a."Name" = 'нержавеющая сталь' 
+        AND a."Type" = 'Внутреннее покрытие'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-kraft-km-mv3200bl_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Kraft KM-MV3200BL'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-kraft-km-mv3200bl_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Kraft KM-MV3200BL'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-kraft-km-mv3200bl_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Kraft KM-MV3200BL'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-kraft-km-mv3200bl_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Kraft KM-MV3200BL'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-kraft-km-mv3200bl_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Kraft KM-MV3200BL'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-kraft-km-mv3200bl_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Kraft KM-MV3200BL'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-kraft-km-mv3200bl_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Kraft KM-MV3200BL'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-kraft-km-mv3200bl_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Kraft KM-MV3200BL'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-kraft-km-mv3200bl_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Kraft KM-MV3200BL'));

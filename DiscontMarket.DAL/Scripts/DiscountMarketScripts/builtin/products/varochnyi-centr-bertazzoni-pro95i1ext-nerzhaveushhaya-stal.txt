@@ -1,0 +1,73 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Варочный центр Bertazzoni PRO95I1EXT нержавеющая сталь', 348950, 10, '/items/productimages/varochnyi-centr-bertazzoni-pro95i1ext-nerzhaveushhaya-stal_0.png', 4.42, '', 'Варочный центр Bertazzoni PRO95I1EXT используют в коммерческих предприятиях или в больших семьях. Корпус из нержавеющей стали оптимален для помещений в современном стиле. Пять конфорок диаметром от 1,6 см до 2,3 см предназначен для приготовления первого и второго блюд, напитка и соуса одновременно. За счет расширенных зон можно использовать посуду нестандартного размера. 
+
+Духовой шкаф объемом 103 л. Благодаря функции быстрого разогрева достигает максимального показателя температуры 250°С в течение 5 минут. Модель поддерживает 11 режимов работы, что позволяет готовить разнообразную еду. С помощью электрического гриля зажаривается сочное мясо с хрустящей корочкой. За счет конвекции нагрев происходит равномерно с разных сторон.
+
+Встроенное галогеновое освещение позволяет контролировать процесс приготовления без открывания дверцы. Управление осуществляется посредством механических поворотных регуляторов. Функция «Таймер выключения» удобна для установки параметров и контроля кулинарного процесса. Духовой шкаф оснащен телескопическими направляющими, что обеспечивает извлечение посуды без риска травмирования. Потребляемая мощность — 1,1 Вт. Габариты: 893x900x600 см.', 'InStock', 'Discount', 4, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Bertazzoni'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Варочный центр Bertazzoni PRO95I1EXT нержавеющая сталь'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Варочный центр Bertazzoni PRO95I1EXT нержавеющая сталь' 
+        AND a."Name" = 'Да' 
+        AND a."Type" = 'Термостат духовки'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Варочный центр Bertazzoni PRO95I1EXT нержавеющая сталь' 
+        AND a."Name" = '103' 
+        AND a."Type" = 'Объем первой духовки'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Варочный центр Bertazzoni PRO95I1EXT нержавеющая сталь' 
+        AND a."Name" = '103' 
+        AND a."Type" = 'Объем духовки'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Варочный центр Bertazzoni PRO95I1EXT нержавеющая сталь' 
+        AND a."Name" = 'Hi-Light' 
+        AND a."Type" = 'Тип конфорок'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Варочный центр Bertazzoni PRO95I1EXT нержавеющая сталь' 
+        AND a."Name" = '5' 
+        AND a."Type" = 'Количество конфорок'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/varochnyi-centr-bertazzoni-pro95i1ext-nerzhaveushhaya-stal_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Варочный центр Bertazzoni PRO95I1EXT нержавеющая сталь'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/varochnyi-centr-bertazzoni-pro95i1ext-nerzhaveushhaya-stal_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Варочный центр Bertazzoni PRO95I1EXT нержавеющая сталь'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/varochnyi-centr-bertazzoni-pro95i1ext-nerzhaveushhaya-stal_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Варочный центр Bertazzoni PRO95I1EXT нержавеющая сталь'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/varochnyi-centr-bertazzoni-pro95i1ext-nerzhaveushhaya-stal_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Варочный центр Bertazzoni PRO95I1EXT нержавеющая сталь'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/varochnyi-centr-bertazzoni-pro95i1ext-nerzhaveushhaya-stal_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Варочный центр Bertazzoni PRO95I1EXT нержавеющая сталь'));

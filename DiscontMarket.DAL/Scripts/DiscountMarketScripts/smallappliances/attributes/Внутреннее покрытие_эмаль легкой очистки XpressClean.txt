@@ -1,0 +1,14 @@
+﻿
+        INSERT INTO "Attributes" ("NameTranslate", "Name", "Type") 
+        SELECT 'эмаль легкой очистки XpressClean', 'эмаль легкой очистки XpressClean', 'Внутреннее покрытие'
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Attributes" WHERE "Name" = 'эмаль легкой очистки XpressClean' AND "Type" = 'Внутреннее покрытие'
+        );
+
+        INSERT INTO "AttributeCategory" ("AttributeID", "CategoryID") 
+        SELECT a."ID", c."ID" FROM "Attributes" a, "Categories" c 
+        WHERE a."Name" = 'эмаль легкой очистки XpressClean' AND a."Type" = 'Внутреннее покрытие' 
+        AND c."Name" = 'smallappliances'
+        AND NOT EXISTS (
+            SELECT 1 FROM "AttributeCategory" WHERE "AttributeID" = a."ID" AND "CategoryID" = c."ID"
+        );

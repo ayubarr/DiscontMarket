@@ -1,0 +1,100 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Стиральная машина узкая Haier HW70-BP12919S', 23499, 17, '/items/productimages/stiralnaya-mashina-uzkaya-haier-hw70-bp12919s_0.png', 4.44, '', 'Узкая стиральная машина Haier HW70-BP12919S, серебристый, вмещает до 7 кг белья. Барабан объемом 45,3 л обладает особой текстурой Pillow: поверхность напоминает маленькие подушечки. Это обеспечивает особенно бережное обращение с бельем и безопасно даже для тонких деликатных тканей. 
+
+• <b>Инверторный мотор</b>
+Благодаря отсутствию трущихся деталей отличается высокой надежностью, экономичным энергопотреблением и сниженным уровнем шума: при стирке он не превышает 53 дБ, при отжиме — 75 дБ. На мотор распространяется 12-летняя гарантия производителя.
+
+• <b>Обработка паром• <b>
+Уничтожает бактерии, устраняет запахи, способствует уменьшению складок и облегчает глажение.
+
+• <b>Технология Smart Dual Spray и покрытие ABT</b> 
+Направленные струи воды очищают внутреннюю сторону дверцы люка и манжету, что позволяет избежать появления плесени и неприятного запаха. На это работает антибактериальное покрытие манжеты, оно же нанесено на кювету. 
+
+В эту модель предустановлено десять программ, среди которых 15-минутная быстрая, ежедневная, деликатная, режимы для спортивной и детской одежды. Можно активировать функцию дополнительного полоскания. Поддерживается возможность дозагрузки белья уже после начала стирки.
+
+Температура регулируется от 20°C до 90°C, скорость отжима — от 400 до 1200 об/мин, при желании нагрев и отжим можно отключить. Наиболее часто используемые настройки можно сохранить в памяти стиральной машины, чтобы не вводить их каждый раз заново. Управление производится при помощи большого сенсорного дисплея.', 'InStock', 'Discount', 5, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Haier'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая Haier HW70-BP12919S'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина узкая Haier HW70-BP12919S' 
+        AND a."Name" = '7' 
+        AND a."Type" = 'Максимальная загрузка'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина узкая Haier HW70-BP12919S' 
+        AND a."Name" = '1200' 
+        AND a."Type" = 'Максимальная скорость отжима'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина узкая Haier HW70-BP12919S' 
+        AND a."Name" = 'инверторный' 
+        AND a."Type" = 'Мотор'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина узкая Haier HW70-BP12919S' 
+        AND a."Name" = 'Да' 
+        AND a."Type" = 'Обработка паром'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина узкая Haier HW70-BP12919S' 
+        AND a."Name" = '85*59.5*39.4 см' 
+        AND a."Type" = 'Габаритные размеры (В*Ш*Г)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-uzkaya-haier-hw70-bp12919s_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая Haier HW70-BP12919S'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-uzkaya-haier-hw70-bp12919s_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая Haier HW70-BP12919S'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-uzkaya-haier-hw70-bp12919s_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая Haier HW70-BP12919S'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-uzkaya-haier-hw70-bp12919s_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая Haier HW70-BP12919S'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-uzkaya-haier-hw70-bp12919s_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая Haier HW70-BP12919S'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-uzkaya-haier-hw70-bp12919s_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая Haier HW70-BP12919S'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-uzkaya-haier-hw70-bp12919s_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая Haier HW70-BP12919S'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-uzkaya-haier-hw70-bp12919s_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая Haier HW70-BP12919S'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-uzkaya-haier-hw70-bp12919s_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая Haier HW70-BP12919S'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-uzkaya-haier-hw70-bp12919s_9.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая Haier HW70-BP12919S'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-uzkaya-haier-hw70-bp12919s_10.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая Haier HW70-BP12919S'));

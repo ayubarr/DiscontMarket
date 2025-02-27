@@ -1,0 +1,81 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Холодильник (Side-by-Side) Toshiba GR-RS780WI-PMJ(06)', 79999, 19, '/items/productimages/holodilnik-side-by-side-toshiba-gr-rs780wi-pmj06_0.png', 4.42, '', 'Холодильник (Side-by-Side) Toshiba GR-RS780WI-PMJ(06) со встроенным ионизатором воздуха создает безопасный климат для хранения продуктов. Внутренняя часть устройства с антибактериальным покрытием предотвращает появление плесени и размножение микробов. Система размораживания No Frost облегчает уход. При отключении питания модель сохраняет температуру до 10 ч. Высокий класс энергоэффективности А++ сэкономит расходы за коммунальные услуги. <br><br>Тихая работа прибора 35 дБ создает комфортные условия эксплуатации. Морозильная камера вмещает до 215 л. За счет высокой мощности заморозки 12 кг/сутки в ней можно быстро охладить продукты. Холодильная камера объемом 369 л оснащена зоной свежести, где можно хранить мясную нарезку и овощи. В ней можно регулировать влажность, что позволяет подобрать оптимальный микроклимат для любого продукта.', 'InStock', 'Discount', 3, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Toshiba'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Холодильник (Side-by-Side) Toshiba GR-RS780WI-PMJ(06)'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник (Side-by-Side) Toshiba GR-RS780WI-PMJ(06)' 
+        AND a."Name" = 'инверторный' 
+        AND a."Type" = 'Тип компрессора'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник (Side-by-Side) Toshiba GR-RS780WI-PMJ(06)' 
+        AND a."Name" = '177.5*91*69.8 см' 
+        AND a."Type" = 'Габаритные размеры (В*Ш*Г)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник (Side-by-Side) Toshiba GR-RS780WI-PMJ(06)' 
+        AND a."Name" = '623' 
+        AND a."Type" = 'Общий объем'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник (Side-by-Side) Toshiba GR-RS780WI-PMJ(06)' 
+        AND a."Name" = 'сухая' 
+        AND a."Type" = 'Тип зоны сохранения свежести'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник (Side-by-Side) Toshiba GR-RS780WI-PMJ(06)' 
+        AND a."Name" = 'дистанционный/ сенсорное/ кнопочное' 
+        AND a."Type" = 'Тип управления'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-side-by-side-toshiba-gr-rs780wi-pmj06_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник (Side-by-Side) Toshiba GR-RS780WI-PMJ(06)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-side-by-side-toshiba-gr-rs780wi-pmj06_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник (Side-by-Side) Toshiba GR-RS780WI-PMJ(06)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-side-by-side-toshiba-gr-rs780wi-pmj06_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник (Side-by-Side) Toshiba GR-RS780WI-PMJ(06)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-side-by-side-toshiba-gr-rs780wi-pmj06_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник (Side-by-Side) Toshiba GR-RS780WI-PMJ(06)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-side-by-side-toshiba-gr-rs780wi-pmj06_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник (Side-by-Side) Toshiba GR-RS780WI-PMJ(06)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-side-by-side-toshiba-gr-rs780wi-pmj06_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник (Side-by-Side) Toshiba GR-RS780WI-PMJ(06)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-side-by-side-toshiba-gr-rs780wi-pmj06_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник (Side-by-Side) Toshiba GR-RS780WI-PMJ(06)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-side-by-side-toshiba-gr-rs780wi-pmj06_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник (Side-by-Side) Toshiba GR-RS780WI-PMJ(06)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-side-by-side-toshiba-gr-rs780wi-pmj06_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник (Side-by-Side) Toshiba GR-RS780WI-PMJ(06)'));

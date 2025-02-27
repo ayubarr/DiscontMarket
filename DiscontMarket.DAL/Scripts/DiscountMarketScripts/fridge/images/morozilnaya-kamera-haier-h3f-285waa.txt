@@ -1,0 +1,25 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-haier-h3f-285waa_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Haier H3F-285WAA'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-haier-h3f-285waa_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Haier H3F-285WAA'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-haier-h3f-285waa_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Haier H3F-285WAA'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-haier-h3f-285waa_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Haier H3F-285WAA'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-haier-h3f-285waa_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Haier H3F-285WAA'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-haier-h3f-285waa_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Haier H3F-285WAA'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-haier-h3f-285waa_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Haier H3F-285WAA'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-haier-h3f-285waa_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Haier H3F-285WAA'));

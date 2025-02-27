@@ -1,0 +1,28 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-toshiba-gr-rb449we-pmj06_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Toshiba GR-RB449WE-PMJ(06)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-toshiba-gr-rb449we-pmj06_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Toshiba GR-RB449WE-PMJ(06)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-toshiba-gr-rb449we-pmj06_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Toshiba GR-RB449WE-PMJ(06)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-toshiba-gr-rb449we-pmj06_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Toshiba GR-RB449WE-PMJ(06)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-toshiba-gr-rb449we-pmj06_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Toshiba GR-RB449WE-PMJ(06)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-toshiba-gr-rb449we-pmj06_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Toshiba GR-RB449WE-PMJ(06)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-toshiba-gr-rb449we-pmj06_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Toshiba GR-RB449WE-PMJ(06)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-toshiba-gr-rb449we-pmj06_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Toshiba GR-RB449WE-PMJ(06)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-toshiba-gr-rb449we-pmj06_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Toshiba GR-RB449WE-PMJ(06)'));

@@ -1,0 +1,7 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-leff-20mm723w_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло LEFF 20MM723W'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-leff-20mm723w_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло LEFF 20MM723W'));

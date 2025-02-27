@@ -1,0 +1,43 @@
+﻿INSERT INTO "Products" 
+("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription",
+"Availability", "Status", "CategoryID", "BrandID", "UserID") 
+VALUES
+ ('Телевизор Thomson T50USL7010', 23099, 6, '/items/productimages/televizor-thomson-t50usl7010_0.png', 4.85, '', 'Телевизор Thomson T50USL7010 представлен в пластиковом корпусе черного цвета. В основе работы лежит операционная система Android. 50-дюймовый экран (127 см), выполненный с использованием LСD-технологии, обладает разрешением 3840х2160 пикселей (Ultra HD). Частота смены кадров составляет 60 Гц. Возможно воспроизведение контента через USB.
+При необходимости картинку можно масштабировать до 4K Ultra HD. Прибор выдает стерео-звук мощностью 20 Вт. Управлять телевизором можно посредством пульта ДУ, оснащенного батарейками типа ААА. Встроенный модуль Bluetooth гарантирует быстрое беспроводное подключение к различным устройствам, в том числе смартфону.
+Поддержка Smart TV позволяет использовать телевизор для интернет-серфинга и просмотра фильмов, сериалов онлайн-платформ. К дополнительным возможностям модели относятся функция TimeShift, встроенные часы, запись с ТВ на USB-накопитель. Обеспечен прием сигнала в соответствии с требованиями стандартов DVB-S2, DVB-C, DVB-S, DVB-T2 и DVB-T. Модель оснащена интерфейсами HDMI версии 2.0, USB 2.0 типа А, RJ45 и разъемом для наушников 3,5 мм. Потребляемая мощность — 110 Вт. За безопасность отвечает защита от детей. Телевизор комплектуется настольной подставкой.', 'InStock', 'Discount', 1, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Thomson'), 1);
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Thomson T50USL7010'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '4K Ultra HD (3840x2160 Пикс)' AND "Type" = 'Экран));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Thomson T50USL7010'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '50' AND "Type" = 'Диагональ));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Thomson T50USL7010'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '60' AND "Type" = 'Частота обновления));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Thomson T50USL7010'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'LED' AND "Type" = 'Технология экрана));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Thomson T50USL7010'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'Direct LED' AND "Type" = 'Тип светодиодной подсветки));
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-thomson-t50usl7010_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Thomson T50USL7010'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-thomson-t50usl7010_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Thomson T50USL7010'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-thomson-t50usl7010_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Thomson T50USL7010'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-thomson-t50usl7010_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Thomson T50USL7010'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-thomson-t50usl7010_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Thomson T50USL7010'));

@@ -1,0 +1,104 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Стиральная машина узкая Gorenje W3NHEI74SAS', 27749, 10, '/items/productimages/stiralnaya-mashina-uzkaya-gorenje-w3nhei74sas_0.png', 4.46, '', 'Узкая стиральная машина Gorenje W3NHEI74SAS оборудована инверторным мотором, который обеспечивает довольно тихую работу. Уровень шума при стирке составляет всего 58 дБ. Функция самоочистки предотвращает скопление бактерий и появление неприятного запаха в барабане. В этой модели реализована опция AddClothes: на начальном этапе можно остановить программу, чтобы добавить забытые вещи. 
+В машину заложены 15 режимов, включая холодную стирку при температуре всего 15°С, экспресс-стирку, «Суперчерное», «Антиаллергия». Управление обеспечивает электронная панель с дисплеем, на котором отображаются выбранные настройки и этапы программы. Можно установить таймер отложенного старта. Звуковой сигнал сообщит об окончании цикла. В приборе предусмотрена функция разрыхления белья после отжима. 
+Бак сделан из прочного и легкого карботека. Максимальная загрузка составляет 7 кг. Устройство обладает классом энергоэффективности А+++: расход электричества за цикл не превышает 0,76 кВт*ч, воды — 42 л. Потребляемая мощность модели — 1700 Вт. Габариты машины — 85х59,7х43,5 см, вес — 59 кг.', 'InStock', 'Discount', 5, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Gorenje'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая Gorenje W3NHEI74SAS'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина узкая Gorenje W3NHEI74SAS' 
+        AND a."Name" = '7' 
+        AND a."Type" = 'Максимальная загрузка'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина узкая Gorenje W3NHEI74SAS' 
+        AND a."Name" = '1400' 
+        AND a."Type" = 'Максимальная скорость отжима'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина узкая Gorenje W3NHEI74SAS' 
+        AND a."Name" = 'инверторный' 
+        AND a."Type" = 'Мотор'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина узкая Gorenje W3NHEI74SAS' 
+        AND a."Name" = 'Да' 
+        AND a."Type" = 'Обработка паром'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина узкая Gorenje W3NHEI74SAS' 
+        AND a."Name" = '85*59.7*43.5 см' 
+        AND a."Type" = 'Габаритные размеры (В*Ш*Г)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-uzkaya-gorenje-w3nhei74sas_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая Gorenje W3NHEI74SAS'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-uzkaya-gorenje-w3nhei74sas_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая Gorenje W3NHEI74SAS'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-uzkaya-gorenje-w3nhei74sas_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая Gorenje W3NHEI74SAS'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-uzkaya-gorenje-w3nhei74sas_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая Gorenje W3NHEI74SAS'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-uzkaya-gorenje-w3nhei74sas_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая Gorenje W3NHEI74SAS'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-uzkaya-gorenje-w3nhei74sas_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая Gorenje W3NHEI74SAS'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-uzkaya-gorenje-w3nhei74sas_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая Gorenje W3NHEI74SAS'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-uzkaya-gorenje-w3nhei74sas_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая Gorenje W3NHEI74SAS'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-uzkaya-gorenje-w3nhei74sas_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая Gorenje W3NHEI74SAS'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-uzkaya-gorenje-w3nhei74sas_9.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая Gorenje W3NHEI74SAS'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-uzkaya-gorenje-w3nhei74sas_10.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая Gorenje W3NHEI74SAS'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-uzkaya-gorenje-w3nhei74sas_11.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая Gorenje W3NHEI74SAS'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-uzkaya-gorenje-w3nhei74sas_12.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая Gorenje W3NHEI74SAS'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-uzkaya-gorenje-w3nhei74sas_13.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая Gorenje W3NHEI74SAS'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-uzkaya-gorenje-w3nhei74sas_14.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая Gorenje W3NHEI74SAS'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-uzkaya-gorenje-w3nhei74sas_15.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая Gorenje W3NHEI74SAS'));

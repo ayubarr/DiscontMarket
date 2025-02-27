@@ -1,0 +1,28 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/kombinirovannaya-plita-60-sm-vesta-valencia-vge-60421245678_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Комбинированная плита (60 см) Vesta Valencia VGE 6042.1245678'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/kombinirovannaya-plita-60-sm-vesta-valencia-vge-60421245678_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Комбинированная плита (60 см) Vesta Valencia VGE 6042.1245678'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/kombinirovannaya-plita-60-sm-vesta-valencia-vge-60421245678_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Комбинированная плита (60 см) Vesta Valencia VGE 6042.1245678'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/kombinirovannaya-plita-60-sm-vesta-valencia-vge-60421245678_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Комбинированная плита (60 см) Vesta Valencia VGE 6042.1245678'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/kombinirovannaya-plita-60-sm-vesta-valencia-vge-60421245678_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Комбинированная плита (60 см) Vesta Valencia VGE 6042.1245678'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/kombinirovannaya-plita-60-sm-vesta-valencia-vge-60421245678_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Комбинированная плита (60 см) Vesta Valencia VGE 6042.1245678'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/kombinirovannaya-plita-60-sm-vesta-valencia-vge-60421245678_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Комбинированная плита (60 см) Vesta Valencia VGE 6042.1245678'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/kombinirovannaya-plita-60-sm-vesta-valencia-vge-60421245678_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Комбинированная плита (60 см) Vesta Valencia VGE 6042.1245678'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/kombinirovannaya-plita-60-sm-vesta-valencia-vge-60421245678_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Комбинированная плита (60 см) Vesta Valencia VGE 6042.1245678'));

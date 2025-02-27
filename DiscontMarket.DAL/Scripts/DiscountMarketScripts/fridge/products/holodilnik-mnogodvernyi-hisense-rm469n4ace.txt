@@ -1,0 +1,83 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Холодильник многодверный Hisense RM469N4ACE', 58999, 12, '/items/productimages/holodilnik-mnogodvernyi-hisense-rm469n4ace_0.png', 4.99, '', 'Холодильник Hisense RM469N4ACE в корпусе серебристого цвета относится к классу энергоэффективности А++. Общий объем камер — 396 л. Холодильник двухкамерный, оборудован холодильным и морозильным отделениями с перенавешиваемыми дверцами. Регулируемые по высоте ножки позволяют устанавливать прибор на неровный пол.
+Холодильник оснащен одним компрессором. Установленные настройки отображаются на встроенном цифровом дисплее. Модель характеризуется низким уровнем шума — не более 38 дБ.
+Общий объем холодильной камеры составляет 270 л, морозильной — 126 л. Мощность замораживания — 7 кг в сутки. Предусмотрена функция быстрой заморозки Super Freeze. Внутри холодильного отсека располагаются пять стеклянных полок, один контейнер для хранения овощей и фруктов (FreshZone). На потолке присутствует светодиодная подсветка. Система No Frost исключает необходимость размораживания камер. Длительное сохранение свежести продуктов обеспечивает MultiFlow 360°: холодный воздух обдувает через вентиляционные отверстия все полки холодильника, благодаря чему температура внутри остается постоянной.', 'InStock', 'Discount', 3, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Hisense'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Hisense RM469N4ACE'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник многодверный Hisense RM469N4ACE' 
+        AND a."Name" = 'стандартный' 
+        AND a."Type" = 'Тип компрессора'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник многодверный Hisense RM469N4ACE' 
+        AND a."Name" = '200*60*66.3 см' 
+        AND a."Type" = 'Габаритные размеры (В*Ш*Г)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник многодверный Hisense RM469N4ACE' 
+        AND a."Name" = '368' 
+        AND a."Type" = 'Общий объем'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник многодверный Hisense RM469N4ACE' 
+        AND a."Name" = 'сенсорное' 
+        AND a."Type" = 'Тип управления'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник многодверный Hisense RM469N4ACE' 
+        AND a."Name" = 'нержавеющая сталь' 
+        AND a."Type" = 'Материал двери'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-hisense-rm469n4ace_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Hisense RM469N4ACE'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-hisense-rm469n4ace_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Hisense RM469N4ACE'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-hisense-rm469n4ace_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Hisense RM469N4ACE'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-hisense-rm469n4ace_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Hisense RM469N4ACE'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-hisense-rm469n4ace_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Hisense RM469N4ACE'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-hisense-rm469n4ace_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Hisense RM469N4ACE'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-hisense-rm469n4ace_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Hisense RM469N4ACE'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-hisense-rm469n4ace_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Hisense RM469N4ACE'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-hisense-rm469n4ace_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Hisense RM469N4ACE'));

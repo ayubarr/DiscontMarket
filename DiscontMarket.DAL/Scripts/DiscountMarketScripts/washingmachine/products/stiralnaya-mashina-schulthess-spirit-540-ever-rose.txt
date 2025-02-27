@@ -1,0 +1,64 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Стиральная машина Schulthess Spirit 540 Ever Rose', 287995, 13, '/items/productimages/stiralnaya-mashina-schulthess-spirit-540-ever-rose_0.png', 4.64, '', 'Стиральная машина Schulthess Spirit 540 Ever Rose — модель с габаритными размерами — 85х67х58,5 см, весом — 102 кг. Класс стирки и отжима — А. Уровень шума в процессе работы не превышает 73 дБ. Объем барабана составляет 60 л. Устройство предназначено для фронтальной загрузки вещей, в том числе из синтетики и шерсти, до 8 кг. За счет наличия большого количества программ можно очищать одежду из хлопка, шелка и смешанных тканей. По окончании работы срабатывает звуковой сигнал. Дверца люка диаметром 34 см открывается налево. Максимальная скорость отжима достигает до 1600 об/мин.
+
+Опция «Отсрочка запуска» дает возможность перенести время включения до 24 часов. Стиральная машина предусматривает автовзвешивание белья, ускоренную стирку, интенсивное замачивание. Функция «Дополнительное полоскание» обеспечивает удаление с белья остатков порошка. Управление производится посредством сенсорной панели. На цифровой дисплей выводится вся основная информация. Световые индикации показывают ход, время программы и окончания стирки.
+
+За безопасность отвечает опция «Защита от детей», исключающая случайное нажатие сенсора и открывание дверцы во время цикла, «Защита от протечек» в случае обнаружения неполадок подача воды прекращается. В процессе стирки контролируется пенообразование. Модель относится к А классу энергопотребления. За цикл расходуется до 0,46 кВт*ч энергии и 42 л воды. Максимальная потребляемая мощность равна 2300 Вт.', 'InStock', 'Discount', 5, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Schulthess'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Стиральная машина Schulthess Spirit 540 Ever Rose'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина Schulthess Spirit 540 Ever Rose' 
+        AND a."Name" = '8' 
+        AND a."Type" = 'Максимальная загрузка'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина Schulthess Spirit 540 Ever Rose' 
+        AND a."Name" = '1600' 
+        AND a."Type" = 'Максимальная скорость отжима'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина Schulthess Spirit 540 Ever Rose' 
+        AND a."Name" = 'стандартный' 
+        AND a."Type" = 'Мотор'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина Schulthess Spirit 540 Ever Rose' 
+        AND a."Name" = '850*585 см' 
+        AND a."Type" = 'Габаритные размеры (В*Ш*Г)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина Schulthess Spirit 540 Ever Rose' 
+        AND a."Name" = '42' 
+        AND a."Type" = 'Расход воды за цикл'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-schulthess-spirit-540-ever-rose_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Schulthess Spirit 540 Ever Rose'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-schulthess-spirit-540-ever-rose_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Schulthess Spirit 540 Ever Rose'));

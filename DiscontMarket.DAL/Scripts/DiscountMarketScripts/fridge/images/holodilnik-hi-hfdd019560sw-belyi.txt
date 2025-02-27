@@ -1,0 +1,22 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-hi-hfdd019560sw-belyi_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Hi HFDD019560SW белый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-hi-hfdd019560sw-belyi_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Hi HFDD019560SW белый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-hi-hfdd019560sw-belyi_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Hi HFDD019560SW белый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-hi-hfdd019560sw-belyi_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Hi HFDD019560SW белый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-hi-hfdd019560sw-belyi_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Hi HFDD019560SW белый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-hi-hfdd019560sw-belyi_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Hi HFDD019560SW белый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-hi-hfdd019560sw-belyi_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Hi HFDD019560SW белый'));

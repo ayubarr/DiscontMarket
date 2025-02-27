@@ -1,0 +1,66 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Настольная электрическая плита Goodhelper ES-10P10', 419, 5, '/items/productimages/nastolnaya-elektricheskaya-plita-goodhelper-es-10p10_0.png', 4.79, '', 'С помощью компактной и простой в использовании электроплитки Goodhelper ES-10P10 можно быстро приготовить или разогреть пищу, вскипятить воду. Это устройство хорошо подходит для использования не только в городской квартире, но и в загородном доме, на даче.<br><br>УДОБНАЯ РЕГУЛИРОВКА НАГРЕВА<br>В электроплитке используется пятиступенчатый термостат, с помощью которого вы можете легко установить нужный уровень нагрева. Первая ступень хорошо подходит для поддержания температуры горячей пищи, а максимальный нагрев позволит особенно быстро вскипятить воду.<br><br>АНТИПРИГАРНОЕ ПОКРЫТИЕ<br>На поверхность конфорки нанесено антипригарное покрытие. Благодаря этому уход за плиткой будет особенно простым и не займёт много времени.<br><br>НАДЁЖНОСТЬ И ДОЛГОВЕЧНОСТЬ<br>Корпус электроплитки изготовлен из прочной стали, на которую нанесено покрытие из эмали, устойчивой к высоким температурам. Это делает устройство особенно надёжным и долговечным.<br>', 'InStock', 'Discount', 4, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Goodhelper'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Настольная электрическая плита Goodhelper ES-10P10'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Настольная электрическая плита Goodhelper ES-10P10' 
+        AND a."Name" = '1' 
+        AND a."Type" = 'Количество конфорок'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Настольная электрическая плита Goodhelper ES-10P10' 
+        AND a."Name" = 'чугунные' 
+        AND a."Type" = 'Тип конфорок'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Настольная электрическая плита Goodhelper ES-10P10' 
+        AND a."Name" = '1000' 
+        AND a."Type" = 'Потребляемая мощность'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Настольная электрическая плита Goodhelper ES-10P10' 
+        AND a."Name" = 'эмалированный металл' 
+        AND a."Type" = 'Материал варочной поверхности'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Настольная электрическая плита Goodhelper ES-10P10' 
+        AND a."Name" = '0.7' 
+        AND a."Type" = 'Длина сетевого шнура'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/nastolnaya-elektricheskaya-plita-goodhelper-es-10p10_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Настольная электрическая плита Goodhelper ES-10P10'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/nastolnaya-elektricheskaya-plita-goodhelper-es-10p10_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Настольная электрическая плита Goodhelper ES-10P10'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/nastolnaya-elektricheskaya-plita-goodhelper-es-10p10_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Настольная электрическая плита Goodhelper ES-10P10'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/nastolnaya-elektricheskaya-plita-goodhelper-es-10p10_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Настольная электрическая плита Goodhelper ES-10P10'));

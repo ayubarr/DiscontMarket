@@ -1,0 +1,86 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Холодильник Hi HFDN020357DW', 15999, 8, '/items/productimages/holodilnik-hi-hfdn020357dw_0.png', 4.11, '', 'Холодильник Hi HFDN020357DW работает с комфортным шумом 41 дБ. Холодильная камера объемом 238 л оснащена четырьмя полками для удобного размещения продуктов. Они изготовлены из закаленного стекла и легко отмываются от загрязнений. Две полки по высоте можно регулировать, что позволяет хранить в холодильнике объемные емкости. 
+
+Вентилятор для распределения температуры сохраняет одинаковый климат в верхней и нижней части модели. Морозильная камера вмещает 105 л. Для хранения в нем продуктов предусмотрены три ящика. За счет функции размораживания No Frost она не требует сложного ухода. При отключении электропитания устройство сохраняет температуру до 10 ч.', 'InStock', 'Discount', 3, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Hi'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Холодильник Hi HFDN020357DW'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Hi HFDN020357DW' 
+        AND a."Name" = 'стандартный' 
+        AND a."Type" = 'Тип компрессора'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Hi HFDN020357DW' 
+        AND a."Name" = '203.4' 
+        AND a."Type" = 'Высота'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Hi HFDN020357DW' 
+        AND a."Name" = '57.4' 
+        AND a."Type" = 'Ширина'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Hi HFDN020357DW' 
+        AND a."Name" = '62.5' 
+        AND a."Type" = 'Глубина'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Hi HFDN020357DW' 
+        AND a."Name" = '343' 
+        AND a."Type" = 'Общий объем'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-hi-hfdn020357dw_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Hi HFDN020357DW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-hi-hfdn020357dw_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Hi HFDN020357DW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-hi-hfdn020357dw_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Hi HFDN020357DW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-hi-hfdn020357dw_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Hi HFDN020357DW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-hi-hfdn020357dw_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Hi HFDN020357DW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-hi-hfdn020357dw_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Hi HFDN020357DW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-hi-hfdn020357dw_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Hi HFDN020357DW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-hi-hfdn020357dw_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Hi HFDN020357DW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-hi-hfdn020357dw_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Hi HFDN020357DW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-hi-hfdn020357dw_9.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Hi HFDN020357DW'));

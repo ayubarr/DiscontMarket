@@ -1,0 +1,33 @@
+﻿INSERT INTO "Products" 
+("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription",
+"Availability", "Status", "CategoryID", "BrandID", "UserID") 
+VALUES
+ ('Телевизор Vekta LD-24TR4357BT', 5195, 14, '/items/productimages/televizor-vekta-ld-24tr4357bt_0.png', 4.54, '', 'Телевизор Vekta LD-24TR4357BT с экраном диагональю 24" создан по технологии LED, поэтому воспроизводит четкое, реалистичное, глубокое, яркое и контрастное изображение в разрешении 1366x768 Пикс. Дисплей оптимизирован под современный стандарт контента, так как обладает соотношением сторон 16:9. Благодаря частоте обновления 60 Гц графика воспроизводится плавно, кадры сменяются незаметно для глаз. Функция цифрового шумоподавления делает картинку более детализированной, удаляя помехи.
+
+Телевизор оснащен стереосистемой NICAM мощностью 10 Вт, которая воспроизводит объемный и четкий звук. Устройство управляется пультом из комплекта. Функция PVR позволяет записывать телепередачи. С помощью опции TimeShift эфир можно ставить на паузу. Благодаря Sleep-таймеру модель автоматически выключится по истечении заданного периода. Доступны интерфейсы HDMI, USB 2.0 тип A, разъем для наушников 3,5 мм и порт для модуля DVB CAM.
+
+Телевизор блокируется для ограничения доступа детям к неподходящему контенту. К устройству можно подключить USB-накопитель для воспроизведения контента. Модель совместима с цифровым тюнером со стандартами T/T2/C. В комплекте настольная подставка для надежной установки прибора.', 'InStock', 'Discount', 1, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Vekta'), 1);
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Vekta LD-24TR4357BT'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'HD (1366x768 Пикс)' AND "Type" = 'Экран));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Vekta LD-24TR4357BT'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '24' AND "Type" = 'Диагональ));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Vekta LD-24TR4357BT'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '60' AND "Type" = 'Частота обновления));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Vekta LD-24TR4357BT'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'LED' AND "Type" = 'Технология экрана));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Vekta LD-24TR4357BT'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'LED' AND "Type" = 'Тип светодиодной подсветки));
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-vekta-ld-24tr4357bt_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Vekta LD-24TR4357BT'));

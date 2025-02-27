@@ -1,0 +1,4 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-topdevice-tv-65-ultra-neo-cs06-uhd-4k_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор TopDevice TV 65" ULTRA NEO CS06, UHD 4K'));

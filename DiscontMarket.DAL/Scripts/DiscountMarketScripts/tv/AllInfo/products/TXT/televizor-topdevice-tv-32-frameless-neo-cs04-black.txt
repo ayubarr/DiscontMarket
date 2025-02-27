@@ -1,0 +1,39 @@
+﻿INSERT INTO "Products" 
+("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription",
+"Availability", "Status", "CategoryID", "BrandID", "UserID") 
+VALUES
+ ('Телевизор TopDevice TV 32" FRAMELESS NEO CS04 Black', 7895, 15, '/items/productimages/televizor-topdevice-tv-32-frameless-neo-cs04-black_0.png', 4.47, '', 'Телевизор Topdevice 32" Frameless Neo CS04 Black — это модель со встроенным Smart TV, которая может подключаться к интернету, позволяя просматривать фильмы, сериалы, трансляции и музыкальные клипы в режиме онлайн. Безрамочный экран диагональю 32" воспроизводит изображение в разрешении 1366x768 Пикс. Картинка характеризуется реалистичностью, глубиной, яркими цветами и высокой контрастностью благодаря технологии VA, которая обеспечивает широкий угол обзора. Дисплей с соотношением сторон 16:9 оптимизирован под стандартный формат современного контента.
+
+Телевизор дополнен операционной системой Android, с помощью которой удобно управлять настройками и загружать дополнительные приложения. Подключать сторонние устройства можно через Bluetooth. Экран обновляется с частотой 60 Гц, поэтому кадры сменяются незаметно для глаз, повышая качество изображения. Объемный звук воспроизводится через аудиосистему Dolby Audio мощностью 16 Вт. Модель может записывать и считывать данные с USB-накопителей.
+
+Телевизор поддерживает цифровые стандарты DVB T, T2, C, S и S2. Устройство можно запрограммировать на автоматическое выключение благодаря наличию Sleep-таймера. Модель дополнена интерфейсами HDMI, USB 2.0 тип A, LAN (RJ45) и разъемом для наушников. Защитить детей от неподходящего контента можно с помощью блокировки. В комплекте настольная подставка.', 'InStock', 'Discount', 1, (SELECT "ID" FROM "Brands" WHERE "Name" = 'TopDevice'), 1);
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор TopDevice TV 32" FRAMELESS NEO CS04 Black'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'HD (1366x768 Пикс)' AND "Type" = 'Экран));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор TopDevice TV 32" FRAMELESS NEO CS04 Black'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '32' AND "Type" = 'Диагональ));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор TopDevice TV 32" FRAMELESS NEO CS04 Black'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '60' AND "Type" = 'Частота обновления));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор TopDevice TV 32" FRAMELESS NEO CS04 Black'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'LED' AND "Type" = 'Технология экрана));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор TopDevice TV 32" FRAMELESS NEO CS04 Black'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'Direct LED' AND "Type" = 'Тип светодиодной подсветки));
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-topdevice-tv-32-frameless-neo-cs04-black_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор TopDevice TV 32" FRAMELESS NEO CS04 Black'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-topdevice-tv-32-frameless-neo-cs04-black_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор TopDevice TV 32" FRAMELESS NEO CS04 Black'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-topdevice-tv-32-frameless-neo-cs04-black_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор TopDevice TV 32" FRAMELESS NEO CS04 Black'));

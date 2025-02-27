@@ -1,0 +1,81 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Винный шкаф до 140 см Tesler TESLER WCV-125 серебристый', 9345, 16, '/items/productimages/vinnyi-shkaf-do-140-sm-tesler-tesler-wcv-125-serebristyi_0.png', 4.84, '', 'Винный шкаф до 140 см Tesler WCV-125 серебристого цвета подходит для хранения до 12 бутылок вина. Для регулировки температурного режима внутри устройства используется панель с сенсорными элементами. Охлаждение основано на термоэлектрической системе. В процессе работы шкаф издает минимальный шум. Внутри находятся пять съемных хромированных полок со стильным деревянным декором. Благодаря минималистичному дизайну винный шкаф легко вписать в интерьер квартиры, дома или офиса.', 'InStock', 'Discount', 3, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Tesler'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Винный шкаф до 140 см Tesler TESLER WCV-125 серебристый'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Винный шкаф до 140 см Tesler TESLER WCV-125 серебристый' 
+        AND a."Name" = '12' 
+        AND a."Type" = 'Максимальное количество бутылок'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Винный шкаф до 140 см Tesler TESLER WCV-125 серебристый' 
+        AND a."Name" = '33' 
+        AND a."Type" = 'Общий объем'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Винный шкаф до 140 см Tesler TESLER WCV-125 серебристый' 
+        AND a."Name" = '5' 
+        AND a."Type" = 'Количество полок'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Винный шкаф до 140 см Tesler TESLER WCV-125 серебристый' 
+        AND a."Name" = 'термоэлектрический' 
+        AND a."Type" = 'Тип охлаждения'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Винный шкаф до 140 см Tesler TESLER WCV-125 серебристый' 
+        AND a."Name" = '1' 
+        AND a."Type" = 'Количество температурных зон'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vinnyi-shkaf-do-140-sm-tesler-tesler-wcv-125-serebristyi_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Винный шкаф до 140 см Tesler TESLER WCV-125 серебристый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vinnyi-shkaf-do-140-sm-tesler-tesler-wcv-125-serebristyi_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Винный шкаф до 140 см Tesler TESLER WCV-125 серебристый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vinnyi-shkaf-do-140-sm-tesler-tesler-wcv-125-serebristyi_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Винный шкаф до 140 см Tesler TESLER WCV-125 серебристый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vinnyi-shkaf-do-140-sm-tesler-tesler-wcv-125-serebristyi_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Винный шкаф до 140 см Tesler TESLER WCV-125 серебристый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vinnyi-shkaf-do-140-sm-tesler-tesler-wcv-125-serebristyi_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Винный шкаф до 140 см Tesler TESLER WCV-125 серебристый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vinnyi-shkaf-do-140-sm-tesler-tesler-wcv-125-serebristyi_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Винный шкаф до 140 см Tesler TESLER WCV-125 серебристый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vinnyi-shkaf-do-140-sm-tesler-tesler-wcv-125-serebristyi_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Винный шкаф до 140 см Tesler TESLER WCV-125 серебристый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vinnyi-shkaf-do-140-sm-tesler-tesler-wcv-125-serebristyi_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Винный шкаф до 140 см Tesler TESLER WCV-125 серебристый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vinnyi-shkaf-do-140-sm-tesler-tesler-wcv-125-serebristyi_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Винный шкаф до 140 см Tesler TESLER WCV-125 серебристый'));

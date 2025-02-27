@@ -1,0 +1,28 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-hyundai-mio-hy093_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Hyundai MIO-HY093'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-hyundai-mio-hy093_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Hyundai MIO-HY093'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-hyundai-mio-hy093_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Hyundai MIO-HY093'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-hyundai-mio-hy093_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Hyundai MIO-HY093'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-hyundai-mio-hy093_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Hyundai MIO-HY093'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-hyundai-mio-hy093_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Hyundai MIO-HY093'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-hyundai-mio-hy093_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Hyundai MIO-HY093'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-hyundai-mio-hy093_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Hyundai MIO-HY093'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-hyundai-mio-hy093_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Hyundai MIO-HY093'));

@@ -1,0 +1,83 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Холодильник Toshiba GR-RT624WE-PMJ(37) бронзовый', 53499, 13, '/items/productimages/holodilnik-toshiba-gr-rt624we-pmj37-bronzovyi_0.png', 4.42, '', 'Холодильник Toshiba GR-RT624WE-PMJ(37) серии AirFall Cooling оборудован инверторным компрессором, который обеспечивает меньшее потребление энергии и низкий уровень шума при работе (43 дБ). Антибактериальный модуль PureBIO устраняет неприятные запахи. Встроен ионизатор воздуха. Объем морозильной камеры — 112 л. Внутри холодильной камеры объемом 362 л, установлены четыре пластиковые полки, один ящик в отделении для овощей и четыре полки на двери. В сухой зоне свежести поддерживается температура немного ниже нуля и влажность 50-55%, что подходит для хранения мяса, рыбы, сыра. В морозильном отделе установлены два прозрачных ящика. Мощность замораживания — 10 кг/сутки. Технология охлаждения AirFall увеличивает воздушный поток и охлаждает воздух быстрее. Встроена система размораживания холодильника No Frost.
+
+Снаружи на металлические двери нанесено покрытие из ПВХ со специальной защитой от отпечатков пальцев. Ручки располагаются горизонтально, открытие двери происходит направо. На сенсорный экран выводится информация о температуре в морозильной камере. Встроен индикатор включения. Внутреннее освещение обеспечивают LED-лампы. Формочки для льда и подставка для яиц входят в комплектацию. Об открытии двери оповещает звуковой сигнал. Хранение при отключении питания — 7 часов. Прибор принадлежит к классу энергоэффективности A++. Энергопотребление в год составляет 292 кВт*ч. Цвет корпуса и дверей — бронзовый/коричневый. Цвет фурнитуры — черный. Габариты составляют 188х69,1х70 см. Вес равен 77 кг.', 'InStock', 'Discount', 3, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Toshiba'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Холодильник Toshiba GR-RT624WE-PMJ(37) бронзовый'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Toshiba GR-RT624WE-PMJ(37) бронзовый' 
+        AND a."Name" = 'инверторный' 
+        AND a."Type" = 'Тип компрессора'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Toshiba GR-RT624WE-PMJ(37) бронзовый' 
+        AND a."Name" = '474' 
+        AND a."Type" = 'Общий объем'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Toshiba GR-RT624WE-PMJ(37) бронзовый' 
+        AND a."Name" = 'сухая' 
+        AND a."Type" = 'Тип зоны сохранения свежести'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Toshiba GR-RT624WE-PMJ(37) бронзовый' 
+        AND a."Name" = 'электронный' 
+        AND a."Type" = 'Тип управления'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Toshiba GR-RT624WE-PMJ(37) бронзовый' 
+        AND a."Name" = 'металл' 
+        AND a."Type" = 'Материал двери'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-toshiba-gr-rt624we-pmj37-bronzovyi_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Toshiba GR-RT624WE-PMJ(37) бронзовый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-toshiba-gr-rt624we-pmj37-bronzovyi_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Toshiba GR-RT624WE-PMJ(37) бронзовый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-toshiba-gr-rt624we-pmj37-bronzovyi_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Toshiba GR-RT624WE-PMJ(37) бронзовый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-toshiba-gr-rt624we-pmj37-bronzovyi_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Toshiba GR-RT624WE-PMJ(37) бронзовый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-toshiba-gr-rt624we-pmj37-bronzovyi_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Toshiba GR-RT624WE-PMJ(37) бронзовый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-toshiba-gr-rt624we-pmj37-bronzovyi_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Toshiba GR-RT624WE-PMJ(37) бронзовый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-toshiba-gr-rt624we-pmj37-bronzovyi_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Toshiba GR-RT624WE-PMJ(37) бронзовый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-toshiba-gr-rt624we-pmj37-bronzovyi_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Toshiba GR-RT624WE-PMJ(37) бронзовый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-toshiba-gr-rt624we-pmj37-bronzovyi_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Toshiba GR-RT624WE-PMJ(37) бронзовый'));

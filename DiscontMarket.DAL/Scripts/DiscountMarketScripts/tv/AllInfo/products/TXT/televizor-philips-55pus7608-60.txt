@@ -1,0 +1,82 @@
+﻿INSERT INTO "Products" 
+("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription",
+"Availability", "Status", "CategoryID", "BrandID", "UserID") 
+VALUES
+ ('Телевизор Philips 55PUS7608/60', 26499, 17, '/items/productimages/televizor-philips-55pus7608-60_0.png', 4.69, '', 'Телевизор Philips 55PUS7608/60 — 55-дюймовое устройство в корпусе серого цвета, в основе работы которого лежит матрица VA. Частота обновления на пике достигает 60 Гц. Технология Direct LED обеспечивает равномерную светодиодную подсветку по всей поверхности. 
+
+• <b>Пиковая яркость — 350 кд/м²</b> 
+Четкость и яркость картинки не теряются при любом уровне освещения в помещении. 
+
+• <b>4K Ultra HD</b> 
+Поддержка разрешения 3840х2160 пикселей обеспечивает отличную детализацию и улучшенную картинку при просмотре фильмов, выпущенных в высоком качестве. 
+
+• <b>Технология HDR10</b> 
+Обеспечивает высокий коэффициент контрастности и может отображать более широкий диапазон оттенков между наиболее темными и светлыми областями — картинка становится четко различимой. 
+
+• <b>Голосовое управление</b> 
+Упрощает взаимодействие с телевизором. Можно использовать Google «Ассистент» или Alexa. 
+
+• <b>Три разъема HDMI</b> 
+Позволяют подключить к телевизору внешние устройства, в частности, ноутбук или игровую консоль. Служат для передачи несжатых аудио- и видеосигналов высокого разрешения. 
+
+Функция Smart TV дает возможность пользоваться всеми возможностями интернета. Технологии Dolby Vision и Dolby Atmos обеспечивают кинематографичное изображение и качественные звуковые эффекты. В результате формируется полноценный эффект погружения. Встроенный цифровой тюнер DVB поддерживает распространенные стандарты T/T2/C/S/S2. Порты USB позволяют считывать медиа с внешних накопителей. Мощность потребления модели — 93 Вт.', 'InStock', 'Discount', 1, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Philips'), 1);
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Philips 55PUS7608/60'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '4K Ultra HD (3840x2160 Пикс)' AND "Type" = 'Экран));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Philips 55PUS7608/60'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '55' AND "Type" = 'Диагональ));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Philips 55PUS7608/60'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '60' AND "Type" = 'Частота обновления));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Philips 55PUS7608/60'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'LED' AND "Type" = 'Технология экрана));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Philips 55PUS7608/60'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'Direct LED' AND "Type" = 'Тип светодиодной подсветки));
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-philips-55pus7608-60_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Philips 55PUS7608/60'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-philips-55pus7608-60_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Philips 55PUS7608/60'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-philips-55pus7608-60_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Philips 55PUS7608/60'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-philips-55pus7608-60_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Philips 55PUS7608/60'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-philips-55pus7608-60_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Philips 55PUS7608/60'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-philips-55pus7608-60_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Philips 55PUS7608/60'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-philips-55pus7608-60_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Philips 55PUS7608/60'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-philips-55pus7608-60_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Philips 55PUS7608/60'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-philips-55pus7608-60_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Philips 55PUS7608/60'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-philips-55pus7608-60_9.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Philips 55PUS7608/60'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-philips-55pus7608-60_10.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Philips 55PUS7608/60'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-philips-55pus7608-60_11.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Philips 55PUS7608/60'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-philips-55pus7608-60_12.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Philips 55PUS7608/60'));

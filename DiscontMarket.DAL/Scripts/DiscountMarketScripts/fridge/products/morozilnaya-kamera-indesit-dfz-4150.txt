@@ -1,0 +1,89 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Морозильная камера Indesit DFZ 4150', 20749, 5, '/items/productimages/morozilnaya-kamera-indesit-dfz-4150_0.png', 4.23, '', 'Морозильная камера Indesit DFZ 4150 однокамерного типа оснащена шестью отделениями и четырьмя ящиками.
+
+• <b>Класс энергоэффективности А+</b>
+Позволяет экономить электроэнергию: потребление за год составляет всего 275 кВт*ч.
+
+• <b>Уровень шума 44 дБ</b>
+Не мешает при работе сну и отдыху.
+
+• <b>Производительность 10 кг/сут, режим суперзамораживания</b>
+Можно быстро охладить большое количество продуктов.
+
+Модель объемом 204 л управляется сенсорными клавишами, находящимися спереди. На цифровом дисплее отображаются выбранные показатели. При отключении питания температура внутри сохраняется до 15 часов. В наборе идут четыре подвесных корзины. Размер — 150х62х60 см, вес — 56,8 кг.', 'InStock', 'Discount', 3, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Indesit'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Морозильная камера Indesit DFZ 4150'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Морозильная камера Indesit DFZ 4150' 
+        AND a."Name" = 'стандартный' 
+        AND a."Type" = 'Тип компрессора'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Морозильная камера Indesit DFZ 4150' 
+        AND a."Name" = '150*60*62 см' 
+        AND a."Type" = 'Габаритные размеры (В*Ш*Г)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Морозильная камера Indesit DFZ 4150' 
+        AND a."Name" = 'A+' 
+        AND a."Type" = 'Класс энергоэффективности'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Морозильная камера Indesit DFZ 4150' 
+        AND a."Name" = 'Да' 
+        AND a."Type" = 'Режим суперзамораживания'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Морозильная камера Indesit DFZ 4150' 
+        AND a."Name" = 'электронный' 
+        AND a."Type" = 'Тип управления'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-indesit-dfz-4150_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Indesit DFZ 4150'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-indesit-dfz-4150_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Indesit DFZ 4150'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-indesit-dfz-4150_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Indesit DFZ 4150'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-indesit-dfz-4150_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Indesit DFZ 4150'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-indesit-dfz-4150_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Indesit DFZ 4150'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-indesit-dfz-4150_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Indesit DFZ 4150'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-indesit-dfz-4150_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Indesit DFZ 4150'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-indesit-dfz-4150_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Indesit DFZ 4150'));

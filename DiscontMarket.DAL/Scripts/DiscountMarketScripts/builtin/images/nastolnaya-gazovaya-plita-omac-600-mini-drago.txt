@@ -1,0 +1,7 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/nastolnaya-gazovaya-plita-omac-600-mini-drago_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Настольная газовая плита OMAC 600 Mini Drago'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/nastolnaya-gazovaya-plita-omac-600-mini-drago_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Настольная газовая плита OMAC 600 Mini Drago'));

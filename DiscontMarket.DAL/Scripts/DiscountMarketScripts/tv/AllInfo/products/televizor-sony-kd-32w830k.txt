@@ -1,0 +1,59 @@
+﻿INSERT INTO "Products" 
+("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription",
+"Availability", "Status", "CategoryID", "BrandID", "UserID") 
+VALUES
+ ('Телевизор Sony KD-32W830K', 22445, 8, '/items/productimages/televizor-sony-kd-32w830k_0.png', 4.95, '', 'Черный телевизор Sony KD-32W830K оснащен системой защиты от детей. Устройство поддерживает Apple HomeKit. Способ управления — дистанционный, с помощью пульта. Система Dolby Audio с дополнительными каналами создает эффект погружения. Габариты изделия с подставкой — 46,5х18,8х73 см. Вес — 13,1 кг. Присутствует функция цифрового шумоподавления. Диагональ экрана составляет 32 дюйма (80 см). Частота обновления кадра — 60 Гц. Мощность акустических систем — 20 Вт. Телевизор поддерживает Smart TV. Sleep-таймер позволяет выставить время выключения. Возможно управление с помощью голоса.', 'InStock', 'Discount', 1, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Sony'), 1);
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Sony KD-32W830K'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'HD (1366x768 Пикс)' AND "Type" = 'Экран));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Sony KD-32W830K'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '32' AND "Type" = 'Диагональ));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Sony KD-32W830K'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '60' AND "Type" = 'Частота обновления));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Sony KD-32W830K'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'LED' AND "Type" = 'Технология экрана));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Sony KD-32W830K'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'Direct LED' AND "Type" = 'Тип светодиодной подсветки));
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-sony-kd-32w830k_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Sony KD-32W830K'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-sony-kd-32w830k_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Sony KD-32W830K'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-sony-kd-32w830k_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Sony KD-32W830K'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-sony-kd-32w830k_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Sony KD-32W830K'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-sony-kd-32w830k_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Sony KD-32W830K'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-sony-kd-32w830k_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Sony KD-32W830K'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-sony-kd-32w830k_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Sony KD-32W830K'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-sony-kd-32w830k_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Sony KD-32W830K'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-sony-kd-32w830k_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Sony KD-32W830K'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-sony-kd-32w830k_9.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Sony KD-32W830K'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-sony-kd-32w830k_10.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Sony KD-32W830K'));

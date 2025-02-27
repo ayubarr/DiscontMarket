@@ -1,0 +1,72 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Холодильник Indesit TIA16 белый', 14749, 12, '/items/productimages/holodilnik-indesit-tia16-belyi_0.png', 4.62, '', 'Indesit TIA16 – современный холодильник с верхним расположением морозильной камеры. Он выглядит лаконично и функционально, хорошо вписывается в интерьер кухни, работает эффективно, с низким уровнем шума.
+
+КАПЕЛЬНОЕ РАЗМОРАЖИВАНИЕ ХОЛОДИЛЬНОЙ КАМЕРЫ
+Для размораживания холодильной камеры используется капельная система. Это простая, надежная, эффективная технология, работающая без участия человека. Благодаря ей владельцам не придётся беспокоиться о том, что на стенках образуется наледь.
+
+УДОБНАЯ ОРГАНИЗАЦИЯ ВНУТРЕННЕГО ПРОСТРАНСТВА
+В холодильной камере установлены четыре полки, которые можно устанавливать так, как удобно владельцам. Также в ней предусмотрены два отделения для хранения зелени, фруктов и овощей. В морозильном отделении установлена одна полка. 
+
+ПЕРЕНАВЕШИВАЕМАЯ ДВЕРЬ
+Дверь холодильника можно снять и перенавесить заново таким образом, чтобы она открывалась в ту сторону, которую посчитают удобной владельцы этого агрегата.
+
+ЭКОНОМИЯ ЭЛЕКТРОЭНЕРГИИ
+Класс энергопотребления этой модели – А. Это означает, что холодильник экономно расходует его электричество, и его эксплуатация не будет чересчур дорогой.', 'InStock', 'Discount', 3, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Indesit'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Холодильник Indesit TIA16 белый'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Indesit TIA16 белый' 
+        AND a."Name" = 'стандартный' 
+        AND a."Type" = 'Тип компрессора'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Indesit TIA16 белый' 
+        AND a."Name" = '296' 
+        AND a."Type" = 'Общий объем'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Indesit TIA16 белый' 
+        AND a."Name" = 'отсутствует' 
+        AND a."Type" = 'Тип зоны сохранения свежести'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Indesit TIA16 белый' 
+        AND a."Name" = 'механический' 
+        AND a."Type" = 'Тип управления'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Indesit TIA16 белый' 
+        AND a."Name" = 'металл' 
+        AND a."Type" = 'Материал двери'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-indesit-tia16-belyi_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Indesit TIA16 белый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-indesit-tia16-belyi_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Indesit TIA16 белый'));

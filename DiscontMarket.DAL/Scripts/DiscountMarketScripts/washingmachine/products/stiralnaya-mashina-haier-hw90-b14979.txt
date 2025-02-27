@@ -1,0 +1,99 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Стиральная машина Haier HW90-B14979', 48499, 19, '/items/productimages/stiralnaya-mashina-haier-hw90-b14979_0.png', 4.94, '', 'Haier HW90-B14979 – стиральная машина с загрузкой, составляющей внушительные 9 кг. Благодаря этому модель будет идеальным решением для большой семьи. 
+
+ИНТУИТИВНОЕ УПРАВЛЕНИЕ
+Устройство снабжено электронным меню контроля с LED-дисплеем и чувствительными сенсорными клавишами. Выбирайте оптимальный режим одним прикосновением. Вам доступны циклы для синтетики, смешанных тканей, шерсти, хлопка и детской одежды. Кроме того, в вашем распоряжении есть экспресс-программа длительностью всего 15 минут и настройка для освежения белья. 
+
+ГИГИЕНА ВЫСШЕГО УРОВНЯ
+Для удаления загрязнений из всех уголков барабана регулярно запускайте самоочистку. За счёт уникальной ABT-технологии в манжете люка не скапливаются бактерии и микробы. 
+
+БЕЗОПАСНОСТЬ ГАРАНТИРОВАНА
+Бытовой помощник оснащён надёжной защитной системой AquaStop. С ней вы избавитесь от страха затопить соседей.', 'InStock', 'Discount', 5, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Haier'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Стиральная машина Haier HW90-B14979'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина Haier HW90-B14979' 
+        AND a."Name" = '9' 
+        AND a."Type" = 'Максимальная загрузка'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина Haier HW90-B14979' 
+        AND a."Name" = '1400' 
+        AND a."Type" = 'Максимальная скорость отжима'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина Haier HW90-B14979' 
+        AND a."Name" = 'инверторный' 
+        AND a."Type" = 'Мотор'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина Haier HW90-B14979' 
+        AND a."Name" = 'Да' 
+        AND a."Type" = 'Обработка паром'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина Haier HW90-B14979' 
+        AND a."Name" = '85*59.5*49.7 см' 
+        AND a."Type" = 'Габаритные размеры (В*Ш*Г)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-haier-hw90-b14979_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Haier HW90-B14979'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-haier-hw90-b14979_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Haier HW90-B14979'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-haier-hw90-b14979_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Haier HW90-B14979'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-haier-hw90-b14979_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Haier HW90-B14979'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-haier-hw90-b14979_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Haier HW90-B14979'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-haier-hw90-b14979_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Haier HW90-B14979'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-haier-hw90-b14979_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Haier HW90-B14979'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-haier-hw90-b14979_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Haier HW90-B14979'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-haier-hw90-b14979_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Haier HW90-B14979'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-haier-hw90-b14979_9.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Haier HW90-B14979'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-haier-hw90-b14979_10.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Haier HW90-B14979'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-haier-hw90-b14979_11.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Haier HW90-B14979'));

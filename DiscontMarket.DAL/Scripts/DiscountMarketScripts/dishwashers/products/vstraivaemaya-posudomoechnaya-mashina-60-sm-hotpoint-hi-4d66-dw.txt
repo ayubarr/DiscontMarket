@@ -1,0 +1,71 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Встраиваемая посудомоечная машина 60 см Hotpoint HI 4D66 DW', 37499, 6, '/items/productimages/vstraivaemaya-posudomoechnaya-mashina-60-sm-hotpoint-hi-4d66-dw_0.png', 4.52, '', 'Встраиваемая посудомоечная машина Hotpoint HI 4D66 DW работает под управлением инверторного двигателя и подлежит установке в монтажную нишу габаритами 820-870х600х560 мм. Агрегат принадлежит к классу энергопотребления А и способен обработать за цикл до 14 комплектов посуды, расходуя до 9,5 л воды. Показатель шума во время работы не превышает 46 дБ. Система умягчения воды предупреждает образование известкового налета на нагревательном элементе. Сенсор чистой воды оптимизирует количество циклов полоскания, снижая расход воды и электроэнергии. 
+Камера машины выполнена из нержавеющей стали и оснащена регулируемой по высоте верхней корзиной, нижней корзиной, отделением для столовых приборов. Вода поступает через верхний и нижний разбрызгиватели. Для моющих средств и соли предназначены дозаторы с поддержкой средств 3-в-1. Закрытый сенсорный блок управления на дверце оснащен цифровым экраном, клавишами выбора программ, отсрочки запуска на 1-24 часа. Предусмотрено подключение к водопроводу с холодной водой температурой до 25°С. Во время работы вода нагревается до температуры 35°-70°С, в зависимости от выбранного цикла мойки. 
+Машина работает в нескольких режимах: «Автоматический», «Экспресс», «Экономичный», «Половинная загрузка», «Усиленная гигиена», «Быстрый 15 минут», «Предварительное ополаскивание». Тип сушки — конденсационная. По окончании цикла дверца открывается автоматически для высыхания посуды. За безопасность эксплуатации прибора отвечает полная функция защиты от протечек.', 'InStock', 'Discount', 28, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Hotpoint'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 60 см Hotpoint HI 4D66 DW'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Встраиваемая посудомоечная машина 60 см Hotpoint HI 4D66 DW' 
+        AND a."Name" = '9.5' 
+        AND a."Type" = 'Расход воды за цикл'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Встраиваемая посудомоечная машина 60 см Hotpoint HI 4D66 DW' 
+        AND a."Name" = '14 комплектов' 
+        AND a."Type" = 'Максимальная вместимость'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Встраиваемая посудомоечная машина 60 см Hotpoint HI 4D66 DW' 
+        AND a."Name" = '6' 
+        AND a."Type" = 'Количество программ мойки'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Встраиваемая посудомоечная машина 60 см Hotpoint HI 4D66 DW' 
+        AND a."Name" = 'инверторный' 
+        AND a."Type" = 'Мотор'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Встраиваемая посудомоечная машина 60 см Hotpoint HI 4D66 DW' 
+        AND a."Name" = '818*598*550' 
+        AND a."Type" = 'Размер ниши, мм (В*Ш*Г)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-60-sm-hotpoint-hi-4d66-dw_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 60 см Hotpoint HI 4D66 DW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-60-sm-hotpoint-hi-4d66-dw_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 60 см Hotpoint HI 4D66 DW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-60-sm-hotpoint-hi-4d66-dw_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 60 см Hotpoint HI 4D66 DW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-60-sm-hotpoint-hi-4d66-dw_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 60 см Hotpoint HI 4D66 DW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-60-sm-hotpoint-hi-4d66-dw_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 60 см Hotpoint HI 4D66 DW'));

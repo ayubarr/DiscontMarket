@@ -1,0 +1,16 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-econ-ex-24hs006b_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Econ EX-24HS006B'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-econ-ex-24hs006b_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Econ EX-24HS006B'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-econ-ex-24hs006b_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Econ EX-24HS006B'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-econ-ex-24hs006b_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Econ EX-24HS006B'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-econ-ex-24hs006b_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Econ EX-24HS006B'));

@@ -1,0 +1,14 @@
+﻿
+        INSERT INTO "Attributes" ("NameTranslate", "Name", "Type") 
+        SELECT '178*91*71 см', '178*91*71 см', 'Габаритные размеры (В*Ш*Г)'
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Attributes" WHERE "Name" = '178*91*71 см' AND "Type" = 'Габаритные размеры (В*Ш*Г)'
+        );
+
+        INSERT INTO "AttributeCategory" ("AttributeID", "CategoryID") 
+        SELECT a."ID", c."ID" FROM "Attributes" a, "Categories" c 
+        WHERE a."Name" = '178*91*71 см' AND a."Type" = 'Габаритные размеры (В*Ш*Г)' 
+        AND c."Name" = 'fridge'
+        AND NOT EXISTS (
+            SELECT 1 FROM "AttributeCategory" WHERE "AttributeID" = a."ID" AND "CategoryID" = c."ID"
+        );

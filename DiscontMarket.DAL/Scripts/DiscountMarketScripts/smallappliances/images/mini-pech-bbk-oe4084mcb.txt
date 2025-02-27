@@ -1,0 +1,19 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-bbk-oe4084mcb_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь BBK OE4084MC (B)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-bbk-oe4084mcb_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь BBK OE4084MC (B)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-bbk-oe4084mcb_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь BBK OE4084MC (B)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-bbk-oe4084mcb_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь BBK OE4084MC (B)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-bbk-oe4084mcb_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь BBK OE4084MC (B)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-bbk-oe4084mcb_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь BBK OE4084MC (B)'));

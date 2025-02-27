@@ -1,0 +1,81 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Встраиваемая посудомоечная машина 60 см Премиум Smeg ST211DS', 44749, 15, '/items/productimages/vstraivaemaya-posudomoechnaya-mashina-60-sm-premium-smeg-st211ds_0.png', 4.38, '', 'Smeg ST211DS – встраиваемая посудомоечная машина шириной 60 см, предназначенная для 13 комплектов кухонных принадлежностей. Модель не займёт много пространства и при этом возьмёт на себя значительную часть бытовых хлопот, подарив вам больше свободного времени. 
+
+ВАЖНЫЕ СОСТАВЛЯЮЩИЕ 
+Основной короб регулируется по высоте, поэтому вы положите туда даже кастрюли, крышки и противни нестандартной формы. Третий уровень загрузки представлен корзиной для столовых приборов – всё будет строго на своих местах. 
+
+ИНТУИТИВНЫЙ КОНТРОЛЬ
+Удобная и простая в освоении электронная панель управления находится на рамке откидной дверцы. С помощью неё вы парой лёгких нажатий активируете одну из пяти доступных программ мойки, а ещё включите отложенный старт. 
+
+БЕЗОПАСНОСТЬ НА 100%
+Эффективный теплообменник устраняет причину резких колебаний температуры, тем самым предотвращая появление трещин на стеклянной и керамической посуде. Надёжная система защиты от протечек не допустит риск затопления вашей квартиры и соседей, живущих этажом ниже. 
+
+О БРЕНДЕ
+Для разработки дизайна своей техники Smeg привлекает мировых архитекторов, ведь кто, как не они, разбирается в стиле? В холодильниках, варочных панелях, стиральных машинах и других приборах нашла своё отражение настоящая итальянская страсть. И такие яркие образы не могли не получить признания: техника бренда неоднократно завоёвывала международные призы за оформление, среди которых несколько престижнейших премий iF Design Award и Red Dot Design Award в 2016 и в 2017 годах.', 'InStock', 'Discount', 28, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Smeg'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 60 см Премиум Smeg ST211DS'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Встраиваемая посудомоечная машина 60 см Премиум Smeg ST211DS' 
+        AND a."Name" = '12' 
+        AND a."Type" = 'Расход воды за цикл'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Встраиваемая посудомоечная машина 60 см Премиум Smeg ST211DS' 
+        AND a."Name" = '13 комплектов' 
+        AND a."Type" = 'Максимальная вместимость'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Встраиваемая посудомоечная машина 60 см Премиум Smeg ST211DS' 
+        AND a."Name" = '5' 
+        AND a."Type" = 'Количество программ мойки'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Встраиваемая посудомоечная машина 60 см Премиум Smeg ST211DS' 
+        AND a."Name" = 'стандартный' 
+        AND a."Type" = 'Мотор'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Встраиваемая посудомоечная машина 60 см Премиум Smeg ST211DS' 
+        AND a."Name" = '82*60*57.5' 
+        AND a."Type" = 'Размер ниши, мм (В*Ш*Г)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-60-sm-premium-smeg-st211ds_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 60 см Премиум Smeg ST211DS'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-60-sm-premium-smeg-st211ds_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 60 см Премиум Smeg ST211DS'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-60-sm-premium-smeg-st211ds_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 60 см Премиум Smeg ST211DS'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-60-sm-premium-smeg-st211ds_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 60 см Премиум Smeg ST211DS'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-60-sm-premium-smeg-st211ds_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 60 см Премиум Smeg ST211DS'));

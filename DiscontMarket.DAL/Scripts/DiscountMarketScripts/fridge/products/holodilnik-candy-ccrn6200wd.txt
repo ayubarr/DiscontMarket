@@ -1,0 +1,95 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Холодильник Candy CCRN6200WD', 27999, 19, '/items/productimages/holodilnik-candy-ccrn6200wd_0.png', 4.33, '', 'Холодильник Candy CCRN6200WD позволяет с легкостью разместить даже внушительные запасы продуктов благодаря объему 370 л. Стильный и лаконичный внешний вид украсит интерьер кухни.
+
+• <b>No Frost</b>
+Холодильник не требует разморозки: постоянная циркуляция холодного воздуха препятствует образованию влаги и наледи. Прибор достаточно лишь регулярно протирать.
+
+• <b>Skin Condenser</b>
+Прибор можно поставить вплотную к стене, экономя пространство. Это особенно важно в маленьких кухнях.
+
+• <b> Быстрая заморозка</b>
+Производительность морозильной камеры — 12 кг в сутки. Функция супербыстрой заморозки сохраняет витамины и вкус продуктов.
+
+Модель оснащена пятью полками, тремя дверными карманами для мелочей, ящиком для фруктов и овощей. В морозильном отсеке — три ящика для хранения полуфабрикатов. Управление осуществляется при помощи сенсорного дисплея на дверце, звуковая сигнализация предупредит, если холодильник забыли закрыть.', 'InStock', 'Discount', 3, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Candy'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Холодильник Candy CCRN6200WD'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Candy CCRN6200WD' 
+        AND a."Name" = 'стандартный' 
+        AND a."Type" = 'Тип компрессора'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Candy CCRN6200WD' 
+        AND a."Name" = '200' 
+        AND a."Type" = 'Высота'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Candy CCRN6200WD' 
+        AND a."Name" = '59.5' 
+        AND a."Type" = 'Ширина'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Candy CCRN6200WD' 
+        AND a."Name" = '65.7' 
+        AND a."Type" = 'Глубина'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Candy CCRN6200WD' 
+        AND a."Name" = '370' 
+        AND a."Type" = 'Общий объем'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-candy-ccrn6200wd_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Candy CCRN6200WD'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-candy-ccrn6200wd_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Candy CCRN6200WD'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-candy-ccrn6200wd_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Candy CCRN6200WD'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-candy-ccrn6200wd_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Candy CCRN6200WD'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-candy-ccrn6200wd_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Candy CCRN6200WD'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-candy-ccrn6200wd_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Candy CCRN6200WD'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-candy-ccrn6200wd_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Candy CCRN6200WD'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-candy-ccrn6200wd_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Candy CCRN6200WD'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-candy-ccrn6200wd_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Candy CCRN6200WD'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-candy-ccrn6200wd_9.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Candy CCRN6200WD'));

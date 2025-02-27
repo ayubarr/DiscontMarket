@@ -1,0 +1,19 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-digma-40-dm-led40sbb31_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Digma 40 DM-LED40SBB31'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-digma-40-dm-led40sbb31_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Digma 40 DM-LED40SBB31'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-digma-40-dm-led40sbb31_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Digma 40 DM-LED40SBB31'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-digma-40-dm-led40sbb31_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Digma 40 DM-LED40SBB31'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-digma-40-dm-led40sbb31_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Digma 40 DM-LED40SBB31'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-digma-40-dm-led40sbb31_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Digma 40 DM-LED40SBB31'));

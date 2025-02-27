@@ -1,0 +1,22 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-vekta-ld-24tr4350bt_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Vekta LD-24TR4350BT'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-vekta-ld-24tr4350bt_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Vekta LD-24TR4350BT'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-vekta-ld-24tr4350bt_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Vekta LD-24TR4350BT'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-vekta-ld-24tr4350bt_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Vekta LD-24TR4350BT'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-vekta-ld-24tr4350bt_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Vekta LD-24TR4350BT'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-vekta-ld-24tr4350bt_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Vekta LD-24TR4350BT'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-vekta-ld-24tr4350bt_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Vekta LD-24TR4350BT'));

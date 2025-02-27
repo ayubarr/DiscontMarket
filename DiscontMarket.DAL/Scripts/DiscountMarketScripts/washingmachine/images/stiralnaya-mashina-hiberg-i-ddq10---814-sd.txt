@@ -1,0 +1,28 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-hiberg-i-ddq10---814-sd_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Hiberg i-DDQ10 - 814 Sd'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-hiberg-i-ddq10---814-sd_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Hiberg i-DDQ10 - 814 Sd'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-hiberg-i-ddq10---814-sd_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Hiberg i-DDQ10 - 814 Sd'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-hiberg-i-ddq10---814-sd_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Hiberg i-DDQ10 - 814 Sd'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-hiberg-i-ddq10---814-sd_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Hiberg i-DDQ10 - 814 Sd'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-hiberg-i-ddq10---814-sd_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Hiberg i-DDQ10 - 814 Sd'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-hiberg-i-ddq10---814-sd_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Hiberg i-DDQ10 - 814 Sd'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-hiberg-i-ddq10---814-sd_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Hiberg i-DDQ10 - 814 Sd'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-hiberg-i-ddq10---814-sd_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Hiberg i-DDQ10 - 814 Sd'));

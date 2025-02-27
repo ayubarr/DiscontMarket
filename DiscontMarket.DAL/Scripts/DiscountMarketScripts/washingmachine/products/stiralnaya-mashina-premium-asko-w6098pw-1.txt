@@ -1,0 +1,82 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Стиральная машина Премиум Asko W6098P.W/1', 107950, 10, '/items/productimages/stiralnaya-mashina-premium-asko-w6098pw-1_0.png', 4.48, '', 'Стиральная машина «Премиум» Asko W6098P.W/1 белого цвета управляется с помощью поворотного регулятора и электронной панели с возможностью блокировки. TFT-дисплей информирует о заданных параметрах и времени. Доступны автоматические режимы для разных видов тканей, «Антиаллергия», «Пятновыведение», минипрограмма продолжительностью 30 минут, настройка скорости в пределах 1800 об/мин и опция разрыхления белья.
+
+Таймер отложенного старта упрощает эксплуатацию. Звуковой сигнал информирует о завершении. Уровень шума при стирке не превышает 50 дБ, при отжиме — 77 дБ. Защита от протечек технологией AquaBlockSystem гарантирует безопасность и долгий срок службы. Прибор с инверторным мотором работает от электросети, потребляя 2100 Вт. Устройство с классом энергоэффективности А за цикл расходует 4,41 кВт*ч и 49 л воды.
+
+Бак и барабан изготовлены из нержавеющей стали без использования резиновой манжеты. Модель объемом 60 л максимально вмещает 9 кг вещей из хлопка, 3,5 кг — из синтетики и 2 кг —из шерсти. Габариты изделия равны 85х59,5х58,5 см, вес — 88,5 кг. Диаметр люка — 42 см. Открываемая налево дверца изготовлена из высокопрочных стекла и пластика.', 'InStock', 'Discount', 5, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Asko'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Стиральная машина Премиум Asko W6098P.W/1'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина Премиум Asko W6098P.W/1' 
+        AND a."Name" = '9' 
+        AND a."Type" = 'Максимальная загрузка'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина Премиум Asko W6098P.W/1' 
+        AND a."Name" = '1800' 
+        AND a."Type" = 'Максимальная скорость отжима'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина Премиум Asko W6098P.W/1' 
+        AND a."Name" = 'инверторный' 
+        AND a."Type" = 'Мотор'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина Премиум Asko W6098P.W/1' 
+        AND a."Name" = 'Да' 
+        AND a."Type" = 'Обработка паром'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина Премиум Asko W6098P.W/1' 
+        AND a."Name" = '85*59.5*58.5 см' 
+        AND a."Type" = 'Габаритные размеры (В*Ш*Г)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-premium-asko-w6098pw-1_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Премиум Asko W6098P.W/1'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-premium-asko-w6098pw-1_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Премиум Asko W6098P.W/1'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-premium-asko-w6098pw-1_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Премиум Asko W6098P.W/1'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-premium-asko-w6098pw-1_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Премиум Asko W6098P.W/1'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-premium-asko-w6098pw-1_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Премиум Asko W6098P.W/1'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-premium-asko-w6098pw-1_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Премиум Asko W6098P.W/1'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-premium-asko-w6098pw-1_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Премиум Asko W6098P.W/1'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-premium-asko-w6098pw-1_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Премиум Asko W6098P.W/1'));

@@ -1,0 +1,4 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/panel-dlya-holodilnika-samsung-ra-b23eut48gg_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Панель для холодильника Samsung RA-B23EUT48GG'));

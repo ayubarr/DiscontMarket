@@ -1,0 +1,72 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Стиральная машина LG AIDD F4V5VS0W', 37499, 18, '/items/productimages/stiralnaya-mashina-lg-aidd-f4v5vs0w_0.png', 4.98, '', 'Стиральная машина LG AIDD F4V5VS0W рассчитана на стирку до 9 кг белья. Управление осуществляется при помощи кнопок и через приложение. При этом можно и использовать стандартные программы (14 вариантов), и применить интеллектуальную систему: она самостоятельно рассчитает вес, мягкость тканей и подберет оптимальный режим стирки. Стиральная машина работает с голосовым помощником «Алиса». Функция обработки паром уничтожает бактерии, аллергены. <br>Таймер позволяет задавать нужное время запуска. На начальном этапе стирки (пока вода не нагрелась свыше +40°С) можно добавить забытое белье в барабан. Внутренняя поверхность из нержавеющей стали — с особой формой перфорации для снижения износа тканей. Ребра жесткости уменьшают шум и вибрацию. Закаленное стекло на дверце устойчиво к высоким температурам, царапинам и трещинам. <br>Класс энергоэффективности прибора — А. Расход воды за цикл стирки не превышает 45 л. Уровень шума при стирке составляет 53 дБ, при отжиме — 74 дБ. Есть возможность заблокировать дисплей от случайных нажатий. Вес прибора — 61 кг. <br>', 'InStock', 'Discount', 5, (SELECT "ID" FROM "Brands" WHERE "Name" = 'LG'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Стиральная машина LG AIDD F4V5VS0W'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина LG AIDD F4V5VS0W' 
+        AND a."Name" = '9' 
+        AND a."Type" = 'Максимальная загрузка'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина LG AIDD F4V5VS0W' 
+        AND a."Name" = '1400' 
+        AND a."Type" = 'Максимальная скорость отжима'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина LG AIDD F4V5VS0W' 
+        AND a."Name" = 'инверторный' 
+        AND a."Type" = 'Мотор'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина LG AIDD F4V5VS0W' 
+        AND a."Name" = 'Да' 
+        AND a."Type" = 'Обработка паром'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина LG AIDD F4V5VS0W' 
+        AND a."Name" = '85*60*56.5 см' 
+        AND a."Type" = 'Габаритные размеры (В*Ш*Г)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-lg-aidd-f4v5vs0w_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина LG AIDD F4V5VS0W'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-lg-aidd-f4v5vs0w_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина LG AIDD F4V5VS0W'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-lg-aidd-f4v5vs0w_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина LG AIDD F4V5VS0W'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-lg-aidd-f4v5vs0w_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина LG AIDD F4V5VS0W'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-lg-aidd-f4v5vs0w_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина LG AIDD F4V5VS0W'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-lg-aidd-f4v5vs0w_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина LG AIDD F4V5VS0W'));

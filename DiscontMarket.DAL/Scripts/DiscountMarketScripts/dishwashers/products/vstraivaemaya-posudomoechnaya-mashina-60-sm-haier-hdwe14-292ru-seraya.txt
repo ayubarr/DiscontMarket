@@ -1,0 +1,71 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Встраиваемая посудомоечная машина 60 см Haier HDWE14-292RU серая', 26499, 12, '/items/productimages/vstraivaemaya-posudomoechnaya-mashina-60-sm-haier-hdwe14-292ru-seraya_0.png', 4.6, '', 'Встраиваемая посудомоечная машина Haier HDWE14-292RU с регулируемыми ножками может быть установлена в нишу кухонной мебели габаритами 600-610х820-880х574 мм, Прибор относится к классу эффективности А. Он способен обработать до 14 комплектов посуды за один цикл, израсходовав до 11 л воды. Проецируемый на пол луч меняет цвет по окончании цикла работы. Предусмотрена звуковая индикация завершения программы, после чего дверца открывается автоматически, позволяя посуде высохнуть без затрат электроэнергии. 
+Моющая камера машины выполнена из нержавеющей стали и укомплектована лампой подсветки, регулируемой по высоте верхней корзиной, нижним коробом для посуды и съемным контейнером для столовых приборов. Антибактериальная обработка дверного уплотнителя и фильтра предупреждает развитие микроорганизмов и появление запахов. Верхний и нижний разбрызгиватели формируют направленные потоки воды, которые способствуют деликатному и тщательному очищению посуды от загрязнений.
+Электронная панель управления с цифровым дисплеем позволяет настраивать параметры работы модели, программировать время старта на 12 часов вперед. Предусмотрены три режима: «Авто», «Эко», «Быстрый 30 минут». Прибор работает при загрузке на 50%, поддерживает функцию «Усиленная гигиена», при которой происходит дезинфекция посуды. За безопасность отвечают блокировка от детей, защита от протечек при повреждении наливного шланга, автоотключение, самодиагностика неисправностей.', 'InStock', 'Discount', 28, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Haier'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 60 см Haier HDWE14-292RU серая'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Встраиваемая посудомоечная машина 60 см Haier HDWE14-292RU серая' 
+        AND a."Name" = '11' 
+        AND a."Type" = 'Расход воды за цикл'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Встраиваемая посудомоечная машина 60 см Haier HDWE14-292RU серая' 
+        AND a."Name" = '14 комплектов' 
+        AND a."Type" = 'Максимальная вместимость'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Встраиваемая посудомоечная машина 60 см Haier HDWE14-292RU серая' 
+        AND a."Name" = '3' 
+        AND a."Type" = 'Количество программ мойки'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Встраиваемая посудомоечная машина 60 см Haier HDWE14-292RU серая' 
+        AND a."Name" = 'стандартный' 
+        AND a."Type" = 'Мотор'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Встраиваемая посудомоечная машина 60 см Haier HDWE14-292RU серая' 
+        AND a."Name" = '878*452*579 мм' 
+        AND a."Type" = 'Размер ниши, мм (В*Ш*Г)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-60-sm-haier-hdwe14-292ru-seraya_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 60 см Haier HDWE14-292RU серая'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-60-sm-haier-hdwe14-292ru-seraya_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 60 см Haier HDWE14-292RU серая'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-60-sm-haier-hdwe14-292ru-seraya_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 60 см Haier HDWE14-292RU серая'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-60-sm-haier-hdwe14-292ru-seraya_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 60 см Haier HDWE14-292RU серая'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-60-sm-haier-hdwe14-292ru-seraya_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 60 см Haier HDWE14-292RU серая'));

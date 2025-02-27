@@ -1,0 +1,62 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Настольная электрическая плита HomeStar HS-1103', 360, 12, '/items/productimages/nastolnaya-elektricheskaya-plita-homestar-hs-1103_0.png', 4.32, '', 'Настольная электрическая плита HomeStar HS-1103 размером 7,6х21,5х23,6 см со спиральной конфоркой весит 0,65 кг и потребляет 1 кВт электроэнергии. К сети модель подсоединяется шнуром длиной 1,7 м, что дает возможность устанавливать электроприбор в любом удобном месте. Благодаря прорезиненному покрытию основания изделие не скользит по столу. 
+
+Спереди располагается механической поворотный переключатель, которым можно выбрать требуемый уровень мощности, использовать функцию поддержания заданной температуры. При перегреве устройство автоматически отключается, что увеличивает безопасность эксплуатации. Стальной корпус не боится коррозии, не деформируется от ударов и падений. Эмалированная варочная поверхность легко очищается от загрязнений.', 'InStock', 'Discount', 4, (SELECT "ID" FROM "Brands" WHERE "Name" = 'HomeStar'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Настольная электрическая плита HomeStar HS-1103'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Настольная электрическая плита HomeStar HS-1103' 
+        AND a."Name" = '1' 
+        AND a."Type" = 'Количество конфорок'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Настольная электрическая плита HomeStar HS-1103' 
+        AND a."Name" = 'спиральные' 
+        AND a."Type" = 'Тип конфорок'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Настольная электрическая плита HomeStar HS-1103' 
+        AND a."Name" = '1000' 
+        AND a."Type" = 'Потребляемая мощность'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Настольная электрическая плита HomeStar HS-1103' 
+        AND a."Name" = 'эмалированная сталь' 
+        AND a."Type" = 'Материал варочной поверхности'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Настольная электрическая плита HomeStar HS-1103' 
+        AND a."Name" = 'Да' 
+        AND a."Type" = 'Поддержание температуры'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/nastolnaya-elektricheskaya-plita-homestar-hs-1103_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Настольная электрическая плита HomeStar HS-1103'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/nastolnaya-elektricheskaya-plita-homestar-hs-1103_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Настольная электрическая плита HomeStar HS-1103'));

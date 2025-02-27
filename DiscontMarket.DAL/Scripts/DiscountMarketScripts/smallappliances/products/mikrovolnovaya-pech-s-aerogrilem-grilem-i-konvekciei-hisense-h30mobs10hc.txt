@@ -1,0 +1,91 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Микроволновая печь с аэрогрилем, грилем и конвекцией Hisense H30MOBS10HC', 17499, 11, '/items/productimages/mikrovolnovaya-pech-s-aerogrilem-grilem-i-konvekciei-hisense-h30mobs10hc_0.png', 4.11, '', 'Микроволновая печь с аэрогрилем, грилем и конвекцией Hisense H30MOBS10HC оборудована камерой объемом 30 л, внутри которой находится поворотный стол диаметром 31,5 см. 
+
+• <b>Встроенный гриль</b>
+Дает возможность получить румяную хрустящую корочку.
+
+• <b>Режим «Конвекция»</b>
+Предназначен для равномерного пропекания блюд.
+
+• <b>30 программ автоматического приготовления</b>
+Позволяют выбирать наиболее оптимальный вариант с учетом используемых ингредиентов.
+
+Цифровой дисплей отображает все данные в виде светящихся символов белого цвета. Интегрированная подсветка обеспечивает хорошую видимость рабочей зоны. Таймер помогает контролировать время приготовления. По окончании рабочего процесса срабатывает звуковой сигнал.
+
+Внутреннее покрытие из нержавеющей стали легко очищается от загрязнений посредством неабразивных моющих средств и губки. Дверца с ручкой открывается налево. Функция «Защита от детей» блокирует доступ к управлению. Часы показывают время до конца и активный режим работы. В комплект входит решетка для гриля.', 'InStock', 'Discount', 6, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Hisense'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Микроволновая печь с аэрогрилем, грилем и конвекцией Hisense H30MOBS10HC'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Микроволновая печь с аэрогрилем, грилем и конвекцией Hisense H30MOBS10HC' 
+        AND a."Name" = '30' 
+        AND a."Type" = 'Полезный объем'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Микроволновая печь с аэрогрилем, грилем и конвекцией Hisense H30MOBS10HC' 
+        AND a."Name" = '31.5' 
+        AND a."Type" = 'Диаметр поворотного стола'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Микроволновая печь с аэрогрилем, грилем и конвекцией Hisense H30MOBS10HC' 
+        AND a."Name" = 'нержавеющая сталь' 
+        AND a."Type" = 'Внутреннее покрытие'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Микроволновая печь с аэрогрилем, грилем и конвекцией Hisense H30MOBS10HC' 
+        AND a."Name" = 'сенсорный/электронный' 
+        AND a."Type" = 'Тип управления'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Микроволновая печь с аэрогрилем, грилем и конвекцией Hisense H30MOBS10HC' 
+        AND a."Name" = 'черный' 
+        AND a."Type" = 'Цвет'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-s-aerogrilem-grilem-i-konvekciei-hisense-h30mobs10hc_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь с аэрогрилем, грилем и конвекцией Hisense H30MOBS10HC'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-s-aerogrilem-grilem-i-konvekciei-hisense-h30mobs10hc_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь с аэрогрилем, грилем и конвекцией Hisense H30MOBS10HC'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-s-aerogrilem-grilem-i-konvekciei-hisense-h30mobs10hc_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь с аэрогрилем, грилем и конвекцией Hisense H30MOBS10HC'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-s-aerogrilem-grilem-i-konvekciei-hisense-h30mobs10hc_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь с аэрогрилем, грилем и конвекцией Hisense H30MOBS10HC'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-s-aerogrilem-grilem-i-konvekciei-hisense-h30mobs10hc_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь с аэрогрилем, грилем и конвекцией Hisense H30MOBS10HC'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-s-aerogrilem-grilem-i-konvekciei-hisense-h30mobs10hc_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь с аэрогрилем, грилем и конвекцией Hisense H30MOBS10HC'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-s-aerogrilem-grilem-i-konvekciei-hisense-h30mobs10hc_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь с аэрогрилем, грилем и конвекцией Hisense H30MOBS10HC'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-s-aerogrilem-grilem-i-konvekciei-hisense-h30mobs10hc_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь с аэрогрилем, грилем и конвекцией Hisense H30MOBS10HC'));

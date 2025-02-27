@@ -1,0 +1,92 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Мини-печь Oasis M-S55CW', 5060, 9, '/items/productimages/mini-pech-oasis-m-s55cw_0.png', 4.27, '', 'Электрическая мини-печь making Oasis everywhere M-S55CW — это компактное устройство, которое подойдёт для небольшой кухни. Объём камеры составляет 60 литров. Пять режимов работы: нижний нагрев, верхний нагрев, комбинированный режим (нижний и верхний нагрев), два комбинированных режима с конвекцией (верхний нагрев и конвекция/нижний, верхний и конвекция). Корпус печи выполнен в белом цвете.
+
+∙ <b>Управление с помощью механических ручек</b>
+Поворотные переключатели быстро настраивают температуру, режим и время приготовления.
+
+∙ <b>Конвекция</b>
+Блюда пропекаются равномерно.
+
+∙ <b>Термостойкое стекло</b>
+Позволяет следить за процессом приготовления.
+
+∙ <b>Внутренняя камера изготовлена из нержавеющей стали</b>
+Материал устойчив к ржавчине, перепадам температур и механическим повреждениям.
+
+∙ <b>Противоскользящие ножки</b>
+Не скользят на гладкой поверхности.
+
+Диапазон температур нагрева — от 100°С до 250°С. Таймер позволяет установить время до 90 минут. О работе печи сигнализирует световой индикатор. В комплекте с кухонным прибором идут противень, решётка, круглый поднос для пиццы и зажим для вынимания. Срок службы мини-печи making Oasis everywhere составляет 5 лет.', 'InStock', 'Discount', 6, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Oasis'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Мини-печь Oasis M-S55CW'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Мини-печь Oasis M-S55CW' 
+        AND a."Name" = '2000' 
+        AND a."Type" = 'Потребляемая мощность'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Мини-печь Oasis M-S55CW' 
+        AND a."Name" = 'отсутствует' 
+        AND a."Type" = 'Тип гриля'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Мини-печь Oasis M-S55CW' 
+        AND a."Name" = 'белый' 
+        AND a."Type" = 'Цвет'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Мини-печь Oasis M-S55CW' 
+        AND a."Name" = 'оцинкованная сталь' 
+        AND a."Type" = 'Внутреннее покрытие'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-oasis-m-s55cw_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Oasis M-S55CW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-oasis-m-s55cw_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Oasis M-S55CW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-oasis-m-s55cw_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Oasis M-S55CW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-oasis-m-s55cw_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Oasis M-S55CW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-oasis-m-s55cw_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Oasis M-S55CW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-oasis-m-s55cw_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Oasis M-S55CW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-oasis-m-s55cw_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Oasis M-S55CW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-oasis-m-s55cw_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Oasis M-S55CW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-oasis-m-s55cw_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Oasis M-S55CW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-oasis-m-s55cw_9.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Oasis M-S55CW'));

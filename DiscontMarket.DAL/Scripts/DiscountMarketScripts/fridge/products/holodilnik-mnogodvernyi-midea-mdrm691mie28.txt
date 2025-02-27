@@ -1,0 +1,69 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Холодильник многодверный Midea MDRM691MIE28', 56999, 11, '/items/productimages/holodilnik-mnogodvernyi-midea-mdrm691mie28_0.png', 4.65, '', 'Холодильник многодверный Midea MDRM691MIE28 черного цвета снабжен многофункциональной системой управления, есть возможность контролировать работу устройства удаленно. Прибор оснащен модулем Wi-Fi. Панель управления сенсорная, цветной цифровой дисплей отображает включение, режим работы, температуру в холодильной и морозильной камерах, в зоне свежести. В устройство заложены режимы «Отпуск», «Легкая заморозка», «Суперзаморозка», «Суперохлаждение». <br>Общий полезный объем модели — 530 л. Объем холодильной камеры составляет 355 л, морозильной — 175 л. Обе камеры размораживаются автоматически (No Frost).<br>Холодильная камера снабжена светодиодным освещением, на стенки нанесено антибактериальное покрытие. Продукты размещаются на четырех полка из закаленного стекла. Объем зоны быстрого охлаждения VarioBox — 25 л. В зоне свежести — два прозрачных выдвижных ящика. В морозильной камере установлены шесть выдвижных прозрачных ящиков. <br>При отключении питания устройство обеспечивает сохранность содержимого на протяжении 10 часов. Встроенный вентилятор обеспечивает равномерное распределение потоков холодного воздуха по всей камере. Система фильтрации устраняет неприятные запахов и предотвращает размножение бактерий. <br>У модели четыре распашные двери из пластика и металла, оборудованные внутренними ручками. В холодильной камере расположены шесть навесных полок для хранения бутылок, консервации и яиц. <br>Однокомпрессорная инверторная модель работает с максимальным уровнем шума в 35 дБ. В системе используется хладагент R 600А. Габариты модели — 189,8х83,3х65,3 см, вес — 94 кг. Прибор относится к классу энергоэффективности А+, за год расходует 442 кВт*ч электричества.', 'InStock', 'Discount', 3, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Midea'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Midea MDRM691MIE28'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник многодверный Midea MDRM691MIE28' 
+        AND a."Name" = 'инверторный' 
+        AND a."Type" = 'Тип компрессора'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник многодверный Midea MDRM691MIE28' 
+        AND a."Name" = '189.8*83.3*65.3 см' 
+        AND a."Type" = 'Габаритные размеры (В*Ш*Г)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник многодверный Midea MDRM691MIE28' 
+        AND a."Name" = '568' 
+        AND a."Type" = 'Общий объем'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник многодверный Midea MDRM691MIE28' 
+        AND a."Name" = 'сухая' 
+        AND a."Type" = 'Тип зоны сохранения свежести'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник многодверный Midea MDRM691MIE28' 
+        AND a."Name" = 'дистанционный/ сенсорное/ кнопочное' 
+        AND a."Type" = 'Тип управления'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-midea-mdrm691mie28_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Midea MDRM691MIE28'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-midea-mdrm691mie28_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Midea MDRM691MIE28'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-midea-mdrm691mie28_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Midea MDRM691MIE28'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-midea-mdrm691mie28_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Midea MDRM691MIE28'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-midea-mdrm691mie28_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Midea MDRM691MIE28'));

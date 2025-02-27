@@ -1,0 +1,4 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-starwind-sw-led32sg305_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Starwind SW-LED32SG305'));

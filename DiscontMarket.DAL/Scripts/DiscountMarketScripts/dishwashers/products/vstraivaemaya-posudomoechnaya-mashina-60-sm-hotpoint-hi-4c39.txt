@@ -1,0 +1,76 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Встраиваемая посудомоечная машина 60 см Hotpoint HI 4C39', 19999, 5, '/items/productimages/vstraivaemaya-posudomoechnaya-mashina-60-sm-hotpoint-hi-4c39_0.png', 4.4, '', 'Встраиваемая посудомоечная машина Hotpoint HI 4C39 белого цвета монтируется в нишу размером 87х60х56 см. В камере можно разместить до 13 комплектов посуды. 
+
+• <b>Энергоэффективность А++</b> 
+За цикл прибор расходует до 0,92 кВт*ч электричества и не более 12,8 л воды. 
+
+• <b>Пять программ</b> 
+Вода нагревается от 35°С до 70°С в зависимости от выбранного режима. Предусмотрены интенсивная мойка, предварительное ополаскивание и частичная загрузка. Минимальный цикл длится всего 30 минут. 
+
+• <b>Отсрочка на 24 часа</b> 
+Позволяет запланировать мойку посуды на удобное время сроком до одного часа до суток. 
+
+• <b>Полная защита от протечек Overflow Safety</b> 
+При возникновении чрезвычайной ситуации подача воду в камеру блокируется, что предотвращает залив помещения. 
+
+Посуда в камере размещается на двух уровнях. Предусмотрены складные держатели для тарелок, полки для кружек, корзина для столовых приборов. Вода подается из верхнего и нижнего коромысел, что обеспечивает максимально эффективную очистку предметов. Устройство поддерживает использование универсальных моющих средств «3 в 1». 
+
+За управление отвечает кнопочная панель, информация о настройках отображается на дисплее. Время до окончания процесса дублируется лучом на полу. По завершении мойки активируются звуковой и световой сигналы.', 'InStock', 'Discount', 28, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Hotpoint'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 60 см Hotpoint HI 4C39'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Встраиваемая посудомоечная машина 60 см Hotpoint HI 4C39' 
+        AND a."Name" = '12.9' 
+        AND a."Type" = 'Расход воды за цикл'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Встраиваемая посудомоечная машина 60 см Hotpoint HI 4C39' 
+        AND a."Name" = '13 комплектов' 
+        AND a."Type" = 'Максимальная вместимость'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Встраиваемая посудомоечная машина 60 см Hotpoint HI 4C39' 
+        AND a."Name" = '5' 
+        AND a."Type" = 'Количество программ мойки'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Встраиваемая посудомоечная машина 60 см Hotpoint HI 4C39' 
+        AND a."Name" = 'стандартный' 
+        AND a."Type" = 'Мотор'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Встраиваемая посудомоечная машина 60 см Hotpoint HI 4C39' 
+        AND a."Name" = '870х600х560' 
+        AND a."Type" = 'Размер ниши, мм (В*Ш*Г)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-60-sm-hotpoint-hi-4c39_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 60 см Hotpoint HI 4C39'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-60-sm-hotpoint-hi-4c39_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 60 см Hotpoint HI 4C39'));

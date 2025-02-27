@@ -1,0 +1,22 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-casarte-casf4777etac5u1_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Casarte CASF4777ETAC5U1'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-casarte-casf4777etac5u1_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Casarte CASF4777ETAC5U1'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-casarte-casf4777etac5u1_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Casarte CASF4777ETAC5U1'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-casarte-casf4777etac5u1_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Casarte CASF4777ETAC5U1'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-casarte-casf4777etac5u1_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Casarte CASF4777ETAC5U1'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-casarte-casf4777etac5u1_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Casarte CASF4777ETAC5U1'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-casarte-casf4777etac5u1_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Casarte CASF4777ETAC5U1'));

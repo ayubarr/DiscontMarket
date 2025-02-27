@@ -1,0 +1,86 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Стиральная машина Candy Rapido RO14146DWMCET-07', 35499, 5, '/items/productimages/stiralnaya-mashina-candy-rapido-ro14146dwmcet-07_0.png', 4.53, '', 'Полноразмерная стиральная машина Candy Rapido RO14146DWMCET-07 с фронтальным люком диаметром 35 см поддерживает загрузку до 14 кг белья и расходует за один рабочий цикл до 60 л воды. 
+
+• <b>Инверторный мотор</b> 
+Обеспечивает тихую (максимум 80 дБ) работу, отсутствие сильных вибраций при отжиме, способствует снижению энергопотребления (класс энергоэффективности А+++). 
+
+• <b>Простота настройки</b> 
+Блок управления прибором состоит из селектора выбора режимов и электронного программатора, который позволяет настроить температуру (20°С, 30°С, 40°С, 60°С), скорость отжима (400-1400 об/мин) и другие рабочие параметры. 
+
+• <b>Отложенный старт 0-24 часа</b> 
+Позволяет запрограммировать работу техники на нужное время с последующим автоотключением, что удобно при наличии ночного тарифа на электроэнергию. 
+
+• <b>14 рабочих программ</b> 
+Поддерживается стирка хлопковых, смешанных, синтетических, деликатных тканей, спортивных вещей, ЭКО (14 минут, 30 минут, 44 минуты), обработка паром, интенсивный и другие полезные режимы. 
+
+После определения уровня загрузки машина автоматически оптимизирует продолжительность стирки. За безопасность техники отвечают блокировка от непреднамеренного включения, контроль дисбаланса и пенообразования, защита от протечек.', 'InStock', 'Discount', 5, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Candy'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Стиральная машина Candy Rapido RO14146DWMCET-07'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина Candy Rapido RO14146DWMCET-07' 
+        AND a."Name" = '14' 
+        AND a."Type" = 'Максимальная загрузка'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина Candy Rapido RO14146DWMCET-07' 
+        AND a."Name" = '1400' 
+        AND a."Type" = 'Максимальная скорость отжима'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина Candy Rapido RO14146DWMCET-07' 
+        AND a."Name" = 'инверторный' 
+        AND a."Type" = 'Мотор'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина Candy Rapido RO14146DWMCET-07' 
+        AND a."Name" = 'Да' 
+        AND a."Type" = 'Обработка паром'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина Candy Rapido RO14146DWMCET-07' 
+        AND a."Name" = '85*60*68 см' 
+        AND a."Type" = 'Габаритные размеры (В*Ш*Г)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-candy-rapido-ro14146dwmcet-07_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Candy Rapido RO14146DWMCET-07'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-candy-rapido-ro14146dwmcet-07_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Candy Rapido RO14146DWMCET-07'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-candy-rapido-ro14146dwmcet-07_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Candy Rapido RO14146DWMCET-07'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-candy-rapido-ro14146dwmcet-07_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Candy Rapido RO14146DWMCET-07'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-candy-rapido-ro14146dwmcet-07_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Candy Rapido RO14146DWMCET-07'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-candy-rapido-ro14146dwmcet-07_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Candy Rapido RO14146DWMCET-07'));

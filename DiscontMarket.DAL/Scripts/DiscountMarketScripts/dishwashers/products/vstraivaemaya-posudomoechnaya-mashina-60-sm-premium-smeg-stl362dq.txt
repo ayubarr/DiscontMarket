@@ -1,0 +1,81 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Встраиваемая посудомоечная машина 60 см Премиум Smeg STL362DQ', 42799, 15, '/items/productimages/vstraivaemaya-posudomoechnaya-mashina-60-sm-premium-smeg-stl362dq_0.png', 4.58, '', 'Посудомоечная машина Smeg STL362DQ подключается к системе холодного или горячего водоснабжения и обрабатывает за один цикл до 14 комплектов посуды, расходуя около 10,5 л воды. Модель подлежит встраиванию в нишу размерами 90 х 60 х 55 см и закрывается декоративной дверцей, не нарушая дизайн кухни, выдержанный в едином стиле. Крепление фасада слайдерное. Управление функциями осуществляется с помощью сенсорной панели Soft Touch, которая позволяет запрограммировать отсрочку включения (1–24 часа), отображает длительность программы и время до окончания цикла, информирует об отсутствии соли и ополаскивателя.<br><br>• <b>Инверторный мотор</b><br>Обеспечивает тихую и стабильную работу Smeg STL362DQ , уровень шума не превышает 46 дБ.<br><br>• <b>Программа замачивания</b><br>Предназначена для кухонной и столовой посуды, ожидающей завершения загрузки. Предполагает предварительное мытье холодной водой.<br><br>• <b>Три корзины для размещения посуды</b><br>В камере расположены регулируемая по высоте верхняя корзина с одним складным держателем и нижняя корзина с двумя складными полками. Предусмотрен держатель для бокалов.<br><br>• <b>Семь стандартных программ</b><br>Установленные программы — «Full express» (60 минут), «Express 50°», «Eco», «Интенсивная 60°», «Смешанная 60°», «Авто 50°-60°», «Самоочистка» в пяти температурных режимах (45°С, 50°С, 55°С, 65°С, 70°С).<br><br>• <b>Конденсационная сушка</b><br>Происходит без энергозатрат путем испарения влаги с посуды после последнего ополаскивания горячей водой. Dry Assist улучшает результаты сушки: на финальном этапе дверца автоматически приоткрывается и остается в таком положении.<br><br>Предусмотрена электронная регулировка смягчения воды. Технология AquaStop обеспечивает полную защиту от протечек.', 'InStock', 'Discount', 28, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Smeg'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 60 см Премиум Smeg STL362DQ'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Встраиваемая посудомоечная машина 60 см Премиум Smeg STL362DQ' 
+        AND a."Name" = '10.5' 
+        AND a."Type" = 'Расход воды за цикл'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Встраиваемая посудомоечная машина 60 см Премиум Smeg STL362DQ' 
+        AND a."Name" = '14 комплектов' 
+        AND a."Type" = 'Максимальная вместимость'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Встраиваемая посудомоечная машина 60 см Премиум Smeg STL362DQ' 
+        AND a."Name" = '8' 
+        AND a."Type" = 'Количество программ мойки'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Встраиваемая посудомоечная машина 60 см Премиум Smeg STL362DQ' 
+        AND a."Name" = 'инверторный' 
+        AND a."Type" = 'Мотор'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Встраиваемая посудомоечная машина 60 см Премиум Smeg STL362DQ' 
+        AND a."Name" = '90*60*55' 
+        AND a."Type" = 'Размер ниши, мм (В*Ш*Г)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-60-sm-premium-smeg-stl362dq_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 60 см Премиум Smeg STL362DQ'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-60-sm-premium-smeg-stl362dq_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 60 см Премиум Smeg STL362DQ'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-60-sm-premium-smeg-stl362dq_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 60 см Премиум Smeg STL362DQ'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-60-sm-premium-smeg-stl362dq_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 60 см Премиум Smeg STL362DQ'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-60-sm-premium-smeg-stl362dq_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 60 см Премиум Smeg STL362DQ'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-60-sm-premium-smeg-stl362dq_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 60 см Премиум Smeg STL362DQ'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-60-sm-premium-smeg-stl362dq_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 60 см Премиум Smeg STL362DQ'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-60-sm-premium-smeg-stl362dq_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 60 см Премиум Smeg STL362DQ'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-60-sm-premium-smeg-stl362dq_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 60 см Премиум Smeg STL362DQ'));

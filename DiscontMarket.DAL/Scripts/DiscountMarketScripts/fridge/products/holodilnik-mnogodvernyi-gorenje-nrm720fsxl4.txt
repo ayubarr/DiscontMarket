@@ -1,0 +1,86 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Холодильник многодверный Gorenje NRM720FSXL4', 69999, 7, '/items/productimages/holodilnik-mnogodvernyi-gorenje-nrm720fsxl4_0.png', 4.7, '', 'Холодильник Gorenje NRM720FSXL4 в корпусе серебристого цвета — двухкамерный. Модель относится к высшему классу энергопотребления — А+ и в год расходует около 328 кВт*ч. Морозильное отделение находится снизу. Дверцы холодильника изготовлены из ламинированной стали, они перенавешиваемые.
+Полезный объем холодильного отделения составляет 326 л, морозильного отсека — 114 л. Внутри холодильного отсека предусмотрено несколько полок и контейнер CrispZone для хранения овощей и фруктов с контролем влажности HumidityControl. При открывании дверцы загорается встроенная подсветка. В морозильном отделении — два ящика. Мощность замораживания — 10 кг в сутки. Присутствует функция быстрой заморозки. Размораживание обоих отсеков автоматическое — No Frost. Холодильник сохраняет заданную температуру в течение 10 часов с момента отключения от электросети. 
+Управление прибором электронное. Предусмотрен встроенный цифровой дисплей. Присутствует сигнализация открытой дверцы. За счет системы Multiflow 360° осуществляется многопоточная 3D-подача воздуха. Компрессор у холодильника инверторный. Кухонный прибор заправлен хладагентом R600A.', 'InStock', 'Discount', 3, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Gorenje'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Gorenje NRM720FSXL4'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник многодверный Gorenje NRM720FSXL4' 
+        AND a."Name" = 'инверторный' 
+        AND a."Type" = 'Тип компрессора'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник многодверный Gorenje NRM720FSXL4' 
+        AND a."Name" = '200*70.4*69.4 см' 
+        AND a."Type" = 'Габаритные размеры (В*Ш*Г)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник многодверный Gorenje NRM720FSXL4' 
+        AND a."Name" = '513' 
+        AND a."Type" = 'Общий объем'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник многодверный Gorenje NRM720FSXL4' 
+        AND a."Name" = 'влажная' 
+        AND a."Type" = 'Тип зоны сохранения свежести'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник многодверный Gorenje NRM720FSXL4' 
+        AND a."Name" = 'сенсорный' 
+        AND a."Type" = 'Тип управления'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-gorenje-nrm720fsxl4_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Gorenje NRM720FSXL4'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-gorenje-nrm720fsxl4_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Gorenje NRM720FSXL4'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-gorenje-nrm720fsxl4_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Gorenje NRM720FSXL4'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-gorenje-nrm720fsxl4_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Gorenje NRM720FSXL4'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-gorenje-nrm720fsxl4_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Gorenje NRM720FSXL4'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-gorenje-nrm720fsxl4_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Gorenje NRM720FSXL4'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-gorenje-nrm720fsxl4_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Gorenje NRM720FSXL4'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-gorenje-nrm720fsxl4_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Gorenje NRM720FSXL4'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-gorenje-nrm720fsxl4_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Gorenje NRM720FSXL4'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-gorenje-nrm720fsxl4_9.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Gorenje NRM720FSXL4'));

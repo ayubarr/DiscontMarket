@@ -1,0 +1,92 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Холодильник с нижней морозильной камерой Indesit DS 4160 G', 16749, 10, '/items/productimages/holodilnik-s-nizhnei-morozilnoi-kameroi-indesit-ds-4160-g_0.png', 4.8, '', 'Холодильник Indesit DS 4160 G — модель двухкамерного типа в корпусе серебристого цвета, обладающая общим объемом 291 л, из которого 182 л выделено на основной отсек и 87 л на морозильник. Устройство характеризуется экономичным потреблением энергии (класс А) с показателем 324 кВт*ч за год. При неожиданном отключении электричества холод сохраняется до 15 часов. В комплекте поставляются лоток для льда и подставка для яиц (1х10).
+
+• <b>Удобная конструкция</b>
+Полки произведены из закаленного стекла высокого качества. За счет оптимальной толщины материал может выдерживать нагрузку до 100 кг, что дает возможность хранить на полке тяжелую посуду.
+
+• <b>Перенавешиваемые двери</b>
+Доступен выбор максимально удобного положения дверей для обеспечения удобства эксплуатации устройства вне зависимости от планировки кухни.
+
+В основе работы лежит стандартный компрессор. Используемый хладагент — R600a отличается невысоким рабочим давлением, поэтому выдает низкий уровень шума (39 дБ). Встроенная лампа накаливания хорошо освещает внутреннюю часть отделений. Управление производится посредством механических переключателей.', 'InStock', 'Discount', 3, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Indesit'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Холодильник с нижней морозильной камерой Indesit DS 4160 G'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник с нижней морозильной камерой Indesit DS 4160 G' 
+        AND a."Name" = 'стандартный' 
+        AND a."Type" = 'Тип компрессора'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник с нижней морозильной камерой Indesit DS 4160 G' 
+        AND a."Name" = '167' 
+        AND a."Type" = 'Высота'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник с нижней морозильной камерой Indesit DS 4160 G' 
+        AND a."Name" = '60' 
+        AND a."Type" = 'Ширина'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник с нижней морозильной камерой Indesit DS 4160 G' 
+        AND a."Name" = '62' 
+        AND a."Type" = 'Глубина'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник с нижней морозильной камерой Indesit DS 4160 G' 
+        AND a."Name" = '291' 
+        AND a."Type" = 'Общий объем'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-s-nizhnei-morozilnoi-kameroi-indesit-ds-4160-g_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник с нижней морозильной камерой Indesit DS 4160 G'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-s-nizhnei-morozilnoi-kameroi-indesit-ds-4160-g_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник с нижней морозильной камерой Indesit DS 4160 G'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-s-nizhnei-morozilnoi-kameroi-indesit-ds-4160-g_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник с нижней морозильной камерой Indesit DS 4160 G'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-s-nizhnei-morozilnoi-kameroi-indesit-ds-4160-g_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник с нижней морозильной камерой Indesit DS 4160 G'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-s-nizhnei-morozilnoi-kameroi-indesit-ds-4160-g_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник с нижней морозильной камерой Indesit DS 4160 G'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-s-nizhnei-morozilnoi-kameroi-indesit-ds-4160-g_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник с нижней морозильной камерой Indesit DS 4160 G'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-s-nizhnei-morozilnoi-kameroi-indesit-ds-4160-g_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник с нижней морозильной камерой Indesit DS 4160 G'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-s-nizhnei-morozilnoi-kameroi-indesit-ds-4160-g_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник с нижней морозильной камерой Indesit DS 4160 G'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-s-nizhnei-morozilnoi-kameroi-indesit-ds-4160-g_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник с нижней морозильной камерой Indesit DS 4160 G'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-s-nizhnei-morozilnoi-kameroi-indesit-ds-4160-g_9.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник с нижней морозильной камерой Indesit DS 4160 G'));

@@ -1,0 +1,60 @@
+﻿INSERT INTO "Products" 
+("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription",
+"Availability", "Status", "CategoryID", "BrandID", "UserID") 
+VALUES
+ ('Телевизор Samsung QE65QN90CAUXCE', 118444, 8, '/items/productimages/televizor-samsung-qe65qn90cauxce_0.png', 4.65, '', 'Телевизор Samsung QE65QN90CAUXCE работает на базе операционной системы Tizen. Устройство оборудовано 65-дюймовым экраном (163 см) формата 16:9, на котором отображается картинка с разрешением 3840x2160 пикселей (4K Ultra HD). Подсветка Neo QLED гарантирует вывод сочного, детализированного изображения. Поддержка технологии HDR обеспечивает получение глубоких и насыщенных оттенков. Частота обновления составляет 120 Гц, что предотвращает появление зависаний в динамичных сценах. Система цифровое шумоподавления убирает все недостатки с картинки. За высокую производительность отвечает процессор Neo Quantum 4K.
+
+При необходимости возможно воспроизведение видео через USB. За счет поддержки Smart TV открывается доступ к онлайн-платформам для скачивания разных приложений, просмотра фильмов, сериалов. Управление может осуществляться посредством голосовых команд или пульта ДУ. Опция «Защита от детей» закрывает доступ к случайному изменению заданных параметров. Функция «Телетекст» обеспечивает выдачу сгруппированных на тематические разделы информацию в виде текста и простых картинок. За счет опции Time Shift можно поставить на паузу программу для просмотра в любое удобное время.
+
+Акустическая система Adaptive Sound версии 4.2.2 общей мощностью 60 Вт формирует громкий и объемный звук. Модуль Wi-Fi гарантирует быстрое подключение к интернету. Для синхронизации внешних устройств можно использовать Bluetooth-соединение версии 5.2. Установка на стену производится на кронштейн VESA400x300.', 'InStock', 'Discount', 1, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Samsung'), 1);
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung QE65QN90CAUXCE'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '4K Ultra HD (3840x2160 Пикс)' AND "Type" = 'Экран));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung QE65QN90CAUXCE'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '65' AND "Type" = 'Диагональ));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung QE65QN90CAUXCE'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '120' AND "Type" = 'Частота обновления));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung QE65QN90CAUXCE'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'QLED' AND "Type" = 'Технология экрана));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung QE65QN90CAUXCE'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'OLED' AND "Type" = 'Тип светодиодной подсветки));
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-samsung-qe65qn90cauxce_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung QE65QN90CAUXCE'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-samsung-qe65qn90cauxce_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung QE65QN90CAUXCE'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-samsung-qe65qn90cauxce_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung QE65QN90CAUXCE'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-samsung-qe65qn90cauxce_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung QE65QN90CAUXCE'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-samsung-qe65qn90cauxce_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung QE65QN90CAUXCE'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-samsung-qe65qn90cauxce_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung QE65QN90CAUXCE'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-samsung-qe65qn90cauxce_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung QE65QN90CAUXCE'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-samsung-qe65qn90cauxce_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung QE65QN90CAUXCE'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-samsung-qe65qn90cauxce_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung QE65QN90CAUXCE'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-samsung-qe65qn90cauxce_9.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung QE65QN90CAUXCE'));

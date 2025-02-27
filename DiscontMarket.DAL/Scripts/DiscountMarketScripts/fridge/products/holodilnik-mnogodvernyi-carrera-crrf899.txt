@@ -1,0 +1,63 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Холодильник многодверный Carrera CRRF899', 64999, 11, '/items/productimages/holodilnik-mnogodvernyi-carrera-crrf899_0.png', 4.39, '', 'Холодильник Carrera CRRF899 обладает общим полезным объемом 502 л. В основе системы охлаждения — инверторный компрессор, который отличается экономичным энергопотреблением класса А+ — в год расходуется 426 кВт*ч. Уровень шума не превышает 37 дБ. <br><br>• <b>Глубина — 60 см</b><br>Прибор встанет в ряд со стандартными кухонными модулями. <br><br>• <b>Дополнительные режимы работы</b><br>ECO помогает экономить электроэнергию — в холодильной камере поддерживается температура 5°С, в морозильной — -18°С. «Быстрое охлаждение» и «Быстрая заморозка» позволяют быстро и равномерно охладить до 2°С или заморозить продукты, сохранив их текстуру, вкусовые качества и питательные свойства. Температура в первом случае поддерживается на уровне 2°С, во втором — опускается до -32°С. <br><br>• <b>Три съемных ящика зоны свежести</b><br>Во всех ящиках можно отрегулировать уровень влажности. Для правого нижнего ящика можно выбрать один из трех режимов, которые позволят хранить овощи и зелень, фрукты и ягоды, свежее мясо и рыбу в оптимальных условиях. <br><br>Холодильник работает на основе технологии Total No Frost — инея и наледи не образуется, ручного размораживания не требуется. О слишком долго открытой двери оповещает звуковой сигнал. Управление электронное, дисплей вынесен на фасадную сторону. При отключении электропитания низкая внутренняя температура будет сохраняться в течение 16 часов.', 'InStock', 'Discount', 3, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Carrera'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Carrera CRRF899'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник многодверный Carrera CRRF899' 
+        AND a."Name" = 'инверторный' 
+        AND a."Type" = 'Тип компрессора'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник многодверный Carrera CRRF899' 
+        AND a."Name" = '502' 
+        AND a."Type" = 'Общий объем'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник многодверный Carrera CRRF899' 
+        AND a."Name" = 'влажная' 
+        AND a."Type" = 'Тип зоны сохранения свежести'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник многодверный Carrera CRRF899' 
+        AND a."Name" = 'электронный' 
+        AND a."Type" = 'Тип управления'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник многодверный Carrera CRRF899' 
+        AND a."Name" = 'пластик/ металл' 
+        AND a."Type" = 'Материал двери'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-carrera-crrf899_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Carrera CRRF899'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-carrera-crrf899_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Carrera CRRF899'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-carrera-crrf899_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Carrera CRRF899'));

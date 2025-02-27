@@ -1,0 +1,19 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-horizont-32le7052d_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Horizont 32LE7052D'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-horizont-32le7052d_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Horizont 32LE7052D'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-horizont-32le7052d_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Horizont 32LE7052D'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-horizont-32le7052d_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Horizont 32LE7052D'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-horizont-32le7052d_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Horizont 32LE7052D'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-horizont-32le7052d_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Horizont 32LE7052D'));

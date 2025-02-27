@@ -1,0 +1,22 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-liebherr-cnsff-5703-22-001_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Liebherr CNsff 5703-22 001'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-liebherr-cnsff-5703-22-001_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Liebherr CNsff 5703-22 001'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-liebherr-cnsff-5703-22-001_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Liebherr CNsff 5703-22 001'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-liebherr-cnsff-5703-22-001_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Liebherr CNsff 5703-22 001'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-liebherr-cnsff-5703-22-001_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Liebherr CNsff 5703-22 001'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-liebherr-cnsff-5703-22-001_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Liebherr CNsff 5703-22 001'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-liebherr-cnsff-5703-22-001_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Liebherr CNsff 5703-22 001'));

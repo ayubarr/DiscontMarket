@@ -1,0 +1,7 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-korting-knfc-71928-gn_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Korting KNFC 71928 GN'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-korting-knfc-71928-gn_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Korting KNFC 71928 GN'));

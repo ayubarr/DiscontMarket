@@ -1,0 +1,81 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Холодильник (Side-by-Side) Samsung RS62R50312C/WT', 119999, 10, '/items/productimages/holodilnik-side-by-side-samsung-rs62r50312c-wt_0.png', 4.5, '', 'Холодильник Samsung RS62R50312C/WT в корпусе черного цвета выполнен по технологии Side-by-Side: оборудован двумя распашными дверями из металла и стекла. В этой модели реализована система охлаждения No Frost, предотвращает образование инея и наледи. Это избавляет от ручной разморозки. <br>Холодильное отделение емкостью 418 л снабжено четырьмя полками, двумя контейнерами для овощей и фруктов, на двери — пять карманов для бутылок и мелких продуктов. Морозильный отсек объемом 229 расположен вертикально. Продукты размещаются на четырех полках, в двух ящиках и пяти дверных карманах. Предусмотрен ледогенератор. Производительность камеры составляет 14 кг/сутки. <br>Прибор обладает классом энергоэффективности А+ благодаря малому расходу электричества — всего 420 кВт*ч в год. При аварийном отключении питания продукты можно хранить в течение 10 часов. При долго открытой двери раздается звуковой сигнал. Управление обеспечивает сенсорный дисплей, на котором отображаются выбранный режим, температура в каждой камере. Предусмотрен блокиратор от случайной смены настроек. <br>В обоих отделениях установлено светодиодное освещение и фильтры, устраняющие неприятные запахи. Инверторный компрессор обеспечивает тихую работу холодильника: уровень шума не превышает 41 дБ. Габариты модели — 178х91,2х71,6 см, вес — 101 кг.', 'InStock', 'Discount', 3, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Samsung'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Холодильник (Side-by-Side) Samsung RS62R50312C/WT'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник (Side-by-Side) Samsung RS62R50312C/WT' 
+        AND a."Name" = 'инверторный' 
+        AND a."Type" = 'Тип компрессора'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник (Side-by-Side) Samsung RS62R50312C/WT' 
+        AND a."Name" = '178*91.2*71.6 см' 
+        AND a."Type" = 'Габаритные размеры (В*Ш*Г)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник (Side-by-Side) Samsung RS62R50312C/WT' 
+        AND a."Name" = '680' 
+        AND a."Type" = 'Общий объем'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник (Side-by-Side) Samsung RS62R50312C/WT' 
+        AND a."Name" = 'электронный' 
+        AND a."Type" = 'Тип управления'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник (Side-by-Side) Samsung RS62R50312C/WT' 
+        AND a."Name" = 'металл' 
+        AND a."Type" = 'Материал двери'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-side-by-side-samsung-rs62r50312c-wt_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник (Side-by-Side) Samsung RS62R50312C/WT'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-side-by-side-samsung-rs62r50312c-wt_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник (Side-by-Side) Samsung RS62R50312C/WT'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-side-by-side-samsung-rs62r50312c-wt_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник (Side-by-Side) Samsung RS62R50312C/WT'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-side-by-side-samsung-rs62r50312c-wt_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник (Side-by-Side) Samsung RS62R50312C/WT'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-side-by-side-samsung-rs62r50312c-wt_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник (Side-by-Side) Samsung RS62R50312C/WT'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-side-by-side-samsung-rs62r50312c-wt_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник (Side-by-Side) Samsung RS62R50312C/WT'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-side-by-side-samsung-rs62r50312c-wt_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник (Side-by-Side) Samsung RS62R50312C/WT'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-side-by-side-samsung-rs62r50312c-wt_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник (Side-by-Side) Samsung RS62R50312C/WT'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-side-by-side-samsung-rs62r50312c-wt_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник (Side-by-Side) Samsung RS62R50312C/WT'));

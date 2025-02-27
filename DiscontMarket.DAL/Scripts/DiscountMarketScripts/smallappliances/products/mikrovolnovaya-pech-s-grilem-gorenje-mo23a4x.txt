@@ -1,0 +1,66 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Микроволновая печь с грилем Gorenje MO23A4X', 7599, 11, '/items/productimages/mikrovolnovaya-pech-s-grilem-gorenje-mo23a4x_0.png', 4.33, '', 'Микроволновая печь Gorenje MO23A4X предоставит вам самые широкие возможности по приготовлению пищи. Вы сможете самостоятельно вводить нужные настройки (доступно пять уровней мощности) или выбрать автоматическую программу.<br><br>ЭКОНОМИТ ВРЕМЯ<br>Задайте тип и вес продукта, всё остальное прибор сделает за вас. Желаете получить блюда с хрустящей корочкой? Используйте гриль, причём для ускорения процесса его можно комбинировать с микроволнами. В комплект поставки входит решётка для жарки. Не нужно ждать, когда заготовки из морозилки оттают: вам поможет функция «Размораживание». <br><br>ПРОСТОЙ УХОД<br>Объём камеры устройства – 23 литра, диаметр поворотного стола – 27 см. Этого вполне достаточно, чтобы приготовить, например, средних размеров пиццу. Стенки покрыты гладкой эмалью и легко очищаются: поместите в печь ёмкость с водой (около 200 мл) и активируйте режим AquaClean. Вам останется только удалить размягчённые загрязнения при помощи салфетки.<br><br>НАГЛЯДНО И УДОБНО<br>У Gorenje MO23A4X электронная панель управления, снабжённая цифровым дисплеем, который отображает время, оставшееся до конца программы. Таймер устанавливается на срок до 60 минут. Звуковой сигнал позовёт вас к столу, когда всё будет готово. При желании его можно отключить.', 'InStock', 'Discount', 6, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Gorenje'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Микроволновая печь с грилем Gorenje MO23A4X'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Микроволновая печь с грилем Gorenje MO23A4X' 
+        AND a."Name" = '23' 
+        AND a."Type" = 'Полезный объем'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Микроволновая печь с грилем Gorenje MO23A4X' 
+        AND a."Name" = '27' 
+        AND a."Type" = 'Диаметр поворотного стола'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Микроволновая печь с грилем Gorenje MO23A4X' 
+        AND a."Name" = 'эмалированный металл' 
+        AND a."Type" = 'Внутреннее покрытие'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Микроволновая печь с грилем Gorenje MO23A4X' 
+        AND a."Name" = 'электронный' 
+        AND a."Type" = 'Тип управления'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Микроволновая печь с грилем Gorenje MO23A4X' 
+        AND a."Name" = 'нержавеющая сталь' 
+        AND a."Type" = 'Цвет'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-s-grilem-gorenje-mo23a4x_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь с грилем Gorenje MO23A4X'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-s-grilem-gorenje-mo23a4x_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь с грилем Gorenje MO23A4X'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-s-grilem-gorenje-mo23a4x_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь с грилем Gorenje MO23A4X'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-s-grilem-gorenje-mo23a4x_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь с грилем Gorenje MO23A4X'));

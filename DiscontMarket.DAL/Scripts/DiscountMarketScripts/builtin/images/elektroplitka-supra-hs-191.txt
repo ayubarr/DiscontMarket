@@ -1,0 +1,13 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/elektroplitka-supra-hs-191_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Электроплитка Supra HS-191'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/elektroplitka-supra-hs-191_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Электроплитка Supra HS-191'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/elektroplitka-supra-hs-191_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Электроплитка Supra HS-191'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/elektroplitka-supra-hs-191_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Электроплитка Supra HS-191'));

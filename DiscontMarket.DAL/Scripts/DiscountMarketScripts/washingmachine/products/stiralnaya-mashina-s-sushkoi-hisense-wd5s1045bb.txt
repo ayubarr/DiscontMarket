@@ -1,0 +1,94 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Стиральная машина с сушкой Hisense WD5S1045BB', 59499, 18, '/items/productimages/stiralnaya-mashina-s-sushkoi-hisense-wd5s1045bb_0.png', 4.12, '', 'Стиральная машина с сушкой Hisense WD5S1045BB, черная, оснащена барабаном объемом 66 л, который вмещает до 10,5 кг белья для стирки и до 6 кг — для сушки. Модель полноразмерная, ее габариты — 59,5х59х84,5 см, вес — 70 кг.
+
+• <b>Автоматическое дозирование</b>
+Машина самостоятельно подбирает оптимальное количество моющего средства в зависимости от загрузки и выбранной программы 
+
+• <b>Обработка паром SteamTech</b>
+Уничтожает бактерии, нейтрализует запахи, способствует уменьшению складок и облегчает глажение. 
+
+• <b>Инверторный мотор Inverter PowerDrive</b>
+Отличается надежностью, экономичным энергопотреблением класса А и сниженным уровнем шума: при стирке он достигает 57 дБ, при сушке — 72 дБ, при отжиме — 72 дБ. 
+
+• <b>Управление по Wi-Fi</b>
+Контролировать работу стиральной машины можно со смартфона, используя приложение ConnectLife. 
+
+Предустановлены программы для хлопка, шерсти, синтетики, смешанных тканей, детской одежды, пуховиков и другие. Для слабозагрязненного белья предусмотрена быстрая стирка, справиться с серьезными загрязнениями поможет добавление к основной программе предварительной стирки. Режим «Антиаллергия» особенно эффективно обрабатывает вещи, устраняя бактерии и остатки моющих средств. Сушку можно настраивать по остаточной влажности. 
+
+Максимальная скорость отжима — 1400 об/мин. Поддерживается функция дозагрузки: дает возможность добавлять белье в барабан уже после начала цикла. Безопасность использования гарантируется системой защиты от перелива и протечек.', 'InStock', 'Discount', 5, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Hisense'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Стиральная машина с сушкой Hisense WD5S1045BB'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина с сушкой Hisense WD5S1045BB' 
+        AND a."Name" = '10.5' 
+        AND a."Type" = 'Максимальная загрузка'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина с сушкой Hisense WD5S1045BB' 
+        AND a."Name" = '1400' 
+        AND a."Type" = 'Максимальная скорость отжима'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина с сушкой Hisense WD5S1045BB' 
+        AND a."Name" = 'инверторный' 
+        AND a."Type" = 'Мотор'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина с сушкой Hisense WD5S1045BB' 
+        AND a."Name" = 'Да' 
+        AND a."Type" = 'Смартфон в качестве пульта ДУ'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина с сушкой Hisense WD5S1045BB' 
+        AND a."Name" = 'Да' 
+        AND a."Type" = 'Обработка паром'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-s-sushkoi-hisense-wd5s1045bb_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина с сушкой Hisense WD5S1045BB'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-s-sushkoi-hisense-wd5s1045bb_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина с сушкой Hisense WD5S1045BB'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-s-sushkoi-hisense-wd5s1045bb_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина с сушкой Hisense WD5S1045BB'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-s-sushkoi-hisense-wd5s1045bb_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина с сушкой Hisense WD5S1045BB'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-s-sushkoi-hisense-wd5s1045bb_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина с сушкой Hisense WD5S1045BB'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-s-sushkoi-hisense-wd5s1045bb_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина с сушкой Hisense WD5S1045BB'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-s-sushkoi-hisense-wd5s1045bb_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина с сушкой Hisense WD5S1045BB'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-s-sushkoi-hisense-wd5s1045bb_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина с сушкой Hisense WD5S1045BB'));

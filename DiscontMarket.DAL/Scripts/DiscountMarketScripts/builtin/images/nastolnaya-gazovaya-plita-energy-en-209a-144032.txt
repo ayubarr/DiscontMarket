@@ -1,0 +1,4 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/nastolnaya-gazovaya-plita-energy-en-209a-144032_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Настольная газовая плита Energy EN-209A 144032'));

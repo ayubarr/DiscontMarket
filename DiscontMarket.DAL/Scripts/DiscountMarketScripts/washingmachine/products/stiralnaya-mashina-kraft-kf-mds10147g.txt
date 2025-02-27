@@ -1,0 +1,99 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Стиральная машина Kraft KF-MDS10147G', 22895, 12, '/items/productimages/stiralnaya-mashina-kraft-kf-mds10147g_0.png', 4.7, '', 'Стиральная машина Kraft KF-MDS10147G, серая, оснащена барабаном объемом 55 л, который вмещает до 10 кг белья. Инверторный мотор отличается экономичным энергопотреблением, соответствующим классу А+++, за цикл расходуется 0,9 кВт*ч и 60 л воды. Уровень шума при стирке достигает 58 дБ, при отжиме не превышает 74 дБ. 
+
+Широкий выбор программ (15) позволяет стирать практически все: постельное белье, верхнюю одежду, пуховые изделия, рубашки и блузы, детские вещи и многое другое. Для слобозагрязненного белья доступен цикл «Быстрый», который длится всего 15 минут. Доступна обработка паром: он дезинфицирует, устраняет запахи, разрыхляет белье и облегчает глажение. Поддерживается дозагрузка: вещи можно добавить в барабан уже после начала стирки. Функция «Автоочистка барабана» устранит жировые отложения и другие загрязнения, предотвратит появление плесени. 
+
+У этой модели электромеханическое управление: поворотный элемент для выбора программ и сенсорный дисплей. С их помощью регулируется температура нагрева (до 90°C), скорость отжима (до 1400 об/мин), программируется таймер отложенного старта (до 24 часов). Индикация отображает все параметры работы, включая продолжительность цикла и его этапы. О завершении программы оповещает звуковой сигнал. 
+
+Машина снабжена системой защиты от протечек, контролирует баланс барабана и уровень образования пены. Доступ к настройкам можно заблокировать — это может пригодиться семьям с маленькими детьми.', 'InStock', 'Discount', 5, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Kraft'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Стиральная машина Kraft KF-MDS10147G'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина Kraft KF-MDS10147G' 
+        AND a."Name" = '10' 
+        AND a."Type" = 'Максимальная загрузка'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина Kraft KF-MDS10147G' 
+        AND a."Name" = '1400' 
+        AND a."Type" = 'Максимальная скорость отжима'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина Kraft KF-MDS10147G' 
+        AND a."Name" = 'инверторный' 
+        AND a."Type" = 'Мотор'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина Kraft KF-MDS10147G' 
+        AND a."Name" = 'Да' 
+        AND a."Type" = 'Обработка паром'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина Kraft KF-MDS10147G' 
+        AND a."Name" = '84*60*58 см' 
+        AND a."Type" = 'Габаритные размеры (В*Ш*Г)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-kraft-kf-mds10147g_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Kraft KF-MDS10147G'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-kraft-kf-mds10147g_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Kraft KF-MDS10147G'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-kraft-kf-mds10147g_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Kraft KF-MDS10147G'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-kraft-kf-mds10147g_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Kraft KF-MDS10147G'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-kraft-kf-mds10147g_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Kraft KF-MDS10147G'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-kraft-kf-mds10147g_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Kraft KF-MDS10147G'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-kraft-kf-mds10147g_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Kraft KF-MDS10147G'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-kraft-kf-mds10147g_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Kraft KF-MDS10147G'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-kraft-kf-mds10147g_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Kraft KF-MDS10147G'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-kraft-kf-mds10147g_9.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Kraft KF-MDS10147G'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-kraft-kf-mds10147g_10.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Kraft KF-MDS10147G'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-kraft-kf-mds10147g_11.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Kraft KF-MDS10147G'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-kraft-kf-mds10147g_12.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Kraft KF-MDS10147G'));

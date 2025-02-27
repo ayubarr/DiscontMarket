@@ -1,0 +1,81 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Встраиваемая посудомоечная машина 60 см Smeg STL323BQLH', 74999, 10, '/items/productimages/vstraivaemaya-posudomoechnaya-mashina-60-sm-smeg-stl323bqlh_0.png', 4.82, '', 'Smeg STL323BQLH – встраиваемая посудомоечная машина шириной 60 см, вмещающая 14 комплектов столовых принадлежностей. Модель снимет с вас часть бытовых хлопот и подарит драгоценное свободное время. 
+
+ОТЛИЧНОЕ ОСНАЩЕНИЕ
+Высота короба регулируется, поэтому вы без проблем разместите там большие кастрюли, сковороды и формы для запекания. Третий уровень загрузки предназначен для ложек, вилок и ножей. Для тарелок предусмотрены складные держатели, а для изделий из тонкого стекла – мягкие силиконовые выступы. 
+
+УДОБНЫЙ КОНТРОЛЬ
+Устройство оснащено электронной панелью управления с наглядным LED-дисплеем. С помощью неё вы парой прикосновений активируете одну из 11 программ и запустите таймер отложенного старта. О том, что прибор в данный момент работает, укажет яркий индикатор – «‎Луч на полу».
+
+ГЛАВНАЯ ДЕТАЛЬ
+Машина снабжена производительным инверторным двигателем. В числе других его преимуществ: повышенная износостойкость, сниженное шумообразование и уменьшенный расход электроэнергии. 
+
+О БРЕНДЕ
+Для разработки дизайна своей техники Smeg привлекает мировых архитекторов, ведь кто, как не они, разбирается в стиле? В холодильниках, варочных панелях, стиральных машинах и других приборах нашла своё отражение настоящая итальянская страсть. И такие яркие образы не могли не получить признания: техника бренда неоднократно завоёвывала международные призы за оформление, среди которых несколько престижнейших премий iF Design Award и Red Dot Design Award в 2016 и в 2017 годах.', 'InStock', 'Discount', 28, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Smeg'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 60 см Smeg STL323BQLH'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Встраиваемая посудомоечная машина 60 см Smeg STL323BQLH' 
+        AND a."Name" = '9' 
+        AND a."Type" = 'Расход воды за цикл'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Встраиваемая посудомоечная машина 60 см Smeg STL323BQLH' 
+        AND a."Name" = '14 комплектов' 
+        AND a."Type" = 'Максимальная вместимость'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Встраиваемая посудомоечная машина 60 см Smeg STL323BQLH' 
+        AND a."Name" = '11' 
+        AND a."Type" = 'Количество программ мойки'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Встраиваемая посудомоечная машина 60 см Smeg STL323BQLH' 
+        AND a."Name" = 'инверторный' 
+        AND a."Type" = 'Мотор'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Встраиваемая посудомоечная машина 60 см Smeg STL323BQLH' 
+        AND a."Name" = '86*60*57.5' 
+        AND a."Type" = 'Размер ниши, мм (В*Ш*Г)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-60-sm-smeg-stl323bqlh_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 60 см Smeg STL323BQLH'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-60-sm-smeg-stl323bqlh_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 60 см Smeg STL323BQLH'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-60-sm-smeg-stl323bqlh_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 60 см Smeg STL323BQLH'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-60-sm-smeg-stl323bqlh_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 60 см Smeg STL323BQLH'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-60-sm-smeg-stl323bqlh_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 60 см Smeg STL323BQLH'));

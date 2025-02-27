@@ -1,0 +1,90 @@
+﻿INSERT INTO "Products" 
+("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription",
+"Availability", "Status", "CategoryID", "BrandID", "UserID") 
+VALUES
+ ('Телевизор Haier 98 Smart TV S8', 219999, 5, '/items/productimages/televizor-haier-98-smart-tv-s8_0.png', 4.26, '', 'Телевизор Haier 98 Smart TV S8 — модель 2023 года релиза с поддержкой 4К и экраном диагональю 98 дюймов (248 см). Прибор работает под контролем операционной системы Google TV с доступом к мультимедийному контенту, Youtube и другим информационным платформам, развлекательным и образовательным каналам. Управление функциями доступно с помощью пульта, мобильного приложения Evo и голосом (по технологии Far Field). Chromecast позволяет транслировать контент со смартфона, планшета или компьютера на большой экран. 
+
+Корпус размерами 124,67х218,17х11,06 см можно установить на подставку с двумя опорными ножками или расположить на стене посредством крепления VESA 800х400. Окруженный тонкими рамками HQLED-экран с частотой обновления 120 Гц и углами обзора 178° воспроизводит изображения в формате 4K UHD. Яркость дисплея достигает 700 нит. Технология HDR 10 обеспечивает высокую точность цветопередачи, контрастность и детализацию в самых темных и светлых сценах. Технология МЕМС придает картинке резкость и плавность путем программного добавления кадров к оригинальному видеоряду. 
+
+Двухканальная акустическая система мощностью 60 Вт поддерживает технологию насыщенного и объемного звучания Dolby Atmos. Встроенные цифровые тюнеры и система аналогового ТВ обеспечивают подключение ко множеству каналов без дополнительного источника сигнала. Прибор поддерживает беспроводную связь по Wi-Fi 5 и Bluetooth версии 5.1. За коммутационные возможности отвечают разъемы USB 2.0 (два), HDMI (четыре), композитный видеовход, аналоговый аудиовход, вход для наушников, слот для карты CI+.', 'InStock', 'Discount', 1, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Haier'), 1);
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Haier 98 Smart TV S8'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '4K Ultra HD (3840x2160 Пикс)' AND "Type" = 'Экран));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Haier 98 Smart TV S8'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '98' AND "Type" = 'Диагональ));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Haier 98 Smart TV S8'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '120' AND "Type" = 'Частота обновления));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Haier 98 Smart TV S8'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'QLED' AND "Type" = 'Технология экрана));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Haier 98 Smart TV S8'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'Direct LED' AND "Type" = 'Тип светодиодной подсветки));
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-haier-98-smart-tv-s8_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Haier 98 Smart TV S8'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-haier-98-smart-tv-s8_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Haier 98 Smart TV S8'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-haier-98-smart-tv-s8_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Haier 98 Smart TV S8'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-haier-98-smart-tv-s8_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Haier 98 Smart TV S8'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-haier-98-smart-tv-s8_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Haier 98 Smart TV S8'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-haier-98-smart-tv-s8_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Haier 98 Smart TV S8'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-haier-98-smart-tv-s8_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Haier 98 Smart TV S8'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-haier-98-smart-tv-s8_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Haier 98 Smart TV S8'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-haier-98-smart-tv-s8_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Haier 98 Smart TV S8'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-haier-98-smart-tv-s8_9.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Haier 98 Smart TV S8'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-haier-98-smart-tv-s8_10.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Haier 98 Smart TV S8'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-haier-98-smart-tv-s8_11.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Haier 98 Smart TV S8'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-haier-98-smart-tv-s8_12.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Haier 98 Smart TV S8'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-haier-98-smart-tv-s8_13.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Haier 98 Smart TV S8'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-haier-98-smart-tv-s8_14.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Haier 98 Smart TV S8'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-haier-98-smart-tv-s8_15.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Haier 98 Smart TV S8'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-haier-98-smart-tv-s8_16.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Haier 98 Smart TV S8'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-haier-98-smart-tv-s8_17.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Haier 98 Smart TV S8'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-haier-98-smart-tv-s8_18.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Haier 98 Smart TV S8'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-haier-98-smart-tv-s8_19.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Haier 98 Smart TV S8'));

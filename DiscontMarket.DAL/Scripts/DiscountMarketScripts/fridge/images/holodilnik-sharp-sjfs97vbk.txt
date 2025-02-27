@@ -1,0 +1,13 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-sharp-sjfs97vbk_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Sharp SJFS97VBK'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-sharp-sjfs97vbk_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Sharp SJFS97VBK'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-sharp-sjfs97vbk_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Sharp SJFS97VBK'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-sharp-sjfs97vbk_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Sharp SJFS97VBK'));

@@ -1,0 +1,75 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Стиральная машина Centek CT-1956', 35345, 9, '/items/productimages/stiralnaya-mashina-centek-ct-1956_0.png', 4.94, '', 'Серая стиральная машина Centek CT-1956 вмещает до 8 кг белья, оснащена функцией сушки по таймеру. Скорость отжима регулируется до 1400 оборотов в минуту. За один цикл расходуется до 48 л воды. Вес — 60 кг. Габариты — 84,7х60х43 см. Прямой привод снижает уровень вибрации. Объем барабана составляет 54 л. Уровень шума во время стирки не превышает 62 дБ. Присутствует система защиты от протекания, контроль пенообразования. Диаметр люка — 52 см. Модель оснащена функцией пара. Возможен выбор степени загрязнения белья.', 'InStock', 'Discount', 5, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Centek'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Стиральная машина Centek CT-1956'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина Centek CT-1956' 
+        AND a."Name" = '8' 
+        AND a."Type" = 'Максимальная загрузка'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина Centek CT-1956' 
+        AND a."Name" = '1400' 
+        AND a."Type" = 'Максимальная скорость отжима'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина Centek CT-1956' 
+        AND a."Name" = 'инверторный' 
+        AND a."Type" = 'Мотор'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина Centek CT-1956' 
+        AND a."Name" = 'Да' 
+        AND a."Type" = 'Обработка паром'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина Centek CT-1956' 
+        AND a."Name" = 'полная' 
+        AND a."Type" = 'Тип защиты от протечек'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-centek-ct-1956_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Centek CT-1956'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-centek-ct-1956_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Centek CT-1956'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-centek-ct-1956_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Centek CT-1956'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-centek-ct-1956_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Centek CT-1956'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-centek-ct-1956_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Centek CT-1956'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-centek-ct-1956_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Centek CT-1956'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-centek-ct-1956_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Centek CT-1956'));

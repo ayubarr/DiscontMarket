@@ -1,0 +1,31 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-lg-55qned86t6a_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор LG 55QNED86T6A'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-lg-55qned86t6a_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор LG 55QNED86T6A'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-lg-55qned86t6a_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор LG 55QNED86T6A'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-lg-55qned86t6a_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор LG 55QNED86T6A'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-lg-55qned86t6a_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор LG 55QNED86T6A'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-lg-55qned86t6a_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор LG 55QNED86T6A'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-lg-55qned86t6a_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор LG 55QNED86T6A'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-lg-55qned86t6a_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор LG 55QNED86T6A'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-lg-55qned86t6a_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор LG 55QNED86T6A'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-lg-55qned86t6a_9.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор LG 55QNED86T6A'));

@@ -1,0 +1,28 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-samsung-ww11cg604clblp_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Samsung WW11CG604CLBLP'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-samsung-ww11cg604clblp_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Samsung WW11CG604CLBLP'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-samsung-ww11cg604clblp_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Samsung WW11CG604CLBLP'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-samsung-ww11cg604clblp_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Samsung WW11CG604CLBLP'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-samsung-ww11cg604clblp_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Samsung WW11CG604CLBLP'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-samsung-ww11cg604clblp_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Samsung WW11CG604CLBLP'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-samsung-ww11cg604clblp_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Samsung WW11CG604CLBLP'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-samsung-ww11cg604clblp_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Samsung WW11CG604CLBLP'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-samsung-ww11cg604clblp_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Samsung WW11CG604CLBLP'));

@@ -1,0 +1,28 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-candy-ccrn6200sd_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Candy CCRN6200SD'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-candy-ccrn6200sd_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Candy CCRN6200SD'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-candy-ccrn6200sd_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Candy CCRN6200SD'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-candy-ccrn6200sd_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Candy CCRN6200SD'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-candy-ccrn6200sd_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Candy CCRN6200SD'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-candy-ccrn6200sd_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Candy CCRN6200SD'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-candy-ccrn6200sd_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Candy CCRN6200SD'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-candy-ccrn6200sd_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Candy CCRN6200SD'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-candy-ccrn6200sd_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Candy CCRN6200SD'));

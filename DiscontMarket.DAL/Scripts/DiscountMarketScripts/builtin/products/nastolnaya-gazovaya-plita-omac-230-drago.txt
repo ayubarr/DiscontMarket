@@ -1,0 +1,43 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Настольная газовая плита OMAC 230 Drago', 3008, 7, '/items/productimages/nastolnaya-gazovaya-plita-omac-230-drago_0.png', 4.52, '', 'Настольная газовая плита Omac 230 Drago черного цвета обладает габаритами 19х40х40 см. Масса прибора — 6,6 кг. Варочная поверхность изготовлена из нержавеющей стали. У модели механический тип управления. Номинальная мощность — до 8500 Вт. 
+Устройство адаптировано для клапанного баллона. Возможна эксплуатация с газом пропан/бутан. Конструкция подходит для напольного размещения.', 'InStock', 'Discount', 4, (SELECT "ID" FROM "Brands" WHERE "Name" = 'OMAC'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Настольная газовая плита OMAC 230 Drago'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Настольная газовая плита OMAC 230 Drago' 
+        AND a."Name" = '1' 
+        AND a."Type" = 'Количество конфорок'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Настольная газовая плита OMAC 230 Drago' 
+        AND a."Name" = 'нержавеющая сталь' 
+        AND a."Type" = 'Материал варочной поверхности'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Настольная газовая плита OMAC 230 Drago' 
+        AND a."Name" = 'черный' 
+        AND a."Type" = 'Цвет'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/nastolnaya-gazovaya-plita-omac-230-drago_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Настольная газовая плита OMAC 230 Drago'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/nastolnaya-gazovaya-plita-omac-230-drago_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Настольная газовая плита OMAC 230 Drago'));

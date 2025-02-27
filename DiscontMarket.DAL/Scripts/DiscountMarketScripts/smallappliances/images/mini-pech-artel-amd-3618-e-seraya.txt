@@ -1,0 +1,16 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-artel-amd-3618-e-seraya_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Artel AMD 3618 E серая'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-artel-amd-3618-e-seraya_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Artel AMD 3618 E серая'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-artel-amd-3618-e-seraya_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Artel AMD 3618 E серая'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-artel-amd-3618-e-seraya_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Artel AMD 3618 E серая'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-artel-amd-3618-e-seraya_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Artel AMD 3618 E серая'));

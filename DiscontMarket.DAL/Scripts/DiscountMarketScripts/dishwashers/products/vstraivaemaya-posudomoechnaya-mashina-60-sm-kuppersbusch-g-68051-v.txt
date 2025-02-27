@@ -1,0 +1,63 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Встраиваемая посудомоечная машина 60 см Kuppersbusch G 6805.1 V', 127495, 9, '/items/productimages/vstraivaemaya-posudomoechnaya-mashina-60-sm-kuppersbusch-g-68051-v_0.png', 4.85, '', 'Встраиваемая посудомоечная машина Kuppersbusch G 6805.0 V в корпусе черного цвета работает в девяти режимах, включая автоматический, минимальные сроком 15 минут и 30 минут. В приборе можно использовать средства «3 в 1». Функции «Усиленная гигиена» и «Зона интенсивного мытья» помогут очистить сильные загрязнения. 
+Камера рассчитана на единовременное размещение до 15 комплектов посуды. Высоту короба можно регулировать, для тарелок предусмотрены складные держатели, для кружек — полки. В комплект входит воронка для засыпания соли. 
+Настройки выбираются с помощью электронной панели. Параметры отображаются на экране, луч проецирует на пол время до окончания процесса. Таймер отложенного старта позволит запрограммировать мытье посуды на срок до 24 часов. В этой модели реализована полная защита от протечек, функция самодиагностики неисправностей. Блокиратор предотвратит случайный запуск. 
+Потребляемая мощность модели — 2100 Вт. Расход электричества за цикл составляет всего 0,84 кВт*ч, воды — 9,9 л, что соответствует классу энергоэффективности А. Уровень шума во время работы прибора не превышает 40 дБ. Габариты машины — 82х59,8х55,5 см. Для монтажа требуется ниша размером 82-87х60х59 см.', 'InStock', 'Discount', 28, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Kuppersbusch'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 60 см Kuppersbusch G 6805.1 V'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Встраиваемая посудомоечная машина 60 см Kuppersbusch G 6805.1 V' 
+        AND a."Name" = '9.9' 
+        AND a."Type" = 'Расход воды за цикл'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Встраиваемая посудомоечная машина 60 см Kuppersbusch G 6805.1 V' 
+        AND a."Name" = '15 комплектов' 
+        AND a."Type" = 'Максимальная вместимость'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Встраиваемая посудомоечная машина 60 см Kuppersbusch G 6805.1 V' 
+        AND a."Name" = '9' 
+        AND a."Type" = 'Количество программ мойки'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Встраиваемая посудомоечная машина 60 см Kuppersbusch G 6805.1 V' 
+        AND a."Name" = 'стандартный' 
+        AND a."Type" = 'Мотор'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Встраиваемая посудомоечная машина 60 см Kuppersbusch G 6805.1 V' 
+        AND a."Name" = '820-870*600*590 мм' 
+        AND a."Type" = 'Размер ниши, мм (В*Ш*Г)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-60-sm-kuppersbusch-g-68051-v_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 60 см Kuppersbusch G 6805.1 V'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-60-sm-kuppersbusch-g-68051-v_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 60 см Kuppersbusch G 6805.1 V'));

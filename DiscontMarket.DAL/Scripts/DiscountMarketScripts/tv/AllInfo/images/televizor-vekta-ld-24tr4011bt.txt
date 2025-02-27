@@ -1,0 +1,13 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-vekta-ld-24tr4011bt_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Vekta LD-24TR4011BT'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-vekta-ld-24tr4011bt_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Vekta LD-24TR4011BT'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-vekta-ld-24tr4011bt_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Vekta LD-24TR4011BT'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-vekta-ld-24tr4011bt_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Vekta LD-24TR4011BT'));

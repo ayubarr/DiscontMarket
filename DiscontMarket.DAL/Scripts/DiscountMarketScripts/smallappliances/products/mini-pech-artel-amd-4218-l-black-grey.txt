@@ -1,0 +1,76 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Мини-печь Artel AMD 4218 L Black/Grey', 9999, 15, '/items/productimages/mini-pech-artel-amd-4218-l-black-grey_0.png', 4.52, '', 'Мини-печь Artel AMD 4218 L обладает размерами 63х34х48 см, весит 17,95 кг. Устройство выполнено в черном и серебристом цветах. Корпус сделан из эмалированной стали, дверца — из двухслойного термостойкого стекла. Эта модель оборудована камерой объемом 42 л, внутренние стенки покрыты биокерамикой. Освещение обеспечивает лампа накаливания. Прорезиненные ножки предотвращают скольжение. 
+Прибор разогревается до 300°С, мощность встроенного гриля — 700 Вт. Управление обеспечивают механические переключатели, индикаторы показывают включение в сеть, текущую температуру, выбранные параметры, время до окончания приготовления. Можно установить таймер запуска и отключения со звуковым сигналом. В комплекте — два противня, металлическая решетка и держатель для вертела.', 'InStock', 'Discount', 6, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Artel'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Мини-печь Artel AMD 4218 L Black/Grey'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Мини-печь Artel AMD 4218 L Black/Grey' 
+        AND a."Name" = '42' 
+        AND a."Type" = 'Объем'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Мини-печь Artel AMD 4218 L Black/Grey' 
+        AND a."Name" = '2432' 
+        AND a."Type" = 'Потребляемая мощность'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Мини-печь Artel AMD 4218 L Black/Grey' 
+        AND a."Name" = 'ТЭН' 
+        AND a."Type" = 'Тип гриля'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Мини-печь Artel AMD 4218 L Black/Grey' 
+        AND a."Name" = 'черный/ серый' 
+        AND a."Type" = 'Цвет'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Мини-печь Artel AMD 4218 L Black/Grey' 
+        AND a."Name" = 'Bio керамика' 
+        AND a."Type" = 'Внутреннее покрытие'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-artel-amd-4218-l-black-grey_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Artel AMD 4218 L Black/Grey'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-artel-amd-4218-l-black-grey_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Artel AMD 4218 L Black/Grey'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-artel-amd-4218-l-black-grey_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Artel AMD 4218 L Black/Grey'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-artel-amd-4218-l-black-grey_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Artel AMD 4218 L Black/Grey'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-artel-amd-4218-l-black-grey_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Artel AMD 4218 L Black/Grey'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-artel-amd-4218-l-black-grey_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Artel AMD 4218 L Black/Grey'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-artel-amd-4218-l-black-grey_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Artel AMD 4218 L Black/Grey'));

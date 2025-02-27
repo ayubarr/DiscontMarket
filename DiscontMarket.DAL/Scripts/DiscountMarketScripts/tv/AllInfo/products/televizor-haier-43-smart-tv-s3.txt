@@ -1,0 +1,49 @@
+﻿INSERT INTO "Products" 
+("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription",
+"Availability", "Status", "CategoryID", "BrandID", "UserID") 
+VALUES
+ ('Телевизор Haier 43 Smart TV S3', 18999, 17, '/items/productimages/televizor-haier-43-smart-tv-s3_0.png', 4.79, '', 'Телевизор Haier 43 Smart TV S3 серого цвета оснащен технологией Far Field, которая отвечает за голосовое управление через Google Assistant. Диагональ экрана — 43 дюйма, телевизор может передавать изображение в разрешении UHD 3840х2160 пикселей, используя для четкости и плавности отображения динамичных сцен функцию MEMC. 
+Телевизор работает под управлением ОС Android TV версии 11, реализована поддержка магазина Google Play Store для установки сторонних приложений. Для передачи изображения с экрана смартфона или планшета можно воспользоваться функцией Chromecast (требуется подключения через Wi-Fi или Bluetooth).
+Интерфейсы подключения представлены двумя USB-портами, композитным входом, выходом под антенну, четырьмя HDMI-разъемами версии 2.1, аналоговым входом и разъемом для подключения акустических систем. В комплект поставки включен пульт ДУ HTR-U32R.', 'InStock', 'Discount', 1, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Haier'), 1);
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Haier 43 Smart TV S3'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '4K Ultra HD (3840x2160 Пикс)' AND "Type" = 'Экран));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Haier 43 Smart TV S3'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '43' AND "Type" = 'Диагональ));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Haier 43 Smart TV S3'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '60' AND "Type" = 'Частота обновления));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Haier 43 Smart TV S3'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'QLED' AND "Type" = 'Технология экрана));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Haier 43 Smart TV S3'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'Direct LED' AND "Type" = 'Тип светодиодной подсветки));
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-haier-43-smart-tv-s3_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Haier 43 Smart TV S3'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-haier-43-smart-tv-s3_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Haier 43 Smart TV S3'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-haier-43-smart-tv-s3_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Haier 43 Smart TV S3'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-haier-43-smart-tv-s3_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Haier 43 Smart TV S3'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-haier-43-smart-tv-s3_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Haier 43 Smart TV S3'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-haier-43-smart-tv-s3_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Haier 43 Smart TV S3'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-haier-43-smart-tv-s3_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Haier 43 Smart TV S3'));

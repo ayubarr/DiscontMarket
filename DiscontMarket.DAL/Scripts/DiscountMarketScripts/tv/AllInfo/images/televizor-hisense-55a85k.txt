@@ -1,0 +1,34 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-hisense-55a85k_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hisense 55A85K'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-hisense-55a85k_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hisense 55A85K'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-hisense-55a85k_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hisense 55A85K'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-hisense-55a85k_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hisense 55A85K'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-hisense-55a85k_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hisense 55A85K'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-hisense-55a85k_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hisense 55A85K'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-hisense-55a85k_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hisense 55A85K'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-hisense-55a85k_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hisense 55A85K'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-hisense-55a85k_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hisense 55A85K'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-hisense-55a85k_9.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hisense 55A85K'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-hisense-55a85k_10.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hisense 55A85K'));

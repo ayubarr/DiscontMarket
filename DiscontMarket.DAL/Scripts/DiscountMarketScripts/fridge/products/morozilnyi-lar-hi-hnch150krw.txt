@@ -1,0 +1,80 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Морозильный ларь Hi HNCH150KRW', 8499, 19, '/items/productimages/morozilnyi-lar-hi-hnch150krw_0.png', 4.56, '', 'Морозильный ларь Hi HNCH150KRW, белый, обладает объемом 155 л и способен замораживать до 6,5 кг продуктов в сутки. 
+
+• <b>Механическое управление</b>
+Простое и удобное, представлено поворотным регулятором и световыми индикаторами.
+
+• <b>Режим суперзамораживания</b>
+Быстро понижает температуру для подготовки свежих припасов к последующему хранению. Способствует сохранению текстуры продуктов.
+
+• <b>Климатический класс N-SN-ST-T</b>
+Означает, что прибор будет успешно справляться со своими задачами практически в любом климате до температуры +43°C.
+
+Компрессор стандартный, используется современный хладагент R600A, безопасный для окружающей среды. Энергопотребление соответствует классу А и составляет 252 кВт*ч. Уровень шума при работе не превышает 41 дБ. В случае отключения электроэнергии низкая внутренняя температура будет сохраняться до 12 часов. Дверца непрозрачная, открывает вверх. Прилагается одна съемная корзина для мелких продуктов.', 'InStock', 'Discount', 3, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Hi'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Морозильный ларь Hi HNCH150KRW'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Морозильный ларь Hi HNCH150KRW' 
+        AND a."Name" = 'стандартный' 
+        AND a."Type" = 'Тип компрессора'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Морозильный ларь Hi HNCH150KRW' 
+        AND a."Name" = '83.5*63.5*55.6 см' 
+        AND a."Type" = 'Габаритные размеры (В*Ш*Г)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Морозильный ларь Hi HNCH150KRW' 
+        AND a."Name" = 'A' 
+        AND a."Type" = 'Класс энергоэффективности'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Морозильный ларь Hi HNCH150KRW' 
+        AND a."Name" = 'Да' 
+        AND a."Type" = 'Режим суперзамораживания'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Морозильный ларь Hi HNCH150KRW' 
+        AND a."Name" = 'механический' 
+        AND a."Type" = 'Тип управления'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnyi-lar-hi-hnch150krw_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильный ларь Hi HNCH150KRW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnyi-lar-hi-hnch150krw_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильный ларь Hi HNCH150KRW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnyi-lar-hi-hnch150krw_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильный ларь Hi HNCH150KRW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnyi-lar-hi-hnch150krw_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильный ларь Hi HNCH150KRW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnyi-lar-hi-hnch150krw_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильный ларь Hi HNCH150KRW'));

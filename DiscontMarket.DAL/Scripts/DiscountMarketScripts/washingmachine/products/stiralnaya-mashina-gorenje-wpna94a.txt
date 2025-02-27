@@ -1,0 +1,80 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Стиральная машина Gorenje WPNA94A', 43499, 12, '/items/productimages/stiralnaya-mashina-gorenje-wpna94a_0.png', 4.31, '', 'Стиральная машина Gorenje WPNA94A вмещает до 9 кг белья и способна убрать с тканей до 99% бактерий за счет обработки паром. Предусмотрены 15 программ стирки, в том числе для шерстяных, хлопковых, синтетических тканей, режим очистки барабана. 
+Инверторный двигатель снижает уровень шума и вибрации, скорость оборотов при отжиме регулируется (максимальная составляет 1400 об/мин). Объем барабана из нержавеющей стали — 64 л. Предусмотрен дисплей, показывающий ход программы и время до окончания цикла. 
+Уровень шума при стирке составляет 54 дБ, при отжиме — 75 дБ. Панель управления можно заблокировать от случайного нажатия. Расход воды за цикл не превышает 57 л, электроэнергии — 1,1 кВт*ч. Диаметр люка — 34 см, дверца открывается налево. Габариты стиральной машины: 85х60х61 см, вес модели составляет 76 кг.', 'InStock', 'Discount', 5, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Gorenje'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Стиральная машина Gorenje WPNA94A'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина Gorenje WPNA94A' 
+        AND a."Name" = '9' 
+        AND a."Type" = 'Максимальная загрузка'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина Gorenje WPNA94A' 
+        AND a."Name" = '1400' 
+        AND a."Type" = 'Максимальная скорость отжима'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина Gorenje WPNA94A' 
+        AND a."Name" = 'инверторный' 
+        AND a."Type" = 'Мотор'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина Gorenje WPNA94A' 
+        AND a."Name" = 'Да' 
+        AND a."Type" = 'Обработка паром'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина Gorenje WPNA94A' 
+        AND a."Name" = '85*60*61 см' 
+        AND a."Type" = 'Габаритные размеры (В*Ш*Г)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-gorenje-wpna94a_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Gorenje WPNA94A'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-gorenje-wpna94a_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Gorenje WPNA94A'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-gorenje-wpna94a_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Gorenje WPNA94A'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-gorenje-wpna94a_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Gorenje WPNA94A'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-gorenje-wpna94a_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Gorenje WPNA94A'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-gorenje-wpna94a_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Gorenje WPNA94A'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-gorenje-wpna94a_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Gorenje WPNA94A'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-gorenje-wpna94a_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Gorenje WPNA94A'));

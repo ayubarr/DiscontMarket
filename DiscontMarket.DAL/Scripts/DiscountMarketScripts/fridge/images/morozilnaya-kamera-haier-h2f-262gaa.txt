@@ -1,0 +1,19 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-haier-h2f-262gaa_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Haier H2F-262GAA'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-haier-h2f-262gaa_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Haier H2F-262GAA'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-haier-h2f-262gaa_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Haier H2F-262GAA'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-haier-h2f-262gaa_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Haier H2F-262GAA'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-haier-h2f-262gaa_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Haier H2F-262GAA'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-haier-h2f-262gaa_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Haier H2F-262GAA'));

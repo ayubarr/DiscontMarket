@@ -1,0 +1,54 @@
+﻿INSERT INTO "Products" 
+("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription",
+"Availability", "Status", "CategoryID", "BrandID", "UserID") 
+VALUES
+ ('Телевизор Витязь 32LF1230', 7499, 6, '/items/productimages/televizor-vityaz-32lf1230_0.png', 4.79, '', 'Телевизор «Витязь» 32LF1230 — модель с LED-экраном диагональю 32 дюйма разрешением Full HD (1920x1080 пикселей). 
+
+• <b>IPS-матрица и частота обновления 60 Гц</b> 
+Лежит в основе экрана и отличается высокой яркостью и реалистичной цветопередачей. Динамичные кадры отображаются плавно, без разрывов. 
+
+• <b>Поддержка технологии HDR</b> 
+Повышает детализацию в темных сценах, улучшает отображение черного — он выглядит по-настоящему глубоким и не уходит в серый. 
+
+• <b>Технология Dolby Atmos</b> 
+Создает выразительное объемное звучание мощностью 20 Вт. Звук транслируют два динамика. 
+
+Телевизор работает на операционной системе WebOS 23 и может подключаться к интернету через разъем LAN разъем (RJ45). Это открывает доступ к огромному разнообразию контента, включая богатый репертуар онлайн-кинотеатров. Поддерживается голосовое управление. 8 Гб встроенной памяти дадут возможность устанавливать нужные приложения. Тюнер стандартов DVB T/T2/C/S/S2 позволяет, не подсоединяя приставку, принимать цифровые, кабельные и спутниковые телеканалы. 
+
+Интерфейсный ряд представлен тремя входами HDMI, двумя портами USB 2.0 Type A, оптическим выходом, слотом CI и разъемом для подключения наушников (3,5 мм). Потребляемая мощность модели — 55 Вт.', 'InStock', 'Discount', 1, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Витязь'), 1);
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Витязь 32LF1230'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'Full HD (1920x1080 Пикс)' AND "Type" = 'Экран));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Витязь 32LF1230'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '32' AND "Type" = 'Диагональ));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Витязь 32LF1230'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '60' AND "Type" = 'Частота обновления));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Витязь 32LF1230'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'LED' AND "Type" = 'Технология экрана));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Витязь 32LF1230'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'LED' AND "Type" = 'Тип светодиодной подсветки));
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-vityaz-32lf1230_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Витязь 32LF1230'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-vityaz-32lf1230_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Витязь 32LF1230'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-vityaz-32lf1230_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Витязь 32LF1230'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-vityaz-32lf1230_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Витязь 32LF1230'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-vityaz-32lf1230_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Витязь 32LF1230'));

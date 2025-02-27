@@ -1,0 +1,16 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/varochnyi-centr-bertazzoni-pro95i1ext-nerzhaveushhaya-stal_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Варочный центр Bertazzoni PRO95I1EXT нержавеющая сталь'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/varochnyi-centr-bertazzoni-pro95i1ext-nerzhaveushhaya-stal_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Варочный центр Bertazzoni PRO95I1EXT нержавеющая сталь'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/varochnyi-centr-bertazzoni-pro95i1ext-nerzhaveushhaya-stal_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Варочный центр Bertazzoni PRO95I1EXT нержавеющая сталь'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/varochnyi-centr-bertazzoni-pro95i1ext-nerzhaveushhaya-stal_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Варочный центр Bertazzoni PRO95I1EXT нержавеющая сталь'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/varochnyi-centr-bertazzoni-pro95i1ext-nerzhaveushhaya-stal_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Варочный центр Bertazzoni PRO95I1EXT нержавеющая сталь'));

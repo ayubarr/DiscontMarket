@@ -1,0 +1,4 @@
+﻿INSERT INTO "Attributes" ("NameTranslate", "Name", "Type") VALUES
+('8K Ultra HD (7680x4320 Пикс)', '8K Ultra HD (7680x4320 Пикс)', 'Экран');
+INSERT INTO "AttributeCategory" ("AttributeID", "CategoryID") VALUES
+((SELECT "ID" FROM "Attributes" WHERE "Name" = '8K Ultra HD (7680x4320 Пикс)' AND "Type" = 'Экран'), (SELECT "ID" FROM "Categories" WHERE "Name" = 'tv'));

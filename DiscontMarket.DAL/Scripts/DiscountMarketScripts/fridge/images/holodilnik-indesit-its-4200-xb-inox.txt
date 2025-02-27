@@ -1,0 +1,19 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-indesit-its-4200-xb-inox_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Indesit ITS 4200 XB Inox'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-indesit-its-4200-xb-inox_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Indesit ITS 4200 XB Inox'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-indesit-its-4200-xb-inox_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Indesit ITS 4200 XB Inox'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-indesit-its-4200-xb-inox_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Indesit ITS 4200 XB Inox'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-indesit-its-4200-xb-inox_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Indesit ITS 4200 XB Inox'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-indesit-its-4200-xb-inox_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Indesit ITS 4200 XB Inox'));

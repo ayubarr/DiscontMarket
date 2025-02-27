@@ -1,0 +1,4 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-beko-wsre-7612-xawi_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Beko WSRE 7612 XAWI'));

@@ -1,0 +1,76 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Встраиваемая посудомоечная машина 45 см Gorenje GV573С11', 29999, 12, '/items/productimages/vstraivaemaya-posudomoechnaya-mashina-45-sm-gorenje-gv573s11_0.png', 4.8, '', 'Встраиваемая посудомоечная машина Gorenje GV573С11 — узкая модель габаритами 815х448х550 мм и весом 31 кг, рассчитанная на десять комплектов посуды. 
+
+• <b>Инверторный мотор</b> 
+Отличается экономичным энергопотреблением класса А+++ (0,6 кВт*ч) и высокой надежностью, так как не содержит быстро изнашивающихся элементов. Уровень шума не превышает 44 дБ. 
+
+• <b>Пять программ</b> 
+Доступны режимы для разной посуды и степени загрязнения. 
+
+• <b>Три уровня загрузки</b> 
+Посуда размещается в двух коробах и лотке. Предназначенном для столовых приборов и мелкой кухонной утвари. 
+
+Сушка выполняется конденсационным методом, для улучшения ее качества предусмотрена функция AirDry: перед окончанием цикла дверца приоткрывается. Функция «Гигиена+» предназначена для особенно тщательного ухода за детской посуды: проводится дезинфекция при температуре 70°C. Управление кнопочное электронное, о завершении работы оповещает звуковой сигнал. Предусмотрена и проекция «Луч на полу». 
+
+Установка производится в нишу размерами 82х56х45 см, для нейтрализации неровностей пола и адаптации под кухонный гарнитур ножки регулируются по высоте в пределах 50 мм.', 'InStock', 'Discount', 28, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Gorenje'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 45 см Gorenje GV573С11'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Встраиваемая посудомоечная машина 45 см Gorenje GV573С11' 
+        AND a."Name" = '8' 
+        AND a."Type" = 'Расход воды за цикл'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Встраиваемая посудомоечная машина 45 см Gorenje GV573С11' 
+        AND a."Name" = '10 комплектов' 
+        AND a."Type" = 'Максимальная вместимость'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Встраиваемая посудомоечная машина 45 см Gorenje GV573С11' 
+        AND a."Name" = '5' 
+        AND a."Type" = 'Количество программ мойки'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Встраиваемая посудомоечная машина 45 см Gorenje GV573С11' 
+        AND a."Name" = 'инверторный' 
+        AND a."Type" = 'Мотор'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Встраиваемая посудомоечная машина 45 см Gorenje GV573С11' 
+        AND a."Name" = '82*56*45' 
+        AND a."Type" = 'Размер ниши, мм (В*Ш*Г)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-45-sm-gorenje-gv573s11_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 45 см Gorenje GV573С11'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-45-sm-gorenje-gv573s11_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 45 см Gorenje GV573С11'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-45-sm-gorenje-gv573s11_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 45 см Gorenje GV573С11'));

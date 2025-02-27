@@ -1,0 +1,84 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Стиральная машина Schaub Lorenz SLW T1721', 27495, 8, '/items/productimages/stiralnaya-mashina-schaub-lorenz-slw-t1721_0.png', 4.49, '', '', 'InStock', 'Discount', 5, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Schaub Lorenz'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Стиральная машина Schaub Lorenz SLW T1721'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина Schaub Lorenz SLW T1721' 
+        AND a."Name" = '7' 
+        AND a."Type" = 'Максимальная загрузка'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина Schaub Lorenz SLW T1721' 
+        AND a."Name" = '1200' 
+        AND a."Type" = 'Максимальная скорость отжима'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина Schaub Lorenz SLW T1721' 
+        AND a."Name" = 'коллекторный' 
+        AND a."Type" = 'Мотор'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина Schaub Lorenz SLW T1721' 
+        AND a."Name" = '84.5*59.7*52.7 см' 
+        AND a."Type" = 'Габаритные размеры (В*Ш*Г)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина Schaub Lorenz SLW T1721' 
+        AND a."Name" = 'полная' 
+        AND a."Type" = 'Тип защиты от протечек'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-schaub-lorenz-slw-t1721_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Schaub Lorenz SLW T1721'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-schaub-lorenz-slw-t1721_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Schaub Lorenz SLW T1721'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-schaub-lorenz-slw-t1721_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Schaub Lorenz SLW T1721'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-schaub-lorenz-slw-t1721_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Schaub Lorenz SLW T1721'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-schaub-lorenz-slw-t1721_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Schaub Lorenz SLW T1721'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-schaub-lorenz-slw-t1721_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Schaub Lorenz SLW T1721'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-schaub-lorenz-slw-t1721_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Schaub Lorenz SLW T1721'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-schaub-lorenz-slw-t1721_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Schaub Lorenz SLW T1721'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-schaub-lorenz-slw-t1721_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Schaub Lorenz SLW T1721'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-schaub-lorenz-slw-t1721_9.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Schaub Lorenz SLW T1721'));

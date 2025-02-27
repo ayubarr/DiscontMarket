@@ -1,0 +1,22 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-birusa-114_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Бирюса 114'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-birusa-114_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Бирюса 114'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-birusa-114_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Бирюса 114'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-birusa-114_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Бирюса 114'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-birusa-114_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Бирюса 114'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-birusa-114_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Бирюса 114'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-birusa-114_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Бирюса 114'));

@@ -1,0 +1,16 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-harper-43f720ts_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Harper 43F720TS'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-harper-43f720ts_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Harper 43F720TS'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-harper-43f720ts_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Harper 43F720TS'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-harper-43f720ts_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Harper 43F720TS'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-harper-43f720ts_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Harper 43F720TS'));

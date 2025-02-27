@@ -1,0 +1,75 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Винный шкаф Casarte CASWS170GDAI', 149999, 6, '/items/productimages/vinnyi-shkaf-casarte-casws170gdai_0.png', 4.21, '', 'Винный шкаф Casarte CASWS170GDAI в черном корпусе оснащен одной стеклянной дверцей с защитой от УФ-лучей. Общий объем шкафа — 440 л. Модель относится к климатическому классу ST, SN, N и создает шум не более 37 дБ.
+
+Винное отделение оснащено семью полками из металла и дерева. Максимальное количество бутылок — 170 штук. Температура в отделении регулируется, освещение осуществляется с помощью светодиодных ламп.
+
+Шкаф оснащен одним компрессором и использует хладагент R600a. Управление сенсорное. Снаружи располагается LED-дисплей с символами белого цвета. Предусмотрена индикация включения, выбранного режима работы и температуры внутри шкафа. 
+
+Модель относится к классу энергопотребления А. Годовое энергопотребление не превышает 210 кВт*ч. Дверцу можно перенавешивать. Предусмотрен встроенный угольный фильтр. Шкаф оснащен сигнализацией открытой двери и повышения температуры. Предусмотрена защита от детей. В комплект входит полка для размещения бокалов.', 'InStock', 'Discount', 3, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Casarte'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Винный шкаф Casarte CASWS170GDAI'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Винный шкаф Casarte CASWS170GDAI' 
+        AND a."Name" = 'стандартный' 
+        AND a."Type" = 'Тип компрессора'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Винный шкаф Casarte CASWS170GDAI' 
+        AND a."Name" = '170' 
+        AND a."Type" = 'Максимальное количество бутылок'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Винный шкаф Casarte CASWS170GDAI' 
+        AND a."Name" = '440' 
+        AND a."Type" = 'Общий объем'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Винный шкаф Casarte CASWS170GDAI' 
+        AND a."Name" = '8' 
+        AND a."Type" = 'Количество полок'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Винный шкаф Casarte CASWS170GDAI' 
+        AND a."Name" = 'компрессорный' 
+        AND a."Type" = 'Тип охлаждения'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vinnyi-shkaf-casarte-casws170gdai_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Винный шкаф Casarte CASWS170GDAI'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vinnyi-shkaf-casarte-casws170gdai_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Винный шкаф Casarte CASWS170GDAI'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vinnyi-shkaf-casarte-casws170gdai_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Винный шкаф Casarte CASWS170GDAI'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vinnyi-shkaf-casarte-casws170gdai_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Винный шкаф Casarte CASWS170GDAI'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vinnyi-shkaf-casarte-casws170gdai_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Винный шкаф Casarte CASWS170GDAI'));

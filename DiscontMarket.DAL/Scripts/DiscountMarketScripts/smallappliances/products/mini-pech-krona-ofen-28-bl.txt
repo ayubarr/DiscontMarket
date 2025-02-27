@@ -1,0 +1,99 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Мини-печь Krona OFEN 28 BL', 4045, 5, '/items/productimages/mini-pech-krona-ofen-28-bl_0.png', 4.86, '', 'Мини-печь Krona Ofen 28 BL оснащена антипригарным покрытием рабочей области, благодаря чему легко очищается от жира и других загрязнений. Корпус устройства выполнен из прочной нержавеющей стали. Дверца сделана из жаропрочного стекла. Максимальная рабочая температура модели достигает 250°С. Регулировка мощности и выбор подходящей программы работы осуществляется при помощи поворотных переключателей.<br><br>Мини-печь оборудована подсветкой рабочей зоны. Объем составляет 28 л. Доступен режим конвекции, который обеспечивает равномерное распределение горячего воздуха по всей камере. Предельный показатель энергопотребления не превышает 1600 Вт. Длина встроенного сетевого кабеля равна 1 м. Дверца открывается вниз. Доступно шесть режимов готовки.', 'InStock', 'Discount', 6, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Krona'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Мини-печь Krona OFEN 28 BL'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Мини-печь Krona OFEN 28 BL' 
+        AND a."Name" = '28' 
+        AND a."Type" = 'Объем'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Мини-печь Krona OFEN 28 BL' 
+        AND a."Name" = '1600' 
+        AND a."Type" = 'Потребляемая мощность'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Мини-печь Krona OFEN 28 BL' 
+        AND a."Name" = 'отсутствует' 
+        AND a."Type" = 'Тип гриля'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Мини-печь Krona OFEN 28 BL' 
+        AND a."Name" = 'черный' 
+        AND a."Type" = 'Цвет'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Мини-печь Krona OFEN 28 BL' 
+        AND a."Name" = 'антипригарное' 
+        AND a."Type" = 'Внутреннее покрытие'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-krona-ofen-28-bl_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Krona OFEN 28 BL'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-krona-ofen-28-bl_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Krona OFEN 28 BL'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-krona-ofen-28-bl_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Krona OFEN 28 BL'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-krona-ofen-28-bl_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Krona OFEN 28 BL'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-krona-ofen-28-bl_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Krona OFEN 28 BL'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-krona-ofen-28-bl_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Krona OFEN 28 BL'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-krona-ofen-28-bl_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Krona OFEN 28 BL'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-krona-ofen-28-bl_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Krona OFEN 28 BL'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-krona-ofen-28-bl_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Krona OFEN 28 BL'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-krona-ofen-28-bl_9.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Krona OFEN 28 BL'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-krona-ofen-28-bl_10.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Krona OFEN 28 BL'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-krona-ofen-28-bl_11.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Krona OFEN 28 BL'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-krona-ofen-28-bl_12.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Krona OFEN 28 BL'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-krona-ofen-28-bl_13.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Krona OFEN 28 BL'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-krona-ofen-28-bl_14.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Krona OFEN 28 BL'));

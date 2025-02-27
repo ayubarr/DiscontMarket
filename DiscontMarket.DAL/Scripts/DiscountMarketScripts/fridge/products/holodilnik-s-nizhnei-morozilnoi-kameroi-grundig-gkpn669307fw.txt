@@ -1,0 +1,96 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Холодильник с нижней морозильной камерой Grundig GKPN669307FW', 49999, 17, '/items/productimages/holodilnik-s-nizhnei-morozilnoi-kameroi-grundig-gkpn669307fw_0.png', 4.69, '', 'Холодильник Grundig GKPN669307FW из серии Prologue оснащен инверторным компрессором. Объем основной камеры — 257 л, морозильника — 100 л. В обоих отделениях реализована технология автоматического размораживания No Frost. 
+
+Для хранения продуктов предусмотрены полки из закаленного стекла и выдвижные ящики из пластика. Есть сухая зона сохранения свежести VitaminZone с ящиком, который движется с помощью телескопических направляющих.
+
+Система управления — электронная. Есть режимы «Отпуск» и «Суперзамораживание» и функция энегосбережения, доступно LED-освещение. Безопасность обеспечивают защита от детей и звуковая и световая сигнализация открытой двери.
+
+При отключенном питании температура внутри устройства остается неизменной в течение примерно 21 часа. Максимальный уровень шума — 37 дБ. Дверь изготовлена из металла, ее можно перенавешивать.', 'InStock', 'Discount', 3, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Grundig'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Холодильник с нижней морозильной камерой Grundig GKPN669307FW'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник с нижней морозильной камерой Grundig GKPN669307FW' 
+        AND a."Name" = 'инверторный' 
+        AND a."Type" = 'Тип компрессора'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник с нижней морозильной камерой Grundig GKPN669307FW' 
+        AND a."Name" = '201' 
+        AND a."Type" = 'Высота'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник с нижней морозильной камерой Grundig GKPN669307FW' 
+        AND a."Name" = '59.5' 
+        AND a."Type" = 'Ширина'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник с нижней морозильной камерой Grundig GKPN669307FW' 
+        AND a."Name" = '65' 
+        AND a."Type" = 'Глубина'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник с нижней морозильной камерой Grundig GKPN669307FW' 
+        AND a."Name" = '357' 
+        AND a."Type" = 'Общий объем'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-s-nizhnei-morozilnoi-kameroi-grundig-gkpn669307fw_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник с нижней морозильной камерой Grundig GKPN669307FW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-s-nizhnei-morozilnoi-kameroi-grundig-gkpn669307fw_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник с нижней морозильной камерой Grundig GKPN669307FW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-s-nizhnei-morozilnoi-kameroi-grundig-gkpn669307fw_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник с нижней морозильной камерой Grundig GKPN669307FW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-s-nizhnei-morozilnoi-kameroi-grundig-gkpn669307fw_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник с нижней морозильной камерой Grundig GKPN669307FW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-s-nizhnei-morozilnoi-kameroi-grundig-gkpn669307fw_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник с нижней морозильной камерой Grundig GKPN669307FW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-s-nizhnei-morozilnoi-kameroi-grundig-gkpn669307fw_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник с нижней морозильной камерой Grundig GKPN669307FW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-s-nizhnei-morozilnoi-kameroi-grundig-gkpn669307fw_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник с нижней морозильной камерой Grundig GKPN669307FW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-s-nizhnei-morozilnoi-kameroi-grundig-gkpn669307fw_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник с нижней морозильной камерой Grundig GKPN669307FW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-s-nizhnei-morozilnoi-kameroi-grundig-gkpn669307fw_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник с нижней морозильной камерой Grundig GKPN669307FW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-s-nizhnei-morozilnoi-kameroi-grundig-gkpn669307fw_9.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник с нижней морозильной камерой Grundig GKPN669307FW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-s-nizhnei-morozilnoi-kameroi-grundig-gkpn669307fw_10.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник с нижней морозильной камерой Grundig GKPN669307FW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-s-nizhnei-morozilnoi-kameroi-grundig-gkpn669307fw_11.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник с нижней морозильной камерой Grundig GKPN669307FW'));

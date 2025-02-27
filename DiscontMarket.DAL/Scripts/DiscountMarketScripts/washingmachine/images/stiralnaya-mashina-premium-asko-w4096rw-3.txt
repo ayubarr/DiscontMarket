@@ -1,0 +1,13 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-premium-asko-w4096rw-3_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Премиум Asko W4096R.W/3'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-premium-asko-w4096rw-3_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Премиум Asko W4096R.W/3'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-premium-asko-w4096rw-3_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Премиум Asko W4096R.W/3'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-premium-asko-w4096rw-3_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Премиум Asko W4096R.W/3'));

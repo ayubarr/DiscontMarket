@@ -1,0 +1,73 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Холодильник Hi HTDN011950RW', 10999, 8, '/items/productimages/holodilnik-hi-htdn011950rw_0.png', 4.4, '', 'Холодильник Hi HTDN011950RW, белый объемом 91 л обладает верхней морозильной камерой объемом 40 л. Модель оснащена механическим управлением и галогеновым освещением холодильной камеры (при открывании). 
+Холодильник оборудован тремя полками, одной зоной сохранения свежести для овощей и фруктов (выдвижной ящик) и тремя пластиковыми дверными карманами. В морозильной камере две полки. Производительность замораживания достигает 2 кг продуктов в сутки. При отключении электроэнергии устройство обеспечит поддержание низкой температуры в течение 15 часов.
+У холодильника один стандартный компрессор, уровень шума не превышает 43 дБ. В системе используется хладагент R600A. Прибор относится к N-SN-ST-T-климатическому классу и к А+-классу энергоэффективности. Годовое потребление электроэнергии составляет 240 кВт*ч.
+У модели две металлические двери, которые открываются при помощи встроенной внутренней ручке. Двери снабжены механизмами перенавешивания и могут открываться как в правую, так и в левую сторону.
+Вес устройства составляет 29 кг, габариты — 177,2х54,8х54,8 см. Форма для заморозки льда поставляется в комплекте.', 'InStock', 'Discount', 3, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Hi'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Холодильник Hi HTDN011950RW'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Hi HTDN011950RW' 
+        AND a."Name" = 'стандартный' 
+        AND a."Type" = 'Тип компрессора'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Hi HTDN011950RW' 
+        AND a."Name" = '131' 
+        AND a."Type" = 'Общий объем'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Hi HTDN011950RW' 
+        AND a."Name" = 'сухая' 
+        AND a."Type" = 'Тип зоны сохранения свежести'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Hi HTDN011950RW' 
+        AND a."Name" = 'механический' 
+        AND a."Type" = 'Тип управления'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Hi HTDN011950RW' 
+        AND a."Name" = 'металл' 
+        AND a."Type" = 'Материал двери'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-hi-htdn011950rw_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Hi HTDN011950RW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-hi-htdn011950rw_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Hi HTDN011950RW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-hi-htdn011950rw_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Hi HTDN011950RW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-hi-htdn011950rw_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Hi HTDN011950RW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-hi-htdn011950rw_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Hi HTDN011950RW'));

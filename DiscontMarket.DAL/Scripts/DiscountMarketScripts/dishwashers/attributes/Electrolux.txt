@@ -1,0 +1,13 @@
+﻿
+        INSERT INTO "Brands" ("NameTranslate", "Name", "Type") 
+        SELECT 'Electrolux', 'Electrolux', 'Бренды'
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Brands" WHERE "Name" = 'Electrolux'
+        );
+
+        INSERT INTO "BrandCategory" ("BrandID", "CategoryID") 
+        SELECT b."ID", c."ID" FROM "Brands" b, "Categories" c 
+        WHERE b."Name" = 'Electrolux' AND c."Name" = 'dishwashers'
+        AND NOT EXISTS (
+            SELECT 1 FROM "BrandCategory" WHERE "BrandID" = b."ID" AND "CategoryID" = c."ID"
+        );

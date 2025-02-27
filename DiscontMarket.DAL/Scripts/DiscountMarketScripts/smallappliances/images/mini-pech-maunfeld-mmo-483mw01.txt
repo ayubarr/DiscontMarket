@@ -1,0 +1,22 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-maunfeld-mmo-483mw01_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Maunfeld MMO-483MW01'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-maunfeld-mmo-483mw01_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Maunfeld MMO-483MW01'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-maunfeld-mmo-483mw01_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Maunfeld MMO-483MW01'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-maunfeld-mmo-483mw01_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Maunfeld MMO-483MW01'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-maunfeld-mmo-483mw01_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Maunfeld MMO-483MW01'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-maunfeld-mmo-483mw01_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Maunfeld MMO-483MW01'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-maunfeld-mmo-483mw01_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Maunfeld MMO-483MW01'));

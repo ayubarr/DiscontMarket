@@ -1,0 +1,92 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Холодильник Samsung RB53DG703EB1WT', 84999, 9, '/items/productimages/holodilnik-samsung-rb53dg703eb1wt_0.png', 4.34, '', 'Холодильник Samsung RB53DG703EB1WT обладает нестандартными габаритами: его ширина составляет 75,9 см, глубина — 71,1 см, высота — 203 см. Вес прибора — 94 кг. Общий объем модели — 554 л. 
+
+• <b>Инверторный компрессор</b> 
+Характеризуется высокой надежностью и экономичным энергопотреблением: оно соответствует классу А++ и составляет 282 кВт*ч в год. Уровень шума не превышает 35 дБ. 
+
+• <b>Технология No Frost</b> 
+Используется в обоих отделениях, предотвращает образование инея и накипи и избавляет от ручного размораживания. 
+
+• <b>Зона свежести Optimal Fresh+</b> 
+Предназначена для хранения мяса, рыбы и прочих скоропортящихся продуктов. Помогает им дольше оставаться свежими. 
+
+• <b>Многопоточная система охлаждения</b> 
+Обеспечивает равномерное распределение холодного воздуха по всему пространству. 
+
+• <b>Технология Metal Cooling</b> 
+На задней стенке холодильника расположена металлическая панель, которая способствует более эффективному сохранению холода и восстановлению низкой температуры после открывания двери. 
+
+Управление производится при помощи сенсорного дисплея, расположенного внутри. О слишком долго открытой двери оповещает звуковой сигнал. Поддерживается Wi-Fi — контролировать работу прибора можно через приложение SmartThings. В случае отключения питания низкая внутренняя температура будет сохраняться в течение 12 часов.', 'InStock', 'Discount', 3, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Samsung'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Холодильник Samsung RB53DG703EB1WT'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Samsung RB53DG703EB1WT' 
+        AND a."Name" = 'инверторный' 
+        AND a."Type" = 'Тип компрессора'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Samsung RB53DG703EB1WT' 
+        AND a."Name" = '75.9' 
+        AND a."Type" = 'Ширина'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Samsung RB53DG703EB1WT' 
+        AND a."Name" = '203' 
+        AND a."Type" = 'Высота'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Samsung RB53DG703EB1WT' 
+        AND a."Name" = '71.1' 
+        AND a."Type" = 'Глубина'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Samsung RB53DG703EB1WT' 
+        AND a."Name" = '554' 
+        AND a."Type" = 'Общий объем'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-samsung-rb53dg703eb1wt_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Samsung RB53DG703EB1WT'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-samsung-rb53dg703eb1wt_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Samsung RB53DG703EB1WT'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-samsung-rb53dg703eb1wt_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Samsung RB53DG703EB1WT'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-samsung-rb53dg703eb1wt_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Samsung RB53DG703EB1WT'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-samsung-rb53dg703eb1wt_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Samsung RB53DG703EB1WT'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-samsung-rb53dg703eb1wt_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Samsung RB53DG703EB1WT'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-samsung-rb53dg703eb1wt_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Samsung RB53DG703EB1WT'));

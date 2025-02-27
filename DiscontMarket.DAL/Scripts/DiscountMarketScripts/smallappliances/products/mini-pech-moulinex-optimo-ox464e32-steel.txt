@@ -1,0 +1,87 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Мини-печь Moulinex Optimo OX464E32 Steel', 16999, 6, '/items/productimages/mini-pech-moulinex-optimo-ox464e32-steel_0.png', 4.66, '', 'Moulinex OX464E32 – это мощная мини-печь. При помощи этого устройства можно готовить множество различных блюд. Одним из главных достоинств модели является эргономичность.<br><br>ВНЕШНИЙ ВИД И ХАРАКТЕРИСТИКИ<br>Печь обладает небольшими габаритами, однако, это нисколько не умаляет её возможностей. Большой объём камеры и высокая мощность обеспечивают быструю, но при этом тщательную обработку готовящихся продуктов.<br><br>ФУНКЦИОНАЛ<br>С целью оптимизации процесса приготовления производитель оснастил печь шестью режимами работы. Помимо основных возможностей, аппарат имеет звуковой таймер и таймер отключения питания.<br><br>ЭКСПЛУАТАЦИЯ<br>Управление изделием осуществляется при помощи кнопок и регуляторов, которые находятся на корпусе, справа от дверки, открывающей камеру. Для большего удобства изготовитель добавил в функционал печи систему индикации, которая предназначена для информирования пользователя о текущем состоянии работы. Наличие длинного сетевого шнура позволяет установить прибор практически в любом месте на кухне.<br><br>НАДЁЖНОСТЬ<br>Корпус изготовлен из высококачественной, прочной нержавеющей стали, которая защищает внутренние рабочие элементы от пагубного воздействия внешних факторов. <br><br>', 'InStock', 'Discount', 6, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Moulinex'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Мини-печь Moulinex Optimo OX464E32 Steel'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Мини-печь Moulinex Optimo OX464E32 Steel' 
+        AND a."Name" = '33' 
+        AND a."Type" = 'Объем'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Мини-печь Moulinex Optimo OX464E32 Steel' 
+        AND a."Name" = '1600' 
+        AND a."Type" = 'Потребляемая мощность'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Мини-печь Moulinex Optimo OX464E32 Steel' 
+        AND a."Name" = 'ТЭН' 
+        AND a."Type" = 'Тип гриля'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Мини-печь Moulinex Optimo OX464E32 Steel' 
+        AND a."Name" = 'серебристый' 
+        AND a."Type" = 'Цвет'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Мини-печь Moulinex Optimo OX464E32 Steel' 
+        AND a."Name" = 'алюминий' 
+        AND a."Type" = 'Внутреннее покрытие'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-moulinex-optimo-ox464e32-steel_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Moulinex Optimo OX464E32 Steel'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-moulinex-optimo-ox464e32-steel_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Moulinex Optimo OX464E32 Steel'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-moulinex-optimo-ox464e32-steel_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Moulinex Optimo OX464E32 Steel'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-moulinex-optimo-ox464e32-steel_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Moulinex Optimo OX464E32 Steel'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-moulinex-optimo-ox464e32-steel_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Moulinex Optimo OX464E32 Steel'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-moulinex-optimo-ox464e32-steel_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Moulinex Optimo OX464E32 Steel'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-moulinex-optimo-ox464e32-steel_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Moulinex Optimo OX464E32 Steel'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-moulinex-optimo-ox464e32-steel_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Moulinex Optimo OX464E32 Steel'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-moulinex-optimo-ox464e32-steel_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Moulinex Optimo OX464E32 Steel'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-moulinex-optimo-ox464e32-steel_9.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Moulinex Optimo OX464E32 Steel'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-moulinex-optimo-ox464e32-steel_10.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Moulinex Optimo OX464E32 Steel'));

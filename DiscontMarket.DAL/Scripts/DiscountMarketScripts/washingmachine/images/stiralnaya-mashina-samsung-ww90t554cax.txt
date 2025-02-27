@@ -1,0 +1,25 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-samsung-ww90t554cax_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Samsung WW90T554CAX'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-samsung-ww90t554cax_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Samsung WW90T554CAX'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-samsung-ww90t554cax_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Samsung WW90T554CAX'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-samsung-ww90t554cax_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Samsung WW90T554CAX'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-samsung-ww90t554cax_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Samsung WW90T554CAX'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-samsung-ww90t554cax_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Samsung WW90T554CAX'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-samsung-ww90t554cax_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Samsung WW90T554CAX'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-samsung-ww90t554cax_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Samsung WW90T554CAX'));

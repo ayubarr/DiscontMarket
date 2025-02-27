@@ -1,0 +1,87 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Холодильник Beko B3R0CNK332HG', 25249, 5, '/items/productimages/holodilnik-beko-b3r0cnk332hg_0.png', 4.66, '', 'Холодильник Beko B3R0CNK332HG — современная модель актуального серого цвета, которая гармонично впишется в любой кухонный интерьер. Общий объем прибора составляет 300 л, из них 100 л приходятся на расположенное снизу морозильное отделение.
+
+• <b>Технология No Frost</b>
+Работает в обоих камерах, избавляет от необходимости тратить время и силы на ручное размораживание, так как инея и наледи на стенках и продуктах не образуется. 
+
+• <b>Дисплей на фасадной стороне</b>
+Предоставляет удобный доступ к управлению, отображает все параметры работы, включая температуру в отделениях. 
+
+• <b>Дополнительные режимы</b>
+«Суперохлаждение» и «Суперзамораживание» полезны при крупной загрузке продуктов — быстро подготавливают их к последующему хранению. «Отпуск» дает возможность полностью не отключать прибор на время отсутствия. 
+
+Оборудование холодильного отделения (200 л) состоит из четырех стеклянных полок, из которых три регулируются по высоте, и пластикового контейнера для фруктов и овощей. На дверце — четыре кармана. Светодиодная подсветка, расположенная сверху, обеспечивает отличный обзор содержимого и не влияет на внутренний микроклимат.
+
+Морозильная камера (100 л) оснащена четырьмя выдвижными ящиками с прозрачными фасадами. В сутки можно заморозить до 7 кг припасов. При отключении электропитания содержимое будет сохраняться от таяния в течение 18 часов. О слишком долго открытой двери оповещает звуковой сигнал. 
+
+Холодильник отличается экономичным энергопотреблением класса А+ и составляет 306 кВт*ч в год. Климатический класс — SN-T, то есть прибор эффективно выполняет свои функции при температуре до +43°C.', 'InStock', 'Discount', 3, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Beko'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Холодильник Beko B3R0CNK332HG'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Beko B3R0CNK332HG' 
+        AND a."Name" = 'стандартный' 
+        AND a."Type" = 'Тип компрессора'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Beko B3R0CNK332HG' 
+        AND a."Name" = '201' 
+        AND a."Type" = 'Высота'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Beko B3R0CNK332HG' 
+        AND a."Name" = '54' 
+        AND a."Type" = 'Ширина'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Beko B3R0CNK332HG' 
+        AND a."Name" = '60' 
+        AND a."Type" = 'Глубина'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Beko B3R0CNK332HG' 
+        AND a."Name" = '335' 
+        AND a."Type" = 'Общий объем'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-beko-b3r0cnk332hg_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Beko B3R0CNK332HG'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-beko-b3r0cnk332hg_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Beko B3R0CNK332HG'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-beko-b3r0cnk332hg_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Beko B3R0CNK332HG'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-beko-b3r0cnk332hg_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Beko B3R0CNK332HG'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-beko-b3r0cnk332hg_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Beko B3R0CNK332HG'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-beko-b3r0cnk332hg_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Beko B3R0CNK332HG'));

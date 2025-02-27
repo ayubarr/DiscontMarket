@@ -1,0 +1,16 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-oasis-m-s30b_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Oasis М-S30B'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-oasis-m-s30b_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Oasis М-S30B'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-oasis-m-s30b_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Oasis М-S30B'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-oasis-m-s30b_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Oasis М-S30B'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-oasis-m-s30b_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Oasis М-S30B'));

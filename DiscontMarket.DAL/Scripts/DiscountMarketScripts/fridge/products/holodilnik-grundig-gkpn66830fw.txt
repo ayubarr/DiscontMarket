@@ -1,0 +1,84 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Холодильник Grundig GKPN66830FW', 42499, 5, '/items/productimages/holodilnik-grundig-gkpn66830fw_0.png', 4.22, '', 'Холодильник Grundig GKPN66830FW из серии Prologue оснащен инверторным компрессором. Объем основной камеры — 220 л, морозильника — 100 л. В обоих отделениях реализована технология автоматического размораживания No Frost. 
+
+Для хранения продуктов предусмотрены полки из закаленного стекла и выдвижные ящики из пластика. Есть сухая зона сохранения свежести VitaminZone с ящиком, который движется с помощью телескопических направляющих.
+
+Система управления — электронная. Есть режимы «Отпуск» и «Суперзамораживание» и функция энегосбережения, доступно LED-освещение. Безопасность обеспечивают защита от детей и звуковая и световая сигнализация открытой двери.
+
+При отключенном питании температура внутри устройства остается неизменной в течение примерно 21 часа. Максимальный уровень шума — 37 дБ. Дверь изготовлена из металла, ее можно перенавешивать.', 'InStock', 'Discount', 3, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Grundig'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Холодильник Grundig GKPN66830FW'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Grundig GKPN66830FW' 
+        AND a."Name" = 'инверторный' 
+        AND a."Type" = 'Тип компрессора'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Grundig GKPN66830FW' 
+        AND a."Name" = '186' 
+        AND a."Type" = 'Высота'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Grundig GKPN66830FW' 
+        AND a."Name" = '59.5' 
+        AND a."Type" = 'Ширина'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Grundig GKPN66830FW' 
+        AND a."Name" = '65' 
+        AND a."Type" = 'Глубина'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Grundig GKPN66830FW' 
+        AND a."Name" = '320' 
+        AND a."Type" = 'Общий объем'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-grundig-gkpn66830fw_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Grundig GKPN66830FW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-grundig-gkpn66830fw_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Grundig GKPN66830FW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-grundig-gkpn66830fw_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Grundig GKPN66830FW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-grundig-gkpn66830fw_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Grundig GKPN66830FW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-grundig-gkpn66830fw_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Grundig GKPN66830FW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-grundig-gkpn66830fw_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Grundig GKPN66830FW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-grundig-gkpn66830fw_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Grundig GKPN66830FW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-grundig-gkpn66830fw_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Grundig GKPN66830FW'));

@@ -1,0 +1,72 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Встраиваемая посудомоечная машина 45 см Korting KDI 45017', 29495, 11, '/items/productimages/vstraivaemaya-posudomoechnaya-mashina-45-sm-korting-kdi-45017_0.png', 4.7, '', 'Встраиваемая посудомоечная машина Korting KDI 45017 с инверторным электродвигателем сконструирована для установки в монтажную нишу размерами 820-870х450х570 мм. Агрегат относится к А++ классу энергоэффективности, обрабатывает за один цикл до десяти комплектов посуды, расходуя около 10 л воды. Метод сушки посуды в камере — конденсационный. Показатель шума во время работы не превышает 49 дБ, потребляемая мощность — 1,9 кВт. 
+Камера машины оснащена LED-лампой и укомплектована тремя корзинами, включая модуль для столовых приборов. Регулятор Easy Lift позволяет менять высоту верхней секции одним движением. Два изогнутых разбрызгивателя формируют водные струи, которые достигают каждого уголка моющего бункера. 
+Машина поддерживает использование моющих средств три-в-одном, половинную загрузку и работает в пяти режимах: «Авто», «Быстрый», «Эко», «90 минут», «Стеклянная посуда». Индикатор «Луч на полу» информирует об этапе рабочего цикла. В режиме автопрограммы устройство самостоятельно подбирает параметры для мойки, анализируя количество, тип и уровень загрязнения посуды. Постоянная работа в этом режиме сокращает годовое водопотребление и расход электричества до 30%. По окончании цикла дверца автоматически приоткрывается, повышая эффективность сушки. 
+Управление работой Korting KDI 45017 обеспечивает модуль с сенсорными кнопками выбора режимов, цифровым LED-индикатором, клавишами включения, настройки отложенного старта (1-24 часа) и половинной загрузки. Система AquaControl блокирует подачу воды в случае перелива и протечек.', 'InStock', 'Discount', 28, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Korting'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 45 см Korting KDI 45017'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Встраиваемая посудомоечная машина 45 см Korting KDI 45017' 
+        AND a."Name" = '9' 
+        AND a."Type" = 'Расход воды за цикл'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Встраиваемая посудомоечная машина 45 см Korting KDI 45017' 
+        AND a."Name" = '10 комплектов' 
+        AND a."Type" = 'Максимальная вместимость'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Встраиваемая посудомоечная машина 45 см Korting KDI 45017' 
+        AND a."Name" = '5' 
+        AND a."Type" = 'Количество программ мойки'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Встраиваемая посудомоечная машина 45 см Korting KDI 45017' 
+        AND a."Name" = '81.5x44.8х55' 
+        AND a."Type" = 'Размер ниши, мм (В*Ш*Г)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Встраиваемая посудомоечная машина 45 см Korting KDI 45017' 
+        AND a."Name" = 'конденсационный' 
+        AND a."Type" = 'Тип сушки'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-45-sm-korting-kdi-45017_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 45 см Korting KDI 45017'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-45-sm-korting-kdi-45017_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 45 см Korting KDI 45017'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-45-sm-korting-kdi-45017_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 45 см Korting KDI 45017'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-45-sm-korting-kdi-45017_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 45 см Korting KDI 45017'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-45-sm-korting-kdi-45017_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 45 см Korting KDI 45017'));

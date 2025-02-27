@@ -1,0 +1,4 @@
+﻿INSERT INTO "Attributes" ("NameTranslate", "Name", "Type") VALUES
+('85', '85', 'Диагональ');
+INSERT INTO "AttributeCategory" ("AttributeID", "CategoryID") VALUES
+((SELECT "ID" FROM "Attributes" WHERE "Name" = '85' AND "Type" = 'Диагональ'), (SELECT "ID" FROM "Categories" WHERE "Name" = 'tv'));

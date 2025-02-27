@@ -1,0 +1,28 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-haier-c2f636cxmvu1_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Haier C2F636CXMVU1'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-haier-c2f636cxmvu1_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Haier C2F636CXMVU1'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-haier-c2f636cxmvu1_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Haier C2F636CXMVU1'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-haier-c2f636cxmvu1_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Haier C2F636CXMVU1'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-haier-c2f636cxmvu1_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Haier C2F636CXMVU1'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-haier-c2f636cxmvu1_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Haier C2F636CXMVU1'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-haier-c2f636cxmvu1_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Haier C2F636CXMVU1'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-haier-c2f636cxmvu1_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Haier C2F636CXMVU1'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-haier-c2f636cxmvu1_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Haier C2F636CXMVU1'));

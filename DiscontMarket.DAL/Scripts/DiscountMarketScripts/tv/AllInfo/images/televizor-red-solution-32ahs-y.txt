@@ -1,0 +1,46 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-red-solution-32ahs-y_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор RED SOLUTION 32AHS/Y'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-red-solution-32ahs-y_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор RED SOLUTION 32AHS/Y'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-red-solution-32ahs-y_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор RED SOLUTION 32AHS/Y'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-red-solution-32ahs-y_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор RED SOLUTION 32AHS/Y'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-red-solution-32ahs-y_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор RED SOLUTION 32AHS/Y'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-red-solution-32ahs-y_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор RED SOLUTION 32AHS/Y'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-red-solution-32ahs-y_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор RED SOLUTION 32AHS/Y'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-red-solution-32ahs-y_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор RED SOLUTION 32AHS/Y'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-red-solution-32ahs-y_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор RED SOLUTION 32AHS/Y'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-red-solution-32ahs-y_9.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор RED SOLUTION 32AHS/Y'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-red-solution-32ahs-y_10.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор RED SOLUTION 32AHS/Y'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-red-solution-32ahs-y_11.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор RED SOLUTION 32AHS/Y'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-red-solution-32ahs-y_12.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор RED SOLUTION 32AHS/Y'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-red-solution-32ahs-y_13.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор RED SOLUTION 32AHS/Y'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-red-solution-32ahs-y_14.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор RED SOLUTION 32AHS/Y'));

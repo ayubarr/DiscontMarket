@@ -1,0 +1,22 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-hi-vhix-65u239msa_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hi VHIX-65U239MSA'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-hi-vhix-65u239msa_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hi VHIX-65U239MSA'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-hi-vhix-65u239msa_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hi VHIX-65U239MSA'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-hi-vhix-65u239msa_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hi VHIX-65U239MSA'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-hi-vhix-65u239msa_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hi VHIX-65U239MSA'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-hi-vhix-65u239msa_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hi VHIX-65U239MSA'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-hi-vhix-65u239msa_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hi VHIX-65U239MSA'));

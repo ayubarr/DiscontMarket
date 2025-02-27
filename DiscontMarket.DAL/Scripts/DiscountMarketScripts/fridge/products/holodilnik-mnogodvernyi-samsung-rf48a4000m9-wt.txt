@@ -1,0 +1,69 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Холодильник многодверный Samsung RF48A4000M9/WT', 99999, 5, '/items/productimages/holodilnik-mnogodvernyi-samsung-rf48a4000m9-wt_0.png', 4.58, '', 'Отдельностоящий холодильник Samsung RF48A4000M9/WT с нижним расположением морозильной камеры работает на под контролем тихого (до 42 дБ) и энергоэффективного инверторного компрессора. Прибор оснащен четырьмя распашными дверцами со скрытыми ручками, регулируемыми по высоте ножками, светодиодной подсветкой камер. Система двухконтурного охлаждения Twin Cooling Plus поддерживает равномерную температуру в камерах, регулирует уровень влажности, предупреждает смешение запахов. Внешний сенсорный модуль управления на правой верхней дверце позволяет настраивать и контролировать работу прибора. <br><br>Холодильное отделение полезным объемом 328 л снабжено тремя полками из закаленного стекла, шестью пластиковыми дверными карманами и двумя выдвижными пластиковыми лотками для овощей и фруктов во влажной зоне свежести. Поддерживаемый температурный режим в камере — от 2°С до 8°С. Морозильное отделение полезным объемом 140 л снабжено четырьмя выдвижными полками и двумя лотками для длительного хранения продуктов. Съемный механический льдогенератор Twist Ice maker позволяет получать лед в кубиках. Диапазон рабочих температур в морозильнике — от -16°С до -24°С. <br><br>Прибор поддерживает режимы «Суперзаморозка» и «Суперохлаждение», которые ускоряют обработку загруженных продуктов. Функция «Отпуск» обеспечивает работу агрегата в режиме пониженного энергопотребления. Блокировка управляющей панели предупреждает случайное изменение настроек. Технология No Frost способствует интенсивной циркуляции воздуха, предупреждает появление наледи и инея, не требует ручного размораживания.', 'InStock', 'Discount', 3, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Samsung'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Samsung RF48A4000M9/WT'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник многодверный Samsung RF48A4000M9/WT' 
+        AND a."Name" = 'инверторный' 
+        AND a."Type" = 'Тип компрессора'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник многодверный Samsung RF48A4000M9/WT' 
+        AND a."Name" = '179.3*83.3*74 см' 
+        AND a."Type" = 'Габаритные размеры (В*Ш*Г)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник многодверный Samsung RF48A4000M9/WT' 
+        AND a."Name" = '511' 
+        AND a."Type" = 'Общий объем'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник многодверный Samsung RF48A4000M9/WT' 
+        AND a."Name" = 'влажная' 
+        AND a."Type" = 'Тип зоны сохранения свежести'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник многодверный Samsung RF48A4000M9/WT' 
+        AND a."Name" = 'сенсорная панель' 
+        AND a."Type" = 'Тип управления'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-samsung-rf48a4000m9-wt_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Samsung RF48A4000M9/WT'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-samsung-rf48a4000m9-wt_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Samsung RF48A4000M9/WT'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-samsung-rf48a4000m9-wt_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Samsung RF48A4000M9/WT'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-samsung-rf48a4000m9-wt_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Samsung RF48A4000M9/WT'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-samsung-rf48a4000m9-wt_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Samsung RF48A4000M9/WT'));

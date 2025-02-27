@@ -1,0 +1,91 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Стиральная машина LG F4M5TSFW', 29795, 19, '/items/productimages/stiralnaya-mashina-lg-f4m5tsfw_0.png', 4.6, '', 'Стиральная машина LG F4M5TSFW — модель с габаритными размерами 85х60х56 см, весом — 60 кг. Класс стирки и отжима — А. Устройство поддерживает автоматические программы, за счет чего подходит для вещей, выполненных из любых типов тканей (хлопка, шерсти). Доступны режимы: «Интенсивная стирка», «Пятновыведение», «Бесшумная работа». Управлять параметрами настройки, выбирать необходимые функции можно посредством сенсорной панели. На цифровой дисплей выводится вся основная информация. Световые индикации показывают состояние работы.
+
+В основе работы лежит инверторный двигатель с прямым приводом. Уровень шума в процессе стирки равен 55 дБ, при отжиме — 74 дБ. Функция «Отсрочка запуска» дает возможность перенести время функционирования на срок до 24 часов. По завершении рабочего процесса активируется звуковой сигнал. Доступны опции: «Ускоренная стирки», «Автовзвешивание белья». Класс энергопотребления — А. Показатель максимальной потребляемой мощности — 1800 Вт.
+
+Модель может отстирывать за один цикл до 8 кг белья. Люк открывается налево. Опция «Контроль пенообразования» позволяет следить за уровнем пены в барабане, исключая превышение оптимальных значений. Функция «Защита от детей» блокирует доступ к управлению, «Самодиагностика неисправностей» позволяет своевременно выявить ошибки и устранить их.', 'InStock', 'Discount', 5, (SELECT "ID" FROM "Brands" WHERE "Name" = 'LG'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Стиральная машина LG F4M5TSFW'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина LG F4M5TSFW' 
+        AND a."Name" = '8' 
+        AND a."Type" = 'Максимальная загрузка'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина LG F4M5TSFW' 
+        AND a."Name" = '1400' 
+        AND a."Type" = 'Максимальная скорость отжима'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина LG F4M5TSFW' 
+        AND a."Name" = 'инверторный' 
+        AND a."Type" = 'Мотор'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина LG F4M5TSFW' 
+        AND a."Name" = 'Да' 
+        AND a."Type" = 'Обработка паром'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина LG F4M5TSFW' 
+        AND a."Name" = '85*60*56 см' 
+        AND a."Type" = 'Габаритные размеры (В*Ш*Г)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-lg-f4m5tsfw_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина LG F4M5TSFW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-lg-f4m5tsfw_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина LG F4M5TSFW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-lg-f4m5tsfw_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина LG F4M5TSFW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-lg-f4m5tsfw_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина LG F4M5TSFW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-lg-f4m5tsfw_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина LG F4M5TSFW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-lg-f4m5tsfw_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина LG F4M5TSFW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-lg-f4m5tsfw_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина LG F4M5TSFW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-lg-f4m5tsfw_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина LG F4M5TSFW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-lg-f4m5tsfw_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина LG F4M5TSFW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-lg-f4m5tsfw_9.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина LG F4M5TSFW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-lg-f4m5tsfw_10.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина LG F4M5TSFW'));

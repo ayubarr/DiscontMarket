@@ -1,0 +1,87 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Холодильник Sharp SJXG60PGSl', 109999, 16, '/items/productimages/holodilnik-sharp-sjxg60pgsl_0.png', 4.94, '', 'Холодильник Sharp SJXG60PG – вместительная модель, которая идеально впишется в кухонный интерьер с современным оформлением. Его дверцы со стеклянным покрытием не только красивы, но и практичны – они легко очищаются от жира и не «собирают» отпечатков пальцев. Тщательно продуманная компоновка позволяет найти подходящее место для каждого вида продуктов – так, для мяса и рыбы предусмотрена отдельная «зона свежести». 
+
+ГИБРИДНАЯ КОНСТРУКЦИЯ
+Для охлаждения основного отделения используются вентилятор и большая алюминиевая пластина. Они помогают поддерживать оптимальный микроклимат на каждой полке и долго сохранять низкую температуру после отключения питания. 
+
+ИНВЕРТОРНЫЙ КОМПРЕССОР
+Плавная регулировка мощности продлевает срок службы двигателя, снижает уровень шума и минимизирует энергопотребление. Устройство соответствует классу экономичности А++.
+
+НАСТОЯЩАЯ СВЕЖЕСТЬ
+Плазменный ионизатор генерирует множество частиц с положительным и отрицательным зарядом. Они уничтожают большинство бактерий и спор грибков, сохраняя полезные свойства продукты. Встроенный дезодоратор разрушает летучие химические соединения, устраняя неприятные запахи. 
+
+ТОЧНАЯ НАСТРОЙКА
+Функция Extra Cool помогает охладить продукты до минимальной отрицательной температуры, сохранив их полезные свойства и облегчив переработку. Она также позволяет подавать к столу прохладные, но не замороженные напитки. 
+
+СОВРЕМЕННЫЕ ТЕХНОЛОГИИ В ДЕЙСТВИИ
+Сенсорная панель управления предоставляет быстрый доступ ко всем настройкам. LED-лампы эффективно освещают содержимое, сохраняя при этом минимальное энергопотребление. Система Total No Frost автоматически размораживает стенки при обнаружении льда и инея, упрощая обслуживание холодильника.', 'InStock', 'Discount', 3, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Sharp'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Холодильник Sharp SJXG60PGSl'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Sharp SJXG60PGSl' 
+        AND a."Name" = 'инверторный' 
+        AND a."Type" = 'Тип компрессора'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Sharp SJXG60PGSl' 
+        AND a."Name" = '86' 
+        AND a."Type" = 'Ширина'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Sharp SJXG60PGSl' 
+        AND a."Name" = '74' 
+        AND a."Type" = 'Глубина'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Sharp SJXG60PGSl' 
+        AND a."Name" = '187' 
+        AND a."Type" = 'Высота'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Sharp SJXG60PGSl' 
+        AND a."Name" = '600' 
+        AND a."Type" = 'Общий объем'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-sharp-sjxg60pgsl_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Sharp SJXG60PGSl'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-sharp-sjxg60pgsl_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Sharp SJXG60PGSl'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-sharp-sjxg60pgsl_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Sharp SJXG60PGSl'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-sharp-sjxg60pgsl_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Sharp SJXG60PGSl'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-sharp-sjxg60pgsl_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Sharp SJXG60PGSl'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-sharp-sjxg60pgsl_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Sharp SJXG60PGSl'));

@@ -1,0 +1,28 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-tcl-75p755pro_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор TCL 75P755PRO'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-tcl-75p755pro_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор TCL 75P755PRO'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-tcl-75p755pro_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор TCL 75P755PRO'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-tcl-75p755pro_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор TCL 75P755PRO'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-tcl-75p755pro_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор TCL 75P755PRO'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-tcl-75p755pro_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор TCL 75P755PRO'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-tcl-75p755pro_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор TCL 75P755PRO'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-tcl-75p755pro_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор TCL 75P755PRO'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-tcl-75p755pro_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор TCL 75P755PRO'));

@@ -1,0 +1,52 @@
+﻿INSERT INTO "Products" 
+("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription",
+"Availability", "Status", "CategoryID", "BrandID", "UserID") 
+VALUES
+ ('Телевизор Samsung UE43DU7100UXRU', 20595, 15, '/items/productimages/televizor-samsung-ue43du7100uxru_0.png', 4.69, '', 'Телевизор Samsung UE43DU7100UXRU представлен в тонком корпусе с маленькими рамками. Разрешение модели составляет 4K UHD (3840x2160 Пикс).
+
+• <b>Поддержка HDR</b>
+Технология HDR (High Dynamic Range) расширяет диапазон яркости, обеспечивая более глубокие тени и более яркие светлые участки, что делает картинку еще более реалистичной и насыщенной.
+
+• <b>Встроенный Wi-Fi и Bluetooth</b>
+Телевизор поддерживает беспроводное подключение к интернету и другим устройствам, что обеспечивает легкий доступ к онлайн-контенту и возможность подключения беспроводной акустики или гарнитуры.
+
+• <b>Удобное управление с помощью смартфона</b>
+С помощью приложения SmartThings можно управлять телевизором прямо со смартфона, синхронизировать его с другими умными устройствами в доме.
+
+Модель оборудована системой Smart TV, которая открывает доступ к различным приложениям, играм и стриминговым сервисам. Доступно воспроизведение видео и музыки с USB-носителей.', 'InStock', 'Discount', 1, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Samsung'), 1);
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung UE43DU7100UXRU'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '4K Ultra HD (3840x2160 Пикс)' AND "Type" = 'Экран));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung UE43DU7100UXRU'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '43' AND "Type" = 'Диагональ));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung UE43DU7100UXRU'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '60' AND "Type" = 'Частота обновления));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung UE43DU7100UXRU'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'LED' AND "Type" = 'Технология экрана));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung UE43DU7100UXRU'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'LED' AND "Type" = 'Тип светодиодной подсветки));
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-samsung-ue43du7100uxru_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung UE43DU7100UXRU'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-samsung-ue43du7100uxru_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung UE43DU7100UXRU'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-samsung-ue43du7100uxru_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung UE43DU7100UXRU'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-samsung-ue43du7100uxru_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung UE43DU7100UXRU'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-samsung-ue43du7100uxru_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung UE43DU7100UXRU'));

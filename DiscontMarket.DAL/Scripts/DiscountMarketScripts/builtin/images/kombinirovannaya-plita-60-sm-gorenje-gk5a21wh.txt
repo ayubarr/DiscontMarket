@@ -1,0 +1,25 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/kombinirovannaya-plita-60-sm-gorenje-gk5a21wh_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Комбинированная плита (60 см) Gorenje GK5A21WH'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/kombinirovannaya-plita-60-sm-gorenje-gk5a21wh_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Комбинированная плита (60 см) Gorenje GK5A21WH'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/kombinirovannaya-plita-60-sm-gorenje-gk5a21wh_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Комбинированная плита (60 см) Gorenje GK5A21WH'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/kombinirovannaya-plita-60-sm-gorenje-gk5a21wh_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Комбинированная плита (60 см) Gorenje GK5A21WH'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/kombinirovannaya-plita-60-sm-gorenje-gk5a21wh_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Комбинированная плита (60 см) Gorenje GK5A21WH'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/kombinirovannaya-plita-60-sm-gorenje-gk5a21wh_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Комбинированная плита (60 см) Gorenje GK5A21WH'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/kombinirovannaya-plita-60-sm-gorenje-gk5a21wh_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Комбинированная плита (60 см) Gorenje GK5A21WH'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/kombinirovannaya-plita-60-sm-gorenje-gk5a21wh_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Комбинированная плита (60 см) Gorenje GK5A21WH'));

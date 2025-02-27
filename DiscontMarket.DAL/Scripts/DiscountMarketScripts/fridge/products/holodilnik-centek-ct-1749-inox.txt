@@ -1,0 +1,83 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Холодильник Centek CT-1749 INOX', 44449, 19, '/items/productimages/holodilnik-centek-ct-1749-inox_0.png', 4.11, '', 'Многодверный холодильник Centek CT-1749 Inox сохраняет температуру до 24 ч при отключении питания. Благодаря высокому классу энергоэффективности А++ техника максимально экономит коммунальные расходы. Режим отпуск позволяет сохранить продукты свежими при минимальных затратах электроэнергии. Модель оснащена полками из закаленного стекла для удобного размещения продуктов. Материал легко отмывается от загрязнений и долго сохраняет внешний вид. 
+
+Благодаря системе No Frost прибор не требует сложного ухода. На двери предусмотрен сенсорный экран, на котором отображается внутренний климат. Уровень шума 41 дБ создает комфортные условия эксплуатации. Защита от детей предупреждает непредвиденное изменение настроек, создавая безопасные условия эксплуатации.', 'InStock', 'Discount', 3, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Centek'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Холодильник Centek CT-1749 INOX'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Centek CT-1749 INOX' 
+        AND a."Name" = 'инверторный' 
+        AND a."Type" = 'Тип компрессора'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Centek CT-1749 INOX' 
+        AND a."Name" = '189.5*85.6*77.5 см' 
+        AND a."Type" = 'Габаритные размеры (В*Ш*Г)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Centek CT-1749 INOX' 
+        AND a."Name" = '434' 
+        AND a."Type" = 'Общий объем'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Centek CT-1749 INOX' 
+        AND a."Name" = 'отсутствует' 
+        AND a."Type" = 'Тип зоны сохранения свежести'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Centek CT-1749 INOX' 
+        AND a."Name" = 'электронный' 
+        AND a."Type" = 'Тип управления'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-centek-ct-1749-inox_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Centek CT-1749 INOX'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-centek-ct-1749-inox_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Centek CT-1749 INOX'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-centek-ct-1749-inox_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Centek CT-1749 INOX'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-centek-ct-1749-inox_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Centek CT-1749 INOX'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-centek-ct-1749-inox_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Centek CT-1749 INOX'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-centek-ct-1749-inox_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Centek CT-1749 INOX'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-centek-ct-1749-inox_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Centek CT-1749 INOX'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-centek-ct-1749-inox_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Centek CT-1749 INOX'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-centek-ct-1749-inox_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Centek CT-1749 INOX'));

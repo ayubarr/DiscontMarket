@@ -1,0 +1,13 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-korting-kwm-59id14107_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Korting KWM 59ID14107'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-korting-kwm-59id14107_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Korting KWM 59ID14107'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-korting-kwm-59id14107_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Korting KWM 59ID14107'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-korting-kwm-59id14107_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Korting KWM 59ID14107'));

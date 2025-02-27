@@ -1,0 +1,66 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Электроплитка Econ ECO-232HP', 949, 9, '/items/productimages/elektroplitka-econ-eco-232hp_0.png', 4.7, '', 'Очень маленькая кухня или недостаточно оборудованное бытовой техникой временное жильё – совсем не повод оставаться без горячих завтраков, обедов и ужинов. Вам на помощь придёт плитка Econ ECO-232HP. Это компактная модель шириной 44 и глубиной 24,5 см, которую можно легко разместить на столе, тумбе, подоконнике. Прибор весит немногим более двух килограммов, так что его перевозка тоже не доставит сложностей.
+
+ПРАКТИЧНОЕ РЕШЕНИЕ
+К вашим услугам пара чугунных конфорок, которые быстро и равномерно прогреваются. Процесс сопровождается световой индикацией. Диаметр «блинов» 15,5 см, мощность – 1000 Вт. Вы сможете одновременно готовить сразу два блюда, что позволит сэкономить время. 
+
+ПРОСТОЕ УПРАВЛЕНИЕ
+В передней части корпуса расположены механические поворотные регуляторы, с помощью которых вы будете плавно настраивать уровень нагрева, выбирая из пяти вариантов. Медленное тушение или быстрая жарка – вы сможете готовить любыми способами, как на стационарной варочной панели.
+
+ОСОБЕННОСТИ КОНСТРУКЦИИ
+Корпус этой модели выполнен из стали и покрыт прочной эмалью, устойчивой к царапинам, сколам и другим механическим повреждениям. За безопасность использования отвечает система защиты от перегрева, которая отключает прибор при угрозе поломки. Прорезиненные ножки предотвращают скольжение плитки по столу.', 'InStock', 'Discount', 4, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Econ'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Электроплитка Econ ECO-232HP'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Электроплитка Econ ECO-232HP' 
+        AND a."Name" = '2' 
+        AND a."Type" = 'Количество конфорок'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Электроплитка Econ ECO-232HP' 
+        AND a."Name" = 'чугунные' 
+        AND a."Type" = 'Тип конфорок'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Электроплитка Econ ECO-232HP' 
+        AND a."Name" = '2000' 
+        AND a."Type" = 'Потребляемая мощность'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Электроплитка Econ ECO-232HP' 
+        AND a."Name" = 'чугун' 
+        AND a."Type" = 'Материал варочной поверхности'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Электроплитка Econ ECO-232HP' 
+        AND a."Name" = 'Да' 
+        AND a."Type" = 'Поддержание температуры'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/elektroplitka-econ-eco-232hp_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Электроплитка Econ ECO-232HP'));

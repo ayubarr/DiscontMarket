@@ -1,0 +1,80 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Морозильный ларь Pozis FH-258-1', 23595, 18, '/items/productimages/morozilnyi-lar-pozis-fh-258-1_0.png', 4.35, '', 'Морозильный ларь Pozis FH-258-1 габаритами 88,5х69,5х170 см весом 69,5 кг комплектуется двумя подвесными корзинами для продуктов, положение которых можно менять по своему усмотрению. Модель общим объемом 472 л функционирует с мощностью замораживания до 16 кг/сут и может использоваться на улице при температуре до -15°С. Устройство класса энергоэффективности А потребляет за год 386,9 кВт*ч электроэнергии и работает тихо — уровень шума не превышает 40 дБ. 
+
+Откидная дверца с внутренней ручкой плотно прилегает к стенкам, благодаря чему при отключении электричества холод внутри сохраняется в течение 10 часов. Предусмотрено ручное размораживание. Внизу располагается поворотный переключатель, которым устанавливается требуемый температурный режим. Отслеживать показатели действия можно по световым индикаторам.', 'InStock', 'Discount', 3, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Pozis'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Морозильный ларь Pozis FH-258-1'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Морозильный ларь Pozis FH-258-1' 
+        AND a."Name" = 'стандартный' 
+        AND a."Type" = 'Тип компрессора'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Морозильный ларь Pozis FH-258-1' 
+        AND a."Name" = '88.5*170*69.5 см' 
+        AND a."Type" = 'Габаритные размеры (В*Ш*Г)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Морозильный ларь Pozis FH-258-1' 
+        AND a."Name" = 'A' 
+        AND a."Type" = 'Класс энергоэффективности'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Морозильный ларь Pozis FH-258-1' 
+        AND a."Name" = 'механический' 
+        AND a."Type" = 'Тип управления'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Морозильный ларь Pozis FH-258-1' 
+        AND a."Name" = '386.9' 
+        AND a."Type" = 'Энергопотребление в год'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnyi-lar-pozis-fh-258-1_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильный ларь Pozis FH-258-1'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnyi-lar-pozis-fh-258-1_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильный ларь Pozis FH-258-1'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnyi-lar-pozis-fh-258-1_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильный ларь Pozis FH-258-1'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnyi-lar-pozis-fh-258-1_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильный ларь Pozis FH-258-1'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnyi-lar-pozis-fh-258-1_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильный ларь Pozis FH-258-1'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnyi-lar-pozis-fh-258-1_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильный ларь Pozis FH-258-1'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnyi-lar-pozis-fh-258-1_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильный ларь Pozis FH-258-1'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnyi-lar-pozis-fh-258-1_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильный ларь Pozis FH-258-1'));

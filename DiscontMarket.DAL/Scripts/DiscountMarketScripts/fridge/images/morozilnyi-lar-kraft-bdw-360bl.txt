@@ -1,0 +1,13 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnyi-lar-kraft-bdw-360bl_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильный ларь Kraft BD(W)-360BL'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnyi-lar-kraft-bdw-360bl_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильный ларь Kraft BD(W)-360BL'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnyi-lar-kraft-bdw-360bl_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильный ларь Kraft BD(W)-360BL'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnyi-lar-kraft-bdw-360bl_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильный ларь Kraft BD(W)-360BL'));

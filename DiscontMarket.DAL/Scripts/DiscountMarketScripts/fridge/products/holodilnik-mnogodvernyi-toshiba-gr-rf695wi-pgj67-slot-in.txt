@@ -1,0 +1,96 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Холодильник многодверный Toshiba GR-RF695WI-PGJ(67) Slot-in', 174999, 15, '/items/productimages/holodilnik-mnogodvernyi-toshiba-gr-rf695wi-pgj67-slot-in_0.png', 4.37, '', 'Многодверный холодильник Toshiba GR-RF695WI-PGJ(67) Slot-in общим объемом 564 л позволит удобно разместить достаточное количество продуктов для большой семьи. В приборе реализована технология No Frost, за счет которой внутри не образуются иней и наледь. В верхнем отделении установлено освещение. <br><br>• <b>Морозильная камера</b> <br>Производительность достигает 10 кг/сутки. Для создания запасов используются шесть выдвижных ящиков. <br><br>• <b>Три режима</b> <br>Выдержка при температуре -1°С позволяет долго хранить охлажденные рыбу и мясо, сохраняя их структуру и вкусовые качества. Слегка подмороженное состояние поддерживает мягкий режим (-3°С). Глубокая заморозка происходит при температуре -30°С. <br><br>• <b>Технология Hydro Fresh</b> <br>В специальном отделении холодильной камеры формируется легкий увлажняющий туман, что способствует сохранению свежести овощей и фруктов. <br><br>• <b>Система Pure Air</b> <br>Формирует большое количество электролитов, которые устраняют запахи в приборе. Металлические компоненты фильтров ликвидируют бактерии. <br><br>Двери сделаны из десятислойного стекла, закаленного при температуре 800°С. Поверхность приятна на ощупь, легко очищается от загрязнений, устойчива к появлению потертостей и царапин, не меняет цвет на протяжении всего срока использования. <br><br>Горизонтальные ручки выполнены из дерева с влагостойким покрытием. Подсветка с датчиками движения активируется автоматически при приближении человека к холодильнику на расстояние 70 см. Toshiba GR-RF695WI-PGJ интегрируется в экосистему «Умный дом», поддерживает управление через приложение и голосовых ассистентов Amazon Alexa и Google Home.', 'InStock', 'Discount', 3, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Toshiba'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Toshiba GR-RF695WI-PGJ(67) Slot-in'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник многодверный Toshiba GR-RF695WI-PGJ(67) Slot-in' 
+        AND a."Name" = 'инверторный' 
+        AND a."Type" = 'Тип компрессора'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник многодверный Toshiba GR-RF695WI-PGJ(67) Slot-in' 
+        AND a."Name" = '191*83.3*60 см' 
+        AND a."Type" = 'Габаритные размеры (В*Ш*Г)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник многодверный Toshiba GR-RF695WI-PGJ(67) Slot-in' 
+        AND a."Name" = '564' 
+        AND a."Type" = 'Общий объем'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник многодверный Toshiba GR-RF695WI-PGJ(67) Slot-in' 
+        AND a."Name" = 'влажная/сухая' 
+        AND a."Type" = 'Тип зоны сохранения свежести'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник многодверный Toshiba GR-RF695WI-PGJ(67) Slot-in' 
+        AND a."Name" = 'электронный' 
+        AND a."Type" = 'Тип управления'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-toshiba-gr-rf695wi-pgj67-slot-in_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Toshiba GR-RF695WI-PGJ(67) Slot-in'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-toshiba-gr-rf695wi-pgj67-slot-in_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Toshiba GR-RF695WI-PGJ(67) Slot-in'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-toshiba-gr-rf695wi-pgj67-slot-in_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Toshiba GR-RF695WI-PGJ(67) Slot-in'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-toshiba-gr-rf695wi-pgj67-slot-in_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Toshiba GR-RF695WI-PGJ(67) Slot-in'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-toshiba-gr-rf695wi-pgj67-slot-in_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Toshiba GR-RF695WI-PGJ(67) Slot-in'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-toshiba-gr-rf695wi-pgj67-slot-in_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Toshiba GR-RF695WI-PGJ(67) Slot-in'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-toshiba-gr-rf695wi-pgj67-slot-in_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Toshiba GR-RF695WI-PGJ(67) Slot-in'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-toshiba-gr-rf695wi-pgj67-slot-in_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Toshiba GR-RF695WI-PGJ(67) Slot-in'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-toshiba-gr-rf695wi-pgj67-slot-in_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Toshiba GR-RF695WI-PGJ(67) Slot-in'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-toshiba-gr-rf695wi-pgj67-slot-in_9.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Toshiba GR-RF695WI-PGJ(67) Slot-in'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-toshiba-gr-rf695wi-pgj67-slot-in_10.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Toshiba GR-RF695WI-PGJ(67) Slot-in'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-toshiba-gr-rf695wi-pgj67-slot-in_11.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Toshiba GR-RF695WI-PGJ(67) Slot-in'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-toshiba-gr-rf695wi-pgj67-slot-in_12.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Toshiba GR-RF695WI-PGJ(67) Slot-in'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-toshiba-gr-rf695wi-pgj67-slot-in_13.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Toshiba GR-RF695WI-PGJ(67) Slot-in'));

@@ -1,0 +1,16 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-beko-b3r-fnk292-s-serebristaya_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Beko B3R FNK292 S серебристая'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-beko-b3r-fnk292-s-serebristaya_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Beko B3R FNK292 S серебристая'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-beko-b3r-fnk292-s-serebristaya_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Beko B3R FNK292 S серебристая'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-beko-b3r-fnk292-s-serebristaya_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Beko B3R FNK292 S серебристая'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-beko-b3r-fnk292-s-serebristaya_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Beko B3R FNK292 S серебристая'));

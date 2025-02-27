@@ -1,0 +1,25 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-gorenje-f492pw_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Gorenje F492PW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-gorenje-f492pw_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Gorenje F492PW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-gorenje-f492pw_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Gorenje F492PW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-gorenje-f492pw_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Gorenje F492PW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-gorenje-f492pw_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Gorenje F492PW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-gorenje-f492pw_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Gorenje F492PW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-gorenje-f492pw_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Gorenje F492PW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-gorenje-f492pw_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Gorenje F492PW'));

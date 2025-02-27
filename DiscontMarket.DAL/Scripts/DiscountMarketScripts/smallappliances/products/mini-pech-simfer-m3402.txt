@@ -1,0 +1,100 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Мини-печь Simfer M3402', 5995, 15, '/items/productimages/mini-pech-simfer-m3402_0.png', 4.53, '', 'Мини-печь Simfer M3402 заменяет духовку. Она надежно термоизолирована, поэтому столешница под ней не будет нагреваться. 
+
+Ножки с нескользящим покрытием обеспечивают устойчивое положение на любой горизонтальной поверхности. В комплекте идут два противня, решетка и съемный поддон. Они легко чистятся и моются обычными средствами. На передней панели располагаются механические регуляторы. 
+
+Можно выбрать режим верхнего, нижнего нагрева или их комбинированное сочетание для быстрого и эффективного приготовления разнообразных блюд. Таймер рассчитан на 90 минут и звуковым сигналом оповещает о завершении работы.', 'InStock', 'Discount', 6, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Simfer'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Мини-печь Simfer M3402'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Мини-печь Simfer M3402' 
+        AND a."Name" = '34' 
+        AND a."Type" = 'Объем'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Мини-печь Simfer M3402' 
+        AND a."Name" = '1300' 
+        AND a."Type" = 'Потребляемая мощность'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Мини-печь Simfer M3402' 
+        AND a."Name" = 'отсутствует' 
+        AND a."Type" = 'Тип гриля'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Мини-печь Simfer M3402' 
+        AND a."Name" = 'белый' 
+        AND a."Type" = 'Цвет'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Мини-печь Simfer M3402' 
+        AND a."Name" = 'эмалированный металл' 
+        AND a."Type" = 'Внутреннее покрытие'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-simfer-m3402_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Simfer M3402'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-simfer-m3402_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Simfer M3402'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-simfer-m3402_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Simfer M3402'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-simfer-m3402_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Simfer M3402'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-simfer-m3402_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Simfer M3402'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-simfer-m3402_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Simfer M3402'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-simfer-m3402_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Simfer M3402'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-simfer-m3402_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Simfer M3402'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-simfer-m3402_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Simfer M3402'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-simfer-m3402_9.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Simfer M3402'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-simfer-m3402_10.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Simfer M3402'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-simfer-m3402_11.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Simfer M3402'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-simfer-m3402_12.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Simfer M3402'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-simfer-m3402_13.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Simfer M3402'));

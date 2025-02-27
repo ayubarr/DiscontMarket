@@ -1,0 +1,58 @@
+﻿INSERT INTO "Products" 
+("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription",
+"Availability", "Status", "CategoryID", "BrandID", "UserID") 
+VALUES
+ ('Телевизор LG 75QNED816RA', 84999, 17, '/items/productimages/televizor-lg-75qned816ra_0.png', 4.2, '', 'Телевизор LG 75QNED816RA диагональю 75" оснащен технологиями, обеспечивающими детализацию и насыщенность картинки — HDR и цифрового шумоподавления. Предустановленная операционная система — WebOS. Обновление и установка новых программ выполняются через интернет, который подключается посредством Wi-Fi или разъема LAN (проводной способ). Для настройки времени выключения используется таймер. 
+
+Модель отличается разрешением 3840x2160 пикселей. Акустическая система AI Sound Pro состоит из двух динамиков, формирующих глубокий, чистый и объемный звук. Пульт ДУ, смартфон и голосовые команды применяются для управления — корректировки громкости, перехода к нужной передаче. Максимальная мощность — 240 Вт. Телевизор размещают на подставке или подвешивают на стену при помощи кронштейна (Vesa 400х300). Цвет корпуса — «синяя сажа». Размеры — 99,4х167,7х37 см. Вес — 33,3 кг.', 'InStock', 'Discount', 1, (SELECT "ID" FROM "Brands" WHERE "Name" = 'LG'), 1);
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор LG 75QNED816RA'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '4K Ultra HD (3840x2160 Пикс)' AND "Type" = 'Экран));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор LG 75QNED816RA'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '75' AND "Type" = 'Диагональ));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор LG 75QNED816RA'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '120' AND "Type" = 'Частота обновления));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор LG 75QNED816RA'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'QNED' AND "Type" = 'Технология экрана));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор LG 75QNED816RA'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'Edge LED' AND "Type" = 'Тип светодиодной подсветки));
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-lg-75qned816ra_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор LG 75QNED816RA'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-lg-75qned816ra_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор LG 75QNED816RA'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-lg-75qned816ra_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор LG 75QNED816RA'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-lg-75qned816ra_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор LG 75QNED816RA'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-lg-75qned816ra_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор LG 75QNED816RA'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-lg-75qned816ra_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор LG 75QNED816RA'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-lg-75qned816ra_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор LG 75QNED816RA'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-lg-75qned816ra_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор LG 75QNED816RA'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-lg-75qned816ra_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор LG 75QNED816RA'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-lg-75qned816ra_9.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор LG 75QNED816RA'));

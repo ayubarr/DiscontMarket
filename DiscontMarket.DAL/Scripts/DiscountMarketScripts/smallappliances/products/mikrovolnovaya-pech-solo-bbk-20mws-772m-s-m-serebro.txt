@@ -1,0 +1,63 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Микроволновая печь соло BBK 20MWS-772M/S-M серебро', 3889, 8, '/items/productimages/mikrovolnovaya-pech-solo-bbk-20mws-772m-s-m-serebro_0.png', 4.8, '', 'Микроволновая печь BBK 20MWS-772M/S-M серебристого цвета потребляет 1200 Вт. Управление устройством механическое. Фронтальная панель сделана из пластика, дверца открывается налево нажатием на клавишу. Изнутри микроволновая печь покрыта эмалью. Поворотный стол изготовлен из стекла. Есть встроенный таймер. В качестве осветительного элемента используется лампа накаливания. Объем камеры микроволновой печи составляет 20 л.', 'InStock', 'Discount', 6, (SELECT "ID" FROM "Brands" WHERE "Name" = 'BBK'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло BBK 20MWS-772M/S-M серебро'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Микроволновая печь соло BBK 20MWS-772M/S-M серебро' 
+        AND a."Name" = '20' 
+        AND a."Type" = 'Полезный объем'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Микроволновая печь соло BBK 20MWS-772M/S-M серебро' 
+        AND a."Name" = '245' 
+        AND a."Type" = 'Диаметр поворотного стола'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Микроволновая печь соло BBK 20MWS-772M/S-M серебро' 
+        AND a."Name" = 'эмалированный металл' 
+        AND a."Type" = 'Внутреннее покрытие'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Микроволновая печь соло BBK 20MWS-772M/S-M серебро' 
+        AND a."Name" = 'механический' 
+        AND a."Type" = 'Тип управления'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Микроволновая печь соло BBK 20MWS-772M/S-M серебро' 
+        AND a."Name" = 'серебристый' 
+        AND a."Type" = 'Цвет'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-bbk-20mws-772m-s-m-serebro_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло BBK 20MWS-772M/S-M серебро'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-bbk-20mws-772m-s-m-serebro_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло BBK 20MWS-772M/S-M серебро'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-bbk-20mws-772m-s-m-serebro_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло BBK 20MWS-772M/S-M серебро'));

@@ -1,0 +1,99 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Мини-печь Libhof OVX-36', 6745, 6, '/items/productimages/mini-pech-libhof-ovx-36_0.png', 4.34, '', 'Черная мини-печь Libhof OVX-36 при габаритах 32,5х51,3х40,3 см и весе 8 кг вмещает 36 л. Модель управляется при помощи сенсорной панели с поддержкой 12 автоматических программ, звуковым сигналом, таймером и индикацией, оповещающей о включении и выбранной температуре. Устройство питается от сети посредством 0,8 м кабеля и потребляет 1500 Вт. Предусмотрен гриль, конвекция, функция предварительной разморозки и нагрев до максимальных 230°С.', 'InStock', 'Discount', 6, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Libhof'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Мини-печь Libhof OVX-36'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Мини-печь Libhof OVX-36' 
+        AND a."Name" = '36' 
+        AND a."Type" = 'Объем'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Мини-печь Libhof OVX-36' 
+        AND a."Name" = '1500' 
+        AND a."Type" = 'Потребляемая мощность'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Мини-печь Libhof OVX-36' 
+        AND a."Name" = 'ТЭН' 
+        AND a."Type" = 'Тип гриля'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Мини-печь Libhof OVX-36' 
+        AND a."Name" = 'черный' 
+        AND a."Type" = 'Цвет'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Мини-печь Libhof OVX-36' 
+        AND a."Name" = 'антипригарное' 
+        AND a."Type" = 'Внутреннее покрытие'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-libhof-ovx-36_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Libhof OVX-36'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-libhof-ovx-36_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Libhof OVX-36'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-libhof-ovx-36_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Libhof OVX-36'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-libhof-ovx-36_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Libhof OVX-36'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-libhof-ovx-36_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Libhof OVX-36'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-libhof-ovx-36_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Libhof OVX-36'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-libhof-ovx-36_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Libhof OVX-36'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-libhof-ovx-36_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Libhof OVX-36'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-libhof-ovx-36_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Libhof OVX-36'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-libhof-ovx-36_9.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Libhof OVX-36'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-libhof-ovx-36_10.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Libhof OVX-36'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-libhof-ovx-36_11.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Libhof OVX-36'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-libhof-ovx-36_12.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Libhof OVX-36'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-libhof-ovx-36_13.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Libhof OVX-36'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-libhof-ovx-36_14.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Libhof OVX-36'));

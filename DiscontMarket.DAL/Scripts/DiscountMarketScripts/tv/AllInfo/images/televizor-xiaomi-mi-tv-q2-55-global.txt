@@ -1,0 +1,28 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-xiaomi-mi-tv-q2-55-global_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Xiaomi Mi TV Q2 55 GLOBAL'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-xiaomi-mi-tv-q2-55-global_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Xiaomi Mi TV Q2 55 GLOBAL'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-xiaomi-mi-tv-q2-55-global_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Xiaomi Mi TV Q2 55 GLOBAL'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-xiaomi-mi-tv-q2-55-global_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Xiaomi Mi TV Q2 55 GLOBAL'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-xiaomi-mi-tv-q2-55-global_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Xiaomi Mi TV Q2 55 GLOBAL'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-xiaomi-mi-tv-q2-55-global_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Xiaomi Mi TV Q2 55 GLOBAL'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-xiaomi-mi-tv-q2-55-global_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Xiaomi Mi TV Q2 55 GLOBAL'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-xiaomi-mi-tv-q2-55-global_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Xiaomi Mi TV Q2 55 GLOBAL'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-xiaomi-mi-tv-q2-55-global_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Xiaomi Mi TV Q2 55 GLOBAL'));

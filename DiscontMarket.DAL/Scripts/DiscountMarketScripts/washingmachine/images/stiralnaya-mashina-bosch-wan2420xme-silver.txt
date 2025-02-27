@@ -1,0 +1,22 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-bosch-wan2420xme-silver_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Bosch WAN2420XME Silver'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-bosch-wan2420xme-silver_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Bosch WAN2420XME Silver'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-bosch-wan2420xme-silver_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Bosch WAN2420XME Silver'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-bosch-wan2420xme-silver_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Bosch WAN2420XME Silver'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-bosch-wan2420xme-silver_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Bosch WAN2420XME Silver'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-bosch-wan2420xme-silver_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Bosch WAN2420XME Silver'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-bosch-wan2420xme-silver_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Bosch WAN2420XME Silver'));

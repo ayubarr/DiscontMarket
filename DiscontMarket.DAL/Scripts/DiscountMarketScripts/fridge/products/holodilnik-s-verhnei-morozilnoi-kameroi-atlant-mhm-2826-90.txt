@@ -1,0 +1,69 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Холодильник с верхней морозильной камерой ATLANT МХМ 2826-90', 17399, 13, '/items/productimages/holodilnik-s-verhnei-morozilnoi-kameroi-atlant-mhm-2826-90_0.png', 4.85, '', '«Атлант» МХМ 2826-90 – современный холодильник с верхним расположением камеры и механической системой управления. Это надёжная модель, которая отлично подходит для хранения продуктов.
+
+АВТОМАТИЧЕСКОЕ РАЗМОРАЖИВАНИЕ ХОЛОДИЛЬНОГО ОТДЕЛЕНИЯ
+Холодильная камера оборудована капельной системой, благодаря которой конденсат оседает на испарителе, замерзает, а затем тает и стекает в специальный резервуар, где и происходит его полное испарение. Это простая и в то же время эффективная система, работающая без вмешательства человека.
+
+ХРАНЕНИЕ ПРИ ОТКЛЮЧЁННОМ ПИТАНИИ
+Благодаря тщательно продуманной конструкции холодильника в нём даже после отключения питания надолго сохраняются оптимальные для продуктов условия. С продуктами, хранящимися в выключенном холодильнике, ничего не случится в течение примерно 20 часов.
+
+ПРОДУМАННАЯ ОРГАНИЗАЦИЯ ВНУТРЕННЕГО ПРОСТРАНСТВА
+Прочная и надёжная полка в морозильном отделении, а также четыре прочных полки из закалённого стекла в холодильном отделении позволяют владельцам легко распределить продукты так, как они считают нужным.', 'InStock', 'Discount', 3, (SELECT "ID" FROM "Brands" WHERE "Name" = 'ATLANT'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Холодильник с верхней морозильной камерой ATLANT МХМ 2826-90'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник с верхней морозильной камерой ATLANT МХМ 2826-90' 
+        AND a."Name" = 'стандартный' 
+        AND a."Type" = 'Тип компрессора'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник с верхней морозильной камерой ATLANT МХМ 2826-90' 
+        AND a."Name" = '288' 
+        AND a."Type" = 'Общий объем'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник с верхней морозильной камерой ATLANT МХМ 2826-90' 
+        AND a."Name" = 'механический' 
+        AND a."Type" = 'Тип управления'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник с верхней морозильной камерой ATLANT МХМ 2826-90' 
+        AND a."Name" = 'металл' 
+        AND a."Type" = 'Материал двери'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-s-verhnei-morozilnoi-kameroi-atlant-mhm-2826-90_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник с верхней морозильной камерой ATLANT МХМ 2826-90'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-s-verhnei-morozilnoi-kameroi-atlant-mhm-2826-90_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник с верхней морозильной камерой ATLANT МХМ 2826-90'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-s-verhnei-morozilnoi-kameroi-atlant-mhm-2826-90_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник с верхней морозильной камерой ATLANT МХМ 2826-90'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-s-verhnei-morozilnoi-kameroi-atlant-mhm-2826-90_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник с верхней морозильной камерой ATLANT МХМ 2826-90'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-s-verhnei-morozilnoi-kameroi-atlant-mhm-2826-90_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник с верхней морозильной камерой ATLANT МХМ 2826-90'));

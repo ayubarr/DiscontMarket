@@ -1,0 +1,28 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-gfgril-gfbb-7-breakfast-bar_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь GFGRIL GFBB-7 BREAKFAST BAR'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-gfgril-gfbb-7-breakfast-bar_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь GFGRIL GFBB-7 BREAKFAST BAR'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-gfgril-gfbb-7-breakfast-bar_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь GFGRIL GFBB-7 BREAKFAST BAR'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-gfgril-gfbb-7-breakfast-bar_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь GFGRIL GFBB-7 BREAKFAST BAR'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-gfgril-gfbb-7-breakfast-bar_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь GFGRIL GFBB-7 BREAKFAST BAR'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-gfgril-gfbb-7-breakfast-bar_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь GFGRIL GFBB-7 BREAKFAST BAR'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-gfgril-gfbb-7-breakfast-bar_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь GFGRIL GFBB-7 BREAKFAST BAR'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-gfgril-gfbb-7-breakfast-bar_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь GFGRIL GFBB-7 BREAKFAST BAR'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-gfgril-gfbb-7-breakfast-bar_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь GFGRIL GFBB-7 BREAKFAST BAR'));

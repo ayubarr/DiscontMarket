@@ -1,0 +1,38 @@
+﻿INSERT INTO "Products" 
+("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription",
+"Availability", "Status", "CategoryID", "BrandID", "UserID") 
+VALUES
+ ('Телевизор Starwind SW-LED40SG300', 10349, 12, '/items/productimages/televizor-starwind-sw-led40sg300_0.png', 4.66, '', 'Телевизор Starwind SW-LED40SG300 работает на операционной системе Android, дополненной русифицированной платформой «Яндекс.ТВ». Дистанционный пульт синхронизируется с устройством через модуль Bluetooth. Устройство поддерживает управление голосом. 
+Для выхода в интернет используется Wi-Fi-соединение и проводное подключение через разъем LAN. В эту модель уже предустановлен магазин с приложениями. 
+Дисплей сделан по технологии LED, обеспечивающей широкие углы обзора и насыщенную реалистичную картинку. Экран диагональю 40 дюймов и соотношением сторон 16:9 транслирует изображение в качестве Full HD. В корпус встроены порты HDMI и USB Type-A. Телевизор можно использовать вместо компьютерного монитора и воспроизводить файлы с цифровых носителей. 
+Стереодинамики выполнены по технологии Surround Sound, обладают мощностью 10 Вт. Акустика обеспечивает мощный объемный звук. Функция цифрового шумоподавления нивелирует плохое качество изображения при воспроизведении с внешних накопителей или при слабом антенном сигнале.', 'InStock', 'Discount', 1, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Starwind'), 1);
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Starwind SW-LED40SG300'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'Full HD (1920x1080 Пикс)' AND "Type" = 'Экран));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Starwind SW-LED40SG300'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '40' AND "Type" = 'Диагональ));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Starwind SW-LED40SG300'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '60' AND "Type" = 'Частота обновления));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Starwind SW-LED40SG300'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'LED' AND "Type" = 'Технология экрана));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Starwind SW-LED40SG300'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'Direct LED' AND "Type" = 'Тип светодиодной подсветки));
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-starwind-sw-led40sg300_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Starwind SW-LED40SG300'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-starwind-sw-led40sg300_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Starwind SW-LED40SG300'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-starwind-sw-led40sg300_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Starwind SW-LED40SG300'));

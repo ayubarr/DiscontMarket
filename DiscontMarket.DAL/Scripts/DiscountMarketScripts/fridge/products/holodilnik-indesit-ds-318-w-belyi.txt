@@ -1,0 +1,81 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Холодильник Indesit DS 318 W белый', 17749, 6, '/items/productimages/holodilnik-indesit-ds-318-w-belyi_0.png', 4.66, '', 'Холодильник с нижней морозильной камерой Indesit DS 318 с хорошо продуманной внутренней планировкой позволяет распределить все продукты в соответствии с потребностями пользователя и требованиям гигиены. Он снабжён регулируемыми по высоте полками, отдельными боксами для овощей и фруктов, а также прозрачными выдвижными ящиками в морозилке.
+
+АВТОМАТИЧЕСКОЕ РАЗМОРАЖИВАНИЕ
+В верхней камере используется система Low Frost. Она растапливает скапливающийся на задней стенке лёд и отводит жидкость во внешний контейнер через специальное отверстие. Благодаря этому пользователю приходится размораживать холодильное отделение один раз в 3–6 месяцев. 
+
+СОХРАННОСТЬ ПРОДУКТОВ
+Качественные теплоизоляционные материалы помогают поддерживать невысокую температуру содержимого холодильника на протяжении 15 часов после отключения питания. 
+
+УДОБСТВО ИСПОЛЬЗОВАНИЯ
+Простая электромеханическая система управления позволяет выбрать оптимальную интенсивность охлаждения одним движением руки.', 'InStock', 'Discount', 3, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Indesit'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Холодильник Indesit DS 318 W белый'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Indesit DS 318 W белый' 
+        AND a."Name" = 'стандартный' 
+        AND a."Type" = 'Тип компрессора'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Indesit DS 318 W белый' 
+        AND a."Name" = '185' 
+        AND a."Type" = 'Высота'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Indesit DS 318 W белый' 
+        AND a."Name" = '60' 
+        AND a."Type" = 'Ширина'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Indesit DS 318 W белый' 
+        AND a."Name" = '64' 
+        AND a."Type" = 'Глубина'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Indesit DS 318 W белый' 
+        AND a."Name" = '310' 
+        AND a."Type" = 'Общий объем'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-indesit-ds-318-w-belyi_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Indesit DS 318 W белый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-indesit-ds-318-w-belyi_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Indesit DS 318 W белый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-indesit-ds-318-w-belyi_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Indesit DS 318 W белый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-indesit-ds-318-w-belyi_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Indesit DS 318 W белый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-indesit-ds-318-w-belyi_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Indesit DS 318 W белый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-indesit-ds-318-w-belyi_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Indesit DS 318 W белый'));

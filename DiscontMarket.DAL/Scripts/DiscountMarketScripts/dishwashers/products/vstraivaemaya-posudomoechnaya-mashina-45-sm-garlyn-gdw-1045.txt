@@ -1,0 +1,78 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Встраиваемая посудомоечная машина 45 см Garlyn GDW-1045', 24995, 19, '/items/productimages/vstraivaemaya-posudomoechnaya-mashina-45-sm-garlyn-gdw-1045_0.png', 4.63, '', 'Встраиваемая посудомоечная машина Garlyn GDW-1045 рассчитана на 11 комплектов посуды. При этом модель отличается компактными габаритами: 815х448х558 мм, что дает возможность установить ее в маленькой кухне. 
+
+• <b>Семь программ</b>
+Предустановлены циклы: «60 минут», «Быстрый», «Интенсивный», «Эко», Light, «Кристалл» и «Предварительное ополаскивание». Температурных режимов пять. Это позволит подобрать оптимальный вариант для любого уровня загрязнений, безопасно вымыть тонкое стекло, не повредив его. 
+
+• <b>Лоток для столовых приборов</b>
+Третий уровень загрузки. Позволяет увеличить место в двух основных коробах. Верхний регулируется по высоте, что позволяет адаптировать пространство под текущие нужды.
+
+• <b>Половинная загрузка</b>
+Дает возможность загрузить только одну корзину и не тратить лишнюю воду и электроэнергию при небольшом количестве грязной посуды.
+
+• <b>Звуковой сигнал и луч на полу</b>
+Оповещают о завершении цикла мытья. 
+Управление кнопочное, все активные параметры работы отображаются светодиодными индикаторами. Встроен цифровой дисплей, который показывает настройки отложенного старта и продолжительность программ.
+
+Энергопотребление посудомоечной машины соответствует классу А++ и составляет 0,782 кВт*ч за цикл, расход воды — 6,2 л. Уровень шума при работе не превышает 55 дБ.', 'InStock', 'Discount', 28, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Garlyn'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 45 см Garlyn GDW-1045'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Встраиваемая посудомоечная машина 45 см Garlyn GDW-1045' 
+        AND a."Name" = '6.9' 
+        AND a."Type" = 'Расход воды за цикл'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Встраиваемая посудомоечная машина 45 см Garlyn GDW-1045' 
+        AND a."Name" = '11 комплектов' 
+        AND a."Type" = 'Максимальная вместимость'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Встраиваемая посудомоечная машина 45 см Garlyn GDW-1045' 
+        AND a."Name" = '7' 
+        AND a."Type" = 'Количество программ мойки'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Встраиваемая посудомоечная машина 45 см Garlyn GDW-1045' 
+        AND a."Name" = 'коллекторный' 
+        AND a."Type" = 'Мотор'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Встраиваемая посудомоечная машина 45 см Garlyn GDW-1045' 
+        AND a."Name" = '820*450*580' 
+        AND a."Type" = 'Размер ниши, мм (В*Ш*Г)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-45-sm-garlyn-gdw-1045_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 45 см Garlyn GDW-1045'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-45-sm-garlyn-gdw-1045_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 45 см Garlyn GDW-1045'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-45-sm-garlyn-gdw-1045_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 45 см Garlyn GDW-1045'));

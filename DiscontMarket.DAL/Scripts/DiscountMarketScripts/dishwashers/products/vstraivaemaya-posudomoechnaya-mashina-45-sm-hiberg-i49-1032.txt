@@ -1,0 +1,83 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Встраиваемая посудомоечная машина 45 см Hiberg I49 1032', 30095, 16, '/items/productimages/vstraivaemaya-posudomoechnaya-mashina-45-sm-hiberg-i49-1032_0.png', 4.34, '', 'Встраиваемая посудомоечная машина 45 см Hiberg I49 1032 с электронным управлением снабжена цифровым дисплеем с функцией блокировки от нежелательного управления. Он показывает выбранную программу и время цикла, индикацию наличия соли и ополаскивателя. Воронка для засыпания соли поставляется в комплекте.
+
+Посудомоечная машина рассчитана на загрузку до 10 комплектов посуды. Присутствует половинная загрузка. Для размещения посуды предусмотрены три корзины с системой регулирования высоты и встроенными держателями для бокалов и тарелок. Сушка — конденсационная.
+
+У машины девять автоматических программ. Среди них: «Эко», «Стекло», «Замачивание», «60 минут». В модели реализована функция автоматического определения степени загрязнения посуды. Время мини программы составляет 30 минут. Для сильно загрязненной посуды предусмотрен режим интенсивной мойки. По завершении цикла прозвучит акустический сигнал, и машина автоматически выключится. 
+
+Модель позволяет использовать универсальные моющие средства 3 в 1. Можно отложить время старта программы благодаря встроенному таймеру. Безопасность обеспечивается системой полной защиты от протечек AquaStop. Встроен сенсор чистой воды. 
+
+Цвет модели — нержавеющая сталь. Внутренняя камера изготовлена из стали устойчивой к коррозии. Машинка обладает габаритами 81,5х44,8х55 см, вес — 33 кг. Она монтируется в нишу размером 82х45х58 см. За один цикл расход электроэнергии составляет 0,74 кВт*ч, годовой расход не превышает 211 кВт*ч. Потребление воды за программу — 13,5 л. Прибор относится к А-классу энергоэффективности, потребляемая мощность двигателя достигает 2100 Вт. Уровень шума при работе не превышает 47 дБ.', 'InStock', 'Discount', 28, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Hiberg'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 45 см Hiberg I49 1032'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Встраиваемая посудомоечная машина 45 см Hiberg I49 1032' 
+        AND a."Name" = '13' 
+        AND a."Type" = 'Расход воды за цикл'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Встраиваемая посудомоечная машина 45 см Hiberg I49 1032' 
+        AND a."Name" = '10 комплектов' 
+        AND a."Type" = 'Максимальная вместимость'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Встраиваемая посудомоечная машина 45 см Hiberg I49 1032' 
+        AND a."Name" = '9' 
+        AND a."Type" = 'Количество программ мойки'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Встраиваемая посудомоечная машина 45 см Hiberg I49 1032' 
+        AND a."Name" = 'стандартный' 
+        AND a."Type" = 'Мотор'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Встраиваемая посудомоечная машина 45 см Hiberg I49 1032' 
+        AND a."Name" = '82*45*58' 
+        AND a."Type" = 'Размер ниши, мм (В*Ш*Г)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-45-sm-hiberg-i49-1032_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 45 см Hiberg I49 1032'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-45-sm-hiberg-i49-1032_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 45 см Hiberg I49 1032'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-45-sm-hiberg-i49-1032_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 45 см Hiberg I49 1032'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-45-sm-hiberg-i49-1032_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 45 см Hiberg I49 1032'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-45-sm-hiberg-i49-1032_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 45 см Hiberg I49 1032'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-45-sm-hiberg-i49-1032_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 45 см Hiberg I49 1032'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-45-sm-hiberg-i49-1032_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 45 см Hiberg I49 1032'));

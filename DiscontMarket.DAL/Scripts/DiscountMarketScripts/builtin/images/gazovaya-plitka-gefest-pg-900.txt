@@ -1,0 +1,16 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/gazovaya-plitka-gefest-pg-900_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Газовая плитка Gefest ПГ 900'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/gazovaya-plitka-gefest-pg-900_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Газовая плитка Gefest ПГ 900'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/gazovaya-plitka-gefest-pg-900_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Газовая плитка Gefest ПГ 900'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/gazovaya-plitka-gefest-pg-900_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Газовая плитка Gefest ПГ 900'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/gazovaya-plitka-gefest-pg-900_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Газовая плитка Gefest ПГ 900'));

@@ -1,0 +1,74 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Стиральная машина узкая Grundig GW5 P57H21 A', 28749, 14, '/items/productimages/stiralnaya-mashina-uzkaya-grundig-gw5-p57h21-a_0.png', 4.89, '', 'Узкая стиральная машина Grundig GW5 P57H21 A оснащена инверторным мотором, который выдает сравнительно низкий уровень шума (до 77 дБ при отжиме). Модель рассчитана на загрузку вещей до 7,5 кг. Люк, выполненный из стекла и пластика, открывается в правую сторону, обладает диаметром 34 см, благодаря чему удобно укладывать белье. Максимальная скорость отжима достигает 1200 об/мин. 
+При необходимости можно активировать минипрограмму «Экспресс стирка», осуществляющуюся за 14 минут. Модель оборудована большим количеством режимов, в том числе «Дополнительное полоскание», «Замачивание», «Ручная стирка». Наличие специальных программ позволяет стирать вещи из хлопка, шерсти, синтетики.
+За один цикл расходуется до 55 л воды и 1,125 кВт*ч энергии. Класс стирки — А, отжима — В. Управление — электронное, производится при помощи поворотного регулятора и кнопок. Вся информация отображается на цифровом дисплее. Функция отложенного старта позволяет переносить время начала стирки. Предусмотрена индикация этапов программы, времени до конца цикла. Панель управления можно заблокировать, что предотвратит появление случайного нажатия. Потребляемая мощность устройства составляет 2200 Вт. Габаритные размеры стиральной машины — 84х49,6х60 см, вес — 62 кг.', 'InStock', 'Discount', 5, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Grundig'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая Grundig GW5 P57H21 A'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина узкая Grundig GW5 P57H21 A' 
+        AND a."Name" = '7.5' 
+        AND a."Type" = 'Максимальная загрузка'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина узкая Grundig GW5 P57H21 A' 
+        AND a."Name" = '1200' 
+        AND a."Type" = 'Максимальная скорость отжима'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина узкая Grundig GW5 P57H21 A' 
+        AND a."Name" = 'инверторный' 
+        AND a."Type" = 'Мотор'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина узкая Grundig GW5 P57H21 A' 
+        AND a."Name" = '84*60*49.6 см' 
+        AND a."Type" = 'Габаритные размеры (В*Ш*Г)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина узкая Grundig GW5 P57H21 A' 
+        AND a."Name" = '55' 
+        AND a."Type" = 'Расход воды за цикл'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-uzkaya-grundig-gw5-p57h21-a_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая Grundig GW5 P57H21 A'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-uzkaya-grundig-gw5-p57h21-a_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая Grundig GW5 P57H21 A'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-uzkaya-grundig-gw5-p57h21-a_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая Grundig GW5 P57H21 A'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-uzkaya-grundig-gw5-p57h21-a_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая Grundig GW5 P57H21 A'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-uzkaya-grundig-gw5-p57h21-a_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая Grundig GW5 P57H21 A'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-uzkaya-grundig-gw5-p57h21-a_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая Grundig GW5 P57H21 A'));

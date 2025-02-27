@@ -1,0 +1,64 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Стиральная машина узкая Korting KWM 42IL1267', 29495, 6, '/items/productimages/stiralnaya-mashina-uzkaya-korting-kwm-42il1267_0.png', 4.36, '', 'Узкая стиральная машина Korting KWM 42IL1267 — модель белого цвета габаритными размерами 84,5х42х59,7 см и весом 70,5 кг. Благодаря небольшой глубине устройство можно размещать в небольших квартирах и студиях. В бак объемом 41 л, выполненный из полимера, помещается за один раз до 6 кг белья. Диаметр люка равен 33 см. Дверца, выполненная из пластика, открывается в левую сторону. 
+В основе работы лежит инверторный мотор, который выдает сравнительно низкий уровень шума (до 75 дБ при отжиме). При желании можно загрузить оставшееся белье во время выполнения программы. Прибор относится к классу энергоэффективности А+++. За один цикл расходуется до 0,56 кВт*ч энергии. Класс стирки — А, отжима В.
+В модель встроено большое количество режимов, которые дают возможность стирать вещи из хлопка, шерсти и других тканей. Предусмотрено несколько специальных программ, в том числе «Предварительная стирка», «Ручная стирка», «Ускоренная стирка». При необходимости можно включить минипрограмму, длительность которой составляет 15 минут. Максимальная скорость отжима равна 1200 об/мин. 
+Управление — электронное. Вся информация отображается на цифровом дисплее. Выбор программ осуществляется при помощи поворотного переключателя. «Отложенный старт» дает возможность переносить время начала стирки.
+Функция «Защита от детей» закрывает доступ к управлению устройством, «Защита от протечек» помогает контролировать систему подачи и слива воды. Потребляемая мощность составляет 1850 Вт.', 'InStock', 'Discount', 5, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Korting'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая Korting KWM 42IL1267'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина узкая Korting KWM 42IL1267' 
+        AND a."Name" = '6' 
+        AND a."Type" = 'Максимальная загрузка'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина узкая Korting KWM 42IL1267' 
+        AND a."Name" = '1200' 
+        AND a."Type" = 'Максимальная скорость отжима'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина узкая Korting KWM 42IL1267' 
+        AND a."Name" = 'инверторный' 
+        AND a."Type" = 'Мотор'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина узкая Korting KWM 42IL1267' 
+        AND a."Name" = '84.5*59.7*42 см' 
+        AND a."Type" = 'Габаритные размеры (В*Ш*Г)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина узкая Korting KWM 42IL1267' 
+        AND a."Name" = 'отсутствует' 
+        AND a."Type" = 'Тип защиты от протечек'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-uzkaya-korting-kwm-42il1267_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая Korting KWM 42IL1267'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-uzkaya-korting-kwm-42il1267_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая Korting KWM 42IL1267'));

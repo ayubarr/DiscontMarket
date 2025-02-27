@@ -1,0 +1,16 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-beko-ele-67511-zsw_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Beko ELE 67511 ZSW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-beko-ele-67511-zsw_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Beko ELE 67511 ZSW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-beko-ele-67511-zsw_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Beko ELE 67511 ZSW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-beko-ele-67511-zsw_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Beko ELE 67511 ZSW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-beko-ele-67511-zsw_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Beko ELE 67511 ZSW'));

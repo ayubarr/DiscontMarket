@@ -1,0 +1,60 @@
+﻿INSERT INTO "Products" 
+("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription",
+"Availability", "Status", "CategoryID", "BrandID", "UserID") 
+VALUES
+ ('Телевизор LG 50QNED86T6A.ARUB', 43995, 5, '/items/productimages/televizor-lg-50qned86t6aarub_0.png', 4.74, '', 'Телевизор LG 50QNED86T6A.ARUB с цифровым шумоподавлением работает с частотой обновления 60 Гц.
+
+• <b>Технология 4K QNED</b>
+Невероятная насыщенность с реалистичной цветопередачей.
+
+• <b>HDR и подсветка Edge LED</b>
+Высокая детализация и яркость изображения вне зависимости от окружающей обстановки.
+
+• <b>AI Sound Pro</b>
+Интеллектуальное подстраивание звука под особенности пространства и типа воспроизводимого контента.
+
+• <b>Дистанционное управление смартфоном или голосом</b>
+Интеграция в «умную» экосистему LG и помощь виртуальных ассистентов в поиске.
+
+Экран диагональю 50" транслирует в формате 16:9 с разрешением 4K Ultra HD. Стереозвучание достигается благодаря двум динамикам по 10 Вт. Модель с тюнером DVB T, T2, C, S, S2 поддерживает Smart TV с ОС WebOS и чтение медиафайлов через USB. Защита от детей отвечает за безопасное пользование. В корпус интегрированы модули Wi-Fi и Bluetooth, четыре входа HDMI, два порта USB 2.0 типа А, разъем LAN и слот для CI / PCMCIA. 
+
+Устройство с потребляемой мощностью 115 Вт работает от стандартной электросети. Для настенного монтажа задействуется крепление к подвесу VESA 200х200, для настольного размещения — подставка шириной 50 см, которая входит в комплектацию. Изделие с габаритами 65,2х112,3х2,97 см весит 13 кг. С опорой параметры равны 72,1х112,3х26 см и 16,8 кг.', 'InStock', 'Discount', 1, (SELECT "ID" FROM "Brands" WHERE "Name" = 'LG'), 1);
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор LG 50QNED86T6A.ARUB'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '4K Ultra HD (3840x2160 Пикс)' AND "Type" = 'Экран));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор LG 50QNED86T6A.ARUB'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '50' AND "Type" = 'Диагональ));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор LG 50QNED86T6A.ARUB'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '120' AND "Type" = 'Частота обновления));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор LG 50QNED86T6A.ARUB'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'QNED' AND "Type" = 'Технология экрана));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор LG 50QNED86T6A.ARUB'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'Edge LED' AND "Type" = 'Тип светодиодной подсветки));
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-lg-50qned86t6aarub_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор LG 50QNED86T6A.ARUB'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-lg-50qned86t6aarub_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор LG 50QNED86T6A.ARUB'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-lg-50qned86t6aarub_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор LG 50QNED86T6A.ARUB'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-lg-50qned86t6aarub_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор LG 50QNED86T6A.ARUB'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-lg-50qned86t6aarub_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор LG 50QNED86T6A.ARUB'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-lg-50qned86t6aarub_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор LG 50QNED86T6A.ARUB'));

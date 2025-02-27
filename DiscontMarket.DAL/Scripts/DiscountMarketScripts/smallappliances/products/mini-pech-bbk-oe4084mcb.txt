@@ -1,0 +1,74 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Мини-печь BBK OE4084MC (B)', 5224, 8, '/items/productimages/mini-pech-bbk-oe4084mcb_0.png', 4.83, '', 'Мини-печь BBK OE4084MC (B) объемом 38 л представляет собой компактную духовку для приготовления и разогревания пищи. В прибор встроено пять режимов приготовления: конвекция, гриль, выпечка, жарка, вертел. Мощность прибора составляет 1800 Вт. Максимальная температура приготовления — 230°С. Встроенный таймер звуковым сигналом оповещает о включении/выключении программы. Внутренняя подсветка позволяет контролировать процесс без открытия дверцы.
+
+Механическое управление осуществляется при помощи трех регуляторов. Корпус черного цвета сделан из металла, внутри устройство покрыто оцинкованной сталью. В комплект входят: решетка, противень, вертел, поддон для крошек, ручки для снятия противней и вертела. Габариты — 35,6х53,5х40,3 см. Вес — 8,5 кг.', 'InStock', 'Discount', 6, (SELECT "ID" FROM "Brands" WHERE "Name" = 'BBK'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Мини-печь BBK OE4084MC (B)'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Мини-печь BBK OE4084MC (B)' 
+        AND a."Name" = '40' 
+        AND a."Type" = 'Объем'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Мини-печь BBK OE4084MC (B)' 
+        AND a."Name" = '1800' 
+        AND a."Type" = 'Потребляемая мощность'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Мини-печь BBK OE4084MC (B)' 
+        AND a."Name" = 'черный' 
+        AND a."Type" = 'Цвет'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Мини-печь BBK OE4084MC (B)' 
+        AND a."Name" = 'нержавеющая сталь' 
+        AND a."Type" = 'Внутреннее покрытие'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Мини-печь BBK OE4084MC (B)' 
+        AND a."Name" = '230' 
+        AND a."Type" = 'Максимальная температура'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-bbk-oe4084mcb_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь BBK OE4084MC (B)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-bbk-oe4084mcb_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь BBK OE4084MC (B)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-bbk-oe4084mcb_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь BBK OE4084MC (B)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-bbk-oe4084mcb_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь BBK OE4084MC (B)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-bbk-oe4084mcb_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь BBK OE4084MC (B)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-bbk-oe4084mcb_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь BBK OE4084MC (B)'));

@@ -1,0 +1,90 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Микроволновая печь соло Hyundai HYM-D2071 Silver/Black', 3999, 17, '/items/productimages/mikrovolnovaya-pech-solo-hyundai-hym-d2071-silver-black_0.png', 4.38, '', 'Hyundai HYM-D2071 – микроволновая печь, которая может похвастаться обширным функционалом. Модель с объёмом камеры 20 литров предельно компактна, поэтому не займёт много места на вашей кухне.
+
+ПРОСТЫЕ НАСТРОЙКИ
+На правой части фасада находится контрольное меню с кнопками и поворотным переключателем. Рядом есть наглядные символы, так что разобраться с управлением не составит большого труда. На крупный цифровой дисплей выводится вся необходимая информация, в том числе время.
+
+ВОЗМОЖНОСТИ
+Не хотите ждать, пока оттают куриные бёдрышки перед жаркой? Воспользуйтесь функцией разморозки, выбрав один из трёх циклов. К тому же с помощью микроволновки вы за пару минут разогреете ужин. А благодаря автоматическому меню – приготовите картофель, овощи, мясо, рыбу, пиццу и даже попкорн.
+
+ПОЛЕЗНЫЕ ДОПОЛНЕНИЯ
+Вы точно не пропустите момент, когда программа завершится, потому что одновременно сработает и специальный звуковой сигнал. Заблокируйте панель управления от случайных нажатий, например, во время уборки. Ещё данная функция не даст детям поиграть с электроприбором.
+
+МИНИМУМ ХЛОПОТ
+Внутреннее покрытие – это идеально гладкая эмаль, которая без усилий очищается от жира и пригоревших кусочков пищи. Чтобы помыть дверцу, её уплотнитель и поворотный стол воспользуйтесь мягкой тканью и мыльным раствором. Неприятные запахи устранит разбавленный в воде лимонный сок: поставьте стакан с ним в печь и активируйте режим повышенной мощности на 10 минут.', 'InStock', 'Discount', 6, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Hyundai'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло Hyundai HYM-D2071 Silver/Black'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Микроволновая печь соло Hyundai HYM-D2071 Silver/Black' 
+        AND a."Name" = '20' 
+        AND a."Type" = 'Полезный объем'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Микроволновая печь соло Hyundai HYM-D2071 Silver/Black' 
+        AND a."Name" = '24.5' 
+        AND a."Type" = 'Диаметр поворотного стола'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Микроволновая печь соло Hyundai HYM-D2071 Silver/Black' 
+        AND a."Name" = 'эмалированный металл' 
+        AND a."Type" = 'Внутреннее покрытие'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Микроволновая печь соло Hyundai HYM-D2071 Silver/Black' 
+        AND a."Name" = 'серый/ черный' 
+        AND a."Type" = 'Цвет'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Микроволновая печь соло Hyundai HYM-D2071 Silver/Black' 
+        AND a."Name" = 'Да' 
+        AND a."Type" = 'Защита от детей'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-hyundai-hym-d2071-silver-black_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло Hyundai HYM-D2071 Silver/Black'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-hyundai-hym-d2071-silver-black_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло Hyundai HYM-D2071 Silver/Black'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-hyundai-hym-d2071-silver-black_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло Hyundai HYM-D2071 Silver/Black'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-hyundai-hym-d2071-silver-black_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло Hyundai HYM-D2071 Silver/Black'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-hyundai-hym-d2071-silver-black_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло Hyundai HYM-D2071 Silver/Black'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-hyundai-hym-d2071-silver-black_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло Hyundai HYM-D2071 Silver/Black'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-hyundai-hym-d2071-silver-black_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло Hyundai HYM-D2071 Silver/Black'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-hyundai-hym-d2071-silver-black_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло Hyundai HYM-D2071 Silver/Black'));

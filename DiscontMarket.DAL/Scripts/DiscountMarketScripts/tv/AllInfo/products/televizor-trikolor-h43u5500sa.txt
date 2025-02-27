@@ -1,0 +1,56 @@
+﻿INSERT INTO "Products" 
+("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription",
+"Availability", "Status", "CategoryID", "BrandID", "UserID") 
+VALUES
+ ('Телевизор Триколор H43U5500SA', 14495, 19, '/items/productimages/televizor-trikolor-h43u5500sa_0.png', 4.6, '', '<p>Телевизор «Триколор» H43U5500SA функционирует на базе операционной системы Android. Данная модель поддерживает Smart TV, функцию TimeShift и беспроводную технологию Wi-Fi для подключения к другим устройствам, в том числе к смартфонам. За основное управление отвечает пульт ДУ, который действует при помощи Bluetooth и инфракрасного излучения.<br><br>Конструкция модели включает в себя экран диагональю 43", выполненного по технологии VA, которая отличается высокими показателями яркости и четкости картинки. При помощи встроенного тюнера формата DVB T/T2/S2 есть возможность смотреть бесплатные спутниковые каналы вещательной компании. Конфигурацией устройства предусмотрена возможность воспроизведения цифровых файлов с внешнего носителя формата USB. На корпусе расположены интерфейсы для подключения HDMI и USB 2.0 тип A, RCA аудио/видео, LAN разъем (RJ45), разъем для модуля DVB CAM. Устройство фиксируется на стене при помощи крепления VESA 200x200. Полный комплект включает в себя настольную подставку.</p>', 'InStock', 'Discount', 1, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Триколор'), 1);
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Триколор H43U5500SA'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '4K Ultra HD (3840x2160 Пикс)' AND "Type" = 'Экран));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Триколор H43U5500SA'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '43' AND "Type" = 'Диагональ));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Триколор H43U5500SA'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '60' AND "Type" = 'Частота обновления));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Триколор H43U5500SA'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'LED' AND "Type" = 'Технология экрана));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Триколор H43U5500SA'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'Direct LED' AND "Type" = 'Тип светодиодной подсветки));
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-trikolor-h43u5500sa_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Триколор H43U5500SA'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-trikolor-h43u5500sa_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Триколор H43U5500SA'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-trikolor-h43u5500sa_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Триколор H43U5500SA'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-trikolor-h43u5500sa_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Триколор H43U5500SA'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-trikolor-h43u5500sa_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Триколор H43U5500SA'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-trikolor-h43u5500sa_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Триколор H43U5500SA'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-trikolor-h43u5500sa_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Триколор H43U5500SA'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-trikolor-h43u5500sa_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Триколор H43U5500SA'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-trikolor-h43u5500sa_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Триколор H43U5500SA'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-trikolor-h43u5500sa_9.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Триколор H43U5500SA'));

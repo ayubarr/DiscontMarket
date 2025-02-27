@@ -1,0 +1,43 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-toshiba-gr-rf695wi-pgj67-slot-in_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Toshiba GR-RF695WI-PGJ(67) Slot-in'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-toshiba-gr-rf695wi-pgj67-slot-in_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Toshiba GR-RF695WI-PGJ(67) Slot-in'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-toshiba-gr-rf695wi-pgj67-slot-in_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Toshiba GR-RF695WI-PGJ(67) Slot-in'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-toshiba-gr-rf695wi-pgj67-slot-in_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Toshiba GR-RF695WI-PGJ(67) Slot-in'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-toshiba-gr-rf695wi-pgj67-slot-in_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Toshiba GR-RF695WI-PGJ(67) Slot-in'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-toshiba-gr-rf695wi-pgj67-slot-in_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Toshiba GR-RF695WI-PGJ(67) Slot-in'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-toshiba-gr-rf695wi-pgj67-slot-in_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Toshiba GR-RF695WI-PGJ(67) Slot-in'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-toshiba-gr-rf695wi-pgj67-slot-in_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Toshiba GR-RF695WI-PGJ(67) Slot-in'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-toshiba-gr-rf695wi-pgj67-slot-in_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Toshiba GR-RF695WI-PGJ(67) Slot-in'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-toshiba-gr-rf695wi-pgj67-slot-in_9.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Toshiba GR-RF695WI-PGJ(67) Slot-in'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-toshiba-gr-rf695wi-pgj67-slot-in_10.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Toshiba GR-RF695WI-PGJ(67) Slot-in'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-toshiba-gr-rf695wi-pgj67-slot-in_11.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Toshiba GR-RF695WI-PGJ(67) Slot-in'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-toshiba-gr-rf695wi-pgj67-slot-in_12.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Toshiba GR-RF695WI-PGJ(67) Slot-in'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-toshiba-gr-rf695wi-pgj67-slot-in_13.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Toshiba GR-RF695WI-PGJ(67) Slot-in'));

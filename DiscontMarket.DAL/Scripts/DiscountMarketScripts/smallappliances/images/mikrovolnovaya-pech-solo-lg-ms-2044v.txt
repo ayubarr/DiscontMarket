@@ -1,0 +1,19 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-lg-ms-2044v_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло LG MS-2044V'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-lg-ms-2044v_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло LG MS-2044V'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-lg-ms-2044v_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло LG MS-2044V'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-lg-ms-2044v_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло LG MS-2044V'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-lg-ms-2044v_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло LG MS-2044V'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-lg-ms-2044v_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло LG MS-2044V'));

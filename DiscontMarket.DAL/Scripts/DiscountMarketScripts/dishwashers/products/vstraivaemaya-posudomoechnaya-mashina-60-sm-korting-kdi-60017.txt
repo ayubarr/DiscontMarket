@@ -1,0 +1,72 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Встраиваемая посудомоечная машина 60 см Korting KDI 60017', 33495, 12, '/items/productimages/vstraivaemaya-posudomoechnaya-mashina-60-sm-korting-kdi-60017_0.png', 4.13, '', 'Встраиваемая посудомоечная машина Korting KDI 60017 монтируется в нишу размером 82х60х58 см. Модель рассчитана на загрузку до 14 комплектов посуды. Есть возможность активировать функцию половинной загрузки. Для размещения кухонной утвари предусмотрены три корзины с системой регулировки высоты Easy Lift. Встроены держатели для бокалов и тарелок. Прилагается корзина для столовых приборов C-Shelf. У модели два разбрызгивателя S-образной формы. Сушка — конденсационная. 
+Электронное управление представлено кнопками. Цифровой дисплей показывает выбранную программу и время цикла, код ошибки при самодиагностике неисправности. Предусмотрена индикация наличия соли и ополаскивателя. 
+У машины пять автоматических программ: «Авто», «Стекло», «Быстрая», «90 минут» и «Эко». Модель позволяет использовать универсальные моющие средства 3 в 1. Для удобства встроено внутреннее освещение камеры. Ход программы отображает индикация «Луч на полу». Таймер отложенного старта можно установить на срок до 24 часов. По завершении цикла прозвучит сигнал, дверца автоматически откроется и прибор автоматически выключится. Безопасность обеспечивается системой полной защиты от протечек AquaStop. 
+Устройство обладает размерами 81,5х59,8х55 см, вес — 34,95 кг. За один цикл расход электроэнергии составляет 0,74 кВт*ч, воды — 11 л. Прибор относится к А++-классу энергоэффективности, потребляемая мощность достигает 1900 Вт. ТЭН проточный. Уровень шума при работе не превышает 47 дБ. Длина сетевого шнура составляет 1,5 м. Воронка для засыпания соли поставляется в комплекте.', 'InStock', 'Discount', 28, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Korting'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 60 см Korting KDI 60017'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Встраиваемая посудомоечная машина 60 см Korting KDI 60017' 
+        AND a."Name" = '11' 
+        AND a."Type" = 'Расход воды за цикл'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Встраиваемая посудомоечная машина 60 см Korting KDI 60017' 
+        AND a."Name" = '14 комплектов' 
+        AND a."Type" = 'Максимальная вместимость'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Встраиваемая посудомоечная машина 60 см Korting KDI 60017' 
+        AND a."Name" = '5' 
+        AND a."Type" = 'Количество программ мойки'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Встраиваемая посудомоечная машина 60 см Korting KDI 60017' 
+        AND a."Name" = '81.5x59.8х55' 
+        AND a."Type" = 'Размер ниши, мм (В*Ш*Г)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Встраиваемая посудомоечная машина 60 см Korting KDI 60017' 
+        AND a."Name" = 'конденсационный' 
+        AND a."Type" = 'Тип сушки'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-60-sm-korting-kdi-60017_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 60 см Korting KDI 60017'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-60-sm-korting-kdi-60017_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 60 см Korting KDI 60017'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-60-sm-korting-kdi-60017_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 60 см Korting KDI 60017'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-60-sm-korting-kdi-60017_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 60 см Korting KDI 60017'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-60-sm-korting-kdi-60017_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 60 см Korting KDI 60017'));

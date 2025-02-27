@@ -1,0 +1,73 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Морозильная камера Maunfeld MFFR143W', 25745, 10, '/items/productimages/morozilnaya-kamera-maunfeld-mffr143w_0.png', 4.26, '', 'Морозильная камера Maunfeld MFFR143W оптимальна как для домашнего использования, так и на предприятии. С помощью модели можно хранить до 168 л мясных и рыбных полуфабрикатов, различных десертов, ягод и овощей, плодовых культур, грибов, зелени и других продуктов. Благодаря этому вы удивите домочадцев или посетителей общепита здоровым рационом. 
+За счет невысокой вибрации устройства камера производит минимальное количество шума, что способствует комфортной эксплуатации даже в ночное время. При необходимости дверцу можно перенавесить в любую сторону. Чтобы удалить наледь, достаточно произвести разморозку естественным способом. Корпус изготовлен из высокопрочного материала, который устойчив к перепадам температуры.', 'InStock', 'Discount', 3, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Maunfeld'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Морозильная камера Maunfeld MFFR143W'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Морозильная камера Maunfeld MFFR143W' 
+        AND a."Name" = 'стандартный' 
+        AND a."Type" = 'Тип компрессора'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Морозильная камера Maunfeld MFFR143W' 
+        AND a."Name" = '143*54.5*56.6 см' 
+        AND a."Type" = 'Габаритные размеры (В*Ш*Г)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Морозильная камера Maunfeld MFFR143W' 
+        AND a."Name" = 'A+' 
+        AND a."Type" = 'Класс энергоэффективности'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Морозильная камера Maunfeld MFFR143W' 
+        AND a."Name" = 'механический' 
+        AND a."Type" = 'Тип управления'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Морозильная камера Maunfeld MFFR143W' 
+        AND a."Name" = '220' 
+        AND a."Type" = 'Энергопотребление в год'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-maunfeld-mffr143w_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Maunfeld MFFR143W'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-maunfeld-mffr143w_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Maunfeld MFFR143W'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-maunfeld-mffr143w_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Maunfeld MFFR143W'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-maunfeld-mffr143w_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Maunfeld MFFR143W'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-maunfeld-mffr143w_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Maunfeld MFFR143W'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-maunfeld-mffr143w_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Maunfeld MFFR143W'));

@@ -1,0 +1,25 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-gorenje-wns1x4acis_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Gorenje WNS1X4ACIS'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-gorenje-wns1x4acis_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Gorenje WNS1X4ACIS'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-gorenje-wns1x4acis_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Gorenje WNS1X4ACIS'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-gorenje-wns1x4acis_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Gorenje WNS1X4ACIS'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-gorenje-wns1x4acis_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Gorenje WNS1X4ACIS'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-gorenje-wns1x4acis_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Gorenje WNS1X4ACIS'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-gorenje-wns1x4acis_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Gorenje WNS1X4ACIS'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-gorenje-wns1x4acis_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Gorenje WNS1X4ACIS'));

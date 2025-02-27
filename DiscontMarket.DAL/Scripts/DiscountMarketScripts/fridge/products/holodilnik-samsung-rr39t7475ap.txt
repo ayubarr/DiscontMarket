@@ -1,0 +1,86 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Холодильник Samsung RR39T7475AP', 76499, 5, '/items/productimages/holodilnik-samsung-rr39t7475ap_0.png', 4.82, '', 'Однодверный холодильник Samsung RR39T7475AP на 394 л снабжен системой No Frost. Технология All-around Cooling равномерно охлаждает каждый уголок рабочей камеры. Предусмотрен режим «Суперохлаждение». 
+
+Полезный объем модели составляет 385 л. Камера оборудована пятью стандартными стеклянными полками, полкой для бутылок, одной складной полкой. Зона свежести для овощей и фруктов — два выдвижных ящика. Присутствует регулировка уровня влажности, что позволяет сохранить свежесть овощей и фруктов в течение продолжительного времени. Дверца холодильника снабжена семью карманами. Подставка для яиц поставляется в комплекте.
+
+Модель оснащена электронной панелью управления с сенсорными кнопками и цифровым дисплеем. На нем отображается включение, режим и температура в камере. Внутреннее LED-освещение обеспечивает комфорт использования, загорается при открывании двери. При продолжительно открытой двери срабатывает звуковой сигнал. 
+
+У холодильника один инверторный компрессор, уровень шума не превышает 39 дБ. В системе используется хладагент R600A. Прибор относится к N-T-климатическому классу и к А+-классу энергоэффективности. Годовое потребление электроэнергии составляет 115 кВт*ч. Для экономии электропотребления на время отсутствия владельца модель снабжена режимом «Отпуск».
+
+Металлическая дверь открываются при помощи внешней ручки. Фронтальная панель сменная, холодильник продается без внешней панели. Дверь может открываться как в правую, так и левую сторону благодаря механизму перенавешивания. Устройство весит 82 кг, габариты — 185,3х59,5х68,8 см.', 'InStock', 'Discount', 3, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Samsung'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Холодильник Samsung RR39T7475AP'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Samsung RR39T7475AP' 
+        AND a."Name" = 'инверторный' 
+        AND a."Type" = 'Тип компрессора'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Samsung RR39T7475AP' 
+        AND a."Name" = '394' 
+        AND a."Type" = 'Общий объем'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Samsung RR39T7475AP' 
+        AND a."Name" = 'A+' 
+        AND a."Type" = 'Класс энергоэффективности'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Samsung RR39T7475AP' 
+        AND a."Name" = 'электронный' 
+        AND a."Type" = 'Тип управления'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Samsung RR39T7475AP' 
+        AND a."Name" = 'LED' 
+        AND a."Type" = 'Тип освещения'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-samsung-rr39t7475ap_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Samsung RR39T7475AP'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-samsung-rr39t7475ap_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Samsung RR39T7475AP'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-samsung-rr39t7475ap_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Samsung RR39T7475AP'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-samsung-rr39t7475ap_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Samsung RR39T7475AP'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-samsung-rr39t7475ap_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Samsung RR39T7475AP'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-samsung-rr39t7475ap_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Samsung RR39T7475AP'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-samsung-rr39t7475ap_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Samsung RR39T7475AP'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-samsung-rr39t7475ap_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Samsung RR39T7475AP'));

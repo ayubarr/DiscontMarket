@@ -1,0 +1,75 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Микроволновая печь с грилем Gorenje MO20S4W', 5849, 6, '/items/productimages/mikrovolnovaya-pech-s-grilem-gorenje-mo20s4w_0.png', 4.64, '', 'У микроволновой печи Gorenje MO20S4W 11 автоматических программ, с помощью которых вы сможете приготовить и основные блюда, и гарнир: мясо, рыбу, картофель, овощи, макароны и др. Вам нужно будет только установить вес и тип продукта, а оптимальные параметры работы прибор подберёт сам.
+
+ПРОСТОР ДЛЯ КУЛИНАРНОГО ТВОРЧЕСТВА
+Конечно, можно ввести настройки и самостоятельно: задавайте мощность (доступно пять уровней) и время работы (до 60 минут). Поджаривайте стейки, сосиски, колбаски на гриле. Он комбинируется с микроволнами, это позволит ускорить процесс. Любителям делать выпечку пригодится функция «Растапливание»: размягчение сливочного масла или шоколада займёт считаные минуты. А подать готовое блюдо на горячих тарелках даст возможность «Подогрев посуды».
+
+БЫСТРО И БЕЗ УСИЛИЙ
+Устройство не доставит вам хлопот в уходе. Устранить загрязнения со стенок камеры поможет режим AquaClean. Поставьте в СВЧ стакан с водой (200 мл) и запустите соответствующую программу. Под воздействием пара брызги жира и частички пищи размягчатся, и вы легко наведёте порядок сухой салфеткой. Очистить прибор снаружи тоже просто: панель управления сенсорная, протереть её гораздо проще, чем кнопки и поворотные регуляторы, «любящие» собирать грязь.', 'InStock', 'Discount', 6, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Gorenje'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Микроволновая печь с грилем Gorenje MO20S4W'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Микроволновая печь с грилем Gorenje MO20S4W' 
+        AND a."Name" = '20' 
+        AND a."Type" = 'Полезный объем'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Микроволновая печь с грилем Gorenje MO20S4W' 
+        AND a."Name" = '27' 
+        AND a."Type" = 'Диаметр поворотного стола'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Микроволновая печь с грилем Gorenje MO20S4W' 
+        AND a."Name" = 'эмалированный металл' 
+        AND a."Type" = 'Внутреннее покрытие'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Микроволновая печь с грилем Gorenje MO20S4W' 
+        AND a."Name" = 'сенсорный' 
+        AND a."Type" = 'Тип управления'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Микроволновая печь с грилем Gorenje MO20S4W' 
+        AND a."Name" = 'белый' 
+        AND a."Type" = 'Цвет'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-s-grilem-gorenje-mo20s4w_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь с грилем Gorenje MO20S4W'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-s-grilem-gorenje-mo20s4w_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь с грилем Gorenje MO20S4W'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-s-grilem-gorenje-mo20s4w_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь с грилем Gorenje MO20S4W'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-s-grilem-gorenje-mo20s4w_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь с грилем Gorenje MO20S4W'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-s-grilem-gorenje-mo20s4w_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь с грилем Gorenje MO20S4W'));

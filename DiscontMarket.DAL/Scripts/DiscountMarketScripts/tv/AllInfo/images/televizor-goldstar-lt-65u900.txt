@@ -1,0 +1,19 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-goldstar-lt-65u900_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор GoldStar LT-65U900'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-goldstar-lt-65u900_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор GoldStar LT-65U900'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-goldstar-lt-65u900_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор GoldStar LT-65U900'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-goldstar-lt-65u900_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор GoldStar LT-65U900'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-goldstar-lt-65u900_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор GoldStar LT-65U900'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-goldstar-lt-65u900_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор GoldStar LT-65U900'));

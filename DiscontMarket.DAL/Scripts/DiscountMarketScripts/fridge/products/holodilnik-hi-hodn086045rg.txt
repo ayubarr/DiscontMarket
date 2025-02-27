@@ -1,0 +1,76 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Холодильник Hi HODN086045RG', 9999, 15, '/items/productimages/holodilnik-hi-hodn086045rg_0.png', 4.14, '', 'Холодильник Hi HODN086045RG однокамерная модель общим объемом 87 л и полезным объемом 84 л. Уровень шума — всего 40 дБ, что гарантирует тихую работу устройства. 
+
+• <b>Климатический класс ST, T, SN, N</b> 
+Позволяет использовать холодильник в различных климатических условиях. 
+
+• <b>Зона свежести</b> 
+Позволяет поддерживать свежесть продуктов в течение длительного времени. 
+
+• <b>Перенавешиваемая дверца</b> 
+Позволяет удобно разместить модель в помещении. 
+
+Холодильник Hi HODN086045RG оснащен двумя основными полками из стекла и пластика. Также присутствует полка для хранения бутылок, отделение для овощей и фруктов. 
+
+Холодильник работает на одном компрессоре (хладагент R600А), управление механическое. Энергопотребление соответствует классу A+, с годовым расходом 109 кВт*ч. Автономное сохранение холода возможно в течение 15 часов после отключения от сети.', 'InStock', 'Discount', 3, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Hi'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Холодильник Hi HODN086045RG'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Hi HODN086045RG' 
+        AND a."Name" = 'стандартный' 
+        AND a."Type" = 'Тип компрессора'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Hi HODN086045RG' 
+        AND a."Name" = '85.1*46.3*44.6 см' 
+        AND a."Type" = 'Габаритные размеры (В*Ш*Г)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Hi HODN086045RG' 
+        AND a."Name" = '87' 
+        AND a."Type" = 'Общий объем'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Hi HODN086045RG' 
+        AND a."Name" = 'A+' 
+        AND a."Type" = 'Класс энергоэффективности'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Hi HODN086045RG' 
+        AND a."Name" = '15' 
+        AND a."Type" = 'Хранение при отключении питания'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-hi-hodn086045rg_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Hi HODN086045RG'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-hi-hodn086045rg_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Hi HODN086045RG'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-hi-hodn086045rg_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Hi HODN086045RG'));

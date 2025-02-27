@@ -1,0 +1,7 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnyi-lar-kraft-bdw-210bl_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильный ларь Kraft BD(W)-210BL'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnyi-lar-kraft-bdw-210bl_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильный ларь Kraft BD(W)-210BL'));

@@ -1,0 +1,35 @@
+﻿INSERT INTO "Products" 
+("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription",
+"Availability", "Status", "CategoryID", "BrandID", "UserID") 
+VALUES
+ ('Телевизор Maunfeld MLT24H01', 8995, 10, '/items/productimages/televizor-maunfeld-mlt24h01_0.png', 4.74, '', 'Телевизор Maunfeld MLT24H01 — устройство с 24-дюймовым (24 см) экраном формата 16:9, на который выводится картинка разрешением 1366х768 пикселей. Технология LED оптимизирует цветовые тона в каждой сцене. Частота обновления составляет 60 Гц, что позволяет избежать заметных разрывов во время быстрой смены изображений. В модели реализована система обработки картинки Pixel Plus HD 1000. Звуковая система Dolby Digital с мощностью динамиков 2х2 Вт выдает чистый и четкий звук.<br>Функция TimeShift дает возможность поставить на паузу цифровую программу. Sleep-таймер позволяет переводить телевизор в «спящий» режим по истечении установленного времени. Есть возможность записи с ТВ на USB-устройство. <br>Управление моделью осуществляется посредством пульта ДУ. Набор интерфейсов включает HDMI и порт USB 2.0 тип A. Потребляемая мощность — 45 Вт. За безопасность отвечает опция защиты от детей. В комплект входит настольная подставка. Габаритные размеры — 33,3х55,3х14,4 см.', 'InStock', 'Discount', 1, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Maunfeld'), 1);
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Maunfeld MLT24H01'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'HD (1366x768 Пикс)' AND "Type" = 'Экран));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Maunfeld MLT24H01'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '24' AND "Type" = 'Диагональ));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Maunfeld MLT24H01'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '60' AND "Type" = 'Частота обновления));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Maunfeld MLT24H01'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'LED' AND "Type" = 'Технология экрана));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Maunfeld MLT24H01'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'Direct LED' AND "Type" = 'Тип светодиодной подсветки));
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-maunfeld-mlt24h01_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Maunfeld MLT24H01'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-maunfeld-mlt24h01_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Maunfeld MLT24H01'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-maunfeld-mlt24h01_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Maunfeld MLT24H01'));

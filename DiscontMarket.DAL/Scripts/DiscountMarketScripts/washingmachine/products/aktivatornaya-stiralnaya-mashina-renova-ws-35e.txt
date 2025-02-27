@@ -1,0 +1,72 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Активаторная стиральная машина Renova WS-35E', 3399, 19, '/items/productimages/aktivatornaya-stiralnaya-mashina-renova-ws-35e_0.png', 4.27, '', 'Мини-стиральная машина активаторного типа Renova WS-35E – компактный прибор, который не занимает много места в ванной и помещается в шкафчик. Небольшая масса позволяет переносить его в пределах дома, устанавливая в наиболее удобном месте. Подписи на панели управления и подсказки на крышке помогают быстро выбирать подходящий режим работы, обеспечивая быструю и эффективную очистку белья. <br><br>МАКСИМАЛЬНАЯ НАДЁЖНОСТЬ<br>Мощный двигатель устойчив к перегрузкам и перегреву. Утолщённый полипропиленовый корпус выдерживает большие нагрузки, а также не ржавеет и не меняет цвет при активном использовании устройства. <br><br>КАЧЕСТВЕННАЯ СТИРКА<br>Активатор с оптимизированной формой создаёт очень мощные потоки воды, глубоко увлажняющие плотную ткань и насыщающие её моющим средством. Благодаря этому машина может удалять стойкие пятна без длительного предварительного замачивания. <br><br>УДОБСТВО ИСПОЛЬЗОВАНИЯ<br>Съёмная крышка может служить вместительным тазом для белья. Специальные крепления на корпусе помогают прочно зафиксировать провод и сливной шланг при хранении устройства. <br>', 'InStock', 'Discount', 5, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Renova'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Активаторная стиральная машина Renova WS-35E'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Активаторная стиральная машина Renova WS-35E' 
+        AND a."Name" = '3.5' 
+        AND a."Type" = 'Максимальная загрузка'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Активаторная стиральная машина Renova WS-35E' 
+        AND a."Name" = 'Да' 
+        AND a."Type" = 'Подключение к горячей воде (60*С)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Активаторная стиральная машина Renova WS-35E' 
+        AND a."Name" = 'до 15 минут' 
+        AND a."Type" = 'Таймер продолжительности работы'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Активаторная стиральная машина Renova WS-35E' 
+        AND a."Name" = 'вертикальная' 
+        AND a."Type" = 'Тип загрузки'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Активаторная стиральная машина Renova WS-35E' 
+        AND a."Name" = 'Да' 
+        AND a."Type" = 'Реверсивное вращение активатора'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/aktivatornaya-stiralnaya-mashina-renova-ws-35e_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Активаторная стиральная машина Renova WS-35E'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/aktivatornaya-stiralnaya-mashina-renova-ws-35e_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Активаторная стиральная машина Renova WS-35E'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/aktivatornaya-stiralnaya-mashina-renova-ws-35e_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Активаторная стиральная машина Renova WS-35E'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/aktivatornaya-stiralnaya-mashina-renova-ws-35e_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Активаторная стиральная машина Renova WS-35E'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/aktivatornaya-stiralnaya-mashina-renova-ws-35e_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Активаторная стиральная машина Renova WS-35E'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/aktivatornaya-stiralnaya-mashina-renova-ws-35e_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Активаторная стиральная машина Renova WS-35E'));

@@ -1,0 +1,22 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-lg-neochef-ms2535gis_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло LG NeoChef MS2535GIS'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-lg-neochef-ms2535gis_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло LG NeoChef MS2535GIS'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-lg-neochef-ms2535gis_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло LG NeoChef MS2535GIS'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-lg-neochef-ms2535gis_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло LG NeoChef MS2535GIS'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-lg-neochef-ms2535gis_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло LG NeoChef MS2535GIS'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-lg-neochef-ms2535gis_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло LG NeoChef MS2535GIS'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-lg-neochef-ms2535gis_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло LG NeoChef MS2535GIS'));

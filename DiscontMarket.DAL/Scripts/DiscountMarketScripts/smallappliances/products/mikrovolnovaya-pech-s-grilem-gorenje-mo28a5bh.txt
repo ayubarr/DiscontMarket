@@ -1,0 +1,86 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Микроволновая печь с грилем Gorenje MO28A5BH', 11699, 6, '/items/productimages/mikrovolnovaya-pech-s-grilem-gorenje-mo28a5bh_0.png', 4.12, '', 'Микроволновая печь с грилем и конвекцией Gorenje MO28A5BH оснащена несколькими режимами работы, включая конвекцию и гриль. Возможно размораживание по весу, что позволяет максимально быстро подготовить продукты для готовки. Мощность микроволн (пять ступеней) достигает 900 Вт, гриля — 1200 Вт. Полезный объем равен 19 л. Печь оснащена восемью автоматическими программами, благодаря которым не нужно самостоятельно подбирать оптимальные настройки. Встроенные часы не дадут забыть о блюде. Поэтапное приготовление обеспечивает более точный контроль над процессом готовки блюда. При необходимости можно поставить ход выполнения программы на паузу. По завершении работы активируется звуковой сигнал. 
+Электронное управление интуитивно понятное и простое. Печь снабжена защитой от детей для большей безопасности — позволяет заблокировать панель управления. Диаметр стеклянного поворотного стола составляет 31,5 см. Фронтальная панель выполнена из металла и пластика. Стенки рабочей камеры покрыты эмалированным слоем, который не подвержен воздействию высокой температуры и отличается неприхотливостью в уходе. 
+Дверца открывается налево, прозрачное стекло позволяет визуально наблюдать над процессом приготовления. Для большей информативности микроволновая печь оснащена цифровым дисплеем и индикаторами, которые сообщают о включении, времени до конца программы и выбранном режиме работы. Предусмотрен настраиваемый таймер. Для освещения используется энергоэффективный светодиодный источник, характеризующийся длительным сроком службы. Решетка для гриля входит в комплект. Мощность потребления составляет 1440 Вт. Габаритные размеры печи — 30,3х51х41 см, вес — 16,5 кг.', 'InStock', 'Discount', 6, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Gorenje'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Микроволновая печь с грилем Gorenje MO28A5BH'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Микроволновая печь с грилем Gorenje MO28A5BH' 
+        AND a."Name" = '28' 
+        AND a."Type" = 'Полезный объем'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Микроволновая печь с грилем Gorenje MO28A5BH' 
+        AND a."Name" = '31.5' 
+        AND a."Type" = 'Диаметр поворотного стола'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Микроволновая печь с грилем Gorenje MO28A5BH' 
+        AND a."Name" = 'нержавеющая сталь' 
+        AND a."Type" = 'Внутреннее покрытие'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Микроволновая печь с грилем Gorenje MO28A5BH' 
+        AND a."Name" = 'электронный' 
+        AND a."Type" = 'Тип управления'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Микроволновая печь с грилем Gorenje MO28A5BH' 
+        AND a."Name" = 'черный' 
+        AND a."Type" = 'Цвет'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-s-grilem-gorenje-mo28a5bh_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь с грилем Gorenje MO28A5BH'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-s-grilem-gorenje-mo28a5bh_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь с грилем Gorenje MO28A5BH'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-s-grilem-gorenje-mo28a5bh_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь с грилем Gorenje MO28A5BH'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-s-grilem-gorenje-mo28a5bh_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь с грилем Gorenje MO28A5BH'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-s-grilem-gorenje-mo28a5bh_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь с грилем Gorenje MO28A5BH'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-s-grilem-gorenje-mo28a5bh_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь с грилем Gorenje MO28A5BH'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-s-grilem-gorenje-mo28a5bh_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь с грилем Gorenje MO28A5BH'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-s-grilem-gorenje-mo28a5bh_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь с грилем Gorenje MO28A5BH'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-s-grilem-gorenje-mo28a5bh_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь с грилем Gorenje MO28A5BH'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-s-grilem-gorenje-mo28a5bh_9.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь с грилем Gorenje MO28A5BH'));

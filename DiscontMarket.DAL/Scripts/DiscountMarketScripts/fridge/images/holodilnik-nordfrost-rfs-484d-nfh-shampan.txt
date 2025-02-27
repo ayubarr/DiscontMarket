@@ -1,0 +1,19 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-nordfrost-rfs-484d-nfh-shampan_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Nordfrost RFS 484D NFH шампань'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-nordfrost-rfs-484d-nfh-shampan_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Nordfrost RFS 484D NFH шампань'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-nordfrost-rfs-484d-nfh-shampan_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Nordfrost RFS 484D NFH шампань'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-nordfrost-rfs-484d-nfh-shampan_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Nordfrost RFS 484D NFH шампань'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-nordfrost-rfs-484d-nfh-shampan_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Nordfrost RFS 484D NFH шампань'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-nordfrost-rfs-484d-nfh-shampan_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Nordfrost RFS 484D NFH шампань'));

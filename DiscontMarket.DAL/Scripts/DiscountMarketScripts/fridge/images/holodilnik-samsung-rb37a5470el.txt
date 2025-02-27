@@ -1,0 +1,13 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-samsung-rb37a5470el_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Samsung RB37A5470EL'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-samsung-rb37a5470el_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Samsung RB37A5470EL'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-samsung-rb37a5470el_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Samsung RB37A5470EL'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-samsung-rb37a5470el_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Samsung RB37A5470EL'));

@@ -1,0 +1,16 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-invertornaya-solo-hisense-h20mobp1hi_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь инверторная соло Hisense H20MOBP1HI'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-invertornaya-solo-hisense-h20mobp1hi_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь инверторная соло Hisense H20MOBP1HI'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-invertornaya-solo-hisense-h20mobp1hi_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь инверторная соло Hisense H20MOBP1HI'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-invertornaya-solo-hisense-h20mobp1hi_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь инверторная соло Hisense H20MOBP1HI'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-invertornaya-solo-hisense-h20mobp1hi_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь инверторная соло Hisense H20MOBP1HI'));

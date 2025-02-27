@@ -1,0 +1,32 @@
+﻿INSERT INTO "Products" 
+("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription",
+"Availability", "Status", "CategoryID", "BrandID", "UserID") 
+VALUES
+ ('Телевизор National NX-65TUS120', 22199, 13, '/items/productimages/televizor-national-nx-65tus120_0.png', 4.75, '', 'Телевизор National NX-65TUS120 выполнен в безрамочном корпусе, оснащен экраном диагональю 65 дюймов. Устройство работает под управлением ОС «Салют ТВ». Установлен процессор Cortex A53 с тактовой частотой 1,1 ГГц, объем памяти для загрузки приложений — 8 Гб, объем ОЗУ — 1 Гб. 
+Телевизор отображает картинку в разрешении 3840х2160 пикселей при динамической контрастности 100000:1 и частоте обновления 60 Гц. Угол обзора по вертикали и горизонтали составляет 176°. Мощность двух встроенных динамиков — 10 Вт.
+Для подключения совместимых устройств используются разъем RJ-45, аудио и видеовыход, порт USB, два HDMI-разъема, выход 3,5 мм и CI-слот. Беспроводные интерфейсы: модули Wi-Fi и Bluetooth. 
+Телевизор комплектуется пультом ДУ (питается от двух батареек формата ААА) и подставкой для настольной установки. Для настенного монтажа можно воспользоваться креплением VESA размером 200х200 мм.', 'InStock', 'Discount', 1, (SELECT "ID" FROM "Brands" WHERE "Name" = 'National'), 1);
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор National NX-65TUS120'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '4K Ultra HD (3840x2160 Пикс)' AND "Type" = 'Экран));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор National NX-65TUS120'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '65' AND "Type" = 'Диагональ));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор National NX-65TUS120'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '60' AND "Type" = 'Частота обновления));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор National NX-65TUS120'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'LED' AND "Type" = 'Технология экрана));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор National NX-65TUS120'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'Direct LED' AND "Type" = 'Тип светодиодной подсветки));
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-national-nx-65tus120_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор National NX-65TUS120'));

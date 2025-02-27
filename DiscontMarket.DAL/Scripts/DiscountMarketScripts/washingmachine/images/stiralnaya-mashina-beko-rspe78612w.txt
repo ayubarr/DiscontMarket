@@ -1,0 +1,7 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-beko-rspe78612w_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Beko RSPE78612W'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-beko-rspe78612w_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Beko RSPE78612W'));

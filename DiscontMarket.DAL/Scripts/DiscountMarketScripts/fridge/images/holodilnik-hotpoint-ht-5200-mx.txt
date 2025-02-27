@@ -1,0 +1,28 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-hotpoint-ht-5200-mx_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Hotpoint HT 5200 MX'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-hotpoint-ht-5200-mx_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Hotpoint HT 5200 MX'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-hotpoint-ht-5200-mx_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Hotpoint HT 5200 MX'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-hotpoint-ht-5200-mx_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Hotpoint HT 5200 MX'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-hotpoint-ht-5200-mx_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Hotpoint HT 5200 MX'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-hotpoint-ht-5200-mx_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Hotpoint HT 5200 MX'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-hotpoint-ht-5200-mx_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Hotpoint HT 5200 MX'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-hotpoint-ht-5200-mx_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Hotpoint HT 5200 MX'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-hotpoint-ht-5200-mx_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Hotpoint HT 5200 MX'));

@@ -1,0 +1,22 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/varochnyi-centr-premium-bertazzoni-pro96l1ext_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Варочный центр Премиум Bertazzoni PRO96L1EXT'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/varochnyi-centr-premium-bertazzoni-pro96l1ext_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Варочный центр Премиум Bertazzoni PRO96L1EXT'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/varochnyi-centr-premium-bertazzoni-pro96l1ext_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Варочный центр Премиум Bertazzoni PRO96L1EXT'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/varochnyi-centr-premium-bertazzoni-pro96l1ext_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Варочный центр Премиум Bertazzoni PRO96L1EXT'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/varochnyi-centr-premium-bertazzoni-pro96l1ext_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Варочный центр Премиум Bertazzoni PRO96L1EXT'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/varochnyi-centr-premium-bertazzoni-pro96l1ext_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Варочный центр Премиум Bertazzoni PRO96L1EXT'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/varochnyi-centr-premium-bertazzoni-pro96l1ext_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Варочный центр Премиум Bertazzoni PRO96L1EXT'));

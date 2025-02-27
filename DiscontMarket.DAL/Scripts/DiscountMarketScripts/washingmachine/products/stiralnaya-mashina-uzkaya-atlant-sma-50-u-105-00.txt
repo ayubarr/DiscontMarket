@@ -1,0 +1,73 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Стиральная машина узкая ATLANT СМА-50 У 105-00', 13745, 9, '/items/productimages/stiralnaya-mashina-uzkaya-atlant-sma-50-u-105-00_0.png', 4.2, '', 'Узкая стиральная машина ATLANT 50У105-00, белая с электромеханической панелью управления снабжена поворотной ручкой для выбора автопрограмм и кнопками для регулировки скорости отжима и температуры нагрева воды. Установлен дисплей, который отображает включение, режим работы и время до конца программы, код ошибки после самодиагностики неисправностей. Есть возможность заблокировать панель от случайного нажатия.
+
+Загрузка у прибора фронтальная, барабан вмещает до 5 кг белья. Модель оснащена стандартным мотором мощностью 1900 Вт. Относится к классу энергоэффективности А: расход электричества за цикл составляет 0,92 кВт*ч, воды — 47 л. Уровень шума при стирке — 59 дБ, при отжиме — 73 дБ.
+
+У машины 11 автопрограмм, среди них: «Шерсть», «Джинсы», «Детская» и другие. Самый короткий режим длится 15 минут. Поддерживаются семь дополнительных функций, в том числе дополнительное полоскание и добавление воды на всех этапах стирки. Максимальная скорость отжима достигает 1000 об/мин, доступно изменение количества оборотов. Предусмотрена возможность регулирования температуры нагрева воды. По окончании цикла прозвучит сигнал и дверца люка автоматически разблокируется. Предусмотрены электронный контроль дисбаланса барабана, полная защита от протечек, контроль пенообразования, защита от перепадов напряжения. Машина перед сливом воды автоматически ее охлаждает в целях безопасности. Параметры модели: вес — 62 кг, габариты — 59,6х40,7х84,6 см.', 'InStock', 'Discount', 5, (SELECT "ID" FROM "Brands" WHERE "Name" = 'ATLANT'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая ATLANT СМА-50 У 105-00'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина узкая ATLANT СМА-50 У 105-00' 
+        AND a."Name" = '5' 
+        AND a."Type" = 'Максимальная загрузка'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина узкая ATLANT СМА-50 У 105-00' 
+        AND a."Name" = '1000' 
+        AND a."Type" = 'Максимальная скорость отжима'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина узкая ATLANT СМА-50 У 105-00' 
+        AND a."Name" = 'коллекторный' 
+        AND a."Type" = 'Мотор'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина узкая ATLANT СМА-50 У 105-00' 
+        AND a."Name" = '84.6*59.6*47.5 см' 
+        AND a."Type" = 'Габаритные размеры (В*Ш*Г)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина узкая ATLANT СМА-50 У 105-00' 
+        AND a."Name" = 'частичная' 
+        AND a."Type" = 'Тип защиты от протечек'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-uzkaya-atlant-sma-50-u-105-00_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая ATLANT СМА-50 У 105-00'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-uzkaya-atlant-sma-50-u-105-00_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая ATLANT СМА-50 У 105-00'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-uzkaya-atlant-sma-50-u-105-00_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая ATLANT СМА-50 У 105-00'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-uzkaya-atlant-sma-50-u-105-00_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая ATLANT СМА-50 У 105-00'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-uzkaya-atlant-sma-50-u-105-00_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая ATLANT СМА-50 У 105-00'));

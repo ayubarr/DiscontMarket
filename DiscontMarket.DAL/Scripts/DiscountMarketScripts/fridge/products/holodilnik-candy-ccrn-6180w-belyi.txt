@@ -1,0 +1,99 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Холодильник Candy CCRN 6180W белый', 23499, 15, '/items/productimages/holodilnik-candy-ccrn-6180w-belyi_0.png', 4.56, '', 'В холодильнике Candy CCRN 6180W стильный дизайн сочетается с современными решениями, обеспечивающими стабильную и эффективную работу. Это и украшение кухни, и прибор, в котором созданы оптимальные условия для хранения продуктов. Использование технологии Skin Condenser позволило расположить решетки радиаторов в боковых стенках корпуса. При этом задняя стенка у CCRN 6180W — плоская, что позволяет разместить холодильник вплотную к стене и избежать скопления пыли из-за отсутствия выступающих частей и решеток.
+
+Total No Frost 
+В обоих отделениях циркулирует прохладный воздух. Это препятствует появлению наледи на внутренних стенках и способствует равномерному распределению температуры.
+ 
+УДОБСТВО 
+В основной камере предусмотрено четыре прочных стеклянных полки, в морозильнике — три выдвижных ящика из прозрачного пластика. Распределите по ним продукты так, как считаете нужным. Ручки холодильника интегрированы в корпус дверей, направление открытия которых можно изменить при необходимости. Гигиеничный съемный уплотнитель дверей обеспечивает удобство ухода за холодильником. 
+
+ПЕРЕДОВЫЕ ТЕХНОЛОГИИ 
+Система управления — электронная. Она обеспечивает полный контроль над настройками и позволяет в любой момент включить режим «быстрое охлаждение». LED-освещение помогает с минимальными затратами времени найти то, что вам понадобилось в данный момент, и экономно потребляет при этом электроэнергию.', 'InStock', 'Discount', 3, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Candy'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Холодильник Candy CCRN 6180W белый'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Candy CCRN 6180W белый' 
+        AND a."Name" = 'стандартный' 
+        AND a."Type" = 'Тип компрессора'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Candy CCRN 6180W белый' 
+        AND a."Name" = '185' 
+        AND a."Type" = 'Высота'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Candy CCRN 6180W белый' 
+        AND a."Name" = '59.5' 
+        AND a."Type" = 'Ширина'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Candy CCRN 6180W белый' 
+        AND a."Name" = '65.7' 
+        AND a."Type" = 'Глубина'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Candy CCRN 6180W белый' 
+        AND a."Name" = '370' 
+        AND a."Type" = 'Общий объем'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-candy-ccrn-6180w-belyi_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Candy CCRN 6180W белый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-candy-ccrn-6180w-belyi_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Candy CCRN 6180W белый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-candy-ccrn-6180w-belyi_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Candy CCRN 6180W белый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-candy-ccrn-6180w-belyi_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Candy CCRN 6180W белый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-candy-ccrn-6180w-belyi_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Candy CCRN 6180W белый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-candy-ccrn-6180w-belyi_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Candy CCRN 6180W белый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-candy-ccrn-6180w-belyi_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Candy CCRN 6180W белый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-candy-ccrn-6180w-belyi_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Candy CCRN 6180W белый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-candy-ccrn-6180w-belyi_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Candy CCRN 6180W белый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-candy-ccrn-6180w-belyi_9.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Candy CCRN 6180W белый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-candy-ccrn-6180w-belyi_10.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Candy CCRN 6180W белый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-candy-ccrn-6180w-belyi_11.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Candy CCRN 6180W белый'));

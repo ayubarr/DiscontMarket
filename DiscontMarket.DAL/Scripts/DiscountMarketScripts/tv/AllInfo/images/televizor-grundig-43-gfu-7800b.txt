@@ -1,0 +1,19 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-grundig-43-gfu-7800b_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Grundig 43 GFU 7800B'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-grundig-43-gfu-7800b_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Grundig 43 GFU 7800B'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-grundig-43-gfu-7800b_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Grundig 43 GFU 7800B'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-grundig-43-gfu-7800b_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Grundig 43 GFU 7800B'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-grundig-43-gfu-7800b_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Grundig 43 GFU 7800B'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-grundig-43-gfu-7800b_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Grundig 43 GFU 7800B'));

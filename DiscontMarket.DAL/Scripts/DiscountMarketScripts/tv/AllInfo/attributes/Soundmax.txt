@@ -1,0 +1,4 @@
+﻿INSERT INTO "Brands" ("NameTranslate", "Name", "Type") VALUES
+('Soundmax', 'Soundmax', 'Бренды');
+INSERT INTO "BrandCategory" ("BrandID", "CategoryID") VALUES
+((SELECT "ID" FROM "Brands" WHERE "Name" = 'Soundmax'), (SELECT "ID" FROM "Categories" WHERE "Name" = 'tv'));

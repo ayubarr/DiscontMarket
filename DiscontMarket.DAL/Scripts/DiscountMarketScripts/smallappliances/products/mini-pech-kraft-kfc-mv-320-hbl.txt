@@ -1,0 +1,86 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Мини-печь Kraft KFC-MV 320 HBL', 2749, 14, '/items/productimages/mini-pech-kraft-kfc-mv-320-hbl_0.png', 4.92, '', 'Черная мини-печь Kraft KFC-MV 320 HBL разогревается до 250°С. 
+
+• <b>Термостат</b>
+Прибор позволяет следить за температурой внутри камеры и регулировать ее.
+
+• <b>Таймер</b>
+На устройстве можно выставлять время до 120 минут, после окончания которого печь автоматически отключится.
+
+• <b>Объем 32 л</b>
+Модель вмещает противни, формы для запекания, небольшие жаровни.
+
+• <b>Три режима работы</b>
+В печи предусмотрены верхний и нижний варианты нагрева, которые можно совмещать или включать отдельно.
+
+Вес изделия — 6,8 кг. Присутствуют индикация включения, встроенное освещение, звуковой сигнал. Корпус сделан из прочного металла, устойчивого к образованию коррозии. В комплектацию входят плоский противень и решетка. Мощность устройства — 1,5 кВт. Длина шнура составляет 80 см. Способ управления прибором — механический.', 'InStock', 'Discount', 6, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Kraft'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Мини-печь Kraft KFC-MV 320 HBL'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Мини-печь Kraft KFC-MV 320 HBL' 
+        AND a."Name" = '32' 
+        AND a."Type" = 'Объем'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Мини-печь Kraft KFC-MV 320 HBL' 
+        AND a."Name" = '1500' 
+        AND a."Type" = 'Потребляемая мощность'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Мини-печь Kraft KFC-MV 320 HBL' 
+        AND a."Name" = 'отсутствует' 
+        AND a."Type" = 'Тип гриля'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Мини-печь Kraft KFC-MV 320 HBL' 
+        AND a."Name" = 'черный' 
+        AND a."Type" = 'Цвет'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Мини-печь Kraft KFC-MV 320 HBL' 
+        AND a."Name" = 'металл' 
+        AND a."Type" = 'Внутреннее покрытие'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-kraft-kfc-mv-320-hbl_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Kraft KFC-MV 320 HBL'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-kraft-kfc-mv-320-hbl_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Kraft KFC-MV 320 HBL'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-kraft-kfc-mv-320-hbl_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Kraft KFC-MV 320 HBL'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-kraft-kfc-mv-320-hbl_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Kraft KFC-MV 320 HBL'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-kraft-kfc-mv-320-hbl_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Kraft KFC-MV 320 HBL'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-kraft-kfc-mv-320-hbl_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Kraft KFC-MV 320 HBL'));

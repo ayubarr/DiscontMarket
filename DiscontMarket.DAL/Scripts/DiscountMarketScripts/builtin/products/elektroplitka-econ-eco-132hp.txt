@@ -1,0 +1,63 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Электроплитка Econ ECO-132HP', 324, 11, '/items/productimages/elektroplitka-econ-eco-132hp_0.png', 4.14, '', 'Электрическая настольная плитка Econ ECO-132HP выручит вас в ситуациях, когда нет возможности установить стационарную варочную панель. Прибор компактный и весит немногим более одного килограмма, так что для него будет несложно найти место на очень маленькой кухне, в общежитии, временном жилье и при необходимости перевезти.
+
+ПРОСТО И НАДЁЖНО
+Корпус этой модели сделан из прочной эмалированной стали, конфорка мощностью 1000 Вт – чугунная. Её диаметр 15,5 см, так что вам будет удобно использовать посуду среднего размера, которая чаще всего и «в ходу». Механический поворотный переключатель позволяет плавно регулировать температуру: доступно пять уровней. Вы сможете готовить томлёные или тушёные блюда, требующие небольшого жара, быстро подогревать пищу или кипятить воду для чая. Световой индикатор отражает наличие подключения к сети и показывает, что устройство работает.
+
+ПРОДУМАННЫЕ ДЕТАЛИ
+Безопасность обеспечивает система защиты от перегрева. В этом случае прибор отключится и не «сгорит». Ножки плитки прорезинены, они не позволят ей скользить и не оставят царапин на столешнице. Длина сетевого шнура – 1 метр, этого вполне достаточно для удобного подключения.', 'InStock', 'Discount', 4, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Econ'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Электроплитка Econ ECO-132HP'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Электроплитка Econ ECO-132HP' 
+        AND a."Name" = '1' 
+        AND a."Type" = 'Количество конфорок'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Электроплитка Econ ECO-132HP' 
+        AND a."Name" = 'чугунные' 
+        AND a."Type" = 'Тип конфорок'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Электроплитка Econ ECO-132HP' 
+        AND a."Name" = '1000' 
+        AND a."Type" = 'Потребляемая мощность'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Электроплитка Econ ECO-132HP' 
+        AND a."Name" = 'эмаль' 
+        AND a."Type" = 'Материал варочной поверхности'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Электроплитка Econ ECO-132HP' 
+        AND a."Name" = '1' 
+        AND a."Type" = 'Длина сетевого шнура'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/elektroplitka-econ-eco-132hp_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Электроплитка Econ ECO-132HP'));

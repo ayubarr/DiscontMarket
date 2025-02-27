@@ -1,0 +1,84 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Холодильник (Side-by-Side) Премиум Sharp SJEX93PBE', 117499, 19, '/items/productimages/holodilnik-side-by-side-premium-sharp-sjex93pbe_0.png', 4.86, '', 'Sharp SJEX93PBE – холодильник формата side-by-side, который станет отличным решением для большой семьи. Совокупный объём превышает 550 л, так что внутри модели вы сможете разместить внушительное количество самых разных продуктов.
+
+ЗДОРОВАЯ СРЕДА
+Благодаря запатентованной технологии Plasmacluster кислород в камерах насыщается отрицательно заряженными частицами. Это, в свою очередь, уничтожает бактерии, споры плесени и прочие микроорганизмы. Система дезодорирования эффективно удаляет неприятные запахи, а ещё не даёт ароматам блюд перемешиваться между собой. Вентилятор дополнен специальной алюминиевой пластиной, расположенной на задней стенке, – они вместе обеспечивают предельно равномерное распределение потоков воздуха и стабилизируют показатель влажности.
+
+БЕЗ ОСОБЫХ УСИЛИЙ
+Панель управления компактно расположилась на внешней окантовке дверцы, так что выставлять настройки можно, не открывая её. Активируйте ускоренное замораживание и охлаждение или включите ионизатор лёгким прикосновением к сенсорным клавишам. Температура в обоих отделениях задаётся обособленно – это удобнее и практичнее, чем единый контроль.
+
+ВСЁ НА ВИДУ
+Несмотря на четырёхдверную конструкцию, в основной камере отсутствуют перегородки, поэтому там без проблем поместится форма для запекания и любая другая посуда шириной более 70 см. Кроме того, полки, сделанные из прочного закалённого стекла, легко переставляются, чтобы вы задействовали каждый сантиметр пространства. Зона свежести представлена двумя парами контейнеров, в которых значительно продлевается срок хранения как растительных плодов, так и парного мяса. В морозилке вы найдёте пять ящиков разной высоты и лотки для приготовления льда с механической подачей кубиков. В верхние дверцы встроено несколько ярусов балкончиков, предназначенных для небольших упаковок, брикетов и бутылок.
+
+БЕЗ ХЛОПОТ И ДИСКОМФОРТА
+Система No Frost избавит вас от лишней работы – вам не придётся заниматься ручным удалением корки инея, поскольку она просто-напросто не будет образовываться. Максимальный уровень шума, создаваемый кухонным помощником, не превышает 36 дБ, что сопоставимо с тихим разговором. 
+
+НЕ СТОИТ ЗАБЫВАТЬ
+Ключевое звено прибора – инверторный компрессор, предельно экономно расходующий ресурс электрической сети. При этом идеальный микроклимат в отсеках устройства поддерживается до 17 в автономном режиме – не беспокойтесь, что ваши съестные припасы испортятся при временном отсутствии света.', 'InStock', 'Discount', 3, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Sharp'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Холодильник (Side-by-Side) Премиум Sharp SJEX93PBE'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник (Side-by-Side) Премиум Sharp SJEX93PBE' 
+        AND a."Name" = 'инверторный' 
+        AND a."Type" = 'Тип компрессора'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник (Side-by-Side) Премиум Sharp SJEX93PBE' 
+        AND a."Name" = '172*89.2*77 см' 
+        AND a."Type" = 'Габаритные размеры (В*Ш*Г)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник (Side-by-Side) Премиум Sharp SJEX93PBE' 
+        AND a."Name" = '556' 
+        AND a."Type" = 'Общий объем'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник (Side-by-Side) Премиум Sharp SJEX93PBE' 
+        AND a."Name" = 'сухая' 
+        AND a."Type" = 'Тип зоны сохранения свежести'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник (Side-by-Side) Премиум Sharp SJEX93PBE' 
+        AND a."Name" = 'электронный' 
+        AND a."Type" = 'Тип управления'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-side-by-side-premium-sharp-sjex93pbe_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник (Side-by-Side) Премиум Sharp SJEX93PBE'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-side-by-side-premium-sharp-sjex93pbe_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник (Side-by-Side) Премиум Sharp SJEX93PBE'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-side-by-side-premium-sharp-sjex93pbe_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник (Side-by-Side) Премиум Sharp SJEX93PBE'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-side-by-side-premium-sharp-sjex93pbe_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник (Side-by-Side) Премиум Sharp SJEX93PBE'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-side-by-side-premium-sharp-sjex93pbe_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник (Side-by-Side) Премиум Sharp SJEX93PBE'));

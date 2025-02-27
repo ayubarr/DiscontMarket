@@ -1,0 +1,76 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Морозильная камера Haier HF300WG', 23499, 13, '/items/productimages/morozilnaya-kamera-haier-hf300wg_0.png', 4.13, '', 'Морозильная камера Haier HF300WG подойдёт для большой семьи, предпочитающей закупаться впрок, а также для сезонных заготовок. Её объёма в 290 литров вполне достаточно чтобы избавить вас от необходимости часто бегать в магазин и ломать голову, где хранить урожай ягод с садового участка или грибы.<br>
+<br>
+УДОБНОЕ ОСНАЩЕНИЕ<br>
+Семь отсеков позволят все припасы рассортировать по типам: складывать вместе мясо, рыбу и овощи не придётся, так что их запахи не смешаются. Один из ящиков увеличенного размера, что очень удобно для размещения «крупногабаритных» продуктов, например, целой индейки или коробки с замороженным десертом. Передние стенки контейнеров прозрачные, так что вы сразу увидите, где что лежит. В сутки можно эффективно заморозить до 16 кг.<br>
+<br>
+НЕ ТРАТИТ ЛИШНЕГО<br>
+Несмотря на довольно большой объём, эта модель весьма экономична: ей присвоен класс энергоэффективности А, так что счета за коммунальные слуги не станут для вас неприятным сюрпризом.<br>
+<br>
+ЭЛЕМЕНТАРНО<br>
+Управление очень простое и надёжное: уровень охлаждения устанавливается поворотным термостатом. Доступно три положения: минимальный, максимальный и «Эко». В этом случае температура поддерживается в диапазоне от -14 до -18 градусов, а электроэнергии расходуется меньше.<br>
+<br>
+НЕ ПОБЕСПОКОИТ<br>
+Работает морозилка тихо: уровень шума не превышает 40 дБ, что можно сравнить со спокойным разговором. Прикройте дверь в спальню, и она точно не помешает отдыху, даже если у вас чуткий сон.<br>
+', 'InStock', 'Discount', 3, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Haier'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Морозильная камера Haier HF300WG'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Морозильная камера Haier HF300WG' 
+        AND a."Name" = 'стандартный' 
+        AND a."Type" = 'Тип компрессора'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Морозильная камера Haier HF300WG' 
+        AND a."Name" = '165*59*69 см' 
+        AND a."Type" = 'Габаритные размеры (В*Ш*Г)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Морозильная камера Haier HF300WG' 
+        AND a."Name" = 'A' 
+        AND a."Type" = 'Класс энергоэффективности'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Морозильная камера Haier HF300WG' 
+        AND a."Name" = 'механический' 
+        AND a."Type" = 'Тип управления'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Морозильная камера Haier HF300WG' 
+        AND a."Name" = '377' 
+        AND a."Type" = 'Энергопотребление в год'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-haier-hf300wg_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Haier HF300WG'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-haier-hf300wg_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Haier HF300WG'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-haier-hf300wg_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Haier HF300WG'));

@@ -1,0 +1,13 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-uzkaya-atlant-60u1210-a-00_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая ATLANT 60У1210-А-00'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-uzkaya-atlant-60u1210-a-00_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая ATLANT 60У1210-А-00'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-uzkaya-atlant-60u1210-a-00_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая ATLANT 60У1210-А-00'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-uzkaya-atlant-60u1210-a-00_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая ATLANT 60У1210-А-00'));

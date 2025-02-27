@@ -1,0 +1,64 @@
+﻿INSERT INTO "Products" 
+("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription",
+"Availability", "Status", "CategoryID", "BrandID", "UserID") 
+VALUES
+ ('Телевизор Samsung The Frame QE75LS03BAU', 129999, 7, '/items/productimages/televizor-samsung-the-frame-qe75ls03bau_0.png', 4.77, '', 'Телевизор Samsung QE75LS03BAU в черном корпусе получил напольную подставку и крепление VESA 400x400 для настенного размещения. Прибор защищен от детей, потребляет 195 Вт мощности и поддерживает голосовое управление. Спереди расположилась 75-дюймовая Dual LED-панель с частотой обновления 120 Гц и разрешением 3840х2160 точек. 
+
+Предусмотрены встроенные динамики мощностью 40 Вт, обеспечивающие звучание Dolby Digital Plus. В качестве ОС выступает платформа Tizen. Модель оснащена Bluetooth-модулем, поддержкой Smart TV и возможностью воспроизводить файлы с USB-накопителя. Интерфейсная панель вместила HDMI-порты, USB, LAN и Toslink.', 'InStock', 'Discount', 1, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Samsung'), 1);
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung The Frame QE75LS03BAU'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '4K Ultra HD (3840x2160 Пикс)' AND "Type" = 'Экран));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung The Frame QE75LS03BAU'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '75' AND "Type" = 'Диагональ));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung The Frame QE75LS03BAU'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '120' AND "Type" = 'Частота обновления));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung The Frame QE75LS03BAU'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'QLED' AND "Type" = 'Технология экрана));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung The Frame QE75LS03BAU'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'Dual LED' AND "Type" = 'Тип светодиодной подсветки));
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-samsung-the-frame-qe75ls03bau_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung The Frame QE75LS03BAU'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-samsung-the-frame-qe75ls03bau_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung The Frame QE75LS03BAU'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-samsung-the-frame-qe75ls03bau_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung The Frame QE75LS03BAU'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-samsung-the-frame-qe75ls03bau_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung The Frame QE75LS03BAU'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-samsung-the-frame-qe75ls03bau_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung The Frame QE75LS03BAU'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-samsung-the-frame-qe75ls03bau_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung The Frame QE75LS03BAU'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-samsung-the-frame-qe75ls03bau_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung The Frame QE75LS03BAU'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-samsung-the-frame-qe75ls03bau_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung The Frame QE75LS03BAU'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-samsung-the-frame-qe75ls03bau_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung The Frame QE75LS03BAU'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-samsung-the-frame-qe75ls03bau_9.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung The Frame QE75LS03BAU'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-samsung-the-frame-qe75ls03bau_10.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung The Frame QE75LS03BAU'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-samsung-the-frame-qe75ls03bau_11.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung The Frame QE75LS03BAU'));

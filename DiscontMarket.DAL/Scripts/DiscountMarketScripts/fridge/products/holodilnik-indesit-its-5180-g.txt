@@ -1,0 +1,120 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Холодильник Indesit ITS 5180 G', 23249, 16, '/items/productimages/holodilnik-indesit-its-5180-g_0.png', 4.4, '', 'Холодильник Indesit ITS 5180 G, серебристый — современная модель с электронным управлением — на фасадной стороне двери размещен сенсорный дисплей. Общий объем прибора составляет 298 л. 
+
+• <b>Функция Push&Go</b> 
+Дает возможность быстро понизить температуру в камерах — пригодится при крупной загрузке свежих продуктов. Активируется нажатием на одну кнопку. 
+
+• <b>Технология Total No Frost</b> 
+Функционирует в обоих камерах, избавляет от ручного размораживания, так как инея и наледи на стенках не появляется. 
+
+• <b>Ящик FreshSpace</b> 
+Обеспечивает хранение фруктов и овощей в правильных условиях. 
+
+• <b>Светодиодная подсветка</b> 
+Яркая, долго не требует замены и не нагревается во время работы — не влияет на внутреннюю температуру. 
+
+Оборудование холодильного отделения (220 л) состоит из четырех стеклянных полок, из которых три можно переставлять по высоте, и пластикового контейнера для фруктов и овощей. На двери — три кармана. Прилагается подставка для яиц. 
+
+Морозильная камера (78 л) снабжена тремя выдвижными ящиками с прозрачными фасадами. В сутки можно загрузить до 4 кг продуктов. При отключении электроэнергии содержимое будет сохраняться автономно в течение 14 часов. 
+
+Холодильник отличается экономичным энергопотреблением класса А, которое составляет 364 кВт*ч в год. Климатический класс — N-ST, то есть Холодильник Indesit ITS 5180 G, эффективно работает при температуре до +38°C. В основе этой модели — стандартный компрессор, который функционирует с уровнем шума до 40 дБ.', 'InStock', 'Discount', 3, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Indesit'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Холодильник Indesit ITS 5180 G'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Indesit ITS 5180 G' 
+        AND a."Name" = 'стандартный' 
+        AND a."Type" = 'Тип компрессора'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Indesit ITS 5180 G' 
+        AND a."Name" = '185' 
+        AND a."Type" = 'Высота'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Indesit ITS 5180 G' 
+        AND a."Name" = '60' 
+        AND a."Type" = 'Ширина'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Indesit ITS 5180 G' 
+        AND a."Name" = '62' 
+        AND a."Type" = 'Глубина'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Indesit ITS 5180 G' 
+        AND a."Name" = '298' 
+        AND a."Type" = 'Общий объем'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-indesit-its-5180-g_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Indesit ITS 5180 G'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-indesit-its-5180-g_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Indesit ITS 5180 G'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-indesit-its-5180-g_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Indesit ITS 5180 G'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-indesit-its-5180-g_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Indesit ITS 5180 G'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-indesit-its-5180-g_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Indesit ITS 5180 G'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-indesit-its-5180-g_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Indesit ITS 5180 G'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-indesit-its-5180-g_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Indesit ITS 5180 G'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-indesit-its-5180-g_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Indesit ITS 5180 G'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-indesit-its-5180-g_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Indesit ITS 5180 G'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-indesit-its-5180-g_9.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Indesit ITS 5180 G'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-indesit-its-5180-g_10.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Indesit ITS 5180 G'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-indesit-its-5180-g_11.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Indesit ITS 5180 G'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-indesit-its-5180-g_12.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Indesit ITS 5180 G'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-indesit-its-5180-g_13.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Indesit ITS 5180 G'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-indesit-its-5180-g_14.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Indesit ITS 5180 G'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-indesit-its-5180-g_15.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Indesit ITS 5180 G'));

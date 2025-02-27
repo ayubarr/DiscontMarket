@@ -1,0 +1,13 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-indesit-its-5180-ng_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Indesit ITS 5180 NG'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-indesit-its-5180-ng_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Indesit ITS 5180 NG'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-indesit-its-5180-ng_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Indesit ITS 5180 NG'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-indesit-its-5180-ng_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Indesit ITS 5180 NG'));

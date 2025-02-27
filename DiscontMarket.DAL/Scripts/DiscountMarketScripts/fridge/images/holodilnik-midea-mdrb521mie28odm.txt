@@ -1,0 +1,31 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-midea-mdrb521mie28odm_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Midea MDRB521MIE28ODM'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-midea-mdrb521mie28odm_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Midea MDRB521MIE28ODM'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-midea-mdrb521mie28odm_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Midea MDRB521MIE28ODM'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-midea-mdrb521mie28odm_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Midea MDRB521MIE28ODM'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-midea-mdrb521mie28odm_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Midea MDRB521MIE28ODM'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-midea-mdrb521mie28odm_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Midea MDRB521MIE28ODM'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-midea-mdrb521mie28odm_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Midea MDRB521MIE28ODM'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-midea-mdrb521mie28odm_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Midea MDRB521MIE28ODM'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-midea-mdrb521mie28odm_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Midea MDRB521MIE28ODM'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-midea-mdrb521mie28odm_9.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Midea MDRB521MIE28ODM'));

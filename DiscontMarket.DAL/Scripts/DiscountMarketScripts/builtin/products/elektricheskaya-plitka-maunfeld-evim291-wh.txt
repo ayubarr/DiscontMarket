@@ -1,0 +1,70 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Электрическая плитка Maunfeld EVI.M291-WH', 3495, 15, '/items/productimages/elektricheskaya-plitka-maunfeld-evim291-wh_0.png', 4.38, '', 'Встраиваемая индукционная панель Maunfeld EVI.M291-WH белого цвета с черными регуляторами обладает потребляемой мощностью 2000 Вт. Масса устройства составляет 2,2 кг. Варочная поверхность изготавливается из стеклокерамики. У устройства комбинированный электромеханический тип управления. Аппарат обладает десятью уровнями мощности. 
+Панель оснащается одной индукционной конфоркой мощностью 2 кВт и диаметром 16 см. В устройстве есть система защиты от детей, индикаторы времени приготовления, выбранной мощности и включения. Панель оснащена системой блокировки элементов управления. В устройстве есть таймер.', 'InStock', 'Discount', 4, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Maunfeld'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Электрическая плитка Maunfeld EVI.M291-WH'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Электрическая плитка Maunfeld EVI.M291-WH' 
+        AND a."Name" = '1' 
+        AND a."Type" = 'Количество конфорок'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Электрическая плитка Maunfeld EVI.M291-WH' 
+        AND a."Name" = 'индукционные' 
+        AND a."Type" = 'Тип конфорок'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Электрическая плитка Maunfeld EVI.M291-WH' 
+        AND a."Name" = '2000' 
+        AND a."Type" = 'Потребляемая мощность'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Электрическая плитка Maunfeld EVI.M291-WH' 
+        AND a."Name" = 'стеклокерамика' 
+        AND a."Type" = 'Материал варочной поверхности'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Электрическая плитка Maunfeld EVI.M291-WH' 
+        AND a."Name" = 'Да' 
+        AND a."Type" = 'Таймер'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/elektricheskaya-plitka-maunfeld-evim291-wh_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Электрическая плитка Maunfeld EVI.M291-WH'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/elektricheskaya-plitka-maunfeld-evim291-wh_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Электрическая плитка Maunfeld EVI.M291-WH'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/elektricheskaya-plitka-maunfeld-evim291-wh_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Электрическая плитка Maunfeld EVI.M291-WH'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/elektricheskaya-plitka-maunfeld-evim291-wh_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Электрическая плитка Maunfeld EVI.M291-WH'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/elektricheskaya-plitka-maunfeld-evim291-wh_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Электрическая плитка Maunfeld EVI.M291-WH'));

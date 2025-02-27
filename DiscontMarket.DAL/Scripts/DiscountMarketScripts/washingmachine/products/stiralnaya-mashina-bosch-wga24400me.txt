@@ -1,0 +1,83 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Стиральная машина Bosch WGA24400ME', 41795, 7, '/items/productimages/stiralnaya-mashina-bosch-wga24400me_0.png', 4.76, '', 'Стиральная машина Bosch WGA24400ME, белая вмещает до 9 кг белья. Мотор отличается экономичным энергопотреблением, соответствующим классу А+++, за цикл расходуется 0,62 кВт*ч и 45 л воды. Уровень шума при стирке достигает 55 дБ, при отжиме не превышает 74 дБ. Его снижает и дизайн AntiVibration: особый рельеф на боковых сторонах корпуса.
+В прибор заложены программы для стирки хлопка и шерсти, рубашек и джинсов, доступны два ускоренных режима, которые длятся 15 минут и 30 минут и смогут быстро привести в порядок слабозагрязненные вещи, предусмотрены циклы для спортивной одежды, деликатных тканей и другие. Система ActiveWater обеспечивает контроль воды, ориентируясь на уровень загрузки, что позволяет экономить ресурсы. 
+На панели управления — поворотный переключатель для выбора программ и сенсорный дисплей, наглядно отображающий все параметры работы. Скорость отжима регулируется до 1200 об/мин (класс В), есть возможность установки таймера отложенного старта. Поддерживается дозагрузка белья уже после запуска цикла. Безопасность обеспечивается системой защиты от протечек, контролем образования пены и баланса барабана. Габаритные размеры стиральной машины: 84,8х59,8х63,5 см, вес — 70 кг.', 'InStock', 'Discount', 5, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Bosch'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Стиральная машина Bosch WGA24400ME'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина Bosch WGA24400ME' 
+        AND a."Name" = '9' 
+        AND a."Type" = 'Максимальная загрузка'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина Bosch WGA24400ME' 
+        AND a."Name" = '1400' 
+        AND a."Type" = 'Максимальная скорость отжима'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина Bosch WGA24400ME' 
+        AND a."Name" = 'инверторный' 
+        AND a."Type" = 'Мотор'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина Bosch WGA24400ME' 
+        AND a."Name" = 'Да' 
+        AND a."Type" = 'Обработка паром'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина Bosch WGA24400ME' 
+        AND a."Name" = '84.5*59.8*63.5 см' 
+        AND a."Type" = 'Габаритные размеры (В*Ш*Г)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-bosch-wga24400me_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Bosch WGA24400ME'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-bosch-wga24400me_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Bosch WGA24400ME'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-bosch-wga24400me_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Bosch WGA24400ME'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-bosch-wga24400me_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Bosch WGA24400ME'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-bosch-wga24400me_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Bosch WGA24400ME'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-bosch-wga24400me_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Bosch WGA24400ME'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-bosch-wga24400me_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Bosch WGA24400ME'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-bosch-wga24400me_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Bosch WGA24400ME'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-bosch-wga24400me_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Bosch WGA24400ME'));

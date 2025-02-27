@@ -1,0 +1,22 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/elektroplitka-smeg-tes-01-black_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Электроплитка Smeg TES-01 (Black)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/elektroplitka-smeg-tes-01-black_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Электроплитка Smeg TES-01 (Black)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/elektroplitka-smeg-tes-01-black_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Электроплитка Smeg TES-01 (Black)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/elektroplitka-smeg-tes-01-black_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Электроплитка Smeg TES-01 (Black)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/elektroplitka-smeg-tes-01-black_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Электроплитка Smeg TES-01 (Black)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/elektroplitka-smeg-tes-01-black_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Электроплитка Smeg TES-01 (Black)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/elektroplitka-smeg-tes-01-black_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Электроплитка Smeg TES-01 (Black)'));

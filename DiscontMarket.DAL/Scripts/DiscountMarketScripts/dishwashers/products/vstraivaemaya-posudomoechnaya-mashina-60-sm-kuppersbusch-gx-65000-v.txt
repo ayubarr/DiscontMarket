@@ -1,0 +1,63 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Встраиваемая посудомоечная машина 60 см Kuppersbusch GX 6500.0 V', 92495, 10, '/items/productimages/vstraivaemaya-posudomoechnaya-mashina-60-sm-kuppersbusch-gx-65000-v_0.png', 4.94, '', 'Встраиваемая посудомоечная машина Kuppersbusch GX 6500.0 V шириной 60 см оснащена девятью программами, в том числе быстрым режимом, для мытья стекла, автоматическим режимом мойки. Модель вмещает до 15 комплектов посуды, зона интенсивного мытья внизу очищает сильно загрязненные кастрюли, сковороды и другую кухонную утварь. 
+Таймер на 24 часа позволяет задавать запуск в удобное время. Машина оснащена сенсором чистоты воды, электронным дисплеем, показывающим всю необходимую информацию. Уровень шума при работе не превышает 43 дБ. Разрешено использовать средства 3 в 1. 
+Как только машина завершает работу, раздается звуковой сигнал, на полу высвечивается луч. Панель управления можно заблокировать, чтобы предотвратить случайное нажатие. Машина снабжена защитой от протечек: подача воды прекращается при возникновении аварийных ситуаций. 
+Расход воды за цикл составляет 9,5 л, электроэнергии — 0,94 кВт*ч. Модель оснащена турбосушкой, за счет чего посуда полностью просушивается без капель и разводов. В комплекте поставляется воронка для удобного засыпания соли. Вес модели составляет 39,2 кг.', 'InStock', 'Discount', 28, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Kuppersbusch'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 60 см Kuppersbusch GX 6500.0 V'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Встраиваемая посудомоечная машина 60 см Kuppersbusch GX 6500.0 V' 
+        AND a."Name" = '9.5' 
+        AND a."Type" = 'Расход воды за цикл'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Встраиваемая посудомоечная машина 60 см Kuppersbusch GX 6500.0 V' 
+        AND a."Name" = '15 комплектов' 
+        AND a."Type" = 'Максимальная вместимость'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Встраиваемая посудомоечная машина 60 см Kuppersbusch GX 6500.0 V' 
+        AND a."Name" = '9' 
+        AND a."Type" = 'Количество программ мойки'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Встраиваемая посудомоечная машина 60 см Kuppersbusch GX 6500.0 V' 
+        AND a."Name" = 'стандартный' 
+        AND a."Type" = 'Мотор'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Встраиваемая посудомоечная машина 60 см Kuppersbusch GX 6500.0 V' 
+        AND a."Name" = '863*600*570 мм' 
+        AND a."Type" = 'Размер ниши, мм (В*Ш*Г)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-60-sm-kuppersbusch-gx-65000-v_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 60 см Kuppersbusch GX 6500.0 V'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-60-sm-kuppersbusch-gx-65000-v_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 60 см Kuppersbusch GX 6500.0 V'));

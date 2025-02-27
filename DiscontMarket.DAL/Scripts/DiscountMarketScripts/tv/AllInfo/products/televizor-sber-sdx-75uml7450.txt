@@ -1,0 +1,73 @@
+﻿INSERT INTO "Products" 
+("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription",
+"Availability", "Status", "CategoryID", "BrandID", "UserID") 
+VALUES
+ ('Телевизор Sber SDX-75UML7450', 74999, 15, '/items/productimages/televizor-sber-sdx-75uml7450_0.png', 4.2, '', 'Телевизор Sber SSDX-75UML7450 работает на операционной системе «Салют ТВ», интегрируется в экосистему «Умный дом Сбер» и предлагает доступ к более чем 100 бесплатным телеканалам на любой вкус. В отдельном разделе собран контент для детей. По подписке доступен также репертуар онлайн-кинотеатров: Okko, «Кинопоиск», «Иви», Wink, Premier и других. 
+
+• <b>75-дюймовый экран разрешением 4K Ultra HD (3840x2160 пикселей)</b>
+Демонстрирует яркое, четкое изображение, помогает в домашних условиях создать атмосферу кинотеатра. Поддерживается более миллиарда оттенков для точной цветопередачи.
+
+• <b>Подсветка в 512 зонах</b>
+Повышает качество изображения, увеличивает детализацию, гарантирует корректную передачу черного. 
+
+• <b>Динамики закрытого типа с независимыми подвесами</b>
+Позволяют избежать резонансных искажений и получить чистый звук на любой громкости. Выходная мощность — 30 Вт. 
+
+• <b>2 Гб оперативной и 16 Гб постоянной памяти</b>
+Обеспечивают быструю работу и отклик на команды, позволяют скачивать необходимые приложения.
+
+Выход в Сеть производится по Wi-Fi, при этом поддерживаются два диапазона 2,4 ГГц и 5 ГГц, что улучшает качество связи и повышает скорость. Встроен модуль Bluetooth для передачи данных с совместимых устройств. Интерфейсный ряд представлен тремя разъемами HDMI, двумя портами USB 2.0 Type A, оптическим выходом (Toslink), слотом CI и LAN для проводного интернета. Для управления можно использовать смартфон — пульт полностью дублируется в приложении «Салют».', 'InStock', 'Discount', 1, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Sber'), 1);
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Sber SDX-75UML7450'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '4K Ultra HD (3840x2160 Пикс)' AND "Type" = 'Экран));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Sber SDX-75UML7450'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '75' AND "Type" = 'Диагональ));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Sber SDX-75UML7450'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '120' AND "Type" = 'Частота обновления));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Sber SDX-75UML7450'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'QLED' AND "Type" = 'Технология экрана));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Sber SDX-75UML7450'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'Mini LED' AND "Type" = 'Тип светодиодной подсветки));
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-sber-sdx-75uml7450_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Sber SDX-75UML7450'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-sber-sdx-75uml7450_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Sber SDX-75UML7450'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-sber-sdx-75uml7450_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Sber SDX-75UML7450'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-sber-sdx-75uml7450_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Sber SDX-75UML7450'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-sber-sdx-75uml7450_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Sber SDX-75UML7450'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-sber-sdx-75uml7450_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Sber SDX-75UML7450'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-sber-sdx-75uml7450_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Sber SDX-75UML7450'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-sber-sdx-75uml7450_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Sber SDX-75UML7450'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-sber-sdx-75uml7450_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Sber SDX-75UML7450'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-sber-sdx-75uml7450_9.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Sber SDX-75UML7450'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-sber-sdx-75uml7450_10.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Sber SDX-75UML7450'));

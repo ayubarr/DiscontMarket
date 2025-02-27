@@ -1,0 +1,33 @@
+﻿INSERT INTO "Products" 
+("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription",
+"Availability", "Status", "CategoryID", "BrandID", "UserID") 
+VALUES
+ ('Телевизор Starwind SW-LED58UB405', 22749, 9, '/items/productimages/televizor-starwind-sw-led58ub405_0.png', 4.75, '', 'Starwind SW-LED58UB405 — телевизор с поддержкой Smart TV, операционной системой «Салют ТВ» и виртуальным ассистентом «Салют». Диагональ его LED-экрана составляет 58 дюймов, разрешение — 3840 х 2160 пикселей. Суммарная мощность акустической системы — 16 Вт.
+
+Эта модель оснащена аналоговым и цифровым тюнерами, у него есть функция шумоподавления. Sleep-таймер помогает беречь электроэнергию, отключая устройство в заданное время. Модуль Wi-Fi обеспечивает доступ в интернет.
+
+Благодаря Bluetooth можно подключать девайсы, поддерживающие беспроводную связь. Также для взаимодействия с различной аудио- и видеоаппаратурой и носителями информации предусмотрены порты USB и HDMI. Телевизор устанавливается на напольную подставку, которая есть в комплекте.', 'InStock', 'Discount', 1, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Starwind'), 1);
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Starwind SW-LED58UB405'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '4K Ultra HD (3840x2160 Пикс)' AND "Type" = 'Экран));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Starwind SW-LED58UB405'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '58' AND "Type" = 'Диагональ));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Starwind SW-LED58UB405'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '60' AND "Type" = 'Частота обновления));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Starwind SW-LED58UB405'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'LED' AND "Type" = 'Технология экрана));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Starwind SW-LED58UB405'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'Да' AND "Type" = 'Поддержка Smart TV));
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-starwind-sw-led58ub405_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Starwind SW-LED58UB405'));

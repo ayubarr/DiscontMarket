@@ -1,0 +1,54 @@
+﻿INSERT INTO "Products" 
+("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription",
+"Availability", "Status", "CategoryID", "BrandID", "UserID") 
+VALUES
+ ('Телевизор Thomson T43FSL6060', 13495, 14, '/items/productimages/televizor-thomson-t43fsl6060_0.png', 4.14, '', 'Телевизор Thomson T43FSL6060 габаритами 56,5х96,8х8 см весит 6,6 кг и может устанавливаться на подставку, которая идет в наборе, или монтироваться на стену при помощи специального подвеса. Модель с предустановленной ОС Android совместима с Wi-Fi, Smart TV, что позволяет быстро подобрать и настроить контент по своему усмотрению. 
+
+Можно ставить телепередачи на паузу, проматывать их, Sleep-таймером задавать время автоотключения, включать режим «Только звук», голосовой поиск. Управлять устройством можно дистанционно, через смартфон, используя поддержку Bluetooth. Аудиосистема общей мощностью 20 Вт обеспечивает объемное звучание. На экране диагональю 109 см со светодиодной подсветкой передается четкое и детализированное изображение разрешением 1920х1080 Пикс. 
+
+Можно устанавливать приложения, смотреть фильмы с USB-носителей, которые подключаются через USB-порты. Видеоустройства подсоединяются через входы HDMI. Подключение к проводному интернету осуществляется через LAN-вход. Тюнер поддерживает основные стандарты цифрового телевидения.', 'InStock', 'Discount', 1, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Thomson'), 1);
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Thomson T43FSL6060'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'Full HD (1920x1080 Пикс)' AND "Type" = 'Экран));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Thomson T43FSL6060'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '43' AND "Type" = 'Диагональ));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Thomson T43FSL6060'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '60' AND "Type" = 'Частота обновления));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Thomson T43FSL6060'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'LED' AND "Type" = 'Технология экрана));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Thomson T43FSL6060'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'Direct LED' AND "Type" = 'Тип светодиодной подсветки));
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-thomson-t43fsl6060_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Thomson T43FSL6060'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-thomson-t43fsl6060_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Thomson T43FSL6060'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-thomson-t43fsl6060_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Thomson T43FSL6060'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-thomson-t43fsl6060_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Thomson T43FSL6060'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-thomson-t43fsl6060_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Thomson T43FSL6060'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-thomson-t43fsl6060_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Thomson T43FSL6060'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-thomson-t43fsl6060_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Thomson T43FSL6060'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-thomson-t43fsl6060_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Thomson T43FSL6060'));

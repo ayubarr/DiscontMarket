@@ -1,0 +1,19 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-sharp-sjxg60pmbe_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Sharp SJXG60PMBE'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-sharp-sjxg60pmbe_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Sharp SJXG60PMBE'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-sharp-sjxg60pmbe_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Sharp SJXG60PMBE'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-sharp-sjxg60pmbe_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Sharp SJXG60PMBE'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-sharp-sjxg60pmbe_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Sharp SJXG60PMBE'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-sharp-sjxg60pmbe_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Sharp SJXG60PMBE'));

@@ -1,0 +1,82 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Встраиваемая посудомоечная машина 45 см Candy CDIH 1L949-08', 17499, 11, '/items/productimages/vstraivaemaya-posudomoechnaya-mashina-45-sm-candy-cdih-1l949-08_0.png', 4.92, '', 'Встраиваемая посудомоечная машина Candy CDIH 1L949-08 — узкая модель шириной 44,8 см, вмещающая до девяти комплектов посуды. 
+
+• <b>Пять программ</b>
+Предустановлены режимы: «Предварительная мойка», «Универсальная мойка», «Экономичная мойка», «Интенсивная мойка» и «Быстрая мойка». 
+
+• <b>Энергоэффективность класса А</b>
+Расход электроэнергии составляет 0,78 кВт*ч за цикл, воды — 9 л.
+
+• <b>Кнопочная панель управления с цифровым дисплеем</b>
+Наглядно отображает все параметры работы, включая продолжительность программы, оставшееся до окончания цикла время, коды ошибок и прочее. 
+
+Внутреннее оснащение состоит из двух коробов, оснащенных складными держателями для тарелок, и корзины для столовых приборов. Два разбрызгивателя равномерно охватывают все пространство моющей камеры. Встроенный теплообменник исключает резкие перепады температуры и повреждение посуды. Сушка выполняется конденсационным методом, о завершении программы оповещает звуковой сигнал. Отложить начало мойки на срок до девяти часов можно при помощи таймера. 
+
+Потребляемая мощность — 2050 Вт, уровень шума при работе достигает 49 дБ. Система AquaStop предотвращает протечки воды при возникновении каких-то неполадок. Для установки требуется ниша размерами 818x452x577 мм, для нейтрализации неровностей пола ножки регулируются.', 'InStock', 'Discount', 28, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Candy'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 45 см Candy CDIH 1L949-08'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Встраиваемая посудомоечная машина 45 см Candy CDIH 1L949-08' 
+        AND a."Name" = '9' 
+        AND a."Type" = 'Расход воды за цикл'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Встраиваемая посудомоечная машина 45 см Candy CDIH 1L949-08' 
+        AND a."Name" = '9 комплектов' 
+        AND a."Type" = 'Максимальная вместимость'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Встраиваемая посудомоечная машина 45 см Candy CDIH 1L949-08' 
+        AND a."Name" = '5' 
+        AND a."Type" = 'Количество программ мойки'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Встраиваемая посудомоечная машина 45 см Candy CDIH 1L949-08' 
+        AND a."Name" = 'стандартный' 
+        AND a."Type" = 'Мотор'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Встраиваемая посудомоечная машина 45 см Candy CDIH 1L949-08' 
+        AND a."Name" = '818x452x577' 
+        AND a."Type" = 'Размер ниши, мм (В*Ш*Г)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-45-sm-candy-cdih-1l949-08_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 45 см Candy CDIH 1L949-08'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-45-sm-candy-cdih-1l949-08_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 45 см Candy CDIH 1L949-08'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-45-sm-candy-cdih-1l949-08_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 45 см Candy CDIH 1L949-08'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-45-sm-candy-cdih-1l949-08_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 45 см Candy CDIH 1L949-08'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-45-sm-candy-cdih-1l949-08_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 45 см Candy CDIH 1L949-08'));

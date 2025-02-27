@@ -1,0 +1,43 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-beko-wsre6h612zawi_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Beko WSRE6H612ZAWI'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-beko-wsre6h612zawi_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Beko WSRE6H612ZAWI'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-beko-wsre6h612zawi_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Beko WSRE6H612ZAWI'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-beko-wsre6h612zawi_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Beko WSRE6H612ZAWI'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-beko-wsre6h612zawi_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Beko WSRE6H612ZAWI'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-beko-wsre6h612zawi_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Beko WSRE6H612ZAWI'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-beko-wsre6h612zawi_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Beko WSRE6H612ZAWI'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-beko-wsre6h612zawi_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Beko WSRE6H612ZAWI'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-beko-wsre6h612zawi_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Beko WSRE6H612ZAWI'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-beko-wsre6h612zawi_9.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Beko WSRE6H612ZAWI'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-beko-wsre6h612zawi_10.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Beko WSRE6H612ZAWI'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-beko-wsre6h612zawi_11.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Beko WSRE6H612ZAWI'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-beko-wsre6h612zawi_12.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Beko WSRE6H612ZAWI'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-beko-wsre6h612zawi_13.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Beko WSRE6H612ZAWI'));

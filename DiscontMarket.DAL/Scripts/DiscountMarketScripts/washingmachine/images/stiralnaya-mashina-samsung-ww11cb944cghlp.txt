@@ -1,0 +1,4 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-samsung-ww11cb944cghlp_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Samsung WW11CB944CGHLP'));

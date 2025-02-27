@@ -1,0 +1,81 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Встраиваемая посудомоечная машина 60 см Премиум Smeg STL232CL', 57999, 14, '/items/productimages/vstraivaemaya-posudomoechnaya-mashina-60-sm-premium-smeg-stl232cl_0.png', 4.88, '', 'Smeg STL232CL – встраиваемая посудомоечная машина шириной 60 см. Благодаря загрузке, составляющей 13 комплектов, модель будет идеальным решением для семьи из четырёх-пяти человек. 
+
+ЗАЛОГ ОТЛИЧНОГО РЕЗУЛЬТАТА
+Устройство оснащено орбитальной системой орошения, гарантирующей наиболее эффективное избавление от стойких загрязнений. Она состоит из верхнего разбрызгивателя и двойного нижнего коромысла. 
+
+УДОБСТВО КОНТРОЛЯ
+Интуитивно понятная электронная панель управления расположена на рамке дверцы. Контрольное меню представлено набором кнопок с наглядными символами и информативным LED-дисплеем. Так, парой лёгких нажатий вы зададите одну из 11 программ и активируете отложенный старт до 24 часов. Примечательная деталь – луч на полу, загорающийся во время работы прибора и отключащийся по завершении цикла. 
+
+ВНУТРЕННЯЯ ОРГАНИЗАЦИЯ
+Высота короба регулируется, что позволяет разместить в нём даже самые большие кастрюли. Для тарелок предусмотрены специальные складные держатели, для тонкого стекла – силиконовые выступы, а для столовых принадлежностей – съёмная корзина. 
+
+РАЦИОНАЛЬНОСТЬ И БЕЗОПАСНОСТЬ
+За энергоэффективность бытового помощника отвечает инверторный мотор и встроенный теплообменник. Избежать непредвиденных ситуаций поможет механизм полной защиты от протечек. 
+
+О БРЕНДЕ
+Для разработки дизайна своей техники Smeg привлекает мировых архитекторов, ведь кто, как не они, разбирается в стиле? В холодильниках, варочных панелях, стиральных машинах и других приборах нашла своё отражение настоящая итальянская страсть. И такие яркие образы не могли не получить признания: техника бренда неоднократно завоёвывала международные призы за оформление, среди которых несколько престижнейших премий iF Design Award и Red Dot Design Award в 2016 и в 2017 годах.', 'InStock', 'Discount', 28, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Smeg'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 60 см Премиум Smeg STL232CL'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Встраиваемая посудомоечная машина 60 см Премиум Smeg STL232CL' 
+        AND a."Name" = '8.5' 
+        AND a."Type" = 'Расход воды за цикл'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Встраиваемая посудомоечная машина 60 см Премиум Smeg STL232CL' 
+        AND a."Name" = '13 комплектов' 
+        AND a."Type" = 'Максимальная вместимость'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Встраиваемая посудомоечная машина 60 см Премиум Smeg STL232CL' 
+        AND a."Name" = '11' 
+        AND a."Type" = 'Количество программ мойки'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Встраиваемая посудомоечная машина 60 см Премиум Smeg STL232CL' 
+        AND a."Name" = 'инверторный' 
+        AND a."Type" = 'Мотор'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Встраиваемая посудомоечная машина 60 см Премиум Smeg STL232CL' 
+        AND a."Name" = '82*60*57.5' 
+        AND a."Type" = 'Размер ниши, мм (В*Ш*Г)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-60-sm-premium-smeg-stl232cl_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 60 см Премиум Smeg STL232CL'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-60-sm-premium-smeg-stl232cl_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 60 см Премиум Smeg STL232CL'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-60-sm-premium-smeg-stl232cl_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 60 см Премиум Smeg STL232CL'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-60-sm-premium-smeg-stl232cl_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 60 см Премиум Smeg STL232CL'));

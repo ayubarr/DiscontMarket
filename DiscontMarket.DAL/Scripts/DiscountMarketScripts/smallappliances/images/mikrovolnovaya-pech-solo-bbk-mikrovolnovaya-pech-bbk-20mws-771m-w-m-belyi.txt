@@ -1,0 +1,13 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-bbk-mikrovolnovaya-pech-bbk-20mws-771m-w-m-belyi_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло BBK Микроволновая печь BBK 20MWS-771M/W-M белый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-bbk-mikrovolnovaya-pech-bbk-20mws-771m-w-m-belyi_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло BBK Микроволновая печь BBK 20MWS-771M/W-M белый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-bbk-mikrovolnovaya-pech-bbk-20mws-771m-w-m-belyi_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло BBK Микроволновая печь BBK 20MWS-771M/W-M белый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-bbk-mikrovolnovaya-pech-bbk-20mws-771m-w-m-belyi_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло BBK Микроволновая печь BBK 20MWS-771M/W-M белый'));

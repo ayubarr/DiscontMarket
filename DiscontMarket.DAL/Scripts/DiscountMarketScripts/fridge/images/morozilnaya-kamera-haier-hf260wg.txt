@@ -1,0 +1,13 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-haier-hf260wg_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Haier HF260WG'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-haier-hf260wg_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Haier HF260WG'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-haier-hf260wg_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Haier HF260WG'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-haier-hf260wg_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Haier HF260WG'));

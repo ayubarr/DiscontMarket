@@ -1,0 +1,76 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Стиральная машина ATLANT СМА 60 У 105-00', 13845, 16, '/items/productimages/stiralnaya-mashina-atlant-sma-60-u-105-00_0.png', 4.99, '', 'Узкая стиральная машина ATLANT 60У105-00 поддерживает фронтальную загрузку вещей до 6 кг Дверца люка диаметром 34 см открывается в левую сторону. Барабан выполнен из устойчивой к появлению деформаций нержавеющей стали. Устройство поддерживает 11 программ стирки, в том числе «Хлопок», «Синтетика», «Полоскание» и другие. Дополнительно используется предварительная стирка, подходящая для сильно загрязненных тканей, и полоскание. На каждом из этапов модель добавляет воду для поддержания оптимальных условий стирки. В режиме отжима можно осуществлять настройку барабана на скорость вращения до 1000 об/мин.
+
+Управление параметрами настройки производится посредством механических кнопок. Ход программы показывается на цифровом дисплее в виде символов красного цвета. Опция «Отсрочка запуска» дает возможность выбрать наиболее оптимальное время для автовключения устройства. При необходимости можно регулировать температуру стирки. Стиральная машина поддерживает режим «Легкая глажка», который позволяет уменьшить вероятность появления заломов на тканях разных типов.
+
+Модель относится к А-классу энергопотребления. За цикл расходуется до 0,95 кВт*ч и 50 л воды. Функция «Контроль дисбаланса» обеспечивает наблюдение за балансировкой барабана во время отжима, «Контроль пенообразования» улучшает качество стирки белья. Стиральная машина поддерживает защиту от перепадов напряжения. Возможна блокировка люка. Опция «Защита от детей» предотвращает случайное изменение настроек.', 'InStock', 'Discount', 5, (SELECT "ID" FROM "Brands" WHERE "Name" = 'ATLANT'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Стиральная машина ATLANT СМА 60 У 105-00'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина ATLANT СМА 60 У 105-00' 
+        AND a."Name" = '6' 
+        AND a."Type" = 'Максимальная загрузка'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина ATLANT СМА 60 У 105-00' 
+        AND a."Name" = '1000' 
+        AND a."Type" = 'Максимальная скорость отжима'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина ATLANT СМА 60 У 105-00' 
+        AND a."Name" = 'стандартный' 
+        AND a."Type" = 'Мотор'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина ATLANT СМА 60 У 105-00' 
+        AND a."Name" = '84.6*59.6*40.7 см' 
+        AND a."Type" = 'Габаритные размеры (В*Ш*Г)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина ATLANT СМА 60 У 105-00' 
+        AND a."Name" = 'полная' 
+        AND a."Type" = 'Тип защиты от протечек'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-atlant-sma-60-u-105-00_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина ATLANT СМА 60 У 105-00'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-atlant-sma-60-u-105-00_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина ATLANT СМА 60 У 105-00'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-atlant-sma-60-u-105-00_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина ATLANT СМА 60 У 105-00'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-atlant-sma-60-u-105-00_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина ATLANT СМА 60 У 105-00'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-atlant-sma-60-u-105-00_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина ATLANT СМА 60 У 105-00'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-atlant-sma-60-u-105-00_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина ATLANT СМА 60 У 105-00'));

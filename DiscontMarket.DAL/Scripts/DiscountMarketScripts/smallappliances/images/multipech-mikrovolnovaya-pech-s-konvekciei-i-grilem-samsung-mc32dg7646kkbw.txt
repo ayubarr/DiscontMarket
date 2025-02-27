@@ -1,0 +1,22 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/multipech-mikrovolnovaya-pech-s-konvekciei-i-grilem-samsung-mc32dg7646kkbw_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мультипечь. Микроволновая печь с конвекцией и грилем Samsung MC32DG7646KKBW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/multipech-mikrovolnovaya-pech-s-konvekciei-i-grilem-samsung-mc32dg7646kkbw_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мультипечь. Микроволновая печь с конвекцией и грилем Samsung MC32DG7646KKBW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/multipech-mikrovolnovaya-pech-s-konvekciei-i-grilem-samsung-mc32dg7646kkbw_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мультипечь. Микроволновая печь с конвекцией и грилем Samsung MC32DG7646KKBW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/multipech-mikrovolnovaya-pech-s-konvekciei-i-grilem-samsung-mc32dg7646kkbw_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мультипечь. Микроволновая печь с конвекцией и грилем Samsung MC32DG7646KKBW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/multipech-mikrovolnovaya-pech-s-konvekciei-i-grilem-samsung-mc32dg7646kkbw_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мультипечь. Микроволновая печь с конвекцией и грилем Samsung MC32DG7646KKBW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/multipech-mikrovolnovaya-pech-s-konvekciei-i-grilem-samsung-mc32dg7646kkbw_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мультипечь. Микроволновая печь с конвекцией и грилем Samsung MC32DG7646KKBW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/multipech-mikrovolnovaya-pech-s-konvekciei-i-grilem-samsung-mc32dg7646kkbw_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мультипечь. Микроволновая печь с конвекцией и грилем Samsung MC32DG7646KKBW'));

@@ -1,0 +1,64 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Стиральная машина Премиум Asko W4114C.W/3', 96450, 15, '/items/productimages/stiralnaya-mashina-premium-asko-w4114cw-3_0.png', 4.53, '', 'Стиральная машина Asko W4114C.W/3 класса «Премиум» выполнена в корпусе белого цвета. Модель оборудована стальным барабаном объемом 80 л, в котором за один раз можно обработать до 11 кг вещей. Дверца сделана по технологии Steel Seal — в ней нет резиновой манжеты, что значительно облегчает загрузку и выгрузку белья, предотвращает образование плесени и появление неприятного запаха. 
+
+В эту модель заложены девять основных, десять специальных программ, в числе которых «Освежение паром», «Интенсивная», «Экспресс Про», «Гипоаллергенная», «Гигиена». В устройстве реализована функция очистки барабана, предусмотрен таймер отложенного старта. За управление отвечает сенсорная панель и поворотный модуль, информация о выбранных настройках и процессе стирки отображается на дисплее. Скорость отжима регулируется (до 1400 об/мин). 
+
+Безопасность обеспечивают блокиратор от случайного включения и защита от протечек AquaBlockSystem. Машина обладает к классу энергоэффективности А, так как за цикл расходует всего 5,83 кВт*ч электричества и 52 л воды. Во время стирки уровень шума не превышает 52 дБ, при отжиме — 72 дБ. Габариты прибора — 85х59,5х70 см, вес — 90,5 кг. При открытом люке глубина составляет 105,7 см.', 'InStock', 'Discount', 5, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Asko'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Стиральная машина Премиум Asko W4114C.W/3'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина Премиум Asko W4114C.W/3' 
+        AND a."Name" = '11' 
+        AND a."Type" = 'Максимальная загрузка'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина Премиум Asko W4114C.W/3' 
+        AND a."Name" = '1400' 
+        AND a."Type" = 'Максимальная скорость отжима'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина Премиум Asko W4114C.W/3' 
+        AND a."Name" = 'инверторный' 
+        AND a."Type" = 'Мотор'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина Премиум Asko W4114C.W/3' 
+        AND a."Name" = 'Да' 
+        AND a."Type" = 'Обработка паром'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина Премиум Asko W4114C.W/3' 
+        AND a."Name" = '85*59.5*70 см' 
+        AND a."Type" = 'Габаритные размеры (В*Ш*Г)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-premium-asko-w4114cw-3_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Премиум Asko W4114C.W/3'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-premium-asko-w4114cw-3_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Премиум Asko W4114C.W/3'));

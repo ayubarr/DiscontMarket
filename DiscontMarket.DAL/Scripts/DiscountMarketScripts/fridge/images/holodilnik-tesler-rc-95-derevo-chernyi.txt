@@ -1,0 +1,22 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-tesler-rc-95-derevo-chernyi_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Tesler RC-95 дерево/черный'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-tesler-rc-95-derevo-chernyi_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Tesler RC-95 дерево/черный'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-tesler-rc-95-derevo-chernyi_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Tesler RC-95 дерево/черный'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-tesler-rc-95-derevo-chernyi_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Tesler RC-95 дерево/черный'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-tesler-rc-95-derevo-chernyi_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Tesler RC-95 дерево/черный'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-tesler-rc-95-derevo-chernyi_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Tesler RC-95 дерево/черный'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-tesler-rc-95-derevo-chernyi_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Tesler RC-95 дерево/черный'));

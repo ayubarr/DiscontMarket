@@ -1,0 +1,28 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-centek-ct-1749-inox_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Centek CT-1749 INOX'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-centek-ct-1749-inox_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Centek CT-1749 INOX'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-centek-ct-1749-inox_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Centek CT-1749 INOX'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-centek-ct-1749-inox_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Centek CT-1749 INOX'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-centek-ct-1749-inox_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Centek CT-1749 INOX'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-centek-ct-1749-inox_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Centek CT-1749 INOX'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-centek-ct-1749-inox_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Centek CT-1749 INOX'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-centek-ct-1749-inox_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Centek CT-1749 INOX'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-centek-ct-1749-inox_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Centek CT-1749 INOX'));

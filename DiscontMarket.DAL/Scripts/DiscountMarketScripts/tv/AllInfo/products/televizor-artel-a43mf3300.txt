@@ -1,0 +1,53 @@
+﻿INSERT INTO "Products" 
+("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription",
+"Availability", "Status", "CategoryID", "BrandID", "UserID") 
+VALUES
+ ('Телевизор Artel A43MF3300', 12999, 5, '/items/productimages/televizor-artel-a43mf3300_0.png', 4.68, '', 'Телевизор Artel A43MF3300 диагональю 43 дюйма обладает разрешением 1980х1080 пикселей (качество Full HD). Матрица IPS обеспечивает реалистичную цветопередачу, высокую яркость и широкие углы обзора независимо от внешнего освещения. <br><br>• <b>Формат 16:9</b> <br>Позволяет смотреть широкоформатные фильмы без черных полос. <br><br>• <b>Технология HDR</b> <br>Повышает диапазон яркости и контрастности между темными и светлыми участками — картинка всегда четкая и насыщенная. <br><br>• <b>Акустическая система Dolby Atmos</b> <br>Два динамика мощностью 20 Вт позволяют ощутить максимальное погружение в происходящее на экране без подключения дополнительных устройств. <br><br>• <b>Умные технологии</b> <br>Телевизор поддерживает функции Smart TV, запись на USB-носители и воспроизведение с них, беспроводную трансляцию контента через модуль Bluetooth. Опция HDMI ARC позволяет транслировать звук напрямую на усилитель или саундбар. <br><br>Телевизор Artel A43MF3300 укомплектован настольной подставкой, совместим с настенным креплением VESA 300х300. В корпус интегрированы три входа HDMI, два порта USB Type-A, предусмотрены интерфейсы для гарнитуры и подключения к кабельному интернету.', 'InStock', 'Discount', 1, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Artel'), 1);
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Artel A43MF3300'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'Full HD (1920x1080 Пикс)' AND "Type" = 'Экран));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Artel A43MF3300'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '43' AND "Type" = 'Диагональ));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Artel A43MF3300'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '60' AND "Type" = 'Частота обновления));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Artel A43MF3300'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'LED' AND "Type" = 'Технология экрана));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Artel A43MF3300'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'Direct LED' AND "Type" = 'Тип светодиодной подсветки));
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-artel-a43mf3300_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Artel A43MF3300'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-artel-a43mf3300_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Artel A43MF3300'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-artel-a43mf3300_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Artel A43MF3300'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-artel-a43mf3300_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Artel A43MF3300'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-artel-a43mf3300_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Artel A43MF3300'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-artel-a43mf3300_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Artel A43MF3300'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-artel-a43mf3300_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Artel A43MF3300'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-artel-a43mf3300_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Artel A43MF3300'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-artel-a43mf3300_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Artel A43MF3300'));

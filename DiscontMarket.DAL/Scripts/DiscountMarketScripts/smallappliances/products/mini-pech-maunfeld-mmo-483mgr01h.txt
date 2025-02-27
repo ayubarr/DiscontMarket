@@ -1,0 +1,77 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Мини-печь Maunfeld MMO-483MGR01H', 9995, 14, '/items/productimages/mini-pech-maunfeld-mmo-483mgr01h_0.png', 4.84, '', 'Мини-печь Maunfeld MMO-483MGR01H в корпусе из металла оснащена фронтальной панелью из стекла, термостатом и прорезиненными ножками, которые обеспечивают устойчивость на поверхности стола. Для сбора влаги предусмотрено наличие съемного поддона. Конструкция устройства включает в себя духовку объемом 48 л с функцией гриля. Функционал модели состоит из пяти встроенных программ, духовка способна нагреваться до 280°С.
+
+На корпусе расположена механическая панель управления, индикаторы включения, заданной температуры и времени до конца программы. Предусмотрено наличие встроенного таймера с предельным показателем 90 минут и звукового сигнала по окончании действия программы. В комплект входят плоский противень, металлическая решетка и круглая форма для выпечки.', 'InStock', 'Discount', 6, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Maunfeld'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Мини-печь Maunfeld MMO-483MGR01H'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Мини-печь Maunfeld MMO-483MGR01H' 
+        AND a."Name" = '48' 
+        AND a."Type" = 'Объем'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Мини-печь Maunfeld MMO-483MGR01H' 
+        AND a."Name" = '4000' 
+        AND a."Type" = 'Потребляемая мощность'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Мини-печь Maunfeld MMO-483MGR01H' 
+        AND a."Name" = 'отсутствует' 
+        AND a."Type" = 'Тип гриля'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Мини-печь Maunfeld MMO-483MGR01H' 
+        AND a."Name" = 'нержавеющая сталь' 
+        AND a."Type" = 'Цвет'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Мини-печь Maunfeld MMO-483MGR01H' 
+        AND a."Name" = '280' 
+        AND a."Type" = 'Максимальная температура'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-maunfeld-mmo-483mgr01h_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Maunfeld MMO-483MGR01H'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-maunfeld-mmo-483mgr01h_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Maunfeld MMO-483MGR01H'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-maunfeld-mmo-483mgr01h_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Maunfeld MMO-483MGR01H'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-maunfeld-mmo-483mgr01h_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Maunfeld MMO-483MGR01H'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-maunfeld-mmo-483mgr01h_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Maunfeld MMO-483MGR01H'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-maunfeld-mmo-483mgr01h_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Maunfeld MMO-483MGR01H'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-maunfeld-mmo-483mgr01h_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Maunfeld MMO-483MGR01H'));

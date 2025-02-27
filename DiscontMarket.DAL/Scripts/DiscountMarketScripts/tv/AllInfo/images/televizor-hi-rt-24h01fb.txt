@@ -1,0 +1,22 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-hi-rt-24h01fb_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hi RT-24H01FB'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-hi-rt-24h01fb_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hi RT-24H01FB'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-hi-rt-24h01fb_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hi RT-24H01FB'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-hi-rt-24h01fb_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hi RT-24H01FB'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-hi-rt-24h01fb_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hi RT-24H01FB'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-hi-rt-24h01fb_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hi RT-24H01FB'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-hi-rt-24h01fb_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hi RT-24H01FB'));

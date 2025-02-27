@@ -1,0 +1,46 @@
+﻿INSERT INTO "Products" 
+("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription",
+"Availability", "Status", "CategoryID", "BrandID", "UserID") 
+VALUES
+ ('Телевизор Digma 40 DM-LED40MBB21', 8099, 15, '/items/productimages/televizor-digma-40-dm-led40mbb21_0.png', 4.61, '', 'Телевизор Digma 40 DM-LED40MBB21 транслирует изображение в качестве Full HD. Экран диагональю 40 дюймов (101 см) выполнен на базе матрицы LED: картинка детализированная, насыщенная и яркая при любом освещении и просмотре сбоку. Дисплей с соотношением сторон 16:9 воспроизводит широкоформатный контент без черных полос. 
+В этой модели реализована технология прогрессивной развертки, заложен гид по программам. Функция TimeShift позволяет поставить на паузу передачу или фильм, чтобы досмотреть его в удобное время или записать на внешний носитель. Телевизор поддерживает сохранение программ на USB-накопители и воспроизведение с них. Можно запрограммировать таймер выключения. 
+Устройство оборудовано двумя фронтальными динамиками мощностью 16 Вт. Для синхронизации с другой техникой используются три входа HDMI, два порта USB, разъем 3,5 мм. Digma 40 DM-LED40MBB21 укомплектован настольной подставкой, совместим с настенным креплением VESA 200х200. Габариты телевизора — 59,5х23,7х90,5 см, вес — 6,9 кг.', 'InStock', 'Discount', 1, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Digma'), 1);
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Digma 40 DM-LED40MBB21'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'Full HD (1920x1080 Пикс)' AND "Type" = 'Экран));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Digma 40 DM-LED40MBB21'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '40' AND "Type" = 'Диагональ));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Digma 40 DM-LED40MBB21'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '60' AND "Type" = 'Частота обновления));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Digma 40 DM-LED40MBB21'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'LED' AND "Type" = 'Технология экрана));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Digma 40 DM-LED40MBB21'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'Direct LED' AND "Type" = 'Тип светодиодной подсветки));
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-digma-40-dm-led40mbb21_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Digma 40 DM-LED40MBB21'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-digma-40-dm-led40mbb21_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Digma 40 DM-LED40MBB21'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-digma-40-dm-led40mbb21_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Digma 40 DM-LED40MBB21'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-digma-40-dm-led40mbb21_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Digma 40 DM-LED40MBB21'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-digma-40-dm-led40mbb21_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Digma 40 DM-LED40MBB21'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-digma-40-dm-led40mbb21_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Digma 40 DM-LED40MBB21'));

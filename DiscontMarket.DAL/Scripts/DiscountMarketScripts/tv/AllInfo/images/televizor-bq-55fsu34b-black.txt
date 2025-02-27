@@ -1,0 +1,4 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-bq-55fsu34b-black_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор BQ 55FSU34B Black'));

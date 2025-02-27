@@ -1,0 +1,77 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Холодильник Бирюса C920NF', 20595, 18, '/items/productimages/holodilnik-birusa-c920nf_0.png', 4.34, '', 'Холодильник с нижней морозильной камерой «Бирюса» C920NF отличается стильным дизайном, высоким качеством материалов и энергоэффективностью. При помощи регулятора Humidity Control устанавливаются необходимые показатели влажности. Встроена система охлаждения Multi Air Flow. Объем холодильной секции с тремя полками составляет 210 л. В морозилке объемом 100 л размещены три ящика из пластика. Перенавешиваемая дверца вмещает внутри три полки, открывается направо с помощью горизонтальной внутренней ручки, встроен автоматический доводчик. Предусмотрен отсек для бутылок.
+
+На передней части корпуса расположен LED-дисплей с сенсорным управлением и индикацией режима работы, температуры в камерах включения. Присутствует LED-освещение. Скорость заморозки — 3 кг/сутки. При отключении электропитания хранение продуктов возможно в течение 17 ч. Размораживание осуществляется с помощью функции No Frost. Во время работы уровень шума достигает 43 дБ. Цвет — серебристый. Вес — 63 кг. Габариты — 175х60х62,5 см.', 'InStock', 'Discount', 3, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Бирюса'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Холодильник Бирюса C920NF'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Бирюса C920NF' 
+        AND a."Name" = 'стандартный' 
+        AND a."Type" = 'Тип компрессора'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Бирюса C920NF' 
+        AND a."Name" = '175' 
+        AND a."Type" = 'Высота'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Бирюса C920NF' 
+        AND a."Name" = '60' 
+        AND a."Type" = 'Ширина'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Бирюса C920NF' 
+        AND a."Name" = '62.5' 
+        AND a."Type" = 'Глубина'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Бирюса C920NF' 
+        AND a."Name" = '310' 
+        AND a."Type" = 'Общий объем'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-birusa-c920nf_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Бирюса C920NF'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-birusa-c920nf_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Бирюса C920NF'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-birusa-c920nf_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Бирюса C920NF'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-birusa-c920nf_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Бирюса C920NF'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-birusa-c920nf_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Бирюса C920NF'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-birusa-c920nf_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Бирюса C920NF'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-birusa-c920nf_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Бирюса C920NF'));

@@ -1,0 +1,28 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-supra-mts-2691_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Supra MTS-2691'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-supra-mts-2691_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Supra MTS-2691'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-supra-mts-2691_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Supra MTS-2691'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-supra-mts-2691_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Supra MTS-2691'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-supra-mts-2691_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Supra MTS-2691'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-supra-mts-2691_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Supra MTS-2691'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-supra-mts-2691_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Supra MTS-2691'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-supra-mts-2691_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Supra MTS-2691'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-supra-mts-2691_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Supra MTS-2691'));

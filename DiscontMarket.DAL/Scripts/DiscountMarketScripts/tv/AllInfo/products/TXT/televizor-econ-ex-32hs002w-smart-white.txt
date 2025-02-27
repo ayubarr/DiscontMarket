@@ -1,0 +1,31 @@
+﻿INSERT INTO "Products" 
+("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription",
+"Availability", "Status", "CategoryID", "BrandID", "UserID") 
+VALUES
+ ('Телевизор Econ EX-32HS002W SMART White', 7245, 13, '/items/productimages/televizor-econ-ex-32hs002w-smart-white_0.png', 4.94, '', 'Телевизор Econ EX-32HS002W Smart White белого цвета оснащен потребляемой мощностью 40 Вт. TFT LED-экран 16:9 с диагональю 81,2 см отличается разрешением 1366х768 пикселей. Частота обновления — 60 Гц. Цифровое шумоподавление позволяет снизить помехи при вещании. Параметры фронтальных АС — 2х8 Вт. Мощность низкочастотных АС — 10 Вт. Предусмотрена технология HDMI ARC. Модель поддерживает Smart TV с подключением через Wi-Fi. Функция Timeshift позволяет осуществить запись трансляции в определенное время. Встроен модуль Bluetooth.
+
+Возможно воспроизведение данных с внешних устройств благодаря USB-порту 2.0 типа A. Присутствует цифровой тюнер DVB формата T2/C. В корпусе встроено три HDMI-входа, один коаксиальный цифровой, разъемы для наушников 3,5 мм и для модуля DVB CAM и LAN-разъем (RJ45). Поддерживается дистанционное управление. Габаритные размеры — 47,4х20,9х73,1 см. Вес телевизора — 4 кг. Вес подставки — 0,2 кг. Возможно крепление к подвесу VESA 100x100 и установка устройства на настольную подставку.', 'InStock', 'Discount', 1, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Econ'), 1);
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Econ EX-32HS002W SMART White'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'HD (1366x768 Пикс)' AND "Type" = 'Экран));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Econ EX-32HS002W SMART White'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '32' AND "Type" = 'Диагональ));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Econ EX-32HS002W SMART White'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '60' AND "Type" = 'Частота обновления));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Econ EX-32HS002W SMART White'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'LED' AND "Type" = 'Технология экрана));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Econ EX-32HS002W SMART White'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'Edge LED' AND "Type" = 'Тип светодиодной подсветки));
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-econ-ex-32hs002w-smart-white_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Econ EX-32HS002W SMART White'));

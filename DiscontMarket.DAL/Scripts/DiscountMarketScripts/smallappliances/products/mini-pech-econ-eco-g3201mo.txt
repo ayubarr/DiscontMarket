@@ -1,0 +1,76 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Мини-печь Econ ECO-G3201MO', 4199, 18, '/items/productimages/mini-pech-econ-eco-g3201mo_0.png', 4.56, '', 'Мини-печь ECO-G3201MO от бренда Econ обладает всеми функциями духовки, но отличается небольшими размером и весом. В комплекте идут решетка, противень, ухват и вертел. Эти аксессуары значительно расширяют список блюд, которые вы можете приготовить.
+
+Устройство поддерживает пять режимов приготовления: для мяса, рыбы, птицы, выпечки и овощей. Когда готовка завершается, печка сообщает об этом при помощи громкого звукового сигнала. 
+
+Материал исполнения корпуса — высокопрочный металл, продлевающий срок эксплуатации. В дверцу установлено одинарное стекло. Все элементы легко очищаются от капель жира стандартными моющими средствами.', 'InStock', 'Discount', 6, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Econ'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Мини-печь Econ ECO-G3201MO'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Мини-печь Econ ECO-G3201MO' 
+        AND a."Name" = '32' 
+        AND a."Type" = 'Объем'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Мини-печь Econ ECO-G3201MO' 
+        AND a."Name" = '1600' 
+        AND a."Type" = 'Потребляемая мощность'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Мини-печь Econ ECO-G3201MO' 
+        AND a."Name" = 'ТЭН' 
+        AND a."Type" = 'Тип гриля'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Мини-печь Econ ECO-G3201MO' 
+        AND a."Name" = 'белый' 
+        AND a."Type" = 'Цвет'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Мини-печь Econ ECO-G3201MO' 
+        AND a."Name" = 'оцинкованная сталь' 
+        AND a."Type" = 'Внутреннее покрытие'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-econ-eco-g3201mo_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Econ ECO-G3201MO'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-econ-eco-g3201mo_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Econ ECO-G3201MO'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-econ-eco-g3201mo_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Econ ECO-G3201MO'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-econ-eco-g3201mo_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Econ ECO-G3201MO'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-econ-eco-g3201mo_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Econ ECO-G3201MO'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-econ-eco-g3201mo_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Econ ECO-G3201MO'));

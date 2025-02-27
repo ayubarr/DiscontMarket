@@ -1,0 +1,40 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-hisense-wf7s1247bw_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Hisense WF7S1247BW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-hisense-wf7s1247bw_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Hisense WF7S1247BW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-hisense-wf7s1247bw_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Hisense WF7S1247BW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-hisense-wf7s1247bw_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Hisense WF7S1247BW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-hisense-wf7s1247bw_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Hisense WF7S1247BW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-hisense-wf7s1247bw_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Hisense WF7S1247BW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-hisense-wf7s1247bw_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Hisense WF7S1247BW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-hisense-wf7s1247bw_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Hisense WF7S1247BW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-hisense-wf7s1247bw_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Hisense WF7S1247BW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-hisense-wf7s1247bw_9.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Hisense WF7S1247BW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-hisense-wf7s1247bw_10.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Hisense WF7S1247BW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-hisense-wf7s1247bw_11.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Hisense WF7S1247BW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-hisense-wf7s1247bw_12.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Hisense WF7S1247BW'));

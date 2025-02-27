@@ -1,0 +1,69 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Стиральная машина узкая Indesit BWSA 51051 S', 13249, 19, '/items/productimages/stiralnaya-mashina-uzkaya-indesit-bwsa-51051-s_0.png', 4.92, '', 'Стиральная машина Indesit BWSA 51051 S имеет множество программ, которые в точности соответствуют различным обстоятельствам. Пользователю доступен интенсивный и экономичный режим, ускоренный цикл с продолжительностью 30 минут, а также специальные функции для очистки деликатных тканей и цветного белья. 
+
+УСКОРЕННАЯ СТИРКА
+Устройство позволяет сократить длительность любой программы одним нажатием на кнопку – это помогает экономить время, не ухудшая качества полученного результата.
+
+АБСОЛЮТНАЯ ЧИСТОТА
+При длительном использовании машины в её барабане накапливаются обрывки нитей и пух. Кроме того, частая стирка с низкой температурой может стать причиной размножения вредоносных бактерий. Справиться с этими проблемами просто – достаточно включить специальный режим очистки.
+
+УСИЛЕННАЯ ГИГИЕНА
+Функция дополнительного полоскания будет особенно полезной для семей с детьми младшего возраста и людей, страдающих аллергиями – она помогает вымывать из ткани мельчайшие частицы пыли и пыльцы, а также остатки моющего средства. 
+
+ВЫСОКИЙ УРОВЕНЬ БЕЗОПАСНОСТИ
+Система AntiOverFlow защищает бак устройства от переполнения, не допуская вытекания воды и затопления помещения.', 'InStock', 'Discount', 5, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Indesit'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая Indesit BWSA 51051 S'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина узкая Indesit BWSA 51051 S' 
+        AND a."Name" = '5' 
+        AND a."Type" = 'Максимальная загрузка'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина узкая Indesit BWSA 51051 S' 
+        AND a."Name" = '1000' 
+        AND a."Type" = 'Максимальная скорость отжима'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина узкая Indesit BWSA 51051 S' 
+        AND a."Name" = 'стандартный' 
+        AND a."Type" = 'Мотор'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина узкая Indesit BWSA 51051 S' 
+        AND a."Name" = '85*59.5*42.5 см' 
+        AND a."Type" = 'Габаритные размеры (В*Ш*Г)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина узкая Indesit BWSA 51051 S' 
+        AND a."Name" = 'частичная' 
+        AND a."Type" = 'Тип защиты от протечек'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-uzkaya-indesit-bwsa-51051-s_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая Indesit BWSA 51051 S'));

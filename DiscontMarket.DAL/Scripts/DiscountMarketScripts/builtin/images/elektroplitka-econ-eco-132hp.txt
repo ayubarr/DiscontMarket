@@ -1,0 +1,4 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/elektroplitka-econ-eco-132hp_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Электроплитка Econ ECO-132HP'));

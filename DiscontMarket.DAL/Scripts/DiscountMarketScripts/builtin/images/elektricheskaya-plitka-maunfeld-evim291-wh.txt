@@ -1,0 +1,16 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/elektricheskaya-plitka-maunfeld-evim291-wh_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Электрическая плитка Maunfeld EVI.M291-WH'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/elektricheskaya-plitka-maunfeld-evim291-wh_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Электрическая плитка Maunfeld EVI.M291-WH'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/elektricheskaya-plitka-maunfeld-evim291-wh_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Электрическая плитка Maunfeld EVI.M291-WH'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/elektricheskaya-plitka-maunfeld-evim291-wh_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Электрическая плитка Maunfeld EVI.M291-WH'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/elektricheskaya-plitka-maunfeld-evim291-wh_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Электрическая плитка Maunfeld EVI.M291-WH'));

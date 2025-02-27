@@ -1,0 +1,13 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-pioneer-mo5005-white_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Pioneer MO5005 White'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-pioneer-mo5005-white_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Pioneer MO5005 White'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-pioneer-mo5005-white_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Pioneer MO5005 White'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-pioneer-mo5005-white_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Pioneer MO5005 White'));

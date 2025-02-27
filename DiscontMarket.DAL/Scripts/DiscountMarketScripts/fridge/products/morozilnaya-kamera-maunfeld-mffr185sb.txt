@@ -1,0 +1,74 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Морозильная камера Maunfeld MFFR185SB', 59195, 18, '/items/productimages/morozilnaya-kamera-maunfeld-mffr185sb_0.png', 4.86, '', 'Вертикальная морозильная камера Maunfeld MFFR185SB со скоростью замораживания 18 кг в день предназначена для эксплуатации в торговых, производственных помещениях и в быту. Прибор цвета черной стали работает от инверторного компрессора, который функционирует на минимальной мощности, не превышая по уровню шума 40 дБ. Решетка конденсаторного типа позволяет установить прибор вплотную к стене. Внешняя сенсорная панель управления обеспечивает контроль над функциями устройства. 
+Внутренний отсек полезным объемом 380 л снабжен семью полками, пять из которых полностью выдвижные и две со шторками. При открывании дверцы включается экономичная светодиодная подсветка, которая не влияет на изменение температуры. Система No Frost предупреждает образование наледи на стенках и продуктах, избавляет от необходимости ручного размораживания устройства. 
+Прибор работает в двух режимах: глубокая заморозка в диапазоне температур от -16°С до -24°С или охлаждение от +2°С до +8°С. Предусмотрено звуковое оповещение об открытой двери. Годовое энергопотребление устройства составляет 310 (класс энергоэффективности А++).', 'InStock', 'Discount', 3, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Maunfeld'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Морозильная камера Maunfeld MFFR185SB'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Морозильная камера Maunfeld MFFR185SB' 
+        AND a."Name" = 'инверторный' 
+        AND a."Type" = 'Тип компрессора'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Морозильная камера Maunfeld MFFR185SB' 
+        AND a."Name" = '185*70*70 см' 
+        AND a."Type" = 'Габаритные размеры (В*Ш*Г)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Морозильная камера Maunfeld MFFR185SB' 
+        AND a."Name" = 'A++' 
+        AND a."Type" = 'Класс энергоэффективности'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Морозильная камера Maunfeld MFFR185SB' 
+        AND a."Name" = 'Да' 
+        AND a."Type" = 'Режим суперзамораживания'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Морозильная камера Maunfeld MFFR185SB' 
+        AND a."Name" = 'сенсорный' 
+        AND a."Type" = 'Тип управления'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-maunfeld-mffr185sb_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Maunfeld MFFR185SB'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-maunfeld-mffr185sb_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Maunfeld MFFR185SB'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-maunfeld-mffr185sb_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Maunfeld MFFR185SB'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-maunfeld-mffr185sb_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Maunfeld MFFR185SB'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-maunfeld-mffr185sb_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Maunfeld MFFR185SB'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-maunfeld-mffr185sb_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Maunfeld MFFR185SB'));

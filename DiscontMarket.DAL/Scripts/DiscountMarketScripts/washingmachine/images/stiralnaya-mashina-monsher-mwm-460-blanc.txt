@@ -1,0 +1,40 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-monsher-mwm-460-blanc_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Monsher MWM 460 Blanc'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-monsher-mwm-460-blanc_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Monsher MWM 460 Blanc'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-monsher-mwm-460-blanc_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Monsher MWM 460 Blanc'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-monsher-mwm-460-blanc_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Monsher MWM 460 Blanc'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-monsher-mwm-460-blanc_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Monsher MWM 460 Blanc'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-monsher-mwm-460-blanc_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Monsher MWM 460 Blanc'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-monsher-mwm-460-blanc_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Monsher MWM 460 Blanc'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-monsher-mwm-460-blanc_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Monsher MWM 460 Blanc'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-monsher-mwm-460-blanc_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Monsher MWM 460 Blanc'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-monsher-mwm-460-blanc_9.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Monsher MWM 460 Blanc'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-monsher-mwm-460-blanc_10.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Monsher MWM 460 Blanc'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-monsher-mwm-460-blanc_11.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Monsher MWM 460 Blanc'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-monsher-mwm-460-blanc_12.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Monsher MWM 460 Blanc'));

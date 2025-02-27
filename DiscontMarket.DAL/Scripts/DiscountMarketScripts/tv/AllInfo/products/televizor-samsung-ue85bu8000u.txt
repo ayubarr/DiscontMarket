@@ -1,0 +1,34 @@
+﻿INSERT INTO "Products" 
+("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription",
+"Availability", "Status", "CategoryID", "BrandID", "UserID") 
+VALUES
+ ('Телевизор Samsung UE85BU8000U', 99999, 17, '/items/productimages/televizor-samsung-ue85bu8000u_0.png', 4.56, '', 'Телевизор Samsung UE85BU8000U — модель в корпусе черного цвета с поддержкой технологии Smart TV, которая дает возможность выходить в Сеть и использовать популярные видеосервисы и приложения. Устройство работает на базе ОС Tizen, обеспечивающей удобство навигации и поддерживающей голосовое управление. Телевизор оборудован цифровым тюнером DVB T/T2/C/S/S2. 
+Экран диагональю 85 дюймов (214 см) формата 16:9 выводит картинку разрешением 3840х2160 пикселей. Предусмотрена система обработки изображения (масштабирование до 4К Ultra HD) и цифровое шумоподавление для устранения помех и искажений.
+Акустическая система Dolby Digital Plus представлена динамиками мощностью 20 Вт. Модули Wi-Fi и Bluetooth гарантируют соединение с Сетью и цифровыми устройствами. Функция TimeShift предназначена для приостановления эфирной программы и повторного воспроизведения в любое удобное время. Предусмотрены интерфейсы HDMI, USB 2.0, RJ45. Потребляемая мощность составляет 235 Вт. Телевизор габаритными размерами 83,2х145,1х25,7 см можно располагать на тумбе при помощи настольной подставки, входящей в комплект.', 'InStock', 'Discount', 1, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Samsung'), 1);
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung UE85BU8000U'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '4K Ultra HD (3840x2160 Пикс)' AND "Type" = 'Экран));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung UE85BU8000U'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '85' AND "Type" = 'Диагональ));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung UE85BU8000U'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '60' AND "Type" = 'Частота обновления));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung UE85BU8000U'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'LED' AND "Type" = 'Технология экрана));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung UE85BU8000U'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'Edge LED' AND "Type" = 'Тип светодиодной подсветки));
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-samsung-ue85bu8000u_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung UE85BU8000U'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-samsung-ue85bu8000u_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung UE85BU8000U'));

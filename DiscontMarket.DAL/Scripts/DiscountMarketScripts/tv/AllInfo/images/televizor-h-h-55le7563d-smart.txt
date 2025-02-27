@@ -1,0 +1,16 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-h-h-55le7563d-smart_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор H H 55LE7563D SMART'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-h-h-55le7563d-smart_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор H H 55LE7563D SMART'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-h-h-55le7563d-smart_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор H H 55LE7563D SMART'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-h-h-55le7563d-smart_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор H H 55LE7563D SMART'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-h-h-55le7563d-smart_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор H H 55LE7563D SMART'));

@@ -1,0 +1,31 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-lg-oled65c3rla_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор LG OLED65C3RLA'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-lg-oled65c3rla_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор LG OLED65C3RLA'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-lg-oled65c3rla_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор LG OLED65C3RLA'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-lg-oled65c3rla_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор LG OLED65C3RLA'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-lg-oled65c3rla_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор LG OLED65C3RLA'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-lg-oled65c3rla_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор LG OLED65C3RLA'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-lg-oled65c3rla_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор LG OLED65C3RLA'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-lg-oled65c3rla_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор LG OLED65C3RLA'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-lg-oled65c3rla_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор LG OLED65C3RLA'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-lg-oled65c3rla_9.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор LG OLED65C3RLA'));

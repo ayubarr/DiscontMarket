@@ -1,0 +1,7 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-gorenje-nrm8181ux_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Gorenje NRM8181UX'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-gorenje-nrm8181ux_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Gorenje NRM8181UX'));

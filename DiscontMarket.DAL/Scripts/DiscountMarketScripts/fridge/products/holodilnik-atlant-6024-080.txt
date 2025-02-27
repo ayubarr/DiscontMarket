@@ -1,0 +1,73 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Холодильник ATLANT 6024-080', 24645, 10, '/items/productimages/holodilnik-atlant-6024-080_0.png', 4.21, '', 'Холодильник с нижней морозильной камерой ATLANT 6024-080 оборудован двумя компрессорами, которые во время работы выдают уровень шума не выше 40 дБ. Благодаря компактным габаритным размерам (195х60х63 см) модель хорошо впишется в любое пространство кухни. Общий полезный объем равен 347 л. Климатический класс холодильника — ST, SN, N.
+
+В основном отделении (246 л) предусмотрены четыре стеклянные полки, на которые можно раскладывать продукты и выдвижные ящики с прозрачными стенками. Доступно отделение для овощей и фруктов. Реализована капельная технология, за счет которой на внутренних стенках отсутствует наледь и не требуется ручная разморозка. Приятное для глаз светодиодное освещение обеспечивает хорошую видимость рабочей зоны. Электромеханическая система управления, находящаяся внутри, дает возможность осуществлять настройку температурного режима. Световая индикация показывает рабочее состояние.
+
+В нижней части модели находится морозильное отделение (101 л) с тремя пластиковыми контейнерами оптимального объема. За сутки может замораживаться до 15 кг продуктов питания. Класс энергопотребления холодильника — A. За год расходуется до 383 кВт*ч электричества. Холодильник отличается возможностью перенавешивания дверей в левую или в правую сторону. При отключении питания холод сохраняется до 17 часов. В комплект входят подставки для яиц, бутылок и лоток для льда.', 'InStock', 'Discount', 3, (SELECT "ID" FROM "Brands" WHERE "Name" = 'ATLANT'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Холодильник ATLANT 6024-080'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник ATLANT 6024-080' 
+        AND a."Name" = 'стандартный' 
+        AND a."Type" = 'Тип компрессора'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник ATLANT 6024-080' 
+        AND a."Name" = '195' 
+        AND a."Type" = 'Высота'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник ATLANT 6024-080' 
+        AND a."Name" = '60' 
+        AND a."Type" = 'Ширина'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник ATLANT 6024-080' 
+        AND a."Name" = '63' 
+        AND a."Type" = 'Глубина'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник ATLANT 6024-080' 
+        AND a."Name" = '367' 
+        AND a."Type" = 'Общий объем'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-atlant-6024-080_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник ATLANT 6024-080'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-atlant-6024-080_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник ATLANT 6024-080'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-atlant-6024-080_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник ATLANT 6024-080'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-atlant-6024-080_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник ATLANT 6024-080'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-atlant-6024-080_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник ATLANT 6024-080'));

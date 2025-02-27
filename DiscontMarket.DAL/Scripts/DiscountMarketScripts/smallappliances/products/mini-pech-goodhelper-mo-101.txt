@@ -1,0 +1,83 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Мини-печь Goodhelper MO-101', 1999, 8, '/items/productimages/mini-pech-goodhelper-mo-101_0.png', 4.56, '', 'Мини-печь Goodhelper MO-101 в корпусе черного цвета — механически управляемая, с максимальной температурой нагрева 250°С. Модель оснащена индикацией заданной температуры, таймером отключения на 60 минут и звуковым таймером. 
+
+Корпус и фронтальная панель печи выполнены из эмалированной стали, прорезиненные ножки обеспечивают устойчивость устройства на поверхности. Внутри печи установлено два нагревательных элемента, дверца духовки выполнена из жаростойкого стекла. В комплекте поставляется плоский противень и металлическая решетка. Потребляемая мощность печи составляет 900 Вт, длина сетевого шнура — 0,88 м.', 'InStock', 'Discount', 6, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Goodhelper'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Мини-печь Goodhelper MO-101'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Мини-печь Goodhelper MO-101' 
+        AND a."Name" = '10' 
+        AND a."Type" = 'Объем'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Мини-печь Goodhelper MO-101' 
+        AND a."Name" = '900' 
+        AND a."Type" = 'Потребляемая мощность'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Мини-печь Goodhelper MO-101' 
+        AND a."Name" = 'отсутствует' 
+        AND a."Type" = 'Тип гриля'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Мини-печь Goodhelper MO-101' 
+        AND a."Name" = 'черный' 
+        AND a."Type" = 'Цвет'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Мини-печь Goodhelper MO-101' 
+        AND a."Name" = 'нержавеющая сталь' 
+        AND a."Type" = 'Внутреннее покрытие'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-goodhelper-mo-101_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Goodhelper MO-101'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-goodhelper-mo-101_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Goodhelper MO-101'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-goodhelper-mo-101_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Goodhelper MO-101'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-goodhelper-mo-101_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Goodhelper MO-101'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-goodhelper-mo-101_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Goodhelper MO-101'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-goodhelper-mo-101_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Goodhelper MO-101'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-goodhelper-mo-101_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Goodhelper MO-101'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-goodhelper-mo-101_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Goodhelper MO-101'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-goodhelper-mo-101_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Goodhelper MO-101'));

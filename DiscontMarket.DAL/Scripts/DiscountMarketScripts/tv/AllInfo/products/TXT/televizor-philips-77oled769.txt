@@ -1,0 +1,62 @@
+﻿INSERT INTO "Products" 
+("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription",
+"Availability", "Status", "CategoryID", "BrandID", "UserID") 
+VALUES
+ ('Телевизор Philips 77OLED769', 231495, 19, '/items/productimages/televizor-philips-77oled769_0.png', 4.48, '', '', 'InStock', 'Discount', 1, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Philips'), 1);
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Philips 77OLED769'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '4K Ultra HD (3840x2160 Пикс)' AND "Type" = 'Экран));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Philips 77OLED769'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '77' AND "Type" = 'Диагональ));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Philips 77OLED769'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '120' AND "Type" = 'Частота обновления));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Philips 77OLED769'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'OLED' AND "Type" = 'Технология экрана));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Philips 77OLED769'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'OLED' AND "Type" = 'Тип светодиодной подсветки));
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-philips-77oled769_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Philips 77OLED769'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-philips-77oled769_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Philips 77OLED769'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-philips-77oled769_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Philips 77OLED769'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-philips-77oled769_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Philips 77OLED769'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-philips-77oled769_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Philips 77OLED769'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-philips-77oled769_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Philips 77OLED769'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-philips-77oled769_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Philips 77OLED769'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-philips-77oled769_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Philips 77OLED769'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-philips-77oled769_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Philips 77OLED769'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-philips-77oled769_9.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Philips 77OLED769'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-philips-77oled769_10.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Philips 77OLED769'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-philips-77oled769_11.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Philips 77OLED769'));

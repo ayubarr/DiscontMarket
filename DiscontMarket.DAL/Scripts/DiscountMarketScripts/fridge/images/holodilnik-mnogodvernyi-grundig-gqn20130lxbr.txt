@@ -1,0 +1,13 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-grundig-gqn20130lxbr_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Grundig GQN20130LXBR'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-grundig-gqn20130lxbr_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Grundig GQN20130LXBR'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-grundig-gqn20130lxbr_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Grundig GQN20130LXBR'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-grundig-gqn20130lxbr_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Grundig GQN20130LXBR'));

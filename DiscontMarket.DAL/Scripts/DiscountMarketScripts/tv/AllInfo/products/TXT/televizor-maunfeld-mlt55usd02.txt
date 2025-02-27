@@ -1,0 +1,56 @@
+﻿INSERT INTO "Products" 
+("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription",
+"Availability", "Status", "CategoryID", "BrandID", "UserID") 
+VALUES
+ ('Телевизор Maunfeld MLT55USD02', 32995, 6, '/items/productimages/televizor-maunfeld-mlt55usd02_0.png', 4.9, '', 'Телевизор Maunfeld MLT55USD02 обладает экраном диагональю 55 дюймов и форматом 16:9. Разрешение 3840х2160 пикселей обеспечивает высокую детализацию. В основе работы экрана лежит технология LED. Частота обновления — до 60 Гц. За счет нее смена картинки осуществляется плавно, что особенно актуально в динамичных сценах. Цифровое шумоподавление делает картинку более четкой. 
+Поддержка Smart TV предоставляет широкие возможности, позволяя смотреть контент на различных онлайн-платформах. Операционная система Android открывает доступ к магазину с десятками тысяч приложений. Объемный звук формируется аудиосистемой Dolby Digital Plus с мощностью динамиков 20 Вт. 
+В телевизоре используется технология NFC для передачи данных и встроенный модуль Bluetooth, позволяющий установить соединение с девайсами. TimeShift позволяет остановить телепрограмму и вернуться к ее просмотру спустя некоторое время. При необходимости можно записать цифровой эфир на USB-накопитель. Технология HDR делает картинку более реалистичной и четкой за счет улучшения детализации в наиболее светлых и темных сценах. Дополнительно есть Sleep-таймер. Предусмотрена функция голосового управления. 
+Прием телевизионного сигнала осуществляется с помощью тюнеров: цифрового DVB и аналогового PAL/SECAM. Потребляемая мощность телевизора — 112 Вт. Есть система защиты от детей и фоновая подсветка корпуса. Подключение к интернету возможно через кабель к LAN-разъему или при помощи беспроводного соединения Wi-Fi. Устройство обладает широким набором интерфейсов — среди них есть HDMI (два), порты USB 2.0 тип A (два), входы и выходы RCA, SCART, для наушников 3,5 мм, для модуля DVB CAM и слот под карты памяти SD/SDHC/SDXC. В комплект входит настольная подставка. Размеры без подставки составляют 76,6х123,1х26,4 см, вес — 12,1 кг.', 'InStock', 'Discount', 1, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Maunfeld'), 1);
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Maunfeld MLT55USD02'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '4K Ultra HD (3840x2160 Пикс)' AND "Type" = 'Экран));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Maunfeld MLT55USD02'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '55' AND "Type" = 'Диагональ));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Maunfeld MLT55USD02'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '60' AND "Type" = 'Частота обновления));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Maunfeld MLT55USD02'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'LED' AND "Type" = 'Технология экрана));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Maunfeld MLT55USD02'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'Direct LED' AND "Type" = 'Тип светодиодной подсветки));
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-maunfeld-mlt55usd02_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Maunfeld MLT55USD02'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-maunfeld-mlt55usd02_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Maunfeld MLT55USD02'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-maunfeld-mlt55usd02_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Maunfeld MLT55USD02'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-maunfeld-mlt55usd02_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Maunfeld MLT55USD02'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-maunfeld-mlt55usd02_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Maunfeld MLT55USD02'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-maunfeld-mlt55usd02_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Maunfeld MLT55USD02'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-maunfeld-mlt55usd02_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Maunfeld MLT55USD02'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-maunfeld-mlt55usd02_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Maunfeld MLT55USD02'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-maunfeld-mlt55usd02_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Maunfeld MLT55USD02'));

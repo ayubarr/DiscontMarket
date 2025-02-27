@@ -1,0 +1,83 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Стиральная машина Ascoli AWMT-851415EBW', 13335, 5, '/items/productimages/stiralnaya-mashina-ascoli-awmt-851415ebw_0.png', 4.52, '', 'Стиральная машина Ascoli AWMT-851415EBW в белом цвете с функцией обработки вещей паром и инверторным мотором для экономии электроэнергии. Корпус выполнен в белом цвете. Бак — из нержавеющей стали, дверца — из закаленного стекла. Вес — 58 кг, габаритные размеры — 85х59,5х47 см. Максимальная загрузка белья — 8 кг (шерсть — 4 кг). Потребление электроэнергии составляет 0,53 кВт*ч, расход воды за один цикл стирки — 53 л. Максимальная скорость при отжиме — 1400 об/мин. Уровень шума при стирке — до 62 дБ, на этапе отжима — до 76 дБ. Встроена функция защиты от детей, предусмотрена защита от протечек AquaStop. 
+
+В стиральной машине доступны 24 стандартные программы. Отдельно предусмотрена мини-программа на 30 минут, которая запускается одним нажатием кнопки. Возможна дозагрузка белья во время работы. Большой дисплей с LED-экраном позволяет осуществлять контроль режимов. Тип управления — кнопочно-поворотный. Предусмотрена опция отложенного старта и звуковой сигнал, оповещающий об окончании работы. Гарантия — 2 года. Страна производства — Китай.', 'InStock', 'Discount', 5, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Ascoli'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Стиральная машина Ascoli AWMT-851415EBW'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина Ascoli AWMT-851415EBW' 
+        AND a."Name" = '8' 
+        AND a."Type" = 'Максимальная загрузка'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина Ascoli AWMT-851415EBW' 
+        AND a."Name" = '1400' 
+        AND a."Type" = 'Максимальная скорость отжима'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина Ascoli AWMT-851415EBW' 
+        AND a."Name" = 'инверторный' 
+        AND a."Type" = 'Мотор'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина Ascoli AWMT-851415EBW' 
+        AND a."Name" = 'Да' 
+        AND a."Type" = 'Обработка паром'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина Ascoli AWMT-851415EBW' 
+        AND a."Name" = '85*59.5*47 см' 
+        AND a."Type" = 'Габаритные размеры (В*Ш*Г)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-ascoli-awmt-851415ebw_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Ascoli AWMT-851415EBW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-ascoli-awmt-851415ebw_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Ascoli AWMT-851415EBW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-ascoli-awmt-851415ebw_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Ascoli AWMT-851415EBW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-ascoli-awmt-851415ebw_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Ascoli AWMT-851415EBW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-ascoli-awmt-851415ebw_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Ascoli AWMT-851415EBW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-ascoli-awmt-851415ebw_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Ascoli AWMT-851415EBW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-ascoli-awmt-851415ebw_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Ascoli AWMT-851415EBW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-ascoli-awmt-851415ebw_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Ascoli AWMT-851415EBW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-ascoli-awmt-851415ebw_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Ascoli AWMT-851415EBW'));

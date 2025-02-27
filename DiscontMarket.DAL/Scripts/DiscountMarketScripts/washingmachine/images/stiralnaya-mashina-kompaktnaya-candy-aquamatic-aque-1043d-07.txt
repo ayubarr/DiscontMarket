@@ -1,0 +1,22 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-kompaktnaya-candy-aquamatic-aque-1043d-07_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина компактная Candy Aquamatic AQUE 1043D-07'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-kompaktnaya-candy-aquamatic-aque-1043d-07_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина компактная Candy Aquamatic AQUE 1043D-07'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-kompaktnaya-candy-aquamatic-aque-1043d-07_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина компактная Candy Aquamatic AQUE 1043D-07'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-kompaktnaya-candy-aquamatic-aque-1043d-07_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина компактная Candy Aquamatic AQUE 1043D-07'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-kompaktnaya-candy-aquamatic-aque-1043d-07_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина компактная Candy Aquamatic AQUE 1043D-07'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-kompaktnaya-candy-aquamatic-aque-1043d-07_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина компактная Candy Aquamatic AQUE 1043D-07'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-kompaktnaya-candy-aquamatic-aque-1043d-07_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина компактная Candy Aquamatic AQUE 1043D-07'));

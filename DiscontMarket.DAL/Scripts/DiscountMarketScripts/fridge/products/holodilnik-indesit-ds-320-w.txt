@@ -1,0 +1,72 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Холодильник Indesit DS 320 W', 18749, 5, '/items/productimages/holodilnik-indesit-ds-320-w_0.png', 4.28, '', 'Двухкамерный холодильник Indesit DS 320 W – хороший выбор для тех, кто хочет приобрести простой в использовании и надёжный прибор. Эта модель весьма вместительна: её общий объём – 339 литров, так что семья из трёх-четырёх человек свободно разместит в ней недельный запас продуктов.<br><br>МЕХАНИКА<br>Управление очень удобно: работа регулируется поворотным переключателем, оптимальный режим охлаждения снабжён пометкой Eco.<br><br>ТРАДИЦИОННОЕ ОСНАЩЕНИЕ<br>В холодильной камере – четыре стеклянных полки, три из которых переставляются по высоте, а одна – служит крышкой для двух контейнеров для хранения овощей и фруктов. Широкие дверные карманы идеально подходят для установки пакетов с соками, молоком и сливками, баночек с соусами и т. п. Лампа накаливания расположена сверху, поэтому всё внутреннее пространство равномерно освещается. В морозилке – три выдвижных ящика, так что все заготовки можно будет рассортировать по типам.<br><br>ОСОБЕННОСТИ РАЗМОРАЖИВАНИЯ<br>Верхнее отделение возьмёт на себя капельная система: конденсат стекает по задней стенке и уходит в дренажное отверстие, так что не забывайте следить за его чистотой. Нижним отсеком нужно будет заняться вручную, это рекомендуется делать, когда толщина инея на стенках достигнет 5 мм.<br><br>НЕ ПОТРЕВОЖИТ ВАШ ПОКОЙ<br>Уровень шума агрегата – всего 39 дБ, что сопоставимо со спокойным разговором. Он не помешает вам в ночное время и не заставит повышать голос, если кухня у вас совмещена с гостиной.<br><br>ВСЮДУ ВПИШЕТСЯ<br>Вне зависимости от планировки помещения, Indesit DS 320 W можно будет установить максимально удобно: его двери перенавешиваются. Дизайн холодильника совершенно нейтрален: прямые линии, классический белый цвет, скрытая ручка. Подобная сдержанность и минимализм будут уместны в любом интерьере. <br>', 'InStock', 'Discount', 3, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Indesit'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Холодильник Indesit DS 320 W'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Indesit DS 320 W' 
+        AND a."Name" = 'стандартный' 
+        AND a."Type" = 'Тип компрессора'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Indesit DS 320 W' 
+        AND a."Name" = '200' 
+        AND a."Type" = 'Высота'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Indesit DS 320 W' 
+        AND a."Name" = '60' 
+        AND a."Type" = 'Ширина'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Indesit DS 320 W' 
+        AND a."Name" = '64' 
+        AND a."Type" = 'Глубина'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Indesit DS 320 W' 
+        AND a."Name" = '339' 
+        AND a."Type" = 'Общий объем'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-indesit-ds-320-w_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Indesit DS 320 W'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-indesit-ds-320-w_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Indesit DS 320 W'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-indesit-ds-320-w_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Indesit DS 320 W'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-indesit-ds-320-w_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Indesit DS 320 W'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-indesit-ds-320-w_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Indesit DS 320 W'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-indesit-ds-320-w_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Indesit DS 320 W'));

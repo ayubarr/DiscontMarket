@@ -1,0 +1,80 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Встраиваемая посудомоечная машина 60 см Премиум Casarte CASDWD14379BU', 99999, 17, '/items/productimages/vstraivaemaya-posudomoechnaya-mashina-60-sm-premium-casarte-casdwd14379bu_0.png', 4.52, '', 'Встраиваемая посудомоечная машина «Премиум» Casarte CASDWD14379BU — двухкамерная модель с двумя дверцами. Камеры независимы, что дает возможность для каждой задать собственные настройки. Общая вместимость — 14 комплектов (по семь в каждой камере).
+
+• <b>Два инверторных мотора</b>
+Современные моторы долговечны, экономичны и отличаются сниженным уровнем шума (47 дБ), за что отвечают прямые приводы. Энергопотребление соответствует классу А+ и составляет 0,6 кВт*ч, расход воды — 8 л. 
+
+• <b>Индивидуальное управление</b>
+Каждая камера оснащена собственной сенсорной панелью. Предустановлены программы: «Авто», «Стандартная», «Интенсивная», «Экономичная», «Стекло», «Быстрая». Это позволит в одной камере разместить, например, тонкие бокалы, во второй — сильнозагрязненные сковороды и для каждой выбрать оптимальный режим. 
+
+• <b>Внутренняя подсветка</b>
+Делает загрузку и выгрузку посуды более удобными.
+
+• <b>Стандартный габариты</b>
+Несмотря на необычную конструкцию, модель отличается привычными размерами: 82х59,9х61,6 см. 
+
+Дверцы посудомоечной машины в конце цикла открываются автоматически, что заметно повышает качество сушки и помогает избежать капель и разводов на посуде. Поддержка Wi-Fi дает возможность контролировать работу устройства со смартфона. Предусмотрена функция отложенного старта от 1 до 24 часов, чтобы запускать мойку в наиболее удобное время.', 'InStock', 'Discount', 28, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Casarte'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 60 см Премиум Casarte CASDWD14379BU'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Встраиваемая посудомоечная машина 60 см Премиум Casarte CASDWD14379BU' 
+        AND a."Name" = '8' 
+        AND a."Type" = 'Расход воды за цикл'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Встраиваемая посудомоечная машина 60 см Премиум Casarte CASDWD14379BU' 
+        AND a."Name" = '14 комплектов' 
+        AND a."Type" = 'Максимальная вместимость'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Встраиваемая посудомоечная машина 60 см Премиум Casarte CASDWD14379BU' 
+        AND a."Name" = '5' 
+        AND a."Type" = 'Количество программ мойки'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Встраиваемая посудомоечная машина 60 см Премиум Casarte CASDWD14379BU' 
+        AND a."Name" = 'инверторный' 
+        AND a."Type" = 'Мотор'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Встраиваемая посудомоечная машина 60 см Премиум Casarte CASDWD14379BU' 
+        AND a."Name" = '822*600*580' 
+        AND a."Type" = 'Размер ниши, мм (В*Ш*Г)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-60-sm-premium-casarte-casdwd14379bu_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 60 см Премиум Casarte CASDWD14379BU'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-60-sm-premium-casarte-casdwd14379bu_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 60 см Премиум Casarte CASDWD14379BU'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-60-sm-premium-casarte-casdwd14379bu_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 60 см Премиум Casarte CASDWD14379BU'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-60-sm-premium-casarte-casdwd14379bu_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 60 см Премиум Casarte CASDWD14379BU'));

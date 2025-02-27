@@ -1,0 +1,16 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/nastolnaya-indukcionnaya-plita-homieland-hl-13_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Настольная индукционная плита HomieLand HL-13'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/nastolnaya-indukcionnaya-plita-homieland-hl-13_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Настольная индукционная плита HomieLand HL-13'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/nastolnaya-indukcionnaya-plita-homieland-hl-13_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Настольная индукционная плита HomieLand HL-13'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/nastolnaya-indukcionnaya-plita-homieland-hl-13_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Настольная индукционная плита HomieLand HL-13'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/nastolnaya-indukcionnaya-plita-homieland-hl-13_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Настольная индукционная плита HomieLand HL-13'));

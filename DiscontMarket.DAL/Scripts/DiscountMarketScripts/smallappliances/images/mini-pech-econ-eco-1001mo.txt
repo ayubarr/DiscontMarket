@@ -1,0 +1,10 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-econ-eco-1001mo_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Econ ECO-1001MO'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-econ-eco-1001mo_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Econ ECO-1001MO'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-econ-eco-1001mo_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Econ ECO-1001MO'));

@@ -1,0 +1,55 @@
+﻿INSERT INTO "Products" 
+("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription",
+"Availability", "Status", "CategoryID", "BrandID", "UserID") 
+VALUES
+ ('Телевизор Sony KD-65X80K', 64895, 16, '/items/productimages/televizor-sony-kd-65x80k_0.png', 4.14, '', 'Телевизор Sony KD-65X80K в корпусе черного цвета — модель диагональю 65 дюймов форматом 16:9. Разрешение — 3840х2160 пикселей. Технология HDR делает картинку более четкой в наиболее светлых и темных областях, что обеспечивает комфортный просмотр. Для улучшения изображения используется система цифрового шумоподавления, которая особенно актуальна при некачественном сигнале. Smart TV дает возможность пользоваться всеми преимуществами интернета, в том числе воспроизводить видео на онлайн-сервисах. Поддерживается взаимодействие с ТВ при помощи голосового помощника Google Assistant.
+Устройство оснащено рядом полезных функций, среди которых Sleep-таймер и TimeShift. Возможна запись телетрансляций непосредственно на флешку. За прием и обработку сигналов цифрового ТВ отвечает тюнер DVB с поддержкой стандартов T/T2, за звуковое сопровождение — аудиосистема, которая состоит из двух динамиков мощностью по 10 Вт. Она формирует объемный звук для глубокого погружения в контент, отображаемый на экране.
+В телевизоре предусмотрен модуль Bluetooth — служит для подключения к сторонним устройствам для обмена информацией. Мощность потребления не превышает 135 Вт. Набор интерфейсов состоит из HDMI (четыре), портов USB 2.0 тип A (два), разъемов LAN (RJ45), 3,5 мм для подключения наушников и для установки DVB CAM. В комплекте — настольная подставка. Возможно крепление на стену при помощи кронштейна VESA 300x300. Размеры телевизора (без подставки) составляют 145,2х83,6х7,2 см, вес — 21,7 кг.', 'InStock', 'Discount', 1, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Sony'), 1);
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Sony KD-65X80K'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '4K Ultra HD (3840x2160 Пикс)' AND "Type" = 'Экран));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Sony KD-65X80K'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '65' AND "Type" = 'Диагональ));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Sony KD-65X80K'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '60' AND "Type" = 'Частота обновления));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Sony KD-65X80K'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'LED' AND "Type" = 'Технология экрана));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Sony KD-65X80K'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'Direct LED' AND "Type" = 'Тип светодиодной подсветки));
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-sony-kd-65x80k_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Sony KD-65X80K'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-sony-kd-65x80k_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Sony KD-65X80K'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-sony-kd-65x80k_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Sony KD-65X80K'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-sony-kd-65x80k_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Sony KD-65X80K'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-sony-kd-65x80k_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Sony KD-65X80K'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-sony-kd-65x80k_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Sony KD-65X80K'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-sony-kd-65x80k_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Sony KD-65X80K'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-sony-kd-65x80k_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Sony KD-65X80K'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-sony-kd-65x80k_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Sony KD-65X80K'));

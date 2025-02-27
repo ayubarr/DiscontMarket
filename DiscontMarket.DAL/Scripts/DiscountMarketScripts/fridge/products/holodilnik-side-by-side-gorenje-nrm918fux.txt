@@ -1,0 +1,86 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Холодильник (Side-by-Side) Gorenje NRM918FUX', 83499, 12, '/items/productimages/holodilnik-side-by-side-gorenje-nrm918fux_0.png', 4.11, '', 'Отдельностоящий холодильник Side-by-Side Gorenje NRM918FUX с функцией быстрого замораживания обладает полезным объемом холодильного отделения 391 л и морозильного отделения — 191 л.
+
+• <b>Холодильная камера</b>
+Оснащена четырьмя полками с фиксаторами против выдвижения. Присутствуют шесть навесных полок на двери. Объем зоны сохранения свежести составляет 60 л. 
+
+• <b>Морозильная камера</b>
+Снабжена четырьмя выдвижными ящиками разного размера, двумя открытыми полками, шестью полками на двери. Мощность замораживания достигает 6 кг/сут. Присутствует ледогенератор. 
+
+• <b>Функция ConvertActiv</b>
+Преобразует морозильник в нулевую зону охлаждения, тем самым увеличивая пространство холодильной камеры. 
+
+• <b>Контейнер Crispzone</b>
+Снабжен системой контроля влажности, что сохраняет свежесть овощей и фруктов.
+
+• <b>Система No Frost Plus</b>
+Обеспечивает равномерное охлаждение в камере независимо от уровня расположения продуктов. Разморозка не требуется, она происходит автоматически.
+
+• <b>При отключении электроэнергии</b>
+Модель поддерживает оптимальную температуру хранения на протяжении 16 часов. 
+
+Двухдверная модель в серебристом металлическом корпусе и с интегрированными ручками обладает габаритными размерами 178,5х91,2х72,5 см. Для настройки параметров работы предусмотрен цифровой дисплей. Внутреннее освещение обеспечивает светодиодная лампа. Однокомпрессорная модель относится к А+-классу энергоэффективности, годовое потребление электроэнергии составляет 456 кВт. Уровень шума не превышает 43 дБ.', 'InStock', 'Discount', 3, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Gorenje'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Холодильник (Side-by-Side) Gorenje NRM918FUX'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник (Side-by-Side) Gorenje NRM918FUX' 
+        AND a."Name" = 'инверторный' 
+        AND a."Type" = 'Тип компрессора'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник (Side-by-Side) Gorenje NRM918FUX' 
+        AND a."Name" = '178.5*91.2*72.5 см' 
+        AND a."Type" = 'Габаритные размеры (В*Ш*Г)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник (Side-by-Side) Gorenje NRM918FUX' 
+        AND a."Name" = '664' 
+        AND a."Type" = 'Общий объем'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник (Side-by-Side) Gorenje NRM918FUX' 
+        AND a."Name" = 'настраиваемая' 
+        AND a."Type" = 'Тип зоны сохранения свежести'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник (Side-by-Side) Gorenje NRM918FUX' 
+        AND a."Name" = 'сенсорное' 
+        AND a."Type" = 'Тип управления'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-side-by-side-gorenje-nrm918fux_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник (Side-by-Side) Gorenje NRM918FUX'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-side-by-side-gorenje-nrm918fux_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник (Side-by-Side) Gorenje NRM918FUX'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-side-by-side-gorenje-nrm918fux_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник (Side-by-Side) Gorenje NRM918FUX'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-side-by-side-gorenje-nrm918fux_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник (Side-by-Side) Gorenje NRM918FUX'));

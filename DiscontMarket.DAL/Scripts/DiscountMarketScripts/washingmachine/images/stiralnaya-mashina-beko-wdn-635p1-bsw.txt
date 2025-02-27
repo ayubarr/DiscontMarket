@@ -1,0 +1,19 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-beko-wdn-635p1-bsw_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Beko WDN 635P1 BSW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-beko-wdn-635p1-bsw_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Beko WDN 635P1 BSW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-beko-wdn-635p1-bsw_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Beko WDN 635P1 BSW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-beko-wdn-635p1-bsw_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Beko WDN 635P1 BSW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-beko-wdn-635p1-bsw_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Beko WDN 635P1 BSW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-beko-wdn-635p1-bsw_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Beko WDN 635P1 BSW'));

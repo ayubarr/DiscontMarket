@@ -1,0 +1,19 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-econ-eco-g3201mo_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Econ ECO-G3201MO'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-econ-eco-g3201mo_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Econ ECO-G3201MO'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-econ-eco-g3201mo_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Econ ECO-G3201MO'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-econ-eco-g3201mo_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Econ ECO-G3201MO'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-econ-eco-g3201mo_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Econ ECO-G3201MO'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-econ-eco-g3201mo_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Econ ECO-G3201MO'));

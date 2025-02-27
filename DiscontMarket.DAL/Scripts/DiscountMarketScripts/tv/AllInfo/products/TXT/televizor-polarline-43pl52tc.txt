@@ -1,0 +1,39 @@
+﻿INSERT INTO "Products" 
+("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription",
+"Availability", "Status", "CategoryID", "BrandID", "UserID") 
+VALUES
+ ('Телевизор POLARLINE 43PL52TC', 16095, 9, '/items/productimages/televizor-polarline-43pl52tc_0.png', 4.67, '', 'Телевизор Polarline 43PL52TC объединяет в себе возможности ПК и широкий функционал ТВ. Максимальная мощность энергопотребления — 70 Вт. Устройство работает на базе ОС WebOS. Экран диагональю 43 дюйма (109 см) обладает разрешением 1920х1080 пикселей. Частота обновления кадров — 60 Гц. Модель поддерживает функцию Smart TV и Ethernet (LAN). Это позволяет просматривать видеоролики и веб-страницы. Акустическая система представлена двумя колонками суммарной мощностью 16 Вт и NICAM-стерео. Звук транслируется чистый и объемный. 
+Телевизор поддерживает цифровые стандарты DVB-T, DVB-C, DVB-T2. Благодаря этому к 99 основным каналам можно дополнительно подключить 1200. Корпус устанавливается на подставку, которая поставляется в комплекте. Также есть крепление для подвешивания устройства на стену. Модель оснащена интерфейсами для подсоединения гаджетов и звуковой гарнитуры. Среди них: три входа HDMI, разъем для наушников 3,5 мм, два USB-разъема и слот для CI. Для беспроводного подключения к смартфону, ноутбуку или ПК есть модуль Bluetooth. Sleep-таймер поставит транслируемое видео на паузу и возобновит просмотр с того же места.', 'InStock', 'Discount', 1, (SELECT "ID" FROM "Brands" WHERE "Name" = 'POLARLINE'), 1);
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор POLARLINE 43PL52TC'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'Full HD (1920x1080 Пикс)' AND "Type" = 'Экран));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор POLARLINE 43PL52TC'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '43' AND "Type" = 'Диагональ));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор POLARLINE 43PL52TC'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '60' AND "Type" = 'Частота обновления));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор POLARLINE 43PL52TC'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'LED' AND "Type" = 'Технология экрана));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор POLARLINE 43PL52TC'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'Direct LED' AND "Type" = 'Тип светодиодной подсветки));
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-polarline-43pl52tc_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор POLARLINE 43PL52TC'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-polarline-43pl52tc_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор POLARLINE 43PL52TC'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-polarline-43pl52tc_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор POLARLINE 43PL52TC'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-polarline-43pl52tc_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор POLARLINE 43PL52TC'));

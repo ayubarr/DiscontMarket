@@ -1,0 +1,104 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Микроволновая печь соло RED SOLUTION RM-2011', 4499, 17, '/items/productimages/mikrovolnovaya-pech-solo-red-solution-rm-2011_0.png', 4.26, '', 'Микроволновая печь соло Red Solution RM-2011 выполнена в сером цвете и обладает габаритными размерами 25,9х44х35,5 см. Прибор оснащен двумя поворотными элементами управления. 
+
+• <b>Камера объемом 20 л</b>
+Защищена специальным полимерным покрытием Smart Protect, устойчивым к механическим повреждениям, коррозии и перепадам температур.
+
+• <b>Внутреннее освещение</b>
+Позволяет следить за ходом приготовления. Также выступает в роли индикатора работы.
+
+• <b>Максимальная мощность микроволн 700 Вт</b>
+Можно регулировать на пяти уровнях. 
+
+• <b>Таймер до 35 минут</b>
+Позволяет установить желаемое время приготовления или размораживания. 
+
+Модель питается от сети 220-240 В, потребляемая мощность составляет 1050 Вт. Камера обладает поворотным столом диаметром 25,5 см.', 'InStock', 'Discount', 6, (SELECT "ID" FROM "Brands" WHERE "Name" = 'RED SOLUTION'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло RED SOLUTION RM-2011'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Микроволновая печь соло RED SOLUTION RM-2011' 
+        AND a."Name" = '20' 
+        AND a."Type" = 'Полезный объем'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Микроволновая печь соло RED SOLUTION RM-2011' 
+        AND a."Name" = '25.5' 
+        AND a."Type" = 'Диаметр поворотного стола'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Микроволновая печь соло RED SOLUTION RM-2011' 
+        AND a."Name" = 'полимерное' 
+        AND a."Type" = 'Внутреннее покрытие'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Микроволновая печь соло RED SOLUTION RM-2011' 
+        AND a."Name" = 'механический' 
+        AND a."Type" = 'Тип управления'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Микроволновая печь соло RED SOLUTION RM-2011' 
+        AND a."Name" = 'серый' 
+        AND a."Type" = 'Цвет'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-red-solution-rm-2011_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло RED SOLUTION RM-2011'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-red-solution-rm-2011_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло RED SOLUTION RM-2011'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-red-solution-rm-2011_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло RED SOLUTION RM-2011'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-red-solution-rm-2011_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло RED SOLUTION RM-2011'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-red-solution-rm-2011_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло RED SOLUTION RM-2011'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-red-solution-rm-2011_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло RED SOLUTION RM-2011'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-red-solution-rm-2011_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло RED SOLUTION RM-2011'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-red-solution-rm-2011_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло RED SOLUTION RM-2011'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-red-solution-rm-2011_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло RED SOLUTION RM-2011'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-red-solution-rm-2011_9.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло RED SOLUTION RM-2011'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-red-solution-rm-2011_10.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло RED SOLUTION RM-2011'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-red-solution-rm-2011_11.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло RED SOLUTION RM-2011'));

@@ -1,0 +1,22 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-simfer-wwc601_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Simfer WWC601'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-simfer-wwc601_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Simfer WWC601'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-simfer-wwc601_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Simfer WWC601'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-simfer-wwc601_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Simfer WWC601'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-simfer-wwc601_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Simfer WWC601'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-simfer-wwc601_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Simfer WWC601'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-simfer-wwc601_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Simfer WWC601'));

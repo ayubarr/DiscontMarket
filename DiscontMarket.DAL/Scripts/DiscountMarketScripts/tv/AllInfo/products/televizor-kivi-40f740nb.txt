@@ -1,0 +1,48 @@
+﻿INSERT INTO "Products" 
+("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription",
+"Availability", "Status", "CategoryID", "BrandID", "UserID") 
+VALUES
+ ('Телевизор Kivi 40F740NB', 12995, 13, '/items/productimages/televizor-kivi-40f740nb_0.png', 4.31, '', 'Телевизор Kivi 40F740NB оснащен разрешением экрана Super MVA и диагональю 40". Разрешение 1920х1080 пикс обеспечивает яркие цвета, четкие детали и широкий угол обзора. Частота обновления экрана 60 Гц гарантирует плавное воспроизведение динамичных сцен и спортивных соревнований. Формат экрана равен 16:9. Встроена фоновая подсветка.
+
+Телевизор работает на операционной системе Android. Мощность фронтальной акустической системы Dolby Audio равна 16 Вт. Встроена технология HDMI ARC. Благодаря нескольким портам HDMI и USB, к телевизору подключаются внешние устройства. Дополнительно встроен разъем для подключения наушников 3,5 мм, разъем для модуля DVB CAM, LAN-разъем (RJ45) для подключения к проводному интернету.
+
+Встроенный Wi-Fi и функции Smart TV позволяют получить доступ к онлайн-контенту и приложениям прямо на экране телевизора. Доступна функция записи с ТВ на USB-устройство. Встроен Sleep-таймер. Доступно голосовое управление. Потребляемая мощность модели составляет 52 Вт. Допустима установка телевизора на поверхности благодаря подставке в комплекте. Цвет корпуса модели — черный. Страна производства — Беларусь. Гарантия на дисплей — три года.', 'InStock', 'Discount', 1, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Kivi'), 1);
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Kivi 40F740NB'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'Full HD (1920x1080 Пикс)' AND "Type" = 'Экран));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Kivi 40F740NB'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '40' AND "Type" = 'Диагональ));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Kivi 40F740NB'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '60' AND "Type" = 'Частота обновления));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Kivi 40F740NB'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'LED' AND "Type" = 'Технология экрана));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Kivi 40F740NB'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'Direct LED' AND "Type" = 'Тип светодиодной подсветки));
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-kivi-40f740nb_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Kivi 40F740NB'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-kivi-40f740nb_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Kivi 40F740NB'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-kivi-40f740nb_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Kivi 40F740NB'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-kivi-40f740nb_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Kivi 40F740NB'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-kivi-40f740nb_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Kivi 40F740NB'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-kivi-40f740nb_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Kivi 40F740NB'));

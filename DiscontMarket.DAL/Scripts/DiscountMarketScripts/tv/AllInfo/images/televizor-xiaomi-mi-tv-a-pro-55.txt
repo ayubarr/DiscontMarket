@@ -1,0 +1,19 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-xiaomi-mi-tv-a-pro-55_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Xiaomi MI TV A Pro 55'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-xiaomi-mi-tv-a-pro-55_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Xiaomi MI TV A Pro 55'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-xiaomi-mi-tv-a-pro-55_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Xiaomi MI TV A Pro 55'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-xiaomi-mi-tv-a-pro-55_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Xiaomi MI TV A Pro 55'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-xiaomi-mi-tv-a-pro-55_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Xiaomi MI TV A Pro 55'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-xiaomi-mi-tv-a-pro-55_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Xiaomi MI TV A Pro 55'));

@@ -1,0 +1,28 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-delonghi-camilla-l-724-v-white_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина DeLonghi CAMILLA L 724 V White'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-delonghi-camilla-l-724-v-white_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина DeLonghi CAMILLA L 724 V White'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-delonghi-camilla-l-724-v-white_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина DeLonghi CAMILLA L 724 V White'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-delonghi-camilla-l-724-v-white_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина DeLonghi CAMILLA L 724 V White'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-delonghi-camilla-l-724-v-white_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина DeLonghi CAMILLA L 724 V White'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-delonghi-camilla-l-724-v-white_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина DeLonghi CAMILLA L 724 V White'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-delonghi-camilla-l-724-v-white_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина DeLonghi CAMILLA L 724 V White'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-delonghi-camilla-l-724-v-white_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина DeLonghi CAMILLA L 724 V White'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-delonghi-camilla-l-724-v-white_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина DeLonghi CAMILLA L 724 V White'));

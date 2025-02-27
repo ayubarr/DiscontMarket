@@ -1,0 +1,40 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-haier-hw100-bd14378s_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Haier HW100-BD14378S'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-haier-hw100-bd14378s_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Haier HW100-BD14378S'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-haier-hw100-bd14378s_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Haier HW100-BD14378S'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-haier-hw100-bd14378s_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Haier HW100-BD14378S'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-haier-hw100-bd14378s_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Haier HW100-BD14378S'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-haier-hw100-bd14378s_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Haier HW100-BD14378S'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-haier-hw100-bd14378s_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Haier HW100-BD14378S'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-haier-hw100-bd14378s_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Haier HW100-BD14378S'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-haier-hw100-bd14378s_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Haier HW100-BD14378S'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-haier-hw100-bd14378s_9.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Haier HW100-BD14378S'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-haier-hw100-bd14378s_10.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Haier HW100-BD14378S'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-haier-hw100-bd14378s_11.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Haier HW100-BD14378S'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-haier-hw100-bd14378s_12.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Haier HW100-BD14378S'));

@@ -1,0 +1,19 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-nastennaya-wistora-xqg25_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина настенная Wistora XQG25'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-nastennaya-wistora-xqg25_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина настенная Wistora XQG25'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-nastennaya-wistora-xqg25_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина настенная Wistora XQG25'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-nastennaya-wistora-xqg25_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина настенная Wistora XQG25'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-nastennaya-wistora-xqg25_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина настенная Wistora XQG25'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-nastennaya-wistora-xqg25_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина настенная Wistora XQG25'));

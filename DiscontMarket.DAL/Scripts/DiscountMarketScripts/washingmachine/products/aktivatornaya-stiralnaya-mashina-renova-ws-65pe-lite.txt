@@ -1,0 +1,81 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Активаторная стиральная машина Renova WS-65PE (LITE)', 5199, 13, '/items/productimages/aktivatornaya-stiralnaya-mashina-renova-ws-65pe-lite_0.png', 4.97, '', 'Активаторная стиральная машина Renova WS-65PE (LITE) с максимальной загрузкой 6,5 кг отличается надёжностью и простотой эксплуатации и к тому же не требует подключения к канализации. Благодаря этому модель станет отличным решением для использования на даче или в загородном доме.
+
+ВИДИМЫЕ ПРЕИМУЩЕСТВА
+Прибор дополнен реверсным механизмом, отвечающим за образование обратных потоков воды. За счёт этого бельё не скручивается в трудно распутываемые жгуты и, соответственно, не деформируется.
+
+УДОБСТВО В МЕЛОЧАХ
+Панель управления состоит из пары поворотных переключателей. С помощью них вы засечёте время до 30 минут и выберете один из двух режимов работы: «Обычный» или «Бережный». Вторая программа создана специально для привередливых тканей вроде шёлка и шерсти. Об окончании цикла вас известит отчётливый звуковой сигнал.
+
+ДЛЯ КОМФОРТА
+В конструкции сливной системы предусмотрена помпа, с которой вы без лишних махинаций и усилий избавитесь от грязной воды. Фильтр для сбора ворса и пуха сделает бельё идеально чистым и предотвратит засорение внутренних узлов машины.
+
+ЕЩЁ О ВАЖНЫХ ФИШКАХ
+В Renova WS-65PE (LITE) вещи загружаются вертикально, что позволяет наиболее рационально задействовать каждый сантиметр полезного пространства вокруг. При изготовлении корпуса использован прочный полипропилен – он не желтеет со временем и не подвергается коррозии. Эргономичные ручки облегчают переноску прибора, да и его вес не превышает 11,5 кг.', 'InStock', 'Discount', 5, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Renova'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Активаторная стиральная машина Renova WS-65PE (LITE)'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Активаторная стиральная машина Renova WS-65PE (LITE)' 
+        AND a."Name" = '6.5' 
+        AND a."Type" = 'Максимальная загрузка'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Активаторная стиральная машина Renova WS-65PE (LITE)' 
+        AND a."Name" = 'до 30 минут' 
+        AND a."Type" = 'Таймер продолжительности работы'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Активаторная стиральная машина Renova WS-65PE (LITE)' 
+        AND a."Name" = 'вертикальная' 
+        AND a."Type" = 'Тип загрузки'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Активаторная стиральная машина Renova WS-65PE (LITE)' 
+        AND a."Name" = 'Да' 
+        AND a."Type" = 'Реверсивное вращение активатора'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Активаторная стиральная машина Renova WS-65PE (LITE)' 
+        AND a."Name" = '11.5' 
+        AND a."Type" = 'Вес'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/aktivatornaya-stiralnaya-mashina-renova-ws-65pe-lite_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Активаторная стиральная машина Renova WS-65PE (LITE)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/aktivatornaya-stiralnaya-mashina-renova-ws-65pe-lite_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Активаторная стиральная машина Renova WS-65PE (LITE)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/aktivatornaya-stiralnaya-mashina-renova-ws-65pe-lite_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Активаторная стиральная машина Renova WS-65PE (LITE)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/aktivatornaya-stiralnaya-mashina-renova-ws-65pe-lite_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Активаторная стиральная машина Renova WS-65PE (LITE)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/aktivatornaya-stiralnaya-mashina-renova-ws-65pe-lite_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Активаторная стиральная машина Renova WS-65PE (LITE)'));

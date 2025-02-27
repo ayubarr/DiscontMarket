@@ -1,0 +1,38 @@
+﻿INSERT INTO "Products" 
+("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription",
+"Availability", "Status", "CategoryID", "BrandID", "UserID") 
+VALUES
+ ('Телевизор LG OLED65G3RLA', 124999, 10, '/items/productimages/televizor-lg-oled65g3rla_0.png', 4.66, '', 'Телевизор LG OLED65G3RLA серебристого цвета оснащен ультратонким корпусом с диагональю 164 см. Присутствуют система защиты от детей, Sleep-таймер, отключающий устройство через установленный промежуток времени. Мощность прибора — 0,506 кВт. Габариты модели — 82,6х144,1х2,43 см. Вес изделия — 25,1 кг. Способ управления — дистанционный/голосовой. Возможна передача данных с USB устройств. Тип операционной системы — WebOS. Технология AI Sound Pro регулирует звуковое поле в зависимости от жанра. Частота обновления 120 Гц обеспечивает качественную картинку даже в динамичных сценах.', 'InStock', 'Discount', 1, (SELECT "ID" FROM "Brands" WHERE "Name" = 'LG'), 1);
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор LG OLED65G3RLA'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '4K Ultra HD (3840x2160 Пикс)' AND "Type" = 'Экран));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор LG OLED65G3RLA'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '65' AND "Type" = 'Диагональ));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор LG OLED65G3RLA'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '120' AND "Type" = 'Частота обновления));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор LG OLED65G3RLA'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'OLED' AND "Type" = 'Технология экрана));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор LG OLED65G3RLA'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'OLED' AND "Type" = 'Тип светодиодной подсветки));
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-lg-oled65g3rla_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор LG OLED65G3RLA'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-lg-oled65g3rla_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор LG OLED65G3RLA'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-lg-oled65g3rla_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор LG OLED65G3RLA'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-lg-oled65g3rla_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор LG OLED65G3RLA'));

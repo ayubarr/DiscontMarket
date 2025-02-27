@@ -1,0 +1,4 @@
+﻿INSERT INTO "Attributes" ("NameTranslate", "Name", "Type") VALUES
+('144', '144', 'Частота обновления');
+INSERT INTO "AttributeCategory" ("AttributeID", "CategoryID") VALUES
+((SELECT "ID" FROM "Attributes" WHERE "Name" = '144' AND "Type" = 'Частота обновления'), (SELECT "ID" FROM "Categories" WHERE "Name" = 'tv'));

@@ -1,0 +1,77 @@
+﻿INSERT INTO "Products" 
+("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription",
+"Availability", "Status", "CategoryID", "BrandID", "UserID") 
+VALUES
+ ('Телевизор Rombica Smart TV QX55 (55XT-UD2G64N)', 29999, 8, '/items/productimages/televizor-rombica-smart-tv-qx55-55xt-ud2g64n_0.png', 4.58, '', 'Телевизор Rombica Smart TV QX55 (55XT-UD2G64N) оснащен 55-дюймовым QLED-экраном разрешением 4К (3840х2160 пикселей) формата 16:9. Он демонстрирует детализированное изображение со всем богатством цветов и оттенков, которое понравится и киноманам, и геймерам. Для последних доступен специальный игровой режим. Частота обновления 120 Гц гарантирует плавность отображения динамичных сцен. 
+
+Яркость — 350 кд/м², контрастность — 1200:1 (динамическая — 30000:1). Технология HDR 10 обеспечивает корректную передачу черного и белого цветов. Широкие углы обзора по 178° позволяют собраться перед экраном большой семьей или компанией, даже тем, кто окажется сбоку, все будет хорошо видно. 
+
+Мощность акустической системы составляет 24 Вт. Объемное звучание с поддержкой Dobly Atmos составит выразительное сопровождение фильмам и играм, даст возможность насладиться прослушиванием концерта. 
+
+Телевизор поддерживает Smart TV и работает на операционной системе Android 11. Простой и удобный интерфейс поможет без труда найти нужный контент. Объем встроенной памяти 16 Гб, что позволит устанавливать необходимые приложения стриминговых сервисов, онлайн-кинотеатров. Выход в интернет производится по Wi-Fi, можно использовать и проводное подключение через LAN. 
+
+Прибор можно использовать для просмотра контента с внешних USB-накопителей, соответствующие порты установлены. Поддерживаются практически все популярные форматы видео, аудио и изображений. Также для подключений предусмотрены три входа HDMI, оптический выход Toslink, разъем для наушников 3,5 мм. 
+
+Энергопотребление составляет 83,1 Вт. Размеры телевизора без подставки — 1225x700x92 мм, вес — 12,8 кг; с подставкой — 1225x760x350 мм, вес — 12,9 кг. Для монтажа на стену используется крепление стандарта VESA 300х300. 
+
+Вместе с телевизором предоставляется подписка на ОККО (6 месяцев) и «Кинопоиск» (3 месяца).', 'InStock', 'Discount', 1, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Rombica'), 1);
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Rombica Smart TV QX55 (55XT-UD2G64N)'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '4K Ultra HD (3840x2160 Пикс)' AND "Type" = 'Экран));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Rombica Smart TV QX55 (55XT-UD2G64N)'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '55' AND "Type" = 'Диагональ));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Rombica Smart TV QX55 (55XT-UD2G64N)'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '120' AND "Type" = 'Частота обновления));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Rombica Smart TV QX55 (55XT-UD2G64N)'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'QLED' AND "Type" = 'Технология экрана));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Rombica Smart TV QX55 (55XT-UD2G64N)'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'Direct LED' AND "Type" = 'Тип светодиодной подсветки));
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-rombica-smart-tv-qx55-55xt-ud2g64n_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Rombica Smart TV QX55 (55XT-UD2G64N)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-rombica-smart-tv-qx55-55xt-ud2g64n_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Rombica Smart TV QX55 (55XT-UD2G64N)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-rombica-smart-tv-qx55-55xt-ud2g64n_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Rombica Smart TV QX55 (55XT-UD2G64N)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-rombica-smart-tv-qx55-55xt-ud2g64n_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Rombica Smart TV QX55 (55XT-UD2G64N)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-rombica-smart-tv-qx55-55xt-ud2g64n_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Rombica Smart TV QX55 (55XT-UD2G64N)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-rombica-smart-tv-qx55-55xt-ud2g64n_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Rombica Smart TV QX55 (55XT-UD2G64N)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-rombica-smart-tv-qx55-55xt-ud2g64n_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Rombica Smart TV QX55 (55XT-UD2G64N)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-rombica-smart-tv-qx55-55xt-ud2g64n_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Rombica Smart TV QX55 (55XT-UD2G64N)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-rombica-smart-tv-qx55-55xt-ud2g64n_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Rombica Smart TV QX55 (55XT-UD2G64N)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-rombica-smart-tv-qx55-55xt-ud2g64n_9.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Rombica Smart TV QX55 (55XT-UD2G64N)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-rombica-smart-tv-qx55-55xt-ud2g64n_10.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Rombica Smart TV QX55 (55XT-UD2G64N)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-rombica-smart-tv-qx55-55xt-ud2g64n_11.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Rombica Smart TV QX55 (55XT-UD2G64N)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-rombica-smart-tv-qx55-55xt-ud2g64n_12.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Rombica Smart TV QX55 (55XT-UD2G64N)'));

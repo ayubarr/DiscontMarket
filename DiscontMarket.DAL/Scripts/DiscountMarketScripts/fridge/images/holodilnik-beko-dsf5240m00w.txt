@@ -1,0 +1,7 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-beko-dsf5240m00w_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Beko DSF5240M00W'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-beko-dsf5240m00w_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Beko DSF5240M00W'));

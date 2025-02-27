@@ -1,0 +1,28 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-simfer-m4524_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Simfer M4524'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-simfer-m4524_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Simfer M4524'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-simfer-m4524_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Simfer M4524'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-simfer-m4524_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Simfer M4524'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-simfer-m4524_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Simfer M4524'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-simfer-m4524_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Simfer M4524'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-simfer-m4524_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Simfer M4524'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-simfer-m4524_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Simfer M4524'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-simfer-m4524_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Simfer M4524'));

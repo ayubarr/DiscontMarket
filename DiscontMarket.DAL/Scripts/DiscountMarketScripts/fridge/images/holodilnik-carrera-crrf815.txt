@@ -1,0 +1,16 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-carrera-crrf815_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Carrera CRRF815'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-carrera-crrf815_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Carrera CRRF815'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-carrera-crrf815_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Carrera CRRF815'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-carrera-crrf815_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Carrera CRRF815'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-carrera-crrf815_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Carrera CRRF815'));

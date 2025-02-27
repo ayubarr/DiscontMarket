@@ -1,0 +1,80 @@
+﻿INSERT INTO "Products" 
+("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription",
+"Availability", "Status", "CategoryID", "BrandID", "UserID") 
+VALUES
+ ('Телевизор Hisense 110UXNQ', 999999, 8, '/items/productimages/televizor-hisense-110uxnq_0.png', 4.85, '', 'Телевизор Hisense 110UXNQ оснащен подсветкой mini-LED, которая улучшает яркость кадров.
+
+• <b>ADS-матрица</b>
+Отличается улучшенной цветопередачей и высокой скоростью обработки изображения.
+
+• <b>Разрешение 4К Ultra HD</b>
+Гарантирует резкость и четкость даже на большом экране.
+
+• <b>Частота обновления 144 Гц</b>
+Обеспечивает плавную смену кадров.
+
+Поддерживаются технологии QLED и HDR. Формат экрана — 16:9. Диагональ составляет 100" (279,4 см). Яркость достигает 700 кд/м², пиковая — 10000 кд/м². Модель дополнена шумоподавлением. Мощность акустической системы — 94 ВТ. Звук — DTS Virtual X. Для дистанционного управления предусмотрен Bluetooth. Для пульта требуются две батареи ААА. Добавлена регулировка при помощи смартфона.
+
+Устройство обладает функциями Smart TV, HDMI ARC, TimeShift, голосового управления, игрового режима, автоматической регулировки яркости, Far Field и «Картина». Доступны воспроизведение с USB, тюнер DVB Т/Т2/С/S/S2 и голосовой помощник Алиса. 
+
+Предусмотрена защита от детей. Модель потребляет 450 Вт, в режиме ожидания — 0,5 Вт. Крепление относится к типу VESA 1000х600. Прилагается настольная подставка. Устройство поддерживает Wi-Fi, оснащено встроенным сабвуфером. Поддерживает работу в экосистеме умный дом Яндекс. Размеры — 147х253х48,7 см, без подставки — 142,5х253х4,8 см. Вес составляет 54,4 кг. Телевизор сделан в черном цвете.', 'InStock', 'Discount', 1, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Hisense'), 1);
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hisense 110UXNQ'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '4K Ultra HD (3840x2160 Пикс)' AND "Type" = 'Экран));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hisense 110UXNQ'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '110' AND "Type" = 'Диагональ));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hisense 110UXNQ'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '144' AND "Type" = 'Частота обновления));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hisense 110UXNQ'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'QLED' AND "Type" = 'Технология экрана));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hisense 110UXNQ'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'Mini LED' AND "Type" = 'Тип светодиодной подсветки));
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-hisense-110uxnq_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hisense 110UXNQ'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-hisense-110uxnq_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hisense 110UXNQ'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-hisense-110uxnq_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hisense 110UXNQ'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-hisense-110uxnq_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hisense 110UXNQ'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-hisense-110uxnq_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hisense 110UXNQ'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-hisense-110uxnq_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hisense 110UXNQ'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-hisense-110uxnq_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hisense 110UXNQ'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-hisense-110uxnq_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hisense 110UXNQ'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-hisense-110uxnq_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hisense 110UXNQ'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-hisense-110uxnq_9.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hisense 110UXNQ'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-hisense-110uxnq_10.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hisense 110UXNQ'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-hisense-110uxnq_11.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hisense 110UXNQ'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-hisense-110uxnq_12.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hisense 110UXNQ'));

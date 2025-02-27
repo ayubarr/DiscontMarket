@@ -1,0 +1,16 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-garlyn-fdf-180_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Garlyn FDF-180'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-garlyn-fdf-180_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Garlyn FDF-180'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-garlyn-fdf-180_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Garlyn FDF-180'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-garlyn-fdf-180_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Garlyn FDF-180'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-garlyn-fdf-180_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Garlyn FDF-180'));

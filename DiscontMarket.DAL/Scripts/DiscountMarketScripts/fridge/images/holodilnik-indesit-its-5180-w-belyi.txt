@@ -1,0 +1,22 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-indesit-its-5180-w-belyi_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Indesit ITS 5180 W белый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-indesit-its-5180-w-belyi_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Indesit ITS 5180 W белый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-indesit-its-5180-w-belyi_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Indesit ITS 5180 W белый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-indesit-its-5180-w-belyi_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Indesit ITS 5180 W белый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-indesit-its-5180-w-belyi_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Indesit ITS 5180 W белый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-indesit-its-5180-w-belyi_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Indesit ITS 5180 W белый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-indesit-its-5180-w-belyi_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Indesit ITS 5180 W белый'));

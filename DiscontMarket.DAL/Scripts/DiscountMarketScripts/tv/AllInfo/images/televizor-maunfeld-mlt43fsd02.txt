@@ -1,0 +1,13 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-maunfeld-mlt43fsd02_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Maunfeld MLT43FSD02'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-maunfeld-mlt43fsd02_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Maunfeld MLT43FSD02'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-maunfeld-mlt43fsd02_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Maunfeld MLT43FSD02'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-maunfeld-mlt43fsd02_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Maunfeld MLT43FSD02'));

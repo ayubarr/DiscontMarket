@@ -1,0 +1,25 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-hisense-hom30m_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Hisense HOM30M'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-hisense-hom30m_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Hisense HOM30M'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-hisense-hom30m_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Hisense HOM30M'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-hisense-hom30m_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Hisense HOM30M'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-hisense-hom30m_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Hisense HOM30M'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-hisense-hom30m_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Hisense HOM30M'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-hisense-hom30m_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Hisense HOM30M'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-hisense-hom30m_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Hisense HOM30M'));

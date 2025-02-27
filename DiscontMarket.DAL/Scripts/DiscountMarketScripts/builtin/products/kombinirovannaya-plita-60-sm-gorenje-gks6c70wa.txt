@@ -1,0 +1,77 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Комбинированная плита (60 см) Gorenje GKS6C70WA', 35499, 6, '/items/productimages/kombinirovannaya-plita-60-sm-gorenje-gks6c70wa_0.png', 4.9, '', 'Комбинированная плита Gorenje GKS6C70WA габаритами 850х600х600 мм выполнена в современном стиле из эмалированной нержавеющей стали. Модель включает электрический духовой шкаф и варочную поверхность, работающую на газе. Нижний выдвижной бокс обеспечивает хранение кухонной посуды. 
+Варочная поверхность Gorenje GKS6C70WA оборудована четырьмя конфорками диаметром 54 мм, 74 мм (две) и 99 мм, крышкой из стекла и чугунной решеткой. Для управления работой конфорок предусмотрены механические переключатели с автоматическим электроподжигом. Газ-контроль отвечает за безопасность эксплуатации прибора. 
+Духовой шкаф оснащен откидной дверцей с горизонтальной ручкой, двойным остеклением и доводчиком. Покрытая эмалью SilverMatte камера объемом 71 л включает телескопические одноуровневые направляющие для противней, вентилятор и лампу подсветки. Сводчатая форма потолка камеры HomeMade Plus способствует свободной циркуляции горячего воздуха и равномерному прогреву блюд. Духовой шкаф поддерживает одиннадцать режимов работы, для выбора которых предусмотрен модуль с сенсорными клавишами и поворотными регуляторами температуры (до 275°С), выбора способа термообработки. Среди доступных функций — гриль мощностью 2700 Вт, выпекание паром, конвекция. Способ очистки камеры — паровой (AquaClean).', 'InStock', 'Discount', 4, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Gorenje'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Комбинированная плита (60 см) Gorenje GKS6C70WA'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Комбинированная плита (60 см) Gorenje GKS6C70WA' 
+        AND a."Name" = '4' 
+        AND a."Type" = 'Количество конфорок'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Комбинированная плита (60 см) Gorenje GKS6C70WA' 
+        AND a."Name" = 'чугунная' 
+        AND a."Type" = 'Решетка'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Комбинированная плита (60 см) Gorenje GKS6C70WA' 
+        AND a."Name" = '71' 
+        AND a."Type" = 'Объем духовки'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Комбинированная плита (60 см) Gorenje GKS6C70WA' 
+        AND a."Name" = 'электрический' 
+        AND a."Type" = 'Тип духовки'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Комбинированная плита (60 см) Gorenje GKS6C70WA' 
+        AND a."Name" = '85*60*60 см' 
+        AND a."Type" = 'Габаритные размеры (В*Ш*Г)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/kombinirovannaya-plita-60-sm-gorenje-gks6c70wa_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Комбинированная плита (60 см) Gorenje GKS6C70WA'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/kombinirovannaya-plita-60-sm-gorenje-gks6c70wa_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Комбинированная плита (60 см) Gorenje GKS6C70WA'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/kombinirovannaya-plita-60-sm-gorenje-gks6c70wa_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Комбинированная плита (60 см) Gorenje GKS6C70WA'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/kombinirovannaya-plita-60-sm-gorenje-gks6c70wa_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Комбинированная плита (60 см) Gorenje GKS6C70WA'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/kombinirovannaya-plita-60-sm-gorenje-gks6c70wa_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Комбинированная плита (60 см) Gorenje GKS6C70WA'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/kombinirovannaya-plita-60-sm-gorenje-gks6c70wa_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Комбинированная плита (60 см) Gorenje GKS6C70WA'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/kombinirovannaya-plita-60-sm-gorenje-gks6c70wa_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Комбинированная плита (60 см) Gorenje GKS6C70WA'));

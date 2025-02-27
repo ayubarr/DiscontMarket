@@ -1,0 +1,75 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Холодильник Indesit TIA 16 G', 15249, 16, '/items/productimages/holodilnik-indesit-tia-16-g_0.png', 4.21, '', 'Холодильник Indesit TIA 16 G — модель в серебристом корпусе, которая характеризуется сравнительно тихой работой (уровень шума до 39 дБ). Управление механическое, удобное и простое. Для охлаждения используется фреон R600a с высоким холодильным эффектом. Он характеризуется безвредностью для окружающей среды. Климатический класс устройства — N-ST.<br><br>• <b>Морозильная камера объемом 51 л</b><br>Установлена сверху. Внутри находится одна полка, которая делится пространство на две части. Суточная мощность замораживания — 2 кг.<br><br>• <b>Холодильный отсек объемом 245 л</b><br>Включает в себя четыре прозрачные полки. Три из них можно регулировать по высоте. Установлено два ящика для хранения фруктов и овощей. Предусмотрено три пластиковых балкона.<br><br>• <b>Капельное размораживание</b><br>Предотвращает появление корки льда на стенках — весь конденсат стекает в емкость. Используется в холодильном отделении.<br><br>• <b>Полки из закаленного стекла</b><br>Сочетают в себе высокую прочность и оптимальную толщину. Выдерживают повышенную нагрузку — до 100 кг.<br><br>• <b>Металлические двери</b><br>Устойчивы к деформациям, появлению вмятин и сколов. Можно перенавешивать, чтобы выбрать наиболее удобное положение холодильник для эффективной планировки.<br><br>При отключении питания оптимальная температура внутри камер сохраняется автономно — до 17 часов. Управление холодильником механическое. В комплектацию входят подставка для яиц и формочки для льда.', 'InStock', 'Discount', 3, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Indesit'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Холодильник Indesit TIA 16 G'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Indesit TIA 16 G' 
+        AND a."Name" = 'стандартный' 
+        AND a."Type" = 'Тип компрессора'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Indesit TIA 16 G' 
+        AND a."Name" = '300' 
+        AND a."Type" = 'Общий объем'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Indesit TIA 16 G' 
+        AND a."Name" = 'отсутствует' 
+        AND a."Type" = 'Тип зоны сохранения свежести'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Indesit TIA 16 G' 
+        AND a."Name" = 'механический' 
+        AND a."Type" = 'Тип управления'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Indesit TIA 16 G' 
+        AND a."Name" = 'металл' 
+        AND a."Type" = 'Материал двери'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-indesit-tia-16-g_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Indesit TIA 16 G'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-indesit-tia-16-g_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Indesit TIA 16 G'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-indesit-tia-16-g_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Indesit TIA 16 G'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-indesit-tia-16-g_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Indesit TIA 16 G'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-indesit-tia-16-g_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Indesit TIA 16 G'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-indesit-tia-16-g_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Indesit TIA 16 G'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-indesit-tia-16-g_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Indesit TIA 16 G'));

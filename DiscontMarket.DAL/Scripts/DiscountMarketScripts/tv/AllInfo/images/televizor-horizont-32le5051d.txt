@@ -1,0 +1,25 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-horizont-32le5051d_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Horizont 32LE5051D'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-horizont-32le5051d_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Horizont 32LE5051D'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-horizont-32le5051d_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Horizont 32LE5051D'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-horizont-32le5051d_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Horizont 32LE5051D'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-horizont-32le5051d_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Horizont 32LE5051D'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-horizont-32le5051d_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Horizont 32LE5051D'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-horizont-32le5051d_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Horizont 32LE5051D'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-horizont-32le5051d_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Horizont 32LE5051D'));

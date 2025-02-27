@@ -1,0 +1,81 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Винный шкаф до 140 см Libhof Amateur AFD-21', 19495, 12, '/items/productimages/vinnyi-shkaf-do-140-sm-libhof-amateur-afd-21_0.png', 4.59, '', 'Libhof AFD-21 — винный холодильник с габаритами 34 х 82 х 51 см. Функционирует по принципу термоэлектрики и вмещает до 21 бутылки стандартного объема 750 мл. Присутствует две температурных зоны с общим объемом 60 л и возможностью температурной регулировки от +7 до +18°. Настройки отображает цифровой дисплей. Шкаф с классом энергоэффективности B, низким уровнем шума 41 дБ. Присутствие особого покрытия на стеклянной дверце дает защиту емкостям от солнца и ультрафиолета. Полностью отсутствует вибрирующий эффект. Внутри напитки располагаются на буковых полках, которые не реагируют на воздействие влаги.', 'InStock', 'Discount', 3, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Libhof'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Винный шкаф до 140 см Libhof Amateur AFD-21'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Винный шкаф до 140 см Libhof Amateur AFD-21' 
+        AND a."Name" = 'отсутствует' 
+        AND a."Type" = 'Тип компрессора'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Винный шкаф до 140 см Libhof Amateur AFD-21' 
+        AND a."Name" = '21' 
+        AND a."Type" = 'Максимальное количество бутылок'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Винный шкаф до 140 см Libhof Amateur AFD-21' 
+        AND a."Name" = '60' 
+        AND a."Type" = 'Общий объем'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Винный шкаф до 140 см Libhof Amateur AFD-21' 
+        AND a."Name" = '7' 
+        AND a."Type" = 'Количество полок'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Винный шкаф до 140 см Libhof Amateur AFD-21' 
+        AND a."Name" = 'термоэлектрический' 
+        AND a."Type" = 'Тип охлаждения'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vinnyi-shkaf-do-140-sm-libhof-amateur-afd-21_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Винный шкаф до 140 см Libhof Amateur AFD-21'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vinnyi-shkaf-do-140-sm-libhof-amateur-afd-21_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Винный шкаф до 140 см Libhof Amateur AFD-21'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vinnyi-shkaf-do-140-sm-libhof-amateur-afd-21_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Винный шкаф до 140 см Libhof Amateur AFD-21'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vinnyi-shkaf-do-140-sm-libhof-amateur-afd-21_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Винный шкаф до 140 см Libhof Amateur AFD-21'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vinnyi-shkaf-do-140-sm-libhof-amateur-afd-21_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Винный шкаф до 140 см Libhof Amateur AFD-21'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vinnyi-shkaf-do-140-sm-libhof-amateur-afd-21_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Винный шкаф до 140 см Libhof Amateur AFD-21'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vinnyi-shkaf-do-140-sm-libhof-amateur-afd-21_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Винный шкаф до 140 см Libhof Amateur AFD-21'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vinnyi-shkaf-do-140-sm-libhof-amateur-afd-21_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Винный шкаф до 140 см Libhof Amateur AFD-21'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vinnyi-shkaf-do-140-sm-libhof-amateur-afd-21_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Винный шкаф до 140 см Libhof Amateur AFD-21'));

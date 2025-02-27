@@ -1,0 +1,13 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-carrera--823_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Carrera №823'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-carrera--823_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Carrera №823'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-carrera--823_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Carrera №823'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-carrera--823_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Carrera №823'));

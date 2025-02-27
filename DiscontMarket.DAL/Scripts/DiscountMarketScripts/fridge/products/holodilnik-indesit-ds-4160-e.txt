@@ -1,0 +1,90 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Холодильник Indesit DS 4160 E', 16045, 17, '/items/productimages/holodilnik-indesit-ds-4160-e_0.png', 4.51, '', '', 'InStock', 'Discount', 3, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Indesit'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Холодильник Indesit DS 4160 E'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Indesit DS 4160 E' 
+        AND a."Name" = 'стандартный' 
+        AND a."Type" = 'Тип компрессора'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Indesit DS 4160 E' 
+        AND a."Name" = '167' 
+        AND a."Type" = 'Высота'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Indesit DS 4160 E' 
+        AND a."Name" = '60' 
+        AND a."Type" = 'Ширина'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Indesit DS 4160 E' 
+        AND a."Name" = '64' 
+        AND a."Type" = 'Глубина'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Indesit DS 4160 E' 
+        AND a."Name" = '291' 
+        AND a."Type" = 'Общий объем'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-indesit-ds-4160-e_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Indesit DS 4160 E'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-indesit-ds-4160-e_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Indesit DS 4160 E'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-indesit-ds-4160-e_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Indesit DS 4160 E'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-indesit-ds-4160-e_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Indesit DS 4160 E'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-indesit-ds-4160-e_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Indesit DS 4160 E'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-indesit-ds-4160-e_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Indesit DS 4160 E'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-indesit-ds-4160-e_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Indesit DS 4160 E'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-indesit-ds-4160-e_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Indesit DS 4160 E'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-indesit-ds-4160-e_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Indesit DS 4160 E'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-indesit-ds-4160-e_9.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Indesit DS 4160 E'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-indesit-ds-4160-e_10.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Indesit DS 4160 E'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-indesit-ds-4160-e_11.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Indesit DS 4160 E'));

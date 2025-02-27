@@ -1,0 +1,25 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-haier-55-smart-tv-s3_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Haier 55 Smart TV S3'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-haier-55-smart-tv-s3_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Haier 55 Smart TV S3'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-haier-55-smart-tv-s3_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Haier 55 Smart TV S3'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-haier-55-smart-tv-s3_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Haier 55 Smart TV S3'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-haier-55-smart-tv-s3_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Haier 55 Smart TV S3'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-haier-55-smart-tv-s3_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Haier 55 Smart TV S3'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-haier-55-smart-tv-s3_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Haier 55 Smart TV S3'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-haier-55-smart-tv-s3_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Haier 55 Smart TV S3'));

@@ -1,0 +1,19 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-hiberg-hiberg-i-ddq9---712-g_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Hiberg HIBERG i-DDQ9 - 712 G'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-hiberg-hiberg-i-ddq9---712-g_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Hiberg HIBERG i-DDQ9 - 712 G'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-hiberg-hiberg-i-ddq9---712-g_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Hiberg HIBERG i-DDQ9 - 712 G'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-hiberg-hiberg-i-ddq9---712-g_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Hiberg HIBERG i-DDQ9 - 712 G'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-hiberg-hiberg-i-ddq9---712-g_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Hiberg HIBERG i-DDQ9 - 712 G'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-hiberg-hiberg-i-ddq9---712-g_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Hiberg HIBERG i-DDQ9 - 712 G'));

@@ -1,0 +1,46 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-delonghi-julia-l-724-vi-white_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина DeLonghi JULIA L 724 VI White'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-delonghi-julia-l-724-vi-white_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина DeLonghi JULIA L 724 VI White'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-delonghi-julia-l-724-vi-white_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина DeLonghi JULIA L 724 VI White'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-delonghi-julia-l-724-vi-white_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина DeLonghi JULIA L 724 VI White'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-delonghi-julia-l-724-vi-white_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина DeLonghi JULIA L 724 VI White'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-delonghi-julia-l-724-vi-white_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина DeLonghi JULIA L 724 VI White'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-delonghi-julia-l-724-vi-white_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина DeLonghi JULIA L 724 VI White'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-delonghi-julia-l-724-vi-white_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина DeLonghi JULIA L 724 VI White'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-delonghi-julia-l-724-vi-white_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина DeLonghi JULIA L 724 VI White'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-delonghi-julia-l-724-vi-white_9.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина DeLonghi JULIA L 724 VI White'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-delonghi-julia-l-724-vi-white_10.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина DeLonghi JULIA L 724 VI White'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-delonghi-julia-l-724-vi-white_11.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина DeLonghi JULIA L 724 VI White'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-delonghi-julia-l-724-vi-white_12.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина DeLonghi JULIA L 724 VI White'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-delonghi-julia-l-724-vi-white_13.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина DeLonghi JULIA L 724 VI White'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-delonghi-julia-l-724-vi-white_14.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина DeLonghi JULIA L 724 VI White'));

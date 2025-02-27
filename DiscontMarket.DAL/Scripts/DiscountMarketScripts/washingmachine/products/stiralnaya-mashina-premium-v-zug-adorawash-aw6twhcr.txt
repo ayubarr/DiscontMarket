@@ -1,0 +1,66 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Стиральная машина Премиум V-Zug AdoraWash AW6TWHCR', 359999, 13, '/items/productimages/stiralnaya-mashina-premium-v-zug-adorawash-aw6twhcr_0.png', 4.3, '', 'V-Zug AdoraWash AW6TWHCR – стиральная машина премиум-класса. Она обеспечивает превосходные результаты стирки, а функция разглаживания паром позволяет справиться со складками и обойтись без утюга.
+
+СОВРЕМЕННЫЕ ТЕХНОЛОГИИ
+В этой модели используется инверторный мотор. Он работает с низким уровнем шума, долго служит владельцу и экономно потребляет электроэнергию, точно поддерживая заданные настройки.
+
+ПРОСТОЕ УПРАВЛЕНИЕ
+Сенсорный дисплей с русифицированным меню позволяет легко выбрать нужную программу. Найдётся решение для верхней одежды, нижнего белья, пуховиков, одеял и пледов и многих других вещей. Достаточно простого прикосновения, чтобы установить подходящие параметры. 
+
+ПРОДУМАНО ДО МЕЛОЧЕЙ
+По завершении стирки люк откроется автоматически. Благодаря подсветке вы не забудете в барабане ни одной вещи. Система уменьшения вибрации VAS сводит шум во время работы к минимуму и увеличивает срок устройства.', 'InStock', 'Discount', 5, (SELECT "ID" FROM "Brands" WHERE "Name" = 'V-Zug'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Стиральная машина Премиум V-Zug AdoraWash AW6TWHCR'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина Премиум V-Zug AdoraWash AW6TWHCR' 
+        AND a."Name" = '8' 
+        AND a."Type" = 'Максимальная загрузка'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина Премиум V-Zug AdoraWash AW6TWHCR' 
+        AND a."Name" = '1400' 
+        AND a."Type" = 'Максимальная скорость отжима'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина Премиум V-Zug AdoraWash AW6TWHCR' 
+        AND a."Name" = 'инверторный' 
+        AND a."Type" = 'Мотор'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина Премиум V-Zug AdoraWash AW6TWHCR' 
+        AND a."Name" = 'Да' 
+        AND a."Type" = 'Обработка паром'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина Премиум V-Zug AdoraWash AW6TWHCR' 
+        AND a."Name" = '85*59.5*62.5 см' 
+        AND a."Type" = 'Габаритные размеры (В*Ш*Г)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-premium-v-zug-adorawash-aw6twhcr_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Премиум V-Zug AdoraWash AW6TWHCR'));

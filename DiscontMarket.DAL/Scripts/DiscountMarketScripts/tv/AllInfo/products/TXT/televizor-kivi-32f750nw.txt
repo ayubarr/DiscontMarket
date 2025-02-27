@@ -1,0 +1,53 @@
+﻿INSERT INTO "Products" 
+("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription",
+"Availability", "Status", "CategoryID", "BrandID", "UserID") 
+VALUES
+ ('Телевизор Kivi 32F750NW', 11995, 7, '/items/productimages/televizor-kivi-32f750nw_0.png', 4.26, '', 'Телевизор Kivi 32F750NW — устройство с 32-дюймовым экраном с технологией FSA. Формат — 16:9, разрешение — 1920х1080 пикселей. Частота обновления достигает 60 Гц, благодаря чему смена изображений в динамичных сценах осуществляется максимально плавно. Чтобы картинка была чище, предусмотрена система цифрового шумоподавления. <br>Поддержка Smart TV дает возможность смотреть фильмы, сериалы и телепередачи онлайн, слушать музыку, читать новости и многое другое. Тип операционной системы — Android 11. Эта ОС характеризуется интуитивно понятным интерфейсом и простыми настройками, которые легко изменять. Управление возможно с помощью голосового помощника. Потребляемая мощность устройства — не более 33 Вт.<br>Для звукового сопровождения видео-контента используется встроенная аудиосистема из двух динамиков по 8 Вт каждый. Поддержка Wi-Fi обеспечивает подключение к интернету беспроводным способом. Сопряжение с различными девайсами производится через модуль Bluetooth. Поддерживается воспроизведение файлов с внешних USB-накопителей. <br>Входы HDMI (три) дают возможность подключить к ТВ игровую приставку или ноутбук для вывода изображения на большой экран. Разъем 3,5 мм служит для подключения наушников. Кроме того, набор интерфейсов включает два USB 2.0 типа А, разъем для модуля DVB CAM и LAN (RJ45). Габаритные размеры без подставки (входит в комплект) — 42,5х72х6,4 см, вес — 4,2 кг.', 'InStock', 'Discount', 1, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Kivi'), 1);
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Kivi 32F750NW'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'Full HD (1920x1080 Пикс)' AND "Type" = 'Экран));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Kivi 32F750NW'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '32' AND "Type" = 'Диагональ));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Kivi 32F750NW'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '60' AND "Type" = 'Частота обновления));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Kivi 32F750NW'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'LED' AND "Type" = 'Технология экрана));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Kivi 32F750NW'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'Direct LED' AND "Type" = 'Тип светодиодной подсветки));
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-kivi-32f750nw_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Kivi 32F750NW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-kivi-32f750nw_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Kivi 32F750NW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-kivi-32f750nw_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Kivi 32F750NW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-kivi-32f750nw_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Kivi 32F750NW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-kivi-32f750nw_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Kivi 32F750NW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-kivi-32f750nw_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Kivi 32F750NW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-kivi-32f750nw_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Kivi 32F750NW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-kivi-32f750nw_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Kivi 32F750NW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-kivi-32f750nw_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Kivi 32F750NW'));

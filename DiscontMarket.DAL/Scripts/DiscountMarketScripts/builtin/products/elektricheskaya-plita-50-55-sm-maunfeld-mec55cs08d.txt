@@ -1,0 +1,81 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Электрическая плита (50-55 см) Maunfeld MEC55CS08D', 29745, 5, '/items/productimages/elektricheskaya-plita-50-55-sm-maunfeld-mec55cs08d_0.png', 4.2, '', 'Электрическая плита (50-55 см) Maunfeld MEC55CS08D цвета «нержавеющая сталь» отличается простым управлением благодаря поворотным регуляторам и интегрированному цифровому экрану. Система индикации информирует о запуске, выбранных параметрах, остаточном тепле и времени. Звуковой сигнал оповещает о завершении программы.
+
+Модель с классом энергоэффективности А потребляет 8350 Вт. Варочная поверхность из стеклокерамики оснащена четырьмя Hi-Light конфорками диаметром 14,5 см и 18 см, которые рассчитаны на 1,2 кВт и 1,8 кВт. Удобство эксплуатации достигается наличием таймера, автоматики закипания и подогрева посуды.
+
+Духовой шкаф со встроенным LED-освещением оснащен электромеханическим вертелом. Мощность гриля равна 1600 Вт. Доступно три режима, включая конвекцию, быстрый нагрев и поддержание температуры в пределах 250°C. Металлические направляющие позволяют разместить плоский противень и решетку.
+
+Камера объемом 60 л с эмалированными стенкам легко очищается путем гидролиза. Дверца изготовлена из трехслойного жаропрочного стекла. В нижнем выдвижном ящике можно хранить посуду. Прибор с воздушным охлаждением корпуса весит 37,4 кг. Изделие размером 85х63х50 см дополнено ножками, которые можно настраивать по высоте, компенсируя неровности пола.', 'InStock', 'Discount', 4, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Maunfeld'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Электрическая плита (50-55 см) Maunfeld MEC55CS08D'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Электрическая плита (50-55 см) Maunfeld MEC55CS08D' 
+        AND a."Name" = '60' 
+        AND a."Type" = 'Объем духовки'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Электрическая плита (50-55 см) Maunfeld MEC55CS08D' 
+        AND a."Name" = '3' 
+        AND a."Type" = 'Режимы работы духовки'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Электрическая плита (50-55 см) Maunfeld MEC55CS08D' 
+        AND a."Name" = 'Да' 
+        AND a."Type" = 'Конвекция'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Электрическая плита (50-55 см) Maunfeld MEC55CS08D' 
+        AND a."Name" = 'Hi-Light' 
+        AND a."Type" = 'Тип конфорок'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Электрическая плита (50-55 см) Maunfeld MEC55CS08D' 
+        AND a."Name" = 'Да' 
+        AND a."Type" = 'Индикация текущей температуры'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/elektricheskaya-plita-50-55-sm-maunfeld-mec55cs08d_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Электрическая плита (50-55 см) Maunfeld MEC55CS08D'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/elektricheskaya-plita-50-55-sm-maunfeld-mec55cs08d_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Электрическая плита (50-55 см) Maunfeld MEC55CS08D'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/elektricheskaya-plita-50-55-sm-maunfeld-mec55cs08d_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Электрическая плита (50-55 см) Maunfeld MEC55CS08D'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/elektricheskaya-plita-50-55-sm-maunfeld-mec55cs08d_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Электрическая плита (50-55 см) Maunfeld MEC55CS08D'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/elektricheskaya-plita-50-55-sm-maunfeld-mec55cs08d_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Электрическая плита (50-55 см) Maunfeld MEC55CS08D'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/elektricheskaya-plita-50-55-sm-maunfeld-mec55cs08d_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Электрическая плита (50-55 см) Maunfeld MEC55CS08D'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/elektricheskaya-plita-50-55-sm-maunfeld-mec55cs08d_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Электрическая плита (50-55 см) Maunfeld MEC55CS08D'));

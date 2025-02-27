@@ -1,0 +1,74 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Холодильник Schaub Lorenz SLU S305GE', 43995, 11, '/items/productimages/holodilnik-schaub-lorenz-slu-s305ge_0.png', 4.24, '', 'Отдельностоящий холодильник однодверный Schaub Lorenz SLU S305GE годовым энергопотреблением 169 кВт*ч (класс А+) работает на базе стандартного компрессора. Прибор оснащен правой перенавешиваемой дверцей с системой открывания на 90° Zero Clearance. Уровень шума во время его функционирования может достигать 41 дБ. Внешний электронный блок с LED дисплеем позволяет настраивать рабочие параметры устройства. Встроенная система ионизации ION Tech продлевает срок хранения продуктов. 
+Камера прибора объемом 380 л покрыта антибактериальным материалом, который предупреждает образование плесени, появление посторонних запахов, порчу продуктов. Предусмотрены пять основных регулируемых по высоте полок из закаленного стекла, хромированная винная полка, контейнер в зоне свежести, лоток для овощей и фруктов с регулировкой влажности Humidity Control, пять боковых полок. Светодиодная подсветка обеспечивает хороший обзор всех уровней. 
+Прибор поддерживает режимы «Суперохлаждение», «Отпуск». Система No Frost способствует равномерному охлаждению всех уровней, предупреждает образование наледи на внутренних стенках и продуктах, обеспечивает автоматическое оттаивание.', 'InStock', 'Discount', 3, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Schaub Lorenz'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Холодильник Schaub Lorenz SLU S305GE'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Schaub Lorenz SLU S305GE' 
+        AND a."Name" = 'стандартный' 
+        AND a."Type" = 'Тип компрессора'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Schaub Lorenz SLU S305GE' 
+        AND a."Name" = '186*59*65 см' 
+        AND a."Type" = 'Габаритные размеры (В*Ш*Г)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Schaub Lorenz SLU S305GE' 
+        AND a."Name" = 'отпуск, суперохлаждения' 
+        AND a."Type" = 'Режимы работы'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Schaub Lorenz SLU S305GE' 
+        AND a."Name" = '380' 
+        AND a."Type" = 'Общий объем'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Schaub Lorenz SLU S305GE' 
+        AND a."Name" = 'A+' 
+        AND a."Type" = 'Класс энергоэффективности'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-schaub-lorenz-slu-s305ge_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Schaub Lorenz SLU S305GE'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-schaub-lorenz-slu-s305ge_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Schaub Lorenz SLU S305GE'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-schaub-lorenz-slu-s305ge_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Schaub Lorenz SLU S305GE'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-schaub-lorenz-slu-s305ge_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Schaub Lorenz SLU S305GE'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-schaub-lorenz-slu-s305ge_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Schaub Lorenz SLU S305GE'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-schaub-lorenz-slu-s305ge_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Schaub Lorenz SLU S305GE'));

@@ -1,0 +1,22 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-thomson-t55usm7030_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Thomson T55USM7030'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-thomson-t55usm7030_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Thomson T55USM7030'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-thomson-t55usm7030_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Thomson T55USM7030'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-thomson-t55usm7030_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Thomson T55USM7030'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-thomson-t55usm7030_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Thomson T55USM7030'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-thomson-t55usm7030_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Thomson T55USM7030'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-thomson-t55usm7030_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Thomson T55USM7030'));

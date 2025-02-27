@@ -1,0 +1,19 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnyi-lar-haier-hce150r-belyi_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильный ларь Haier HCE150R белый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnyi-lar-haier-hce150r-belyi_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильный ларь Haier HCE150R белый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnyi-lar-haier-hce150r-belyi_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильный ларь Haier HCE150R белый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnyi-lar-haier-hce150r-belyi_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильный ларь Haier HCE150R белый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnyi-lar-haier-hce150r-belyi_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильный ларь Haier HCE150R белый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnyi-lar-haier-hce150r-belyi_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильный ларь Haier HCE150R белый'));

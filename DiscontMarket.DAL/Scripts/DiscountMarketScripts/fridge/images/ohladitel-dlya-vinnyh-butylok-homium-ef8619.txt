@@ -1,0 +1,19 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/ohladitel-dlya-vinnyh-butylok-homium-ef8619_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Охладитель для винных бутылок HOMIUM EF8619'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/ohladitel-dlya-vinnyh-butylok-homium-ef8619_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Охладитель для винных бутылок HOMIUM EF8619'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/ohladitel-dlya-vinnyh-butylok-homium-ef8619_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Охладитель для винных бутылок HOMIUM EF8619'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/ohladitel-dlya-vinnyh-butylok-homium-ef8619_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Охладитель для винных бутылок HOMIUM EF8619'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/ohladitel-dlya-vinnyh-butylok-homium-ef8619_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Охладитель для винных бутылок HOMIUM EF8619'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/ohladitel-dlya-vinnyh-butylok-homium-ef8619_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Охладитель для винных бутылок HOMIUM EF8619'));

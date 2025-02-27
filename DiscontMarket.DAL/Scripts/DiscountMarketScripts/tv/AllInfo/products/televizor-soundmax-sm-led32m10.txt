@@ -1,0 +1,47 @@
+﻿INSERT INTO "Products" 
+("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription",
+"Availability", "Status", "CategoryID", "BrandID", "UserID") 
+VALUES
+ ('Телевизор Soundmax SM-LED32M10', 5749, 16, '/items/productimages/televizor-soundmax-sm-led32m10_0.png', 4.69, '', 'Черный телевизор Soundmax SM-LED32M10 оснащен Sleep-таймером, позволяющим выставлять время отключения. В комплектацию входит настольная подставка. Способ управления — дистанционный, с помощью пульта. Диагональ экрана составляет 31,5 дюйма (80 см). Частота обновления кадра — 60 Гц. Габариты изделия с подставкой — 48,1х20,1х72,8 см. Вес модели — 4,2 кг. Мощность прибора — 40 Вт. Функция TimeShift позволит ставить программы на паузу и просматривать пропущенные куски в режиме реального времени. Возможна запись с ТВ на устройство.', 'InStock', 'Discount', 1, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Soundmax'), 1);
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Soundmax SM-LED32M10'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'HD (1366x768 Пикс)' AND "Type" = 'Экран));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Soundmax SM-LED32M10'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '32' AND "Type" = 'Диагональ));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Soundmax SM-LED32M10'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '60' AND "Type" = 'Частота обновления));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Soundmax SM-LED32M10'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'LED' AND "Type" = 'Технология экрана));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Soundmax SM-LED32M10'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'Direct LED' AND "Type" = 'Тип светодиодной подсветки));
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-soundmax-sm-led32m10_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Soundmax SM-LED32M10'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-soundmax-sm-led32m10_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Soundmax SM-LED32M10'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-soundmax-sm-led32m10_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Soundmax SM-LED32M10'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-soundmax-sm-led32m10_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Soundmax SM-LED32M10'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-soundmax-sm-led32m10_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Soundmax SM-LED32M10'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-soundmax-sm-led32m10_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Soundmax SM-LED32M10'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-soundmax-sm-led32m10_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Soundmax SM-LED32M10'));

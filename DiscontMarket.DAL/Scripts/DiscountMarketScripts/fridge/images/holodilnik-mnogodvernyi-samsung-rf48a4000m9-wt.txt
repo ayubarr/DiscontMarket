@@ -1,0 +1,16 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-samsung-rf48a4000m9-wt_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Samsung RF48A4000M9/WT'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-samsung-rf48a4000m9-wt_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Samsung RF48A4000M9/WT'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-samsung-rf48a4000m9-wt_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Samsung RF48A4000M9/WT'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-samsung-rf48a4000m9-wt_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Samsung RF48A4000M9/WT'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-samsung-rf48a4000m9-wt_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Samsung RF48A4000M9/WT'));

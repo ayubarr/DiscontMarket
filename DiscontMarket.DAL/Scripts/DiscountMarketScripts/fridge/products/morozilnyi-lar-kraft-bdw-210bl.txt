@@ -1,0 +1,63 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Морозильный ларь Kraft BD(W)-210BL', 12349, 7, '/items/productimages/morozilnyi-lar-kraft-bdw-210bl_0.png', 4.58, '', 'Морозильный ларь Kraft BD(W)-210BL, белый обладает общим объемом 225 л, комплектуется одной подвесной корзиной. В сутки можно заморозить до 9 кг продуктов. Прибор эффективно работает при температуре окружающей среды от 10°С до 43°С, климатический класс — SN/N/ST/T. 
+Энергопотребление соответствует классу A+ — в год расходуется 250 кВт*ч. Компрессор один, уровень шума при работе не превышает 41 дБ. Система охлаждения заправлена современным хладагентом R600A, обладающим высоким холодильным коэффициентом и безопасным для озонового слоя. Термоизоляция циклопентановая. При отключении электроэнергии морозильный ларь сохраняет низкую температуру до 21 часа. 
+Управление сенсорное, панель с цифровым дисплеем расположена в нижней части корпуса. Эта модель может работать как морозильная камера (от -12°C до -24°C) или как холодильная (от 0°C до +10°C). Доступен режим «Суперзаморозка», при его активации температура в камере опускается до -30°C, что позволяет сохранить естественную структуру продуктов и быстро подготовить их к длительному хранению. 
+Размораживание ларя производится вручную. Дверца откидная, открывается вверх. Потребляемая мощность прибора составляет 150 Вт. Габариты морозильного ларя: 81,6х55х85 см, вес — 27,8 кг.', 'InStock', 'Discount', 3, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Kraft'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Морозильный ларь Kraft BD(W)-210BL'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Морозильный ларь Kraft BD(W)-210BL' 
+        AND a."Name" = 'стандартный' 
+        AND a."Type" = 'Тип компрессора'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Морозильный ларь Kraft BD(W)-210BL' 
+        AND a."Name" = '85*81.6*55 см' 
+        AND a."Type" = 'Габаритные размеры (В*Ш*Г)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Морозильный ларь Kraft BD(W)-210BL' 
+        AND a."Name" = 'A+' 
+        AND a."Type" = 'Класс энергоэффективности'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Морозильный ларь Kraft BD(W)-210BL' 
+        AND a."Name" = 'Да' 
+        AND a."Type" = 'Режим суперзамораживания'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Морозильный ларь Kraft BD(W)-210BL' 
+        AND a."Name" = 'сенсорная панель' 
+        AND a."Type" = 'Тип управления'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnyi-lar-kraft-bdw-210bl_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильный ларь Kraft BD(W)-210BL'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnyi-lar-kraft-bdw-210bl_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильный ларь Kraft BD(W)-210BL'));

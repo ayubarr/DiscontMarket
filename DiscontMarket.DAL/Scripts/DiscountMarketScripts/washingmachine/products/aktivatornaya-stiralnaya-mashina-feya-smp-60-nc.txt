@@ -1,0 +1,99 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Активаторная стиральная машина Фея СМП 60 НC', 6495, 10, '/items/productimages/aktivatornaya-stiralnaya-mashina-feya-smp-60-nc_0.png', 4.18, '', 'Активаторная стиральная машина «Фея» СМП 60 НC — модель с вертикальная загрузкой, в которую помещается до 6 кг белья. Доступны три режима — обычная и бережная стирка, слив. Для управления используются поворотные переключатели. Предусмотрен таймер, позволяющий настроить продолжительность работы до 15 минут. Модель подключается к холодному и горячему водоснабжению. Корпус сделан из пластика, дополнен ручками для переноски. Соединение с розеткой обеспечивает сетевой шнур длиной 1,4 м. Размеры — 77,5х68х42 см, вес — 15 кг.', 'InStock', 'Discount', 5, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Фея'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Активаторная стиральная машина Фея СМП 60 НC'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Активаторная стиральная машина Фея СМП 60 НC' 
+        AND a."Name" = '6' 
+        AND a."Type" = 'Максимальная загрузка'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Активаторная стиральная машина Фея СМП 60 НC' 
+        AND a."Name" = 'Да' 
+        AND a."Type" = 'Подключение к горячей воде (60*С)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Активаторная стиральная машина Фея СМП 60 НC' 
+        AND a."Name" = 'до 15 минут' 
+        AND a."Type" = 'Таймер продолжительности работы'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Активаторная стиральная машина Фея СМП 60 НC' 
+        AND a."Name" = 'вертикальная' 
+        AND a."Type" = 'Тип загрузки'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Активаторная стиральная машина Фея СМП 60 НC' 
+        AND a."Name" = 'Да' 
+        AND a."Type" = 'Подключение к холодной воде'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/aktivatornaya-stiralnaya-mashina-feya-smp-60-nc_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Активаторная стиральная машина Фея СМП 60 НC'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/aktivatornaya-stiralnaya-mashina-feya-smp-60-nc_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Активаторная стиральная машина Фея СМП 60 НC'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/aktivatornaya-stiralnaya-mashina-feya-smp-60-nc_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Активаторная стиральная машина Фея СМП 60 НC'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/aktivatornaya-stiralnaya-mashina-feya-smp-60-nc_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Активаторная стиральная машина Фея СМП 60 НC'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/aktivatornaya-stiralnaya-mashina-feya-smp-60-nc_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Активаторная стиральная машина Фея СМП 60 НC'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/aktivatornaya-stiralnaya-mashina-feya-smp-60-nc_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Активаторная стиральная машина Фея СМП 60 НC'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/aktivatornaya-stiralnaya-mashina-feya-smp-60-nc_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Активаторная стиральная машина Фея СМП 60 НC'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/aktivatornaya-stiralnaya-mashina-feya-smp-60-nc_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Активаторная стиральная машина Фея СМП 60 НC'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/aktivatornaya-stiralnaya-mashina-feya-smp-60-nc_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Активаторная стиральная машина Фея СМП 60 НC'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/aktivatornaya-stiralnaya-mashina-feya-smp-60-nc_9.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Активаторная стиральная машина Фея СМП 60 НC'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/aktivatornaya-stiralnaya-mashina-feya-smp-60-nc_10.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Активаторная стиральная машина Фея СМП 60 НC'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/aktivatornaya-stiralnaya-mashina-feya-smp-60-nc_11.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Активаторная стиральная машина Фея СМП 60 НC'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/aktivatornaya-stiralnaya-mashina-feya-smp-60-nc_12.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Активаторная стиральная машина Фея СМП 60 НC'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/aktivatornaya-stiralnaya-mashina-feya-smp-60-nc_13.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Активаторная стиральная машина Фея СМП 60 НC'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/aktivatornaya-stiralnaya-mashina-feya-smp-60-nc_14.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Активаторная стиральная машина Фея СМП 60 НC'));

@@ -1,0 +1,78 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Холодильник многодверный Haier HB25FSSAAARU', 179999, 17, '/items/productimages/holodilnik-mnogodvernyi-haier-hb25fssaaaru_0.png', 4.56, '', 'Холодильник Haier HB25FSSAAARU позволяет хранить очень большое количество продуктов, а также обеспечивает удобный доступ к ним благодаря применению выдвижных тележек в морозилке и универсальной камере. Несмотря на немалый внутренний объём, он может обходиться минимальными затратами электроэнергии благодаря применению инверторного компрессора. 
+
+РАСШИРЕННЫЕ ВОЗМОЖНОСТИ
+В средней части устройства расположено отделение с возможностью регулировки температуры. В нём можно подвергать продукты лёгкой заморозке, а также хранить мясо, рыбу, овощи и зелень, не допуская их порчи. Встроенный генератор льда позволяет получать аккуратные кубики для коктейлей и охлаждённых напитков в течение минимального времени. 
+
+ПОЛНАЯ БЕЗОПАСНОСТЬ ПРОДУКТОВ
+Внутренние стенки камер покрыты специальным антибактериальным материалом. Он не допускает размножения вредоносных микроорганизмов, вызывающих опасные заболевания человека и становящихся причиной быстрой порчи продуктов.
+
+ВЫСОКИЕ ТЕХНОЛОГИИ
+Внутренние LED-лампы эффективно освещают каждую полку, не создавая ярких бликов и не выделяя много тепла. Наружный сенсорный дисплей обеспечивает простую установку параметров без существенных энергопотерь.', 'InStock', 'Discount', 3, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Haier'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Haier HB25FSSAAARU'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник многодверный Haier HB25FSSAAARU' 
+        AND a."Name" = 'инверторный' 
+        AND a."Type" = 'Тип компрессора'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник многодверный Haier HB25FSSAAARU' 
+        AND a."Name" = '190*100.5*76 см' 
+        AND a."Type" = 'Габаритные размеры (В*Ш*Г)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник многодверный Haier HB25FSSAAARU' 
+        AND a."Name" = '685' 
+        AND a."Type" = 'Общий объем'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник многодверный Haier HB25FSSAAARU' 
+        AND a."Name" = 'сухая' 
+        AND a."Type" = 'Тип зоны сохранения свежести'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник многодверный Haier HB25FSSAAARU' 
+        AND a."Name" = 'электронный' 
+        AND a."Type" = 'Тип управления'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-haier-hb25fssaaaru_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Haier HB25FSSAAARU'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-haier-hb25fssaaaru_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Haier HB25FSSAAARU'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-haier-hb25fssaaaru_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Haier HB25FSSAAARU'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-haier-hb25fssaaaru_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Haier HB25FSSAAARU'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-haier-hb25fssaaaru_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Haier HB25FSSAAARU'));

@@ -1,0 +1,28 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-kivi-k32hd60b_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Kivi K32HD60B'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-kivi-k32hd60b_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Kivi K32HD60B'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-kivi-k32hd60b_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Kivi K32HD60B'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-kivi-k32hd60b_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Kivi K32HD60B'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-kivi-k32hd60b_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Kivi K32HD60B'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-kivi-k32hd60b_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Kivi K32HD60B'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-kivi-k32hd60b_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Kivi K32HD60B'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-kivi-k32hd60b_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Kivi K32HD60B'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-kivi-k32hd60b_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Kivi K32HD60B'));

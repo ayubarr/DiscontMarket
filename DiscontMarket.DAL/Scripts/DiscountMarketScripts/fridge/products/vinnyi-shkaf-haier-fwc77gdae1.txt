@@ -1,0 +1,78 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Винный шкаф Haier FWC77GDAE1', 52999, 16, '/items/productimages/vinnyi-shkaf-haier-fwc77gdae1_0.png', 4.59, '', 'Винный шкаф Haier FWC77GDAE1, черный, обладает общим объемом 190 л и вмещает до 77 бутылок. Температурных зон две, в каждой можно установить температуру в диапазоне от +5° до +20°С. Влажность поддерживается на уровне 50-70%. Это дает возможность хранить вина разных сортов в оптимальных условиях. Вентилятор равномерно распределяет воздух. 
+
+Управление производится при помощи сенсорной панели, встроенный дисплей отображает актуальные параметры. Также можно использовать смартфон и приложение evo — поддерживается Wi-Fi. Многоточечное светодиодное освещение 3D Light равномерно освещает внутреннее пространство и не влияет на микроклимат, так как во время работы LED-элементы не нагреваются. Воздух очищает угольный фильтр, препятствующий появлению неприятного запаха.
+
+Оснащение состоит из семи полок, выполненный из дерева — бука. Натуральный материал способствует уменьшению вибрации, на это же работает и особый защищенный компрессор. Уровень шума не превышает 37 дБ. В системе используется современный хладагент R600A. Дверца защищает содержимое от UV-лучей. При необходимости ее можно перенавесить для изменения направления открывания. Предусмотрен замок от детей. 
+
+Энергопотребление прибора соответствует классу А и составляет 152 кВт/ч в год. Климатический класс — SN-N-ST. Габариты винного шкафа: 127x49,7х58,5, вес — 53,5 кг.', 'InStock', 'Discount', 3, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Haier'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Винный шкаф Haier FWC77GDAE1'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Винный шкаф Haier FWC77GDAE1' 
+        AND a."Name" = 'с пониженной выбрацией' 
+        AND a."Type" = 'Тип компрессора'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Винный шкаф Haier FWC77GDAE1' 
+        AND a."Name" = '77' 
+        AND a."Type" = 'Максимальное количество бутылок'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Винный шкаф Haier FWC77GDAE1' 
+        AND a."Name" = '190' 
+        AND a."Type" = 'Общий объем'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Винный шкаф Haier FWC77GDAE1' 
+        AND a."Name" = '8' 
+        AND a."Type" = 'Количество полок'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Винный шкаф Haier FWC77GDAE1' 
+        AND a."Name" = 'компрессорный' 
+        AND a."Type" = 'Тип охлаждения'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vinnyi-shkaf-haier-fwc77gdae1_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Винный шкаф Haier FWC77GDAE1'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vinnyi-shkaf-haier-fwc77gdae1_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Винный шкаф Haier FWC77GDAE1'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vinnyi-shkaf-haier-fwc77gdae1_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Винный шкаф Haier FWC77GDAE1'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vinnyi-shkaf-haier-fwc77gdae1_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Винный шкаф Haier FWC77GDAE1'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vinnyi-shkaf-haier-fwc77gdae1_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Винный шкаф Haier FWC77GDAE1'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vinnyi-shkaf-haier-fwc77gdae1_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Винный шкаф Haier FWC77GDAE1'));

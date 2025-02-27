@@ -1,0 +1,28 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-maunfeld-mqt65usd03_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Maunfeld MQT65USD03'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-maunfeld-mqt65usd03_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Maunfeld MQT65USD03'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-maunfeld-mqt65usd03_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Maunfeld MQT65USD03'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-maunfeld-mqt65usd03_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Maunfeld MQT65USD03'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-maunfeld-mqt65usd03_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Maunfeld MQT65USD03'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-maunfeld-mqt65usd03_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Maunfeld MQT65USD03'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-maunfeld-mqt65usd03_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Maunfeld MQT65USD03'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-maunfeld-mqt65usd03_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Maunfeld MQT65USD03'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-maunfeld-mqt65usd03_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Maunfeld MQT65USD03'));

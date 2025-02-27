@@ -1,0 +1,16 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-kraft-kf-mo-3803-kgr_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Kraft KF-MO 3803 KGR'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-kraft-kf-mo-3803-kgr_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Kraft KF-MO 3803 KGR'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-kraft-kf-mo-3803-kgr_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Kraft KF-MO 3803 KGR'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-kraft-kf-mo-3803-kgr_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Kraft KF-MO 3803 KGR'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-kraft-kf-mo-3803-kgr_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Kraft KF-MO 3803 KGR'));

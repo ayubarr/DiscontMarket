@@ -1,0 +1,22 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-indesit-tia-16-g_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Indesit TIA 16 G'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-indesit-tia-16-g_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Indesit TIA 16 G'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-indesit-tia-16-g_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Indesit TIA 16 G'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-indesit-tia-16-g_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Indesit TIA 16 G'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-indesit-tia-16-g_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Indesit TIA 16 G'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-indesit-tia-16-g_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Indesit TIA 16 G'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-indesit-tia-16-g_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Indesit TIA 16 G'));

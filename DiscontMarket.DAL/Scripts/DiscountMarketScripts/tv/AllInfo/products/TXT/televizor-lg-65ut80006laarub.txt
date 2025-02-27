@@ -1,0 +1,54 @@
+﻿INSERT INTO "Products" 
+("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription",
+"Availability", "Status", "CategoryID", "BrandID", "UserID") 
+VALUES
+ ('Телевизор LG 65UT80006LA.ARUB', 40995, 12, '/items/productimages/televizor-lg-65ut80006laarub_0.png', 4.58, '', 'Телевизор LG 65UT80006LA.ARUB — модель с габаритными размерами — 90,6х145,4х57,7 см, весом 21,7 кг, которая обладает 65-дюймовым экраном (165 см) формата 16:9. Разрешение 3840x2160 пикселей обеспечивает высокий уровень детализации, что дает возможность максимально рассмотреть любые детали в кадре. Светодиодная подсветка типа Direct LED обеспечивает высокую степень яркости, рассчитана для просмотра контента даже при лучах солнца. Частота обновления 60 Гц гарантирует плавную выдачу кадров при показе динамичных сцен. Поддержка Ultra HD увеличивает степень реалистичности картинки. Устройство осуществляет работу на базе ОС WebOS.
+
+Система Smart TV предназначена для выбора необходимого контента на онлайн-платформах. Возможно воспроизведение видео через USB. Технология «Обработка изображения» уменьшает вероятность появления недостатков в изображении. Модуль Wi-Fi предназначен для быстрого выхода в интернет. Синхронизация модели с различными устройствами производится посредством Bluetooth. Встроенные динамики (2х10 Вт) формируют объемный звук. Управление осуществляется с помощью пульта ДУ и голоса.
+
+Список доступных интерфейсов: вход HDMI (три), USB (два), для модуля DVB CAM. Показатель потребляемой мощности — 135 Вт. За безопасность отвечает опция «Защита от детей», которая блокирует случайное изменение настроек.', 'InStock', 'Discount', 1, (SELECT "ID" FROM "Brands" WHERE "Name" = 'LG'), 1);
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор LG 65UT80006LA.ARUB'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '4K Ultra HD (3840x2160 Пикс)' AND "Type" = 'Экран));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор LG 65UT80006LA.ARUB'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '65' AND "Type" = 'Диагональ));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор LG 65UT80006LA.ARUB'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '60' AND "Type" = 'Частота обновления));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор LG 65UT80006LA.ARUB'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'LED' AND "Type" = 'Технология экрана));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор LG 65UT80006LA.ARUB'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'Direct LED' AND "Type" = 'Тип светодиодной подсветки));
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-lg-65ut80006laarub_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор LG 65UT80006LA.ARUB'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-lg-65ut80006laarub_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор LG 65UT80006LA.ARUB'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-lg-65ut80006laarub_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор LG 65UT80006LA.ARUB'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-lg-65ut80006laarub_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор LG 65UT80006LA.ARUB'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-lg-65ut80006laarub_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор LG 65UT80006LA.ARUB'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-lg-65ut80006laarub_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор LG 65UT80006LA.ARUB'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-lg-65ut80006laarub_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор LG 65UT80006LA.ARUB'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-lg-65ut80006laarub_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор LG 65UT80006LA.ARUB'));

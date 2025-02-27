@@ -1,0 +1,39 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Панель для холодильника Samsung RA-B23EUU22GG', 4199, 7, '/items/productimages/panel-dlya-holodilnika-samsung-ra-b23euu22gg_0.png', 4.5, '', 'Панель для холодильника Samsung RA-B23EUU22GG предназначена для моделей серии Bespoke, которые отличаются высотой в 185 и 203 см. Материалом изготовления послужило прочное стекло, устойчивое к сколам и царапинам и сохраняющее первоначальный вид на протяжении длительного времени. Вес ― 4,8 кг. Загрязнения легко удаляются при помощи мягкой салфетки.', 'InStock', 'Discount', 3, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Samsung'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Панель для холодильника Samsung RA-B23EUU22GG'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Панель для холодильника Samsung RA-B23EUU22GG' 
+        AND a."Name" = 'стекло' 
+        AND a."Type" = 'Материал'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Панель для холодильника Samsung RA-B23EUU22GG' 
+        AND a."Name" = 'черный' 
+        AND a."Type" = 'Цвет'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Панель для холодильника Samsung RA-B23EUU22GG' 
+        AND a."Name" = 'Да' 
+        AND a."Type" = 'Верхнее'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/panel-dlya-holodilnika-samsung-ra-b23euu22gg_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Панель для холодильника Samsung RA-B23EUU22GG'));

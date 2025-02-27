@@ -1,0 +1,28 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-grundig-32-ghh-6505_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Grundig 32 GHH 6505'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-grundig-32-ghh-6505_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Grundig 32 GHH 6505'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-grundig-32-ghh-6505_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Grundig 32 GHH 6505'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-grundig-32-ghh-6505_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Grundig 32 GHH 6505'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-grundig-32-ghh-6505_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Grundig 32 GHH 6505'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-grundig-32-ghh-6505_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Grundig 32 GHH 6505'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-grundig-32-ghh-6505_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Grundig 32 GHH 6505'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-grundig-32-ghh-6505_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Grundig 32 GHH 6505'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-grundig-32-ghh-6505_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Grundig 32 GHH 6505'));

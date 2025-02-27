@@ -1,0 +1,88 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Холодильник Samsung RB50DG602ES9WT', 64999, 12, '/items/productimages/holodilnik-samsung-rb50dg602es9wt_0.png', 4.82, '', 'Холодильник Samsung RB50DG602ES9WT — широкая модель в корпусе серого цвета с нижней морозильной камерой. Общий объем устройства составляет 462 л. 
+
+• <b>Большая вместимость</b> 
+В модели реализована технология SpaceMax — за счет более тонких стенок полезный объем увеличен без потери энергоэффективности. 
+
+• <b>Система охлаждения All-Around Cooling</b> 
+Холод распространяется равномерно по всей камере через специальные вентотверстия. 
+
+• <b>Умное управление</b> 
+Прибор можно синхронизировать со смартфоном и в приложении контролировать его работу и менять настройки. 
+
+• <b>Сухая зона свежести</b> 
+Отсек Optimal Fresh+ представлен выдвижным контейнером. В отсеке поддерживается более низкая температура, что позволяет дольше сохранять продукты свежими. 
+
+Холодильник не нужно размораживать вручную — система No Frost предотвращает образование инея и наледи. В устройство заложены режимы быстрого охлаждения и заморозки, которые пригодятся при пополнении запасов. Эта модель укомплектована мультилотком для удобного хранения небольших продуктов. Складная полка позволит освободить дополнительное пространство для высоких бутылок или банок. 
+
+Двери сделаны из металла, их можно размещать на любую сторону. Для открытия используются скрытые горизонтальные ручки. Холодильнику присвоен класс энергоэффективности А++ за низкий расход электричества: в год — не более 273 кВт*ч. За счет инверторного компрессора уровень шума во время работы устройства не превышает 35 дБ.', 'InStock', 'Discount', 3, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Samsung'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Холодильник Samsung RB50DG602ES9WT'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Samsung RB50DG602ES9WT' 
+        AND a."Name" = 'инверторный' 
+        AND a."Type" = 'Тип компрессора'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Samsung RB50DG602ES9WT' 
+        AND a."Name" = '75.9' 
+        AND a."Type" = 'Ширина'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Samsung RB50DG602ES9WT' 
+        AND a."Name" = '192' 
+        AND a."Type" = 'Высота'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Samsung RB50DG602ES9WT' 
+        AND a."Name" = '71.1' 
+        AND a."Type" = 'Глубина'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Samsung RB50DG602ES9WT' 
+        AND a."Name" = '522' 
+        AND a."Type" = 'Общий объем'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-samsung-rb50dg602es9wt_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Samsung RB50DG602ES9WT'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-samsung-rb50dg602es9wt_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Samsung RB50DG602ES9WT'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-samsung-rb50dg602es9wt_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Samsung RB50DG602ES9WT'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-samsung-rb50dg602es9wt_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Samsung RB50DG602ES9WT'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-samsung-rb50dg602es9wt_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Samsung RB50DG602ES9WT'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-samsung-rb50dg602es9wt_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Samsung RB50DG602ES9WT'));

@@ -1,0 +1,38 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Охладитель для винных бутылок HOMIUM EF8619', 4995, 6, '/items/productimages/ohladitel-dlya-vinnyh-butylok-homium-ef8619_0.png', 4.55, '', 'Охладитель для винных бутылок Homium EF8619 позволит сохранить оптимальную температуру напитков перед подачей. В приборе реализована термоэлектрическая бескомпрессорная технология. Температура регулируется на трех уровнях (в диапазоне от +6°С до +22°С), которые подходят для разных сортов вин. 
+
+Управление обеспечивает электронный блок с кнопками. На дисплее отображаются выбранные параметры в градусах Цельсия или Фаренгейта. Корпус прибора сделан из ударопрочного пластика. Размеры устройства — 23х21,5х9 см.', 'InStock', 'Discount', 3, (SELECT "ID" FROM "Brands" WHERE "Name" = 'HOMIUM'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Охладитель для винных бутылок HOMIUM EF8619'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Охладитель для винных бутылок HOMIUM EF8619' 
+        AND a."Name" = 'черный' 
+        AND a."Type" = 'Цвет'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/ohladitel-dlya-vinnyh-butylok-homium-ef8619_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Охладитель для винных бутылок HOMIUM EF8619'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/ohladitel-dlya-vinnyh-butylok-homium-ef8619_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Охладитель для винных бутылок HOMIUM EF8619'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/ohladitel-dlya-vinnyh-butylok-homium-ef8619_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Охладитель для винных бутылок HOMIUM EF8619'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/ohladitel-dlya-vinnyh-butylok-homium-ef8619_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Охладитель для винных бутылок HOMIUM EF8619'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/ohladitel-dlya-vinnyh-butylok-homium-ef8619_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Охладитель для винных бутылок HOMIUM EF8619'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/ohladitel-dlya-vinnyh-butylok-homium-ef8619_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Охладитель для винных бутылок HOMIUM EF8619'));

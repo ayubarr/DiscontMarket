@@ -1,0 +1,87 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Холодильник Indesit ITD 167 W', 15249, 19, '/items/productimages/holodilnik-indesit-itd-167-w_0.png', 4.67, '', 'Indesit ITD 167 W – холодильник, который идеально подойдёт для небольшой семьи или для использования на даче. Его общий объём составляет 303 литра, чего оптимально хватит для хранения солений, варенья и полуфабрикатов домашнего производства.
+
+ГРАМОТНАЯ ОРГАНИЗАЦИЯ ПРОСТРАНСТВА
+Компактная морозилка находится в верхней части главного отделения. Там же вы найдёте четыре полки-решётки, изготовленные из прочного металла и пару выдвижных ящиков для фруктов и овощей. На двери есть специальные балкончики для миниатюрных ёмкостей и брикетов.
+
+ВАЖНЫЕ ДОПОЛНЕНИЯ
+Чтобы бы видели содержимое каждого яруса, внутри холодильника предусмотрено яркое освещение. А если у вас отключат электроэнергию, то низкая температура будет поддерживаться автономно ещё в течение целых 13 часов.
+
+ОБСЛУЖИВАНИЕ В ДВА СЧЁТА
+Оттаивание основного отделения происходит совершенно без вашего участия. От вас лишь требуется не допускать засора дренажного отверстия. Для удаления наледи из морозилки нужно отключить устройство от сети, поставить внутрь камеры миску с тёплой водой, а потом просто вытереть влагу мягкой губкой или салфеткой.', 'InStock', 'Discount', 3, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Indesit'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Холодильник Indesit ITD 167 W'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Indesit ITD 167 W' 
+        AND a."Name" = 'стандартный' 
+        AND a."Type" = 'Тип компрессора'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Indesit ITD 167 W' 
+        AND a."Name" = '167*60*67 см' 
+        AND a."Type" = 'Габаритные размеры (В*Ш*Г)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Indesit ITD 167 W' 
+        AND a."Name" = '303' 
+        AND a."Type" = 'Общий объем'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Indesit ITD 167 W' 
+        AND a."Name" = 'B' 
+        AND a."Type" = 'Класс энергоэффективности'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Indesit ITD 167 W' 
+        AND a."Name" = '13' 
+        AND a."Type" = 'Хранение при отключении питания'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-indesit-itd-167-w_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Indesit ITD 167 W'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-indesit-itd-167-w_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Indesit ITD 167 W'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-indesit-itd-167-w_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Indesit ITD 167 W'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-indesit-itd-167-w_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Indesit ITD 167 W'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-indesit-itd-167-w_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Indesit ITD 167 W'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-indesit-itd-167-w_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Indesit ITD 167 W'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-indesit-itd-167-w_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Indesit ITD 167 W'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-indesit-itd-167-w_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Indesit ITD 167 W'));

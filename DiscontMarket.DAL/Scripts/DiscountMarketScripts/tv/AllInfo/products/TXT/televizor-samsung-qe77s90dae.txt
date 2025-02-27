@@ -1,0 +1,44 @@
+﻿INSERT INTO "Products" 
+("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription",
+"Availability", "Status", "CategoryID", "BrandID", "UserID") 
+VALUES
+ ('Телевизор Samsung QE77S90DAE', 229999, 10, '/items/productimages/televizor-samsung-qe77s90dae_0.png', 4.43, '', 'Телевизор Samsung QE77S90DAEXRU с 77-дюймовым экраном разрешением 3840х2160 пикселей поддерживает функции Smart TV.<br><br>• <b>Нейронный процессор NQ4 AI</b><br>Масштабирует любой контент в формат 4К, оптимизирует качество звука, создавая яркую, контрастную и детализированную картинку.<br><br>• <b>Технологии OLED и OLED HDR+</b><br>Самоподсвечивающие пиксели делают изображение точным за счет максимально насыщенного черного и чистого белого цветов, передают широкую палитру остальных цветов и воспроизводят даже мельчайшие детали.<br><br>• <b>ОС Samsung Tizen</b><br>Включает множество современных приложений, позволяет координировать домашние и рабочие дела с помощью функции Daily+, контролировать состояние подключенных к ТВ умных приборов.<br><br>Телевизор оборудован мощными динамиками, которые воспроизводят звук в формате Dolby Atmos. С помощью технологии OTS Lite формируется 3D-акустика, обеспечивая полное погружение в происходящее на экране. Специальные опции усилят речь актеров и адаптируют звук в соответствии с помещением.<br><br>Управление осуществляется с помощью смартфона. Эта модель поддерживает воспроизведение файлов с USB-носителей. В корпус встроены четыре входа HDMI, два порта USB Type-A и оптический выход Toslink — достаточно для подсоединения дополнительных устройств. Предусмотрен разъем LAN для подключения к кабельному интернету. Телевизор можно разместить на стене с помощью крепления VESA 400х300 (приобретается отдельно), в комплект входит настольная подставка.', 'InStock', 'Discount', 1, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Samsung'), 1);
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung QE77S90DAE'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '4K Ultra HD (3840x2160 Пикс)' AND "Type" = 'Экран));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung QE77S90DAE'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '77' AND "Type" = 'Диагональ));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung QE77S90DAE'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '144' AND "Type" = 'Частота обновления));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung QE77S90DAE'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'OLED' AND "Type" = 'Технология экрана));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung QE77S90DAE'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'OLED' AND "Type" = 'Тип светодиодной подсветки));
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-samsung-qe77s90dae_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung QE77S90DAE'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-samsung-qe77s90dae_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung QE77S90DAE'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-samsung-qe77s90dae_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung QE77S90DAE'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-samsung-qe77s90dae_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung QE77S90DAE'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-samsung-qe77s90dae_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung QE77S90DAE'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-samsung-qe77s90dae_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung QE77S90DAE'));

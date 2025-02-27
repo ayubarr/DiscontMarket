@@ -1,0 +1,96 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Стиральная машина Haier HW100-BD14378S', 60499, 6, '/items/productimages/stiralnaya-mashina-haier-hw100-bd14378s_0.png', 4.61, '', 'Стиральная машина Haier HW100-BD14378S в корпусе черно-серебристой расцветки оснащена LED-дисплеем, который облегчает навигацию по программам. У модели сенсорное управление. 
+Барабан стиральной машинки вмещает до 10 кг белья. Загрузка фронтальная. В машину можно дозагружать белье, не прерывая процесс стирки. Модель обладает различными программами работы, включая режим для деликатных вещей, синтетики, шерсти, детской одежды, экспресс-стирку (15 минут), обработку белья паром. Дополнительные опции — отсрочка старта (0,5-24 часа) и функция памяти.
+Класс стирки у модели — A, отжима — B. Максимальная скорость отжима составляет 1400 об/мин. Уровень шума в процессе стирки составляет максимум 52 дБ, во время отжима — 68 дБ. Класс энергопотребления у модели высший — А+++. Блокировка панели управления от детей предотвращает случайное изменение настроек машины.
+Модель работает от сети с напряжением 220-240 В. Потребляемая мощность стиральной машины — 2000 Вт, энергопотребление — 138 кВт*ч в год. Устройство обладает опцией самоочистки барабана. В наличии регулируемый термостат.', 'InStock', 'Discount', 5, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Haier'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Стиральная машина Haier HW100-BD14378S'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина Haier HW100-BD14378S' 
+        AND a."Name" = '10' 
+        AND a."Type" = 'Максимальная загрузка'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина Haier HW100-BD14378S' 
+        AND a."Name" = '1400' 
+        AND a."Type" = 'Максимальная скорость отжима'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина Haier HW100-BD14378S' 
+        AND a."Name" = 'инверторный' 
+        AND a."Type" = 'Мотор'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина Haier HW100-BD14378S' 
+        AND a."Name" = 'Да' 
+        AND a."Type" = 'Обработка паром'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина Haier HW100-BD14378S' 
+        AND a."Name" = '85*59.5*58.3 см' 
+        AND a."Type" = 'Габаритные размеры (В*Ш*Г)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-haier-hw100-bd14378s_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Haier HW100-BD14378S'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-haier-hw100-bd14378s_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Haier HW100-BD14378S'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-haier-hw100-bd14378s_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Haier HW100-BD14378S'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-haier-hw100-bd14378s_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Haier HW100-BD14378S'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-haier-hw100-bd14378s_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Haier HW100-BD14378S'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-haier-hw100-bd14378s_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Haier HW100-BD14378S'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-haier-hw100-bd14378s_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Haier HW100-BD14378S'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-haier-hw100-bd14378s_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Haier HW100-BD14378S'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-haier-hw100-bd14378s_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Haier HW100-BD14378S'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-haier-hw100-bd14378s_9.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Haier HW100-BD14378S'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-haier-hw100-bd14378s_10.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Haier HW100-BD14378S'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-haier-hw100-bd14378s_11.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Haier HW100-BD14378S'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-haier-hw100-bd14378s_12.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Haier HW100-BD14378S'));

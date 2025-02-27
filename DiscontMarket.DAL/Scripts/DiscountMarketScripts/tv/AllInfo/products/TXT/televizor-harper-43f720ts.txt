@@ -1,0 +1,44 @@
+﻿INSERT INTO "Products" 
+("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription",
+"Availability", "Status", "CategoryID", "BrandID", "UserID") 
+VALUES
+ ('Телевизор Harper 43F720TS', 12749, 19, '/items/productimages/televizor-harper-43f720ts_0.png', 4.27, '', 'Телевизор Harper 43F720TS поставляется с ОС Android версии 9.0. Устройство обладает 43-дюймовым экраном (108 см) с подсветкой Direct LED. Разрешение 1920х1080 пикселей обеспечивает высокий уровень детализации изображения. Используемая технология дисплея — Super MVA. Частота обновления составляет 60 Гц, что исключает возможность возникновения искажений. 
+Акустическая стереосистема, включающая в себя динамики мощностью 2х8 Вт, выдает громкий и объемный звук. Управление устройством осуществляется посредством пульта ДУ.
+Модуль Wi-Fi гарантирует быстрый выход в интернет. Поддержка Smart TV позволяет подключать телевизор к Сети для поиска и воспроизведения контента. Функция TimeShift предназначена для записи телепрограмм цифрового телевидения и отсроченного просмотра. Sleep-таймер дает возможность выключить прибор по истечении заданного времени. 
+У телевизора есть цифровой тюнер DVB — T/T2/C/S2. Реализованы интерфейсы HDMI версии 1.4, порт USB 2.0 тип А, RJ45. Потребляемая мощность модели составляет 64 Вт. Опция «Защита от детей» предотвращает несанкционированный доступ. В комплекте поставляется настольная подставка. Габаритные размеры телевизора — 55,6х89,3х21 см, вес — 6,3 кг.', 'InStock', 'Discount', 1, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Harper'), 1);
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Harper 43F720TS'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'Full HD (1920x1080 Пикс)' AND "Type" = 'Экран));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Harper 43F720TS'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '43' AND "Type" = 'Диагональ));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Harper 43F720TS'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '60' AND "Type" = 'Частота обновления));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Harper 43F720TS'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'LED' AND "Type" = 'Технология экрана));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Harper 43F720TS'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'Direct LED' AND "Type" = 'Тип светодиодной подсветки));
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-harper-43f720ts_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Harper 43F720TS'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-harper-43f720ts_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Harper 43F720TS'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-harper-43f720ts_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Harper 43F720TS'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-harper-43f720ts_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Harper 43F720TS'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-harper-43f720ts_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Harper 43F720TS'));

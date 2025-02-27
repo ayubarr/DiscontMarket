@@ -1,0 +1,19 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-sber-sdx-65uq5231_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Sber SDX-65UQ5231'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-sber-sdx-65uq5231_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Sber SDX-65UQ5231'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-sber-sdx-65uq5231_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Sber SDX-65UQ5231'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-sber-sdx-65uq5231_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Sber SDX-65UQ5231'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-sber-sdx-65uq5231_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Sber SDX-65UQ5231'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-sber-sdx-65uq5231_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Sber SDX-65UQ5231'));

@@ -1,0 +1,22 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-sony-kd85x85tj_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Sony KD85X85TJ'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-sony-kd85x85tj_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Sony KD85X85TJ'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-sony-kd85x85tj_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Sony KD85X85TJ'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-sony-kd85x85tj_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Sony KD85X85TJ'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-sony-kd85x85tj_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Sony KD85X85TJ'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-sony-kd85x85tj_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Sony KD85X85TJ'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-sony-kd85x85tj_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Sony KD85X85TJ'));

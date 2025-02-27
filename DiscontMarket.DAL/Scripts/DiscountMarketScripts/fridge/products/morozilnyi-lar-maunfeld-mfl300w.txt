@@ -1,0 +1,72 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Морозильный ларь Maunfeld MFL300W', 29495, 15, '/items/productimages/morozilnyi-lar-maunfeld-mfl300w_0.png', 4.94, '', 'Морозильный ларь Maunfeld MFL300W белого цвета оснащен двумя металлическими корзинами и регулируемыми по высоте ножками. Объем морозильной камеры составляет 292 л. Мощность замораживания — 14 кг в сутки. Модель заправлена хладагентом R600a. Управление механическое. У прибора одна камера, дверца открывается вверх. Ручка внутренняя. Есть индикация включения и выбранного режима работы. Морозильный ларь сохраняет температуру в течение 24 часов с момента отключения от электросети. Он потребляет 267 кВт в год.', 'InStock', 'Discount', 3, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Maunfeld'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Морозильный ларь Maunfeld MFL300W'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Морозильный ларь Maunfeld MFL300W' 
+        AND a."Name" = 'стандартный' 
+        AND a."Type" = 'Тип компрессора'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Морозильный ларь Maunfeld MFL300W' 
+        AND a."Name" = '83.5*105.5*69 см' 
+        AND a."Type" = 'Габаритные размеры (В*Ш*Г)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Морозильный ларь Maunfeld MFL300W' 
+        AND a."Name" = 'A+' 
+        AND a."Type" = 'Класс энергоэффективности'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Морозильный ларь Maunfeld MFL300W' 
+        AND a."Name" = 'Да' 
+        AND a."Type" = 'Режим суперзамораживания'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Морозильный ларь Maunfeld MFL300W' 
+        AND a."Name" = 'механический' 
+        AND a."Type" = 'Тип управления'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnyi-lar-maunfeld-mfl300w_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильный ларь Maunfeld MFL300W'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnyi-lar-maunfeld-mfl300w_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильный ларь Maunfeld MFL300W'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnyi-lar-maunfeld-mfl300w_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильный ларь Maunfeld MFL300W'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnyi-lar-maunfeld-mfl300w_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильный ларь Maunfeld MFL300W'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnyi-lar-maunfeld-mfl300w_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильный ларь Maunfeld MFL300W'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnyi-lar-maunfeld-mfl300w_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильный ларь Maunfeld MFL300W'));

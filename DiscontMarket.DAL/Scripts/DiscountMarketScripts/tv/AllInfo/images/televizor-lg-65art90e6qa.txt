@@ -1,0 +1,22 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-lg-65art90e6qa_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор LG 65ART90E6QA'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-lg-65art90e6qa_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор LG 65ART90E6QA'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-lg-65art90e6qa_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор LG 65ART90E6QA'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-lg-65art90e6qa_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор LG 65ART90E6QA'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-lg-65art90e6qa_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор LG 65ART90E6QA'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-lg-65art90e6qa_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор LG 65ART90E6QA'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-lg-65art90e6qa_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор LG 65ART90E6QA'));

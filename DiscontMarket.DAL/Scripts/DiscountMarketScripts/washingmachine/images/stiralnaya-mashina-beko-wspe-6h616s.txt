@@ -1,0 +1,28 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-beko-wspe-6h616s_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Beko WSPE 6H616S'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-beko-wspe-6h616s_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Beko WSPE 6H616S'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-beko-wspe-6h616s_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Beko WSPE 6H616S'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-beko-wspe-6h616s_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Beko WSPE 6H616S'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-beko-wspe-6h616s_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Beko WSPE 6H616S'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-beko-wspe-6h616s_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Beko WSPE 6H616S'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-beko-wspe-6h616s_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Beko WSPE 6H616S'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-beko-wspe-6h616s_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Beko WSPE 6H616S'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-beko-wspe-6h616s_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Beko WSPE 6H616S'));

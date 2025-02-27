@@ -1,0 +1,51 @@
+﻿INSERT INTO "Products" 
+("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription",
+"Availability", "Status", "CategoryID", "BrandID", "UserID") 
+VALUES
+ ('Телевизор LG 50UT80006LA.ARUB', 28995, 19, '/items/productimages/televizor-lg-50ut80006laarub_0.png', 4.76, '', 'Телевизор LG 50UT80006LA.ARUB поставляется с предустановленной ОС WebOS. На 50-дюймовом экране (127 см) формата 16:9 отображается изображение с разрешением 3840x2160 пикселей. Благодаря поддержке HDR обеспечиваются высокая степень четкости и детализация. Частота обновления равна 60 Гц, что уменьшает вероятность возникновения разрыва кадров при показе динамичных сцен. Используемый тип светодиодной подсветки — Direct LED.
+
+В модели предусмотрен цифровой тюнер DVB T/T2/S/C/S2. Режим цифрового шумоподавления убирает все недостатки на картинке. Акустическая система 2.0 формирует объемный звук. Модель способна воспроизводить видео через USB. Технология Smart TV дает возможность искать контент в Сети. Модуль Wi-Fi гарантирует быстрый выход в интернет, Bluetooth версии 5.0 обеспечивает синхронизацию с разными устройствами.
+
+Управлять параметрами работы можно с помощью голосовых помощников или пульта ДУ. Функция «Защита от детей» предотвращает случайное изменение настроек. К доступным интерфейсам относятся HDMI, порт USB, RJ45. Телевизор может устанавливаться на стену на кронштейн стандарта VESA 200x200 или на устойчивую подставку с небольшими ножками. Показатель потребляемой мощности — 85 Вт. Габаритные размеры устройства — 71,3х112,1х57,1 см, вес — 11,9 кг.', 'InStock', 'Discount', 1, (SELECT "ID" FROM "Brands" WHERE "Name" = 'LG'), 1);
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор LG 50UT80006LA.ARUB'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '4K Ultra HD (3840x2160 Пикс)' AND "Type" = 'Экран));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор LG 50UT80006LA.ARUB'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '50' AND "Type" = 'Диагональ));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор LG 50UT80006LA.ARUB'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '60' AND "Type" = 'Частота обновления));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор LG 50UT80006LA.ARUB'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'LED' AND "Type" = 'Технология экрана));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор LG 50UT80006LA.ARUB'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'Direct LED' AND "Type" = 'Тип светодиодной подсветки));
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-lg-50ut80006laarub_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор LG 50UT80006LA.ARUB'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-lg-50ut80006laarub_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор LG 50UT80006LA.ARUB'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-lg-50ut80006laarub_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор LG 50UT80006LA.ARUB'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-lg-50ut80006laarub_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор LG 50UT80006LA.ARUB'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-lg-50ut80006laarub_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор LG 50UT80006LA.ARUB'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-lg-50ut80006laarub_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор LG 50UT80006LA.ARUB'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-lg-50ut80006laarub_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор LG 50UT80006LA.ARUB'));

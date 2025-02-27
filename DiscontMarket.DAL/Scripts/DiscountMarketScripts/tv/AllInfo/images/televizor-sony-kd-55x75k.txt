@@ -1,0 +1,22 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-sony-kd-55x75k_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Sony KD-55X75K'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-sony-kd-55x75k_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Sony KD-55X75K'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-sony-kd-55x75k_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Sony KD-55X75K'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-sony-kd-55x75k_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Sony KD-55X75K'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-sony-kd-55x75k_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Sony KD-55X75K'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-sony-kd-55x75k_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Sony KD-55X75K'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-sony-kd-55x75k_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Sony KD-55X75K'));

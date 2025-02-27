@@ -1,0 +1,87 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Морозильная камера ATLANT М 7606-100 N', 19999, 17, '/items/productimages/morozilnaya-kamera-atlant-m-7606-100-n_0.png', 4.44, '', 'Морозильная камера «Атлант» М 7606-100 N – удобное решение для большой семьи. Она очень вместительна: общий объём – 278 литров (полезный – 245 литров), так что поместятся и припасы, закупленные на одну-две недели, и сезонные заготовки.
+
+ВНУТРЕННЕЕ ОСНАЩЕНИЕ
+Восемь контейнеров позволят вам разложить продукты по типам, чтобы рыба, мясо, фрукты и овощи хранились отдельно и их запахи не смешивались. Один из отсеков увеличенного размера (Big Box): в него поместятся «крупногабаритные» упаковки, например, коробка с тортом или высокое ведёрко с мороженым. Есть и плоский поддон, в котором будет удобно разложить ягоды. Две маленьких полочки на дверце вместят небольшие упаковки: замороженное тесто, круассаны, хлеб и т.п.
+
+ПОЛЕЗНАЯ ВОЗМОЖНОСТЬ
+Совершили «большой набег» на супермаркет или удачно сходили на «охоту» за грибами? Активируйте режим Super Freeze: он понизит температуру и не позволит свежим, тёплым припасам повлиять на те, что уже хранятся в камере. В сутки можно эффективно заморозить до 13 кг.
+
+ДЛЯ ЗАБЫВЧИВЫХ
+Если вы оставите дверцу открытой более чем на 60 секунд, вас предупредит звуковой сигнал, так что потечь морозилка не успеет.
+
+ЛИШНЕГО НЕ ТРАТИТ
+Внушительный объём не мешает этой модели быть экономичной: ей присвоен класс энергоэффективности А+, поэтому счета «за коммуналку» не станут для вас неприятной неожиданностью.
+
+ВСЁ ПРОДУМАНО
+Передние ножки регулируются, это даст возможность установить «Атлант» М 7606-100 N даже на не очень ровном полу. Пара задних колёсиков поможет передвинуть прибор. Дверца перенавешивается, чтобы вам было удобно открывать её в помещении любой планировки.', 'InStock', 'Discount', 3, (SELECT "ID" FROM "Brands" WHERE "Name" = 'ATLANT'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Морозильная камера ATLANT М 7606-100 N'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Морозильная камера ATLANT М 7606-100 N' 
+        AND a."Name" = 'стандартный' 
+        AND a."Type" = 'Тип компрессора'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Морозильная камера ATLANT М 7606-100 N' 
+        AND a."Name" = '186*62.8*59.5 см' 
+        AND a."Type" = 'Габаритные размеры (В*Ш*Г)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Морозильная камера ATLANT М 7606-100 N' 
+        AND a."Name" = 'A+' 
+        AND a."Type" = 'Класс энергоэффективности'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Морозильная камера ATLANT М 7606-100 N' 
+        AND a."Name" = 'электронный' 
+        AND a."Type" = 'Тип управления'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Морозильная камера ATLANT М 7606-100 N' 
+        AND a."Name" = '303' 
+        AND a."Type" = 'Энергопотребление в год'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-atlant-m-7606-100-n_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера ATLANT М 7606-100 N'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-atlant-m-7606-100-n_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера ATLANT М 7606-100 N'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-atlant-m-7606-100-n_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера ATLANT М 7606-100 N'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-atlant-m-7606-100-n_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера ATLANT М 7606-100 N'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-atlant-m-7606-100-n_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера ATLANT М 7606-100 N'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-atlant-m-7606-100-n_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера ATLANT М 7606-100 N'));

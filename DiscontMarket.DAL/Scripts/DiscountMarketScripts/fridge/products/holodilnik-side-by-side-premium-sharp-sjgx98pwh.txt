@@ -1,0 +1,93 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Холодильник (Side-by-Side) Премиум Sharp SJGX98PWH', 149999, 16, '/items/productimages/holodilnik-side-by-side-premium-sharp-sjgx98pwh_0.png', 4.36, '', 'Sharp SJGX98PWH – вместительный холодильник типа Side-by-Side со встроенным генератором льда. Это хороший выбор как для большой семьи, так и для тех, кто не хочет часто ходить в магазин. Двери отделаны стеклом и выглядят особенно стильно.
+
+КОМФОРТ И ЭКОНОМИЧНОСТЬ
+В этой модели установлен инверторный компрессор. Он точно поддерживает заданный температурный режим, работая при этом с низким энергопотреблением и уровнем шума, не превышающим 36 дБ – это не громче приглушённого разговора.
+
+СОВРЕМЕННЫЕ ТЕХНОЛОГИИ
+Благодаря системе ионизации и очистки воздуха Plasmacluster продукты дольше сохраняют свежесть. Она уничтожает бактерии и плесневые споры и устраняет неприятные запахи.
+
+ПРОСТОЕ ОБСЛУЖИВАНИЕ
+Во всех камерах есть функция No Frost, которая работает в автоматическом режиме. Это значит, что ручная разморозка вам не понадобится: на внутренних стенках не будет наледи.
+
+ВСЁ ПОД КОНТРОЛЕМ
+Электронный тип управления позволяет легко регулировать настройки и задействовать дополнительные режимы. Мягкий и приятный свет LED-ламп поможет найти на полках и в контейнерах то, что вам понадобилось именно сейчас.', 'InStock', 'Discount', 3, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Sharp'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Холодильник (Side-by-Side) Премиум Sharp SJGX98PWH'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник (Side-by-Side) Премиум Sharp SJGX98PWH' 
+        AND a."Name" = 'инверторный' 
+        AND a."Type" = 'Тип компрессора'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник (Side-by-Side) Премиум Sharp SJGX98PWH' 
+        AND a."Name" = '183*89.2*77.1 см' 
+        AND a."Type" = 'Габаритные размеры (В*Ш*Г)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник (Side-by-Side) Премиум Sharp SJGX98PWH' 
+        AND a."Name" = '678' 
+        AND a."Type" = 'Общий объем'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник (Side-by-Side) Премиум Sharp SJGX98PWH' 
+        AND a."Name" = 'влажная' 
+        AND a."Type" = 'Тип зоны сохранения свежести'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник (Side-by-Side) Премиум Sharp SJGX98PWH' 
+        AND a."Name" = 'электронный' 
+        AND a."Type" = 'Тип управления'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-side-by-side-premium-sharp-sjgx98pwh_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник (Side-by-Side) Премиум Sharp SJGX98PWH'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-side-by-side-premium-sharp-sjgx98pwh_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник (Side-by-Side) Премиум Sharp SJGX98PWH'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-side-by-side-premium-sharp-sjgx98pwh_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник (Side-by-Side) Премиум Sharp SJGX98PWH'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-side-by-side-premium-sharp-sjgx98pwh_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник (Side-by-Side) Премиум Sharp SJGX98PWH'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-side-by-side-premium-sharp-sjgx98pwh_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник (Side-by-Side) Премиум Sharp SJGX98PWH'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-side-by-side-premium-sharp-sjgx98pwh_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник (Side-by-Side) Премиум Sharp SJGX98PWH'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-side-by-side-premium-sharp-sjgx98pwh_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник (Side-by-Side) Премиум Sharp SJGX98PWH'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-side-by-side-premium-sharp-sjgx98pwh_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник (Side-by-Side) Премиум Sharp SJGX98PWH'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-side-by-side-premium-sharp-sjgx98pwh_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник (Side-by-Side) Премиум Sharp SJGX98PWH'));

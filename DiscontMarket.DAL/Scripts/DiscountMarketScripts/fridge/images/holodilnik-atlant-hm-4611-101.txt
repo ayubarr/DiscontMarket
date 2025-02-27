@@ -1,0 +1,16 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-atlant-hm-4611-101_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник ATLANT ХМ 4611-101'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-atlant-hm-4611-101_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник ATLANT ХМ 4611-101'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-atlant-hm-4611-101_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник ATLANT ХМ 4611-101'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-atlant-hm-4611-101_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник ATLANT ХМ 4611-101'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-atlant-hm-4611-101_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник ATLANT ХМ 4611-101'));

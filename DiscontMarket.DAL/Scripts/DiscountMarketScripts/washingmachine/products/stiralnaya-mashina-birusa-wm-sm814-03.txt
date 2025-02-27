@@ -1,0 +1,84 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Стиральная машина Бирюса WM-SM814/03', 23595, 18, '/items/productimages/stiralnaya-mashina-birusa-wm-sm814-03_0.png', 4.86, '', 'Стиральная машина «Бирюса» WM-SM814/03 оборудована барабаном объемом 58 л. Дверца модели выполнена из пластика и стекла, диаметр люка составляет 30 см. Изделие оснащено сенсорным управлением и LED-дисплеем. Модель относится к высокому классу А+++ по энергоэффективности, за один цикл работы потребляет 0,88 кВт*ч. У техники установлен инверторный мотор, который отличается пониженным шумом. Уровень шума при стирке равен 60 дБ, при отжиме — 75 дБ. У устройства предусмотрена «Защита от детей» и «Защита от протечек». Габариты: 85х59,5х60 см. Вес — 66 кг.', 'InStock', 'Discount', 5, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Бирюса'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Стиральная машина Бирюса WM-SM814/03'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина Бирюса WM-SM814/03' 
+        AND a."Name" = '8' 
+        AND a."Type" = 'Максимальная загрузка'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина Бирюса WM-SM814/03' 
+        AND a."Name" = '1200' 
+        AND a."Type" = 'Максимальная скорость отжима'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина Бирюса WM-SM814/03' 
+        AND a."Name" = 'стандартный' 
+        AND a."Type" = 'Мотор'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина Бирюса WM-SM814/03' 
+        AND a."Name" = '85*59.5*60 см' 
+        AND a."Type" = 'Габаритные размеры (В*Ш*Г)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина Бирюса WM-SM814/03' 
+        AND a."Name" = 'отсутствует' 
+        AND a."Type" = 'Тип защиты от протечек'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-birusa-wm-sm814-03_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Бирюса WM-SM814/03'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-birusa-wm-sm814-03_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Бирюса WM-SM814/03'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-birusa-wm-sm814-03_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Бирюса WM-SM814/03'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-birusa-wm-sm814-03_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Бирюса WM-SM814/03'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-birusa-wm-sm814-03_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Бирюса WM-SM814/03'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-birusa-wm-sm814-03_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Бирюса WM-SM814/03'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-birusa-wm-sm814-03_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Бирюса WM-SM814/03'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-birusa-wm-sm814-03_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Бирюса WM-SM814/03'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-birusa-wm-sm814-03_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Бирюса WM-SM814/03'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-birusa-wm-sm814-03_9.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Бирюса WM-SM814/03'));

@@ -1,0 +1,28 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/plita-kombinirovannaya-60-sm-maunfeld-mgc60eew03-belyi_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Плита комбинированная (60 см) Maunfeld MGC60EEW03 белый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/plita-kombinirovannaya-60-sm-maunfeld-mgc60eew03-belyi_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Плита комбинированная (60 см) Maunfeld MGC60EEW03 белый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/plita-kombinirovannaya-60-sm-maunfeld-mgc60eew03-belyi_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Плита комбинированная (60 см) Maunfeld MGC60EEW03 белый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/plita-kombinirovannaya-60-sm-maunfeld-mgc60eew03-belyi_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Плита комбинированная (60 см) Maunfeld MGC60EEW03 белый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/plita-kombinirovannaya-60-sm-maunfeld-mgc60eew03-belyi_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Плита комбинированная (60 см) Maunfeld MGC60EEW03 белый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/plita-kombinirovannaya-60-sm-maunfeld-mgc60eew03-belyi_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Плита комбинированная (60 см) Maunfeld MGC60EEW03 белый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/plita-kombinirovannaya-60-sm-maunfeld-mgc60eew03-belyi_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Плита комбинированная (60 см) Maunfeld MGC60EEW03 белый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/plita-kombinirovannaya-60-sm-maunfeld-mgc60eew03-belyi_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Плита комбинированная (60 см) Maunfeld MGC60EEW03 белый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/plita-kombinirovannaya-60-sm-maunfeld-mgc60eew03-belyi_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Плита комбинированная (60 см) Maunfeld MGC60EEW03 белый'));

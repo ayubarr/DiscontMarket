@@ -1,0 +1,84 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Холодильник Hi HFDD019560SB черный', 26999, 14, '/items/productimages/holodilnik-hi-hfdd019560sb-chernyi_0.png', 4.47, '', 'Отдельностоящий холодильник Hi HFDD019560SB с нижней морозильной камерой и инверторным компрессором.
+Холодильник Hi HFDD019560SW с технологией Total No Frost удобен в уходе, ведь в нем полностью исключается образование наледи и инея на стенках. Как итог, нет необходимости его размораживать.
+
+Размер модели 195х60 см, полезный объем 344 л. Удобная холодильная камера объемом 235 л с большим ящиком для овощей и фруктов и регулируемыми по высоте полками. Морозильная камера — 109 л с тремя отделениями. 
+
+В режиме SMART холодильник автоматически устанавливает оптимальные настройки для обеих камер в соответствии с температурой на кухне — так, чтобы продукты сохраняли свежесть и полезные вещества еще дольше. С помощью удобного LED-дисплея можно также отрегулировать температуру в обеих камерах самостоятельно, выбрать режим быстрого охлаждения или быстрой заморозки, установить энергосберегающий режим «Отпуск» или защитную блокировку. 
+
+Долговечный инверторный компрессор поддерживает в камерах устойчивую температуру, что важно для сохранения свежести продуктов. Среди других преимуществ компрессора — тихая работа и низкое потребление электроэнергии. 
+
+Перенавешиваемые двери позволят вам легко выбрать, в какую сторону будет осуществляться открывание холодильника. Класс энергопотребления А+ позволит не расходовать больше электричества, чем необходим.', 'InStock', 'Discount', 3, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Hi'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Холодильник Hi HFDD019560SB черный'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Hi HFDD019560SB черный' 
+        AND a."Name" = 'инверторный' 
+        AND a."Type" = 'Тип компрессора'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Hi HFDD019560SB черный' 
+        AND a."Name" = '195' 
+        AND a."Type" = 'Высота'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Hi HFDD019560SB черный' 
+        AND a."Name" = '60' 
+        AND a."Type" = 'Ширина'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Hi HFDD019560SB черный' 
+        AND a."Name" = '65.8' 
+        AND a."Type" = 'Глубина'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Hi HFDD019560SB черный' 
+        AND a."Name" = '344' 
+        AND a."Type" = 'Общий объем'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-hi-hfdd019560sb-chernyi_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Hi HFDD019560SB черный'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-hi-hfdd019560sb-chernyi_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Hi HFDD019560SB черный'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-hi-hfdd019560sb-chernyi_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Hi HFDD019560SB черный'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-hi-hfdd019560sb-chernyi_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Hi HFDD019560SB черный'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-hi-hfdd019560sb-chernyi_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Hi HFDD019560SB черный'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-hi-hfdd019560sb-chernyi_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Hi HFDD019560SB черный'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-hi-hfdd019560sb-chernyi_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Hi HFDD019560SB черный'));

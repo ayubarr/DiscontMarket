@@ -1,0 +1,81 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Мини-печь Delvento D2504 бежевая', 4650, 15, '/items/productimages/mini-pech-delvento-d2504-bezhevaya_0.png', 4.72, '', '<p>Мини-печь Delvento D2504 — бежевая модель в металлическом термоизолированном корпусе, оснащенная тремя программами приготовления. Среди них есть верхний, нижний нагрев, верхний + нижний. Механическое управление представлено тремя переключателями. Объем составляет 25 л. Мощность потребления достигает 1500 Вт. Температуру внутри духовки можно регулировать в пределах 40-250°С. Фронтальная панель — прозрачное стекло из одного слоя. <br>Индикация на корпусе сообщает о включении прибора и выбранном режиме работы. По завершении программы срабатывает звуковой сигнал. Решетка выполнена из хромированного металла. Направляющие устройства — рельефные. Для подключения к сети есть шнур длиной 0,7 м. Устойчивость на столе обеспечивается прорезиненными ножками. Размеры модели составляют 36х44х38 см, вес — 7 кг.<br></p>', 'InStock', 'Discount', 6, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Delvento'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Мини-печь Delvento D2504 бежевая'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Мини-печь Delvento D2504 бежевая' 
+        AND a."Name" = '25' 
+        AND a."Type" = 'Объем'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Мини-печь Delvento D2504 бежевая' 
+        AND a."Name" = '1500' 
+        AND a."Type" = 'Потребляемая мощность'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Мини-печь Delvento D2504 бежевая' 
+        AND a."Name" = 'отсутствует' 
+        AND a."Type" = 'Тип гриля'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Мини-печь Delvento D2504 бежевая' 
+        AND a."Name" = 'бежевый' 
+        AND a."Type" = 'Цвет'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Мини-печь Delvento D2504 бежевая' 
+        AND a."Name" = 'нержавеющая сталь' 
+        AND a."Type" = 'Внутреннее покрытие'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-delvento-d2504-bezhevaya_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Delvento D2504 бежевая'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-delvento-d2504-bezhevaya_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Delvento D2504 бежевая'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-delvento-d2504-bezhevaya_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Delvento D2504 бежевая'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-delvento-d2504-bezhevaya_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Delvento D2504 бежевая'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-delvento-d2504-bezhevaya_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Delvento D2504 бежевая'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-delvento-d2504-bezhevaya_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Delvento D2504 бежевая'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-delvento-d2504-bezhevaya_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Delvento D2504 бежевая'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-delvento-d2504-bezhevaya_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Delvento D2504 бежевая'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-delvento-d2504-bezhevaya_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Delvento D2504 бежевая'));

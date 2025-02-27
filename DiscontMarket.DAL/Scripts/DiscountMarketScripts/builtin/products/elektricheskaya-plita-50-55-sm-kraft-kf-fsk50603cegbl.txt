@@ -1,0 +1,80 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Электрическая плита (50-55 см) Kraft KF-FSK50603CEGBL', 24999, 8, '/items/productimages/elektricheskaya-plita-50-55-sm-kraft-kf-fsk50603cegbl_0.png', 4.32, '', 'Электрическая плита Kraft KF-FSK50603CEGBL — энергоэффективная модель (класс А), оснащенная духовым шкафом объемом 58 л. Дверца устройства снабжена двухслойным стеклом — устойчиво к высоким температурам и не подвержено сильному нагреву с внешней стороны. Внутри духовой камеры установлена лампа накаливания. 
+
+• <b>Гидролизная очистка</b> 
+Используется в духовом шкафу. Водяной пар размягчает пригоревшие частички жира и пищи, которые затем можно легко удалить при помощи тряпки или губки. 
+
+• <b>Четыре конфорки</b> 
+Имеют спиральную форму. Размер двух из них составляет 16,5 см, двух других — 20 см. Это позволяет использовать для готовки посуду разного объема и диаметра. 
+
+• <b>Внутреннее покрытие из эмалированной стали</b> 
+Отличается высокой устойчивостью к механическим повреждениям. В непористую поверхностью не въедается частицы пищи, жира, что упрощает уход за ней. Налет, который образуется на поверхности, удаляется увлажненной тряпкой или губкой с моющими средствами. 
+
+• <b>Варочная поверхность из закаленного стекла</b> 
+Обладает отличной жаростойкостью. Долго сохраняет первоначальный внешний вид. 
+
+Поверх конфорок устанавливается прочная металлическая решетка, входящая в комплектацию. Специальный таймер позволяет настроить время выключения духовки. Управление представлено механическими переключателями. Предусмотрены регулируемые ножки, обеспечивающие плите устойчивость.', 'InStock', 'Discount', 4, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Kraft'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Электрическая плита (50-55 см) Kraft KF-FSK50603CEGBL'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Электрическая плита (50-55 см) Kraft KF-FSK50603CEGBL' 
+        AND a."Name" = '58' 
+        AND a."Type" = 'Объем духовки'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Электрическая плита (50-55 см) Kraft KF-FSK50603CEGBL' 
+        AND a."Name" = '3' 
+        AND a."Type" = 'Режимы работы духовки'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Электрическая плита (50-55 см) Kraft KF-FSK50603CEGBL' 
+        AND a."Name" = 'спиральные' 
+        AND a."Type" = 'Тип конфорок'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Электрическая плита (50-55 см) Kraft KF-FSK50603CEGBL' 
+        AND a."Name" = 'отсутствует' 
+        AND a."Type" = 'Тип гриля'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Электрическая плита (50-55 см) Kraft KF-FSK50603CEGBL' 
+        AND a."Name" = 'эмалированная сталь' 
+        AND a."Type" = 'Внутреннее покрытие'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/elektricheskaya-plita-50-55-sm-kraft-kf-fsk50603cegbl_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Электрическая плита (50-55 см) Kraft KF-FSK50603CEGBL'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/elektricheskaya-plita-50-55-sm-kraft-kf-fsk50603cegbl_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Электрическая плита (50-55 см) Kraft KF-FSK50603CEGBL'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/elektricheskaya-plita-50-55-sm-kraft-kf-fsk50603cegbl_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Электрическая плита (50-55 см) Kraft KF-FSK50603CEGBL'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/elektricheskaya-plita-50-55-sm-kraft-kf-fsk50603cegbl_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Электрическая плита (50-55 см) Kraft KF-FSK50603CEGBL'));

@@ -1,0 +1,19 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-pozis-rk-103-belyi_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Pozis RK-103 белый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-pozis-rk-103-belyi_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Pozis RK-103 белый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-pozis-rk-103-belyi_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Pozis RK-103 белый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-pozis-rk-103-belyi_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Pozis RK-103 белый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-pozis-rk-103-belyi_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Pozis RK-103 белый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-pozis-rk-103-belyi_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Pozis RK-103 белый'));

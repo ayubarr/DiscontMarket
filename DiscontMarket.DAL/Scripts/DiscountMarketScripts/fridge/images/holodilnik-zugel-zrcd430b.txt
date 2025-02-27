@@ -1,0 +1,28 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-zugel-zrcd430b_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник ZUGEL ZRCD430B'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-zugel-zrcd430b_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник ZUGEL ZRCD430B'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-zugel-zrcd430b_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник ZUGEL ZRCD430B'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-zugel-zrcd430b_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник ZUGEL ZRCD430B'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-zugel-zrcd430b_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник ZUGEL ZRCD430B'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-zugel-zrcd430b_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник ZUGEL ZRCD430B'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-zugel-zrcd430b_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник ZUGEL ZRCD430B'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-zugel-zrcd430b_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник ZUGEL ZRCD430B'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-zugel-zrcd430b_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник ZUGEL ZRCD430B'));

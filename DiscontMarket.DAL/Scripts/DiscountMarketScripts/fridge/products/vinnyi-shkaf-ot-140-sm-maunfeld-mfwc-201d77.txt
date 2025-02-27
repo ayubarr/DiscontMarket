@@ -1,0 +1,80 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Винный шкаф от 140 см Maunfeld MFWC-201D77', 46745, 12, '/items/productimages/vinnyi-shkaf-ot-140-sm-maunfeld-mfwc-201d77_0.png', 4.79, '', 'Винный шкаф от 140 см Maunfeld MFWC-201D77 компрессорного типа охлаждения относится к климатическому классу N-SN-ST. В устройстве используется хладагент типа R 600a. Объем холодильной камеры достигает 193 л. Модель оборудована девятью полками, которые вмещают в себя до 77 бутылок. При работе уровень шума не превышает 41 дБ.
+
+Устройство оборудовано сенсорным типом управления, LED дисплеем, LED подсветкой холодильника с плавным включением освещения и вентилятором для распределения температуры. Для устранения запахов предусмотрено наличие угольного фильтра. На корпусе шкафа расположены индикаторы режима работы, температуры в холодильнике и каждой зоне. Для безопасной эксплуатации модель оборудована световым и звуковым сигналом увеличения температуры, звуковым сигналом отсутствия питания и звуковым сигналом при открытой двери холодильника. Габаритные размеры модели — 128,5х61,8х48 см. Цвет модели — черный.', 'InStock', 'Discount', 3, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Maunfeld'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Винный шкаф от 140 см Maunfeld MFWC-201D77'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Винный шкаф от 140 см Maunfeld MFWC-201D77' 
+        AND a."Name" = 'стандартный' 
+        AND a."Type" = 'Тип компрессора'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Винный шкаф от 140 см Maunfeld MFWC-201D77' 
+        AND a."Name" = '77' 
+        AND a."Type" = 'Максимальное количество бутылок'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Винный шкаф от 140 см Maunfeld MFWC-201D77' 
+        AND a."Name" = '193' 
+        AND a."Type" = 'Общий объем'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Винный шкаф от 140 см Maunfeld MFWC-201D77' 
+        AND a."Name" = '1' 
+        AND a."Type" = 'Количество полок'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Винный шкаф от 140 см Maunfeld MFWC-201D77' 
+        AND a."Name" = 'компрессорный' 
+        AND a."Type" = 'Тип охлаждения'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vinnyi-shkaf-ot-140-sm-maunfeld-mfwc-201d77_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Винный шкаф от 140 см Maunfeld MFWC-201D77'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vinnyi-shkaf-ot-140-sm-maunfeld-mfwc-201d77_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Винный шкаф от 140 см Maunfeld MFWC-201D77'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vinnyi-shkaf-ot-140-sm-maunfeld-mfwc-201d77_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Винный шкаф от 140 см Maunfeld MFWC-201D77'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vinnyi-shkaf-ot-140-sm-maunfeld-mfwc-201d77_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Винный шкаф от 140 см Maunfeld MFWC-201D77'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vinnyi-shkaf-ot-140-sm-maunfeld-mfwc-201d77_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Винный шкаф от 140 см Maunfeld MFWC-201D77'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vinnyi-shkaf-ot-140-sm-maunfeld-mfwc-201d77_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Винный шкаф от 140 см Maunfeld MFWC-201D77'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vinnyi-shkaf-ot-140-sm-maunfeld-mfwc-201d77_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Винный шкаф от 140 см Maunfeld MFWC-201D77'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vinnyi-shkaf-ot-140-sm-maunfeld-mfwc-201d77_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Винный шкаф от 140 см Maunfeld MFWC-201D77'));

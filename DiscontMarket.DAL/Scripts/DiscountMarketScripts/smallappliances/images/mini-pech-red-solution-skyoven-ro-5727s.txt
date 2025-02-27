@@ -1,0 +1,4 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-red-solution-skyoven-ro-5727s_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь RED SOLUTION SkyOven RO-5727S'));

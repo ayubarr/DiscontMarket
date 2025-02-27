@@ -1,0 +1,58 @@
+﻿INSERT INTO "Products" 
+("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription",
+"Availability", "Status", "CategoryID", "BrandID", "UserID") 
+VALUES
+ ('Телевизор Триколор H32H5000SA', 8495, 12, '/items/productimages/televizor-trikolor-h32h5000sa_0.png', 4.12, '', 'Телевизор «Триколор» H32H5000SA в корпусе черного цвета с ультратонкими рамками работает на операционной системе Android. Экран диагональю 32 дюйма (81 см) выполнен на базе матрицы VA, транслирует изображение разрешением 1366х768 пикселей. В этой модели реализована технология цифрового шумоподавления. 
+Высокое качество звука обеспечивают встроенные низкочастотные динамики мощностью 16 Вт. Управление обеспечивает Bluetooth-пульт, который работает от двух батареек типа ААА. Телевизор поддерживает функции Smart TV, позволяет записывать контент на USB-носитель и транслировать его с флеш-карт. Выход в интернет обеспечивают модуль Wi-Fi и разъем LAN для кабельного подключения к сети. 
+Эта модель оборудована тремя входами HDMI, интерфейсами USB Type-A, RCA, Mini Jack 3,5 мм, для модуля DVB CAM. Телевизор позволяет устанавливать приложения apk, в комплекте поставляется годовая подписка «Смотри кино и ТВ». Прибор совместим с настенным креплением VESA 200х200.', 'InStock', 'Discount', 1, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Триколор'), 1);
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Триколор H32H5000SA'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'HD (1366x768 Пикс)' AND "Type" = 'Экран));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Триколор H32H5000SA'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '32' AND "Type" = 'Диагональ));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Триколор H32H5000SA'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '60' AND "Type" = 'Частота обновления));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Триколор H32H5000SA'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'LED' AND "Type" = 'Технология экрана));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Триколор H32H5000SA'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'Direct LED' AND "Type" = 'Тип светодиодной подсветки));
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-trikolor-h32h5000sa_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Триколор H32H5000SA'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-trikolor-h32h5000sa_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Триколор H32H5000SA'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-trikolor-h32h5000sa_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Триколор H32H5000SA'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-trikolor-h32h5000sa_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Триколор H32H5000SA'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-trikolor-h32h5000sa_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Триколор H32H5000SA'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-trikolor-h32h5000sa_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Триколор H32H5000SA'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-trikolor-h32h5000sa_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Триколор H32H5000SA'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-trikolor-h32h5000sa_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Триколор H32H5000SA'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-trikolor-h32h5000sa_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Триколор H32H5000SA'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-trikolor-h32h5000sa_9.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Триколор H32H5000SA'));

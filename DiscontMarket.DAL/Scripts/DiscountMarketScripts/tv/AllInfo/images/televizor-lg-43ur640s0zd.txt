@@ -1,0 +1,28 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-lg-43ur640s0zd_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор LG 43UR640S0ZD'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-lg-43ur640s0zd_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор LG 43UR640S0ZD'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-lg-43ur640s0zd_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор LG 43UR640S0ZD'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-lg-43ur640s0zd_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор LG 43UR640S0ZD'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-lg-43ur640s0zd_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор LG 43UR640S0ZD'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-lg-43ur640s0zd_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор LG 43UR640S0ZD'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-lg-43ur640s0zd_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор LG 43UR640S0ZD'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-lg-43ur640s0zd_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор LG 43UR640S0ZD'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-lg-43ur640s0zd_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор LG 43UR640S0ZD'));

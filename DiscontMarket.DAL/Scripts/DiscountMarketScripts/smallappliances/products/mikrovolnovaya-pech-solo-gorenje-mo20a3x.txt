@@ -1,0 +1,75 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Микроволновая печь соло Gorenje MO20A3X', 4649, 17, '/items/productimages/mikrovolnovaya-pech-solo-gorenje-mo20a3x_0.png', 4.59, '', 'Gorenje MO20A3X – микроволновая печь с простым управлением, которая поможет вам сэкономить время, затрачиваемое на кухонные хлопоты. Автоматические программы позволят быстро приготовить рыбу и мясо, макароны, овощи и картофель. 
+
+И НЕ ТОЛЬКО!
+Есть и специальные режимы для пиццы и попкорна. «Растапливание» особенно пригодится любителям выпечки: сливочное масло размягчится за считаные минуты. Не нужно заранее вынимать заготовки из морозилки: функция «Размораживание» (по весу и времени) быстро доведёт их до «нужной кондиции». Конечно, вы можете задать параметры работы и самостоятельно: выбирайте из пяти уровней мощности микроволн, устанавливайте время приготовления (до 60 минут).
+
+ПРОСТОЙ УХОД
+Объём камеры – 20 литров, обычно для семей из трёх-четырёх человек этого достаточно. Стенки снабжены покрытием из гладкой эмали, очистка которой не доставит вам хлопот. А поможет в наведении порядка функция AquaClean: горячий пар справится даже с присохшими крошками и жиром, а вам потребуется только поработать сухой салфеткой.
+
+ЭЛЕКТРОННОЕ УПРАВЛЕНИЕ
+Поворотный регулятор отвечает за таймер и «меню», кнопки – за прочие параметры. Рисунки-подсказки помогут во всём разобраться. Цифровой дисплей отображает текущее время, когда микроволновка выключена, и ведёт отсчёт оставшихся минут при активации программы.', 'InStock', 'Discount', 6, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Gorenje'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло Gorenje MO20A3X'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Микроволновая печь соло Gorenje MO20A3X' 
+        AND a."Name" = '20' 
+        AND a."Type" = 'Полезный объем'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Микроволновая печь соло Gorenje MO20A3X' 
+        AND a."Name" = '27' 
+        AND a."Type" = 'Диаметр поворотного стола'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Микроволновая печь соло Gorenje MO20A3X' 
+        AND a."Name" = 'эмалированный металл' 
+        AND a."Type" = 'Внутреннее покрытие'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Микроволновая печь соло Gorenje MO20A3X' 
+        AND a."Name" = 'электронный' 
+        AND a."Type" = 'Тип управления'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Микроволновая печь соло Gorenje MO20A3X' 
+        AND a."Name" = 'нержавеющая сталь' 
+        AND a."Type" = 'Цвет'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-gorenje-mo20a3x_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло Gorenje MO20A3X'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-gorenje-mo20a3x_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло Gorenje MO20A3X'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-gorenje-mo20a3x_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло Gorenje MO20A3X'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-gorenje-mo20a3x_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло Gorenje MO20A3X'));

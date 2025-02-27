@@ -1,0 +1,44 @@
+﻿INSERT INTO "Products" 
+("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription",
+"Availability", "Status", "CategoryID", "BrandID", "UserID") 
+VALUES
+ ('Телевизор Thomson T32RTE1310', 7545, 19, '/items/productimages/televizor-thomson-t32rte1310_0.png', 4.45, '', 'Телевизор Thomson T32RTE1310 — устройство с 32-дюймовым экраном, разрешение которого составляет 1366х768 пикселей. Формат экрана — 16:9. Установлена светодиодная подсветка Direct LED, которая равномерно распределена по всему экрану. Для обработки изображения при недостаточно хорошем качестве ТВ-сигнала используется система цифрового шумоподавления. Встроенный таймер позволяет настроить время автоматического отключения телевизора. За звуковое сопровождение отвечает аудиосистема, которая состоит из двух динамиков мощностью по 10 Вт. <br><br>Функция TimeShift позволяет остановить трансляцию ТВ-программы и через некоторое время вернуться к ее просмотру с того же места. Возможно воспроизведение медиа с USB-накопителей. Установлен цифровой тюнер DVB с поддержкой стандартов T/T2/C — служит для приема и обработки ТВ-сигнала. <br><br>Входы HDMI 1.4 позволяют подключить к телевизору игровую приставку или ноутбук. Интегрированы порты USB 2.0, оптический выход Toslink, разъемы для наушников 3,5 мм и для модуля DVB CAM. Потребляемая мощность сравнительно невысокая — 40 Вт. Предусмотрена защита от детей. В комплект входит настольная подставка. Установка на стену производится при помощи VESA 100x100. Габаритные размеры — 43,1х72,6х8,2 см, вес — 4 кг.', 'InStock', 'Discount', 1, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Thomson'), 1);
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Thomson T32RTE1310'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'HD (1366x768 Пикс)' AND "Type" = 'Экран));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Thomson T32RTE1310'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '32' AND "Type" = 'Диагональ));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Thomson T32RTE1310'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '60' AND "Type" = 'Частота обновления));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Thomson T32RTE1310'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'LED' AND "Type" = 'Технология экрана));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Thomson T32RTE1310'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'Direct LED' AND "Type" = 'Тип светодиодной подсветки));
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-thomson-t32rte1310_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Thomson T32RTE1310'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-thomson-t32rte1310_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Thomson T32RTE1310'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-thomson-t32rte1310_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Thomson T32RTE1310'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-thomson-t32rte1310_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Thomson T32RTE1310'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-thomson-t32rte1310_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Thomson T32RTE1310'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-thomson-t32rte1310_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Thomson T32RTE1310'));

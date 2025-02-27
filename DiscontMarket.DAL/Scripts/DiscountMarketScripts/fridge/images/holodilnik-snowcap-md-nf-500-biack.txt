@@ -1,0 +1,19 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-snowcap-md-nf-500-biack_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Snowcap MD NF 500 Biack'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-snowcap-md-nf-500-biack_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Snowcap MD NF 500 Biack'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-snowcap-md-nf-500-biack_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Snowcap MD NF 500 Biack'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-snowcap-md-nf-500-biack_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Snowcap MD NF 500 Biack'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-snowcap-md-nf-500-biack_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Snowcap MD NF 500 Biack'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-snowcap-md-nf-500-biack_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Snowcap MD NF 500 Biack'));

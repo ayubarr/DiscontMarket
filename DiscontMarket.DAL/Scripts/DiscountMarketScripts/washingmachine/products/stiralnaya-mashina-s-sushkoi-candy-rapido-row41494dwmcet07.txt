@@ -1,0 +1,80 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Стиральная машина с сушкой Candy RapidO ROW41494DWMCET07', 43999, 17, '/items/productimages/stiralnaya-mashina-s-sushkoi-candy-rapido-row41494dwmcet07_0.png', 4.54, '', 'Стиральная машина Candy RapidO ROW41494DWMCET07 снабжена инверторным мотором, снижающим уровень шума и вибрации. Модель оснащена 16 режимами для стирки и сушки различных тканей. 
+
+• <b>Большая вместительность</b> 
+Стиральная машина вмещает 14 кг белья для стирки и 9 кг для сушки. Прибор снабжен автоматическими весами: при превышении допустимой загрузки звучит сигнал. 
+
+• <b>Дозагрузка белья</b> 
+Даже после запуска стиральной машины можно добавить забытые вещи. Это позволяет не запускать прибор повторно, экономя электричество и воду. 
+
+• <b> Интеллектуальная система</b> 
+Машина самостоятельно анализирует количество вещей. Если их мало, то мощность и необходимое количество воды уменьшаются, что также позволяет уменьшить счета за коммунальные услуги. 
+
+Таймер отложенного старта включит стиральную машину в нужное время (до 24 часов), нужно лишь заранее положить белье и выбрать необходимую программу. Скорость отжима можно регулировать (максимальная составляет 1400 об/мин). Система Quick & Clean смешивает воду и средство для стирки, создавая концентрированный раствор, ускоряющий отстирывание.', 'InStock', 'Discount', 5, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Candy'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Стиральная машина с сушкой Candy RapidO ROW41494DWMCET07'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина с сушкой Candy RapidO ROW41494DWMCET07' 
+        AND a."Name" = '14' 
+        AND a."Type" = 'Максимальная загрузка'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина с сушкой Candy RapidO ROW41494DWMCET07' 
+        AND a."Name" = '9' 
+        AND a."Type" = 'Загрузка при сушке(хлопок)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина с сушкой Candy RapidO ROW41494DWMCET07' 
+        AND a."Name" = '1400' 
+        AND a."Type" = 'Максимальная скорость отжима'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина с сушкой Candy RapidO ROW41494DWMCET07' 
+        AND a."Name" = 'инверторный' 
+        AND a."Type" = 'Мотор'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина с сушкой Candy RapidO ROW41494DWMCET07' 
+        AND a."Name" = 'Да' 
+        AND a."Type" = 'Смартфон в качестве пульта ДУ'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-s-sushkoi-candy-rapido-row41494dwmcet07_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина с сушкой Candy RapidO ROW41494DWMCET07'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-s-sushkoi-candy-rapido-row41494dwmcet07_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина с сушкой Candy RapidO ROW41494DWMCET07'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-s-sushkoi-candy-rapido-row41494dwmcet07_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина с сушкой Candy RapidO ROW41494DWMCET07'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-s-sushkoi-candy-rapido-row41494dwmcet07_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина с сушкой Candy RapidO ROW41494DWMCET07'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-s-sushkoi-candy-rapido-row41494dwmcet07_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина с сушкой Candy RapidO ROW41494DWMCET07'));

@@ -1,0 +1,22 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-indesit-tt-85-a_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Indesit TT 85 A'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-indesit-tt-85-a_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Indesit TT 85 A'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-indesit-tt-85-a_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Indesit TT 85 A'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-indesit-tt-85-a_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Indesit TT 85 A'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-indesit-tt-85-a_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Indesit TT 85 A'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-indesit-tt-85-a_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Indesit TT 85 A'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-indesit-tt-85-a_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Indesit TT 85 A'));

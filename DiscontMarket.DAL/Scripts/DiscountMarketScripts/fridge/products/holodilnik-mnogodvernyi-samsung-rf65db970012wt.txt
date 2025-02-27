@@ -1,0 +1,101 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Холодильник многодверный Samsung RF65DB970012WT', 299999, 19, '/items/productimages/holodilnik-mnogodvernyi-samsung-rf65db970012wt_0.png', 4.84, '', 'Многодверный холодильник Samsung RF65DB970012WT — модель типа Side-by-Side, которая обладает полезным объемом 551 л. Предусмотрены четыре двери, произведенные из стекла и пластика, которые открываются налево и направо. Устройство относится к климатическому классу ST, T, SN, N. 
+
+• <b>Холодильная камера объемом 362 л</b> 
+Внутри расположены четыре полки, шесть карманов на двери, отделение для овощей и фруктов. 
+
+• <b>Морозильное отделение объемом 189 л</b> 
+Оснащено двумя ящиками, через которые видно содержимое, двумя полками, генератором льда. 
+
+• <b>Система размораживания No Frost</b> 
+Предотвращает образование наледи на стенках. Устройство не требует ручного размораживания. 
+
+• <b>Режим «Отпуск»</b> 
+Обеспечивает экономию электроэнергии при долгом отсутствии хозяев. 
+
+• <b>Звуковая сигнализация</b> 
+Срабатывает при оставлении двери открытой. 
+
+В основе работы лежит инверторный процессор, который выдает шум не более 35 дБ. Используемый хладагент — R600А. Изменение параметров производится посредством электронной панели, расположенной внутри. Индикаторы показывают включение, рабочий режим и температуру. Класс энергопотребления устройства — А+. Холодильник поддерживает режимы «Быстрое освежение», «Суперохлаждение» и «Суперзамораживание». Автономное время поддержания холода составляет 12 часов.', 'InStock', 'Discount', 3, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Samsung'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Samsung RF65DB970012WT'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник многодверный Samsung RF65DB970012WT' 
+        AND a."Name" = 'инверторный' 
+        AND a."Type" = 'Тип компрессора'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник многодверный Samsung RF65DB970012WT' 
+        AND a."Name" = '185.3*91.2*73.1 см' 
+        AND a."Type" = 'Габаритные размеры (В*Ш*Г)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник многодверный Samsung RF65DB970012WT' 
+        AND a."Name" = '676' 
+        AND a."Type" = 'Общий объем'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник многодверный Samsung RF65DB970012WT' 
+        AND a."Name" = 'отсутствует' 
+        AND a."Type" = 'Тип зоны сохранения свежести'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник многодверный Samsung RF65DB970012WT' 
+        AND a."Name" = 'электронный' 
+        AND a."Type" = 'Тип управления'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-samsung-rf65db970012wt_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Samsung RF65DB970012WT'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-samsung-rf65db970012wt_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Samsung RF65DB970012WT'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-samsung-rf65db970012wt_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Samsung RF65DB970012WT'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-samsung-rf65db970012wt_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Samsung RF65DB970012WT'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-samsung-rf65db970012wt_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Samsung RF65DB970012WT'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-samsung-rf65db970012wt_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Samsung RF65DB970012WT'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-samsung-rf65db970012wt_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Samsung RF65DB970012WT'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-samsung-rf65db970012wt_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Samsung RF65DB970012WT'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-samsung-rf65db970012wt_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Samsung RF65DB970012WT'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-samsung-rf65db970012wt_9.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Samsung RF65DB970012WT'));

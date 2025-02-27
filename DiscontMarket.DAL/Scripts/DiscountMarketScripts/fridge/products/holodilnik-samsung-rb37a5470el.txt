@@ -1,0 +1,66 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Холодильник Samsung RB37A5470EL', 41499, 5, '/items/productimages/holodilnik-samsung-rb37a5470el_0.png', 4.8, '', 'Холодильник Samsung RB37A5470EL, бежевый — двухкамерная модель общим объемом 367 л. Прибор выполнен по технологии SpaceMax: эффективная термоизоляция позволила уменьшить толщину стенок, увеличив внутреннее пространство при сохранении внешних габаритов. Они составляют 201х59,5х65 см. <br>В основе системы охлаждения — современный хладагент R600A и цифровой инверторный компрессор, который отличается экономичным потреблением электроэнергии (А+, 314 кВт*ч в год) и низким уровнем шума (37 дБ). Климатический класс — SN, N, ST, T. Оба отделения размораживаются автоматически по технологии No Frost. <br>Оборудование холодильной камеры состоит из трех полок, одна из которых складывается и две — переставляются по высоте, шести дверных карманов и двух контейнеров: зоны свежести и бокса для хранения фруктов и овощей. Многопоточная система охлаждения и технология All Around Cooling равномерно распределяют холод по всему внутреннему пространству. Морозильная камера оснащена тремя ящиками, в сутки она способна обработать до 12 кг продуктов. <br>У прибора электронное управление, дисплей расположен на фасадной стороне. Поддерживаются режимы «Быстрая заморозка» и «Отпуск». О слишком долго открытой дверце предупреждает звуковой сигнал. Двери можно перенавесить, чтобы с удобством пользоваться холодильником в помещении любой планировки.', 'InStock', 'Discount', 3, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Samsung'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Холодильник Samsung RB37A5470EL'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Samsung RB37A5470EL' 
+        AND a."Name" = 'инверторный' 
+        AND a."Type" = 'Тип компрессора'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Samsung RB37A5470EL' 
+        AND a."Name" = '201' 
+        AND a."Type" = 'Высота'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Samsung RB37A5470EL' 
+        AND a."Name" = '59.5' 
+        AND a."Type" = 'Ширина'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Samsung RB37A5470EL' 
+        AND a."Name" = '65' 
+        AND a."Type" = 'Глубина'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Samsung RB37A5470EL' 
+        AND a."Name" = '367' 
+        AND a."Type" = 'Общий объем'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-samsung-rb37a5470el_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Samsung RB37A5470EL'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-samsung-rb37a5470el_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Samsung RB37A5470EL'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-samsung-rb37a5470el_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Samsung RB37A5470EL'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-samsung-rb37a5470el_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Samsung RB37A5470EL'));

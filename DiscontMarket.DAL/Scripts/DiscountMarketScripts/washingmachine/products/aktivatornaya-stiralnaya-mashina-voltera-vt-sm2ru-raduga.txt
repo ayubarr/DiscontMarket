@@ -1,0 +1,63 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Активаторная стиральная машина Волтера ВТ-СМ2RU Радуга', 3749, 12, '/items/productimages/aktivatornaya-stiralnaya-mashina-voltera-vt-sm2ru-raduga_0.png', 4.99, '', 'Мини-стиральная машина активаторного типа «Волтера» ВТ-СМ2RU «Радуга» выручит в ситуации, когда нет возможности установить большую автоматическую модель. Это компактное устройство размером 62 х 41,5х 35 см и весом 7 кг, для которого несложно найти место в ограниченном пространстве и при необходимости переставить или перевезти. Удачный выбор для общежития, дачи, съёмного жилья.<br><br>МЕХАНИЧЕСКОЕ УПРАВЛЕНИЕ<br>Наполнение водой и слив производятся вручную, для удобства есть гибкие шланги длиной 1 (залив) и 0,7 (слив) м. Рекомендуется использовать жидкость температурой до 50°. Бак вмещает до 2 кг белья. Продолжительность стирки регулируется при помощи поворотного регулятора – таймера, устанавливающегося на срок до 15 минут.<br><br>ПРОДУМАННЫЕ ДЕТАЛИ<br>Бак и корпус выполнены из полипропилена – прочного, устойчивого к механическим воздействиям материала. Для переноса устройство оснащено ручкой. Прорезиненные ножки гасят вибрацию, снижают уровень шума при работе и не позволяют прибору двигаться по полу. Питание стиральная машина получает от стандатной электрической сети и потребляет 175 Вт. <br>', 'InStock', 'Discount', 5, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Волтера'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Активаторная стиральная машина Волтера ВТ-СМ2RU Радуга'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Активаторная стиральная машина Волтера ВТ-СМ2RU Радуга' 
+        AND a."Name" = '2' 
+        AND a."Type" = 'Максимальная загрузка'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Активаторная стиральная машина Волтера ВТ-СМ2RU Радуга' 
+        AND a."Name" = 'до 15 минут' 
+        AND a."Type" = 'Таймер продолжительности работы'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Активаторная стиральная машина Волтера ВТ-СМ2RU Радуга' 
+        AND a."Name" = 'вертикальная' 
+        AND a."Type" = 'Тип загрузки'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Активаторная стиральная машина Волтера ВТ-СМ2RU Радуга' 
+        AND a."Name" = 'Да' 
+        AND a."Type" = 'Реверсивное вращение активатора'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Активаторная стиральная машина Волтера ВТ-СМ2RU Радуга' 
+        AND a."Name" = '7' 
+        AND a."Type" = 'Вес'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/aktivatornaya-stiralnaya-mashina-voltera-vt-sm2ru-raduga_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Активаторная стиральная машина Волтера ВТ-СМ2RU Радуга'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/aktivatornaya-stiralnaya-mashina-voltera-vt-sm2ru-raduga_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Активаторная стиральная машина Волтера ВТ-СМ2RU Радуга'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/aktivatornaya-stiralnaya-mashina-voltera-vt-sm2ru-raduga_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Активаторная стиральная машина Волтера ВТ-СМ2RU Радуга'));

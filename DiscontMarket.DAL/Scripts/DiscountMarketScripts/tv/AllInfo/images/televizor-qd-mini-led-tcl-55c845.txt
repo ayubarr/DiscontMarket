@@ -1,0 +1,52 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-qd-mini-led-tcl-55c845_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор QD-Mini LED TCL 55C845'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-qd-mini-led-tcl-55c845_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор QD-Mini LED TCL 55C845'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-qd-mini-led-tcl-55c845_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор QD-Mini LED TCL 55C845'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-qd-mini-led-tcl-55c845_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор QD-Mini LED TCL 55C845'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-qd-mini-led-tcl-55c845_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор QD-Mini LED TCL 55C845'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-qd-mini-led-tcl-55c845_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор QD-Mini LED TCL 55C845'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-qd-mini-led-tcl-55c845_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор QD-Mini LED TCL 55C845'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-qd-mini-led-tcl-55c845_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор QD-Mini LED TCL 55C845'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-qd-mini-led-tcl-55c845_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор QD-Mini LED TCL 55C845'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-qd-mini-led-tcl-55c845_9.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор QD-Mini LED TCL 55C845'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-qd-mini-led-tcl-55c845_10.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор QD-Mini LED TCL 55C845'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-qd-mini-led-tcl-55c845_11.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор QD-Mini LED TCL 55C845'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-qd-mini-led-tcl-55c845_12.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор QD-Mini LED TCL 55C845'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-qd-mini-led-tcl-55c845_13.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор QD-Mini LED TCL 55C845'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-qd-mini-led-tcl-55c845_14.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор QD-Mini LED TCL 55C845'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-qd-mini-led-tcl-55c845_15.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор QD-Mini LED TCL 55C845'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-qd-mini-led-tcl-55c845_16.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор QD-Mini LED TCL 55C845'));

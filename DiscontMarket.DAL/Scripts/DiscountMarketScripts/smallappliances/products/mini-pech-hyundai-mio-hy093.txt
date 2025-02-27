@@ -1,0 +1,87 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Мини-печь Hyundai MIO-HY093', 5999, 12, '/items/productimages/mini-pech-hyundai-mio-hy093_0.png', 4.54, '', 'Мини-печь Hyundai MIO-HY093 выполнена из металла и стекла в черном цвете. Прорезиненные ножки обеспечивают устойчивость на различных поверхностях. Дверца откидная, открывается вниз благодаря внешней ручке.
+
+У модели механическая панель управления. Три поворотные ручки позволяют выбрать режим работы, температуру нагрева и продолжительность приготовления (таймер до 60 минут). На корпусе присутствует индикация включения.
+
+Объем камеры составляет 28 л. Внутреннее покрытие антипригарное. Модель оснащена шестью режимами, среди них: «Верхний нагрев», «Нижний нагрев», «Гриль» и «Конвекция». Мощность ТЭНового гриля составляет 800 Вт. Максимальная температура достигает 250°С. Следить за процессом готовки позволяет внутреннее освещение камеры. Об окончании работы известит звуковой сигнал.
+
+Габариты печи составляют 40,7х54,9х32,1 см, вес — 8,5 кг. Для подключения устройство снабжено кабелем длиной 1,01 м. Потребляемая мощность четырех нагревательных элементов достигает 1600 Вт. Комплект поставки состоит из металлических направляющих, поддона для крошек, ухвата, противня и металлической решетки.', 'InStock', 'Discount', 6, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Hyundai'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Мини-печь Hyundai MIO-HY093'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Мини-печь Hyundai MIO-HY093' 
+        AND a."Name" = '28' 
+        AND a."Type" = 'Объем'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Мини-печь Hyundai MIO-HY093' 
+        AND a."Name" = '1600' 
+        AND a."Type" = 'Потребляемая мощность'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Мини-печь Hyundai MIO-HY093' 
+        AND a."Name" = 'ТЭН (верхний/нижний)' 
+        AND a."Type" = 'Тип гриля'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Мини-печь Hyundai MIO-HY093' 
+        AND a."Name" = 'черный' 
+        AND a."Type" = 'Цвет'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Мини-печь Hyundai MIO-HY093' 
+        AND a."Name" = 'антипригарное' 
+        AND a."Type" = 'Внутреннее покрытие'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-hyundai-mio-hy093_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Hyundai MIO-HY093'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-hyundai-mio-hy093_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Hyundai MIO-HY093'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-hyundai-mio-hy093_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Hyundai MIO-HY093'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-hyundai-mio-hy093_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Hyundai MIO-HY093'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-hyundai-mio-hy093_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Hyundai MIO-HY093'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-hyundai-mio-hy093_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Hyundai MIO-HY093'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-hyundai-mio-hy093_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Hyundai MIO-HY093'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-hyundai-mio-hy093_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Hyundai MIO-HY093'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-hyundai-mio-hy093_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Hyundai MIO-HY093'));

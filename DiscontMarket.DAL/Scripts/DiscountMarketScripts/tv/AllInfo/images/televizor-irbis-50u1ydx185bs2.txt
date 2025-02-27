@@ -1,0 +1,19 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-irbis-50u1ydx185bs2_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Irbis 50U1YDX185BS2'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-irbis-50u1ydx185bs2_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Irbis 50U1YDX185BS2'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-irbis-50u1ydx185bs2_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Irbis 50U1YDX185BS2'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-irbis-50u1ydx185bs2_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Irbis 50U1YDX185BS2'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-irbis-50u1ydx185bs2_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Irbis 50U1YDX185BS2'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-irbis-50u1ydx185bs2_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Irbis 50U1YDX185BS2'));

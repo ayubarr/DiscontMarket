@@ -1,0 +1,10 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-carrera-crrf891_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Carrera CRRF891'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-carrera-crrf891_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Carrera CRRF891'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-carrera-crrf891_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Carrera CRRF891'));

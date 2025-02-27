@@ -1,0 +1,78 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Стиральная машина с сушкой Toshiba TWD-BM110GF4RU(SK)', 53999, 7, '/items/productimages/stiralnaya-mashina-s-sushkoi-toshiba-twd-bm110gf4rusk_0.png', 4.5, '', 'Стиральная машина с сушкой Toshiba TWD-BM110GF4RU(SK) — полноразмерная модель с барабаном объемом 70 л, в который можно загрузить до 10 кг белья для стирки и до 7 кг для сушки. В основе прибора — надежный и энергоэффективный мотор. За полный цикл (стирка и сушка) расходуется 4,19 кВт*ч, что соответствует классу А. Потребление воды — 118 л. 
+
+Предустановлены программы для хлопковых, шерстяных, смешанных тканей, «Эко», «Быстрая», «Гипоаллергенная» и другие. Специально для цветных вещей предназначен режим Great Waves, который позволит качественно удалить загрязнения и сохранить насыщенность цвета. «Очистка барабана» предотвратит появление плесени и устранит неприятный запах. Доступна активация функций «Предварительная стирка» и «Дополнительное полоскание». «Стирка с паром» (предназначена для хлопка) освежает белье, стерилизует. Можно выбрать стандартную и интенсивную сушки. 
+
+Технология Ultra Fine Bubble (UFB) создает очень мелкие пузырьки, которые проникают глубоко в волокна тканей и доставляют туда моющие средства. Прибор оснащен системой автоматического дозирования жидкого моющего средства, при желании использовать порошок ее можно отключить. 
+
+Управление электронное, наиболее часто используемую программу удобно сохранить в памяти стиральной машины. Запустить программу в нужное время можно при помощи таймера отложенного старта (до 24 часов). Максимальная температура — 90°C, скорость отжима — 1400 об/мин. Управление производится при помощи сенсорного дисплея на корпусе или со смартфона, связь производится по Wi-Fi. Уровень шума при стирке достигает 52 дБ, при отжиме — 80 дБ. Мощность подключения — 2000 Вт. Габариты стиральной машины: 85x61,5x59,5, вес — 72 кг.', 'InStock', 'Discount', 5, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Toshiba'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Стиральная машина с сушкой Toshiba TWD-BM110GF4RU(SK)'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина с сушкой Toshiba TWD-BM110GF4RU(SK)' 
+        AND a."Name" = '10' 
+        AND a."Type" = 'Максимальная загрузка'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина с сушкой Toshiba TWD-BM110GF4RU(SK)' 
+        AND a."Name" = '7' 
+        AND a."Type" = 'Загрузка при сушке(хлопок)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина с сушкой Toshiba TWD-BM110GF4RU(SK)' 
+        AND a."Name" = '1400' 
+        AND a."Type" = 'Максимальная скорость отжима'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина с сушкой Toshiba TWD-BM110GF4RU(SK)' 
+        AND a."Name" = 'инверторный' 
+        AND a."Type" = 'Мотор'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина с сушкой Toshiba TWD-BM110GF4RU(SK)' 
+        AND a."Name" = 'Да' 
+        AND a."Type" = 'Смартфон в качестве пульта ДУ'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-s-sushkoi-toshiba-twd-bm110gf4rusk_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина с сушкой Toshiba TWD-BM110GF4RU(SK)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-s-sushkoi-toshiba-twd-bm110gf4rusk_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина с сушкой Toshiba TWD-BM110GF4RU(SK)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-s-sushkoi-toshiba-twd-bm110gf4rusk_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина с сушкой Toshiba TWD-BM110GF4RU(SK)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-s-sushkoi-toshiba-twd-bm110gf4rusk_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина с сушкой Toshiba TWD-BM110GF4RU(SK)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-s-sushkoi-toshiba-twd-bm110gf4rusk_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина с сушкой Toshiba TWD-BM110GF4RU(SK)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-s-sushkoi-toshiba-twd-bm110gf4rusk_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина с сушкой Toshiba TWD-BM110GF4RU(SK)'));

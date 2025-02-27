@@ -1,0 +1,67 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Встраиваемая посудомоечная машина 45 см Zigmund & Shtain DW 301.4', 18395, 7, '/items/productimages/vstraivaemaya-posudomoechnaya-mashina-45-sm-zigmund--shtain-dw-3014_0.png', 4.43, '', 'Встраиваемая посудомоечная машина Zigmund & Shtain DW 301.4 шириной 45 см предназначена для домашнего использования. Модель характеризуется низким уровнем шума, поэтому активировать устройство можно в любое время суток. Устройство рассчитано 11 комплектов посуды. 
+
+Посудомоечная машина с тремя уровнями загрузки обеспечивают удобство при сортировке. Высоту корзины можно регулировать в зависимости от габаритов кастрюль, стаканов и другой посуды. Режим «Неполная загрузка» позволяет сэкономить воду и электроэнергию. Запуск устройства можно отложить на 24 часа. По окончании времени модель включится автоматически. Встраиваемая посудомоечная машина Zigmund & Shtain DW 301.4 с семью программами. Благодаря которым устройство самостоятельно определяет необходимое количество моющего средства и устанавливает время. Для очищения тарелок, кружек сразу после приема пищи рекомендуется воспользоваться ускоренной программой. 
+
+За счет световой индикации удобно контролировать процесс работы. Для столовых приборов предусмотрена специальная корзинка. Посудомоечная машина Zigmund & Shtain DW 301.4 характеризуется износоустойчивостью и прочностью.', 'InStock', 'Discount', 28, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Zigmund & Shtain'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 45 см Zigmund & Shtain DW 301.4'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Встраиваемая посудомоечная машина 45 см Zigmund & Shtain DW 301.4' 
+        AND a."Name" = '9' 
+        AND a."Type" = 'Расход воды за цикл'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Встраиваемая посудомоечная машина 45 см Zigmund & Shtain DW 301.4' 
+        AND a."Name" = '11 комплектов' 
+        AND a."Type" = 'Максимальная вместимость'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Встраиваемая посудомоечная машина 45 см Zigmund & Shtain DW 301.4' 
+        AND a."Name" = '7' 
+        AND a."Type" = 'Количество программ мойки'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Встраиваемая посудомоечная машина 45 см Zigmund & Shtain DW 301.4' 
+        AND a."Name" = 'стандартный' 
+        AND a."Type" = 'Мотор'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Встраиваемая посудомоечная машина 45 см Zigmund & Shtain DW 301.4' 
+        AND a."Name" = '81,5х45х58 см' 
+        AND a."Type" = 'Размер ниши, мм (В*Ш*Г)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-45-sm-zigmund--shtain-dw-3014_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 45 см Zigmund & Shtain DW 301.4'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-45-sm-zigmund--shtain-dw-3014_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 45 см Zigmund & Shtain DW 301.4'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-45-sm-zigmund--shtain-dw-3014_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 45 см Zigmund & Shtain DW 301.4'));

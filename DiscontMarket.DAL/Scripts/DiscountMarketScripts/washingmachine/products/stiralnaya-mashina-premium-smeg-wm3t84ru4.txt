@@ -1,0 +1,86 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Стиральная машина Премиум Smeg WM3T84RU4', 42999, 9, '/items/productimages/stiralnaya-mashina-premium-smeg-wm3t84ru4_0.png', 4.3, '', 'Стиральная машина класса «Премиум» Smeg WM3T84RU4 оснащена инверторным мотором, который характеризуется небольшим уровнем шума (50/75 дБ) и экономичным энергопотреблением. 
+
+• <b>Максимальная загрузка — 8 кг</b> 
+Позволяет загружать большое количество белья одновременно, экономит время и электроэнергию. 
+
+• <b>Большой барабан</b> 
+Его объем составляет 55 л, что позволяет стирать крупные вещи: одеяла, пуховики и другое. 
+
+• <b>Разнообразные режимы работы</b> 
+Доступны следующие режимы: «Предварительная стирка», «Дополнительное полоскание», «Автоматический режим», «Ускоренная стирка», «Быстрая стирка» (15 минут), «Шерсть», «Хлопок», «Постельное белье», «Джинсы», «Замачивание», «Верхняя одежда», «Деликатная стирка», «Пуховые изделия», «Одеяла/пледы», «Темные ткани», «Антиаллергия», «Цветные ткани», «Обработка паром», «Детские вещи», «Стирка рубашек», «Смешанные ткани», «Деликатные ткани», «Шелк», «Кипячение». 
+
+• <b>Энергоэффективность и безопасность</b> 
+Машине присвоен класс энергоэффективности A+++, класс стирки A, класс отжима B. Также предусмотрены защита от детей, функция автоматического отключения при скачках напряжения, контроль дисбаланса, система самодиагностики неисправностей и частичная защита от протечек (AquaStop). 
+
+Стиральная машина Smeg WM3T84RU4 оснащена автоматическим дозатором для моющего средства, функцией «Отложенный старт» до 23 часов, звуковым сигналом, индикацией режима работы, времени до конца программы и этапов стирки.', 'InStock', 'Discount', 5, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Smeg'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Стиральная машина Премиум Smeg WM3T84RU4'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина Премиум Smeg WM3T84RU4' 
+        AND a."Name" = '8' 
+        AND a."Type" = 'Максимальная загрузка'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина Премиум Smeg WM3T84RU4' 
+        AND a."Name" = '1400' 
+        AND a."Type" = 'Максимальная скорость отжима'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина Премиум Smeg WM3T84RU4' 
+        AND a."Name" = 'инверторный' 
+        AND a."Type" = 'Мотор'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина Премиум Smeg WM3T84RU4' 
+        AND a."Name" = 'Да' 
+        AND a."Type" = 'Обработка паром'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина Премиум Smeg WM3T84RU4' 
+        AND a."Name" = '84.25*59.6*56.32 см' 
+        AND a."Type" = 'Габаритные размеры (В*Ш*Г)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-premium-smeg-wm3t84ru4_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Премиум Smeg WM3T84RU4'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-premium-smeg-wm3t84ru4_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Премиум Smeg WM3T84RU4'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-premium-smeg-wm3t84ru4_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Премиум Smeg WM3T84RU4'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-premium-smeg-wm3t84ru4_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Премиум Smeg WM3T84RU4'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-premium-smeg-wm3t84ru4_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Премиум Smeg WM3T84RU4'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-premium-smeg-wm3t84ru4_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Премиум Smeg WM3T84RU4'));

@@ -1,0 +1,97 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Встраиваемая посудомоечная машина 60 см Премиум Asko DSD746U', 82450, 17, '/items/productimages/vstraivaemaya-posudomoechnaya-mashina-60-sm-premium-asko-dsd746u_0.png', 4.89, '', 'Встраиваемая посудомоечная машина премиум-класса Asko DSD746U со слайдерной дверью монтируется в нишу размером 820х600х560 мм. Вмещает до 14 комплектов посуды, поддерживает 14 программ мойки. Мини-программа за 15 минут освежит слабозагрязненную посуду.
+
+• <b>Функция Гигиена+</b>
+Дезинфицирует кухонную утварь при температуре 70°С, убивая бактерии.
+
+• <b>Трехуровневая загрузка с системой корзин Flexi Racks</b>
+Позволяет регулировать корзины по высоте, складывать держатели для тарелок и чашек для загрузки крупноразмерной посуды.
+
+• <b>Сенсорный датчик чистоты Sensi Clean</b>
+Для достижения оптимального результата анализирует чистоту воды после ополаскивания и корректирует выбранную автоматическую программу мойки.
+
+• <b>Технология распределения воды 9Spray</b>
+Регулирует подачу на девять зон обработки, обеспечивая высокое качество мойки. Расход воды за один цикл не превышает 9,2 л.
+
+• <b>Инверторный мотор мощностью 1900 Вт</b>
+Работает с уровнем шума, не превышающим 39 дБ.
+
+• <b>Система защиты от протечек AquaSafe</b>
+Автоматически перекроет подачу воды при повреждении шланга или внутренних неполадках в устройстве.
+
+Модель снабжена электронной панелью управления с графическим дисплеем и сенсорными кнопками. Предусмотрены автодозирование моющего средства, половинная загрузка, таймер до 24 часов. Встроенное освещение камеры (две LED-лампы) позволяет загружать и выгружать посуду даже при слабом освещении. 
+
+После завершения работы прибор подает звуковой сигнал и автоматически открывает дверь для удаления пара из камеры и ускорения конденсационной сушки посуды. Посудомоечная машина относится к А-классу энергоэффективности, потребление энергии за один цикл мойки составляет 0,64 кВт*ч.', 'InStock', 'Discount', 28, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Asko'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 60 см Премиум Asko DSD746U'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Встраиваемая посудомоечная машина 60 см Премиум Asko DSD746U' 
+        AND a."Name" = '9.2' 
+        AND a."Type" = 'Расход воды за цикл'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Встраиваемая посудомоечная машина 60 см Премиум Asko DSD746U' 
+        AND a."Name" = '14 комплектов' 
+        AND a."Type" = 'Максимальная вместимость'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Встраиваемая посудомоечная машина 60 см Премиум Asko DSD746U' 
+        AND a."Name" = '14' 
+        AND a."Type" = 'Количество программ мойки'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Встраиваемая посудомоечная машина 60 см Премиум Asko DSD746U' 
+        AND a."Name" = 'инверторный' 
+        AND a."Type" = 'Мотор'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Встраиваемая посудомоечная машина 60 см Премиум Asko DSD746U' 
+        AND a."Name" = '820*600*560' 
+        AND a."Type" = 'Размер ниши, мм (В*Ш*Г)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-60-sm-premium-asko-dsd746u_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 60 см Премиум Asko DSD746U'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-60-sm-premium-asko-dsd746u_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 60 см Премиум Asko DSD746U'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-60-sm-premium-asko-dsd746u_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 60 см Премиум Asko DSD746U'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-60-sm-premium-asko-dsd746u_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 60 см Премиум Asko DSD746U'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-60-sm-premium-asko-dsd746u_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 60 см Премиум Asko DSD746U'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-60-sm-premium-asko-dsd746u_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 60 см Премиум Asko DSD746U'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-60-sm-premium-asko-dsd746u_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 60 см Премиум Asko DSD746U'));

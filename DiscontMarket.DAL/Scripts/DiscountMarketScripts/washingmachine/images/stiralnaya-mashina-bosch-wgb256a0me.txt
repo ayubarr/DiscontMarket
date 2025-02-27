@@ -1,0 +1,22 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-bosch-wgb256a0me_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Bosch WGB256A0ME'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-bosch-wgb256a0me_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Bosch WGB256A0ME'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-bosch-wgb256a0me_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Bosch WGB256A0ME'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-bosch-wgb256a0me_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Bosch WGB256A0ME'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-bosch-wgb256a0me_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Bosch WGB256A0ME'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-bosch-wgb256a0me_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Bosch WGB256A0ME'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-bosch-wgb256a0me_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Bosch WGB256A0ME'));

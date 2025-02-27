@@ -1,0 +1,462 @@
+﻿INSERT INTO "Attributes" ("NameTranslate", "Name", "Type") VALUES
+('4K Ultra HD (3840x2160 Пикс)', '4K Ultra HD (3840x2160 Пикс)', 'Экран');
+INSERT INTO "AttributeCategory" ("AttributeID", "CategoryID") VALUES
+((SELECT "ID" FROM "Attributes" WHERE "Name" = '4K Ultra HD (3840x2160 Пикс)' AND "Type" = 'Экран'), (SELECT "ID" FROM "Categories" WHERE "Name" = 'tv'));
+INSERT INTO "Attributes" ("NameTranslate", "Name", "Type") VALUES
+('75', '75', 'Диагональ');
+INSERT INTO "AttributeCategory" ("AttributeID", "CategoryID") VALUES
+((SELECT "ID" FROM "Attributes" WHERE "Name" = '75' AND "Type" = 'Диагональ'), (SELECT "ID" FROM "Categories" WHERE "Name" = 'tv'));
+INSERT INTO "Attributes" ("NameTranslate", "Name", "Type") VALUES
+('60', '60', 'Частота обновления');
+INSERT INTO "AttributeCategory" ("AttributeID", "CategoryID") VALUES
+((SELECT "ID" FROM "Attributes" WHERE "Name" = '60' AND "Type" = 'Частота обновления'), (SELECT "ID" FROM "Categories" WHERE "Name" = 'tv'));
+INSERT INTO "Attributes" ("NameTranslate", "Name", "Type") VALUES
+('QLED', 'QLED', 'Технология экрана');
+INSERT INTO "AttributeCategory" ("AttributeID", "CategoryID") VALUES
+((SELECT "ID" FROM "Attributes" WHERE "Name" = 'QLED' AND "Type" = 'Технология экрана'), (SELECT "ID" FROM "Categories" WHERE "Name" = 'tv'));
+INSERT INTO "Attributes" ("NameTranslate", "Name", "Type") VALUES
+('Direct LED', 'Direct LED', 'Тип светодиодной подсветки');
+INSERT INTO "AttributeCategory" ("AttributeID", "CategoryID") VALUES
+((SELECT "ID" FROM "Attributes" WHERE "Name" = 'Direct LED' AND "Type" = 'Тип светодиодной подсветки'), (SELECT "ID" FROM "Categories" WHERE "Name" = 'tv'));
+INSERT INTO "Brands" ("NameTranslate", "Name", "Type") VALUES
+('TCL', 'TCL', 'Бренды');
+INSERT INTO "BrandCategory" ("BrandID", "CategoryID") VALUES
+((SELECT "ID" FROM "Brands" WHERE "Name" = 'TCL'), (SELECT "ID" FROM "Categories" WHERE "Name" = 'tv'));
+
+INSERT INTO "Attributes" ("NameTranslate", "Name", "Type") VALUES
+('55', '55', 'Диагональ');
+INSERT INTO "AttributeCategory" ("AttributeID", "CategoryID") VALUES
+((SELECT "ID" FROM "Attributes" WHERE "Name" = '55' AND "Type" = 'Диагональ'), (SELECT "ID" FROM "Categories" WHERE "Name" = 'tv'));
+INSERT INTO "Attributes" ("NameTranslate", "Name", "Type") VALUES
+('120', '120', 'Частота обновления');
+INSERT INTO "AttributeCategory" ("AttributeID", "CategoryID") VALUES
+((SELECT "ID" FROM "Attributes" WHERE "Name" = '120' AND "Type" = 'Частота обновления'), (SELECT "ID" FROM "Categories" WHERE "Name" = 'tv'));
+INSERT INTO "Attributes" ("NameTranslate", "Name", "Type") VALUES
+('OLED', 'OLED', 'Технология экрана');
+INSERT INTO "AttributeCategory" ("AttributeID", "CategoryID") VALUES
+((SELECT "ID" FROM "Attributes" WHERE "Name" = 'OLED' AND "Type" = 'Технология экрана'), (SELECT "ID" FROM "Categories" WHERE "Name" = 'tv'));
+INSERT INTO "Attributes" ("NameTranslate", "Name", "Type") VALUES
+('OLED', 'OLED', 'Тип светодиодной подсветки');
+INSERT INTO "AttributeCategory" ("AttributeID", "CategoryID") VALUES
+((SELECT "ID" FROM "Attributes" WHERE "Name" = 'OLED' AND "Type" = 'Тип светодиодной подсветки'), (SELECT "ID" FROM "Categories" WHERE "Name" = 'tv'));
+INSERT INTO "Brands" ("NameTranslate", "Name", "Type") VALUES
+('Hisense', 'Hisense', 'Бренды');
+INSERT INTO "BrandCategory" ("BrandID", "CategoryID") VALUES
+((SELECT "ID" FROM "Brands" WHERE "Name" = 'Hisense'), (SELECT "ID" FROM "Categories" WHERE "Name" = 'tv'));
+
+INSERT INTO "Attributes" ("NameTranslate", "Name", "Type") VALUES
+('50', '50', 'Диагональ');
+INSERT INTO "AttributeCategory" ("AttributeID", "CategoryID") VALUES
+((SELECT "ID" FROM "Attributes" WHERE "Name" = '50' AND "Type" = 'Диагональ'), (SELECT "ID" FROM "Categories" WHERE "Name" = 'tv'));
+INSERT INTO "Attributes" ("NameTranslate", "Name", "Type") VALUES
+('LED', 'LED', 'Технология экрана');
+INSERT INTO "AttributeCategory" ("AttributeID", "CategoryID") VALUES
+((SELECT "ID" FROM "Attributes" WHERE "Name" = 'LED' AND "Type" = 'Технология экрана'), (SELECT "ID" FROM "Categories" WHERE "Name" = 'tv'));
+INSERT INTO "Brands" ("NameTranslate", "Name", "Type") VALUES
+('Витязь', 'Витязь', 'Бренды');
+INSERT INTO "BrandCategory" ("BrandID", "CategoryID") VALUES
+((SELECT "ID" FROM "Brands" WHERE "Name" = 'Витязь'), (SELECT "ID" FROM "Categories" WHERE "Name" = 'tv'));
+
+INSERT INTO "Attributes" ("NameTranslate", "Name", "Type") VALUES
+('144', '144', 'Частота обновления');
+INSERT INTO "AttributeCategory" ("AttributeID", "CategoryID") VALUES
+((SELECT "ID" FROM "Attributes" WHERE "Name" = '144' AND "Type" = 'Частота обновления'), (SELECT "ID" FROM "Categories" WHERE "Name" = 'tv'));
+INSERT INTO "Attributes" ("NameTranslate", "Name", "Type") VALUES
+('Mini LED', 'Mini LED', 'Тип светодиодной подсветки');
+INSERT INTO "AttributeCategory" ("AttributeID", "CategoryID") VALUES
+((SELECT "ID" FROM "Attributes" WHERE "Name" = 'Mini LED' AND "Type" = 'Тип светодиодной подсветки'), (SELECT "ID" FROM "Categories" WHERE "Name" = 'tv'));
+INSERT INTO "Brands" ("NameTranslate", "Name", "Type") VALUES
+('Samsung', 'Samsung', 'Бренды');
+INSERT INTO "BrandCategory" ("BrandID", "CategoryID") VALUES
+((SELECT "ID" FROM "Brands" WHERE "Name" = 'Samsung'), (SELECT "ID" FROM "Categories" WHERE "Name" = 'tv'));
+
+INSERT INTO "Attributes" ("NameTranslate", "Name", "Type") VALUES
+('43', '43', 'Диагональ');
+INSERT INTO "AttributeCategory" ("AttributeID", "CategoryID") VALUES
+((SELECT "ID" FROM "Attributes" WHERE "Name" = '43' AND "Type" = 'Диагональ'), (SELECT "ID" FROM "Categories" WHERE "Name" = 'tv'));
+INSERT INTO "Brands" ("NameTranslate", "Name", "Type") VALUES
+('Grundig', 'Grundig', 'Бренды');
+INSERT INTO "BrandCategory" ("BrandID", "CategoryID") VALUES
+((SELECT "ID" FROM "Brands" WHERE "Name" = 'Grundig'), (SELECT "ID" FROM "Categories" WHERE "Name" = 'tv'));
+
+INSERT INTO "Attributes" ("NameTranslate", "Name", "Type") VALUES
+('HD (1366x768 Пикс)', 'HD (1366x768 Пикс)', 'Экран');
+INSERT INTO "AttributeCategory" ("AttributeID", "CategoryID") VALUES
+((SELECT "ID" FROM "Attributes" WHERE "Name" = 'HD (1366x768 Пикс)' AND "Type" = 'Экран'), (SELECT "ID" FROM "Categories" WHERE "Name" = 'tv'));
+INSERT INTO "Attributes" ("NameTranslate", "Name", "Type") VALUES
+('32', '32', 'Диагональ');
+INSERT INTO "AttributeCategory" ("AttributeID", "CategoryID") VALUES
+((SELECT "ID" FROM "Attributes" WHERE "Name" = '32' AND "Type" = 'Диагональ'), (SELECT "ID" FROM "Categories" WHERE "Name" = 'tv'));
+
+INSERT INTO "Attributes" ("NameTranslate", "Name", "Type") VALUES
+('Dual LED', 'Dual LED', 'Тип светодиодной подсветки');
+INSERT INTO "AttributeCategory" ("AttributeID", "CategoryID") VALUES
+((SELECT "ID" FROM "Attributes" WHERE "Name" = 'Dual LED' AND "Type" = 'Тип светодиодной подсветки'), (SELECT "ID" FROM "Categories" WHERE "Name" = 'tv'));
+
+INSERT INTO "Attributes" ("NameTranslate", "Name", "Type") VALUES
+('65', '65', 'Диагональ');
+INSERT INTO "AttributeCategory" ("AttributeID", "CategoryID") VALUES
+((SELECT "ID" FROM "Attributes" WHERE "Name" = '65' AND "Type" = 'Диагональ'), (SELECT "ID" FROM "Categories" WHERE "Name" = 'tv'));
+INSERT INTO "Attributes" ("NameTranslate", "Name", "Type") VALUES
+('QNED', 'QNED', 'Технология экрана');
+INSERT INTO "AttributeCategory" ("AttributeID", "CategoryID") VALUES
+((SELECT "ID" FROM "Attributes" WHERE "Name" = 'QNED' AND "Type" = 'Технология экрана'), (SELECT "ID" FROM "Categories" WHERE "Name" = 'tv'));
+INSERT INTO "Attributes" ("NameTranslate", "Name", "Type") VALUES
+('Edge LED', 'Edge LED', 'Тип светодиодной подсветки');
+INSERT INTO "AttributeCategory" ("AttributeID", "CategoryID") VALUES
+((SELECT "ID" FROM "Attributes" WHERE "Name" = 'Edge LED' AND "Type" = 'Тип светодиодной подсветки'), (SELECT "ID" FROM "Categories" WHERE "Name" = 'tv'));
+INSERT INTO "Brands" ("NameTranslate", "Name", "Type") VALUES
+('LG', 'LG', 'Бренды');
+INSERT INTO "BrandCategory" ("BrandID", "CategoryID") VALUES
+((SELECT "ID" FROM "Brands" WHERE "Name" = 'LG'), (SELECT "ID" FROM "Categories" WHERE "Name" = 'tv'));
+
+INSERT INTO "Attributes" ("NameTranslate", "Name", "Type") VALUES
+('77', '77', 'Диагональ');
+INSERT INTO "AttributeCategory" ("AttributeID", "CategoryID") VALUES
+((SELECT "ID" FROM "Attributes" WHERE "Name" = '77' AND "Type" = 'Диагональ'), (SELECT "ID" FROM "Categories" WHERE "Name" = 'tv'));
+
+INSERT INTO "Attributes" ("NameTranslate", "Name", "Type") VALUES
+('Да', 'Да', 'Поддержка Smart TV');
+INSERT INTO "AttributeCategory" ("AttributeID", "CategoryID") VALUES
+((SELECT "ID" FROM "Attributes" WHERE "Name" = 'Да' AND "Type" = 'Поддержка Smart TV'), (SELECT "ID" FROM "Categories" WHERE "Name" = 'tv'));
+INSERT INTO "Brands" ("NameTranslate", "Name", "Type") VALUES
+('Toshiba', 'Toshiba', 'Бренды');
+INSERT INTO "BrandCategory" ("BrandID", "CategoryID") VALUES
+((SELECT "ID" FROM "Brands" WHERE "Name" = 'Toshiba'), (SELECT "ID" FROM "Categories" WHERE "Name" = 'tv'));
+
+INSERT INTO "Attributes" ("NameTranslate", "Name", "Type") VALUES
+('98', '98', 'Диагональ');
+INSERT INTO "AttributeCategory" ("AttributeID", "CategoryID") VALUES
+((SELECT "ID" FROM "Attributes" WHERE "Name" = '98' AND "Type" = 'Диагональ'), (SELECT "ID" FROM "Categories" WHERE "Name" = 'tv'));
+
+INSERT INTO "Attributes" ("NameTranslate", "Name", "Type") VALUES
+('4K UHD', '4K UHD', 'Технология экрана');
+INSERT INTO "AttributeCategory" ("AttributeID", "CategoryID") VALUES
+((SELECT "ID" FROM "Attributes" WHERE "Name" = '4K UHD' AND "Type" = 'Технология экрана'), (SELECT "ID" FROM "Categories" WHERE "Name" = 'tv'));
+
+INSERT INTO "Brands" ("NameTranslate", "Name", "Type") VALUES
+('Sber', 'Sber', 'Бренды');
+INSERT INTO "BrandCategory" ("BrandID", "CategoryID") VALUES
+((SELECT "ID" FROM "Brands" WHERE "Name" = 'Sber'), (SELECT "ID" FROM "Categories" WHERE "Name" = 'tv'));
+
+INSERT INTO "Attributes" ("NameTranslate", "Name", "Type") VALUES
+('Full HD (1920x1080 Пикс)', 'Full HD (1920x1080 Пикс)', 'Экран');
+INSERT INTO "AttributeCategory" ("AttributeID", "CategoryID") VALUES
+((SELECT "ID" FROM "Attributes" WHERE "Name" = 'Full HD (1920x1080 Пикс)' AND "Type" = 'Экран'), (SELECT "ID" FROM "Categories" WHERE "Name" = 'tv'));
+INSERT INTO "Attributes" ("NameTranslate", "Name", "Type") VALUES
+('40', '40', 'Диагональ');
+INSERT INTO "AttributeCategory" ("AttributeID", "CategoryID") VALUES
+((SELECT "ID" FROM "Attributes" WHERE "Name" = '40' AND "Type" = 'Диагональ'), (SELECT "ID" FROM "Categories" WHERE "Name" = 'tv'));
+INSERT INTO "Brands" ("NameTranslate", "Name", "Type") VALUES
+('Hi', 'Hi', 'Бренды');
+INSERT INTO "BrandCategory" ("BrandID", "CategoryID") VALUES
+((SELECT "ID" FROM "Brands" WHERE "Name" = 'Hi'), (SELECT "ID" FROM "Categories" WHERE "Name" = 'tv'));
+
+INSERT INTO "Attributes" ("NameTranslate", "Name", "Type") VALUES
+('1', '1', 'Порт USB 2.0 тип A');
+INSERT INTO "AttributeCategory" ("AttributeID", "CategoryID") VALUES
+((SELECT "ID" FROM "Attributes" WHERE "Name" = '1' AND "Type" = 'Порт USB 2.0 тип A'), (SELECT "ID" FROM "Categories" WHERE "Name" = 'tv'));
+
+INSERT INTO "Attributes" ("NameTranslate", "Name", "Type") VALUES
+('85', '85', 'Диагональ');
+INSERT INTO "AttributeCategory" ("AttributeID", "CategoryID") VALUES
+((SELECT "ID" FROM "Attributes" WHERE "Name" = '85' AND "Type" = 'Диагональ'), (SELECT "ID" FROM "Categories" WHERE "Name" = 'tv'));
+
+INSERT INTO "Attributes" ("NameTranslate", "Name", "Type") VALUES
+('100', '100', 'Диагональ');
+INSERT INTO "AttributeCategory" ("AttributeID", "CategoryID") VALUES
+((SELECT "ID" FROM "Attributes" WHERE "Name" = '100' AND "Type" = 'Диагональ'), (SELECT "ID" FROM "Categories" WHERE "Name" = 'tv'));
+
+INSERT INTO "Attributes" ("NameTranslate", "Name", "Type") VALUES
+('NANO QLED', 'NANO QLED', 'Технология экрана');
+INSERT INTO "AttributeCategory" ("AttributeID", "CategoryID") VALUES
+((SELECT "ID" FROM "Attributes" WHERE "Name" = 'NANO QLED' AND "Type" = 'Технология экрана'), (SELECT "ID" FROM "Categories" WHERE "Name" = 'tv'));
+
+INSERT INTO "Brands" ("NameTranslate", "Name", "Type") VALUES
+('Philips', 'Philips', 'Бренды');
+INSERT INTO "BrandCategory" ("BrandID", "CategoryID") VALUES
+((SELECT "ID" FROM "Brands" WHERE "Name" = 'Philips'), (SELECT "ID" FROM "Categories" WHERE "Name" = 'tv'));
+
+INSERT INTO "Brands" ("NameTranslate", "Name", "Type") VALUES
+('Haier', 'Haier', 'Бренды');
+INSERT INTO "BrandCategory" ("BrandID", "CategoryID") VALUES
+((SELECT "ID" FROM "Brands" WHERE "Name" = 'Haier'), (SELECT "ID" FROM "Categories" WHERE "Name" = 'tv'));
+
+INSERT INTO "Attributes" ("NameTranslate", "Name", "Type") VALUES
+('44', '44', 'Диагональ');
+INSERT INTO "AttributeCategory" ("AttributeID", "CategoryID") VALUES
+((SELECT "ID" FROM "Attributes" WHERE "Name" = '44' AND "Type" = 'Диагональ'), (SELECT "ID" FROM "Categories" WHERE "Name" = 'tv'));
+INSERT INTO "Attributes" ("NameTranslate", "Name", "Type") VALUES
+('LED', 'LED', 'Тип светодиодной подсветки');
+INSERT INTO "AttributeCategory" ("AttributeID", "CategoryID") VALUES
+((SELECT "ID" FROM "Attributes" WHERE "Name" = 'LED' AND "Type" = 'Тип светодиодной подсветки'), (SELECT "ID" FROM "Categories" WHERE "Name" = 'tv'));
+
+INSERT INTO "Attributes" ("NameTranslate", "Name", "Type") VALUES
+('VA', 'VA', 'Технология экрана');
+INSERT INTO "AttributeCategory" ("AttributeID", "CategoryID") VALUES
+((SELECT "ID" FROM "Attributes" WHERE "Name" = 'VA' AND "Type" = 'Технология экрана'), (SELECT "ID" FROM "Categories" WHERE "Name" = 'tv'));
+
+INSERT INTO "Attributes" ("NameTranslate", "Name", "Type") VALUES
+('8K Ultra HD (7680x4320 Пикс)', '8K Ultra HD (7680x4320 Пикс)', 'Экран');
+INSERT INTO "AttributeCategory" ("AttributeID", "CategoryID") VALUES
+((SELECT "ID" FROM "Attributes" WHERE "Name" = '8K Ultra HD (7680x4320 Пикс)' AND "Type" = 'Экран'), (SELECT "ID" FROM "Categories" WHERE "Name" = 'tv'));
+
+INSERT INTO "Brands" ("NameTranslate", "Name", "Type") VALUES
+('Яндекс', 'Яндекс', 'Бренды');
+INSERT INTO "BrandCategory" ("BrandID", "CategoryID") VALUES
+((SELECT "ID" FROM "Brands" WHERE "Name" = 'Яндекс'), (SELECT "ID" FROM "Categories" WHERE "Name" = 'tv'));
+
+INSERT INTO "Brands" ("NameTranslate", "Name", "Type") VALUES
+('Hyundai', 'Hyundai', 'Бренды');
+INSERT INTO "BrandCategory" ("BrandID", "CategoryID") VALUES
+((SELECT "ID" FROM "Brands" WHERE "Name" = 'Hyundai'), (SELECT "ID" FROM "Categories" WHERE "Name" = 'tv'));
+
+INSERT INTO "Attributes" ("NameTranslate", "Name", "Type") VALUES
+('50', '50', 'Частота обновления');
+INSERT INTO "AttributeCategory" ("AttributeID", "CategoryID") VALUES
+((SELECT "ID" FROM "Attributes" WHERE "Name" = '50' AND "Type" = 'Частота обновления'), (SELECT "ID" FROM "Categories" WHERE "Name" = 'tv'));
+
+INSERT INTO "Brands" ("NameTranslate", "Name", "Type") VALUES
+('Xiaomi', 'Xiaomi', 'Бренды');
+INSERT INTO "BrandCategory" ("BrandID", "CategoryID") VALUES
+((SELECT "ID" FROM "Brands" WHERE "Name" = 'Xiaomi'), (SELECT "ID" FROM "Categories" WHERE "Name" = 'tv'));
+
+INSERT INTO "Brands" ("NameTranslate", "Name", "Type") VALUES
+('SKYWORTH', 'SKYWORTH', 'Бренды');
+INSERT INTO "BrandCategory" ("BrandID", "CategoryID") VALUES
+((SELECT "ID" FROM "Brands" WHERE "Name" = 'SKYWORTH'), (SELECT "ID" FROM "Categories" WHERE "Name" = 'tv'));
+
+INSERT INTO "Brands" ("NameTranslate", "Name", "Type") VALUES
+('BBK', 'BBK', 'Бренды');
+INSERT INTO "BrandCategory" ("BrandID", "CategoryID") VALUES
+((SELECT "ID" FROM "Brands" WHERE "Name" = 'BBK'), (SELECT "ID" FROM "Categories" WHERE "Name" = 'tv'));
+
+INSERT INTO "Brands" ("NameTranslate", "Name", "Type") VALUES
+('TopDevice', 'TopDevice', 'Бренды');
+INSERT INTO "BrandCategory" ("BrandID", "CategoryID") VALUES
+((SELECT "ID" FROM "Brands" WHERE "Name" = 'TopDevice'), (SELECT "ID" FROM "Categories" WHERE "Name" = 'tv'));
+
+INSERT INTO "Brands" ("NameTranslate", "Name", "Type") VALUES
+('Sony', 'Sony', 'Бренды');
+INSERT INTO "BrandCategory" ("BrandID", "CategoryID") VALUES
+((SELECT "ID" FROM "Brands" WHERE "Name" = 'Sony'), (SELECT "ID" FROM "Categories" WHERE "Name" = 'tv'));
+
+INSERT INTO "Brands" ("NameTranslate", "Name", "Type") VALUES
+('Thomson', 'Thomson', 'Бренды');
+INSERT INTO "BrandCategory" ("BrandID", "CategoryID") VALUES
+((SELECT "ID" FROM "Brands" WHERE "Name" = 'Thomson'), (SELECT "ID" FROM "Categories" WHERE "Name" = 'tv'));
+
+INSERT INTO "Brands" ("NameTranslate", "Name", "Type") VALUES
+('Horizont', 'Horizont', 'Бренды');
+INSERT INTO "BrandCategory" ("BrandID", "CategoryID") VALUES
+((SELECT "ID" FROM "Brands" WHERE "Name" = 'Horizont'), (SELECT "ID" FROM "Categories" WHERE "Name" = 'tv'));
+
+INSERT INTO "Attributes" ("NameTranslate", "Name", "Type") VALUES
+('NanoCell', 'NanoCell', 'Технология экрана');
+INSERT INTO "AttributeCategory" ("AttributeID", "CategoryID") VALUES
+((SELECT "ID" FROM "Attributes" WHERE "Name" = 'NanoCell' AND "Type" = 'Технология экрана'), (SELECT "ID" FROM "Categories" WHERE "Name" = 'tv'));
+
+INSERT INTO "Brands" ("NameTranslate", "Name", "Type") VALUES
+('POLARLINE', 'POLARLINE', 'Бренды');
+INSERT INTO "BrandCategory" ("BrandID", "CategoryID") VALUES
+((SELECT "ID" FROM "Brands" WHERE "Name" = 'POLARLINE'), (SELECT "ID" FROM "Categories" WHERE "Name" = 'tv'));
+
+INSERT INTO "Brands" ("NameTranslate", "Name", "Type") VALUES
+('Olto', 'Olto', 'Бренды');
+INSERT INTO "BrandCategory" ("BrandID", "CategoryID") VALUES
+((SELECT "ID" FROM "Brands" WHERE "Name" = 'Olto'), (SELECT "ID" FROM "Categories" WHERE "Name" = 'tv'));
+
+INSERT INTO "Brands" ("NameTranslate", "Name", "Type") VALUES
+('GoldStar', 'GoldStar', 'Бренды');
+INSERT INTO "BrandCategory" ("BrandID", "CategoryID") VALUES
+((SELECT "ID" FROM "Brands" WHERE "Name" = 'GoldStar'), (SELECT "ID" FROM "Categories" WHERE "Name" = 'tv'));
+
+INSERT INTO "Brands" ("NameTranslate", "Name", "Type") VALUES
+('Kivi', 'Kivi', 'Бренды');
+INSERT INTO "BrandCategory" ("BrandID", "CategoryID") VALUES
+((SELECT "ID" FROM "Brands" WHERE "Name" = 'Kivi'), (SELECT "ID" FROM "Categories" WHERE "Name" = 'tv'));
+
+INSERT INTO "Brands" ("NameTranslate", "Name", "Type") VALUES
+('Akai', 'Akai', 'Бренды');
+INSERT INTO "BrandCategory" ("BrandID", "CategoryID") VALUES
+((SELECT "ID" FROM "Brands" WHERE "Name" = 'Akai'), (SELECT "ID" FROM "Categories" WHERE "Name" = 'tv'));
+
+INSERT INTO "Attributes" ("NameTranslate", "Name", "Type") VALUES
+('24', '24', 'Диагональ');
+INSERT INTO "AttributeCategory" ("AttributeID", "CategoryID") VALUES
+((SELECT "ID" FROM "Attributes" WHERE "Name" = '24' AND "Type" = 'Диагональ'), (SELECT "ID" FROM "Categories" WHERE "Name" = 'tv'));
+
+INSERT INTO "Brands" ("NameTranslate", "Name", "Type") VALUES
+('Soundmax', 'Soundmax', 'Бренды');
+INSERT INTO "BrandCategory" ("BrandID", "CategoryID") VALUES
+((SELECT "ID" FROM "Brands" WHERE "Name" = 'Soundmax'), (SELECT "ID" FROM "Categories" WHERE "Name" = 'tv'));
+
+INSERT INTO "Brands" ("NameTranslate", "Name", "Type") VALUES
+('Harper', 'Harper', 'Бренды');
+INSERT INTO "BrandCategory" ("BrandID", "CategoryID") VALUES
+((SELECT "ID" FROM "Brands" WHERE "Name" = 'Harper'), (SELECT "ID" FROM "Categories" WHERE "Name" = 'tv'));
+
+INSERT INTO "Attributes" ("NameTranslate", "Name", "Type") VALUES
+('4K QLED', '4K QLED', 'Технология экрана');
+INSERT INTO "AttributeCategory" ("AttributeID", "CategoryID") VALUES
+((SELECT "ID" FROM "Attributes" WHERE "Name" = '4K QLED' AND "Type" = 'Технология экрана'), (SELECT "ID" FROM "Categories" WHERE "Name" = 'tv'));
+
+INSERT INTO "Brands" ("NameTranslate", "Name", "Type") VALUES
+('BQ', 'BQ', 'Бренды');
+INSERT INTO "BrandCategory" ("BrandID", "CategoryID") VALUES
+((SELECT "ID" FROM "Brands" WHERE "Name" = 'BQ'), (SELECT "ID" FROM "Categories" WHERE "Name" = 'tv'));
+
+INSERT INTO "Brands" ("NameTranslate", "Name", "Type") VALUES
+('Econ', 'Econ', 'Бренды');
+INSERT INTO "BrandCategory" ("BrandID", "CategoryID") VALUES
+((SELECT "ID" FROM "Brands" WHERE "Name" = 'Econ'), (SELECT "ID" FROM "Categories" WHERE "Name" = 'tv'));
+
+INSERT INTO "Brands" ("NameTranslate", "Name", "Type") VALUES
+('Candy', 'Candy', 'Бренды');
+INSERT INTO "BrandCategory" ("BrandID", "CategoryID") VALUES
+((SELECT "ID" FROM "Brands" WHERE "Name" = 'Candy'), (SELECT "ID" FROM "Categories" WHERE "Name" = 'tv'));
+
+INSERT INTO "Brands" ("NameTranslate", "Name", "Type") VALUES
+('Garlyn', 'Garlyn', 'Бренды');
+INSERT INTO "BrandCategory" ("BrandID", "CategoryID") VALUES
+((SELECT "ID" FROM "Brands" WHERE "Name" = 'Garlyn'), (SELECT "ID" FROM "Categories" WHERE "Name" = 'tv'));
+
+INSERT INTO "Attributes" ("NameTranslate", "Name", "Type") VALUES
+('86', '86', 'Диагональ');
+INSERT INTO "AttributeCategory" ("AttributeID", "CategoryID") VALUES
+((SELECT "ID" FROM "Attributes" WHERE "Name" = '86' AND "Type" = 'Диагональ'), (SELECT "ID" FROM "Categories" WHERE "Name" = 'tv'));
+
+INSERT INTO "Brands" ("NameTranslate", "Name", "Type") VALUES
+('Artel', 'Artel', 'Бренды');
+INSERT INTO "BrandCategory" ("BrandID", "CategoryID") VALUES
+((SELECT "ID" FROM "Brands" WHERE "Name" = 'Artel'), (SELECT "ID" FROM "Categories" WHERE "Name" = 'tv'));
+
+INSERT INTO "Attributes" ("NameTranslate", "Name", "Type") VALUES
+('83', '83', 'Диагональ');
+INSERT INTO "AttributeCategory" ("AttributeID", "CategoryID") VALUES
+((SELECT "ID" FROM "Attributes" WHERE "Name" = '83' AND "Type" = 'Диагональ'), (SELECT "ID" FROM "Categories" WHERE "Name" = 'tv'));
+
+INSERT INTO "Brands" ("NameTranslate", "Name", "Type") VALUES
+('Триколор', 'Триколор', 'Бренды');
+INSERT INTO "BrandCategory" ("BrandID", "CategoryID") VALUES
+((SELECT "ID" FROM "Brands" WHERE "Name" = 'Триколор'), (SELECT "ID" FROM "Categories" WHERE "Name" = 'tv'));
+
+INSERT INTO "Brands" ("NameTranslate", "Name", "Type") VALUES
+('RED SOLUTION', 'RED SOLUTION', 'Бренды');
+INSERT INTO "BrandCategory" ("BrandID", "CategoryID") VALUES
+((SELECT "ID" FROM "Brands" WHERE "Name" = 'RED SOLUTION'), (SELECT "ID" FROM "Categories" WHERE "Name" = 'tv'));
+
+INSERT INTO "Attributes" ("NameTranslate", "Name", "Type") VALUES
+('70', '70', 'Диагональ');
+INSERT INTO "AttributeCategory" ("AttributeID", "CategoryID") VALUES
+((SELECT "ID" FROM "Attributes" WHERE "Name" = '70' AND "Type" = 'Диагональ'), (SELECT "ID" FROM "Categories" WHERE "Name" = 'tv'));
+
+INSERT INTO "Attributes" ("NameTranslate", "Name", "Type") VALUES
+('HD (768x1366 Пикс)', 'HD (768x1366 Пикс)', 'Экран');
+INSERT INTO "AttributeCategory" ("AttributeID", "CategoryID") VALUES
+((SELECT "ID" FROM "Attributes" WHERE "Name" = 'HD (768x1366 Пикс)' AND "Type" = 'Экран'), (SELECT "ID" FROM "Categories" WHERE "Name" = 'tv'));
+
+INSERT INTO "Attributes" ("NameTranslate", "Name", "Type") VALUES
+('HD (2160x3840 Пикс)', 'HD (2160x3840 Пикс)', 'Экран');
+INSERT INTO "AttributeCategory" ("AttributeID", "CategoryID") VALUES
+((SELECT "ID" FROM "Attributes" WHERE "Name" = 'HD (2160x3840 Пикс)' AND "Type" = 'Экран'), (SELECT "ID" FROM "Categories" WHERE "Name" = 'tv'));
+
+INSERT INTO "Attributes" ("NameTranslate", "Name", "Type") VALUES
+('HD (1080x1920 Пикс)', 'HD (1080x1920 Пикс)', 'Экран');
+INSERT INTO "AttributeCategory" ("AttributeID", "CategoryID") VALUES
+((SELECT "ID" FROM "Attributes" WHERE "Name" = 'HD (1080x1920 Пикс)' AND "Type" = 'Экран'), (SELECT "ID" FROM "Categories" WHERE "Name" = 'tv'));
+
+INSERT INTO "Brands" ("NameTranslate", "Name", "Type") VALUES
+('Vekta', 'Vekta', 'Бренды');
+INSERT INTO "BrandCategory" ("BrandID", "CategoryID") VALUES
+((SELECT "ID" FROM "Brands" WHERE "Name" = 'Vekta'), (SELECT "ID" FROM "Categories" WHERE "Name" = 'tv'));
+
+INSERT INTO "Brands" ("NameTranslate", "Name", "Type") VALUES
+('Irbis', 'Irbis', 'Бренды');
+INSERT INTO "BrandCategory" ("BrandID", "CategoryID") VALUES
+((SELECT "ID" FROM "Brands" WHERE "Name" = 'Irbis'), (SELECT "ID" FROM "Categories" WHERE "Name" = 'tv'));
+
+INSERT INTO "Brands" ("NameTranslate", "Name", "Type") VALUES
+('Rombica', 'Rombica', 'Бренды');
+INSERT INTO "BrandCategory" ("BrandID", "CategoryID") VALUES
+((SELECT "ID" FROM "Brands" WHERE "Name" = 'Rombica'), (SELECT "ID" FROM "Categories" WHERE "Name" = 'tv'));
+
+INSERT INTO "Brands" ("NameTranslate", "Name", "Type") VALUES
+('Maunfeld', 'Maunfeld', 'Бренды');
+INSERT INTO "BrandCategory" ("BrandID", "CategoryID") VALUES
+((SELECT "ID" FROM "Brands" WHERE "Name" = 'Maunfeld'), (SELECT "ID" FROM "Categories" WHERE "Name" = 'tv'));
+
+INSERT INTO "Attributes" ("NameTranslate", "Name", "Type") VALUES
+('100', '100', 'Частота обновления');
+INSERT INTO "AttributeCategory" ("AttributeID", "CategoryID") VALUES
+((SELECT "ID" FROM "Attributes" WHERE "Name" = '100' AND "Type" = 'Частота обновления'), (SELECT "ID" FROM "Categories" WHERE "Name" = 'tv'));
+
+INSERT INTO "Brands" ("NameTranslate", "Name", "Type") VALUES
+('Vesta', 'Vesta', 'Бренды');
+INSERT INTO "BrandCategory" ("BrandID", "CategoryID") VALUES
+((SELECT "ID" FROM "Brands" WHERE "Name" = 'Vesta'), (SELECT "ID" FROM "Categories" WHERE "Name" = 'tv'));
+
+INSERT INTO "Brands" ("NameTranslate", "Name", "Type") VALUES
+('H', 'H', 'Бренды');
+INSERT INTO "BrandCategory" ("BrandID", "CategoryID") VALUES
+((SELECT "ID" FROM "Brands" WHERE "Name" = 'H'), (SELECT "ID" FROM "Categories" WHERE "Name" = 'tv'));
+
+INSERT INTO "Attributes" ("NameTranslate", "Name", "Type") VALUES
+('Full HD (1080x1920 Пикс)', 'Full HD (1080x1920 Пикс)', 'Экран');
+INSERT INTO "AttributeCategory" ("AttributeID", "CategoryID") VALUES
+((SELECT "ID" FROM "Attributes" WHERE "Name" = 'Full HD (1080x1920 Пикс)' AND "Type" = 'Экран'), (SELECT "ID" FROM "Categories" WHERE "Name" = 'tv'));
+INSERT INTO "Brands" ("NameTranslate", "Name", "Type") VALUES
+('Centek', 'Centek', 'Бренды');
+INSERT INTO "BrandCategory" ("BrandID", "CategoryID") VALUES
+((SELECT "ID" FROM "Brands" WHERE "Name" = 'Centek'), (SELECT "ID" FROM "Categories" WHERE "Name" = 'tv'));
+
+INSERT INTO "Attributes" ("NameTranslate", "Name", "Type") VALUES
+('Full HD (3840x2160 Пикс)', 'Full HD (3840x2160 Пикс)', 'Экран');
+INSERT INTO "AttributeCategory" ("AttributeID", "CategoryID") VALUES
+((SELECT "ID" FROM "Attributes" WHERE "Name" = 'Full HD (3840x2160 Пикс)' AND "Type" = 'Экран'), (SELECT "ID" FROM "Categories" WHERE "Name" = 'tv'));
+
+INSERT INTO "Brands" ("NameTranslate", "Name", "Type") VALUES
+('Starwind', 'Starwind', 'Бренды');
+INSERT INTO "BrandCategory" ("BrandID", "CategoryID") VALUES
+((SELECT "ID" FROM "Brands" WHERE "Name" = 'Starwind'), (SELECT "ID" FROM "Categories" WHERE "Name" = 'tv'));
+
+INSERT INTO "Brands" ("NameTranslate", "Name", "Type") VALUES
+('Digma', 'Digma', 'Бренды');
+INSERT INTO "BrandCategory" ("BrandID", "CategoryID") VALUES
+((SELECT "ID" FROM "Brands" WHERE "Name" = 'Digma'), (SELECT "ID" FROM "Categories" WHERE "Name" = 'tv'));
+
+INSERT INTO "Attributes" ("NameTranslate", "Name", "Type") VALUES
+('1920x1080 Пикс (1920x1080 Пикс)', '1920x1080 Пикс (1920x1080 Пикс)', 'Экран');
+INSERT INTO "AttributeCategory" ("AttributeID", "CategoryID") VALUES
+((SELECT "ID" FROM "Attributes" WHERE "Name" = '1920x1080 Пикс (1920x1080 Пикс)' AND "Type" = 'Экран'), (SELECT "ID" FROM "Categories" WHERE "Name" = 'tv'));
+
+INSERT INTO "Attributes" ("NameTranslate", "Name", "Type") VALUES
+('TFT', 'TFT', 'Технология экрана');
+INSERT INTO "AttributeCategory" ("AttributeID", "CategoryID") VALUES
+((SELECT "ID" FROM "Attributes" WHERE "Name" = 'TFT' AND "Type" = 'Технология экрана'), (SELECT "ID" FROM "Categories" WHERE "Name" = 'tv'));
+
+INSERT INTO "Brands" ("NameTranslate", "Name", "Type") VALUES
+('National', 'National', 'Бренды');
+INSERT INTO "BrandCategory" ("BrandID", "CategoryID") VALUES
+((SELECT "ID" FROM "Brands" WHERE "Name" = 'National'), (SELECT "ID" FROM "Categories" WHERE "Name" = 'tv'));
+
+INSERT INTO "Attributes" ("NameTranslate", "Name", "Type") VALUES
+('115', '115', 'Диагональ');
+INSERT INTO "AttributeCategory" ("AttributeID", "CategoryID") VALUES
+((SELECT "ID" FROM "Attributes" WHERE "Name" = '115' AND "Type" = 'Диагональ'), (SELECT "ID" FROM "Categories" WHERE "Name" = 'tv'));
+
+INSERT INTO "Attributes" ("NameTranslate", "Name", "Type") VALUES
+('110', '110', 'Диагональ');
+INSERT INTO "AttributeCategory" ("AttributeID", "CategoryID") VALUES
+((SELECT "ID" FROM "Attributes" WHERE "Name" = '110' AND "Type" = 'Диагональ'), (SELECT "ID" FROM "Categories" WHERE "Name" = 'tv'));
+
+INSERT INTO "Attributes" ("NameTranslate", "Name", "Type") VALUES
+('58', '58', 'Диагональ');
+INSERT INTO "AttributeCategory" ("AttributeID", "CategoryID") VALUES
+((SELECT "ID" FROM "Attributes" WHERE "Name" = '58' AND "Type" = 'Диагональ'), (SELECT "ID" FROM "Categories" WHERE "Name" = 'tv'));
+
+INSERT INTO "Brands" ("NameTranslate", "Name", "Type") VALUES
+('Carrera', 'Carrera', 'Бренды');
+INSERT INTO "BrandCategory" ("BrandID", "CategoryID") VALUES
+((SELECT "ID" FROM "Brands" WHERE "Name" = 'Carrera'), (SELECT "ID" FROM "Categories" WHERE "Name" = 'tv'));
+

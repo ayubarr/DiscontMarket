@@ -1,0 +1,28 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-lg-65qned816ra_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор LG 65QNED816RA'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-lg-65qned816ra_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор LG 65QNED816RA'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-lg-65qned816ra_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор LG 65QNED816RA'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-lg-65qned816ra_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор LG 65QNED816RA'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-lg-65qned816ra_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор LG 65QNED816RA'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-lg-65qned816ra_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор LG 65QNED816RA'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-lg-65qned816ra_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор LG 65QNED816RA'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-lg-65qned816ra_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор LG 65QNED816RA'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-lg-65qned816ra_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор LG 65QNED816RA'));

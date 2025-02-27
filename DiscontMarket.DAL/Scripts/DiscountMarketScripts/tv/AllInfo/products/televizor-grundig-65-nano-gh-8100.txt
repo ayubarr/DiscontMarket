@@ -1,0 +1,55 @@
+﻿INSERT INTO "Products" 
+("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription",
+"Availability", "Status", "CategoryID", "BrandID", "UserID") 
+VALUES
+ ('Телевизор Grundig 65 NANO GH 8100', 42499, 7, '/items/productimages/televizor-grundig-65-nano-gh-8100_0.png', 4.97, '', 'Телевизор Grundig 65 Nano GH 8100 оборудован безрамочным экраном размером 65", максимальное разрешение изображения составляет 3840x2160 Пикс (UHD 4K). Для объемной и чистой передачи звука с яркими верхними и нижними частотами применена технология Dolby Atmos. Цифровое шумоподавление улучшает качество картинки. Показатель энергопотребления не превышает 100 Вт.
+
+Модель работает на базе операционной системы Google TV. Доступно два варианта дистанционного управления: через смартфон при помощи модуля Bluetooth и через ИК-пульт ДУ. Встроен Sleep-таймер с функцией выбора времени автоматического отключения телевизора. Мощность фронтальной акустической системы равна 30 Вт. Устройство совместимо с настенным креплением VESA 200x100.', 'InStock', 'Discount', 1, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Grundig'), 1);
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Grundig 65 NANO GH 8100'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '4K Ultra HD (3840x2160 Пикс)' AND "Type" = 'Экран));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Grundig 65 NANO GH 8100'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '65' AND "Type" = 'Диагональ));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Grundig 65 NANO GH 8100'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '60' AND "Type" = 'Частота обновления));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Grundig 65 NANO GH 8100'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'LED' AND "Type" = 'Технология экрана));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Grundig 65 NANO GH 8100'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'Direct LED' AND "Type" = 'Тип светодиодной подсветки));
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-grundig-65-nano-gh-8100_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Grundig 65 NANO GH 8100'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-grundig-65-nano-gh-8100_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Grundig 65 NANO GH 8100'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-grundig-65-nano-gh-8100_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Grundig 65 NANO GH 8100'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-grundig-65-nano-gh-8100_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Grundig 65 NANO GH 8100'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-grundig-65-nano-gh-8100_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Grundig 65 NANO GH 8100'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-grundig-65-nano-gh-8100_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Grundig 65 NANO GH 8100'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-grundig-65-nano-gh-8100_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Grundig 65 NANO GH 8100'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-grundig-65-nano-gh-8100_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Grundig 65 NANO GH 8100'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-grundig-65-nano-gh-8100_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Grundig 65 NANO GH 8100'));

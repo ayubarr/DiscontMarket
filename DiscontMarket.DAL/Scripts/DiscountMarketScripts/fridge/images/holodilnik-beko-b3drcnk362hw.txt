@@ -1,0 +1,19 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-beko-b3drcnk362hw_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Beko B3DRCNK362HW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-beko-b3drcnk362hw_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Beko B3DRCNK362HW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-beko-b3drcnk362hw_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Beko B3DRCNK362HW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-beko-b3drcnk362hw_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Beko B3DRCNK362HW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-beko-b3drcnk362hw_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Beko B3DRCNK362HW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-beko-b3drcnk362hw_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Beko B3DRCNK362HW'));

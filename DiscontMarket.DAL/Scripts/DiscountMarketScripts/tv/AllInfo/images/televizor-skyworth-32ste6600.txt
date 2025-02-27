@@ -1,0 +1,16 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-skyworth-32ste6600_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор SKYWORTH 32STE6600'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-skyworth-32ste6600_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор SKYWORTH 32STE6600'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-skyworth-32ste6600_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор SKYWORTH 32STE6600'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-skyworth-32ste6600_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор SKYWORTH 32STE6600'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-skyworth-32ste6600_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор SKYWORTH 32STE6600'));

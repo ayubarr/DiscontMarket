@@ -1,0 +1,56 @@
+﻿INSERT INTO "Products" 
+("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription",
+"Availability", "Status", "CategoryID", "BrandID", "UserID") 
+VALUES
+ ('Телевизор Artel 55AU20K', 34999, 8, '/items/productimages/televizor-artel-55au20k_0.png', 4.47, '', 'Телевизор Artel 55AU20K оснащен 55-дюймовым (139 см) экраном формата 16:9, который выводит изображение разрешением 3840х2160 пикселей. Максимальная частота обновления составляет 60 Гц. Предусмотрено цифровое шумоподавление для устранения искажений и система обработки картинки — масштабирование до 4К. В основе работы лежит операционная система Android. Устройство оснащено фронтальной акустической системой мощностью 2х12 Вт, которая выдает чистый звук. Управление осуществляется посредством пульта ДУ.<br>Встроенный модуль Bluetooth позволяет осуществлять беспроводное соединение с устройствами, Wi-Fi — выходить в интернет. Поддерживается воспроизведение контента через USB. Дополнительные возможности модели — поддержка Smart TV (для просмотра контента в интернете) и голосовое управление. Поддерживаемые цифровые стандарты для трансляции каналов — DVB-C, DVB-C2, DVB-S, DVB-T, DVB-S2, DVB-T2.<br>Прибор оборудован набором интерфейсов для подключения оборудования и различной периферии: HDMI, USB 2.0, RJ45, jack 3,5 мм, вход RCA. Потребляемая мощность составляет 120 Вт. За безопасность отвечает функция защиты от детей. Телевизор комплектуется настольной подставкой. Крепление на стену осуществляется при помощи крепления VESA 200х100.', 'InStock', 'Discount', 1, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Artel'), 1);
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Artel 55AU20K'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '4K Ultra HD (3840x2160 Пикс)' AND "Type" = 'Экран));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Artel 55AU20K'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '55' AND "Type" = 'Диагональ));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Artel 55AU20K'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '60' AND "Type" = 'Частота обновления));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Artel 55AU20K'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'LED' AND "Type" = 'Технология экрана));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Artel 55AU20K'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'Direct LED' AND "Type" = 'Тип светодиодной подсветки));
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-artel-55au20k_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Artel 55AU20K'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-artel-55au20k_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Artel 55AU20K'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-artel-55au20k_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Artel 55AU20K'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-artel-55au20k_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Artel 55AU20K'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-artel-55au20k_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Artel 55AU20K'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-artel-55au20k_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Artel 55AU20K'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-artel-55au20k_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Artel 55AU20K'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-artel-55au20k_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Artel 55AU20K'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-artel-55au20k_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Artel 55AU20K'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-artel-55au20k_9.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Artel 55AU20K'));

@@ -1,0 +1,89 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Электроплитка Smeg TES-01 (Black)', 26699, 13, '/items/productimages/elektroplitka-smeg-tes-01-black_0.png', 4.17, '', 'Электроплитка Smeg TES-01 (Black) оснащена одной конфоркой с датчиком наличия посуды.
+
+• <b>Слайдерное управление</b>
+Устанавливайте нужную мощность легким движением — доступно девять режимов с максимальным показателем 2100 Вт.
+
+• <b>Таймер со звуковым оповещением</b>
+Выбирайте оптимальное время готовки, прибор выключится автоматически. О завершении проинформирует звуковой сигнал.
+
+• <b>Безопасная эксплуатация</b>
+Индикация остаточного тепла предотвращает возможные ожоги. Защита от детей позволяет заблокировать кнопки. Автоотключение при перегреве гарантирует отсутствие поломок.
+
+• <b>Поддержание температуры и пауза</b>
+Присутствуют специальные функции, которые делают процесс создания блюд удобным.
+
+Источником питания служит стандартная электросеть 220 В. Для подсоединения к розетке задействуется кабель длиной 1 м. Варочная поверхность изготовлена из стеклокерамики, корпус — из алюминия и пластика белого и черного матового цвета. Основание дополнено прорезиненными ножками. Модель габаритами 5,4х31,5х41,25 см весит 3,3 кг.', 'InStock', 'Discount', 4, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Smeg'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Электроплитка Smeg TES-01 (Black)'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Электроплитка Smeg TES-01 (Black)' 
+        AND a."Name" = '1' 
+        AND a."Type" = 'Количество конфорок'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Электроплитка Smeg TES-01 (Black)' 
+        AND a."Name" = 'индукционные' 
+        AND a."Type" = 'Тип конфорок'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Электроплитка Smeg TES-01 (Black)' 
+        AND a."Name" = '2100' 
+        AND a."Type" = 'Потребляемая мощность'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Электроплитка Smeg TES-01 (Black)' 
+        AND a."Name" = 'алюминий/ стеклокерамика' 
+        AND a."Type" = 'Материал варочной поверхности'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Электроплитка Smeg TES-01 (Black)' 
+        AND a."Name" = 'Да' 
+        AND a."Type" = 'Таймер'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/elektroplitka-smeg-tes-01-black_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Электроплитка Smeg TES-01 (Black)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/elektroplitka-smeg-tes-01-black_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Электроплитка Smeg TES-01 (Black)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/elektroplitka-smeg-tes-01-black_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Электроплитка Smeg TES-01 (Black)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/elektroplitka-smeg-tes-01-black_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Электроплитка Smeg TES-01 (Black)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/elektroplitka-smeg-tes-01-black_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Электроплитка Smeg TES-01 (Black)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/elektroplitka-smeg-tes-01-black_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Электроплитка Smeg TES-01 (Black)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/elektroplitka-smeg-tes-01-black_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Электроплитка Smeg TES-01 (Black)'));

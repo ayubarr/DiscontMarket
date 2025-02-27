@@ -1,0 +1,58 @@
+﻿INSERT INTO "Products" 
+("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription",
+"Availability", "Status", "CategoryID", "BrandID", "UserID") 
+VALUES
+ ('Телевизор Витязь 50LU1222', 0, 6, '/items/productimages/televizor-vityaz-50lu1222_0.png', 4.23, '', 'Телевизор «Витязь» 50LU1222 поставляется с предустановленной ОС YaOS. Показатель потребляемой мощности — 93 Вт, в режиме ожидания — 0,5 Вт. Модель оборудована 50-дюймовым (127 см) экраном, на который выводится детализированная, четкая картинка с естественными оттенками и яркостью 250 кд/м². Светодиодная подсветка Direct LED обеспечивает равномерный охват всей площади дисплея и исключает засветы. 
+
+• <b>Частота обновления 60 Гц</b> 
+Исключает вероятность разрывов кадров при показе динамичных сцен. 
+
+• <b>Интегрированная аудиосистема Dolby Digital 2.0</b> 
+Два динамика мощностью по 8 Вт формируют громкий и чистый звук. 
+
+• <b>Дистанционное управление</b> 
+Возможно изменение настроек посредством голосового помощника «Алиса», смартфона с приложением, пульта ДУ. 
+
+• <b>Встроенный тюнер с поддержкой стандартов DVB T/T2/C/S/S2</b> 
+Гарантирует быстрое подключение к цифровому, кабельному, спутниковому вещанию. 
+
+• <b>Поддержка Smart TV</b> 
+Открывает доступ к сервисам для просмотра фильмов и сериалов в режиме онлайн. 
+
+В основе функционирования лежит четырехъядерный процессор Cortex A53 от ARM. Объем встроенной памяти равен 8 Гб, оперативной — 1,5 Гб. «Защита от детей» закрывает доступ к изменению параметров. Для воспроизведения контента через флеш-накопитель предусмотрены порты USB (два), для подключения игровой консоли, камеры, приставки — HDMI версии 2.0 (три). Телевизор можно размещать на специальной подставке или фиксировать на стене при помощи кронштейна VESA 200x200.', 'InStock', 'Discount', 1, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Витязь'), 1);
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Витязь 50LU1222'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '4K Ultra HD (3840x2160 Пикс)' AND "Type" = 'Экран));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Витязь 50LU1222'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '50' AND "Type" = 'Диагональ));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Витязь 50LU1222'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '60' AND "Type" = 'Частота обновления));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Витязь 50LU1222'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'LED' AND "Type" = 'Технология экрана));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Витязь 50LU1222'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'Direct LED' AND "Type" = 'Тип светодиодной подсветки));
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-vityaz-50lu1222_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Витязь 50LU1222'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-vityaz-50lu1222_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Витязь 50LU1222'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-vityaz-50lu1222_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Витязь 50LU1222'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-vityaz-50lu1222_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Витязь 50LU1222'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-vityaz-50lu1222_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Витязь 50LU1222'));

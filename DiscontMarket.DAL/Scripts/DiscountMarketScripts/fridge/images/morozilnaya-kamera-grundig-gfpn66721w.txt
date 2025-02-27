@@ -1,0 +1,22 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-grundig-gfpn66721w_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Grundig GFPN66721W'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-grundig-gfpn66721w_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Grundig GFPN66721W'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-grundig-gfpn66721w_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Grundig GFPN66721W'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-grundig-gfpn66721w_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Grundig GFPN66721W'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-grundig-gfpn66721w_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Grundig GFPN66721W'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-grundig-gfpn66721w_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Grundig GFPN66721W'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-grundig-gfpn66721w_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Grundig GFPN66721W'));

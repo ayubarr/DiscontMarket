@@ -1,0 +1,25 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-samsung-rr39t7475ap_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Samsung RR39T7475AP'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-samsung-rr39t7475ap_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Samsung RR39T7475AP'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-samsung-rr39t7475ap_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Samsung RR39T7475AP'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-samsung-rr39t7475ap_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Samsung RR39T7475AP'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-samsung-rr39t7475ap_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Samsung RR39T7475AP'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-samsung-rr39t7475ap_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Samsung RR39T7475AP'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-samsung-rr39t7475ap_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Samsung RR39T7475AP'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-samsung-rr39t7475ap_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Samsung RR39T7475AP'));

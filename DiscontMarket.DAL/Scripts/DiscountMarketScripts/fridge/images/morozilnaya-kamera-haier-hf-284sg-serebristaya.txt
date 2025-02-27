@@ -1,0 +1,13 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-haier-hf-284sg-serebristaya_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Haier HF-284SG серебристая'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-haier-hf-284sg-serebristaya_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Haier HF-284SG серебристая'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-haier-hf-284sg-serebristaya_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Haier HF-284SG серебристая'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-haier-hf-284sg-serebristaya_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Haier HF-284SG серебристая'));

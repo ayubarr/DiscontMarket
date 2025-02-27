@@ -1,0 +1,63 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Холодильник Beko B5RCNK403ZXBR', 30499, 15, '/items/productimages/holodilnik-beko-b5rcnk403zxbr_0.png', 4.29, '', 'Холодильник Beko B5RCNK403ZXBR общим объёмом 403 л относится к классу A++ по степени энергоэффективности. Модель способна поддерживать низкую температуру автономно на протяжении 21 часа, а если оставить дверь открытой, то через пару минут сработает защитное звуковое оповещение. 
+
+Панель управления с наглядным и информативным дисплеем находится на уровне глаз. Створки без проблем перевешиваются на другую сторону, чтобы вы могли выбрать для прибора наиболее подходящее место. 
+
+Устройство оснащено системой NoFrost Dual Cooling. Благодаря ей отсутствует необходимость в ручном размораживании, и не происходит смешивание запахов. 
+
+Внутри кухонного помощника предусмотрена сухая зона свежести «0-3°‎», идеальная для скоропортящихся продуктов: охлаждённого мяса, птицы и рыбы. В контейнер Everfresh с регулируемой влажностью встроена трёхцветная подсветка HarvestFresh, имитирующая 24-часовой солнечный цикл для сохранения витаминов и полезных микроэлементов. Плюс в комплекте вы найдёте дополнительное оснащение: подставку для яиц, форму для кубиков льда и лоток для пельменей.', 'InStock', 'Discount', 3, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Beko'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Холодильник Beko B5RCNK403ZXBR'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Beko B5RCNK403ZXBR' 
+        AND a."Name" = 'инверторный' 
+        AND a."Type" = 'Тип компрессора'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Beko B5RCNK403ZXBR' 
+        AND a."Name" = '201' 
+        AND a."Type" = 'Высота'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Beko B5RCNK403ZXBR' 
+        AND a."Name" = '59.5' 
+        AND a."Type" = 'Ширина'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Beko B5RCNK403ZXBR' 
+        AND a."Name" = '65' 
+        AND a."Type" = 'Глубина'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Beko B5RCNK403ZXBR' 
+        AND a."Name" = '403' 
+        AND a."Type" = 'Общий объем'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-beko-b5rcnk403zxbr_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Beko B5RCNK403ZXBR'));

@@ -1,0 +1,16 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-birusa-wm-mk814-03_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Бирюса WM-MK814/03'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-birusa-wm-mk814-03_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Бирюса WM-MK814/03'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-birusa-wm-mk814-03_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Бирюса WM-MK814/03'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-birusa-wm-mk814-03_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Бирюса WM-MK814/03'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-birusa-wm-mk814-03_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Бирюса WM-MK814/03'));

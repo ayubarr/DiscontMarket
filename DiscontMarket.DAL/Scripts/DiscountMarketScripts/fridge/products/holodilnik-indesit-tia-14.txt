@@ -1,0 +1,81 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Холодильник Indesit TIA 14', 13999, 6, '/items/productimages/holodilnik-indesit-tia-14_0.png', 4.41, '', 'Холодильник Indesit TIA 14 – хорошее решение для небольшой семьи. Он оборудован компрессором стандартного типа, экономно расходует электроэнергию и работает с уровнем шума 39 дБ, что по громкости примерно соответствует обычному разговору.
+
+ПРОСТОЕ ОБСЛУЖИВАНИЕ
+Вам не нужно беспокоиться о ледяной корке на внутренних стенках. В этой модели реализована капельная технология, которая в автоматическом режиме препятствует её образованию.
+
+ПРОДУМАННАЯ ОРГАНИЗАЦИЯ ВНУТРЕННЕГО ПРОСТРАНСТВА
+Для хранения продуктов предусмотрены прочные стеклянные полки и вместительные контейнеры из прозрачного пластика. Яркая лампа накаливания поможет быстро отыскать то, что понадобилось вам в данный момент.
+
+НАДЁЖНОСТЬ
+Если возникнут перебои в питании, температура в обеих камерах в течение примерно 17 часов останется на ранее заданном уровне, и с содержимым устройства ничего не случится.', 'InStock', 'Discount', 3, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Indesit'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Холодильник Indesit TIA 14'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Indesit TIA 14' 
+        AND a."Name" = 'стандартный' 
+        AND a."Type" = 'Тип компрессора'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Indesit TIA 14' 
+        AND a."Name" = '245' 
+        AND a."Type" = 'Общий объем'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Indesit TIA 14' 
+        AND a."Name" = 'отсутствует' 
+        AND a."Type" = 'Тип зоны сохранения свежести'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Indesit TIA 14' 
+        AND a."Name" = 'механический' 
+        AND a."Type" = 'Тип управления'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Indesit TIA 14' 
+        AND a."Name" = 'металл' 
+        AND a."Type" = 'Материал двери'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-indesit-tia-14_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Indesit TIA 14'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-indesit-tia-14_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Indesit TIA 14'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-indesit-tia-14_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Indesit TIA 14'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-indesit-tia-14_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Indesit TIA 14'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-indesit-tia-14_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Indesit TIA 14'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-indesit-tia-14_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Indesit TIA 14'));

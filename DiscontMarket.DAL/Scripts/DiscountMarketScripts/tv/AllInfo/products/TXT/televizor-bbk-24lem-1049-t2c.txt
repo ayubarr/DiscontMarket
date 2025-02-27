@@ -1,0 +1,43 @@
+﻿INSERT INTO "Products" 
+("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription",
+"Availability", "Status", "CategoryID", "BrandID", "UserID") 
+VALUES
+ ('Телевизор BBK 24LEM-1049/T2C', 6595, 10, '/items/productimages/televizor-bbk-24lem-1049-t2c_0.png', 4.99, '', 'Телевизор BBK 24LEM-1049/T2C оснащен экраном диагональю 32 дюйма, выполненным по технологии Direct LED. Специальная подсветка обеспечивает насыщенное и детализированное изображение. Дисплей транслирует изображение разрешением 1366х7468 пикселей. Стереозвучание обеспечивают низкочастотные динамики мощностью 8 Вт каждый. В комплект входит дистанционный пульт и две батарейки типа ААА к нему. 
+
+Встроенный цифровой тюнер DVB поддерживает стандарты T2/C/S2. В корпус встроены три входа HDMI, три порта USB Type-A, один из них высокоскоростной, выход RCA и интерфейс для гарнитуры. Модель совместима с настенным креплением VESA 100х100 (приобретается дополнительно). Габариты телевизора — 55х38х7,6 см, вес — 2,3 кг.', 'InStock', 'Discount', 1, (SELECT "ID" FROM "Brands" WHERE "Name" = 'BBK'), 1);
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор BBK 24LEM-1049/T2C'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'HD (1366x768 Пикс)' AND "Type" = 'Экран));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор BBK 24LEM-1049/T2C'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '32' AND "Type" = 'Диагональ));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор BBK 24LEM-1049/T2C'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '60' AND "Type" = 'Частота обновления));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор BBK 24LEM-1049/T2C'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'LED' AND "Type" = 'Технология экрана));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор BBK 24LEM-1049/T2C'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'Direct LED' AND "Type" = 'Тип светодиодной подсветки));
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-bbk-24lem-1049-t2c_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор BBK 24LEM-1049/T2C'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-bbk-24lem-1049-t2c_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор BBK 24LEM-1049/T2C'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-bbk-24lem-1049-t2c_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор BBK 24LEM-1049/T2C'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-bbk-24lem-1049-t2c_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор BBK 24LEM-1049/T2C'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-bbk-24lem-1049-t2c_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор BBK 24LEM-1049/T2C'));

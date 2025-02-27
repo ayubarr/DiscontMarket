@@ -1,0 +1,16 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-side-by-side-liebherr-5220-20-001-sfnbde-5227-20-001_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник (Side-by-Side) Liebherr 5220-20 001/SFNbde 5227-20 001'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-side-by-side-liebherr-5220-20-001-sfnbde-5227-20-001_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник (Side-by-Side) Liebherr 5220-20 001/SFNbde 5227-20 001'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-side-by-side-liebherr-5220-20-001-sfnbde-5227-20-001_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник (Side-by-Side) Liebherr 5220-20 001/SFNbde 5227-20 001'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-side-by-side-liebherr-5220-20-001-sfnbde-5227-20-001_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник (Side-by-Side) Liebherr 5220-20 001/SFNbde 5227-20 001'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-side-by-side-liebherr-5220-20-001-sfnbde-5227-20-001_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник (Side-by-Side) Liebherr 5220-20 001/SFNbde 5227-20 001'));

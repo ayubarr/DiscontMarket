@@ -1,0 +1,28 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-indesit-es-15-a_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Indesit ES 15 A'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-indesit-es-15-a_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Indesit ES 15 A'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-indesit-es-15-a_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Indesit ES 15 A'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-indesit-es-15-a_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Indesit ES 15 A'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-indesit-es-15-a_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Indesit ES 15 A'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-indesit-es-15-a_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Indesit ES 15 A'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-indesit-es-15-a_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Indesit ES 15 A'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-indesit-es-15-a_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Indesit ES 15 A'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-indesit-es-15-a_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Indesit ES 15 A'));

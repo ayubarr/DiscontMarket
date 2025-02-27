@@ -1,0 +1,92 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Холодильник многодверный Hisense RQ5P470SAI1', 74499, 6, '/items/productimages/holodilnik-mnogodvernyi-hisense-rq5p470sai1_0.png', 4.87, '', 'Холодильник Hisense RQ5P470SAI1 общим объемом 456 л разработан с учетом современных требований к хранению продуктов. Его металлический корпус и двери не только придают лаконичный вид, но и обеспечивают долговечность эксплуатации. Возможность открывать двери в обе стороны делает его удобным в использовании, внутренние ручки добавляют дополнительный комфорт.
+
+• <b>Технология NoFrost Plus</b>
+Предотвращает образование льда, это исключает необходимость ручного размораживания.
+
+• <b>Холодильная камера</b>
+Ее объем составляет 304 л, что позволяет легко разместить все необходимые продукты. Индикация поможет легко отслеживать нужный уровень температуры.
+
+• <b>Морозильная камера</b>
+Имеет нижнее расположение. Мощность замораживания составляет 12 кг/сутки, объем — 199 л. Два выдвижных ящика обеспечат легкий доступ к замороженным продуктам.
+
+• <b>Зона сохранения свежести</b>
+Пространство в 298 л обеспечивает хранение фруктов, овощей и других продуктов. 
+
+Холодильник Hisense RQ5P470SAI1 предлагает не только обширные объемы, но и современные технологии, облегчающие использование. Важным аспектом является и безопасность, включая защиту от детей. Звуковой сигнал не даст забыть закрыть дверь и известит о изменениях температуры.', 'InStock', 'Discount', 3, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Hisense'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Hisense RQ5P470SAI1'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник многодверный Hisense RQ5P470SAI1' 
+        AND a."Name" = 'инверторный' 
+        AND a."Type" = 'Тип компрессора'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник многодверный Hisense RQ5P470SAI1' 
+        AND a."Name" = '178.5*79.4*69.8 см' 
+        AND a."Type" = 'Габаритные размеры (В*Ш*Г)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник многодверный Hisense RQ5P470SAI1' 
+        AND a."Name" = '456' 
+        AND a."Type" = 'Общий объем'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник многодверный Hisense RQ5P470SAI1' 
+        AND a."Name" = 'влажная/сухая' 
+        AND a."Type" = 'Тип зоны сохранения свежести'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник многодверный Hisense RQ5P470SAI1' 
+        AND a."Name" = 'электронный' 
+        AND a."Type" = 'Тип управления'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-hisense-rq5p470sai1_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Hisense RQ5P470SAI1'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-hisense-rq5p470sai1_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Hisense RQ5P470SAI1'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-hisense-rq5p470sai1_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Hisense RQ5P470SAI1'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-hisense-rq5p470sai1_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Hisense RQ5P470SAI1'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-hisense-rq5p470sai1_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Hisense RQ5P470SAI1'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-hisense-rq5p470sai1_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Hisense RQ5P470SAI1'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-hisense-rq5p470sai1_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Hisense RQ5P470SAI1'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-hisense-rq5p470sai1_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Hisense RQ5P470SAI1'));

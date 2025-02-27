@@ -1,0 +1,28 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-hotter-hx-16_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Hotter HX-16'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-hotter-hx-16_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Hotter HX-16'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-hotter-hx-16_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Hotter HX-16'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-hotter-hx-16_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Hotter HX-16'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-hotter-hx-16_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Hotter HX-16'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-hotter-hx-16_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Hotter HX-16'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-hotter-hx-16_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Hotter HX-16'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-hotter-hx-16_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Hotter HX-16'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-hotter-hx-16_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Hotter HX-16'));

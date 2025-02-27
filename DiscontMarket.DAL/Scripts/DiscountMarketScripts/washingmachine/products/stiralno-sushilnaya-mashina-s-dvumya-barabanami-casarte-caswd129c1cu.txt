@@ -1,0 +1,84 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Стирально-сушильная машина с двумя барабанами Casarte CASWD129C1CU', 199999, 10, '/items/productimages/stiralno-sushilnaya-mashina-s-dvumya-barabanami-casarte-caswd129c1cu_0.png', 4.46, '', 'Стирально-сушильная машина Casarte CASWD129C1CU оборудована двумя барабанами: нижний используется для стирки, верхний для сушки и ухода за вещами. Объем барабанов составляет 78 л и 116 л соответственно. В первый можно загрузить до 12 кг вещей, во второй — до 9 кг. Внутренняя поверхность выполнена по технологии Pillow Drum, что обеспечивает бережный уход даже за деликатными тканями. 
+В эту модель заложены 12 программ стирки и девять сушки, среди которых «Рубашки», «Объемные вещи», «Шёлк», «Меховые изделия». Ускоренная программа стирки длится всего 15 минут. Предусмотрены отделение для использования аромакапсулы и автоматический дозатор моющего средства. Управление обеспечивает сенсорная панель. Эту модель можно синхронизировать со смартфоном, в приложении задавать настройки и контролировать процесс. Таймер отложенного старта устанавливается сроком до 24 часов. 
+При выборе режима «Стирка + сушка» информация о тканях автоматически передается из нижнего отсека в верхний. Максимальная скорость отжима составляет 1400 об/минуту. Машина обладает классом энергоэффективности и А+++, так как за цикл расходует всего 0,73 кВт*ч электричества и 60 л воды. 
+В устройстве реализована полная защиты от протечек и случайного включения. Встроенный стабилизатор предотвратит поломку при скачках напряжения. Инверторный двигатель делает работу машины тихой: уровень шума при стирке не превышает 50 дБ, при сушке — 65 дБ. Габариты прибора — 150х59,5х68,5 см, вес — 138 кг.', 'InStock', 'Discount', 5, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Casarte'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Стирально-сушильная машина с двумя барабанами Casarte CASWD129C1CU'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стирально-сушильная машина с двумя барабанами Casarte CASWD129C1CU' 
+        AND a."Name" = '12' 
+        AND a."Type" = 'Максимальная загрузка'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стирально-сушильная машина с двумя барабанами Casarte CASWD129C1CU' 
+        AND a."Name" = '116' 
+        AND a."Type" = 'Объем верхнего барабана'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стирально-сушильная машина с двумя барабанами Casarte CASWD129C1CU' 
+        AND a."Name" = '78' 
+        AND a."Type" = 'Объем нижнего барабана'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стирально-сушильная машина с двумя барабанами Casarte CASWD129C1CU' 
+        AND a."Name" = '1400' 
+        AND a."Type" = 'Скорость отжима нижнего барабана'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стирально-сушильная машина с двумя барабанами Casarte CASWD129C1CU' 
+        AND a."Name" = 'инверторный' 
+        AND a."Type" = 'Мотор'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralno-sushilnaya-mashina-s-dvumya-barabanami-casarte-caswd129c1cu_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стирально-сушильная машина с двумя барабанами Casarte CASWD129C1CU'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralno-sushilnaya-mashina-s-dvumya-barabanami-casarte-caswd129c1cu_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стирально-сушильная машина с двумя барабанами Casarte CASWD129C1CU'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralno-sushilnaya-mashina-s-dvumya-barabanami-casarte-caswd129c1cu_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стирально-сушильная машина с двумя барабанами Casarte CASWD129C1CU'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralno-sushilnaya-mashina-s-dvumya-barabanami-casarte-caswd129c1cu_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стирально-сушильная машина с двумя барабанами Casarte CASWD129C1CU'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralno-sushilnaya-mashina-s-dvumya-barabanami-casarte-caswd129c1cu_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стирально-сушильная машина с двумя барабанами Casarte CASWD129C1CU'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralno-sushilnaya-mashina-s-dvumya-barabanami-casarte-caswd129c1cu_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стирально-сушильная машина с двумя барабанами Casarte CASWD129C1CU'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralno-sushilnaya-mashina-s-dvumya-barabanami-casarte-caswd129c1cu_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стирально-сушильная машина с двумя барабанами Casarte CASWD129C1CU'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralno-sushilnaya-mashina-s-dvumya-barabanami-casarte-caswd129c1cu_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стирально-сушильная машина с двумя барабанами Casarte CASWD129C1CU'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralno-sushilnaya-mashina-s-dvumya-barabanami-casarte-caswd129c1cu_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стирально-сушильная машина с двумя барабанами Casarte CASWD129C1CU'));

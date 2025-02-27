@@ -1,0 +1,22 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-haier-msr115l_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Haier MSR115L'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-haier-msr115l_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Haier MSR115L'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-haier-msr115l_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Haier MSR115L'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-haier-msr115l_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Haier MSR115L'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-haier-msr115l_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Haier MSR115L'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-haier-msr115l_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Haier MSR115L'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-haier-msr115l_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Haier MSR115L'));

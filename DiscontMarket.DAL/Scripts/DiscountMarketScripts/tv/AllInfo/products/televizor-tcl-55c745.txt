@@ -1,0 +1,60 @@
+﻿INSERT INTO "Products" 
+("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription",
+"Availability", "Status", "CategoryID", "BrandID", "UserID") 
+VALUES
+ ('Телевизор TCL 55C745', 39999, 15, '/items/productimages/televizor-tcl-55c745_0.png', 4.11, '', 'Телевизор TCL 55C745 обладает габаритами 77х122х32 см. Вес устройства — 15 кг, без подставки — 13,5 кг. Присутствует крепление к подвесу типа VESA 400x300. Установлена система защиты от детей. Уровень потребляемой мощности — не более 330 Вт. Прибор обладает интерфейсами HDMI, USB 2.0 тип A, LAN, DVB CAM, 3,5 мм. Встроенный цифровой тюнер работают в диапазонах T/T2/C/C2/S/S2. Модель поддерживает экосистему Apple HomeKit и воспроизведение медиафайлов с USB. 
+Телевизор оснащается Wi-Fi-модулем. Присутствует функция TimeShift. Доступны голосовое управление и Google Assistant. Модель поддерживает Smart TV. В комплекте поставляется пульт дистанционного управления, работающий от двух батареек типа ААА. Возможно управление со смартфона. Прибор обладает двухканальным звуком. Установлена операционная система Google TV. Экран построен на базе технологий QLED, HDR, HDMI ARC. Диагональ дисплея — 55", разрешение — 3480х2160 пикс. Частота обновления достигает 144 Гц. Пиковая яркость — 1000 нит.', 'InStock', 'Discount', 1, (SELECT "ID" FROM "Brands" WHERE "Name" = 'TCL'), 1);
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор TCL 55C745'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '4K Ultra HD (3840x2160 Пикс)' AND "Type" = 'Экран));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор TCL 55C745'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '55' AND "Type" = 'Диагональ));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор TCL 55C745'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '144' AND "Type" = 'Частота обновления));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор TCL 55C745'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'QLED' AND "Type" = 'Технология экрана));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор TCL 55C745'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'Direct LED' AND "Type" = 'Тип светодиодной подсветки));
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-tcl-55c745_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор TCL 55C745'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-tcl-55c745_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор TCL 55C745'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-tcl-55c745_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор TCL 55C745'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-tcl-55c745_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор TCL 55C745'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-tcl-55c745_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор TCL 55C745'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-tcl-55c745_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор TCL 55C745'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-tcl-55c745_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор TCL 55C745'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-tcl-55c745_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор TCL 55C745'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-tcl-55c745_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор TCL 55C745'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-tcl-55c745_9.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор TCL 55C745'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-tcl-55c745_10.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор TCL 55C745'));

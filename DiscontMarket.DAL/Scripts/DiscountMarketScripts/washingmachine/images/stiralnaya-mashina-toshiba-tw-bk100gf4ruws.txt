@@ -1,0 +1,22 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-toshiba-tw-bk100gf4ruws_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Toshiba TW-BK100GF4RU(WS)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-toshiba-tw-bk100gf4ruws_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Toshiba TW-BK100GF4RU(WS)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-toshiba-tw-bk100gf4ruws_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Toshiba TW-BK100GF4RU(WS)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-toshiba-tw-bk100gf4ruws_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Toshiba TW-BK100GF4RU(WS)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-toshiba-tw-bk100gf4ruws_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Toshiba TW-BK100GF4RU(WS)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-toshiba-tw-bk100gf4ruws_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Toshiba TW-BK100GF4RU(WS)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-toshiba-tw-bk100gf4ruws_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Toshiba TW-BK100GF4RU(WS)'));

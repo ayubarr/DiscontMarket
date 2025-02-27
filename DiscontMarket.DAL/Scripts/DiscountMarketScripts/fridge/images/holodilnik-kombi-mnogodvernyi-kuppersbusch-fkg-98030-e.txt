@@ -1,0 +1,7 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-kombi-mnogodvernyi-kuppersbusch-fkg-98030-e_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник комби многодверный Kuppersbusch FKG 9803.0 E'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-kombi-mnogodvernyi-kuppersbusch-fkg-98030-e_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник комби многодверный Kuppersbusch FKG 9803.0 E'));

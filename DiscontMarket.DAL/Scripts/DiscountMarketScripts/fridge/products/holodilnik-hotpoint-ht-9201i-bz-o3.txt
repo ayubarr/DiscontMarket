@@ -1,0 +1,87 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Холодильник Hotpoint HT 9201I BZ O3', 35999, 12, '/items/productimages/holodilnik-hotpoint-ht-9201i-bz-o3_0.png', 4.74, '', 'Холодильник Hotpoint HT 9201I BZ O3 — модель двухкамерного типа в корпусе бронзового цвета с общим объемом 357 л, которая потребляет за год до 323 кВт*ч электроэнергии и функционирует с высокой производительностью — при замораживании до 9 кг/сутки. Управление настройками производится посредством специальных электронных клавиш, находящихся снаружи, которыми можно выбирать необходимую температуру для холодильной камеры объемом 227 л и морозильной емкостью 83 л.<br><br>• <b>Автоматическая разморозка</b><br>Система No Frost упрощает обслуживание устройства, исключает образование слоя инея и наледи на внутренних стенках. Это связано с равномерным распределением потоков охлажденного воздуха по всей камере.<br><br>• <b>Зона свежести</b><br>Специально разработанное отделение рассчитано на создание оптимальных условий для хранения свежей зелени, овощей, фруктов, мяса или рыбы.<br><br>• <b>Безопасность</b><br>Об открытой дверце оповещает световая и звуковая сигнализация. При отсутствии подачи электроэнергии холод внутри модели сохраняется до 14 часов.<br><br>В холодильнике доступна возможность установки режимов «Отпуск», «Суперзамораживание», «Суперохлаждение». Антибактериальная поверхность предотвращает развитие болезнетворных микроорганизмов. В комплекте поставляются подставка для яиц (1х10), лоток для льда.', 'InStock', 'Discount', 3, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Hotpoint'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Холодильник Hotpoint HT 9201I BZ O3'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Hotpoint HT 9201I BZ O3' 
+        AND a."Name" = 'инверторный' 
+        AND a."Type" = 'Тип компрессора'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Hotpoint HT 9201I BZ O3' 
+        AND a."Name" = '200' 
+        AND a."Type" = 'Высота'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Hotpoint HT 9201I BZ O3' 
+        AND a."Name" = '60' 
+        AND a."Type" = 'Ширина'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Hotpoint HT 9201I BZ O3' 
+        AND a."Name" = '62' 
+        AND a."Type" = 'Глубина'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Hotpoint HT 9201I BZ O3' 
+        AND a."Name" = '357' 
+        AND a."Type" = 'Общий объем'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-hotpoint-ht-9201i-bz-o3_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Hotpoint HT 9201I BZ O3'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-hotpoint-ht-9201i-bz-o3_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Hotpoint HT 9201I BZ O3'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-hotpoint-ht-9201i-bz-o3_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Hotpoint HT 9201I BZ O3'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-hotpoint-ht-9201i-bz-o3_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Hotpoint HT 9201I BZ O3'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-hotpoint-ht-9201i-bz-o3_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Hotpoint HT 9201I BZ O3'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-hotpoint-ht-9201i-bz-o3_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Hotpoint HT 9201I BZ O3'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-hotpoint-ht-9201i-bz-o3_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Hotpoint HT 9201I BZ O3'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-hotpoint-ht-9201i-bz-o3_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Hotpoint HT 9201I BZ O3'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-hotpoint-ht-9201i-bz-o3_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Hotpoint HT 9201I BZ O3'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-hotpoint-ht-9201i-bz-o3_9.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Hotpoint HT 9201I BZ O3'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-hotpoint-ht-9201i-bz-o3_10.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Hotpoint HT 9201I BZ O3'));

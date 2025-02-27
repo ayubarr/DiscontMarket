@@ -1,0 +1,22 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-monsher-mmc-4850-argent-serebristaya_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Monsher MMC 4850 Argent серебристая'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-monsher-mmc-4850-argent-serebristaya_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Monsher MMC 4850 Argent серебристая'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-monsher-mmc-4850-argent-serebristaya_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Monsher MMC 4850 Argent серебристая'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-monsher-mmc-4850-argent-serebristaya_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Monsher MMC 4850 Argent серебристая'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-monsher-mmc-4850-argent-serebristaya_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Monsher MMC 4850 Argent серебристая'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-monsher-mmc-4850-argent-serebristaya_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Monsher MMC 4850 Argent серебристая'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-monsher-mmc-4850-argent-serebristaya_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Monsher MMC 4850 Argent серебристая'));

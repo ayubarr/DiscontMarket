@@ -1,0 +1,28 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-h-eat-mws-2002b_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло H-eat MWS-2002B'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-h-eat-mws-2002b_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло H-eat MWS-2002B'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-h-eat-mws-2002b_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло H-eat MWS-2002B'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-h-eat-mws-2002b_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло H-eat MWS-2002B'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-h-eat-mws-2002b_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло H-eat MWS-2002B'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-h-eat-mws-2002b_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло H-eat MWS-2002B'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-h-eat-mws-2002b_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло H-eat MWS-2002B'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-h-eat-mws-2002b_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло H-eat MWS-2002B'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mikrovolnovaya-pech-solo-h-eat-mws-2002b_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Микроволновая печь соло H-eat MWS-2002B'));

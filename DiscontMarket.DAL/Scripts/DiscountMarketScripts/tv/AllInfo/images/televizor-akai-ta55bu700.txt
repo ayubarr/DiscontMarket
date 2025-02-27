@@ -1,0 +1,40 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-akai-ta55bu700_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Akai TA55BU700'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-akai-ta55bu700_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Akai TA55BU700'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-akai-ta55bu700_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Akai TA55BU700'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-akai-ta55bu700_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Akai TA55BU700'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-akai-ta55bu700_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Akai TA55BU700'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-akai-ta55bu700_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Akai TA55BU700'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-akai-ta55bu700_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Akai TA55BU700'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-akai-ta55bu700_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Akai TA55BU700'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-akai-ta55bu700_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Akai TA55BU700'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-akai-ta55bu700_9.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Akai TA55BU700'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-akai-ta55bu700_10.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Akai TA55BU700'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-akai-ta55bu700_11.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Akai TA55BU700'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-akai-ta55bu700_12.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Akai TA55BU700'));

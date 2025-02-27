@@ -1,0 +1,88 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Холодильник (Side-by-Side) Toshiba GR-RS755WI-PMJ(05)', 93499, 12, '/items/productimages/holodilnik-side-by-side-toshiba-gr-rs755wi-pmj05_0.png', 4.84, '', 'Холодильник (Side-by-Side) Toshiba GR-RS755WI-PMJ(05) управляется за счет электронной панели или дистанционно благодаря встроенному интерфейсу Wi-Fi. Удобство обеспечивают автономный ледогенератор, подача охлажденной воды, освежитель и очиститель воздуха, функция ионизации, автоматический контроль влажности и температуры. Заданные параметры и текущие показатели отображаются на сенсорном дисплее.
+
+Модель с технологией No Frost относится к климатическому классу N-SN-ST-T. В работе используется безопасный хладагент R 600a. В изделие установлен фильтр от запахов. Устройство с инверторным компрессором отличается производительностью 10 кг/сутки. Уровень шума не превышает 35 дБ. Прибор с энергоэффективностью А++ потребляет 471 кВт*ч. Поддержание оптимальных условий при отсутствии питания возможно на протяжении семи часов. О длительном открытии двери информирует звуковой сигнал.
+
+Камеры с общим объемом 636 л оборудованы LED-подсветкой. Внутреннее антибактериальное покрытие позволяет увеличить срок хранения продуктов. В холодильном отсеке размещены сухая зона свежести с двумя боксами, три основные и четыре боковые полки из закаленного стекла и пластика, в морозильном — два ящика. В комплектацию входит формочка для льда. Корпус выполнен из металла, фасадная часть — из ПВХ с защитным слоем от отпечатков пальцев. Габариты равны 177,5х91х69,8 см, вес — 101 кг.', 'InStock', 'Discount', 3, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Toshiba'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Холодильник (Side-by-Side) Toshiba GR-RS755WI-PMJ(05)'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник (Side-by-Side) Toshiba GR-RS755WI-PMJ(05)' 
+        AND a."Name" = 'инверторный' 
+        AND a."Type" = 'Тип компрессора'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник (Side-by-Side) Toshiba GR-RS755WI-PMJ(05)' 
+        AND a."Name" = '177.5*91*69.8 см' 
+        AND a."Type" = 'Габаритные размеры (В*Ш*Г)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник (Side-by-Side) Toshiba GR-RS755WI-PMJ(05)' 
+        AND a."Name" = '636' 
+        AND a."Type" = 'Общий объем'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник (Side-by-Side) Toshiba GR-RS755WI-PMJ(05)' 
+        AND a."Name" = 'сухая' 
+        AND a."Type" = 'Тип зоны сохранения свежести'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник (Side-by-Side) Toshiba GR-RS755WI-PMJ(05)' 
+        AND a."Name" = 'электронный' 
+        AND a."Type" = 'Тип управления'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-side-by-side-toshiba-gr-rs755wi-pmj05_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник (Side-by-Side) Toshiba GR-RS755WI-PMJ(05)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-side-by-side-toshiba-gr-rs755wi-pmj05_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник (Side-by-Side) Toshiba GR-RS755WI-PMJ(05)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-side-by-side-toshiba-gr-rs755wi-pmj05_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник (Side-by-Side) Toshiba GR-RS755WI-PMJ(05)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-side-by-side-toshiba-gr-rs755wi-pmj05_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник (Side-by-Side) Toshiba GR-RS755WI-PMJ(05)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-side-by-side-toshiba-gr-rs755wi-pmj05_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник (Side-by-Side) Toshiba GR-RS755WI-PMJ(05)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-side-by-side-toshiba-gr-rs755wi-pmj05_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник (Side-by-Side) Toshiba GR-RS755WI-PMJ(05)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-side-by-side-toshiba-gr-rs755wi-pmj05_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник (Side-by-Side) Toshiba GR-RS755WI-PMJ(05)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-side-by-side-toshiba-gr-rs755wi-pmj05_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник (Side-by-Side) Toshiba GR-RS755WI-PMJ(05)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-side-by-side-toshiba-gr-rs755wi-pmj05_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник (Side-by-Side) Toshiba GR-RS755WI-PMJ(05)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-side-by-side-toshiba-gr-rs755wi-pmj05_9.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник (Side-by-Side) Toshiba GR-RS755WI-PMJ(05)'));

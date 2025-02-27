@@ -1,0 +1,13 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/elektroplitka-vitek-vt-3705_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Электроплитка Vitek VT-3705'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/elektroplitka-vitek-vt-3705_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Электроплитка Vitek VT-3705'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/elektroplitka-vitek-vt-3705_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Электроплитка Vitek VT-3705'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/elektroplitka-vitek-vt-3705_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Электроплитка Vitek VT-3705'));

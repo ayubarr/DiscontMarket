@@ -1,0 +1,7 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-kraft-kr-75w_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Kraft KR-75W'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-kraft-kr-75w_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Kraft KR-75W'));

@@ -1,0 +1,75 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Комбинированная плита (50-55 см) Gefest ПГЭ 5302-03 0046 черная', 20249, 6, '/items/productimages/kombinirovannaya-plita-50-55-sm-gefest-pge-5302-03-0046-chernaya_0.png', 4.12, '', 'Комбинированная плита (50-55 см) Gefest ПГЭ 5302-03 0046, черная оснащена четырьмя газовыми горелками с электророзжигом. Их мощность и диаметр: передняя левая — 1,75-1,8 кВт и 6,7 см, передняя правая — 3,0 кВт и 8,7 см, задняя левая — 1,75-1,8 кВт и 6,7 см, задняя правая — 1,0 кВт и 4,9 см. Поддерживается функция малого пламени. Безопасность использования обеспечивает газ-контроль горелок: происходит прекращение подачи газа при затухании огня. <br>Духовка электрическая, ее объем — 55 л. Мощность верхнего ТЭНа составляет 0,8 кВт, нижнего — 1,2 кВт. Духовой шкаф работает в семи режимах. Доступна регулировка температуры нагрева в диапазоне от 100°С до 250°С. Мощность режима «Конвекция» составляет 2,0 кВт. Гриль мощностью 1,2 кВт обеспечивает образование румяной корочки на продукте с сохранением сочности внутри. Вертел у духовки с электроприводом. <br>Механический таймер позволяет установить время работы (до 120 минут), об отключении известит звуковой сигнал. Одинарная подсветка позволяет контролировать процесс приготовления.<br>Дверца состоит из двух слоев стекла и не нагревается снаружи, что защищает от случайных ожогов. Дополнительное место хранения кухонной утвари обеспечивает выдвижной ящик, расположенный в нижней части корпуса. Стол покрыт термостойкой эмалью, которую легко чистить. Решетки чугунные, крышка стеклянная. <br>Параметры модели: вес составляет 41,9 кг, габариты — 50х58,5х85 см. Для регулировки высоты и нейтрализации неровности пола предусмотрены регулируемые ножки. Присоединительная резьба газопровода — G 1/2. В комплекте поставляются жиклеры для подключения газового баллона, проволочные направляющие, накладка на решетку для турки, плоский и глубокий противни и металлическая решетка. Прибор относится к А-классу энергоэффективности, расход электроэнергии составляет 3,0-3,28 кВт. Потребляемая мощность достигает 3250 Вт.', 'InStock', 'Discount', 4, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Gefest'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Комбинированная плита (50-55 см) Gefest ПГЭ 5302-03 0046 черная'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Комбинированная плита (50-55 см) Gefest ПГЭ 5302-03 0046 черная' 
+        AND a."Name" = '4' 
+        AND a."Type" = 'Количество конфорок'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Комбинированная плита (50-55 см) Gefest ПГЭ 5302-03 0046 черная' 
+        AND a."Name" = 'чугунная' 
+        AND a."Type" = 'Решетка'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Комбинированная плита (50-55 см) Gefest ПГЭ 5302-03 0046 черная' 
+        AND a."Name" = '55' 
+        AND a."Type" = 'Объем духовки'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Комбинированная плита (50-55 см) Gefest ПГЭ 5302-03 0046 черная' 
+        AND a."Name" = 'электрический' 
+        AND a."Type" = 'Тип духовки'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Комбинированная плита (50-55 см) Gefest ПГЭ 5302-03 0046 черная' 
+        AND a."Name" = '85*50*58.5 см' 
+        AND a."Type" = 'Габаритные размеры (В*Ш*Г)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/kombinirovannaya-plita-50-55-sm-gefest-pge-5302-03-0046-chernaya_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Комбинированная плита (50-55 см) Gefest ПГЭ 5302-03 0046 черная'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/kombinirovannaya-plita-50-55-sm-gefest-pge-5302-03-0046-chernaya_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Комбинированная плита (50-55 см) Gefest ПГЭ 5302-03 0046 черная'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/kombinirovannaya-plita-50-55-sm-gefest-pge-5302-03-0046-chernaya_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Комбинированная плита (50-55 см) Gefest ПГЭ 5302-03 0046 черная'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/kombinirovannaya-plita-50-55-sm-gefest-pge-5302-03-0046-chernaya_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Комбинированная плита (50-55 см) Gefest ПГЭ 5302-03 0046 черная'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/kombinirovannaya-plita-50-55-sm-gefest-pge-5302-03-0046-chernaya_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Комбинированная плита (50-55 см) Gefest ПГЭ 5302-03 0046 черная'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/kombinirovannaya-plita-50-55-sm-gefest-pge-5302-03-0046-chernaya_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Комбинированная плита (50-55 см) Gefest ПГЭ 5302-03 0046 черная'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/kombinirovannaya-plita-50-55-sm-gefest-pge-5302-03-0046-chernaya_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Комбинированная плита (50-55 см) Gefest ПГЭ 5302-03 0046 черная'));

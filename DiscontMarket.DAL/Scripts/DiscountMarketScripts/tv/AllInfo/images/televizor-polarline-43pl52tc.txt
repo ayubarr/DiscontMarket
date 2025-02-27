@@ -1,0 +1,13 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-polarline-43pl52tc_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор POLARLINE 43PL52TC'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-polarline-43pl52tc_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор POLARLINE 43PL52TC'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-polarline-43pl52tc_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор POLARLINE 43PL52TC'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-polarline-43pl52tc_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор POLARLINE 43PL52TC'));

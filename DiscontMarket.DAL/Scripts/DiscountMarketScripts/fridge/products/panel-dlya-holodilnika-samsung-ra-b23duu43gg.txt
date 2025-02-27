@@ -1,0 +1,63 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Панель для холодильника Samsung RA-B23DUU43GG', 3995, 19, '/items/productimages/panel-dlya-holodilnika-samsung-ra-b23duu43gg_0.png', 4.39, '', 'Лицевая панель для холодильника Samsung позволяет изменить внешний вид прибора в соответствии с вашими предпочтениями. Аксессуар подходит для моделей серии RA.
+
+ХАРАКТЕРИСТИКИ
+Деталь выполнена из прочного матового металла. Она легко устанавливается и снимается благодаря винтовому креплению.', 'InStock', 'Discount', 3, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Samsung'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Панель для холодильника Samsung RA-B23DUU43GG'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Панель для холодильника Samsung RA-B23DUU43GG' 
+        AND a."Name" = 'Bespoke' 
+        AND a."Type" = 'Серия'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Панель для холодильника Samsung RA-B23DUU43GG' 
+        AND a."Name" = 'стекло' 
+        AND a."Type" = 'Материал'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Панель для холодильника Samsung RA-B23DUU43GG' 
+        AND a."Name" = 'винтовой' 
+        AND a."Type" = 'Тип крепления'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Панель для холодильника Samsung RA-B23DUU43GG' 
+        AND a."Name" = 'для Samsung RB33T3070AP' 
+        AND a."Type" = 'Совместимость'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Панель для холодильника Samsung RA-B23DUU43GG' 
+        AND a."Name" = 'красный рубин' 
+        AND a."Type" = 'Цвет'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/panel-dlya-holodilnika-samsung-ra-b23duu43gg_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Панель для холодильника Samsung RA-B23DUU43GG'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/panel-dlya-holodilnika-samsung-ra-b23duu43gg_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Панель для холодильника Samsung RA-B23DUU43GG'));

@@ -1,0 +1,4 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-national-nx-65tus120_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор National NX-65TUS120'));

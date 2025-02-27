@@ -1,0 +1,78 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Настольная инфракрасная плита Oasis A-TS2B', 4750, 13, '/items/productimages/nastolnaya-infrakrasnaya-plita-oasis-a-ts2b_0.png', 4.34, '', 'Настольная инфракрасная плита making Oasis everywhere A-TS2B даёт возможность готовить еду и кипятить воду на двух конфорках 1,8 кВт, их диаметр — 18 см. Материал, из которого сделана варочная поверхность, — стекло. Модель оснащена сенсорной системой управления. Доступно восемь уровней мощности и таймер, важная информация выводится на цифровой дисплей со светящимися символами. Для безопасной эксплуатации предусмотрена функция отключения при перегреве. Корпус из термостойкого пластика дополнен прорезиненными ножками, обеспечивающими устойчивость. Размеры — 7,5х39х66 см, вес — 5,28 кг.', 'InStock', 'Discount', 4, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Oasis'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Настольная инфракрасная плита Oasis A-TS2B'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Настольная инфракрасная плита Oasis A-TS2B' 
+        AND a."Name" = '2' 
+        AND a."Type" = 'Количество конфорок'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Настольная инфракрасная плита Oasis A-TS2B' 
+        AND a."Name" = 'Hi-Light' 
+        AND a."Type" = 'Тип конфорок'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Настольная инфракрасная плита Oasis A-TS2B' 
+        AND a."Name" = '3600' 
+        AND a."Type" = 'Потребляемая мощность'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Настольная инфракрасная плита Oasis A-TS2B' 
+        AND a."Name" = 'стеклокерамика' 
+        AND a."Type" = 'Материал варочной поверхности'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Настольная инфракрасная плита Oasis A-TS2B' 
+        AND a."Name" = 'Да' 
+        AND a."Type" = 'Таймер'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/nastolnaya-infrakrasnaya-plita-oasis-a-ts2b_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Настольная инфракрасная плита Oasis A-TS2B'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/nastolnaya-infrakrasnaya-plita-oasis-a-ts2b_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Настольная инфракрасная плита Oasis A-TS2B'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/nastolnaya-infrakrasnaya-plita-oasis-a-ts2b_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Настольная инфракрасная плита Oasis A-TS2B'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/nastolnaya-infrakrasnaya-plita-oasis-a-ts2b_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Настольная инфракрасная плита Oasis A-TS2B'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/nastolnaya-infrakrasnaya-plita-oasis-a-ts2b_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Настольная инфракрасная плита Oasis A-TS2B'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/nastolnaya-infrakrasnaya-plita-oasis-a-ts2b_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Настольная инфракрасная плита Oasis A-TS2B'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/nastolnaya-infrakrasnaya-plita-oasis-a-ts2b_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Настольная инфракрасная плита Oasis A-TS2B'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/nastolnaya-infrakrasnaya-plita-oasis-a-ts2b_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Настольная инфракрасная плита Oasis A-TS2B'));

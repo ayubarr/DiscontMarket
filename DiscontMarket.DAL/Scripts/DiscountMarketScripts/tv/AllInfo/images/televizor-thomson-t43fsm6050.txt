@@ -1,0 +1,19 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-thomson-t43fsm6050_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Thomson T43FSM6050'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-thomson-t43fsm6050_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Thomson T43FSM6050'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-thomson-t43fsm6050_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Thomson T43FSM6050'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-thomson-t43fsm6050_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Thomson T43FSM6050'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-thomson-t43fsm6050_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Thomson T43FSM6050'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-thomson-t43fsm6050_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Thomson T43FSM6050'));

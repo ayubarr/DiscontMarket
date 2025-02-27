@@ -1,0 +1,19 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-carrera--513_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Carrera №513'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-carrera--513_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Carrera №513'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-carrera--513_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Carrera №513'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-carrera--513_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Carrera №513'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-carrera--513_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Carrera №513'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-carrera--513_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Carrera №513'));

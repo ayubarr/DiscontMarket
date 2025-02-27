@@ -1,0 +1,61 @@
+﻿INSERT INTO "Products" 
+("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription",
+"Availability", "Status", "CategoryID", "BrandID", "UserID") 
+VALUES
+ ('Телевизор Philips 55PUS8139/60', 31499, 14, '/items/productimages/televizor-philips-55pus8139-60_0.png', 4.73, '', 'Черный матовый телевизор Philips 55PUS8139/60 идет в комплекте с пультом, работающим от двух батареек ААА. Для управления можно использовать смартфон.
+
+• <b>Технология 4K UHD</b>
+У экрана в четыре раза больше пикселей, чем у Full HD, что делает картинку более детальной, четкой и яркой.
+
+• <b>Функция TimeShift</b>
+Устройство позволяет просматривать пропущенные моменты в передачах в режиме реального времени.
+
+• <b>Тип светодиодной подсветки Direct LED</b>
+Модель обеспечивает равномерное и четкое изображение, исключая перепады яркости.
+
+• <b>Поддержка Smart TV</b>
+Телевизор предоставляет доступ к интернету и различным сервисам без подключения к ПК.
+
+Присутствует функция голосового управления, защиты от детей. Вес изделия с настольной подставкой — 10,2 кг. Возможно воспроизведение файлов с USB-носителей. Мощность АС составляет 20 Вт. Диагональ экрана — 139,7 см. Формат — 16:9. Частота обновления кадра — 60 Гц. Устройство оснащено функцией цифрового шумоподавления.', 'InStock', 'Discount', 1, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Philips'), 1);
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Philips 55PUS8139/60'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '4K Ultra HD (3840x2160 Пикс)' AND "Type" = 'Экран));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Philips 55PUS8139/60'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '55' AND "Type" = 'Диагональ));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Philips 55PUS8139/60'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '60' AND "Type" = 'Частота обновления));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Philips 55PUS8139/60'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'LED' AND "Type" = 'Технология экрана));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Philips 55PUS8139/60'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'Direct LED' AND "Type" = 'Тип светодиодной подсветки));
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-philips-55pus8139-60_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Philips 55PUS8139/60'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-philips-55pus8139-60_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Philips 55PUS8139/60'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-philips-55pus8139-60_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Philips 55PUS8139/60'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-philips-55pus8139-60_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Philips 55PUS8139/60'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-philips-55pus8139-60_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Philips 55PUS8139/60'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-philips-55pus8139-60_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Philips 55PUS8139/60'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-philips-55pus8139-60_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Philips 55PUS8139/60'));

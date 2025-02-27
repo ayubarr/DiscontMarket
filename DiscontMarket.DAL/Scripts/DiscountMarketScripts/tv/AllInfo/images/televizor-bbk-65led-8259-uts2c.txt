@@ -1,0 +1,19 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-bbk-65led-8259-uts2c_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор BBK 65LED-8259/UTS2C'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-bbk-65led-8259-uts2c_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор BBK 65LED-8259/UTS2C'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-bbk-65led-8259-uts2c_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор BBK 65LED-8259/UTS2C'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-bbk-65led-8259-uts2c_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор BBK 65LED-8259/UTS2C'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-bbk-65led-8259-uts2c_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор BBK 65LED-8259/UTS2C'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-bbk-65led-8259-uts2c_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор BBK 65LED-8259/UTS2C'));

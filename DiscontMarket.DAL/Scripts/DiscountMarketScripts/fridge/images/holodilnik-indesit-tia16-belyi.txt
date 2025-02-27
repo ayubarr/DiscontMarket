@@ -1,0 +1,7 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-indesit-tia16-belyi_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Indesit TIA16 белый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-indesit-tia16-belyi_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Indesit TIA16 белый'));

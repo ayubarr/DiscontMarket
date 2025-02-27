@@ -1,0 +1,55 @@
+﻿INSERT INTO "Products" 
+("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription",
+"Availability", "Status", "CategoryID", "BrandID", "UserID") 
+VALUES
+ ('Телевизор Kivi 43U750NW', 16995, 9, '/items/productimages/televizor-kivi-43u750nw_0.png', 4.27, '', 'Телевизор Kivi 43U750NW обладает 43-дюймовым экраном (109,2 см) формата 16:9, на который выводится изображение разрешением 3840х2160 пикселей. Используемая технология Super MVA отличается высокой яркостью. Частота обновления составляет 60 Гц, что гарантирует плавную передачу картинки даже в динамичных сценах. Предусмотрена возможность масштабирования изображения до 4K Ultra HD. Цифровое шумоподавление предотвращает появление искажений. Устройство поставляется с предустановленной ОС Android 11. 
+Акустическая система Dolby Atmos воспроизводит чистый и объемный звук. Мощность фронтальных АС составляет 2х12 Вт. Управление производится посредством смартфона с заранее установленным приложением или пульта ДУ, в который вставляются две батарейки типа ААА. Модуль Wi-Fi обеспечивает подключение к интернету. Bluetooth гарантирует беспроводную синхронизацию с различными девайсами. Возможна запись с ТВ на USB-устройство. Sleep-таймер автоматически отключает прибор по окончании установленного времени. Функция TimeShift дает возможность ставить на паузу разные программы и продолжать просмотр в любое удобное время. Доступно голосовое управление. 
+В конструкции предусмотрены порт HDMI USB 2.0 тип А (два), RJ45, разъем для модуля DVB CAM, разъем для наушников. Потребляемая мощность составляет 69 Вт. В комплект входит настольная подставка. Размеры телевизора — 55,6х96х6,4 см, вес — 7,4 кг.', 'InStock', 'Discount', 1, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Kivi'), 1);
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Kivi 43U750NW'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '4K Ultra HD (3840x2160 Пикс)' AND "Type" = 'Экран));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Kivi 43U750NW'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '43' AND "Type" = 'Диагональ));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Kivi 43U750NW'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '60' AND "Type" = 'Частота обновления));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Kivi 43U750NW'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'LED' AND "Type" = 'Технология экрана));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Kivi 43U750NW'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'Direct LED' AND "Type" = 'Тип светодиодной подсветки));
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-kivi-43u750nw_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Kivi 43U750NW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-kivi-43u750nw_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Kivi 43U750NW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-kivi-43u750nw_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Kivi 43U750NW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-kivi-43u750nw_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Kivi 43U750NW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-kivi-43u750nw_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Kivi 43U750NW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-kivi-43u750nw_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Kivi 43U750NW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-kivi-43u750nw_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Kivi 43U750NW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-kivi-43u750nw_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Kivi 43U750NW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-kivi-43u750nw_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Kivi 43U750NW'));

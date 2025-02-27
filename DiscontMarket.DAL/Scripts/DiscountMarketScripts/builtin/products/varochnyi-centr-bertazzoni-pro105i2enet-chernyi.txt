@@ -1,0 +1,71 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Варочный центр Bertazzoni PRO105I2ENET черный', 524950, 10, '/items/productimages/varochnyi-centr-bertazzoni-pro105i2enet-chernyi_0.png', 4.13, '', 'Варочный центр Bertazzoni PRO105I2ENET представлен в черном цвете. Поверхность оснащена пятью электрическими конфорками мощностью от 1,85 кВт до 3 кВт. Благодаря этому можно приготовить обед и вскипятить чайник за короткий срок. Управление осуществляется посредством механических регуляторов с интуитивно понятными символами, поэтому удобно включать устройство и настраивать мощность. Общий объем духовых шкафов — 123 л. Модель функционирует в 17 автоматических режимах, что позволяет испечь пирог и зажарить гуся одновременно. Максимальная температура составляет 250°С. С помощью таймера со звуковым сигналом удобно контролировать время приготовления. 
+
+Дверца с тройным стеклом обеспечивает эффективную теплоизоляцию. За счет этого минимизируется нагрев внешних элементов, что исключает получение ожогов при случайном прикосновении. Плавное закрытие дверцы обеспечивает комфортную эксплуатацию. Эмалевое покрытие духового шкафа очищается от загрязнений с помощью влажной салфетки. Благодаря внутреннему галогенному освещению достигается видимость блюд без дополнительного открывания дверцы. Световые индикаторы позволяют контролировать включение, режим работы и заданную температуру. Для подключения модели можно использовать жиклеры, которые поставляются в комплекте. Вес — 105 кг. Габариты: 893x1000x600 см.', 'InStock', 'Discount', 4, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Bertazzoni'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Варочный центр Bertazzoni PRO105I2ENET черный'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Варочный центр Bertazzoni PRO105I2ENET черный' 
+        AND a."Name" = 'Да' 
+        AND a."Type" = 'Термостат духовки'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Варочный центр Bertazzoni PRO105I2ENET черный' 
+        AND a."Name" = '69' 
+        AND a."Type" = 'Объем первой духовки'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Варочный центр Bertazzoni PRO105I2ENET черный' 
+        AND a."Name" = '54' 
+        AND a."Type" = 'Объем второй духовки'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Варочный центр Bertazzoni PRO105I2ENET черный' 
+        AND a."Name" = '123' 
+        AND a."Type" = 'Объем духовки'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Варочный центр Bertazzoni PRO105I2ENET черный' 
+        AND a."Name" = 'Hi-Light' 
+        AND a."Type" = 'Тип конфорок'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/varochnyi-centr-bertazzoni-pro105i2enet-chernyi_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Варочный центр Bertazzoni PRO105I2ENET черный'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/varochnyi-centr-bertazzoni-pro105i2enet-chernyi_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Варочный центр Bertazzoni PRO105I2ENET черный'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/varochnyi-centr-bertazzoni-pro105i2enet-chernyi_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Варочный центр Bertazzoni PRO105I2ENET черный'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/varochnyi-centr-bertazzoni-pro105i2enet-chernyi_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Варочный центр Bertazzoni PRO105I2ENET черный'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/varochnyi-centr-bertazzoni-pro105i2enet-chernyi_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Варочный центр Bertazzoni PRO105I2ENET черный'));

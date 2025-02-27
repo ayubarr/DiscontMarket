@@ -1,0 +1,16 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-lg-65uq91009ld_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор LG 65UQ91009LD'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-lg-65uq91009ld_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор LG 65UQ91009LD'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-lg-65uq91009ld_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор LG 65UQ91009LD'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-lg-65uq91009ld_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор LG 65UQ91009LD'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-lg-65uq91009ld_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор LG 65UQ91009LD'));

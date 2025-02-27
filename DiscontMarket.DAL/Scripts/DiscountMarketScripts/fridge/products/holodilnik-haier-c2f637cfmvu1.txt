@@ -1,0 +1,96 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Холодильник Haier C2F637CFMVU1', 44999, 5, '/items/productimages/holodilnik-haier-c2f637cfmvu1_0.png', 4.87, '', 'Двухкамерный холодильник Haier C2F637CFMVU1, серебристый, обладает общим полезным объемом 386 л.
+
+• <b>Технология No Frost</b>
+Предотвращает образование на стенках инея и наледи, избавляет от необходимости тратить время на ручное размораживание. 
+
+• <b>Турмалиновый ионизирующий модуль T.ABT</b>
+Устраняет бактерии, поддерживает свежесть воздуха, препятствует появлению неприятного запаха.
+
+• <b>Технология MultiFlow</b>
+Прохладный воздух равномерно распределяется по всему пространству.
+
+Объем холодильной камеры составляет 278 л. Она оборудована пятью полками, выполненными из закаленного стекла, три из которых регулируются по высоте и одна складывается. На двери размещены четыре кармана. Кроме того, предусмотрены металлический подвес для бутылок, контейнер для фруктов и овощей и зона свежести для скоропортящихся продуктов. Для освещения применяются яркие и экономичные светодиодные элементы. Объем морозильной камеры — 108 л. Она снабжена четырьмя выдвижными ящиками, в сутки можно заморозить до 12 кг продуктов. 
+
+В год холодильник расходует 349 кВт*ч, ему присвоен соответствующий класс А+. Климатический класс SN-ST означает, что прибор эффективно работает при температуре до +38°С. Уровень шума не превышает 42 дБ.
+
+За управление отвечает сенсорный дисплей, расположенный на фасадной стороне двери. Поддерживаются функции «Суперохлаждение», «Суперзамораживание», «Отпуск». Если дверь долго остается открытой, оповещает звуковой сигнал. Установку упрощают регулируемые ножки для нейтрализации неровностей пола, двери перенавешиваются.', 'InStock', 'Discount', 3, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Haier'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Холодильник Haier C2F637CFMVU1'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Haier C2F637CFMVU1' 
+        AND a."Name" = 'стандартный' 
+        AND a."Type" = 'Тип компрессора'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Haier C2F637CFMVU1' 
+        AND a."Name" = '199.8' 
+        AND a."Type" = 'Высота'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Haier C2F637CFMVU1' 
+        AND a."Name" = '59.5' 
+        AND a."Type" = 'Ширина'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Haier C2F637CFMVU1' 
+        AND a."Name" = '67.2' 
+        AND a."Type" = 'Глубина'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Haier C2F637CFMVU1' 
+        AND a."Name" = '386' 
+        AND a."Type" = 'Общий объем'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-haier-c2f637cfmvu1_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Haier C2F637CFMVU1'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-haier-c2f637cfmvu1_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Haier C2F637CFMVU1'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-haier-c2f637cfmvu1_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Haier C2F637CFMVU1'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-haier-c2f637cfmvu1_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Haier C2F637CFMVU1'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-haier-c2f637cfmvu1_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Haier C2F637CFMVU1'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-haier-c2f637cfmvu1_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Haier C2F637CFMVU1'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-haier-c2f637cfmvu1_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Haier C2F637CFMVU1'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-haier-c2f637cfmvu1_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Haier C2F637CFMVU1'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-haier-c2f637cfmvu1_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Haier C2F637CFMVU1'));

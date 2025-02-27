@@ -1,0 +1,4 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-beko-b5rcnk403zxbr_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Beko B5RCNK403ZXBR'));

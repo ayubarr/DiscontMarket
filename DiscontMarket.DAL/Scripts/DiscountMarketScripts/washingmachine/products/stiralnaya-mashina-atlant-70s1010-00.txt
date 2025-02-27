@@ -1,0 +1,72 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Стиральная машина ATLANT 70С1010-00', 15345, 9, '/items/productimages/stiralnaya-mashina-atlant-70s1010-00_0.png', 4.16, '', 'Стиральная машина ATLANT 70С1010-00 управляется с помощью кнопочного блока, который позволяет установить оптимальную скорость отжима в пределах 1000 об/мин, запустить таймер отложенного старта продолжительностью до 24 часов. Поворотный регулятор дает возможность выбрать автоматический режим для разных видов тканей, изделий и степени загрязненности. Минипрограмма до 15 минут упрощает эксплуатацию.<br><br>Заданные параметры и время отображаются на цифровом дисплее. Звуковой сигнал информирует о завершении. Уровень шума при стирке не превышает 59 дБ, при отжиме — 73 дБ. Безопасность пользования достигается благодаря контролю пенообразования, частичной защите от протечек, от образования накипи на нагревателе и от детей, самодиагностике неисправностей. Модель с классами стирки А, отжима С и энергоэффективностью А++ за цикл расходует 0,9 кВт*ч и 52,5 л воды.<br><br>Устройство с коллекторным мотором максимально потребляет 2100 Вт. Прибор с люком диаметром 34 см и разборным баком из ударопрочного полипропилена рассчитан на загрузку до 7 кг белья из хлопка, 5 кг — из синтетики и 3 кг — из шерсти. Открываемая налево дверца изготовлена из металла и стекла. Габариты конструкции равны 84,6х59,6х55 см, вес — 63 кг.<br><br>', 'InStock', 'Discount', 5, (SELECT "ID" FROM "Brands" WHERE "Name" = 'ATLANT'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Стиральная машина ATLANT 70С1010-00'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина ATLANT 70С1010-00' 
+        AND a."Name" = '7' 
+        AND a."Type" = 'Максимальная загрузка'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина ATLANT 70С1010-00' 
+        AND a."Name" = '1000' 
+        AND a."Type" = 'Максимальная скорость отжима'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина ATLANT 70С1010-00' 
+        AND a."Name" = 'коллекторный' 
+        AND a."Type" = 'Мотор'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина ATLANT 70С1010-00' 
+        AND a."Name" = '84.6*59.6*55 см' 
+        AND a."Type" = 'Габаритные размеры (В*Ш*Г)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина ATLANT 70С1010-00' 
+        AND a."Name" = 'частичная' 
+        AND a."Type" = 'Тип защиты от протечек'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-atlant-70s1010-00_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина ATLANT 70С1010-00'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-atlant-70s1010-00_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина ATLANT 70С1010-00'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-atlant-70s1010-00_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина ATLANT 70С1010-00'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-atlant-70s1010-00_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина ATLANT 70С1010-00'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-atlant-70s1010-00_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина ATLANT 70С1010-00'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-atlant-70s1010-00_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина ATLANT 70С1010-00'));

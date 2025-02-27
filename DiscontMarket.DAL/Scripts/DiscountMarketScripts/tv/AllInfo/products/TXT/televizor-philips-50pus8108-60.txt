@@ -1,0 +1,62 @@
+﻿INSERT INTO "Products" 
+("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription",
+"Availability", "Status", "CategoryID", "BrandID", "UserID") 
+VALUES
+ ('Телевизор Philips 50PUS8108/60', 23499, 5, '/items/productimages/televizor-philips-50pus8108-60_0.png', 4.95, '', 'Телевизор Philips 50PUS8108/60 оснащен экраном диагональю 50 дюймов (126 см) разрешением 3820х2160 пикселей, что гарантирует высокое качество картинки. Благодаря поддержке технологии HDR тени и светлые части кадра выглядят максимально реалистично. Частота обновления составляет 60 Гц, что гарантирует плавную подачу изображения в любых сценах. В устройство установлена система Dolby Atmos, которая воспроизводит громкий и объемный звук.<br>Модель поддерживает технологию Smart TV. Голосовое управление посредством помощников Google Assistant, Amazon Alexa упрощает поиск необходимого контента и настройку параметров. Благодаря поддержке модуля Wi-Fi достигается быстрое интернет-соединение. Встроенный таймер выключения позволяет запрограммировать время работы. «Телетекст» передает разбитую на тематические разделы информацию в виде текста, простых картинок.<br>За счет модуля Bluetooth доступно подключение дополнительных устройств беспроводным способом. С помощью интерфейсов (HDMI версии 2.0 (три), USB 2.0 тип А (два), RJ45, Toslink, DVB CAM) можно подсоединять к модели игровую консоль, внешний накопитель. Функция «Защита от детей» блокирует доступ к управлению телевизором. В комплект входит настольная подставка.<br><br><br>ВПЕЧАТЛЕНИЯ БЕЗ ГРАНИЦ<br> В этой модели используется фоновая подсветка Ambilight. Интеллектуальная LED-система переносит цвета с экрана на стены в режиме реального времени, за счёт чего он кажется больше, чем есть на самом деле.', 'InStock', 'Discount', 1, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Philips'), 1);
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Philips 50PUS8108/60'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '4K Ultra HD (3840x2160 Пикс)' AND "Type" = 'Экран));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Philips 50PUS8108/60'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '50' AND "Type" = 'Диагональ));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Philips 50PUS8108/60'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '60' AND "Type" = 'Частота обновления));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Philips 50PUS8108/60'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'LED' AND "Type" = 'Технология экрана));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Philips 50PUS8108/60'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'Direct LED' AND "Type" = 'Тип светодиодной подсветки));
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-philips-50pus8108-60_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Philips 50PUS8108/60'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-philips-50pus8108-60_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Philips 50PUS8108/60'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-philips-50pus8108-60_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Philips 50PUS8108/60'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-philips-50pus8108-60_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Philips 50PUS8108/60'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-philips-50pus8108-60_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Philips 50PUS8108/60'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-philips-50pus8108-60_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Philips 50PUS8108/60'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-philips-50pus8108-60_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Philips 50PUS8108/60'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-philips-50pus8108-60_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Philips 50PUS8108/60'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-philips-50pus8108-60_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Philips 50PUS8108/60'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-philips-50pus8108-60_9.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Philips 50PUS8108/60'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-philips-50pus8108-60_10.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Philips 50PUS8108/60'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-philips-50pus8108-60_11.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Philips 50PUS8108/60'));

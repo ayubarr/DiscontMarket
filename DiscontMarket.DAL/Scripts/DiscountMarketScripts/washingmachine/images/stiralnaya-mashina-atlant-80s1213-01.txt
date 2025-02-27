@@ -1,0 +1,22 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-atlant-80s1213-01_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина ATLANT 80С1213-01'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-atlant-80s1213-01_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина ATLANT 80С1213-01'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-atlant-80s1213-01_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина ATLANT 80С1213-01'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-atlant-80s1213-01_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина ATLANT 80С1213-01'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-atlant-80s1213-01_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина ATLANT 80С1213-01'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-atlant-80s1213-01_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина ATLANT 80С1213-01'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-atlant-80s1213-01_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина ATLANT 80С1213-01'));

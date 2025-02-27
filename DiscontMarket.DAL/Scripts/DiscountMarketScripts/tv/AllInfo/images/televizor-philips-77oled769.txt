@@ -1,0 +1,37 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-philips-77oled769_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Philips 77OLED769'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-philips-77oled769_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Philips 77OLED769'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-philips-77oled769_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Philips 77OLED769'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-philips-77oled769_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Philips 77OLED769'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-philips-77oled769_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Philips 77OLED769'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-philips-77oled769_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Philips 77OLED769'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-philips-77oled769_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Philips 77OLED769'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-philips-77oled769_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Philips 77OLED769'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-philips-77oled769_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Philips 77OLED769'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-philips-77oled769_9.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Philips 77OLED769'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-philips-77oled769_10.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Philips 77OLED769'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-philips-77oled769_11.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Philips 77OLED769'));

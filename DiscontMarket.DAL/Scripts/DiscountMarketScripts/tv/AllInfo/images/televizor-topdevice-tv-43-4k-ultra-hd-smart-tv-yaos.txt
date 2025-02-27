@@ -1,0 +1,43 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-topdevice-tv-43-4k-ultra-hd-smart-tv-yaos_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор TopDevice TV 43" 4K ULTRA HD, Smart TV YaOS'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-topdevice-tv-43-4k-ultra-hd-smart-tv-yaos_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор TopDevice TV 43" 4K ULTRA HD, Smart TV YaOS'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-topdevice-tv-43-4k-ultra-hd-smart-tv-yaos_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор TopDevice TV 43" 4K ULTRA HD, Smart TV YaOS'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-topdevice-tv-43-4k-ultra-hd-smart-tv-yaos_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор TopDevice TV 43" 4K ULTRA HD, Smart TV YaOS'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-topdevice-tv-43-4k-ultra-hd-smart-tv-yaos_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор TopDevice TV 43" 4K ULTRA HD, Smart TV YaOS'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-topdevice-tv-43-4k-ultra-hd-smart-tv-yaos_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор TopDevice TV 43" 4K ULTRA HD, Smart TV YaOS'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-topdevice-tv-43-4k-ultra-hd-smart-tv-yaos_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор TopDevice TV 43" 4K ULTRA HD, Smart TV YaOS'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-topdevice-tv-43-4k-ultra-hd-smart-tv-yaos_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор TopDevice TV 43" 4K ULTRA HD, Smart TV YaOS'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-topdevice-tv-43-4k-ultra-hd-smart-tv-yaos_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор TopDevice TV 43" 4K ULTRA HD, Smart TV YaOS'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-topdevice-tv-43-4k-ultra-hd-smart-tv-yaos_9.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор TopDevice TV 43" 4K ULTRA HD, Smart TV YaOS'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-topdevice-tv-43-4k-ultra-hd-smart-tv-yaos_10.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор TopDevice TV 43" 4K ULTRA HD, Smart TV YaOS'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-topdevice-tv-43-4k-ultra-hd-smart-tv-yaos_11.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор TopDevice TV 43" 4K ULTRA HD, Smart TV YaOS'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-topdevice-tv-43-4k-ultra-hd-smart-tv-yaos_12.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор TopDevice TV 43" 4K ULTRA HD, Smart TV YaOS'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-topdevice-tv-43-4k-ultra-hd-smart-tv-yaos_13.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор TopDevice TV 43" 4K ULTRA HD, Smart TV YaOS'));

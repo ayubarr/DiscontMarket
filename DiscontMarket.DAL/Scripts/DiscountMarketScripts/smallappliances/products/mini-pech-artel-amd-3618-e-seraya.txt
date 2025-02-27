@@ -1,0 +1,71 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Мини-печь Artel AMD 3618 E серая', 6499, 11, '/items/productimages/mini-pech-artel-amd-3618-e-seraya_0.png', 4.56, '', 'Серая мини-печь Artel AMD 3618 E вмещает 36 л при габаритах 54х31х43 см и весе 13,5 кг. Прибор изготовлен из стали и покрыт изнутри биокерамикой с антипригарным покрытием. Дверца выполнена из однослойного стекла. Устройство поддерживает нагрев до максимальной температуры 300°С и таймер на 1,5 ч. Аппарат дополнен звуковым сигналом, оповещающим об окончании цикла и специальной индикацией текущей температуры и времени.
+
+В комплект входит два глубоких противня, два нагревательных элемента, гриль-противень и электрические конфорки. Модель питается от сети при помощи 1,5-метрового кабеля и потребляет 2000 Вт мощности.', 'InStock', 'Discount', 6, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Artel'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Мини-печь Artel AMD 3618 E серая'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Мини-печь Artel AMD 3618 E серая' 
+        AND a."Name" = '36' 
+        AND a."Type" = 'Объем'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Мини-печь Artel AMD 3618 E серая' 
+        AND a."Name" = '2000' 
+        AND a."Type" = 'Потребляемая мощность'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Мини-печь Artel AMD 3618 E серая' 
+        AND a."Name" = 'отсутствует' 
+        AND a."Type" = 'Тип гриля'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Мини-печь Artel AMD 3618 E серая' 
+        AND a."Name" = 'серый' 
+        AND a."Type" = 'Цвет'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Мини-печь Artel AMD 3618 E серая' 
+        AND a."Name" = 'Bio керамика' 
+        AND a."Type" = 'Внутреннее покрытие'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-artel-amd-3618-e-seraya_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Artel AMD 3618 E серая'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-artel-amd-3618-e-seraya_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Artel AMD 3618 E серая'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-artel-amd-3618-e-seraya_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Artel AMD 3618 E серая'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-artel-amd-3618-e-seraya_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Artel AMD 3618 E серая'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-artel-amd-3618-e-seraya_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Artel AMD 3618 E серая'));

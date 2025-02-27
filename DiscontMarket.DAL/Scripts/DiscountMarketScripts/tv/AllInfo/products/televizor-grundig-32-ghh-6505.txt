@@ -1,0 +1,55 @@
+﻿INSERT INTO "Products" 
+("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription",
+"Availability", "Status", "CategoryID", "BrandID", "UserID") 
+VALUES
+ ('Телевизор Grundig 32 GHH 6505', 15499, 9, '/items/productimages/televizor-grundig-32-ghh-6505_0.png', 4.63, '', 'Телевизор Grundig 32 GHH 6505 в корпусе белого цвета оснащен экраном диагональю 32 дюйма (80 см). Дисплей сделан по технологии Direct LED, передает изображение в HD-качестве (1366х768 пикселей). Соотношение сторон 16:9 обеспечивает трансляцию широкоформатного контента без черных полос. В этой модели реализована технология цифрового шумоподавления, которая автоматически улучшает качество, например, старых фильмов. 
+Прибор работает на операционной системе Android, поддерживает функции Smart TV. Выход в интернет обеспечивает встроенный модуль Wi-Fi, соединение с мобильными устройствами — Bluetooth. В эту модель заложена функция TimeShift: можно поставить эфир на паузу, записать трансляцию на USB-носитель и посмотреть его позже. Управление обеспечивает дистанционный пульт и голосовой помощник Google Assistant. 
+В корпус интегрированы два входа HDMI, порт USB Type-A, коаксиальный цифровой интерфейс, разъемы для наушников и LAN. Звук в качестве Dolby Digital обеспечивают два динамика общей мощностью 16 Вт. Специальная функция предотвратит случайное включение или смену настроек, например, детьми. Телевизор укомплектован настольной подставкой, совместим с настенным креплением VESA 200х100 (приобретается отдельно).', 'InStock', 'Discount', 1, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Grundig'), 1);
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Grundig 32 GHH 6505'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'HD (1366x768 Пикс)' AND "Type" = 'Экран));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Grundig 32 GHH 6505'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '32' AND "Type" = 'Диагональ));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Grundig 32 GHH 6505'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '60' AND "Type" = 'Частота обновления));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Grundig 32 GHH 6505'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'LED' AND "Type" = 'Технология экрана));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Grundig 32 GHH 6505'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'Direct LED' AND "Type" = 'Тип светодиодной подсветки));
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-grundig-32-ghh-6505_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Grundig 32 GHH 6505'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-grundig-32-ghh-6505_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Grundig 32 GHH 6505'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-grundig-32-ghh-6505_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Grundig 32 GHH 6505'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-grundig-32-ghh-6505_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Grundig 32 GHH 6505'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-grundig-32-ghh-6505_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Grundig 32 GHH 6505'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-grundig-32-ghh-6505_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Grundig 32 GHH 6505'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-grundig-32-ghh-6505_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Grundig 32 GHH 6505'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-grundig-32-ghh-6505_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Grundig 32 GHH 6505'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-grundig-32-ghh-6505_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Grundig 32 GHH 6505'));

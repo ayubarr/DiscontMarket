@@ -1,0 +1,19 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-grundig-gwp810616ww_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Grundig GWP810616WW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-grundig-gwp810616ww_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Grundig GWP810616WW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-grundig-gwp810616ww_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Grundig GWP810616WW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-grundig-gwp810616ww_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Grundig GWP810616WW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-grundig-gwp810616ww_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Grundig GWP810616WW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-grundig-gwp810616ww_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Grundig GWP810616WW'));

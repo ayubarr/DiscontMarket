@@ -1,0 +1,87 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Холодильник Haier C4F640CWU1 белый', 42999, 11, '/items/productimages/holodilnik-haier-c4f640cwu1-belyi_0.png', 4.24, '', 'Двухкамерный холодильник Haier C4F640CWU1, белый обладает общим полезным объемом 400 мл. В год эта модель потребляет 378 кВт*ч, что соответствует классу А+. Экономичность обеспечивает инверторный компрессор, который отличается тихой работой. Уровень шума не превышает 36 дБ. 
+Климатический класс SN-T означает, что холодильник эффективно работает при внешней температуре до 43°С. Система автоматического размораживания Total No Frost экономит время и силы — инея и наледи на стенках не образуется.
+Внутреннее оснащение холодильной камеры (263 л) состоит из трех стеклянных полок, из которых одна складывается, четырех дверных карманов и двух пластиковых контейнеров. Один — зона свежести с поддержкой оптимального уровня влажности для хранения фруктов и овощей, второй — отделение MyZone, условия в котором можно регулировать в зависимости от типа продуктов. Прилагается подставка для десяти яиц. Хороший обзор обеспечивает яркая и равномерная светодиодная подсветка. Динамическое охлаждение AirSurround распределяет прохладу по всем уголкам, ионизирующий модуль T.ABT нейтрализует бактерии, препятствует появлению неприятного запаха. Морозильная камера (115 л) оборудована четырьмя выдвижными ящиками. Мощность замораживания составляет 12 кг в сутки.
+За управление отвечает сенсорный дисплей, вынесенный на фасадную сторону дверцы. С его помощью регулируется температура: от 2°C до 8°C в холодильном отделении, от -16°C до -24°C в морозильном. Для MyZone можно выбрать режимы «Фрукты и овощи», «Свежесть при 0°C», «Мягкая заморозка». Кроме того, холодильником поддерживаются режимы «Быстрое охлаждение», «Быстрая заморозка», «Отпуск». Возможно управление со смартфона через приложение evo. Размеры прибора: 200х59,5х68,2 см, вес — 79 кг.', 'InStock', 'Discount', 3, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Haier'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Холодильник Haier C4F640CWU1 белый'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Haier C4F640CWU1 белый' 
+        AND a."Name" = 'инверторный' 
+        AND a."Type" = 'Тип компрессора'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Haier C4F640CWU1 белый' 
+        AND a."Name" = '200' 
+        AND a."Type" = 'Высота'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Haier C4F640CWU1 белый' 
+        AND a."Name" = '59.5' 
+        AND a."Type" = 'Ширина'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Haier C4F640CWU1 белый' 
+        AND a."Name" = '68.2' 
+        AND a."Type" = 'Глубина'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Haier C4F640CWU1 белый' 
+        AND a."Name" = '400' 
+        AND a."Type" = 'Общий объем'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-haier-c4f640cwu1-belyi_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Haier C4F640CWU1 белый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-haier-c4f640cwu1-belyi_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Haier C4F640CWU1 белый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-haier-c4f640cwu1-belyi_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Haier C4F640CWU1 белый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-haier-c4f640cwu1-belyi_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Haier C4F640CWU1 белый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-haier-c4f640cwu1-belyi_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Haier C4F640CWU1 белый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-haier-c4f640cwu1-belyi_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Haier C4F640CWU1 белый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-haier-c4f640cwu1-belyi_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Haier C4F640CWU1 белый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-haier-c4f640cwu1-belyi_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Haier C4F640CWU1 белый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-haier-c4f640cwu1-belyi_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Haier C4F640CWU1 белый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-haier-c4f640cwu1-belyi_9.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Haier C4F640CWU1 белый'));

@@ -1,0 +1,82 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Холодильник Sharp SJFS97VBK', 147999, 6, '/items/productimages/holodilnik-sharp-sjfs97vbk_0.png', 4.69, '', 'Непревзойдённое изящество и функционал завтрашнего дня - новая премиальная модель 4-дверных холодильников SHARP.
+
+Благодаря уникальному инженерному решению в холодильной камере отсутствует вертикальная внутренняя перегородка - вы легко можете разместить в ней любую посуду, включая блюда шириной до 70 см. Теперь, ожидая гостей, вам не нужно будет спешить: вы можете заранее сервировать блюда, приготовить торт и поставить их в холодильник, чтобы сразу подать на стол, как только гости придут. Объемные полки на дверях холодильника позволяют хранить огромное количество охлажденных напитков общим объемом до 30 литров.
+
+Любите вечеринки -  холодильник оборудован автоматическим ледогенератором с уникальной функцией Cristal Clear Ice, готовящей лёд разных размеров. Это значит, что лёд в Ваших напитках будет абсолютно прозрачный. А функция экспресс приготовления льда приготовит новую порцию всего за 30 минут. 
+
+Все элементы системы ледогенератора имеет покрытия AG+, защищающие от возможного попадания бактерий из водопроводной воды. 
+
+Холодильник оснащен гибридной системой охлаждения, которая совмещает в себе системы Multi Air-Flow и Sushi Panel. Система  Multi Air-Flow равномерно распределяет потоки охлажденного воздуха по всему внутреннему пространству холодильника,  гарантируя стабильную температуру во всём внутреннем пространстве. Система Sushi Panel помогает поддерживать естественный уровень влажности в холодильной  камере, что, в свою очередь, помогает продуктам оставаться свежими максимально долгое время и исключает эффект заветривания.
+
+От бактерий, аллергенов, плесени и неприятных запахов, которые могут появляться в холодильнике, защищают активный дезодорант и  разработанная компанией Sharp система очистки воздуха Plasmacluster. Эта уникальная технология при помощи положительных и отрицательных ионов деактивирует переносимые по воздуху микроорганизмы (вирусы, бактерии, споры грибков плесени),  аллергены и другие вредные примеси  и очищает воздух.
+
+Эффективность действия технологии Plasmacluster доказана ведущими международными научными институтами Японии, США, Канады, Германии, Китая, Кореи, Великобритании, а также ФГУП ГосНИИ генетики и селекции промышленных микроорганизмов и Международным Учебно-научным Биотехнологическим центром МГУ им М.В. Ломоносова в России.
+
+Внутреннее освещение камер -48  светодиодов. С помощью внешней электронной панели управления легко управлять настройками температуры в камерах, функциями  -быстрое замораживание-, -отпуск-, -экорежим-. Панель управления можно заблокировать от случайного изменения настроек детьми. 
+
+Холодильник выполнен в черном цвете с покрытием дверей из безрамочного закаленного стекла с абсолютно ровной глянцевой поверхностью. Класс энергопотребления -  А++.', 'InStock', 'Discount', 3, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Sharp'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Холодильник Sharp SJFS97VBK'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Sharp SJFS97VBK' 
+        AND a."Name" = 'стандартный' 
+        AND a."Type" = 'Тип компрессора'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Sharp SJFS97VBK' 
+        AND a."Name" = '183*90*77 см' 
+        AND a."Type" = 'Габаритные размеры (В*Ш*Г)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Sharp SJFS97VBK' 
+        AND a."Name" = '600' 
+        AND a."Type" = 'Общий объем'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Sharp SJFS97VBK' 
+        AND a."Name" = 'сухая' 
+        AND a."Type" = 'Тип зоны сохранения свежести'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Sharp SJFS97VBK' 
+        AND a."Name" = 'электронный' 
+        AND a."Type" = 'Тип управления'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-sharp-sjfs97vbk_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Sharp SJFS97VBK'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-sharp-sjfs97vbk_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Sharp SJFS97VBK'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-sharp-sjfs97vbk_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Sharp SJFS97VBK'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-sharp-sjfs97vbk_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Sharp SJFS97VBK'));

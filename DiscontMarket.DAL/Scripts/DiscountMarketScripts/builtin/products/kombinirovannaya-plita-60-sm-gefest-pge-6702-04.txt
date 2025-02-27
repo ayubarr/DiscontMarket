@@ -1,0 +1,88 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Комбинированная плита (60 см) Gefest ПГЭ 6702-04', 33999, 19, '/items/productimages/kombinirovannaya-plita-60-sm-gefest-pge-6702-04_0.png', 4.73, '', 'Комбинированная плита Gefest ПГЭ 6702-04 станет отличным дополнением к дизайнерскому интерьеру кухни благодаря оформлению в стиле хай-тек. Её рабочая поверхность из закалённого стекла и металлическая фурнитура легко очищаются от жира и копоти. <br>
+<br>
+МНОГОФУНКЦИОНАЛЬНОСТЬ<br>
+Готовьте самые разные блюда – от традиционных до экзотических. Плита снабжена двухрядной горелкой повышенной мощности, а также электрической духовкой с грилем и конвектором. К ней прилагаются вертел и шашлычница, позволяющие равномерно прожаривать мясо за счёт медленного вращения. <br>
+<br>
+МАКСИМАЛЬНОЕ УДОБСТВО<br>
+Задавайте время приготовления одним прикосновением. С помощью сенсорной панели вы можете устанавливать таймеры с отключением духовки и громким звуковым сигналом. <br>
+<br>
+УДОБСТВО И БЕЗОПАСНОСТЬ<br>
+Разжигайте огонь за считаные секунды – просто поверните соответствующий регулятор и нажмите на него. Оставляйте плиту без присмотра – даже если пламя погаснет, электроника перекроет газ, предотвратив утечку. <br>
+<br>
+ПРОДУМАННАЯ КОНСТРУКЦИЯ<br>
+Высокие ножки из нержавеющей стали отлично сочетаются с высококлассной кухонной мебелью. Большой выдвижной ящик предоставляет место для хранения противней, сковород, решёток и другой кухонной утвари. Съёмные направляющие помогают быстро отмывать внутренние стенки духовки, а массивные чугунные решётки позволяют легко передвигать тяжёлую посуду по рабочей поверхности. <br>
+<br>
+<br>
+<br>
+', 'InStock', 'Discount', 4, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Gefest'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Комбинированная плита (60 см) Gefest ПГЭ 6702-04'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Комбинированная плита (60 см) Gefest ПГЭ 6702-04' 
+        AND a."Name" = '4' 
+        AND a."Type" = 'Количество конфорок'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Комбинированная плита (60 см) Gefest ПГЭ 6702-04' 
+        AND a."Name" = 'чугунная' 
+        AND a."Type" = 'Решетка'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Комбинированная плита (60 см) Gefest ПГЭ 6702-04' 
+        AND a."Name" = '55' 
+        AND a."Type" = 'Объем духовки'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Комбинированная плита (60 см) Gefest ПГЭ 6702-04' 
+        AND a."Name" = 'электрический' 
+        AND a."Type" = 'Тип духовки'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Комбинированная плита (60 см) Gefest ПГЭ 6702-04' 
+        AND a."Name" = 'автоматический' 
+        AND a."Type" = 'Электроподжиг конфорок'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/kombinirovannaya-plita-60-sm-gefest-pge-6702-04_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Комбинированная плита (60 см) Gefest ПГЭ 6702-04'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/kombinirovannaya-plita-60-sm-gefest-pge-6702-04_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Комбинированная плита (60 см) Gefest ПГЭ 6702-04'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/kombinirovannaya-plita-60-sm-gefest-pge-6702-04_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Комбинированная плита (60 см) Gefest ПГЭ 6702-04'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/kombinirovannaya-plita-60-sm-gefest-pge-6702-04_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Комбинированная плита (60 см) Gefest ПГЭ 6702-04'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/kombinirovannaya-plita-60-sm-gefest-pge-6702-04_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Комбинированная плита (60 см) Gefest ПГЭ 6702-04'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/kombinirovannaya-plita-60-sm-gefest-pge-6702-04_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Комбинированная плита (60 см) Gefest ПГЭ 6702-04'));

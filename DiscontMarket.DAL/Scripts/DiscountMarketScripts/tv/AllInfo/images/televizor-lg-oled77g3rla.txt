@@ -1,0 +1,13 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-lg-oled77g3rla_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор LG OLED77G3RLA'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-lg-oled77g3rla_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор LG OLED77G3RLA'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-lg-oled77g3rla_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор LG OLED77G3RLA'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-lg-oled77g3rla_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор LG OLED77G3RLA'));

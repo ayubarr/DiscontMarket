@@ -1,0 +1,28 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-delvento-d2501_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Delvento D2501'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-delvento-d2501_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Delvento D2501'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-delvento-d2501_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Delvento D2501'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-delvento-d2501_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Delvento D2501'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-delvento-d2501_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Delvento D2501'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-delvento-d2501_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Delvento D2501'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-delvento-d2501_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Delvento D2501'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-delvento-d2501_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Delvento D2501'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-delvento-d2501_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь Delvento D2501'));

@@ -1,0 +1,56 @@
+﻿INSERT INTO "Products" 
+("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription",
+"Availability", "Status", "CategoryID", "BrandID", "UserID") 
+VALUES
+ ('Телевизор Philips 43PUS7608/60', 14999, 8, '/items/productimages/televizor-philips-43pus7608-60_0.png', 4.29, '', 'Телевизор Philips 43PUS7608/60 в корпусе серой расцветки работает от электрической сети и потребляет 89 Вт. Функция Smart TV позволяет выходить в интернет без использования дополнительных устройств. Телевизор поддерживает голосовое управление. Предусмотрен таймер автоматического отключения, защита от детей, телетекст, гид по программам, функция Time Shift, возможность записывать телепередачи (PVR).
+Диагональ экрана телевизора — 43 дюйма. Экран изготовлен с использованием LED-технологии. Он широкоформатный. Угол обзора изображения по горизонтали и вертикали составляет 178°. Частота обновления картинки — 60 Гц. Предусмотрена встроенная светодиодная подсветка Direct LED. 
+На корпусе телевизора располагается разъем для подключения и USB-устройств. Также предусмотрено три HDMI-порта версии 2.1, оптический аудиовыход и аудиовход, разъем для подключения проводного интернета, разъем для модуля DVB CAM (слот CI). Беспроводную передачу данных обеспечивают модули Wi-Fi и Bluetooth. Поддерживаемые стандарты вещания: MP3, AVI, MKV, JPEG, WMA, MPEG4.
+Телевизор оборудован четырехъядерным процессором. Предусмотрено цифровое шумоподавление и функция масштабирования изображения. Тип звуковой системы — Dolby Digital. Она представлена двумя динамиками мощностью 10 Вт каждый. Телевизор можно установить на горизонтальную поверхность, либо подвесить на стену. В комплекте — подставка, пульт дистанционного управления, батарейки к нему.', 'InStock', 'Discount', 1, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Philips'), 1);
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Philips 43PUS7608/60'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '4K Ultra HD (3840x2160 Пикс)' AND "Type" = 'Экран));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Philips 43PUS7608/60'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '43' AND "Type" = 'Диагональ));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Philips 43PUS7608/60'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '60' AND "Type" = 'Частота обновления));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Philips 43PUS7608/60'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'LED' AND "Type" = 'Технология экрана));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Philips 43PUS7608/60'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'Direct LED' AND "Type" = 'Тип светодиодной подсветки));
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-philips-43pus7608-60_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Philips 43PUS7608/60'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-philips-43pus7608-60_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Philips 43PUS7608/60'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-philips-43pus7608-60_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Philips 43PUS7608/60'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-philips-43pus7608-60_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Philips 43PUS7608/60'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-philips-43pus7608-60_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Philips 43PUS7608/60'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-philips-43pus7608-60_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Philips 43PUS7608/60'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-philips-43pus7608-60_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Philips 43PUS7608/60'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-philips-43pus7608-60_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Philips 43PUS7608/60'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-philips-43pus7608-60_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Philips 43PUS7608/60'));

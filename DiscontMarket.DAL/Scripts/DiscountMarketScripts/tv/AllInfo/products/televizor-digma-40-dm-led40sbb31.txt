@@ -1,0 +1,46 @@
+﻿INSERT INTO "Products" 
+("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription",
+"Availability", "Status", "CategoryID", "BrandID", "UserID") 
+VALUES
+ ('Телевизор Digma 40 DM-LED40SBB31', 8949, 12, '/items/productimages/televizor-digma-40-dm-led40sbb31_0.png', 4.97, '', 'Телевизор Digma 40 DM-LED40SBB31 работает на операционной системе «Яндекс ТВ», поддерживает управление с помощью голосового ассистента «Алиса». Устройство оснащено таймером сна, позволяет записывать фильмы и передачи на USB-накопители, воспроизводить с них контент. Беспроводную передачу данных и выход в интернет обеспечивают модули Bluetooth и Wi-Fi
+Эта модель оборудована экраном диагональю 40 дюймов (101 см), выполненным на основе матрицы LED. Разрешение — 1920x1080 пикселей. За счет соотношения сторон 16:9 широкоформатное изображение заполняет дисплей, не оставляя черных полос. Телевизор поддерживает технологию DLNA (подключение к локальной сети). В прибор заложена функция «Телетекст».
+Телевизор снабжен интерфейсами для подключения дополнительного оборудования: тремя входами HDMI, двумя портами USB Type-A, коаксиальным цифровым выходом, разъемами для наушников и интернет-кабеля LAN. Телевизор укомплектован настольной подставкой, совместим с настенным креплением VESA 200х200 (нет в комплекте).', 'InStock', 'Discount', 1, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Digma'), 1);
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Digma 40 DM-LED40SBB31'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'Full HD (1920x1080 Пикс)' AND "Type" = 'Экран));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Digma 40 DM-LED40SBB31'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '40' AND "Type" = 'Диагональ));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Digma 40 DM-LED40SBB31'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'LED' AND "Type" = 'Технология экрана));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Digma 40 DM-LED40SBB31'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'Direct LED' AND "Type" = 'Тип светодиодной подсветки));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Digma 40 DM-LED40SBB31'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'Да' AND "Type" = 'Поддержка Smart TV));
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-digma-40-dm-led40sbb31_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Digma 40 DM-LED40SBB31'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-digma-40-dm-led40sbb31_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Digma 40 DM-LED40SBB31'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-digma-40-dm-led40sbb31_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Digma 40 DM-LED40SBB31'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-digma-40-dm-led40sbb31_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Digma 40 DM-LED40SBB31'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-digma-40-dm-led40sbb31_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Digma 40 DM-LED40SBB31'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-digma-40-dm-led40sbb31_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Digma 40 DM-LED40SBB31'));

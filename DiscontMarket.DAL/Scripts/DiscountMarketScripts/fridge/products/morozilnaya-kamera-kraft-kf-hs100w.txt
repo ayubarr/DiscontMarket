@@ -1,0 +1,72 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Морозильная камера Kraft KF-HS100W', 9749, 6, '/items/productimages/morozilnaya-kamera-kraft-kf-hs100w_0.png', 4.49, '', 'Kraft KF-HS100W – морозильник объёмом 94 л, который отлично подойдёт для использования на даче или в качестве дополнительного места хранения различных съестных припасов. Благодаря наличию трёх ящиков вы сможете раздельно положить мясо, рыбу и растительно-плодовые полуфабрикаты.
+
+ВАЖНЫЕ ХАРАКТЕРИСТИКИ
+За сутки устройство способно доводить до оптимально низкой температуры 6 кг продуктов. При образовании излишней наледи удалите её вручную – для этого предварительно отключите прибор от сети и уберите из контейнеров всю пищу.
+
+ПОЛЕЗНЫЕ ОСОБЕННОСТИ
+В случае отсутствия электроэнергии модель будет поддерживать идеальный для сохранения свежести еды микроклимат ещё в течение 17 часов. Качественное антибактериальное покрытие обеспечивает максимальный уровень гигиены и не допускает появления неприятных запахов.', 'InStock', 'Discount', 3, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Kraft'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Морозильная камера Kraft KF-HS100W'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Морозильная камера Kraft KF-HS100W' 
+        AND a."Name" = 'стандартный' 
+        AND a."Type" = 'Тип компрессора'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Морозильная камера Kraft KF-HS100W' 
+        AND a."Name" = '84.5*55.3*57.4 см' 
+        AND a."Type" = 'Габаритные размеры (В*Ш*Г)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Морозильная камера Kraft KF-HS100W' 
+        AND a."Name" = 'A+' 
+        AND a."Type" = 'Класс энергоэффективности'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Морозильная камера Kraft KF-HS100W' 
+        AND a."Name" = 'механический' 
+        AND a."Type" = 'Тип управления'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Морозильная камера Kraft KF-HS100W' 
+        AND a."Name" = '176' 
+        AND a."Type" = 'Энергопотребление в год'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-kraft-kf-hs100w_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Kraft KF-HS100W'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-kraft-kf-hs100w_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Kraft KF-HS100W'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-kraft-kf-hs100w_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Kraft KF-HS100W'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-kraft-kf-hs100w_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Kraft KF-HS100W'));

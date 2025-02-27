@@ -1,0 +1,82 @@
+﻿INSERT INTO "Products" 
+("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription",
+"Availability", "Status", "CategoryID", "BrandID", "UserID") 
+VALUES
+ ('Телевизор TopDevice TDTV43CS07U_WE', 13595, 14, '/items/productimages/televizor-topdevice-tdtv43cs07uwe_0.png', 4.54, '', 'Телевизор Topdevice TDTV43CS07U_WE поддерживает голосовое управление через Алису и через телефон. 
+
+• <b>Поддержка Wi-Fi</b>
+Позволяет быстро и удобно подключаться к интернету. 
+
+• <b>Защита от детей</b>
+Не допускает непредвиденное изменение настроек и отключение. 
+
+• <b>Поддержка Smart TV</b>
+Облегчает скачивание приложение и игр на телевизор. 
+
+• <b>Оптимальная яркость — 230 кд/м²</b>
+Обеспечивает качественную картинку с высокой контрастностью, благодаря чему создаются комфортные условия для просмотра. 
+
+Модель с ОС YaOS+YaOS поддерживает беспроводное воспроизведение через Bluetooth или Wi-Fi.', 'InStock', 'Discount', 1, (SELECT "ID" FROM "Brands" WHERE "Name" = 'TopDevice'), 1);
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор TopDevice TDTV43CS07U_WE'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '4K Ultra HD (3840x2160 Пикс)' AND "Type" = 'Экран));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор TopDevice TDTV43CS07U_WE'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '43' AND "Type" = 'Диагональ));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор TopDevice TDTV43CS07U_WE'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '60' AND "Type" = 'Частота обновления));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор TopDevice TDTV43CS07U_WE'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'LED' AND "Type" = 'Технология экрана));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор TopDevice TDTV43CS07U_WE'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'Direct LED' AND "Type" = 'Тип светодиодной подсветки));
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-topdevice-tdtv43cs07uwe_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор TopDevice TDTV43CS07U_WE'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-topdevice-tdtv43cs07uwe_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор TopDevice TDTV43CS07U_WE'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-topdevice-tdtv43cs07uwe_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор TopDevice TDTV43CS07U_WE'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-topdevice-tdtv43cs07uwe_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор TopDevice TDTV43CS07U_WE'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-topdevice-tdtv43cs07uwe_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор TopDevice TDTV43CS07U_WE'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-topdevice-tdtv43cs07uwe_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор TopDevice TDTV43CS07U_WE'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-topdevice-tdtv43cs07uwe_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор TopDevice TDTV43CS07U_WE'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-topdevice-tdtv43cs07uwe_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор TopDevice TDTV43CS07U_WE'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-topdevice-tdtv43cs07uwe_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор TopDevice TDTV43CS07U_WE'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-topdevice-tdtv43cs07uwe_9.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор TopDevice TDTV43CS07U_WE'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-topdevice-tdtv43cs07uwe_10.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор TopDevice TDTV43CS07U_WE'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-topdevice-tdtv43cs07uwe_11.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор TopDevice TDTV43CS07U_WE'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-topdevice-tdtv43cs07uwe_12.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор TopDevice TDTV43CS07U_WE'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-topdevice-tdtv43cs07uwe_13.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор TopDevice TDTV43CS07U_WE'));

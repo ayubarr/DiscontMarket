@@ -1,0 +1,90 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Встраиваемая посудомоечная машина 45 см AKPO Series 8 Autoopen ZMA45 серый', 27495, 15, '/items/productimages/vstraivaemaya-posudomoechnaya-mashina-45-sm-akpo-series-8-autoopen-zma45-seryi_0.png', 4.62, '', 'Встраиваемая посудомоечная машина Akpo ZMA45 Series 8 Autoopen — компактная модель шириной 44,8 см, высотой 81,5 см и глубиной 55 см, вес — 32,5 кг. Внутреннее оснащение включает три уровня загрузки, на которых размещаются до десяти комплектов посуды. Верхний лоток предназначен для столовых приборов и различной мелкой кухонной утвари. 
+
+В эту модель заложено восемь программ: «Автоматическая», «Экономичная», «Замачивание», «Быстрая», «Стекло», «Интенсивная», «90 минут» и «Стандартная». Сушка производится методом конденсации. Доступны также дополнительные опции, которые можно активировать, чтобы адаптировать цикл под текущие потребности: «Экстра мойка», «Экстра сушка» и «Экспресс мойка». Поддерживается функция половинной загрузки: можно выбрать верхний или нижний короб. 
+
+Управление электронное, есть возможность отложить старт при помощи таймера (до 24 часов). Камера подсвечивается, что упрощает загрузку и выгрузку посуды. Перед окончанием цикла дверца приоткрывается, что улучшает качество сушки. 
+
+Прибор оснащен инверторным мотором, который отличается низким энергопотреблением класса А, за цикл расходуется 0,608 кВт*ч и 8 л воды. Уровень шума при работе не превышает 42 дБ. Защиту от протечек обеспечивает система AquaStop, которая останавливает подачу воды при возникновении проблем. Для встраивания посудомоечной машины требуется ниша размерами 82х45х56 см.', 'InStock', 'Discount', 28, (SELECT "ID" FROM "Brands" WHERE "Name" = 'AKPO'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 45 см AKPO Series 8 Autoopen ZMA45 серый'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Встраиваемая посудомоечная машина 45 см AKPO Series 8 Autoopen ZMA45 серый' 
+        AND a."Name" = '8' 
+        AND a."Type" = 'Расход воды за цикл'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Встраиваемая посудомоечная машина 45 см AKPO Series 8 Autoopen ZMA45 серый' 
+        AND a."Name" = '10 комплектов' 
+        AND a."Type" = 'Максимальная вместимость'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Встраиваемая посудомоечная машина 45 см AKPO Series 8 Autoopen ZMA45 серый' 
+        AND a."Name" = '8' 
+        AND a."Type" = 'Количество программ мойки'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Встраиваемая посудомоечная машина 45 см AKPO Series 8 Autoopen ZMA45 серый' 
+        AND a."Name" = 'инверторный' 
+        AND a."Type" = 'Мотор'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Встраиваемая посудомоечная машина 45 см AKPO Series 8 Autoopen ZMA45 серый' 
+        AND a."Name" = '88*45*58 см' 
+        AND a."Type" = 'Размер ниши, мм (В*Ш*Г)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-45-sm-akpo-series-8-autoopen-zma45-seryi_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 45 см AKPO Series 8 Autoopen ZMA45 серый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-45-sm-akpo-series-8-autoopen-zma45-seryi_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 45 см AKPO Series 8 Autoopen ZMA45 серый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-45-sm-akpo-series-8-autoopen-zma45-seryi_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 45 см AKPO Series 8 Autoopen ZMA45 серый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-45-sm-akpo-series-8-autoopen-zma45-seryi_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 45 см AKPO Series 8 Autoopen ZMA45 серый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-45-sm-akpo-series-8-autoopen-zma45-seryi_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 45 см AKPO Series 8 Autoopen ZMA45 серый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-45-sm-akpo-series-8-autoopen-zma45-seryi_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 45 см AKPO Series 8 Autoopen ZMA45 серый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-45-sm-akpo-series-8-autoopen-zma45-seryi_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 45 см AKPO Series 8 Autoopen ZMA45 серый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-45-sm-akpo-series-8-autoopen-zma45-seryi_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 45 см AKPO Series 8 Autoopen ZMA45 серый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-45-sm-akpo-series-8-autoopen-zma45-seryi_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 45 см AKPO Series 8 Autoopen ZMA45 серый'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vstraivaemaya-posudomoechnaya-mashina-45-sm-akpo-series-8-autoopen-zma45-seryi_9.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Встраиваемая посудомоечная машина 45 см AKPO Series 8 Autoopen ZMA45 серый'));

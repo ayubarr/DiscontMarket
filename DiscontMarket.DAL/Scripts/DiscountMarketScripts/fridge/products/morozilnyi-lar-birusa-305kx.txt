@@ -1,0 +1,71 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Морозильный ларь Бирюса 305KX', 15695, 8, '/items/productimages/morozilnyi-lar-birusa-305kx_0.png', 4.18, '', 'Морозильный ларь «Бирюса» 305KХ объемом 285 л выполняет замораживание с мощностью 17 кг/сутки. Функционирование обеспечивается стандартным компрессором. Хладагент — R 600a. Размораживание происходит вручную, управление — механическое. Камера размещает три подвесные металлические корзины белого цвета (две входят в комплектацию). Встроен режим суперзамораживания.
+
+Дверь открывается по направлению вверх, ручка — внутренняя. Индикатор сообщает о включении, световой и звуковой сигналы — о повышении температуры. Уровень шума во время работы достигает 43 дБ. При отключении от сети безопасное хранение продуктов возможно в течение 12 ч. Класс энергоэффективности — А, потребляемая мощность — 100 Вт. Цвет — белый. Вес — 39 кг. Модель произведена в России.', 'InStock', 'Discount', 3, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Бирюса'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Морозильный ларь Бирюса 305KX'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Морозильный ларь Бирюса 305KX' 
+        AND a."Name" = 'стандартный' 
+        AND a."Type" = 'Тип компрессора'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Морозильный ларь Бирюса 305KX' 
+        AND a."Name" = '81*105.5*66.5 см' 
+        AND a."Type" = 'Габаритные размеры (В*Ш*Г)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Морозильный ларь Бирюса 305KX' 
+        AND a."Name" = 'A' 
+        AND a."Type" = 'Класс энергоэффективности'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Морозильный ларь Бирюса 305KX' 
+        AND a."Name" = 'Да' 
+        AND a."Type" = 'Режим суперзамораживания'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Морозильный ларь Бирюса 305KX' 
+        AND a."Name" = 'механический' 
+        AND a."Type" = 'Тип управления'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnyi-lar-birusa-305kx_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильный ларь Бирюса 305KX'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnyi-lar-birusa-305kx_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильный ларь Бирюса 305KX'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnyi-lar-birusa-305kx_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильный ларь Бирюса 305KX'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnyi-lar-birusa-305kx_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильный ларь Бирюса 305KX'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnyi-lar-birusa-305kx_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильный ларь Бирюса 305KX'));

@@ -1,0 +1,4 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/vinnyi-shkaf-temptech-vwcr30ds_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Винный шкаф Temptech VWCR30DS'));

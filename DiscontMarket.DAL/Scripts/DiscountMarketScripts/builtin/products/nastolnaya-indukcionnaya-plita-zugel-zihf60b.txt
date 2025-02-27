@@ -1,0 +1,101 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Настольная индукционная плита ZUGEL ZIHF60B', 1745, 16, '/items/productimages/nastolnaya-indukcionnaya-plita-zugel-zihf60b_0.png', 4.61, '', 'Настольная индукционная плита Zugel ZIHF60B оснащена варочной панелью из прочной стеклокерамики. В корпусе находится металлическая катушка, создающая магнитное поле для ускоренного нагрева стальной посуды, стоящей на конфорке. Температурный датчик работает с высокой точностью и позволяет поддерживать стабильную температуру нагрева.
+ 
+В процессе приготовления еды конфорки не раскаляются. Таймер позволяет сделать отсрочку до 180 минут. Устройство самостоятельно определяет диаметр используемой посуды. При перегреве или перепадах напряжения модель автоматически выключается. Рабочие параметры показываются на цифровом дисплее.', 'InStock', 'Discount', 4, (SELECT "ID" FROM "Brands" WHERE "Name" = 'ZUGEL'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Настольная индукционная плита ZUGEL ZIHF60B'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Настольная индукционная плита ZUGEL ZIHF60B' 
+        AND a."Name" = '1' 
+        AND a."Type" = 'Количество конфорок'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Настольная индукционная плита ZUGEL ZIHF60B' 
+        AND a."Name" = 'индукционные' 
+        AND a."Type" = 'Тип конфорок'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Настольная индукционная плита ZUGEL ZIHF60B' 
+        AND a."Name" = '2000' 
+        AND a."Type" = 'Потребляемая мощность'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Настольная индукционная плита ZUGEL ZIHF60B' 
+        AND a."Name" = 'стеклокерамика' 
+        AND a."Type" = 'Материал варочной поверхности'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Настольная индукционная плита ZUGEL ZIHF60B' 
+        AND a."Name" = 'Да' 
+        AND a."Type" = 'Таймер'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/nastolnaya-indukcionnaya-plita-zugel-zihf60b_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Настольная индукционная плита ZUGEL ZIHF60B'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/nastolnaya-indukcionnaya-plita-zugel-zihf60b_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Настольная индукционная плита ZUGEL ZIHF60B'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/nastolnaya-indukcionnaya-plita-zugel-zihf60b_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Настольная индукционная плита ZUGEL ZIHF60B'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/nastolnaya-indukcionnaya-plita-zugel-zihf60b_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Настольная индукционная плита ZUGEL ZIHF60B'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/nastolnaya-indukcionnaya-plita-zugel-zihf60b_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Настольная индукционная плита ZUGEL ZIHF60B'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/nastolnaya-indukcionnaya-plita-zugel-zihf60b_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Настольная индукционная плита ZUGEL ZIHF60B'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/nastolnaya-indukcionnaya-plita-zugel-zihf60b_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Настольная индукционная плита ZUGEL ZIHF60B'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/nastolnaya-indukcionnaya-plita-zugel-zihf60b_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Настольная индукционная плита ZUGEL ZIHF60B'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/nastolnaya-indukcionnaya-plita-zugel-zihf60b_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Настольная индукционная плита ZUGEL ZIHF60B'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/nastolnaya-indukcionnaya-plita-zugel-zihf60b_9.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Настольная индукционная плита ZUGEL ZIHF60B'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/nastolnaya-indukcionnaya-plita-zugel-zihf60b_10.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Настольная индукционная плита ZUGEL ZIHF60B'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/nastolnaya-indukcionnaya-plita-zugel-zihf60b_11.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Настольная индукционная плита ZUGEL ZIHF60B'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/nastolnaya-indukcionnaya-plita-zugel-zihf60b_12.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Настольная индукционная плита ZUGEL ZIHF60B'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/nastolnaya-indukcionnaya-plita-zugel-zihf60b_13.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Настольная индукционная плита ZUGEL ZIHF60B'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/nastolnaya-indukcionnaya-plita-zugel-zihf60b_14.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Настольная индукционная плита ZUGEL ZIHF60B'));

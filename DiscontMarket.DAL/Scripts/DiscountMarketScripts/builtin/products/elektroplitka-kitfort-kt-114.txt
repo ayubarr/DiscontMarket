@@ -1,0 +1,83 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Электроплитка Kitfort КТ-114', 2245, 7, '/items/productimages/elektroplitka-kitfort-kt-114_0.png', 5, '', 'Электроплитка Kitfort КТ-114 с одной конфоркой питается от стандартной электросети за счет кабеля длиной 1,32 м. Отключение при перегреве гарантирует безопасность.
+
+• <b>Нагревается только посуда</b>
+Рабочая поверхность становится едва теплой, что исключает возможные ожоги.
+
+• <b>Четыре автоматические программы и ручная настройка</b>
+Присутствуют режимы жарки, варки, томления, разогрева или выбор мощности от 120 Вт до 1600 Вт.
+
+• <b>Таймер автоотключения</b>
+Выбирайте нужное время готовки в пределах 3 часов.
+
+• <b>Кнопочная панель управления</b>
+У прибора интуитивно понятное обозначение и световая индикация заданных параметров и времени.
+
+Модель габаритами 6,4х35,3х26,7 см и весом 2,05 кг отличается прочной стеклокерамической поверхностью и пластиковым корпусом. Основание дополнено прорезиненными ножками, благодаря которым достигается оптимальная устойчивость.', 'InStock', 'Discount', 4, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Kitfort'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Электроплитка Kitfort КТ-114'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Электроплитка Kitfort КТ-114' 
+        AND a."Name" = '1' 
+        AND a."Type" = 'Количество конфорок'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Электроплитка Kitfort КТ-114' 
+        AND a."Name" = 'индукционные' 
+        AND a."Type" = 'Тип конфорок'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Электроплитка Kitfort КТ-114' 
+        AND a."Name" = '1600' 
+        AND a."Type" = 'Потребляемая мощность'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Электроплитка Kitfort КТ-114' 
+        AND a."Name" = 'стеклокерамика' 
+        AND a."Type" = 'Материал варочной поверхности'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Электроплитка Kitfort КТ-114' 
+        AND a."Name" = 'Да' 
+        AND a."Type" = 'Таймер'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/elektroplitka-kitfort-kt-114_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Электроплитка Kitfort КТ-114'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/elektroplitka-kitfort-kt-114_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Электроплитка Kitfort КТ-114'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/elektroplitka-kitfort-kt-114_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Электроплитка Kitfort КТ-114'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/elektroplitka-kitfort-kt-114_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Электроплитка Kitfort КТ-114'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/elektroplitka-kitfort-kt-114_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Электроплитка Kitfort КТ-114'));

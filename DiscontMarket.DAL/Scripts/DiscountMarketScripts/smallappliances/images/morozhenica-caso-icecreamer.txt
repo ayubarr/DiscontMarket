@@ -1,0 +1,19 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozhenica-caso-icecreamer_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мороженица Caso IceCreamer'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozhenica-caso-icecreamer_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мороженица Caso IceCreamer'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozhenica-caso-icecreamer_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мороженица Caso IceCreamer'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozhenica-caso-icecreamer_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мороженица Caso IceCreamer'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozhenica-caso-icecreamer_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мороженица Caso IceCreamer'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozhenica-caso-icecreamer_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мороженица Caso IceCreamer'));

@@ -1,0 +1,22 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/nastolnaya-indukcionnaya-plita-gfgril-gf-inp20_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Настольная индукционная плита GFGRIL GF-INP20'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/nastolnaya-indukcionnaya-plita-gfgril-gf-inp20_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Настольная индукционная плита GFGRIL GF-INP20'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/nastolnaya-indukcionnaya-plita-gfgril-gf-inp20_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Настольная индукционная плита GFGRIL GF-INP20'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/nastolnaya-indukcionnaya-plita-gfgril-gf-inp20_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Настольная индукционная плита GFGRIL GF-INP20'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/nastolnaya-indukcionnaya-plita-gfgril-gf-inp20_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Настольная индукционная плита GFGRIL GF-INP20'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/nastolnaya-indukcionnaya-plita-gfgril-gf-inp20_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Настольная индукционная плита GFGRIL GF-INP20'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/nastolnaya-indukcionnaya-plita-gfgril-gf-inp20_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Настольная индукционная плита GFGRIL GF-INP20'));

@@ -1,0 +1,22 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-tesler-rf-90-chernaya_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Tesler RF-90 черная'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-tesler-rf-90-chernaya_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Tesler RF-90 черная'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-tesler-rf-90-chernaya_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Tesler RF-90 черная'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-tesler-rf-90-chernaya_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Tesler RF-90 черная'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-tesler-rf-90-chernaya_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Tesler RF-90 черная'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-tesler-rf-90-chernaya_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Tesler RF-90 черная'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-tesler-rf-90-chernaya_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Tesler RF-90 черная'));

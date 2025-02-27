@@ -1,0 +1,51 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Настольная газовая плита OMAC 600 Mini Drago', 2091, 14, '/items/productimages/nastolnaya-gazovaya-plita-omac-600-mini-drago_0.png', 4.63, '', 'Настольная газовая плита Omac 600 Mini Drago черного цвета обладает габаритами 19х30х30 см. У устройства система управления механического типа. Варочная поверхность выполнена из нержавеющей стали. Габариты прибора — 19х30х30 см. Мощность — до 3,5 кВт. <br>Прибор адаптирован для клапанного баллона. Нагрузка по весу не должна превышать 100 кг. У модели одна конфорка.', 'InStock', 'Discount', 4, (SELECT "ID" FROM "Brands" WHERE "Name" = 'OMAC'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Настольная газовая плита OMAC 600 Mini Drago'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Настольная газовая плита OMAC 600 Mini Drago' 
+        AND a."Name" = '1' 
+        AND a."Type" = 'Количество конфорок'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Настольная газовая плита OMAC 600 Mini Drago' 
+        AND a."Name" = 'нержавеющая сталь' 
+        AND a."Type" = 'Материал варочной поверхности'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Настольная газовая плита OMAC 600 Mini Drago' 
+        AND a."Name" = 'стальная' 
+        AND a."Type" = 'Решетка'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Настольная газовая плита OMAC 600 Mini Drago' 
+        AND a."Name" = 'черный' 
+        AND a."Type" = 'Цвет'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/nastolnaya-gazovaya-plita-omac-600-mini-drago_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Настольная газовая плита OMAC 600 Mini Drago'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/nastolnaya-gazovaya-plita-omac-600-mini-drago_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Настольная газовая плита OMAC 600 Mini Drago'));

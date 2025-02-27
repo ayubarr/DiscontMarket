@@ -1,0 +1,79 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Варочный центр Премиум Bertazzoni PRO96L1ENET', 286495, 18, '/items/productimages/varochnyi-centr-premium-bertazzoni-pro96l1enet_0.png', 4.14, '', 'Варочный центр «Премиум» Bertazzoni PRO96L1ENET оборудована зонами нагрева, мощность которых варьируется от 0,48 кВт до 5 кВт. Конфорка WOK предусматривает приготовление блюд в азиатском стиле с золотистой корочкой. На передней панели расположены механические регуляторы, с помощью которых удобно настраивать температуру. Для безопасного использования рекомендуется использовать функцию «Автоматический электроподжиг». 
+
+Духовой шкаф электрического типа поддерживает 11 режимов работы. Благодаря оптимальному объему 80 л можно готовить на нескольких уровнях одновременно. Система конвекции обеспечивает принудительную циркуляцию воздуха по всей площади, поэтому происходит равномерное пропекание блюд с разных сторон. Противни и решетка плавно выдвигаются посредством телескопических направляющих. По истечении времени приготовления устройство издаст звуковой сигнал. Дверца с тройным стеклом минимизирует риск получения ожога. 
+
+Каталитическая эмаль легко очищается от загрязнений и жира посредством мягкой салфетки. В модели предусмотрено галогеновое освещение. С помощью специальных индикаторов можно контролировать включение, режим работы и заданную температуру. Потребляемая мощность — 3200 Вт. Вес — 95,5 кг.', 'InStock', 'Discount', 4, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Bertazzoni'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Варочный центр Премиум Bertazzoni PRO96L1ENET'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Варочный центр Премиум Bertazzoni PRO96L1ENET' 
+        AND a."Name" = '80' 
+        AND a."Type" = 'Объем первой духовки'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Варочный центр Премиум Bertazzoni PRO96L1ENET' 
+        AND a."Name" = '80' 
+        AND a."Type" = 'Объем духовки'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Варочный центр Премиум Bertazzoni PRO96L1ENET' 
+        AND a."Name" = 'газовые' 
+        AND a."Type" = 'Тип конфорок'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Варочный центр Премиум Bertazzoni PRO96L1ENET' 
+        AND a."Name" = '6' 
+        AND a."Type" = 'Количество конфорок'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Варочный центр Премиум Bertazzoni PRO96L1ENET' 
+        AND a."Name" = 'каталитич. эмаль' 
+        AND a."Type" = 'Внутреннее покрытие'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/varochnyi-centr-premium-bertazzoni-pro96l1enet_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Варочный центр Премиум Bertazzoni PRO96L1ENET'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/varochnyi-centr-premium-bertazzoni-pro96l1enet_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Варочный центр Премиум Bertazzoni PRO96L1ENET'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/varochnyi-centr-premium-bertazzoni-pro96l1enet_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Варочный центр Премиум Bertazzoni PRO96L1ENET'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/varochnyi-centr-premium-bertazzoni-pro96l1enet_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Варочный центр Премиум Bertazzoni PRO96L1ENET'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/varochnyi-centr-premium-bertazzoni-pro96l1enet_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Варочный центр Премиум Bertazzoni PRO96L1ENET'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/varochnyi-centr-premium-bertazzoni-pro96l1enet_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Варочный центр Премиум Bertazzoni PRO96L1ENET'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/varochnyi-centr-premium-bertazzoni-pro96l1enet_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Варочный центр Премиум Bertazzoni PRO96L1ENET'));

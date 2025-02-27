@@ -1,0 +1,75 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Холодильник Beko DSMV 5280MA0 W', 15249, 18, '/items/productimages/holodilnik-beko-dsmv-5280ma0-w_0.png', 4.52, '', 'Холодильник Beko DSMV 5280MA0 W создан с применением современных технических решений, среди которых стоит назвать экономичный компрессор и яркое LED-освещение. Благодаря этому он обходится малым энергопотреблением, укладывающимся в рамки класса А. 
+
+УДОБСТВО ИСПОЛЬЗОВАНИЯ
+Устройство можно устанавливать даже в малогабаритных квартирах-студиях за счёт минимальной шумности. Светодиодные лампы эффективно подсвечивают каждую его полку, не создавая при этом бликов. Капельная система значительно облегчает размораживание холодильной камеры и сохраняет чистоту в кухне во время выполнения этой процедуры. 
+
+СОХРАННОСТЬ ПРОДУКТОВ
+При производстве холодильника применяются качественные теплоизолирующие материалы. Благодаря этому он поддерживает невысокую температуру содержимого в течение 16 часов после отключения питания.', 'InStock', 'Discount', 3, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Beko'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Холодильник Beko DSMV 5280MA0 W'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Beko DSMV 5280MA0 W' 
+        AND a."Name" = 'стандартный' 
+        AND a."Type" = 'Тип компрессора'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Beko DSMV 5280MA0 W' 
+        AND a."Name" = '256' 
+        AND a."Type" = 'Общий объем'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Beko DSMV 5280MA0 W' 
+        AND a."Name" = 'отсутствует' 
+        AND a."Type" = 'Тип зоны сохранения свежести'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Beko DSMV 5280MA0 W' 
+        AND a."Name" = 'механический' 
+        AND a."Type" = 'Тип управления'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Beko DSMV 5280MA0 W' 
+        AND a."Name" = 'металл' 
+        AND a."Type" = 'Материал двери'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-beko-dsmv-5280ma0-w_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Beko DSMV 5280MA0 W'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-beko-dsmv-5280ma0-w_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Beko DSMV 5280MA0 W'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-beko-dsmv-5280ma0-w_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Beko DSMV 5280MA0 W'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-beko-dsmv-5280ma0-w_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Beko DSMV 5280MA0 W'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-beko-dsmv-5280ma0-w_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Beko DSMV 5280MA0 W'));

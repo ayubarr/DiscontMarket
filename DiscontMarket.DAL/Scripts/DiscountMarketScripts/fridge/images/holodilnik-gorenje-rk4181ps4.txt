@@ -1,0 +1,13 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-gorenje-rk4181ps4_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Gorenje RK4181PS4'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-gorenje-rk4181ps4_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Gorenje RK4181PS4'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-gorenje-rk4181ps4_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Gorenje RK4181PS4'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-gorenje-rk4181ps4_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Gorenje RK4181PS4'));

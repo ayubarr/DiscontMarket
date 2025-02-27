@@ -1,0 +1,25 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/nastolnaya-infrakrasnaya-plita-oasis-a-ts2b_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Настольная инфракрасная плита Oasis A-TS2B'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/nastolnaya-infrakrasnaya-plita-oasis-a-ts2b_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Настольная инфракрасная плита Oasis A-TS2B'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/nastolnaya-infrakrasnaya-plita-oasis-a-ts2b_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Настольная инфракрасная плита Oasis A-TS2B'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/nastolnaya-infrakrasnaya-plita-oasis-a-ts2b_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Настольная инфракрасная плита Oasis A-TS2B'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/nastolnaya-infrakrasnaya-plita-oasis-a-ts2b_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Настольная инфракрасная плита Oasis A-TS2B'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/nastolnaya-infrakrasnaya-plita-oasis-a-ts2b_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Настольная инфракрасная плита Oasis A-TS2B'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/nastolnaya-infrakrasnaya-plita-oasis-a-ts2b_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Настольная инфракрасная плита Oasis A-TS2B'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/nastolnaya-infrakrasnaya-plita-oasis-a-ts2b_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Настольная инфракрасная плита Oasis A-TS2B'));

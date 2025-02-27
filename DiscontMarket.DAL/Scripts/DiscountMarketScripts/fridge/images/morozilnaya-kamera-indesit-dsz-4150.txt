@@ -1,0 +1,25 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-indesit-dsz-4150_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Indesit DSZ 4150'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-indesit-dsz-4150_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Indesit DSZ 4150'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-indesit-dsz-4150_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Indesit DSZ 4150'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-indesit-dsz-4150_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Indesit DSZ 4150'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-indesit-dsz-4150_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Indesit DSZ 4150'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-indesit-dsz-4150_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Indesit DSZ 4150'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-indesit-dsz-4150_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Indesit DSZ 4150'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-indesit-dsz-4150_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Indesit DSZ 4150'));

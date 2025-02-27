@@ -1,0 +1,13 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-birusa-sbs-460-i_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Бирюса SBS 460 I'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-birusa-sbs-460-i_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Бирюса SBS 460 I'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-birusa-sbs-460-i_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Бирюса SBS 460 I'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-birusa-sbs-460-i_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Бирюса SBS 460 I'));

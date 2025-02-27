@@ -1,0 +1,66 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Холодильник Korting KNFS 83177 X', 54995, 16, '/items/productimages/holodilnik-korting-knfs-83177-x_0.png', 4.47, '', 'Холодильник типа Side-by-Side Korting KNFS 83177 X оснащен двумя отделениями. Система NoFrost отвечает за выведение конденсата наружу, благодаря чему на стенках отделений не копится иней. Для управления прибором используется электронная панель. На дисплее находятся цифровые индикаторы. <br><br>В устройстве доступно яркое светодиодное освещение. Высота размещения полок легко регулируется. Технология Dynamic Air Cooling обеспечивает эффективное распределение воздуха и установленной температуры. Мощность заморозки у модели достигает 10 кг продуктов в сутки. Энергоэффективный инверторный двигатель гарантирует долгий срок службы. <br>', 'InStock', 'Discount', 3, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Korting'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Холодильник Korting KNFS 83177 X'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Korting KNFS 83177 X' 
+        AND a."Name" = 'инверторный' 
+        AND a."Type" = 'Тип компрессора'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Korting KNFS 83177 X' 
+        AND a."Name" = '177.5*83.5*63.5 см' 
+        AND a."Type" = 'Габаритные размеры (В*Ш*Г)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Korting KNFS 83177 X' 
+        AND a."Name" = '442' 
+        AND a."Type" = 'Общий объем'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Korting KNFS 83177 X' 
+        AND a."Name" = 'отсутствует' 
+        AND a."Type" = 'Тип зоны сохранения свежести'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Korting KNFS 83177 X' 
+        AND a."Name" = 'электронный' 
+        AND a."Type" = 'Тип управления'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-korting-knfs-83177-x_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Korting KNFS 83177 X'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-korting-knfs-83177-x_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Korting KNFS 83177 X'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-korting-knfs-83177-x_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Korting KNFS 83177 X'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-korting-knfs-83177-x_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Korting KNFS 83177 X'));

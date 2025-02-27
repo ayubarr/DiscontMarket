@@ -1,0 +1,47 @@
+﻿INSERT INTO "Products" 
+("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription",
+"Availability", "Status", "CategoryID", "BrandID", "UserID") 
+VALUES
+ ('Телевизор Maunfeld MLT43FSX02', 17995, 5, '/items/productimages/televizor-maunfeld-mlt43fsx02_0.png', 4.19, '', 'Телевизор Maunfeld MLT43FSX02 — устройство с 43-дюймовым экраном разрешением 1920х1080 пикселей. Формат дисплея — 16:9, технология — OLED. Частота обновления составляет 60 Гц. Предусмотрена система обработки изображения — UHD 4K PPI 1000. Технология HDR подчеркивает контрасты и детали, что делает цвета более насыщенными. 
+Звуковая система Dolby Digital Plus обладает динамиками мощностью 16 Вт, выдающими объемный и громкий звук. Встроенный модуль Bluetooth обеспечивает беспроводное подключение к совместимым устройствам. Технология NFC предназначена для передачи данных малого радиуса действия — не более 10 см. 
+Smart TV дает возможность использовать телевизор для просмотра контента на разных онлайн-сервисах. TimeShift позволяет ставить на паузу любую телепрограмму цифрового вещания. Модуль Wi-Fi предназначен для мгновенного выхода в Сеть. Есть возможность записи фильмов с ТВ на USB-устройство. Sleep-таймер позволяет устанавливать время, после которого телевизор перейдет в спящий режим. Управление осуществляется при помощи пульта ДУ, который питается от двух батареек. 
+Модель оборудована цифровым тюнером DVB T/T2/C/C2/S/S2. Возможно воспроизведение контента с USB-накопителей. Потребляемая мощность — 60 Вт. За безопасность отвечает защита от детей. Набор интерфейсов включает HDMI, USB 2.0 тип A, USB 3.0 тип А, RJ45. В комплекте — настольная подставка. Вес телевизора — 6,5 кг.', 'InStock', 'Discount', 1, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Maunfeld'), 1);
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Maunfeld MLT43FSX02'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'Full HD (1920x1080 Пикс)' AND "Type" = 'Экран));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Maunfeld MLT43FSX02'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '43' AND "Type" = 'Диагональ));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Maunfeld MLT43FSX02'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '60' AND "Type" = 'Частота обновления));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Maunfeld MLT43FSX02'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'LED' AND "Type" = 'Технология экрана));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Maunfeld MLT43FSX02'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'Direct LED' AND "Type" = 'Тип светодиодной подсветки));
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-maunfeld-mlt43fsx02_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Maunfeld MLT43FSX02'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-maunfeld-mlt43fsx02_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Maunfeld MLT43FSX02'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-maunfeld-mlt43fsx02_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Maunfeld MLT43FSX02'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-maunfeld-mlt43fsx02_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Maunfeld MLT43FSX02'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-maunfeld-mlt43fsx02_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Maunfeld MLT43FSX02'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-maunfeld-mlt43fsx02_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Maunfeld MLT43FSX02'));

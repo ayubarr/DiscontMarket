@@ -1,0 +1,63 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Холодильник Haier C4F744CWG', 54499, 8, '/items/productimages/holodilnik-haier-c4f744cwg_0.png', 4.14, '', 'Объём холодильника Haier C4F744CWG составляет 493 л. За счёт этого он отлично подойдёт большой семье. Лаконичный и в то же время элегантный дизайн помогает этой модели гармонично вписаться в современный интерьер.<br><br>ОПТИМАЛЬНЫЕ УСЛОВИЯ<br>Инверторный компрессор экономно потребляет электроэнергию и поддерживает заданный температурный режим. Встроенный ионизатор очищает воздух от бактерий, оказывающих негативное воздействие на продукты.<br><br>ПРОСТОЙ УХОД<br>В обеих камерах реализована технология No Frost, отвечающая за размораживание. Она работает в автоматическом режиме и эффективно препятствует образованию наледи.<br><br>ЗОНА СВЕЖЕСТИ<br>В устройстве предусмотрено отделение для недавно купленных фруктов и овощей. Её важная особенность – автономная регулировка влажности.<br><br>УДОБНО УПРАВЛЯТЬ<br>На дверце расположен цифровой дисплей, на который выводится информация о текущем состоянии прибора. Изменить настройки или воспользоваться дополнительными функциями можно с помощью сенсорных клавиш, мгновенно реагирующих на прикосновения пальцев.', 'InStock', 'Discount', 3, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Haier'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Холодильник Haier C4F744CWG'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Haier C4F744CWG' 
+        AND a."Name" = 'инверторный' 
+        AND a."Type" = 'Тип компрессора'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Haier C4F744CWG' 
+        AND a."Name" = '70' 
+        AND a."Type" = 'Ширина'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Haier C4F744CWG' 
+        AND a."Name" = '190' 
+        AND a."Type" = 'Высота'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Haier C4F744CWG' 
+        AND a."Name" = '68' 
+        AND a."Type" = 'Глубина'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Haier C4F744CWG' 
+        AND a."Name" = '439' 
+        AND a."Type" = 'Общий объем'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-haier-c4f744cwg_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Haier C4F744CWG'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-haier-c4f744cwg_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Haier C4F744CWG'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-haier-c4f744cwg_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Haier C4F744CWG'));

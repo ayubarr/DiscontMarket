@@ -1,0 +1,83 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Мини-печь GFGRIL GFBB-7 BREAKFAST BAR', 5990, 8, '/items/productimages/mini-pech-gfgril-gfbb-7-breakfast-bar_0.png', 4.49, '', 'Мини-печь GFGril GFBB-7 Breakfast Bar — универсальный прибор для запекания, жарки на гриле и приготовления кофе. Устройство обладает камерой объемом 7 л, сверху установлена сковорода с антипригарным покрытием. Емкость встроенного кофейника — 600 мл. 
+Настройки выбираются с помощью механических регуляторов. Духовка работает в трех режимах с максимальной температурой 230°С. В эту модель интегрирован гриль типа ТЭН. Таймер отключения программируется на срок до 30 минут, об окончании приготовления сообщает звуковой сигнал. 
+Корпус прибора сделан из металла, дверца — из однослойного стекла. Прорезиненные ножки предотвращают скольжение. Печь укомплектована плоским противнем, металлической решеткой и книгой рецептов. Для подсоединения к электросети используется кабель длиной 1 м.', 'InStock', 'Discount', 6, (SELECT "ID" FROM "Brands" WHERE "Name" = 'GFGRIL'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Мини-печь GFGRIL GFBB-7 BREAKFAST BAR'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Мини-печь GFGRIL GFBB-7 BREAKFAST BAR' 
+        AND a."Name" = '7' 
+        AND a."Type" = 'Объем'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Мини-печь GFGRIL GFBB-7 BREAKFAST BAR' 
+        AND a."Name" = '1250' 
+        AND a."Type" = 'Потребляемая мощность'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Мини-печь GFGRIL GFBB-7 BREAKFAST BAR' 
+        AND a."Name" = 'ТЭН' 
+        AND a."Type" = 'Тип гриля'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Мини-печь GFGRIL GFBB-7 BREAKFAST BAR' 
+        AND a."Name" = 'красный/ черный' 
+        AND a."Type" = 'Цвет'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Мини-печь GFGRIL GFBB-7 BREAKFAST BAR' 
+        AND a."Name" = '3' 
+        AND a."Type" = 'Режимы работы духовки'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-gfgril-gfbb-7-breakfast-bar_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь GFGRIL GFBB-7 BREAKFAST BAR'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-gfgril-gfbb-7-breakfast-bar_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь GFGRIL GFBB-7 BREAKFAST BAR'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-gfgril-gfbb-7-breakfast-bar_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь GFGRIL GFBB-7 BREAKFAST BAR'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-gfgril-gfbb-7-breakfast-bar_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь GFGRIL GFBB-7 BREAKFAST BAR'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-gfgril-gfbb-7-breakfast-bar_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь GFGRIL GFBB-7 BREAKFAST BAR'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-gfgril-gfbb-7-breakfast-bar_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь GFGRIL GFBB-7 BREAKFAST BAR'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-gfgril-gfbb-7-breakfast-bar_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь GFGRIL GFBB-7 BREAKFAST BAR'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-gfgril-gfbb-7-breakfast-bar_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь GFGRIL GFBB-7 BREAKFAST BAR'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/mini-pech-gfgril-gfbb-7-breakfast-bar_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мини-печь GFGRIL GFBB-7 BREAKFAST BAR'));

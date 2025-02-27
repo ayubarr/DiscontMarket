@@ -1,0 +1,28 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-grundig-55-oled-gh-9700_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Grundig 55 OLED GH 9700'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-grundig-55-oled-gh-9700_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Grundig 55 OLED GH 9700'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-grundig-55-oled-gh-9700_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Grundig 55 OLED GH 9700'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-grundig-55-oled-gh-9700_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Grundig 55 OLED GH 9700'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-grundig-55-oled-gh-9700_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Grundig 55 OLED GH 9700'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-grundig-55-oled-gh-9700_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Grundig 55 OLED GH 9700'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-grundig-55-oled-gh-9700_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Grundig 55 OLED GH 9700'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-grundig-55-oled-gh-9700_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Grundig 55 OLED GH 9700'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-grundig-55-oled-gh-9700_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Grundig 55 OLED GH 9700'));

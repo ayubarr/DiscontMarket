@@ -1,0 +1,25 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-samsung-qa65q70cakxxm_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung QA65Q70CAKXXM'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-samsung-qa65q70cakxxm_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung QA65Q70CAKXXM'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-samsung-qa65q70cakxxm_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung QA65Q70CAKXXM'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-samsung-qa65q70cakxxm_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung QA65Q70CAKXXM'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-samsung-qa65q70cakxxm_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung QA65Q70CAKXXM'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-samsung-qa65q70cakxxm_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung QA65Q70CAKXXM'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-samsung-qa65q70cakxxm_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung QA65Q70CAKXXM'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-samsung-qa65q70cakxxm_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung QA65Q70CAKXXM'));

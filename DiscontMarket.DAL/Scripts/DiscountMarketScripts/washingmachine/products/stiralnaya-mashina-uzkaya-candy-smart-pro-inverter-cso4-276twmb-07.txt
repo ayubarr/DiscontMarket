@@ -1,0 +1,82 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Стиральная машина узкая Candy Smart Pro Inverter CSO4 276TWMB-07', 16499, 9, '/items/productimages/stiralnaya-mashina-uzkaya-candy-smart-pro-inverter-cso4-276twmb-07_0.png', 4.54, '', 'Узкая стиральная машина Candy Smart Pro Inverter CSO4 276TWMB-07 в корпусе белого цвета позволит быстро и качественно постирать белье и привести в порядок одежду. За один раз можно очистить до 7 кг различных вещей. В прибор заложены 16 автоматических программ, включая девять быстрых. Минимальные циклы займут меньше часа. Предусмотрена обработка паром после сушки — волокна тканей становятся мягкими и легче разглаживаются. 
+
+Скорость отжима можно регулировать, максимальная составляет 1200 об/мин. Инверторный двигатель делает работу устройства тихой: уровень шума при стирке не превышает 51 дБ. За цикл машина расходует до 48 л воды. Устройству присвоен класс энергоэффективности А. 
+
+Управление обеспечивают электронная панель и поворотный регулятор. Таймер отложенного старта позволит запрограммировать стирку на удобное время. Выбранный режим и время до окончания цикла отображаются на цифровом дисплее. Предусмотрена функция дозагрузки белья во время стирки. Габариты прибора — 85х60х40 см, вес — 63,5 кг.', 'InStock', 'Discount', 5, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Candy'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая Candy Smart Pro Inverter CSO4 276TWMB-07'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина узкая Candy Smart Pro Inverter CSO4 276TWMB-07' 
+        AND a."Name" = '7' 
+        AND a."Type" = 'Максимальная загрузка'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина узкая Candy Smart Pro Inverter CSO4 276TWMB-07' 
+        AND a."Name" = '1200' 
+        AND a."Type" = 'Максимальная скорость отжима'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина узкая Candy Smart Pro Inverter CSO4 276TWMB-07' 
+        AND a."Name" = 'инверторный' 
+        AND a."Type" = 'Мотор'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина узкая Candy Smart Pro Inverter CSO4 276TWMB-07' 
+        AND a."Name" = 'Да' 
+        AND a."Type" = 'Обработка паром'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина узкая Candy Smart Pro Inverter CSO4 276TWMB-07' 
+        AND a."Name" = '85*60*40 см' 
+        AND a."Type" = 'Габаритные размеры (В*Ш*Г)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-uzkaya-candy-smart-pro-inverter-cso4-276twmb-07_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая Candy Smart Pro Inverter CSO4 276TWMB-07'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-uzkaya-candy-smart-pro-inverter-cso4-276twmb-07_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая Candy Smart Pro Inverter CSO4 276TWMB-07'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-uzkaya-candy-smart-pro-inverter-cso4-276twmb-07_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая Candy Smart Pro Inverter CSO4 276TWMB-07'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-uzkaya-candy-smart-pro-inverter-cso4-276twmb-07_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая Candy Smart Pro Inverter CSO4 276TWMB-07'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-uzkaya-candy-smart-pro-inverter-cso4-276twmb-07_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая Candy Smart Pro Inverter CSO4 276TWMB-07'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-uzkaya-candy-smart-pro-inverter-cso4-276twmb-07_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая Candy Smart Pro Inverter CSO4 276TWMB-07'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-uzkaya-candy-smart-pro-inverter-cso4-276twmb-07_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая Candy Smart Pro Inverter CSO4 276TWMB-07'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-uzkaya-candy-smart-pro-inverter-cso4-276twmb-07_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина узкая Candy Smart Pro Inverter CSO4 276TWMB-07'));

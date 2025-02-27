@@ -1,0 +1,77 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Комбинированная плита (60 см) Gorenje GKS6C70XF', 38499, 18, '/items/productimages/kombinirovannaya-plita-60-sm-gorenje-gks6c70xf_0.png', 4.43, '', 'Комбинированная плита Gorenje GKS6C70XFF с газовыми конфорками и электрической духовкой относится к А-классу энергопотребления. Корпус и панель управления выполнены из нержавеющей стали, дверца — стеклянная с элементами из окрашенного металла. Стенки духовой камеры покрыты эмалью легкой очистки SilverMatte. 
+У плиты четыре конфорки с чугунными решетками мощностью и диаметром: передняя левая — 1,0 кВт и 54 мм, передняя правая — 3,0 кВт и 99 мм, задняя левая и задняя правая — по 1,9 кВт и по 74 мм. Модель снабжена автоматическим электроподжигом конфорок.
+Панель управления оснащена цифровым дисплеем, сенсорными кнопками и механическими поворотными элементами. Встроенные часы отображают текущее время. Доступна установка таймера и функции отложенного старта, звуковой сигнал сообщит об окончании работы. 
+Объем мультифункциональной духовки — 71 л. К выбору доступны 11 режимов работы, в том числе «Верхний и нижний нагрев», «Вентилятор с функцией пара», «Размораживание», «Очистка паром AquaClean», «Интенсивное выпекание». Мощность режима «Гриль» составляет 2700 Вт. Максимальная температура нагрева достигает 275°С. 
+Освещение на задней стенке позволяет контролировать процесс приготовления. Дверца духовки с двойным стеклом, с одним теплоотражающим слоем, оснащена шарниром для плавного закрывания. Установлена динамическая система охлаждения. На одном уровне расположены телескопические направляющие. Внизу размещен выдвижной ящик для хранения посуды. Безопасность использования обеспечивает система газ-контроля конфорок.
+Модель работает от сети 220-240 В и от баллонного и природного газа. Вес — 49,1 кг. Габаритные размеры — 85х60х60 см. Присоединительная мощность составляет 3300 Вт. В комплекте: форсунки G30/30-37 для подключения сжиженного газа, металлическая решетка, глубокий и плоский эмалированные противни.', 'InStock', 'Discount', 4, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Gorenje'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Комбинированная плита (60 см) Gorenje GKS6C70XF'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Комбинированная плита (60 см) Gorenje GKS6C70XF' 
+        AND a."Name" = 'чугунная' 
+        AND a."Type" = 'Решетка'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Комбинированная плита (60 см) Gorenje GKS6C70XF' 
+        AND a."Name" = '71' 
+        AND a."Type" = 'Объем духовки'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Комбинированная плита (60 см) Gorenje GKS6C70XF' 
+        AND a."Name" = 'электрический' 
+        AND a."Type" = 'Тип духовки'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Комбинированная плита (60 см) Gorenje GKS6C70XF' 
+        AND a."Name" = '85*60*60 см' 
+        AND a."Type" = 'Габаритные размеры (В*Ш*Г)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Комбинированная плита (60 см) Gorenje GKS6C70XF' 
+        AND a."Name" = 'автоматический' 
+        AND a."Type" = 'Электроподжиг конфорок'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/kombinirovannaya-plita-60-sm-gorenje-gks6c70xf_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Комбинированная плита (60 см) Gorenje GKS6C70XF'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/kombinirovannaya-plita-60-sm-gorenje-gks6c70xf_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Комбинированная плита (60 см) Gorenje GKS6C70XF'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/kombinirovannaya-plita-60-sm-gorenje-gks6c70xf_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Комбинированная плита (60 см) Gorenje GKS6C70XF'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/kombinirovannaya-plita-60-sm-gorenje-gks6c70xf_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Комбинированная плита (60 см) Gorenje GKS6C70XF'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/kombinirovannaya-plita-60-sm-gorenje-gks6c70xf_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Комбинированная плита (60 см) Gorenje GKS6C70XF'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/kombinirovannaya-plita-60-sm-gorenje-gks6c70xf_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Комбинированная плита (60 см) Gorenje GKS6C70XF'));

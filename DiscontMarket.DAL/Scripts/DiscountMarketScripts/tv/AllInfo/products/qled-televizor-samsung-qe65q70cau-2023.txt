@@ -1,0 +1,67 @@
+﻿INSERT INTO "Products" 
+("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription",
+"Availability", "Status", "CategoryID", "BrandID", "UserID") 
+VALUES
+ ('QLED Телевизор Samsung QE65Q70CAU (2023)', 69999, 6, '/items/productimages/qled-televizor-samsung-qe65q70cau-2023_0.png', 4.14, '', 'Черный телевизор Samsung QE65Q70CAU с 65-дюймовой QLED-панелью работает на основе ОС Tizen. Модель получила низкочастотную акустическую систему мощностью 20 Вт и поддержку воспроизведения с USB-носителя. Прибор оснащен встроенным Bluetooth-модулем и Wi-Fi для управления при помощи смартфона. 
+
+Интерфейс устройства представлен четырьмя HDMI-портами, двумя USB-разъемами, одним LAN и DVB CAM. Телевизор защищен от детей, установлен на специальную настольную подставку и потребляет 146 Вт. Предусмотрена возможность голосового управления, наличие Smart TV и TimeShift. Вес конструкции составил 24,3 кг.', 'InStock', 'Discount', 1, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Samsung'), 1);
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'QLED Телевизор Samsung QE65Q70CAU (2023)'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '4K Ultra HD (3840x2160 Пикс)' AND "Type" = 'Экран));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'QLED Телевизор Samsung QE65Q70CAU (2023)'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '65' AND "Type" = 'Диагональ));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'QLED Телевизор Samsung QE65Q70CAU (2023)'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '120' AND "Type" = 'Частота обновления));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'QLED Телевизор Samsung QE65Q70CAU (2023)'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'QLED' AND "Type" = 'Технология экрана));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'QLED Телевизор Samsung QE65Q70CAU (2023)'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'Dual LED' AND "Type" = 'Тип светодиодной подсветки));
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/qled-televizor-samsung-qe65q70cau-2023_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'QLED Телевизор Samsung QE65Q70CAU (2023)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/qled-televizor-samsung-qe65q70cau-2023_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'QLED Телевизор Samsung QE65Q70CAU (2023)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/qled-televizor-samsung-qe65q70cau-2023_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'QLED Телевизор Samsung QE65Q70CAU (2023)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/qled-televizor-samsung-qe65q70cau-2023_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'QLED Телевизор Samsung QE65Q70CAU (2023)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/qled-televizor-samsung-qe65q70cau-2023_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'QLED Телевизор Samsung QE65Q70CAU (2023)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/qled-televizor-samsung-qe65q70cau-2023_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'QLED Телевизор Samsung QE65Q70CAU (2023)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/qled-televizor-samsung-qe65q70cau-2023_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'QLED Телевизор Samsung QE65Q70CAU (2023)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/qled-televizor-samsung-qe65q70cau-2023_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'QLED Телевизор Samsung QE65Q70CAU (2023)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/qled-televizor-samsung-qe65q70cau-2023_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'QLED Телевизор Samsung QE65Q70CAU (2023)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/qled-televizor-samsung-qe65q70cau-2023_9.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'QLED Телевизор Samsung QE65Q70CAU (2023)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/qled-televizor-samsung-qe65q70cau-2023_10.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'QLED Телевизор Samsung QE65Q70CAU (2023)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/qled-televizor-samsung-qe65q70cau-2023_11.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'QLED Телевизор Samsung QE65Q70CAU (2023)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/qled-televizor-samsung-qe65q70cau-2023_12.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'QLED Телевизор Samsung QE65Q70CAU (2023)'));

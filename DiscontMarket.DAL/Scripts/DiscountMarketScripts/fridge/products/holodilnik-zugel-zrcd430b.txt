@@ -1,0 +1,85 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Холодильник ZUGEL ZRCD430B', 52495, 17, '/items/productimages/holodilnik-zugel-zrcd430b_0.png', 4.12, '', 'Многодверный холодильник Zugel ZRCD430B обеспечивает производительность до 12 кг/сутки. Модель потребляет 365 кВт*ч электроэнергии и оснащена четырьмя распашными дверцами. В верхней правой части располагаются сенсорные клавиши управления, которыми выбирается требуемый температурный режим. На цифровом табло отображаются результаты функционирования. Защита от детей препятствует случайному изменению установленных настроек. 
+
+Функции суперзамораживания и суперохлаждения дают возможность быстро охладить продукты. Подогрев контура дверец исключает образование наледи. Внутреннее антибактериальное покрытие предотвращает развитие болезнетворных бактерий. Температура внутри при внезапном отключении электричества сохраняется в течение 12 часов. 
+
+Опция самодиагностики неисправностей продлевает срок службы электроприбора и позволяет устранить поломку в минимальные сроки. Предусмотрена светодиодная подсветка. Система авторазмораживания No Frost упрощает уход за изделием размером 183х83,6х63,6 см, весом 90 кг. Морозильная камера вмещает 129 л, холодильная — 288 л.', 'InStock', 'Discount', 3, (SELECT "ID" FROM "Brands" WHERE "Name" = 'ZUGEL'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Холодильник ZUGEL ZRCD430B'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник ZUGEL ZRCD430B' 
+        AND a."Name" = 'инверторный' 
+        AND a."Type" = 'Тип компрессора'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник ZUGEL ZRCD430B' 
+        AND a."Name" = '183*83.6*63.6 см' 
+        AND a."Type" = 'Габаритные размеры (В*Ш*Г)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник ZUGEL ZRCD430B' 
+        AND a."Name" = '482' 
+        AND a."Type" = 'Общий объем'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник ZUGEL ZRCD430B' 
+        AND a."Name" = 'отсутствует' 
+        AND a."Type" = 'Тип зоны сохранения свежести'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник ZUGEL ZRCD430B' 
+        AND a."Name" = 'сенсорное' 
+        AND a."Type" = 'Тип управления'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-zugel-zrcd430b_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник ZUGEL ZRCD430B'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-zugel-zrcd430b_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник ZUGEL ZRCD430B'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-zugel-zrcd430b_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник ZUGEL ZRCD430B'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-zugel-zrcd430b_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник ZUGEL ZRCD430B'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-zugel-zrcd430b_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник ZUGEL ZRCD430B'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-zugel-zrcd430b_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник ZUGEL ZRCD430B'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-zugel-zrcd430b_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник ZUGEL ZRCD430B'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-zugel-zrcd430b_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник ZUGEL ZRCD430B'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-zugel-zrcd430b_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник ZUGEL ZRCD430B'));

@@ -1,0 +1,7 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/elektroplitka-supra-hs-192_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Электроплитка Supra HS-192'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/elektroplitka-supra-hs-192_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Электроплитка Supra HS-192'));

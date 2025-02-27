@@ -1,0 +1,79 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Комбинированная плита (60 см) Gefest ПГЭ 6102-01 0197 черная', 14899, 12, '/items/productimages/kombinirovannaya-plita-60-sm-gefest-pge-6102-01-0197-chernaya_0.png', 4.15, '', 'Комбинированная плита Gefest ПГЭ 6102-01 0197, черная, обладает электроподжигом, который помогает быстро создать искру для получения огня. Предусмотрена возможность работы от газового баллона. На рабочей поверхности расположены четыре газовые конфорки с разным диаметром (от 4,9 см до 8,7 см) и мощностью (от 1 кВт до 1,8 кВт). Чугунная решетка позволяет размещать любую объемную посуду. Эмалированное покрытие можно легко очищать от разных загрязнений с помощью губки и неабразивного моющего средства. Объем камеры электрического духового шкафа — 55 л. Максимальная температура достигает 240°С. Тип очистки — традиционный. 
+
+Для получения блюд с румяной корочкой предусмотрен встроенный гриль мощностью 1200 Вт. Количество доступных режимов работы — 4. Термостат предназначен для поддержания определенной температуры. За яркое, равномерное освещение отвечает лампа накаливания. Дверца из двойного стекла откидывается вниз. Управление производится посредством механических регуляторов. Механический таймер рассчитан на программирование времени работы, по окончании которого срабатывает звуковой сигнал. Световой индикатор показывает состояние процесса. 
+
+Устройство относится к А классу энергопотребления. Показатель присоединительной мощности составляет 2,05 кВт. В нижней части корпуса находится ящик для посуды. Регулируемый ножки гарантируют высокую устойчивость на любой напольной поверхности. В комплект входят плоский и глубокий противень, решетка для духовки.', 'InStock', 'Discount', 4, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Gefest'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Комбинированная плита (60 см) Gefest ПГЭ 6102-01 0197 черная'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Комбинированная плита (60 см) Gefest ПГЭ 6102-01 0197 черная' 
+        AND a."Name" = '4' 
+        AND a."Type" = 'Количество конфорок'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Комбинированная плита (60 см) Gefest ПГЭ 6102-01 0197 черная' 
+        AND a."Name" = 'чугунная' 
+        AND a."Type" = 'Решетка'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Комбинированная плита (60 см) Gefest ПГЭ 6102-01 0197 черная' 
+        AND a."Name" = '55' 
+        AND a."Type" = 'Объем духовки'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Комбинированная плита (60 см) Gefest ПГЭ 6102-01 0197 черная' 
+        AND a."Name" = 'электрический' 
+        AND a."Type" = 'Тип духовки'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Комбинированная плита (60 см) Gefest ПГЭ 6102-01 0197 черная' 
+        AND a."Name" = '85*60*60 см' 
+        AND a."Type" = 'Габаритные размеры (В*Ш*Г)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/kombinirovannaya-plita-60-sm-gefest-pge-6102-01-0197-chernaya_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Комбинированная плита (60 см) Gefest ПГЭ 6102-01 0197 черная'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/kombinirovannaya-plita-60-sm-gefest-pge-6102-01-0197-chernaya_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Комбинированная плита (60 см) Gefest ПГЭ 6102-01 0197 черная'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/kombinirovannaya-plita-60-sm-gefest-pge-6102-01-0197-chernaya_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Комбинированная плита (60 см) Gefest ПГЭ 6102-01 0197 черная'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/kombinirovannaya-plita-60-sm-gefest-pge-6102-01-0197-chernaya_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Комбинированная плита (60 см) Gefest ПГЭ 6102-01 0197 черная'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/kombinirovannaya-plita-60-sm-gefest-pge-6102-01-0197-chernaya_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Комбинированная плита (60 см) Gefest ПГЭ 6102-01 0197 черная'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/kombinirovannaya-plita-60-sm-gefest-pge-6102-01-0197-chernaya_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Комбинированная плита (60 см) Gefest ПГЭ 6102-01 0197 черная'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/kombinirovannaya-plita-60-sm-gefest-pge-6102-01-0197-chernaya_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Комбинированная плита (60 см) Gefest ПГЭ 6102-01 0197 черная'));

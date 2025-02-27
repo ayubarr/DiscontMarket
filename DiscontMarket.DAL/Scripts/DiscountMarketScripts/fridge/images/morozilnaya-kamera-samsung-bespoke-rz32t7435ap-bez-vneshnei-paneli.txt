@@ -1,0 +1,43 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-samsung-bespoke-rz32t7435ap-bez-vneshnei-paneli_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Samsung Bespoke RZ32T7435AP без внешней панели'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-samsung-bespoke-rz32t7435ap-bez-vneshnei-paneli_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Samsung Bespoke RZ32T7435AP без внешней панели'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-samsung-bespoke-rz32t7435ap-bez-vneshnei-paneli_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Samsung Bespoke RZ32T7435AP без внешней панели'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-samsung-bespoke-rz32t7435ap-bez-vneshnei-paneli_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Samsung Bespoke RZ32T7435AP без внешней панели'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-samsung-bespoke-rz32t7435ap-bez-vneshnei-paneli_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Samsung Bespoke RZ32T7435AP без внешней панели'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-samsung-bespoke-rz32t7435ap-bez-vneshnei-paneli_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Samsung Bespoke RZ32T7435AP без внешней панели'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-samsung-bespoke-rz32t7435ap-bez-vneshnei-paneli_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Samsung Bespoke RZ32T7435AP без внешней панели'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-samsung-bespoke-rz32t7435ap-bez-vneshnei-paneli_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Samsung Bespoke RZ32T7435AP без внешней панели'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-samsung-bespoke-rz32t7435ap-bez-vneshnei-paneli_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Samsung Bespoke RZ32T7435AP без внешней панели'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-samsung-bespoke-rz32t7435ap-bez-vneshnei-paneli_9.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Samsung Bespoke RZ32T7435AP без внешней панели'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-samsung-bespoke-rz32t7435ap-bez-vneshnei-paneli_10.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Samsung Bespoke RZ32T7435AP без внешней панели'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-samsung-bespoke-rz32t7435ap-bez-vneshnei-paneli_11.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Samsung Bespoke RZ32T7435AP без внешней панели'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-samsung-bespoke-rz32t7435ap-bez-vneshnei-paneli_12.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Samsung Bespoke RZ32T7435AP без внешней панели'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-samsung-bespoke-rz32t7435ap-bez-vneshnei-paneli_13.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера Samsung Bespoke RZ32T7435AP без внешней панели'));

@@ -1,0 +1,95 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Стиральная машина Gorenje WPNA94A1TWIFI/C', 50999, 8, '/items/productimages/stiralnaya-mashina-gorenje-wpna94a1twifi-c_0.png', 4.81, '', 'Стиральная машина Gorenje WPNA94A1TWIFI/C произведена в Словении.
+
+• <b>Загрузка до 9 кг</b>
+Позволяет одновременно стирать большие объемы.
+
+• <b>Поверхность барабана WaveActive</b>
+Обеспечивает бережное отношение к вещам. Объем барабана — 54 л, 
+
+• <b>Широкий спектр программ</b>
+Доступны автоматические режимы — от ручной стирки и предварительной стирки до стирки шерсти, деликатной стирки, очищения синтетики и хлопка. Быстрая стирка займет 20 мин, экономичная ECO сохранит электроэнергию. Возможность обработки паром позволяет дополнительно стерилизовать белье, что особенно подходит для детских вещей и людей с аллергиями.
+
+Габаритные размеры: 85х60x54,5 см. Соответствует классу энергоэффективности A. Стиральной машине нужно 1,1 кВт*ч на цикл стирки и 57 литров жидкости. Модель Gorenje WPNA94A1TWIFI/C оснащена защитой от детей и системой AquaStop для предотвращения протечек.', 'InStock', 'Discount', 5, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Gorenje'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Стиральная машина Gorenje WPNA94A1TWIFI/C'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина Gorenje WPNA94A1TWIFI/C' 
+        AND a."Name" = '9' 
+        AND a."Type" = 'Максимальная загрузка'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина Gorenje WPNA94A1TWIFI/C' 
+        AND a."Name" = '1400' 
+        AND a."Type" = 'Максимальная скорость отжима'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина Gorenje WPNA94A1TWIFI/C' 
+        AND a."Name" = 'инверторный' 
+        AND a."Type" = 'Мотор'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина Gorenje WPNA94A1TWIFI/C' 
+        AND a."Name" = 'Да' 
+        AND a."Type" = 'Обработка паром'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина Gorenje WPNA94A1TWIFI/C' 
+        AND a."Name" = '85*60*54.5 см' 
+        AND a."Type" = 'Габаритные размеры (В*Ш*Г)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-gorenje-wpna94a1twifi-c_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Gorenje WPNA94A1TWIFI/C'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-gorenje-wpna94a1twifi-c_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Gorenje WPNA94A1TWIFI/C'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-gorenje-wpna94a1twifi-c_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Gorenje WPNA94A1TWIFI/C'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-gorenje-wpna94a1twifi-c_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Gorenje WPNA94A1TWIFI/C'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-gorenje-wpna94a1twifi-c_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Gorenje WPNA94A1TWIFI/C'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-gorenje-wpna94a1twifi-c_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Gorenje WPNA94A1TWIFI/C'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-gorenje-wpna94a1twifi-c_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Gorenje WPNA94A1TWIFI/C'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-gorenje-wpna94a1twifi-c_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Gorenje WPNA94A1TWIFI/C'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-gorenje-wpna94a1twifi-c_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Gorenje WPNA94A1TWIFI/C'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-gorenje-wpna94a1twifi-c_9.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Gorenje WPNA94A1TWIFI/C'));

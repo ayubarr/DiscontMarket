@@ -1,0 +1,92 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Электрическая плита (60 см) Gefest ПЭ 6570-04 0040', 34999, 12, '/items/productimages/elektricheskaya-plita-60-sm-gefest-pe-6570-04-0040_0.png', 4.69, '', 'Электрическая плита Gefest ПЭ 6570-04 0040 характеризуется шириной корпуса 60 см и оснащена четырьмя зонами нагревания.
+
+• <b>Индукционные конфорки</b>
+Обеспечивают равномерное и быстрое нагревание посуды. Благодаря этому меньше вероятность пригорания к варочной поверхности жира и ингредиентов, что упрощает очищение модели.
+
+• <b>Зоны размером 16 см, 18 см и 20 см</b>
+Позволяют использовать посуду разного диаметра.
+
+• <b>Духовой шкаф объемом 55 л с десятью режимами</b>
+Оптимален для приготовления различной выпечки, мяса, птицы, рыбы и морепродуктов.
+
+• <b>Гриль с ТЭНом мощностью 1200 Вт</b>
+Обеспечивает создание хрустящей корочки на ингредиентах без добавления масла.
+
+• <b>Режим «Конвекция»</b>
+Способствует равномерному распределению горячего воздуха в камере. Благодаря этому ингредиенты однородно пропекаются и не теряют сочность.
+
+• <b>Таймер выключения конфорок и духового шкафа</b>
+Предотвращает пригорание блюда и создает безопасные условия для использования.
+
+• <b>Поверхность варочной панели из стеклокерамики</b>
+Устойчива к повреждениям при попадании капель горячего масла.
+
+Модель оборудована дверцей с двойным остеклением, что снижает вероятность перегревания наружной поверхности. Сенсорная панель управления с электронным программатором способствует комфортному и точному выбору нужных параметров работы.', 'InStock', 'Discount', 4, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Gefest'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Электрическая плита (60 см) Gefest ПЭ 6570-04 0040'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Электрическая плита (60 см) Gefest ПЭ 6570-04 0040' 
+        AND a."Name" = '55' 
+        AND a."Type" = 'Объем духовки'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Электрическая плита (60 см) Gefest ПЭ 6570-04 0040' 
+        AND a."Name" = '10' 
+        AND a."Type" = 'Режимы работы духовки'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Электрическая плита (60 см) Gefest ПЭ 6570-04 0040' 
+        AND a."Name" = 'Да' 
+        AND a."Type" = 'Конвекция'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Электрическая плита (60 см) Gefest ПЭ 6570-04 0040' 
+        AND a."Name" = 'индукционные' 
+        AND a."Type" = 'Тип конфорок'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Электрическая плита (60 см) Gefest ПЭ 6570-04 0040' 
+        AND a."Name" = 'ТЭН' 
+        AND a."Type" = 'Тип гриля'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/elektricheskaya-plita-60-sm-gefest-pe-6570-04-0040_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Электрическая плита (60 см) Gefest ПЭ 6570-04 0040'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/elektricheskaya-plita-60-sm-gefest-pe-6570-04-0040_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Электрическая плита (60 см) Gefest ПЭ 6570-04 0040'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/elektricheskaya-plita-60-sm-gefest-pe-6570-04-0040_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Электрическая плита (60 см) Gefest ПЭ 6570-04 0040'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/elektricheskaya-plita-60-sm-gefest-pe-6570-04-0040_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Электрическая плита (60 см) Gefest ПЭ 6570-04 0040'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/elektricheskaya-plita-60-sm-gefest-pe-6570-04-0040_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Электрическая плита (60 см) Gefest ПЭ 6570-04 0040'));

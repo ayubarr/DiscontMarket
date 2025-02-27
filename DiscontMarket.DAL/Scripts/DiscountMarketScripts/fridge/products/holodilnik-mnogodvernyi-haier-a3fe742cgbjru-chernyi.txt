@@ -1,0 +1,69 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Холодильник многодверный Haier A3FE742CGBJRU черный', 82499, 11, '/items/productimages/holodilnik-mnogodvernyi-haier-a3fe742cgbjru-chernyi_0.png', 4.91, '', 'Haier A3FE742CGBJRU – стильный вместительный холодильник с инверторным компрессором и выдвижными морозильными камерами. Он экономно расходует электроэнергию, необходимую для создания оптимальных условий для хранения продуктов, и работает с низким уровнем шума. Панель, расположенная на внешней стороне двери, даёт возможность легко контролировать состояние холодильника и пользоваться всеми его функциями.<br><br>ЗОНА С НАСТРАИВАЕМОЙ ТЕМПЕРАТУРОЙ<br>В этой модели предусмотрен ящик MyZone («Моя зона»), в котором можно установить локальный температурный режим. Благодаря этому вы можете использовать его так, как это необходимо в данных момент: для хранения овощей и фруктов, свежего мяса, рыбы и приготовленных блюд либо для разморозки замороженных продуктов.<br><br>МНОГОПОТОЧНОЕ ОХЛАЖДЕНИЕ<br>В холодильнике реализована технология многоканального воздушного потока. Специальный вентилятор подаёт охлаждённый воздух через каналы, расположенные на каждом уровне полок. Это позволяет обеспечить одинаковую температуру в каждом уголке холодильника.<br><br>СВЕТОДИОДНОЕ ОСВЕЩЕНИЕ<br>Для освещения внутреннего пространства разработчики предусмотрели светодиодные лампы. Они экономно расходуют электроэнергию, обеспечивают мягкий, приятный свет, который помогает быстро найти нужные продукты.<br>', 'InStock', 'Discount', 3, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Haier'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Haier A3FE742CGBJRU черный'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник многодверный Haier A3FE742CGBJRU черный' 
+        AND a."Name" = 'инверторный' 
+        AND a."Type" = 'Тип компрессора'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник многодверный Haier A3FE742CGBJRU черный' 
+        AND a."Name" = '190.5*70*67.6 см' 
+        AND a."Type" = 'Габаритные размеры (В*Ш*Г)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник многодверный Haier A3FE742CGBJRU черный' 
+        AND a."Name" = '436' 
+        AND a."Type" = 'Общий объем'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник многодверный Haier A3FE742CGBJRU черный' 
+        AND a."Name" = 'влажная' 
+        AND a."Type" = 'Тип зоны сохранения свежести'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник многодверный Haier A3FE742CGBJRU черный' 
+        AND a."Name" = 'сенсорный' 
+        AND a."Type" = 'Тип управления'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-haier-a3fe742cgbjru-chernyi_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Haier A3FE742CGBJRU черный'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-haier-a3fe742cgbjru-chernyi_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Haier A3FE742CGBJRU черный'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-haier-a3fe742cgbjru-chernyi_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Haier A3FE742CGBJRU черный'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-haier-a3fe742cgbjru-chernyi_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Haier A3FE742CGBJRU черный'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-haier-a3fe742cgbjru-chernyi_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Haier A3FE742CGBJRU черный'));

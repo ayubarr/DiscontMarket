@@ -1,0 +1,87 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Холодильник многодверный Casarte CASF4777ETAC5U1', 299999, 15, '/items/productimages/holodilnik-mnogodvernyi-casarte-casf4777etac5u1_0.png', 4.13, '', 'Многодверный холодильник Casarte CASF4777ETAC5U1 цвета «базальт» оборудован двумя распашными дверями с внешним стеклянным покрытием и двумя выдвижными ящиками из стекла и металла. С внешней стороны нанесено защитное покрытие от отпечатков пальцев, с внутренней — антибактериальное покрытие. Двери и ящики оснащены механизмами мягкого закрывания и внутренними ручками. Контур двери подогревается.
+
+Модель с нижней морозильной камерой обладает общим объемом 829 л, из них холодильник — 475 л и морозильник — 225 л. Холодильник снабжен системой автоматического контроля влажности и температуры. Для равномерного распределения прохладного воздуха по камере встроен вентилятор. В этой модели реализована система охлаждения и размораживания No Frost для обеих камер.
+
+Управление — электронное, встроен дисплей с сенсорным управлением. Панель можно заблокировать для избежания изменения настроек, что удобно семьям с детьми. Присутствуют режимы: «Суперохлаждение», «Быстрое охлаждение», «Нулевая температура» «Охлаждение напитков», «Легкая заморозка» и «Суперзамораживание». На экране отображаются включение, режим, температура в обеих камерах и в зоне свежести. 
+
+Предусмотрена система самодиагностики неисправностей. Холодильник можно синхронизировать со смартфоном через модуль Wi-Fi. Холодильная камера оснащена тремя стеклянно-металлическими полками (две из них регулируются по высоте), двумя ящиками для овощей и фруктов. Объем настраиваемой зоны сохранения свежести составляет 15 л. На двери расположены три кармана из пластика.
+
+Морозильная камера объемом 225 л представлена двумя выдвижными ящиками высотой 17 см. Встроен ледогенератор. Присутствует режим быстрого охлаждения напитков. Производительность замораживания достигает 14 кг/сут. При отключении электроэнергии устройство поддерживает низкую температуру в течение 6 часов.
+
+Холодильная и морозильная камеры снабжены светодиодной подсветкой. Об отключении питания, повышении температуры известят звуковой и световой сигналы, при слишком долго открытой двери сработает акустический сигнал. Система фильтрации представлена угольным и антибактериальным фильтрами. Встроен ионизатор воздуха. 
+
+Прибор весит 213 кг, обладает габаритами 190х100,5х78,7 см. Установлен инверторный компрессор, максимальный уровень шума достигает 38 дБ. В системе используется хладагент R600A. Годовое потребление электроэнергии — 438 кВт*ч, присутствует энергосберегающий режим. Класс энергоэффективности — А+. Устройство относится к климатическому классу N-SN-ST-T.', 'InStock', 'Discount', 3, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Casarte'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Casarte CASF4777ETAC5U1'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник многодверный Casarte CASF4777ETAC5U1' 
+        AND a."Name" = 'инверторный' 
+        AND a."Type" = 'Тип компрессора'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник многодверный Casarte CASF4777ETAC5U1' 
+        AND a."Name" = '190*100.5*78.7 см' 
+        AND a."Type" = 'Габаритные размеры (В*Ш*Г)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник многодверный Casarte CASF4777ETAC5U1' 
+        AND a."Name" = '829' 
+        AND a."Type" = 'Общий объем'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник многодверный Casarte CASF4777ETAC5U1' 
+        AND a."Name" = 'настраиваемая' 
+        AND a."Type" = 'Тип зоны сохранения свежести'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник многодверный Casarte CASF4777ETAC5U1' 
+        AND a."Name" = 'электронный' 
+        AND a."Type" = 'Тип управления'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-casarte-casf4777etac5u1_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Casarte CASF4777ETAC5U1'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-casarte-casf4777etac5u1_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Casarte CASF4777ETAC5U1'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-casarte-casf4777etac5u1_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Casarte CASF4777ETAC5U1'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-casarte-casf4777etac5u1_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Casarte CASF4777ETAC5U1'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-casarte-casf4777etac5u1_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Casarte CASF4777ETAC5U1'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-casarte-casf4777etac5u1_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Casarte CASF4777ETAC5U1'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-mnogodvernyi-casarte-casf4777etac5u1_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник многодверный Casarte CASF4777ETAC5U1'));

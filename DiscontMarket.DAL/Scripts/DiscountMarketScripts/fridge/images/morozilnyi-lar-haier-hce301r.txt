@@ -1,0 +1,16 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnyi-lar-haier-hce301r_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильный ларь Haier HCE301R'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnyi-lar-haier-hce301r_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильный ларь Haier HCE301R'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnyi-lar-haier-hce301r_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильный ларь Haier HCE301R'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnyi-lar-haier-hce301r_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильный ларь Haier HCE301R'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnyi-lar-haier-hce301r_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильный ларь Haier HCE301R'));

@@ -1,0 +1,45 @@
+﻿INSERT INTO "Products" 
+("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription",
+"Availability", "Status", "CategoryID", "BrandID", "UserID") 
+VALUES
+ ('Телевизор Samsung QE98QN990CU', 1099999, 18, '/items/productimages/televizor-samsung-qe98qn990cu_0.png', 4.58, '', 'Телевизор Samsung QE98QN990CU с потреблением 192 Вт оснащен процессором Neural Quantum 8K. Модель с операционной системой Tizen отличается QLED-дисплеем диагональю 98", который обеспечивает трансляцию формата 16:9 с частотой обновления 120 Гц. Технология HDR и цифровое шумоподавление гарантируют насыщенное и детализированное изображение.
+
+Фронтальные излучатели Dolby Atmos мощностью 120 Вт создают глубокое и чистое звучание. Удобство эксплуатации достигается благодаря поддержке Smart TV, воспроизведения со сторонних носителей, записи с ТВ на USB, наличию Sleep-таймера, функции TimeShift и защите от детей. Для управления используются пульт ДУ, питающийся от солнечных батарей, смартфон или голосовой помощник Google Assistant.
+
+Прибор со встроенным тюнером DVB T2 оборудован интерфейсами беспроводного соединения Wi-Fi и Bluetooth, разъемом LAN, оптическим выходом Toslink, четырьмя портами HDMI и тремя — USB 3.0 типа А. Устройство с креплением VESA 600x400 устанавливается настенным или настольным способом. В комплектацию входит подставка шириной 42 см, с учетом которой параметры равны 131,6х217,9х36,9 см и 86,5 кг. Без опоры габариты изделия составляют 124,5х217,9х1,9 см, вес — 68 кг.', 'InStock', 'Discount', 1, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Samsung'), 1);
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung QE98QN990CU'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '8K Ultra HD (7680x4320 Пикс)' AND "Type" = 'Экран));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung QE98QN990CU'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '98' AND "Type" = 'Диагональ));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung QE98QN990CU'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '120' AND "Type" = 'Частота обновления));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung QE98QN990CU'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'QLED' AND "Type" = 'Технология экрана));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung QE98QN990CU'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'Mini LED' AND "Type" = 'Тип светодиодной подсветки));
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-samsung-qe98qn990cu_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung QE98QN990CU'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-samsung-qe98qn990cu_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung QE98QN990CU'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-samsung-qe98qn990cu_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung QE98QN990CU'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-samsung-qe98qn990cu_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung QE98QN990CU'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-samsung-qe98qn990cu_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung QE98QN990CU'));

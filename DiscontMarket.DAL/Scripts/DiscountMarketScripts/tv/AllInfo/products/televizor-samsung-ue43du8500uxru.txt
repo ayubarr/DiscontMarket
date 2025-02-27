@@ -1,0 +1,55 @@
+﻿INSERT INTO "Products" 
+("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription",
+"Availability", "Status", "CategoryID", "BrandID", "UserID") 
+VALUES
+ ('Телевизор Samsung UE43DU8500UXRU', 27895, 18, '/items/productimages/televizor-samsung-ue43du8500uxru_0.png', 4.32, '', 'Телевизор Samsung UE43DU8500UXRU во время работы потребляет не более 68 Вт мощности. Устройство функционирует на базе операционной системы Tizen.
+
+• <b>Экран 4K Ultra HD</b>
+Технология экрана обеспечивает высокую яркость изображения, повышенную цветопередачу и детализацию картинки. Разрешение экрана составляет 3840x2160 пикселей. В качестве системы обработки изображения используется цифровое шумоподавление. 
+
+• <b>Дистанционное управление</b>
+Устройство способно функционировать в системе «умного дома». В этом случае смартфон используется в качестве пульта ДУ посредством голосового помощника. Предусмотрено наличие стандартного пульта ДУ на солнечных батареях. 
+
+• <b>Поддержка Smart TV</b>
+Позволяет устанавливать дополнительные приложения, пользоваться поисковыми системами, воспроизводить медиафайлы с внешних носителей. Модель оснащена встроенным модулем Bluetooth. 
+
+На корпусе устройства расположены интерфейсы подключения HDMI, USB, LAN разъем (RJ45), Toslink, слот для CI / PCMCIA. Для фиксации на поверхности стены используется крепление VESA 200x200. Габаритные размеры устройства — 56,03х96,63х2,57 см.', 'InStock', 'Discount', 1, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Samsung'), 1);
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung UE43DU8500UXRU'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '4K Ultra HD (3840x2160 Пикс)' AND "Type" = 'Экран));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung UE43DU8500UXRU'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '43' AND "Type" = 'Диагональ));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung UE43DU8500UXRU'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '60' AND "Type" = 'Частота обновления));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung UE43DU8500UXRU'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'LED' AND "Type" = 'Технология экрана));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung UE43DU8500UXRU'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'LED' AND "Type" = 'Тип светодиодной подсветки));
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-samsung-ue43du8500uxru_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung UE43DU8500UXRU'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-samsung-ue43du8500uxru_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung UE43DU8500UXRU'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-samsung-ue43du8500uxru_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung UE43DU8500UXRU'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-samsung-ue43du8500uxru_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung UE43DU8500UXRU'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-samsung-ue43du8500uxru_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung UE43DU8500UXRU'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-samsung-ue43du8500uxru_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung UE43DU8500UXRU'));

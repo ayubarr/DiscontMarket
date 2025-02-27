@@ -1,0 +1,99 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Стиральная машина Simfer WHC704 White', 14895, 14, '/items/productimages/stiralnaya-mashina-simfer-whc704-white_0.png', 4.51, '', '', 'InStock', 'Discount', 5, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Simfer'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Стиральная машина Simfer WHC704 White'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина Simfer WHC704 White' 
+        AND a."Name" = '7' 
+        AND a."Type" = 'Максимальная загрузка'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина Simfer WHC704 White' 
+        AND a."Name" = '1000' 
+        AND a."Type" = 'Максимальная скорость отжима'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина Simfer WHC704 White' 
+        AND a."Name" = 'стандартный' 
+        AND a."Type" = 'Мотор'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина Simfer WHC704 White' 
+        AND a."Name" = '85*59.5*43 см' 
+        AND a."Type" = 'Габаритные размеры (В*Ш*Г)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина Simfer WHC704 White' 
+        AND a."Name" = 'частичная' 
+        AND a."Type" = 'Тип защиты от протечек'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-simfer-whc704-white_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Simfer WHC704 White'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-simfer-whc704-white_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Simfer WHC704 White'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-simfer-whc704-white_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Simfer WHC704 White'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-simfer-whc704-white_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Simfer WHC704 White'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-simfer-whc704-white_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Simfer WHC704 White'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-simfer-whc704-white_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Simfer WHC704 White'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-simfer-whc704-white_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Simfer WHC704 White'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-simfer-whc704-white_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Simfer WHC704 White'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-simfer-whc704-white_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Simfer WHC704 White'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-simfer-whc704-white_9.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Simfer WHC704 White'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-simfer-whc704-white_10.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Simfer WHC704 White'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-simfer-whc704-white_11.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Simfer WHC704 White'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-simfer-whc704-white_12.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Simfer WHC704 White'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-simfer-whc704-white_13.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Simfer WHC704 White'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-simfer-whc704-white_14.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Simfer WHC704 White'));

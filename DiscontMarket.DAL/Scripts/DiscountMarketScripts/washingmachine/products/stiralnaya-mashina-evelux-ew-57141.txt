@@ -1,0 +1,96 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Стиральная машина Evelux EW 57141', 23495, 11, '/items/productimages/stiralnaya-mashina-evelux-ew-57141_0.png', 4.35, '', 'Стиральная машина Evelux EW 57141 с фронтальной загрузкой вмещает до 7 кг белья, выполнена в белом цвете с черной дверцей люка и панелью управления. Она электронная, представлена поворотным регулятором и кнопками. Есть возможность заблокировать панель, эта функция особенно удобна для семей с детьми. <br>Модель снабжена 15 автоматическими программами для стирки деликатного белья, хлопка, шерсти, джинсов, штор, синтетики и другими. Минимальное время программы занимает 30 минут. Максимальная скорость отжима достигает 1400 об/мин.<br>Прибор оснащен функциями паузы, контроля пенообразования, контроля уровня залива воды, дисбаланса барабана, защиты от протечек. Присутствует отложенный старт до 9 часов. О завершении стирки извещает звуковой сигнал. Модель укомплектована диспенсером для жидких моющих средств. <br>Петли дверцы люка расположены слева. Внешний диаметр загрузочного люка составляет 43 см. Объем барабана — 48 л, он выполнен из нержавеющей стали. Уровень шума при стирке не превышает 56 дБ, при отжиме — 76 дБ. Мощность мотора достигает 2200 Вт. Прибор относится к классу энергопотребления А+++. Класс эффективности стирки — А, класс эффективности отжима — В. Параметры машины: вес составляет 67 кг, габаритные размеры — 59,5х48х84,2 см.', 'InStock', 'Discount', 5, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Evelux'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Стиральная машина Evelux EW 57141'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина Evelux EW 57141' 
+        AND a."Name" = '7' 
+        AND a."Type" = 'Максимальная загрузка'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина Evelux EW 57141' 
+        AND a."Name" = '1400' 
+        AND a."Type" = 'Максимальная скорость отжима'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина Evelux EW 57141' 
+        AND a."Name" = 'стандартный' 
+        AND a."Type" = 'Мотор'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина Evelux EW 57141' 
+        AND a."Name" = '84.2*59.5*48 см' 
+        AND a."Type" = 'Габаритные размеры (В*Ш*Г)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Стиральная машина Evelux EW 57141' 
+        AND a."Name" = 'Да' 
+        AND a."Type" = 'Индикация времени до конца программы'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-evelux-ew-57141_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Evelux EW 57141'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-evelux-ew-57141_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Evelux EW 57141'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-evelux-ew-57141_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Evelux EW 57141'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-evelux-ew-57141_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Evelux EW 57141'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-evelux-ew-57141_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Evelux EW 57141'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-evelux-ew-57141_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Evelux EW 57141'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-evelux-ew-57141_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Evelux EW 57141'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-evelux-ew-57141_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Evelux EW 57141'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-evelux-ew-57141_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Evelux EW 57141'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-evelux-ew-57141_9.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Evelux EW 57141'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-evelux-ew-57141_10.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Evelux EW 57141'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-evelux-ew-57141_11.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Evelux EW 57141'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-evelux-ew-57141_12.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Evelux EW 57141'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-evelux-ew-57141_13.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Evelux EW 57141'));

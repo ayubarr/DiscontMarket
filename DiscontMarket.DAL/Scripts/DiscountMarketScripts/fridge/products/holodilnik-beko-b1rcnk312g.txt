@@ -1,0 +1,84 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Холодильник Beko B1RCNK312G', 22499, 12, '/items/productimages/holodilnik-beko-b1rcnk312g_0.png', 4.82, '', 'Холодильник Beko B1RCNK312G, темно-серый — двухкамерная модель общим объемом 310 л, полезным — 276 л. 
+
+• <b>Технология Dual Cooling</b> 
+Система охлаждения представлена двумя контурами, это предотвращает смешивание запахов продуктов, гарантирует более точное поддержание температуры. 
+
+• <b>Технология No Frost</b> 
+Используется в обоих отделениях. Предотвращает образование инея и наледи, поэтому ручного размораживание не требуется. 
+
+• <b>Класс энергоэффективности A+</b> 
+Свидетельствует об экономичности прибора, в год расходуется 282 кВт*ч. 
+
+• <b>Климатический класс SN-T</b> 
+Холодильник будет эффективно работать практически в любом климате при температуре до +43°C. 
+
+Внутреннее оснащение холодильного отделения (200 л) состоит из четырех стеклянных полок, из которых три переставляются по высоте. Четвертая служит крышкой контейнера для фруктов и овощей. На двери — три кармана, в комплект входит подставка для яиц. 
+
+Морозильная камера (76 л) оборудована тремя выдвижными ящиками и замораживает до 5 кг продуктов в сутки. В случае, если питание будет отключено, низкая внутренняя температура будет сохраняться в течение 18 часов. 
+
+Компрессор стандартный, уровень шума при его работе не превышает 39 дБ. О слишком долго открытой двери оповещает звуковой сигнал. Размеры холодильника: 184х54х60 см, вес — 59 кг.', 'InStock', 'Discount', 3, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Beko'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Холодильник Beko B1RCNK312G'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Beko B1RCNK312G' 
+        AND a."Name" = 'стандартный' 
+        AND a."Type" = 'Тип компрессора'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Beko B1RCNK312G' 
+        AND a."Name" = '184' 
+        AND a."Type" = 'Высота'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Beko B1RCNK312G' 
+        AND a."Name" = '54' 
+        AND a."Type" = 'Ширина'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Beko B1RCNK312G' 
+        AND a."Name" = '60' 
+        AND a."Type" = 'Глубина'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Beko B1RCNK312G' 
+        AND a."Name" = '310' 
+        AND a."Type" = 'Общий объем'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-beko-b1rcnk312g_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Beko B1RCNK312G'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-beko-b1rcnk312g_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Beko B1RCNK312G'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-beko-b1rcnk312g_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Beko B1RCNK312G'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-beko-b1rcnk312g_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Beko B1RCNK312G'));

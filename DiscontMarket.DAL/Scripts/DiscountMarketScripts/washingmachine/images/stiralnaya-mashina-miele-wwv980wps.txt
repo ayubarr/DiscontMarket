@@ -1,0 +1,4 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/stiralnaya-mashina-miele-wwv980wps_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Стиральная машина Miele WWV980WPS'));

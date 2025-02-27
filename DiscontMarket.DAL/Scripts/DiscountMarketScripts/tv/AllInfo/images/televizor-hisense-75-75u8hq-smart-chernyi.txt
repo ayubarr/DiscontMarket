@@ -1,0 +1,16 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-hisense-75-75u8hq-smart-chernyi_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hisense 75 75U8HQ Smart черный'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-hisense-75-75u8hq-smart-chernyi_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hisense 75 75U8HQ Smart черный'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-hisense-75-75u8hq-smart-chernyi_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hisense 75 75U8HQ Smart черный'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-hisense-75-75u8hq-smart-chernyi_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hisense 75 75U8HQ Smart черный'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-hisense-75-75u8hq-smart-chernyi_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Hisense 75 75U8HQ Smart черный'));

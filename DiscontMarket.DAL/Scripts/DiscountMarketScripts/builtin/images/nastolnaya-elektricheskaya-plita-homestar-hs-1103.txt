@@ -1,0 +1,7 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/nastolnaya-elektricheskaya-plita-homestar-hs-1103_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Настольная электрическая плита HomeStar HS-1103'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/nastolnaya-elektricheskaya-plita-homestar-hs-1103_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Настольная электрическая плита HomeStar HS-1103'));

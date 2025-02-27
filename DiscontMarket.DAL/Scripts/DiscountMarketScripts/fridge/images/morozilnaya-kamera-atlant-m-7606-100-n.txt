@@ -1,0 +1,19 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-atlant-m-7606-100-n_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера ATLANT М 7606-100 N'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-atlant-m-7606-100-n_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера ATLANT М 7606-100 N'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-atlant-m-7606-100-n_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера ATLANT М 7606-100 N'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-atlant-m-7606-100-n_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера ATLANT М 7606-100 N'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-atlant-m-7606-100-n_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера ATLANT М 7606-100 N'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozilnaya-kamera-atlant-m-7606-100-n_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Морозильная камера ATLANT М 7606-100 N'));

@@ -1,0 +1,25 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-lg-55ur78006lk_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор LG 55UR78006LK'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-lg-55ur78006lk_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор LG 55UR78006LK'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-lg-55ur78006lk_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор LG 55UR78006LK'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-lg-55ur78006lk_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор LG 55UR78006LK'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-lg-55ur78006lk_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор LG 55UR78006LK'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-lg-55ur78006lk_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор LG 55UR78006LK'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-lg-55ur78006lk_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор LG 55UR78006LK'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-lg-55ur78006lk_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор LG 55UR78006LK'));

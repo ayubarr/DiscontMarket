@@ -1,0 +1,76 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Мороженица Caso IceCreamer', 32999, 19, '/items/productimages/morozhenica-caso-icecreamer_0.png', 4.77, '', 'Мороженица Caso IceCreamer снабжена встроенной морозильной камерой, которая позволяет поддерживать температуру до -35°С. Корпус изготовлен из нержавеющей стали, снабжен устойчивыми ножками. Предусмотрены отсек для стаканчиков и отсек для компактного хранения сетевого кабеля. 
+
+У устройства электронное управление со светодиодным дисплеем с подсветкой. На нем отображаются включение, готовность к работе, режим и время до конца программы. Доступен выбор из четырех режимов, в том числе для приготовления замороженного йогурта и сорбета. Съемная чаша для продуктов обладает объемом 2 л. В корпусе предусмотрено отверстие для добавления ингредиентов во время работы. Удобство использования обеспечивает таймер с функцией автовыключения. После завершения работы звучит сигнал. 
+
+Модель получает питание от сети напряжением 220 В по шнуру длиной 80 см. Потребляемая мощность достигает 180 Вт. В комплекте — ложечка для мороженого и мерный стакан. Параметры мороженицы: вес составляет 11,8 кг, габариты — 28х43х28,5 см.', 'InStock', 'Discount', 6, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Caso'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Мороженица Caso IceCreamer'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Мороженица Caso IceCreamer' 
+        AND a."Name" = '2' 
+        AND a."Type" = 'Максимальный объем мороженого'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Мороженица Caso IceCreamer' 
+        AND a."Name" = 'Да' 
+        AND a."Type" = 'Встроенная холодильная установка'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Мороженица Caso IceCreamer' 
+        AND a."Name" = 'Да' 
+        AND a."Type" = 'Добавление ингредиентов в процессе работы'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Мороженица Caso IceCreamer' 
+        AND a."Name" = 'Да' 
+        AND a."Type" = 'Индикация режима работы'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Мороженица Caso IceCreamer' 
+        AND a."Name" = 'Да' 
+        AND a."Type" = 'Индикация времени до конца программы'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozhenica-caso-icecreamer_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мороженица Caso IceCreamer'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozhenica-caso-icecreamer_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мороженица Caso IceCreamer'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozhenica-caso-icecreamer_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мороженица Caso IceCreamer'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozhenica-caso-icecreamer_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мороженица Caso IceCreamer'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozhenica-caso-icecreamer_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мороженица Caso IceCreamer'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/morozhenica-caso-icecreamer_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Мороженица Caso IceCreamer'));

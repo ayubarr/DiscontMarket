@@ -1,0 +1,93 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Холодильник Kuppersberg NRV 192 BG (6206)', 82595, 6, '/items/productimages/holodilnik-kuppersberg-nrv-192-bg-6206_0.png', 4.64, '', '', 'InStock', 'Discount', 3, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Kuppersberg'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Холодильник Kuppersberg NRV 192 BG (6206)'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Kuppersberg NRV 192 BG (6206)' 
+        AND a."Name" = 'стандартный' 
+        AND a."Type" = 'Тип компрессора'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Kuppersberg NRV 192 BG (6206)' 
+        AND a."Name" = '192' 
+        AND a."Type" = 'Высота'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Kuppersberg NRV 192 BG (6206)' 
+        AND a."Name" = '70' 
+        AND a."Type" = 'Ширина'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Kuppersberg NRV 192 BG (6206)' 
+        AND a."Name" = '72' 
+        AND a."Type" = 'Глубина'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Kuppersberg NRV 192 BG (6206)' 
+        AND a."Name" = '461' 
+        AND a."Type" = 'Общий объем'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-kuppersberg-nrv-192-bg-6206_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Kuppersberg NRV 192 BG (6206)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-kuppersberg-nrv-192-bg-6206_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Kuppersberg NRV 192 BG (6206)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-kuppersberg-nrv-192-bg-6206_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Kuppersberg NRV 192 BG (6206)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-kuppersberg-nrv-192-bg-6206_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Kuppersberg NRV 192 BG (6206)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-kuppersberg-nrv-192-bg-6206_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Kuppersberg NRV 192 BG (6206)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-kuppersberg-nrv-192-bg-6206_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Kuppersberg NRV 192 BG (6206)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-kuppersberg-nrv-192-bg-6206_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Kuppersberg NRV 192 BG (6206)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-kuppersberg-nrv-192-bg-6206_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Kuppersberg NRV 192 BG (6206)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-kuppersberg-nrv-192-bg-6206_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Kuppersberg NRV 192 BG (6206)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-kuppersberg-nrv-192-bg-6206_9.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Kuppersberg NRV 192 BG (6206)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-kuppersberg-nrv-192-bg-6206_10.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Kuppersberg NRV 192 BG (6206)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-kuppersberg-nrv-192-bg-6206_11.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Kuppersberg NRV 192 BG (6206)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-kuppersberg-nrv-192-bg-6206_12.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Kuppersberg NRV 192 BG (6206)'));

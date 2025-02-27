@@ -1,0 +1,84 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Холодильник Gorenje NRK6202AC4', 47499, 9, '/items/productimages/holodilnik-gorenje-nrk6202ac4_0.png', 4.86, '', 'Холодильник Gorenje NRK6202AC4 стильно выглядит и обеспечивает оптимальные условия для хранения продуктов. В обеих его камерах реализована полностью автоматическая технология разморозки No Frost, что делает обслуживание особенно лёгким.
+
+ЗНАЕТ ВАШИ ПРИВЫЧКИ
+Система AdaptTech следит за тем, как вы пользуетесь устройством, и анализирует собранную информацию. Она использует её, чтобы поддерживать стабильный температурный уровень вне зависимости от того, как часто вы открываете дверцу.
+
+ПРОСТАЯ РЕГУЛИРОВКА
+Установить настройки можно с помощью сенсорной панели управления SensoTech Switch. Она удобно расположена и чутко реагирует на касания пальцев.
+
+ПРОДУМАНО ДО МЕЛОЧЕЙ
+Для свежих фруктов и овощей предусмотрен ящик CrispZone с функцией изменения влажности, для мяса и рыбы – низкотемпературный контейнер FreshZone. LED-освещение пригодится, чтобы не тратить много времени на поиск продуктов, понадобившихся вам именно сейчас.', 'InStock', 'Discount', 3, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Gorenje'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Холодильник Gorenje NRK6202AC4'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Gorenje NRK6202AC4' 
+        AND a."Name" = 'стандартный' 
+        AND a."Type" = 'Тип компрессора'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Gorenje NRK6202AC4' 
+        AND a."Name" = '200' 
+        AND a."Type" = 'Высота'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Gorenje NRK6202AC4' 
+        AND a."Name" = '60' 
+        AND a."Type" = 'Ширина'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Gorenje NRK6202AC4' 
+        AND a."Name" = '59.2' 
+        AND a."Type" = 'Глубина'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Gorenje NRK6202AC4' 
+        AND a."Name" = '353' 
+        AND a."Type" = 'Общий объем'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-gorenje-nrk6202ac4_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Gorenje NRK6202AC4'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-gorenje-nrk6202ac4_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Gorenje NRK6202AC4'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-gorenje-nrk6202ac4_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Gorenje NRK6202AC4'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-gorenje-nrk6202ac4_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Gorenje NRK6202AC4'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-gorenje-nrk6202ac4_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Gorenje NRK6202AC4'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-gorenje-nrk6202ac4_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Gorenje NRK6202AC4'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-gorenje-nrk6202ac4_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Gorenje NRK6202AC4'));

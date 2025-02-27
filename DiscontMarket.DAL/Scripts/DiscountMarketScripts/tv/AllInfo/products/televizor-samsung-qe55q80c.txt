@@ -1,0 +1,39 @@
+﻿INSERT INTO "Products" 
+("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription",
+"Availability", "Status", "CategoryID", "BrandID", "UserID") 
+VALUES
+ ('Телевизор Samsung QE55Q80C', 64995, 14, '/items/productimages/televizor-samsung-qe55q80c_0.png', 4.49, '', 'Телевизор Samsung QE55Q80C с нейронным процессором и частотой обновления 120 Гц обеспечивает трехмерную глубину изображения с разрешением Ultra HD. QLED-дисплей диагональю 55" формата 16:9 с цифровым шумоподавлением и технологией HDR отличается высококачественной трансляцией с детализированной анимацией. Регулировка яркости позволяет создавать комфортные условия для просмотра в зависимости от интенсивности окружающего освещения.
+
+Реалистичное и объемное звучание достигается благодаря акустической системе 5.1 мощностью 60 Вт. Интегрированный Smart Hub дает возможность подключать устройство к умному дому для дистанционного управления голосом и через смартфон. За беспроводное соединение отвечают модули Wi-Fi и Bluetooth. В прибор с ОС Tizen встроены разъем для DVB CAM, интерфейс LAN, два порта USB 2.0 типа и четыре входа HDMI версии 2.1.
+
+Модель с тюнером DVB T/T2/C/C2/S/S2 отличается поддержкой Smart TV, функциями записи с ТВ на внешний носитель, воспроизведения с USB, TimeShift, Sleep-таймера, защитой от детей. Устройство с потреблением 230 Вт выполнено в тонкорамочном черном корпусе с фоновой подсветкой. За счет крепление VESA 200х200 и настольной подставки изделие можно монтировать на стене или размещать на любой плоской поверхности. Габариты без опоры и с ней равны 70х122х5,6 см и 78х122х25 см, вес — 18 кг и 21 кг.', 'InStock', 'Discount', 1, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Samsung'), 1);
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung QE55Q80C'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '4K Ultra HD (3840x2160 Пикс)' AND "Type" = 'Экран));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung QE55Q80C'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '55' AND "Type" = 'Диагональ));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung QE55Q80C'), (SELECT "ID" FROM "Attributes" WHERE "Name" = '120' AND "Type" = 'Частота обновления));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung QE55Q80C'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'QLED' AND "Type" = 'Технология экрана));
+
+INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+VALUES
+((SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung QE55Q80C'), (SELECT "ID" FROM "Attributes" WHERE "Name" = 'Direct LED' AND "Type" = 'Тип светодиодной подсветки));
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-samsung-qe55q80c_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung QE55Q80C'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-samsung-qe55q80c_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung QE55Q80C'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/televizor-samsung-qe55q80c_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Телевизор Samsung QE55Q80C'));

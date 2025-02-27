@@ -1,0 +1,22 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/aktivatornaya-stiralnaya-mashina-voltera-pomoshhnica-2m-vt-smp4dru_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Активаторная стиральная машина Волтера Помощница-2М (ВТ-СМП4ДRU)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/aktivatornaya-stiralnaya-mashina-voltera-pomoshhnica-2m-vt-smp4dru_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Активаторная стиральная машина Волтера Помощница-2М (ВТ-СМП4ДRU)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/aktivatornaya-stiralnaya-mashina-voltera-pomoshhnica-2m-vt-smp4dru_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Активаторная стиральная машина Волтера Помощница-2М (ВТ-СМП4ДRU)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/aktivatornaya-stiralnaya-mashina-voltera-pomoshhnica-2m-vt-smp4dru_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Активаторная стиральная машина Волтера Помощница-2М (ВТ-СМП4ДRU)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/aktivatornaya-stiralnaya-mashina-voltera-pomoshhnica-2m-vt-smp4dru_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Активаторная стиральная машина Волтера Помощница-2М (ВТ-СМП4ДRU)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/aktivatornaya-stiralnaya-mashina-voltera-pomoshhnica-2m-vt-smp4dru_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Активаторная стиральная машина Волтера Помощница-2М (ВТ-СМП4ДRU)'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/aktivatornaya-stiralnaya-mashina-voltera-pomoshhnica-2m-vt-smp4dru_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Активаторная стиральная машина Волтера Помощница-2М (ВТ-СМП4ДRU)'));

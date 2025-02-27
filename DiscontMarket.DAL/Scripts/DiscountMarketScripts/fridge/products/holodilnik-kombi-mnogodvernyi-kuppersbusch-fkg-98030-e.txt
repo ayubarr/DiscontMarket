@@ -1,0 +1,45 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Холодильник комби многодверный Kuppersbusch FKG 9803.0 E', 277995, 10, '/items/productimages/holodilnik-kombi-mnogodvernyi-kuppersbusch-fkg-98030-e_0.png', 4.33, '', 'Холодильник Kuppersbusch FKG 9803.0 E выполнен по технологии Side-by-Side — оснащен двумя распашными дверями. Камеры расположены вертикально. Эта модель за год расходует всего 318 кВт*ч электричества, максимальный уровень шума составляет 41 дБ. Устройство снабжено встроенным сифоном с фильтром, подключается к централизованному водопроводу. 
+Морозильная камера объемом 182 л оборудована тремя полками, двумя прозрачными ящиками и двумя дверными карманами. Производительность отделения — 14 кг продуктов в сутки. Иней и наледь удаляются автоматически с помощью системы No Frost. 
+Холодильный отсек объемом 334 л снабжен четырьмя полками, двумя контейнерами и четырьмя дверными карманами. Для разморозки используется капельная полуавтоматическая система. Функция ионизации Multi Airflow защищает от распространения бактерий и появления неприятных запахов. Для освещения используются светодиодные элементы. 
+В этой модели реализованы функции «Отпуск», «Быстрое охлаждение», «Суперзамораживание», «Суперохлаждение». При длительно открытой двери раздается звуковой сигнал. В случае аварийного отключения питания продукты можно хранить в течение 6 часов.', 'InStock', 'Discount', 3, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Kuppersbusch'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Холодильник комби многодверный Kuppersbusch FKG 9803.0 E'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник комби многодверный Kuppersbusch FKG 9803.0 E' 
+        AND a."Name" = '176.5*89.7*76.1 см' 
+        AND a."Type" = 'Габаритные размеры (В*Ш*Г)'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник комби многодверный Kuppersbusch FKG 9803.0 E' 
+        AND a."Name" = '516' 
+        AND a."Type" = 'Общий объем'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник комби многодверный Kuppersbusch FKG 9803.0 E' 
+        AND a."Name" = 'электронный' 
+        AND a."Type" = 'Тип управления'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-kombi-mnogodvernyi-kuppersbusch-fkg-98030-e_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник комби многодверный Kuppersbusch FKG 9803.0 E'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-kombi-mnogodvernyi-kuppersbusch-fkg-98030-e_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник комби многодверный Kuppersbusch FKG 9803.0 E'));

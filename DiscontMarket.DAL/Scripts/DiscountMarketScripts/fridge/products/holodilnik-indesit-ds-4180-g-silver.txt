@@ -1,0 +1,113 @@
+﻿
+        INSERT INTO "Products" 
+        ("ProductName", "Price", "Quantity", "IconPath", "Rating", "Description", "FullDescription", 
+            "Availability", "Status", "CategoryID", "BrandID", "UserID") 
+        SELECT 'Холодильник Indesit DS 4180 G Silver', 18749, 12, '/items/productimages/holodilnik-indesit-ds-4180-g-silver_0.png', 4.96, '', 'Холодильник Indesit DS 4180 G устойчиво фиксируется на полу за счет нескользящего основания. В основе работы лежит стандартный компрессор с хладагентом R600a, который выдает уровень шума до 39 дБ. Устройство работает с высокой производительностью при замораживании до 4 кг/сутки и потребляет до 342 кВт*ч электроэнергии за год. Управление параметрами настройки осуществляется с помощью электромеханических регуляторов. Световая индикация показывает рабочее состояние.
+
+• <b>Наличие двух камер</b>
+Объем холодильного отделения равен 223 л, морозильного — 87 л. Полки из закаленного стекла регулируются по высоте и могут выдерживать нагрузку до 100 кг, что дает возможность размещать внутри продукты и посуду любого веса и размеров. Бутылки надежно держатся за счет фиксатора.
+
+• <b>Хорошее освещение</b>
+Встроенная светодиодная лампа дает возможность видеть содержимое холодильника в любое время суток.
+
+• <b>Удобство эксплуатации</b>
+Дверь, выполненную из металла, можно перенавешивать справа налево и наоборот.
+
+При оставлении двери открытой или повышении температуры активируется световая сигнализация. В случае неожиданного отключения электричества холод внутри устройства сохраняется до 18 часов.', 'InStock', 'Discount', 3, (SELECT "ID" FROM "Brands" WHERE "Name" = 'Indesit'), 1
+        WHERE NOT EXISTS (
+            SELECT 1 FROM "Products" WHERE "ProductName" = 'Холодильник Indesit DS 4180 G Silver'
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Indesit DS 4180 G Silver' 
+        AND a."Name" = 'стандартный' 
+        AND a."Type" = 'Тип компрессора'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Indesit DS 4180 G Silver' 
+        AND a."Name" = '185' 
+        AND a."Type" = 'Высота'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Indesit DS 4180 G Silver' 
+        AND a."Name" = '60' 
+        AND a."Type" = 'Ширина'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Indesit DS 4180 G Silver' 
+        AND a."Name" = '62' 
+        AND a."Type" = 'Глубина'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+        INSERT INTO "ProductAttribute" ("ProductID", "AttributeID") 
+        SELECT p."ID", a."ID" FROM "Products" p, "Attributes" a 
+        WHERE p."ProductName" = 'Холодильник Indesit DS 4180 G Silver' 
+        AND a."Name" = '332' 
+        AND a."Type" = 'Общий объем'
+        AND NOT EXISTS (
+            SELECT 1 FROM "ProductAttribute" WHERE "ProductID" = p."ID" AND "AttributeID" = a."ID"
+        );
+
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-indesit-ds-4180-g-silver_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Indesit DS 4180 G Silver'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-indesit-ds-4180-g-silver_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Indesit DS 4180 G Silver'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-indesit-ds-4180-g-silver_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Indesit DS 4180 G Silver'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-indesit-ds-4180-g-silver_3.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Indesit DS 4180 G Silver'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-indesit-ds-4180-g-silver_4.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Indesit DS 4180 G Silver'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-indesit-ds-4180-g-silver_5.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Indesit DS 4180 G Silver'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-indesit-ds-4180-g-silver_6.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Indesit DS 4180 G Silver'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-indesit-ds-4180-g-silver_7.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Indesit DS 4180 G Silver'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-indesit-ds-4180-g-silver_8.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Indesit DS 4180 G Silver'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-indesit-ds-4180-g-silver_9.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Indesit DS 4180 G Silver'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-indesit-ds-4180-g-silver_10.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Indesit DS 4180 G Silver'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-indesit-ds-4180-g-silver_11.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Indesit DS 4180 G Silver'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-indesit-ds-4180-g-silver_12.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Indesit DS 4180 G Silver'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-indesit-ds-4180-g-silver_13.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Indesit DS 4180 G Silver'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-indesit-ds-4180-g-silver_14.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Indesit DS 4180 G Silver'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-indesit-ds-4180-g-silver_15.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Indesit DS 4180 G Silver'));

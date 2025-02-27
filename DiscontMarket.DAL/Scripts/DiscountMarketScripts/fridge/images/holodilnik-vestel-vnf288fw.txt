@@ -1,0 +1,10 @@
+﻿
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-vestel-vnf288fw_0.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Vestel VNF288FW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-vestel-vnf288fw_1.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Vestel VNF288FW'));
+INSERT INTO "Images" ("Path", "ProductID")
+ VALUES
+('/items/productimages/holodilnik-vestel-vnf288fw_2.png', (SELECT "ID" FROM "Products" WHERE "ProductName" = 'Холодильник Vestel VNF288FW'));
